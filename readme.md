@@ -8,3 +8,4 @@
 5. `difference.py`可以比较中日人气投票数占比
 6. `CharacterTagAnalyze-tfidf.py`、`CharacterTagAnalyze-freq.py`、`CharacterTagAnalyze-textrank.py`、`CharacterTagAnalyze-LDA.py`分别是不同方法，在thbwiki上提取出的角色关键词
 7. `CharacterTagAnalyze-clusters.py`为所有四种方法的关键词聚合分析
+8. `人气拉表统计.opju`为origin作图的人气数据
