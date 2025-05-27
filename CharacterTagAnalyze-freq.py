@@ -21,7 +21,7 @@ remove_keywords = ["的", "我们", "公司", "产品"]
 stopwords_path = "stopwords.txt"
 font_path = r"E:\School\Touhou\fun\方正书宋简体.ttf"
 cache_dir = "cache_data"
-output_dir = "results-freq"
+output_dir = "CharacterTagAnalyze-results-freq"
 
 os.makedirs(cache_dir, exist_ok=True)
 os.makedirs(output_dir, exist_ok=True)

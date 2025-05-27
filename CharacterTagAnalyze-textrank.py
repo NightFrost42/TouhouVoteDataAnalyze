@@ -22,7 +22,7 @@ remove_keywords = ["的", "我们", "公司", "产品"]  # 强制过滤词
 stopwords_path = "stopwords.txt"            # 停用词文件（可选）
 font_path = r"E:\School\Touhou\fun\方正书宋简体.ttf"  # 词云字体路径，根据系统调整
 cache_dir = "cache_data"                   # 本地缓存目录
-output_dir = "results-textrank"                     # 输出目录，用于保存结果
+output_dir = "CharacterTagAnalyze-results-textrank"                     # 输出目录，用于保存结果
 
 # === 初始化目录 ===
 os.makedirs(cache_dir, exist_ok=True)
