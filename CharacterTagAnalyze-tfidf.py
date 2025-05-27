@@ -19,7 +19,7 @@ suffixes = ["/二次设定", "/"]  # 每个 partial_path 后要拼接的特定�
 # suffixes = ["/二次设定", "/分析考据", "/"]  # 每个 partial_path 后要拼接的特定地址列表
 remove_keywords = ["的", "我们", "公司", "产品"]  # 强制过滤词
 stopwords_path = "stopwords.txt"            # 停用词文件（可选）
-font_path = r"E:\School\Touhou\fun\方正书宋简体.ttf"  # 词云字体路径，根据系统调整
+font_path = r"方正书宋简体.ttf"  # 词云字体路径，根据系统调整
 cache_dir = "cache_data"                   # 本地缓存目录
 output_dir = "CharacterTagAnalyze-results-tfidf"                     # 输出目录，用于保存结果
 
