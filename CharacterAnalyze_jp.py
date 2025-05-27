@@ -1,10 +1,27 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import re
 
 TARGET_NAME = 'チルノ'
 EXCEL_FILE= 'TouhouVote_jp_grouped.xlsx'
 EXCEL_FILE_RAW = 'TouhouVote_jp.xlsx'
 OUTPUT_IMAGE = 'TouhouVote_character.png'
+
+def extract_number(group_value):
+    # 处理 NaN 值
+    if pd.isna(group_value):
+        return float('inf')
+    # 正则提取数字部分（含小数点）
+    match = re.match(r'^(\d+)', group_value)
+    if match:
+        try:
+            # 转换为浮点数
+            return float(match.group(1))
+        except:
+            return float('inf')
+    else:
+        # 没有匹配到数字的情况
+        return float('inf')
 
 # 1. 读取所有 Sheet 并按键名（数字）升序排序
 all_sheets = pd.read_excel(EXCEL_FILE, sheet_name=None)
@@ -12,7 +29,7 @@ raw_sheets = pd.read_excel(EXCEL_FILE_RAW, sheet_name=None)
 
 # 提取 Sheet 名并转换为整数排序（例如 "1", "2" → 1, 2）
 try:
-    sorted_sheet_names = sorted(all_sheets.keys(), key=lambda x: int(x))
+    sorted_sheet_names = sorted(all_sheets.keys(), key=lambda x: extract_number(x))
 except ValueError:
     raise ValueError("Sheet 名必须为可转换为整数的字符串（如 '1', '2'）")
 

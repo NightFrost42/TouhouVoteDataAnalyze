@@ -1,10 +1,27 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import re
 
 # 参数配置
 EXCEL_FILE = "TouhouVote_jp_grouped.xlsx"  # 输入文件路径（包含首次出现作品和票数）
 EXCEL_FILE_RAW = 'TouhouVote_jp.xlsx'
 OUTPUT_IMAGE = "group_percentages.png"  # 输出图片路径
+
+def extract_number(group_value):
+    # 处理 NaN 值
+    if pd.isna(group_value):
+        return float('inf')
+    # 正则提取数字部分（含小数点）
+    match = re.match(r'^(\d+)', group_value)
+    if match:
+        try:
+            # 转换为浮点数
+            return float(match.group(1))
+        except:
+            return float('inf')
+    else:
+        # 没有匹配到数字的情况
+        return float('inf')
 
 # 1. 读取所有 Sheet 并按数字升序排序
 all_sheets = pd.read_excel(EXCEL_FILE, sheet_name=None)
@@ -13,7 +30,7 @@ raw_sheets = pd.read_excel(EXCEL_FILE_RAW, sheet_name=None)
 
 # 提取 Sheet 名并转换为整数排序（例如 "1", "2" → 1, 2）
 try:
-    sheet_names = sorted(all_sheets.keys(), key=lambda x: int(x))
+    sheet_names = sorted(all_sheets.keys(), key=lambda x: extract_number(x))
 except ValueError:
     raise ValueError("Sheet 名必须为可转换为整数的字符串（如 '1', '2'）")
 
@@ -54,16 +71,6 @@ if not results:
 result_df = pd.DataFrame(results)
 
 result_df["首次出现作品"] = pd.to_numeric(result_df["首次出现作品"], errors="coerce")
-def extract_number(group_value):
-    # 直接处理 float 类型的值
-    try:
-        # 如果是 NaN，排到最后
-        if pd.isna(group_value):
-            return float('inf')
-        # 直接返回浮点数值
-        return float(group_value)
-    except:
-        return float('inf')
 
 # 4. 绘制点线图
 plt.figure(figsize=(12, 6))
@@ -72,7 +79,7 @@ plt.figure(figsize=(12, 6))
 # 按浮点数值直接排序（处理 NaN）
 groups = sorted(
     result_df["首次出现作品"].unique(),
-    key=lambda x: extract_number(x)
+    key=lambda x: float(x)
 )
 # 定义颜色和标记样式（扩展更多选项）
 colors = plt.cm.tab20(range(len(groups)))  # 从 tab10 改为 tab20，支持更多颜色
@@ -81,7 +88,7 @@ markers = ['o', 's', '^', 'D', 'v', 'p', '*', 'X', 'h', '+', 'x', '|', '1', '2',
 # 遍历每个组别，分别绘制线条
 for idx, group in enumerate(groups):
     group_data = result_df[result_df["首次出现作品"] == group]
-    group_data = group_data.sort_values("Sheet", key=lambda x: x.astype(int))
+    group_data = group_data.sort_values("Sheet", key=lambda col: col.apply(extract_number))
     plt.plot(
         group_data["Sheet"],
         group_data["百分比"],
