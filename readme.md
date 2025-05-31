@@ -11,3 +11,4 @@
 8. `人气拉表统计.opju`为origin作图的人气数据
 9. `TagGetMoeWiki.py`获取萌娘百科中角色萌点作为tag
 10. `TouhouVoteMusic.py`清洗歌曲投票数据
+11. `SummarizeAllData.py`总和全数据
