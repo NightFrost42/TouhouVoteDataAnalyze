@@ -70,6 +70,8 @@ for sheet in wb.sheet_names:
             'r': to_int(r.get('名次')),
             'prev_r': to_int(r.get('上回名次')),
             'prev2_r': to_int(r.get('上上回名次')),
+            'v': to_int(r.get('票数')),
+            'bnum': to_int(r.get('本名票数')),
             'comments': to_int(r.get('评论数')),
             'support': to_int(r.get('应援作品数'))
         }
