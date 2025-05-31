@@ -103,7 +103,7 @@ for sheet in wb.sheet_names:
             data['characters'][tr] = {'id': re.sub(r"\W+", "", tr).lower(), 'jp_name': None, 'first_appear': fa, 'keywords': [], 'sessions': {}}
             if fa: data['indexes']['by_work'].setdefault(fa, []).append(tr)
         stats = {
-            'r': to_int(r.get('排名')),
+            'r': to_int(r.get('名次')),
             'v': to_int(r.get('票数')),
             'bnum': to_int(r.get('本命数')),
             'brate': to_float(r.get('本命率')),
