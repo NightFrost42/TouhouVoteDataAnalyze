@@ -2,8 +2,6 @@
 import json
 import numpy as np
 import re
-
-
 # 打开文件，存储至字典data中
 with open('./touhou_vote.json','r',encoding='utf-8') as file:
     data = json.load(file)
@@ -74,7 +72,10 @@ for tag in tags_dict.keys():
         # TODO：我tm安装不了pyplot，你来绘图吧！
         # tag_vote_percentage_list按届数从前往后排序，直接用这个
         # 例：print(tag_vote_percentage_list)
-        
+        # print(tag)
+        # print(i)
+        # print(tag_vote_percentage_list)
+
 
 # ------------------------------------------------------------------------------
 # 排序
@@ -123,3 +124,58 @@ for i in range(2):
 # TODO：我tm安装不了pyplot，你来绘图吧！
 # 例：
 #   print(tag_rank_sessions_japan[3])
+# print(tag_rank_sessions_japan[3])
+
+
+# 将 tuple 转成 list，JSON 不支持 tuple
+data_to_save = {
+    session: list(map(list, tag_list))  # 把每个 (key, value) tuple 转成 [key, value]
+    for session, tag_list in tag_rank_sessions_china.items()
+}
+
+with open("data_statistic/data_cn.json", "w", encoding="utf-8") as f:
+    json.dump(data_to_save, f, ensure_ascii=False, indent=4)
+
+
+# 将 tuple 转成 list，JSON 不支持 tuple
+data_to_save = {
+    session: list(map(list, tag_list))  # 把每个 (key, value) tuple 转成 [key, value]
+    for session, tag_list in tag_rank_sessions_japan.items()
+}
+
+with open("data_statistic/data_jp.json", "w", encoding="utf-8") as f:
+    json.dump(data_to_save, f, ensure_ascii=False, indent=4)
+# # 国家分中日，中为0，日为1
+# NATIONAL = 0
+# SESSION = 11
+# TOP_N = 15  # 你想展示的前 N 名，可自行修改
+
+# if NATIONAL == 0:
+#     data = tag_rank_sessions_china[SESSION-1]
+# else:
+#     data = tag_rank_sessions_japan[SESSION-1]
+
+# # 对列表进行切片，只保留前 TOP_N 项
+# top_n_data = data[:TOP_N]
+
+# # 分别提取字典的 key 和 value 作为横轴和纵轴数据
+# tags = []   # 存储所有标签
+# values = [] # 存储所有对应的得票率
+
+# for tag_name, vote_rate in top_n_data:
+#     tags.append(tag_name)
+#     values.append(vote_rate)
+
+# # 创建条形图
+# plt.figure(figsize=(8, 5))
+# plt.rcParams['font.sans-serif'] = ['SimHei']  # 解决中文乱码
+# plt.bar(tags, values)
+# plt.xlabel("标签 (tag)")
+# plt.ylabel("得票率 (value)")
+# title = f"第{SESSION}届{'中国' if NATIONAL == 0 else '日本'}标签得票率排名前{TOP_N}名"
+# plt.title(f"{title}得票率条形图")
+# plt.xticks(rotation=45)
+# plt.tight_layout()
+
+# # 显示图表
+# plt.show()
