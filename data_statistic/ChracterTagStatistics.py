@@ -2,6 +2,10 @@
 import json
 import numpy as np
 import re
+
+# 给出排名限定，如果排名 <= rank_boundary 则不计入
+rank_boundary = 10
+
 # 打开文件，存储至字典data中
 with open('./touhou_vote.json','r',encoding='utf-8') as file:
     data = json.load(file)
@@ -44,9 +48,12 @@ for tag in tags:
         # 如果有，则统计
         else:
             for votes in data['characters'][character]['sessions']:
-                session, nationality = vote_data_processing(votes)
-                tags_dict[tag][nationality][session] += (data['characters'][character]['sessions'][votes]['v'] / data['indexes']['by_session'][votes]['total_votes'])
-
+                # 如果角色当期排名高于N，则跳过
+                if int(data['characters'][character]['sessions'][votes]['r']) <= rank_boundary:
+                    continue
+                else:
+                    session, nationality = vote_data_processing(votes)
+                    tags_dict[tag][nationality][session] += (data['characters'][character]['sessions'][votes]['v'] / data['indexes']['by_session'][votes]['total_votes'])
 
 # ------------------------------------------------------------------------------
 # 数据统计
@@ -69,13 +76,12 @@ for tag in tags_dict.keys():
             # 日
             tag_vote_percentage_list = tags_dict[tag][1][2:20]
     
-        # TODO：我tm安装不了pyplot，你来绘图吧！
+        # TODO：绘图！
         # tag_vote_percentage_list按届数从前往后排序，直接用这个
         # 例：print(tag_vote_percentage_list)
         # print(tag)
         # print(i)
         # print(tag_vote_percentage_list)
-
 
 # ------------------------------------------------------------------------------
 # 排序
@@ -121,7 +127,7 @@ for i in range(2):
 # 格式：list[dict{key: tag, value: 具体得票率}]
 # 返回为第3届日本tag得票率排序后的，dict{key: tag, value: 得票率}，大->小
 
-# TODO：我tm安装不了pyplot，你来绘图吧！
+# TODO：绘图！
 # 例：
 #   print(tag_rank_sessions_japan[3])
 # print(tag_rank_sessions_japan[3])
