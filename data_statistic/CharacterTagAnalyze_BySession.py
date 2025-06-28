@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 国家分中日，中为0，日为1
-NATIONAL = 0
-SESSION = 11
+NATIONAL = 1
+SESSION = 20
 TOP_N = 15  # 你想展示的前 N 名，可自行修改
 
 with open("data_statistic/data_cn.json", "r", encoding="utf-8") as f:

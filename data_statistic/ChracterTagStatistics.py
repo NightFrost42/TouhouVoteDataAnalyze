@@ -1,10 +1,9 @@
-
 import json
 import numpy as np
 import re
 
 # 给出排名限定，如果排名 <= rank_boundary 则不计入
-rank_boundary = 10
+rank_boundary = 0
 
 # 打开文件，存储至字典data中
 with open('./touhou_vote.json','r',encoding='utf-8') as file:
@@ -15,15 +14,8 @@ tag_list = []
 for character in data['characters']:
     tag_list += data['characters'][character]['keywords']
 
-# 处理重复元素
-tags = np.unique(tag_list)
-
-# 需求：tag基于投票届数的数据变化表，以及得票率排名
-
-# 统计数据
-# 创建数据存储结构dict，格式：dict{key1:tag名字，key2:国家，key3:届数，value:得票率}
-# tag名于tags中，届数为1-20届对应0-19，国家分中日，中为0，日为1
-tags_dict = {}
+# 处理重复元素，得到所有唯一的 tag
+all_unique_tags = np.unique(tag_list)
 
 # 数据处理，例：输入'3_jp'，返回session = 3, nationality = 1
 def vote_data_processing(votes):
@@ -35,153 +27,181 @@ def vote_data_processing(votes):
         nationality = 1
     return session, nationality
 
-# 遍历tag
+# ---
+# ## 新增：过滤掉独有 Tag
+
+# 这个部分会遍历所有 tag，统计每个 tag 对应的角色数量，然后只保留那些被多个角色共同拥有的 tag。
+
+# ```python
+# 统计每个 tag 被多少个不同的角色拥有
+tag_character_counts = {}
+for tag in all_unique_tags:
+    tag_character_counts[tag] = 0
+    for character_name in data['characters']:
+        if tag in data['characters'][character_name]['keywords']:
+            tag_character_counts[tag] += 1
+
+# 筛选 tags 列表，只保留被至少两个角色拥有的 tag
+# 你可以根据需要修改这里的阈值，比如只想分析被10个以上角色共有的tag
+min_characters_per_tag = 2 
+tags = [tag for tag in all_unique_tags if tag_character_counts[tag] >= min_characters_per_tag]
+
+print(f"原始 tag 数量: {len(all_unique_tags)}")
+print(f"过滤后 tag 数量 (至少被 {min_characters_per_tag} 个角色拥有): {len(tags)}")
+
+# ---
+# ## 预处理：确定排除的角色与届次
+
+# 为了确保一个角色只要在任一地区排名靠前就被完全排除，我们首先建立一个排除集合。
+
+# ```python
+excluded_character_sessions = set()
+
+for character_name, character_data in data['characters'].items():
+    for votes_key, session_data in character_data['sessions'].items():
+        rank = int(session_data['r'])
+        session_num = int(re.findall(r'\d+', votes_key)[0]) # 提取届数（1-indexed）
+        
+        # 只要任意一边的排名达到排除条件，就将此“角色-届数”组合加入排除列表
+        if rank <= rank_boundary:
+            excluded_character_sessions.add((character_name, session_num))
+
+# ---
+# ## 核心修改：统计总票数和角色数量
+
+# 这里是主要修改的部分。`tags_dict` 将不再直接存储得票率，而是存储**总票数**和**角色计数**，以便后续计算平均值。
+
+# ```python
+tags_dict = {}
+
+# 遍历筛选后的 tag 列表
 for tag in tags:
-    # 初始化
-    tags_dict[tag] = np.zeros((2,20))
+    # 初始化每个tag的数据结构
+    tags_dict[tag] = {
+        'total_votes': np.zeros((2, 20)),
+        'character_counts': np.zeros((2, 20))
+    }
     
     # 遍历角色
     for character in data['characters']:
-        # 如果角色没有该tag
+        # 如果角色没有该tag，则跳过
         if tag not in data['characters'][character]['keywords']:
             continue
-        # 如果有，则统计
+        # 如果有该tag，则统计其票数和角色数量
         else:
+            # 用一个集合来记录当前届次中该角色是否已被计入，避免重复计数
+            # 比如一个角色在同一届同时有cn和jp的数据，我们只计一次
+            counted_sessions_for_character_tag = set() 
+
             for votes in data['characters'][character]['sessions']:
-                # 如果角色当期排名高于N，则跳过
-                if int(data['characters'][character]['sessions'][votes]['r']) <= rank_boundary:
-                    continue
+                session, nationality = vote_data_processing(votes)
+                original_session_num = session + 1 # 将0-indexed的session转换回1-indexed
+
+                # 检查当前“角色-届数”组合是否在排除列表中
+                if (character, original_session_num) in excluded_character_sessions:
+                    continue # 如果在排除列表，则跳过本次投票数据
                 else:
-                    session, nationality = vote_data_processing(votes)
-                    tags_dict[tag][nationality][session] += (data['characters'][character]['sessions'][votes]['v'] / data['indexes']['by_session'][votes]['total_votes'])
+                    # 累加票数
+                    current_votes = data['characters'][character]['sessions'][votes]['v']
+                    total_session_votes = data['indexes']['by_session'][votes]['total_votes']
+                    
+                    if total_session_votes > 0: # 避免除以零
+                        tags_dict[tag]['total_votes'][nationality][session] += (current_votes / total_session_votes)
+                    
+                    # 累加角色数量，确保每个角色在每届只被计算一次
+                    if (session, nationality) not in counted_sessions_for_character_tag:
+                        tags_dict[tag]['character_counts'][nationality][session] += 1
+                        counted_sessions_for_character_tag.add((session, nationality))
 
-# ------------------------------------------------------------------------------
-# 数据统计
+# ---
+# ## 数据统计：计算平均得票率并输出
 
-# 中国部分(1-11届)：tags_dict[tag][0][0:11]
-# 日本部分(3-20届)：tags_dict[tag][1][2:20]
-# 数据为百分比，意义为所有票中有多少比例投了该tag
-# 例：print(tags_dict["贫乳"][0][0:11])
+# 现在 `tags_dict` 存储的是总票数和角色数量。在数据统计阶段，我们将进行平均值计算。
+
+# ```python
+tag_average_vote_percentage = {}
 
 for tag in tags_dict.keys():
-    # 初始化
-    tag_vote_percentage_list = []
-    
-    # 分区：
-    for i in range(2):
-        if i == 0:
-            # 中
-            tag_vote_percentage_list = tags_dict[tag][i][0:11]
-        else:
-            # 日
-            tag_vote_percentage_list = tags_dict[tag][1][2:20]
-    
-        # TODO：绘图！
-        # tag_vote_percentage_list按届数从前往后排序，直接用这个
-        # 例：print(tag_vote_percentage_list)
-        # print(tag)
-        # print(i)
-        # print(tag_vote_percentage_list)
+    tag_average_vote_percentage[tag] = np.zeros((2,20)) # 同样是 [中/日][届数]
 
-# ------------------------------------------------------------------------------
-# 排序
+    # 分区计算平均值
+    for i in range(2): # i=0 为中国，i=1 为日本
+        for session_idx in range(20): # 遍历所有届数 (0-19)
+            total_votes_for_tag = tags_dict[tag]['total_votes'][i][session_idx]
+            character_count_for_tag = tags_dict[tag]['character_counts'][i][session_idx]
 
-# 生成子字典
+            if character_count_for_tag > 0:
+                # 计算平均得票率：总票数 / 角色数量
+                tag_average_vote_percentage[tag][i][session_idx] = total_votes_for_tag / character_count_for_tag
+            else:
+                tag_average_vote_percentage[tag][i][session_idx] = 0 # 如果没有角色，则平均得票率为0
+    
+    # 你可以在这里打印每个tag的中国和日本的平均得票率列表
+    # print(f"Tag: {tag}")
+    # print(f"  中国区平均得票率 (1-11届): {tag_average_vote_percentage[tag][0][0:11]}")
+    # print(f"  日本区平均得票率 (3-20届): {tag_average_vote_percentage[tag][1][2:20]}")
+
+# ---
+# ## 排序：基于新的平均得票率
+
+# 排序部分需要使用新的 `tag_average_vote_percentage` 数据结构。
+
+# ```python
 tag_rank_sessions_china = {}
 tag_rank_sessions_japan = {}
 
 for i in range(2):
     if i == 0:
-        # 中：1-11
-        for session in range(1,12):
-            # 创建临时字典
+        # 中国：1-11届
+        for session in range(1,12): # 1-indexed session
+            # 创建临时字典来存储当前届次的tag和其平均得票率
             temp_dict = {}
-    
-            #读取数据
-            for tag in tags:
-                temp_dict[tag] = tags_dict[tag][0][session-1]
-    
+            for tag in tags: # 注意这里现在遍历的是筛选后的 tags 列表
+                # 使用 tag_average_vote_percentage 来获取数据
+                temp_dict[tag] = tag_average_vote_percentage[tag][0][session-1]
+            
             # 排序
             sorted_dict = sorted(temp_dict.items(), key=lambda x: x[1],reverse=True)
-    
+            
             # 写入
             tag_rank_sessions_china[session] = sorted_dict
 
     else:
-        # 日：3-20
-        for session in range(3,21):
+        # 日本：3-20届
+        for session in range(3,21): # 1-indexed session
             # 创建临时字典
             temp_dict = {}
-    
-            #读取数据
-            for tag in tags:
-                temp_dict[tag] = tags_dict[tag][1][session-1]
-    
+            for tag in tags: # 注意这里现在遍历的是筛选后的 tags 列表
+                # 使用 tag_average_vote_percentage 来获取数据
+                temp_dict[tag] = tag_average_vote_percentage[tag][1][session-1]
+            
             # 排序
             sorted_dict = sorted(temp_dict.items(), key=lambda x: x[1],reverse=True)
-    
+            
             # 写入
             tag_rank_sessions_japan[session] = sorted_dict
 
-# tag_rank_sessions_china和tag_rank_sessions_japan分别存储了按届排序的不同tag
-# 格式：list[dict{key: tag, value: 具体得票率}]
-# 返回为第3届日本tag得票率排序后的，dict{key: tag, value: 得票率}，大->小
+# ---
+# ## 保存结果
 
-# TODO：绘图！
-# 例：
-#   print(tag_rank_sessions_japan[3])
-# print(tag_rank_sessions_japan[3])
+# 这个部分与之前相同，直接将处理好的数据保存为 JSON 文件。
 
-
+# ```python
 # 将 tuple 转成 list，JSON 不支持 tuple
-data_to_save = {
-    session: list(map(list, tag_list))  # 把每个 (key, value) tuple 转成 [key, value]
+data_to_save_cn = {
+    session: list(map(list, tag_list)) 
     for session, tag_list in tag_rank_sessions_china.items()
 }
 
 with open("data_statistic/data_cn.json", "w", encoding="utf-8") as f:
-    json.dump(data_to_save, f, ensure_ascii=False, indent=4)
+    json.dump(data_to_save_cn, f, ensure_ascii=False, indent=4)
 
 
 # 将 tuple 转成 list，JSON 不支持 tuple
-data_to_save = {
-    session: list(map(list, tag_list))  # 把每个 (key, value) tuple 转成 [key, value]
+data_to_save_jp = {
+    session: list(map(list, tag_list)) 
     for session, tag_list in tag_rank_sessions_japan.items()
 }
 
 with open("data_statistic/data_jp.json", "w", encoding="utf-8") as f:
-    json.dump(data_to_save, f, ensure_ascii=False, indent=4)
-# # 国家分中日，中为0，日为1
-# NATIONAL = 0
-# SESSION = 11
-# TOP_N = 15  # 你想展示的前 N 名，可自行修改
-
-# if NATIONAL == 0:
-#     data = tag_rank_sessions_china[SESSION-1]
-# else:
-#     data = tag_rank_sessions_japan[SESSION-1]
-
-# # 对列表进行切片，只保留前 TOP_N 项
-# top_n_data = data[:TOP_N]
-
-# # 分别提取字典的 key 和 value 作为横轴和纵轴数据
-# tags = []   # 存储所有标签
-# values = [] # 存储所有对应的得票率
-
-# for tag_name, vote_rate in top_n_data:
-#     tags.append(tag_name)
-#     values.append(vote_rate)
-
-# # 创建条形图
-# plt.figure(figsize=(8, 5))
-# plt.rcParams['font.sans-serif'] = ['SimHei']  # 解决中文乱码
-# plt.bar(tags, values)
-# plt.xlabel("标签 (tag)")
-# plt.ylabel("得票率 (value)")
-# title = f"第{SESSION}届{'中国' if NATIONAL == 0 else '日本'}标签得票率排名前{TOP_N}名"
-# plt.title(f"{title}得票率条形图")
-# plt.xticks(rotation=45)
-# plt.tight_layout()
-
-# # 显示图表
-# plt.show()
+    json.dump(data_to_save_jp, f, ensure_ascii=False, indent=4)

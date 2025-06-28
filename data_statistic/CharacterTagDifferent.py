@@ -4,9 +4,6 @@ import matplotlib.pyplot as plt
 
 # -------------------------------
 # （1） 读取并转换 data_cn.json 和 data_jp.json
-#     请确认文件路径是否正确，例如：
-#     如果在当前目录下，就写 "data_cn.json"、"data_jp.json"；
-#     如果在子文件夹 data_statistic 下，则写 "data_statistic/data_cn.json" 等
 # -------------------------------
 with open("data_statistic/data_cn.json", "r", encoding="utf-8") as f:
     loaded_cn = json.load(f)
@@ -25,9 +22,10 @@ tag_rank_sessions_japan = {
 # -------------------------------
 # （2） 指定要对比的中国区和日本区届数及阈值
 # -------------------------------
-cn_session = 11    # 中国区要对比的届数 (1–11)
-jp_session = 20   # 日本区要对比的届数 (3–20)
-threshold = 0.01  # 绝对差值阈值 (vote rate，以小数形式，例如 0.01 表示 1%)
+cn_session = 11     # 中国区要对比的届数 (1–11)
+jp_session = 20     # 日本区要对比的届数 (3–20)
+threshold = 0.002   # 绝对差值阈值 (vote rate，以小数形式，例如 0.01 表示 1%)
+top_n_tags = 30     # 新增：只显示差异最大的前 N 个标签，可根据需要调整
 
 # -------------------------------
 # （3） 获取对应届的 tag->rate 映射
@@ -44,59 +42,73 @@ all_tags = set(cn_rates.keys()).union(jp_rates.keys())
 for tag in all_tags:
     cn_rate = cn_rates.get(tag, 0.0)
     jp_rate = jp_rates.get(tag, 0.0)
-    diff = cn_rate - jp_rate  # 有向差值
+    diff = cn_rate - jp_rate    # 有向差值
     if abs(diff) >= threshold:
         diff_list.append((tag, cn_rate, jp_rate, diff))
 
-# 按差值绝对值从大到小排序（可选）
+# 按差值绝对值从大到小排序
 diff_list.sort(key=lambda x: abs(x[3]), reverse=True)
+
+# 如果指定了 top_n_tags，则只取前 N 个
+if top_n_tags > 0:
+    diff_list = diff_list[:top_n_tags]
 
 # 如果没有满足条件的 tag，则提示
 if not diff_list:
-    print(f"在中国区第 {cn_session} 届和日本区第 {jp_session} 届中，没有 tag 的得票率差异 ≥ {threshold}")
+    print(f"在中国区第 {cn_session} 届和日本区第 {jp_session} 届中，没有 tag 的得票率差异 ≥ {threshold*100:.1f}% 或没有足够多的标签满足显示数量 ({top_n_tags})。")
 else:
     # -------------------------------
     # （5） 分解信息，将差值转换为百分比，并准备绘图
     # -------------------------------
-    tags = [item[0] for item in diff_list]
-    # 将小数形式的差值乘以 100，得到百分比
-    diffs_pct = [item[3] * 100 for item in diff_list]
+    # 注意：为了水平条形图，这里需要反转列表，让最大的差异在图表上方显示
+    tags = [item[0] for item in diff_list][::-1]
+    diffs_pct = [item[3] * 100 for item in diff_list][::-1]
 
-    x = np.arange(len(tags))
+    y = np.arange(len(tags)) # Y轴现在是标签的位置
 
     # 为正负差值分别指定颜色：正(中国区更高)为红色，负(日本区更高)为蓝色
     colors = ['tab:red' if d > 0 else 'tab:blue' for d in diffs_pct]
 
     # -------------------------------
-    # （6） 绘制“差值百分比条形图”，并调大横向尺寸
+    # （6） 绘制“差值百分比条形图”，使用水平条形图
     # -------------------------------
-    plt.figure(figsize=(14, 6))  # 宽度设置为14，足够横向展开，避免标签重叠
+    plt.figure(figsize=(10, len(tags) * 0.4 + 2)) # 根据标签数量动态调整图表高度
     plt.rcParams['font.sans-serif'] = ['SimHei']  # 中文支持
 
-    bars = plt.bar(x, diffs_pct, color=colors)
+    # 使用 plt.barh 绘制水平条形图
+    bars = plt.barh(y, diffs_pct, color=colors)
 
-    # 在每个条形上方或下方标注百分比数值（保留两位小数）
+    # 在每个条形旁边标注百分比数值（保留两位小数）
     for bar, d in zip(bars, diffs_pct):
-        height = bar.get_height()
-        # 如果是正值，文字放在条形上方；如果是负值，文字放在条形下方
-        if height >= 0:
-            va, y_offset = 'bottom', 0.1
+        x_val = bar.get_width() # 获取条形的宽度（即差值）
+        y_val = bar.get_y() + bar.get_height() / 2 # 获取条形的中心Y坐标
+
+        # 根据正负差值调整文本位置：正值文本在条形右侧，负值文本在条形左侧
+        if x_val >= 0:
+            ha, x_offset = 'left', 0.0 # 文本左对齐，稍偏右
         else:
-            va, y_offset = 'top', -0.1
+            ha, x_offset = 'right', 0.0 # 文本右对齐，稍偏左
+        
         plt.text(
-            bar.get_x() + bar.get_width() / 2,
-            height + y_offset,
+            x_val + x_offset,
+            y_val,
             f"{d:.2f}%",  # 显示百分号
-            ha='center',
-            va=va,
+            ha=ha,
+            va='center', # 垂直居中
             fontsize=8
         )
 
-    plt.axhline(0, color='black', linewidth=0.8)  # 添加 y=0 的参考线
-    plt.xlabel("标签 (Tag)")
-    plt.ylabel("得票率差值 (中国区率 – 日本区率) [%]")
-    plt.title(f"中日区 第{cn_session}届 vs 第{jp_session}届 得票率有向差值（|差| ≥ {threshold*100:.0f}%）")
-    plt.xticks(x, tags, rotation=45, ha='right')
-    plt.grid(axis='y', linestyle='--', alpha=0.6)
-    plt.tight_layout()
+    plt.axvline(0, color='black', linewidth=0.8) # 添加 x=0 的参考线 (现在是垂直的)
+    plt.ylabel("标签 (Tag)") # Y轴现在是标签
+    plt.xlabel("得票率差值 (中国区率 – 日本区率) [%]") # X轴是差值
+    
+    title_suffix = f"（|差| ≥ {threshold*100:.1f}%）"
+    if top_n_tags > 0:
+        title_suffix = f"（差异最大前 {top_n_tags} 个，|差| ≥ {threshold*100:.1f}%）"
+    plt.title(f"中日区 第{cn_session}届 vs 第{jp_session}届 得票率有向差值{title_suffix}")
+    
+    # 设置 Y 轴刻度标签
+    plt.yticks(y, tags)
+    plt.grid(axis='x', linestyle='--', alpha=0.6) # 网格线现在是垂直的
+    plt.tight_layout() # 自动调整布局，防止标签重叠
     plt.show()
