@@ -1,0 +1,89 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/character/706.php",
+    "effective_url": "https://toho-vote.info/result13/character/706.php",
+    "retrieved_at": "2026-08-15T09:55:33+00:00",
+    "http_status": 200,
+    "bytes": 4158,
+    "sha256": "226282a720e46ff6aeb241874f177ca5ec515652a08bce70f3f71992cb74e7c8",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "character",
+  "item_id": "706",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：命蓮 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "命蓮（156位）",
+      "numbers": [
+        {
+          "raw": "156位",
+          "value": 156,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：35点 ｜ 得票数：33票 ｜ 一押し数：2票 ｜ コメント数：9件 ｜ 支援作品数： 1件 継続投票率：100.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "35点",
+          "value": 35,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "33票",
+          "value": 33,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

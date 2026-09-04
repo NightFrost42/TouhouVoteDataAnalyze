@@ -1,0 +1,47 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote7/result_anq2l.html",
+    "effective_url": "http://thwiki.info/th/vote7/result_anq2l.html",
+    "retrieved_at": "2026-08-15T09:46:12+00:00",
+    "http_status": 200,
+    "bytes": 210101,
+    "sha256": "67ed051dd4d9c61c9b37f7d2a82c4d1fc76214260e525add473702d96ce28abf",
+    "charset": "euc_jp",
+    "header_charset": null
+  },
+  "round": 7,
+  "role": "detail",
+  "category": "questionnaire",
+  "item_id": "result_anq2l",
+  "discovery_label": "コメント一覧",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "第７回東方シリーズ人気投票 投票者アンケート結果 作品別コメント",
+      "numbers": []
+    },
+    {
+      "kind": "item_header",
+      "text": "東方儚月抄 平均：3.68点 コメント数:3626",
+      "numbers": [
+        {
+          "raw": "3.68点",
+          "value": 3.68,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "3626",
+          "value": 3626,
+          "unit": null,
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

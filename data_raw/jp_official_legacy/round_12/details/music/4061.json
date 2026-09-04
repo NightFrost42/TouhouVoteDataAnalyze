@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4061.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4061.php",
+    "retrieved_at": "2026-08-15T09:54:56+00:00",
+    "http_status": 200,
+    "bytes": 4802,
+    "sha256": "df4347ae98258eb6f1b3eec54c88b4c769ffaf69bae24970d1e3f19cb24fe7cb",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4061",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：トロヤ群の密林 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "トロヤ群の密林（256位）",
+      "numbers": [
+        {
+          "raw": "256位",
+          "value": 256,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：99点 ｜ 得票数：93票 ｜ 一押し数：6票 ｜ コメント数：7件 継続投票率：54.5%（11名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "99点",
+          "value": 99,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "93票",
+          "value": 93,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7件",
+          "value": 7,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "54.5%",
+          "value": 54.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "11名",
+          "value": 11,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

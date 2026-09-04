@@ -1,0 +1,77 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/character/808.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/character/808.php",
+    "retrieved_at": "2026-08-15T09:53:36+00:00",
+    "http_status": 200,
+    "bytes": 4704,
+    "sha256": "6ab35091d372b74cc0c599b4cce42b55efd25b09b954d86a7981c7d745df00a2",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "character",
+  "item_id": "808",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：岩笠 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "岩笠（155位）",
+      "numbers": [
+        {
+          "raw": "155位",
+          "value": 155,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：27点 ｜ 得票数：23票 ｜ 一押し数：4票 ｜ コメント数：12件 ｜ 支援作品数： 0件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "27点",
+          "value": 27,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "23票",
+          "value": 23,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "12件",
+          "value": 12,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

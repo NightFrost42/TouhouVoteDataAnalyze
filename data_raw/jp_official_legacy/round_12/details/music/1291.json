@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1291.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1291.php",
+    "retrieved_at": "2026-08-15T09:54:26+00:00",
+    "http_status": 200,
+    "bytes": 3763,
+    "sha256": "b6af75cb7b8b61fa7cf9d8f89fa5070395b7eecbb082ad39629dcffae3824325",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1291",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：小槌の魔力 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "小槌の魔力（380位）",
+      "numbers": [
+        {
+          "raw": "380位",
+          "value": 380,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：20点 ｜ 得票数：19票 ｜ 一押し数：1票 ｜ コメント数：1件 継続投票率：50.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "20点",
+          "value": 20,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "19票",
+          "value": 19,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1322.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1322.php",
+    "retrieved_at": "2026-08-15T09:54:30+00:00",
+    "http_status": 200,
+    "bytes": 3647,
+    "sha256": "de86077ffc2eab8a8b4511800da45e698075d02435c2a61ac2392a4003d6ca55",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1322",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：真実を知る者 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "真実を知る者（460位）",
+      "numbers": [
+        {
+          "raw": "460位",
+          "value": 460,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：4点 ｜ 得票数：4票 ｜ 一押し数：0票 ｜ コメント数：0件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "4点",
+          "value": 4,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

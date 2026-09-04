@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2096.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2096.php",
+    "retrieved_at": "2026-08-15T09:54:49+00:00",
+    "http_status": 200,
+    "bytes": 5690,
+    "sha256": "2e47a5d7d434b9a638bae0f782c6f42146932077f50afbe1df566e42519374b6",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2096",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：裏切りの少女 ～ Judas Kiss - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "裏切りの少女 ～ Judas Kiss（236位）",
+      "numbers": [
+        {
+          "raw": "236位",
+          "value": 236,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：135点 ｜ 得票数：126票 ｜ 一押し数：9票 ｜ コメント数：21件 継続投票率：80.0%（10名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "135点",
+          "value": 135,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "126票",
+          "value": 126,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "21件",
+          "value": 21,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "80.0%",
+          "value": 80.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "10名",
+          "value": 10,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

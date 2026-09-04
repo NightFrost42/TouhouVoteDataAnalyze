@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="游戏部分">
+	
+	<title>游戏部分 - 东方Project人气投票 第⑨回 - THBWiki</title>
+
+	<!-- Bootstrap 3.3.7 -->
+	<link href="https://touhou.vote/v9/style/bootstrap.min.css" rel="stylesheet">
+	<link href="https://touhou.vote/v9/style/bootstrap-theme.min.css" rel="stylesheet">
+	
+  	<link href="https://touhou.vote/v9/style/footable.bootstrap.css" rel="stylesheet">
+	<link href="https://touhou.vote/v9/style/result.css" rel="stylesheet">
+	
+	<script src="https://touhou.vote/v9/js/jquery-3.1.1.min.js"></script>
+	
+	<script type="text/javascript">
+		var sort = "total", vote = [];
+	</script>
+</head>
+
+<body>
+		<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">导航条</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="." class="navbar-brand">东方Project人气投票</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="https://touhou.vote/v9/">游戏部分</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">本届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v9/?m=chara">角色部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=music">音乐部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=work">作品部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=cp">组合部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=game">游戏部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=paper">问卷部分</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">往届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v9/../v8" target="_blank">第八回</a></li>
+							<li><a href="https://touhou.vote/v9/../v7" target="_blank">第七回</a></li>
+							<li><a href="https://touhou.vote/v9/../v6" target="_blank">第六回</a></li>
+							<li><a href="https://touhou.vote/v9/../v5" target="_blank">第五回</a></li>
+							<li><a href="https://touhou.vote/v9/../v4" target="_blank">第四回</a></li>
+							<li><a href="https://touhou.vote/v9/../v3" target="_blank">第三回</a></li>
+							<li><a href="https://touhou.vote/v9/../v2" target="_blank">第二回</a></li>
+							<li><a href="https://touhou.vote/v9/../v1" target="_blank">第一回</a></li>
+						</ul>
+					</li>
+					<li><a href="https://thwiki.cc" target="_blank">THBWiki主站</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>	<!-- Header -->
+	<div class="jumbotron">
+	
+		<div class="container">
+			<h2>结果信息</h2>
+			<h1>游戏部分</h1>
+		</div>
+	
+	</div>
+	<!-- Content -->
+	<div class="container wide">
+		<div class="callout callout-info">
+			<h4>说明</h4>
+			<ul>
+				<li>
+					本页面为游戏部门的问卷情况简表。
+				</li>
+				<li>
+					总有效问卷数<b>5912</b>，
+					参投游戏总数<b>30</b>。
+				</li>
+				<li>
+					点击表头可进行其他类型的排序，点 <b>+</b> 号或者表格行本身可展开详情，点击详情链接可以查看更加详尽的游戏投票数据。
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div class="show-foo-div">
+				<div id="game-div-stg">
+					<table class="table footatble table-bordered" id="stg" data-sorting="true">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">Easy</th>
+							<th data-name="v2">Normal</th>
+							<th data-name="v3">Hard</th>
+							<th data-name="v4">Lunatic</th>
+							<th data-name="v5">Extra</th>
+							<th data-name="v6">Phantasm</th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+				<div id="game-div-th01">
+					<table class="table footatble table-bordered" id="th01" data-sorting="false">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group" data-breakpoints="all">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">Easy(地狱)</th>
+							<th data-name="v2">Normal(地狱)</th>
+							<th data-name="v3">Hard(地狱)</th>
+							<th data-name="v4">Lunatic(地狱)</th>
+							<th data-name="v5">Easy(魔界)</th>
+							<th data-name="v6">Normal(魔界)</th>
+							<th data-name="v7">Hard(魔界)</th>
+							<th data-name="v8">Lunatic(魔界)</th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+				<div id="game-div-th095">
+					<table class="table footatble table-bordered" id="th095" data-sorting="true">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group" data-breakpoints="all">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">Lv1</th>
+							<th data-name="v2">Lv2</th>
+							<th data-name="v3">Lv3</th>
+							<th data-name="v4">Lv4</th>
+							<th data-name="v5">Lv5</th>
+							<th data-name="v6">Lv6</th>
+							<th data-name="v7">Lv7</th>
+							<th data-name="v8">Lv8</th>
+							<th data-name="v9">Lv9</th>
+							<th data-name="v10">Lv10</th>
+							<th data-name="v11">LvEX</th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+				<div id="game-div-th125">
+					<table class="table footatble table-bordered" id="th125" data-sorting="true">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group" data-breakpoints="all">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">Lv1</th>
+							<th data-name="v2">Lv2</th>
+							<th data-name="v3">Lv3</th>
+							<th data-name="v4">Lv4</th>
+							<th data-name="v5">Lv5</th>
+							<th data-name="v6">Lv6</th>
+							<th data-name="v7">Lv7</th>
+							<th data-name="v8">Lv8</th>
+							<th data-name="v9">Lv9</th>
+							<th data-name="v10">Lv10</th>
+							<th data-name="v11">Lv11</th>
+							<th data-name="v12">Lv12</th>
+							<th data-name="v13">LvEX</th>
+							<th data-name="v14">SPOILER</th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+				<div id="game-div-th143">
+					<table class="table footatble table-bordered" id="th143" data-sorting="true">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group" data-breakpoints="all">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">第一日</th>
+							<th data-name="v2">第二日</th>
+							<th data-name="v3">第三日</th>
+							<th data-name="v4">第四日</th>
+							<th data-name="v5">第五日</th>
+							<th data-name="v6">第六日</th>
+							<th data-name="v7">第七日</th>
+							<th data-name="v8">第八日</th>
+							<th data-name="v9">第九日</th>
+							<th data-name="v10">第十日</th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+				<div id="game-div-th15">
+					<table class="table footatble table-bordered" id="th15" data-sorting="false">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group" data-breakpoints="all">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">Easy（完美）</th>
+							<th data-name="v2">Normal（完美）</th>
+							<th data-name="v3">Hard（完美）</th>
+							<th data-name="v4">Lunatic（完美)</th>
+							<th data-name="v5">Easy（传统）</th>
+							<th data-name="v6">Normal（传统）</th>
+							<th data-name="v7">Hard（传统）</th>
+							<th data-name="v8">Lunatic（传统）</th>
+							<th data-name="v9">Extra</th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+				<div id="game-div-th165">
+					<table class="table footatble table-bordered" id="th165" data-sorting="false">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group" data-breakpoints="all">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">一周目</th>
+							<th data-name="v2">里周目</th>
+							<th data-name="v3">噩梦周目</th>
+							<th data-name="v4">噩梦日记</th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+				<div id="game-div-ftg">
+					<table class="table footatble table-bordered" id="ftg" data-sorting="true">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group" data-breakpoints="all">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">Easy</th>
+							<th data-name="v2">Normal</th>
+							<th data-name="v3">Hard</th>
+							<th data-name="v4">Lunatic</th>
+							<th data-name="v5">Overdrive</th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+				<div id="game-div-th175">
+					<table class="table footatble table-bordered" id="th175" data-sorting="true">
+						<thead>
+							<th data-name="id" data-sortable="true" data-sorted="true">序号</th>
+							<th data-name="group" data-breakpoints="all">分类</th>
+							<th data-name="name">游戏名</th>
+							<th data-name="v0">没有通关</th>
+							<th data-name="v1">Easy</th>
+							<th data-name="v1">Normal</th></th>
+							<th data-name="info" data-type="html" data-breakpoints="all">作品详情</th>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<br />
+			<a href="https://touhou.vote/v9/" id="button" value="返回游戏部门目录" class="bt-blue">返回游戏部门目录</a>
+						
+			<h5></h5>
+			<span id="bottom">THBWiki - <a href="https://touhou.vote/v9/" title="东方Project人气投票">东方Project人气投票</a></span>
+		</div>
+				<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2e5ba8781d699fe45b54547f88ffeec5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	</div>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<script src="https://touhou.vote/v9/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://touhou.vote/v9/js/ie10-viewport-bug-workaround.js"></script>
+	
+	<script src="https://touhou.vote/v9/js/moment-with-locales.js"></script>
+	<script src="https://touhou.vote/v9/js/footable.js"></script>
+	
+	<script type="text/javascript">
+	var tableStatus = "", tempStatus = "", formObj, tableObj, storecolumn, storedirection, tempcolumn, tempdirection;
+	var preid = function(column, direction) {
+		storecolumn = column;
+		storedirection = direction;
+	}
+	var makeid = function(column, direction) {
+		if (tempcolumn == storecolumn && (tableStatus != "")) return false;
+		if (tableStatus != "") {
+			$('.form-left-tip').append($('<span/>', {'class': 'form-tip'})).html("当前显示的名次是按照筛选后的结果再排序");
+		} else {
+			$('.form-left-tip').html();
+		}
+		if (isNaN(column) || direction == "") return false;
+		if (direction == "DESC") {
+			var now = 0.0, pre = 999999999.9, id = 0, tid = 0;
+			$("#list > tbody > tr:not([class='footable-detail-row'])").each(function(){
+				now = parseFloat($(this).children("td").eq(column).html());
+				tid++;
+				if (pre > now) id = tid, pre = now;
+				$(this).children('td').eq(2).children('span.index').remove();
+				$(this).children('td').eq(2).append("<span class='index'>"+id+"</span>");
+			});
+		} else {
+			var len = $("#list > tbody > tr:not([class='footable-detail-row'])").length;
+			var now = 0.0, pre = 999999999.9, id = 0, tid = 0;
+			$("#list > tbody > tr:not([class='footable-detail-row'])").each(function(i){
+				var tr = $(".table > tbody").children().eq(len - i - 1);
+				now = parseFloat(tr.children("td").eq(column).html());
+				tid++;
+				if (pre > now) id = tid, pre = now;
+				tr.children('td').eq(2).children('span.index').remove();
+				tr.children('td').eq(2).append("<span class='index'>"+id+"</span>");
+			});
+		}
+		tempStatus = tableStatus;
+		tempcolumn = column;
+		tempdirection = direction;
+	};
+	
+	$(document).ready(function(){
+		$('#stg').footable({
+			"sorting": {
+				"enabled": true
+			},
+			"rows": [{"id":"TH02","name":"东方封魔录","by":"TH02","group":"PC-98","info":"<a href='./?m=info&type=work&id=35' target='_blank'>点击查看详情</a>","v0":{"value":"5398 (91.31%)","options":{"sortValue":"5398"}},"v1":{"value":"277 (4.69%)","options":{"sortValue":"0277"}},"v2":{"value":"184 (3.11%)","options":{"sortValue":"0184"}},"v3":{"value":"26 (0.44%)","options":{"sortValue":"0026"}},"v4":{"value":"24 (0.41%)","options":{"sortValue":"0024"}},"v5":{"value":"34 (0.58%)","options":{"sortValue":"0034"}},"v6":"-"},{"id":"TH03","name":"东方梦时空","by":"TH03","group":"PC-98","info":"<a href='./?m=info&type=work&id=36' target='_blank'>点击查看详情</a>","v0":{"value":"5276 (89.24%)","options":{"sortValue":"5276"}},"v1":{"value":"335 (5.67%)","options":{"sortValue":"0335"}},"v2":{"value":"229 (3.87%)","options":{"sortValue":"0229"}},"v3":{"value":"43 (0.73%)","options":{"sortValue":"0043"}},"v4":{"value":"29 (0.49%)","options":{"sortValue":"0029"}},"v5":"-","v6":"-"},{"id":"TH04","name":"东方幻想乡","by":"TH04","group":"PC-98","info":"<a href='./?m=info&type=work&id=33' target='_blank'>点击查看详情</a>","v0":{"value":"5118 (86.57%)","options":{"sortValue":"5118"}},"v1":{"value":"365 (6.17%)","options":{"sortValue":"0365"}},"v2":{"value":"315 (5.33%)","options":{"sortValue":"0315"}},"v3":{"value":"63 (1.07%)","options":{"sortValue":"0063"}},"v4":{"value":"45 (0.76%)","options":{"sortValue":"0045"}},"v5":{"value":"64 (1.08%)","options":{"sortValue":"0064"}},"v6":"-"},{"id":"TH05","name":"东方怪绮谈","by":"TH05","group":"PC-98","info":"<a href='./?m=info&type=work&id=34' target='_blank'>点击查看详情</a>","v0":{"value":"5207 (88.08%)","options":{"sortValue":"5207"}},"v1":{"value":"349 (5.9%)","options":{"sortValue":"0349"}},"v2":{"value":"264 (4.47%)","options":{"sortValue":"0264"}},"v3":{"value":"45 (0.76%)","options":{"sortValue":"0045"}},"v4":{"value":"36 (0.61%)","options":{"sortValue":"0036"}},"v5":{"value":"74 (1.25%)","options":{"sortValue":"0074"}},"v6":"-"},{"id":"TH06","name":"东方红魔乡","by":"TH06","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=6' target='_blank'>点击查看详情</a>","v0":{"value":"1973 (33.37%)","options":{"sortValue":"1973"}},"v1":{"value":"1603 (27.11%)","options":{"sortValue":"1603"}},"v2":{"value":"1665 (28.16%)","options":{"sortValue":"1665"}},"v3":{"value":"366 (6.19%)","options":{"sortValue":"0366"}},"v4":{"value":"275 (4.65%)","options":{"sortValue":"0275"}},"v5":{"value":"595 (10.06%)","options":{"sortValue":"0595"}},"v6":"-"},{"id":"TH07","name":"东方妖妖梦","by":"TH07","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=7' target='_blank'>点击查看详情</a>","v0":{"value":"1905 (32.22%)","options":{"sortValue":"1905"}},"v1":{"value":"1546 (26.15%)","options":{"sortValue":"1546"}},"v2":{"value":"1660 (28.08%)","options":{"sortValue":"1660"}},"v3":{"value":"420 (7.1%)","options":{"sortValue":"0420"}},"v4":{"value":"351 (5.94%)","options":{"sortValue":"0351"}},"v5":{"value":"704 (11.91%)","options":{"sortValue":"0704"}},"v6":{"value":"417 (7.05%)","options":{"sortValue":"0417"}}},{"id":"TH08","name":"东方永夜抄","by":"TH08","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=9' target='_blank'>点击查看详情</a>","v0":{"value":"1020 (17.25%)","options":{"sortValue":"1020"}},"v1":{"value":"1611 (27.25%)","options":{"sortValue":"1611"}},"v2":{"value":"2124 (35.93%)","options":{"sortValue":"2124"}},"v3":{"value":"682 (11.54%)","options":{"sortValue":"0682"}},"v4":{"value":"436 (7.37%)","options":{"sortValue":"0436"}},"v5":{"value":"964 (16.31%)","options":{"sortValue":"0964"}},"v6":"-"},{"id":"TH09","name":"东方花映塚","by":"TH09","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=10' target='_blank'>点击查看详情</a>","v0":{"value":"3013 (50.96%)","options":{"sortValue":"3013"}},"v1":{"value":"1328 (22.46%)","options":{"sortValue":"1328"}},"v2":{"value":"1072 (18.13%)","options":{"sortValue":"1072"}},"v3":{"value":"241 (4.08%)","options":{"sortValue":"0241"}},"v4":{"value":"238 (4.03%)","options":{"sortValue":"0238"}},"v5":{"value":"225 (3.81%)","options":{"sortValue":"0225"}},"v6":"-"},{"id":"TH10","name":"东方风神录","by":"TH10","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=12' target='_blank'>点击查看详情</a>","v0":{"value":"1810 (30.62%)","options":{"sortValue":"1810"}},"v1":{"value":"1416 (23.95%)","options":{"sortValue":"1416"}},"v2":{"value":"1794 (30.35%)","options":{"sortValue":"1794"}},"v3":{"value":"475 (8.03%)","options":{"sortValue":"0475"}},"v4":{"value":"396 (6.7%)","options":{"sortValue":"0396"}},"v5":{"value":"821 (13.89%)","options":{"sortValue":"0821"}},"v6":"-"},{"id":"TH11","name":"东方地灵殿","by":"TH11","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=14' target='_blank'>点击查看详情</a>","v0":{"value":"2501 (42.3%)","options":{"sortValue":"2501"}},"v1":{"value":"1685 (28.5%)","options":{"sortValue":"1685"}},"v2":{"value":"1183 (20.01%)","options":{"sortValue":"1183"}},"v3":{"value":"258 (4.36%)","options":{"sortValue":"0258"}},"v4":{"value":"250 (4.23%)","options":{"sortValue":"0250"}},"v5":{"value":"595 (10.06%)","options":{"sortValue":"0595"}},"v6":"-"},{"id":"TH12","name":"东方星莲船","by":"TH12","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=15' target='_blank'>点击查看详情</a>","v0":{"value":"3222 (54.5%)","options":{"sortValue":"3222"}},"v1":{"value":"1406 (23.78%)","options":{"sortValue":"1406"}},"v2":{"value":"922 (15.6%)","options":{"sortValue":"0922"}},"v3":{"value":"187 (3.16%)","options":{"sortValue":"0187"}},"v4":{"value":"163 (2.76%)","options":{"sortValue":"0163"}},"v5":{"value":"375 (6.34%)","options":{"sortValue":"0375"}},"v6":"-"},{"id":"TH12.8","name":"妖精大战争","by":"TH12.8","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=18' target='_blank'>点击查看详情</a>","v0":{"value":"4548 (76.93%)","options":{"sortValue":"4548"}},"v1":{"value":"748 (12.65%)","options":{"sortValue":"0748"}},"v2":{"value":"448 (7.58%)","options":{"sortValue":"0448"}},"v3":{"value":"89 (1.51%)","options":{"sortValue":"0089"}},"v4":{"value":"65 (1.1%)","options":{"sortValue":"0065"}},"v5":{"value":"125 (2.11%)","options":{"sortValue":"0125"}},"v6":"-"},{"id":"TH13","name":"东方神灵庙","by":"TH13","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=19' target='_blank'>点击查看详情</a>","v0":{"value":"2669 (45.15%)","options":{"sortValue":"2669"}},"v1":{"value":"1306 (22.09%)","options":{"sortValue":"1306"}},"v2":{"value":"1333 (22.55%)","options":{"sortValue":"1333"}},"v3":{"value":"326 (5.51%)","options":{"sortValue":"0326"}},"v4":{"value":"264 (4.47%)","options":{"sortValue":"0264"}},"v5":{"value":"501 (8.47%)","options":{"sortValue":"0501"}},"v6":"-"},{"id":"TH14","name":"东方辉针城","by":"TH14","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=21' target='_blank'>点击查看详情</a>","v0":{"value":"2617 (44.27%)","options":{"sortValue":"2617"}},"v1":{"value":"1383 (23.39%)","options":{"sortValue":"1383"}},"v2":{"value":"1328 (22.46%)","options":{"sortValue":"1328"}},"v3":{"value":"304 (5.14%)","options":{"sortValue":"0304"}},"v4":{"value":"267 (4.52%)","options":{"sortValue":"0267"}},"v5":{"value":"569 (9.62%)","options":{"sortValue":"0569"}},"v6":"-"},{"id":"TH16","name":"东方天空璋","by":"TH16","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=59' target='_blank'>点击查看详情</a>","v0":{"value":"2867 (48.49%)","options":{"sortValue":"2867"}},"v1":{"value":"1314 (22.23%)","options":{"sortValue":"1314"}},"v2":{"value":"1101 (18.62%)","options":{"sortValue":"1101"}},"v3":{"value":"261 (4.41%)","options":{"sortValue":"0261"}},"v4":{"value":"355 (6%)","options":{"sortValue":"0355"}},"v5":{"value":"757 (12.8%)","options":{"sortValue":"0757"}},"v6":"-"},{"id":"TH17","name":"东方鬼形兽","by":"TH17","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=64' target='_blank'>点击查看详情</a>","v0":{"value":"3099 (52.42%)","options":{"sortValue":"3099"}},"v1":{"value":"1209 (20.45%)","options":{"sortValue":"1209"}},"v2":{"value":"1116 (18.88%)","options":{"sortValue":"1116"}},"v3":{"value":"241 (4.08%)","options":{"sortValue":"0241"}},"v4":{"value":"233 (3.94%)","options":{"sortValue":"0233"}},"v5":{"value":"569 (9.62%)","options":{"sortValue":"0569"}},"v6":"-"}],
+			"empty": "暂无数据...",
+		});
+		$('#ftg').footable({
+			"sorting": {
+				"enabled": true
+			},
+			"rows": [{"id":"TH07.5","name":"东方萃梦想","by":"TH07.5","group":"Win(FTG)","info":"<a href='./?m=info&type=work&id=8' target='_blank'>点击查看详情</a>","v0":{"value":"4199 (71.03%)","options":{"sortValue":"4199"}},"v1":{"value":"740 (12.52%)","options":{"sortValue":"0740"}},"v2":{"value":"548 (9.27%)","options":{"sortValue":"0548"}},"v3":{"value":"190 (3.21%)","options":{"sortValue":"0190"}},"v4":{"value":"235 (3.97%)","options":{"sortValue":"0235"}},"v5":"-"},{"id":"TH10.5","name":"东方绯想天","by":"TH10.5","group":"Win(FTG)","info":"<a href='./?m=info&type=work&id=13' target='_blank'>点击查看详情</a>","v0":{"value":"3236 (54.74%)","options":{"sortValue":"3236"}},"v1":{"value":"948 (16.04%)","options":{"sortValue":"0948"}},"v2":{"value":"850 (14.38%)","options":{"sortValue":"0850"}},"v3":{"value":"309 (5.23%)","options":{"sortValue":"0309"}},"v4":{"value":"569 (9.62%)","options":{"sortValue":"0569"}},"v5":"-"},{"id":"TH12.3","name":"东方非想天则","by":"TH12.3","group":"Win(FTG)","info":"<a href='./?m=info&type=work&id=16' target='_blank'>点击查看详情</a>","v0":{"value":"2820 (47.7%)","options":{"sortValue":"2820"}},"v1":{"value":"1077 (18.22%)","options":{"sortValue":"1077"}},"v2":{"value":"889 (15.04%)","options":{"sortValue":"0889"}},"v3":{"value":"342 (5.78%)","options":{"sortValue":"0342"}},"v4":{"value":"784 (13.26%)","options":{"sortValue":"0784"}},"v5":"-"},{"id":"TH13.5","name":"东方心绮楼","by":"TH13.5","group":"Win(FTG)","info":"<a href='./?m=info&type=work&id=20' target='_blank'>点击查看详情</a>","v0":{"value":"3590 (60.72%)","options":{"sortValue":"3590"}},"v1":{"value":"839 (14.19%)","options":{"sortValue":"0839"}},"v2":{"value":"794 (13.43%)","options":{"sortValue":"0794"}},"v3":{"value":"259 (4.38%)","options":{"sortValue":"0259"}},"v4":{"value":"430 (7.27%)","options":{"sortValue":"0430"}},"v5":"-"},{"id":"TH14.5","name":"东方深秘录","by":"TH14.5","group":"Win(FTG)","info":"<a href='./?m=info&type=work&id=23' target='_blank'>点击查看详情</a>","v0":{"value":"3892 (65.83%)","options":{"sortValue":"3892"}},"v1":{"value":"677 (11.45%)","options":{"sortValue":"0677"}},"v2":{"value":"636 (10.76%)","options":{"sortValue":"0636"}},"v3":{"value":"221 (3.74%)","options":{"sortValue":"0221"}},"v4":{"value":"486 (8.22%)","options":{"sortValue":"0486"}},"v5":"-"},{"id":"TH14.5PS4","name":"东方深秘录PS4版","by":"TH14.5PS4","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=57' target='_blank'>点击查看详情</a>","v0":{"value":"5674 (95.97%)","options":{"sortValue":"5674"}},"v1":{"value":"95 (1.61%)","options":{"sortValue":"0095"}},"v2":{"value":"68 (1.15%)","options":{"sortValue":"0068"}},"v3":{"value":"19 (0.32%)","options":{"sortValue":"0019"}},"v4":{"value":"28 (0.47%)","options":{"sortValue":"0028"}},"v5":{"value":"28 (0.47%)","options":{"sortValue":"0028"}}},{"id":"TH15.5","name":"东方凭依华","by":"TH15.5","group":"Win(FTG)","info":"<a href='./?m=info&type=work&id=58' target='_blank'>点击查看详情</a>","v0":{"value":"3505 (59.29%)","options":{"sortValue":"3505"}},"v1":{"value":"686 (11.6%)","options":{"sortValue":"0686"}},"v2":{"value":"639 (10.81%)","options":{"sortValue":"0639"}},"v3":{"value":"263 (4.45%)","options":{"sortValue":"0263"}},"v4":{"value":"479 (8.1%)","options":{"sortValue":"0479"}},"v5":{"value":"340 (5.75%)","options":{"sortValue":"0340"}}}],
+			"empty": "暂无数据...",
+		});
+		$('#th01').footable({
+			"sorting": {
+				"enabled": false
+			},
+			"rows": [{"id":"TH01","name":"东方灵异传","by":"TH01","group":"PC-98","info":"<a href='./?m=info&type=work&id=37' target='_blank'>点击查看详情</a>","v0":{"value":"5495 (92.95%)","options":{"sortValue":"5495"}},"v1":{"value":"232 (3.92%)","options":{"sortValue":"0232"}},"v2":{"value":"98 (1.66%)","options":{"sortValue":"0098"}},"v3":{"value":"29 (0.49%)","options":{"sortValue":"0029"}},"v4":{"value":"24 (0.41%)","options":{"sortValue":"0024"}},"v5":{"value":"151 (2.55%)","options":{"sortValue":"0151"}},"v6":{"value":"74 (1.25%)","options":{"sortValue":"0074"}},"v7":{"value":"17 (0.29%)","options":{"sortValue":"0017"}},"v8":{"value":"19 (0.32%)","options":{"sortValue":"0019"}}}],
+			"empty": "暂无数据...",
+		});
+		$('#th095').footable({
+			"sorting": {
+				"enabled": false
+			},
+			"rows": [{"id":"TH09.5","name":"东方文花帖","by":"TH09.5","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=11' target='_blank'>点击查看详情</a>","v0":{"value":"4278 (72.36%)","options":{"sortValue":"4278"}},"v1":{"value":"921 (15.58%)","options":{"sortValue":"0921"}},"v2":{"value":"692 (11.71%)","options":{"sortValue":"0692"}},"v3":{"value":"638 (10.79%)","options":{"sortValue":"0638"}},"v4":{"value":"524 (8.86%)","options":{"sortValue":"0524"}},"v5":{"value":"439 (7.43%)","options":{"sortValue":"0439"}},"v6":{"value":"328 (5.55%)","options":{"sortValue":"0328"}},"v7":{"value":"230 (3.89%)","options":{"sortValue":"0230"}},"v8":{"value":"165 (2.79%)","options":{"sortValue":"0165"}},"v9":{"value":"144 (2.44%)","options":{"sortValue":"0144"}},"v10":{"value":"258 (4.36%)","options":{"sortValue":"0258"}},"v11":{"value":"160 (2.71%)","options":{"sortValue":"0160"}}}],
+			"empty": "暂无数据...",
+		});
+		$('#th125').footable({
+			"sorting": {
+				"enabled": false
+			},
+			"rows": [{"id":"TH12.5","name":"DS东方文花帖","by":"TH12.5","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=17' target='_blank'>点击查看详情</a>","v0":{"value":"4635 (78.4%)","options":{"sortValue":"4635"}},"v1":{"value":"767 (12.97%)","options":{"sortValue":"0767"}},"v2":{"value":"523 (8.85%)","options":{"sortValue":"0523"}},"v3":{"value":"484 (8.19%)","options":{"sortValue":"0484"}},"v4":{"value":"413 (6.99%)","options":{"sortValue":"0413"}},"v5":{"value":"351 (5.94%)","options":{"sortValue":"0351"}},"v6":{"value":"283 (4.79%)","options":{"sortValue":"0283"}},"v7":{"value":"210 (3.55%)","options":{"sortValue":"0210"}},"v8":{"value":"181 (3.06%)","options":{"sortValue":"0181"}},"v9":{"value":"150 (2.54%)","options":{"sortValue":"0150"}},"v10":{"value":"256 (4.33%)","options":{"sortValue":"0256"}},"v11":{"value":"150 (2.54%)","options":{"sortValue":"0150"}},"v12":{"value":"136 (2.3%)","options":{"sortValue":"0136"}},"v13":{"value":"148 (2.5%)","options":{"sortValue":"0148"}},"v14":{"value":"142 (2.4%)","options":{"sortValue":"0142"}}}],
+			"empty": "暂无数据...",
+		});
+		$('#th143').footable({
+			"sorting": {
+				"enabled": false
+			},
+			"rows": [{"id":"TH14.3","name":"弹幕天邪鬼","by":"TH14.3","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=22' target='_blank'>点击查看详情</a>","v0":{"value":"3781 (63.95%)","options":{"sortValue":"3781"}},"v1":{"value":"1177 (19.91%)","options":{"sortValue":"1177"}},"v2":{"value":"1009 (17.07%)","options":{"sortValue":"1009"}},"v3":{"value":"980 (16.58%)","options":{"sortValue":"0980"}},"v4":{"value":"865 (14.63%)","options":{"sortValue":"0865"}},"v5":{"value":"735 (12.43%)","options":{"sortValue":"0735"}},"v6":{"value":"668 (11.3%)","options":{"sortValue":"0668"}},"v7":{"value":"625 (10.57%)","options":{"sortValue":"0625"}},"v8":{"value":"581 (9.83%)","options":{"sortValue":"0581"}},"v9":{"value":"606 (10.25%)","options":{"sortValue":"0606"}},"v10":{"value":"777 (13.14%)","options":{"sortValue":"0777"}}}],
+			"empty": "暂无数据...",
+		});
+		$('#th15').footable({
+			"sorting": {
+				"enabled": false
+			},
+			"rows": [{"id":"TH15","name":"东方绀珠传","by":"TH15","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=24' target='_blank'>点击查看详情</a>","v0":{"value":"2291 (38.75%)","options":{"sortValue":"2291"}},"v1":{"value":"1401 (23.7%)","options":{"sortValue":"1401"}},"v2":{"value":"1238 (20.94%)","options":{"sortValue":"1238"}},"v3":{"value":"323 (5.46%)","options":{"sortValue":"0323"}},"v4":{"value":"350 (5.92%)","options":{"sortValue":"0350"}},"v5":{"value":"751 (12.7%)","options":{"sortValue":"0751"}},"v6":{"value":"556 (9.4%)","options":{"sortValue":"0556"}},"v7":{"value":"135 (2.28%)","options":{"sortValue":"0135"}},"v8":{"value":"260 (4.4%)","options":{"sortValue":"0260"}},"v9":{"value":"370 (6.26%)","options":{"sortValue":"0370"}}}],
+			"empty": "暂无数据...",
+		});
+		$('#th175').footable({
+			"sorting": {
+				"enabled": false
+			},
+			"rows": [{"id":"TH17.5","name":"东方刚欲异闻","by":"TH17.5","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=65' target='_blank'>点击查看详情</a>","v0":{"value":"5600 (94.72%)","options":{"sortValue":"5600"}},"v1":{"value":"234 (3.96%)","options":{"sortValue":"0234"}},"v2":{"value":"117 (1.98%)","options":{"sortValue":"0117"}}}],
+			"empty": "暂无数据...",
+		});
+		$('#th165').footable({
+			"sorting": {
+				"enabled": false
+			},
+			"rows": [{"id":"TH16.5","name":"秘封噩梦日记","by":"TH16.5","group":"Win(STG)","info":"<a href='./?m=info&type=work&id=62' target='_blank'>点击查看详情</a>","v0":{"value":"4920 (83.22%)","options":{"sortValue":"4920"}},"v1":{"value":"725 (12.26%)","options":{"sortValue":"0725"}},"v2":{"value":"431 (7.29%)","options":{"sortValue":"0431"}},"v3":{"value":"264 (4.47%)","options":{"sortValue":"0264"}},"v4":{"value":"255 (4.31%)","options":{"sortValue":"0255"}}}],
+			"empty": "暂无数据...",
+		});
+	});
+	</script>
+</body>
+</html>

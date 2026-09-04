@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "analysis_version": "jp-questionnaire-trends-v1",
+  "outputs": [
+    {
+      "path": "analysis_results/jp_questionnaire/questionnaire_numeric_long.csv",
+      "bytes": 3138012,
+      "sha256": "d8630d5b381b6b6dd006d3d40b4876702db559779c471ae8e817f26b45f245b9"
+    },
+    {
+      "path": "analysis_results/jp_questionnaire/comparable_trends_long.csv",
+      "bytes": 3492229,
+      "sha256": "6bc9d3444b6acfec7044773797f65d4013b36cd930ac430acdac4db16c883c94"
+    },
+    {
+      "path": "analysis_results/jp_questionnaire/trend_deltas.csv",
+      "bytes": 109651,
+      "sha256": "3bf0cdb026252c683fff656aa92aab43bcbdf6652bb90af49f686665ad52ab0c"
+    },
+    {
+      "path": "analysis_results/jp_questionnaire/question_inventory.csv",
+      "bytes": 39088,
+      "sha256": "1b6be304605f2daf193fde0205a138f9ce25d848b9da2e11f406c2b02425d569"
+    },
+    {
+      "path": "analysis_results/jp_questionnaire/topic_round_coverage.csv",
+      "bytes": 29023,
+      "sha256": "98cbc2329b4474128d18b032cde666994f6f89c07a21e6fff5f87274f13bdc5e"
+    },
+    {
+      "path": "analysis_results/jp_questionnaire/question_changes.csv",
+      "bytes": 5937,
+      "sha256": "7d1edfe8c35e1abf1fb181f260e4c3c3e5f344a9d1184de0b88f04b29ba349ca"
+    },
+    {
+      "path": "analysis_results/jp_questionnaire/README.md",
+      "bytes": 20273,
+      "sha256": "c9c1179ee7cb5301075fd7547ca11f9568f88c87b3304f6f92452f9a83371cfb"
+    },
+    {
+      "path": "analysis_results/jp_questionnaire/summary.json",
+      "bytes": 79794,
+      "sha256": "ccd629da8c01e4c8e397e631dc0961d5907d374d50c297159a92be0233221354"
+    }
+  ],
+  "issues": [],
+  "warnings": [],
+  "valid": true
+}

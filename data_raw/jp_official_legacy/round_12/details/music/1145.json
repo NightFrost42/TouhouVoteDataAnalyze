@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1145.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1145.php",
+    "retrieved_at": "2026-08-15T09:54:06+00:00",
+    "http_status": 200,
+    "bytes": 3901,
+    "sha256": "4f9ceeaf4d4790ac39192f2b71e904cb66c12e16f87093250dad65fa5b1db790",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1145",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：嘲りの遊戯 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "嘲りの遊戯（366位）",
+      "numbers": [
+        {
+          "raw": "366位",
+          "value": 366,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：26点 ｜ 得票数：23票 ｜ 一押し数：3票 ｜ コメント数：2件 継続投票率：50.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "26点",
+          "value": 26,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "23票",
+          "value": 23,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

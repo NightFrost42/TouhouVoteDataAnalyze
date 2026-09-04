@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2065.php",
+    "effective_url": "https://toho-vote.info/result13/music/2065.php",
+    "retrieved_at": "2026-08-15T09:56:11+00:00",
+    "http_status": 200,
+    "bytes": 4033,
+    "sha256": "3d92739dc40b5dc523f01e29d19560656abad2e695bced5782285f4b248210f2",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2065",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：霊戦 ～ Perdition crisis - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "霊戦 ～ Perdition crisis（324位）",
+      "numbers": [
+        {
+          "raw": "324位",
+          "value": 324,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：48点 ｜ 得票数：47票 ｜ 一押し数：1票 ｜ コメント数：5件 継続投票率：83.3%（6名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "48点",
+          "value": 48,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "47票",
+          "value": 47,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "83.3%",
+          "value": 83.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "6名",
+          "value": 6,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

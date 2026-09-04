@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-02T14:13:43Z",
+  "scope": "CN10/11 official bounded atomic advanced-search basis",
+  "rounds": [
+    {
+      "round": 10,
+      "sourceSite": "https://touhou.vote/v10/",
+      "complete": true,
+      "legacyParityComplete": true,
+      "legacyParityReason": "modern GraphQL archive has no official all-answer questionnaire cross-tab operation; parity uses explicit qA=a AND qB=b cell queries",
+      "questionnaireAnswerConditions": {
+        "archivalExpected": 390,
+        "archivalAvailableCrawled": 390,
+        "analyticallyMeaningfulExpected": 387,
+        "analyticallyMeaningfulAvailableCrawled": 387,
+        "inputPlaceholderExpected": 3,
+        "inputPlaceholderAvailableCrawled": 3,
+        "inputPlaceholderPolicy": "preserve the zero-result official response for completeness; exclude it from numerical analysis because the Input answer body is not a categorical option",
+        "fetchFailed": 0,
+        "pending": 0
+      },
+      "entityAtomicConditions": {
+        "character_any": {
+          "catalogueItems": 239,
+          "statisticallyNonemptyExpected": 239,
+          "availableCrawled": 239,
+          "officialQueryDefects": 0,
+          "accountedResponses": 239,
+          "missing": 0,
+          "invalid": 0,
+          "zeroCohortNotRequested": 0
+        },
+        "character_first": {
+          "catalogueItems": 239,
+          "statisticallyNonemptyExpected": 175,
+          "availableCrawled": 175,
+          "officialQueryDefects": 0,
+          "accountedResponses": 175,
+          "missing": 0,
+          "invalid": 0,
+          "zeroCohortNotRequested": 64
+        },
+        "music_any": {
+          "catalogueItems": 595,
+          "statisticallyNonemptyExpected": 595,
+          "availableCrawled": 595,
+          "officialQueryDefects": 0,
+          "accountedResponses": 595,
+          "missing": 0,
+          "invalid": 0,
+          "zeroCohortNotRequested": 0
+        },
+        "music_first": {
+          "catalogueItems": 595,
+          "statisticallyNonemptyExpected": 406,
+          "availableCrawled": 406,
+          "officialQueryDefects": 0,
+          "accountedResponses": 406,
+          "missing": 0,
+          "invalid": 0,
+          "zeroCohortNotRequested": 189
+        }
+      },
+      "questionnaireUnorderedPairs": {
+        "status": "available_crawled",
+        "eligibleQuestions": 74,
+        "eligibleAnswerOptions": 387,
+        "expected": 2701,
+        "available": 2701,
+        "expectedAnswerCells": 73168,
+        "availableAnswerCells": 73168,
+        "invalidDetails": [],
+        "recordUnit": "unordered_question_pair_matrix",
+        "reason": "modern GraphQL archive has no official all-answer questionnaire cross-tab operation; parity uses explicit qA=a AND qB=b cell queries",
+        "queryLanguageEquivalent": true,
+        "planPath": "data_raw/cn_official/round_10/advanced_conditions/questionnaire_pair_plan.json",
+        "planExpectedPath": "data_raw/cn_official/round_10/advanced_conditions/questionnaire_pair_plan.json"
+      },
+      "covoteMatrices": {
+        "character": {
+          "sourceItems": 239,
+          "expectedPairs": 28441,
+          "availablePairs": 28441,
+          "complete": true
+        },
+        "music": {
+          "sourceItems": 595,
+          "expectedPairs": 176715,
+          "availablePairs": 176715,
+          "complete": true
+        }
+      },
+      "officialQueryDefects": [],
+      "invalidDetails": [],
+      "indexPath": "data_raw/cn_official/round_10/advanced_conditions/index.json",
+      "boundedCoveragePolicy": {
+        "captured": [
+          "every categorical questionnaire-answer singleton -> global + character/music/CP rankings",
+          "every character-any singleton -> global + character/music/CP rankings",
+          "every nonzero character-first singleton -> global + character/music/CP rankings",
+          "every music-any singleton was issued through the official GUI spelling; successful responses and reproducible official empty-cohort defects are both archived",
+          "every nonzero music-first singleton was issued through the official GUI spelling; successful responses and reproducible official empty-cohort defects are both archived",
+          "every categorical questionnaire pair -> every answer intersection count via explicit Boolean cell queries"
+        ],
+        "notEnumerated": [
+          "higher-order and mixed-family AND/OR products beyond the finite two-question legacy parity surface",
+          "zero-cohort first-choice constraints (official base firstVoteCount=0)",
+          "front-end keyword/rank/count display filters reproducible locally from archived rankings"
+        ],
+        "contentExcluded": [
+          "recommendation reasons and comments",
+          "images and fonts",
+          "private vote-token interfaces"
+        ],
+        "officialDefectPolicy": "a HTTP-200 empty response for a nonzero catalogue item is only accounted as an official_query_defect when the catalogue name ends in TAB/CR/LF and a separately archived control-trimmed probe also returns zero; it is never treated as a real zero cohort"
+      },
+      "coverage_contract": {
+        "schemaVersion": 2,
+        "conditionFamilies": [
+          {
+            "id": "questionnaire_answer",
+            "unit": "one questionnaire answer option",
+            "queryForm": "q<questionId>=<answerId>",
+            "questionTypes": [
+              "Single",
+              "Multiple"
+            ],
+            "excludedQuestionTypes": [
+              "Input",
+              "open_text"
+            ],
+            "comparableRankingTargets": [
+              "character",
+              "music"
+            ],
+            "legacyResultScopes": [
+              "character",
+              "music"
+            ],
+            "modernResultScopes": [
+              "global_stats",
+              "character",
+              "music",
+              "cp"
+            ],
+            "modernAdditionalResultScopes": [
+              "global_stats",
+              "cp"
+            ],
+            "combination": "singleton; multiple clauses are an explicit Boolean query",
+            "legacyComponent": "questionnaire_atomic_rankings",
+            "modernComponent": "questionnaireAnswerConditions"
+          },
+          {
+            "id": "questionnaire_pair",
+            "unit": "unordered pair of distinct eligible questions",
+            "queryForm": "all answer cross-cells for question A × question B",
+            "questionTypes": [
+              "Single",
+              "Multiple"
+            ],
+            "excludedQuestionTypes": [
+              "Input",
+              "open_text"
+            ],
+            "comparableTargets": [
+              "global"
+            ],
+            "resultScopes": [
+              "pair_cells",
+              "conditional_percentages"
+            ],
+            "combination": "one unordered pair per eligible question pair",
+            "legacyComponent": "questionnaire_unordered_pairs",
+            "modernComponent": "questionnaireUnorderedPairs",
+            "status": "available_crawled",
+            "statusReason": "modern GraphQL archive has no official all-answer questionnaire cross-tab operation; parity uses explicit qA=a AND qB=b cell queries"
+          },
+          {
+            "id": "entity_vote",
+            "unit": "one named character or music entity",
+            "queryForms": [
+              "chars: [<name>]",
+              "chars_first=<name>",
+              "musics: [<name>]",
+              "musics_first=<name>"
+            ],
+            "sourceCategories": [
+              "character",
+              "music"
+            ],
+            "conditionKinds": [
+              "any",
+              "first"
+            ],
+            "comparableRankingTargets": [
+              "character",
+              "music"
+            ],
+            "legacyResultScopes": [
+              "character",
+              "music"
+            ],
+            "modernResultScopes": [
+              "global_stats",
+              "character",
+              "music",
+              "cp"
+            ],
+            "modernAdditionalResultScopes": [
+              "global_stats",
+              "cp"
+            ],
+            "combination": "singleton; zero-sized first cohorts are excluded",
+            "legacyComponent": "entity_atomic_rankings",
+            "modernComponent": "entityAtomicConditions"
+          }
+        ],
+        "booleanQueryLanguage": {
+          "operators": [
+            "AND",
+            "OR"
+          ],
+          "grouping": [
+            "(",
+            ")"
+          ],
+          "capturedAsRawQueries": true,
+          "cartesianEnumeration": false,
+          "reason": "the official query language permits unbounded Boolean products"
+        },
+        "parityInterpretation": {
+          "atomicFamiliesMustMatch": true,
+          "comparableAtomicTargets": [
+            "character",
+            "music"
+          ],
+          "modernAdditionalScopesAreExtensions": [
+            "global_stats",
+            "cp"
+          ],
+          "questionnairePairMatrixMustBeReportedSeparately": true,
+          "modernPairEndpointEquivalentToLegacy": false,
+          "modernEnumeratedCellsEquivalentToLegacyDataset": true,
+          "note": "The modern endpoint has no bulk cross-table operation. Enumerating every qA=answerA AND qB=answerB cell restores the same finite count/percentage dataset with different transport provenance."
+        }
+      }
+    },
+    {
+      "round": 11,
+      "sourceSite": "https://touhou.vote/v11/",
+      "complete": true,
+      "legacyParityComplete": true,
+      "legacyParityReason": "modern GraphQL archive has no official all-answer questionnaire cross-tab operation; parity uses explicit qA=a AND qB=b cell queries",
+      "questionnaireAnswerConditions": {
+        "archivalExpected": 406,
+        "archivalAvailableCrawled": 406,
+        "analyticallyMeaningfulExpected": 403,
+        "analyticallyMeaningfulAvailableCrawled": 403,
+        "inputPlaceholderExpected": 3,
+        "inputPlaceholderAvailableCrawled": 3,
+        "inputPlaceholderPolicy": "preserve the zero-result official response for completeness; exclude it from numerical analysis because the Input answer body is not a categorical option",
+        "fetchFailed": 0,
+        "pending": 0
+      },
+      "entityAtomicConditions": {
+        "character_any": {
+          "catalogueItems": 244,
+          "statisticallyNonemptyExpected": 244,
+          "availableCrawled": 244,
+          "officialQueryDefects": 0,
+          "accountedResponses": 244,
+          "missing": 0,
+          "invalid": 0,
+          "zeroCohortNotRequested": 0
+        },
+        "character_first": {
+          "catalogueItems": 244,
+          "statisticallyNonemptyExpected": 172,
+          "availableCrawled": 172,
+          "officialQueryDefects": 0,
+          "accountedResponses": 172,
+          "missing": 0,
+          "invalid": 0,
+          "zeroCohortNotRequested": 72
+        },
+        "music_any": {
+          "catalogueItems": 612,
+          "statisticallyNonemptyExpected": 612,
+          "availableCrawled": 610,
+          "officialQueryDefects": 2,
+          "accountedResponses": 612,
+          "missing": 0,
+          "invalid": 0,
+          "zeroCohortNotRequested": 0
+        },
+        "music_first": {
+          "catalogueItems": 612,
+          "statisticallyNonemptyExpected": 359,
+          "availableCrawled": 358,
+          "officialQueryDefects": 1,
+          "accountedResponses": 359,
+          "missing": 0,
+          "invalid": 0,
+          "zeroCohortNotRequested": 253
+        }
+      },
+      "questionnaireUnorderedPairs": {
+        "status": "available_crawled",
+        "eligibleQuestions": 73,
+        "eligibleAnswerOptions": 403,
+        "expected": 2628,
+        "available": 2628,
+        "expectedAnswerCells": 79239,
+        "availableAnswerCells": 79239,
+        "invalidDetails": [],
+        "recordUnit": "unordered_question_pair_matrix",
+        "reason": "modern GraphQL archive has no official all-answer questionnaire cross-tab operation; parity uses explicit qA=a AND qB=b cell queries",
+        "queryLanguageEquivalent": true,
+        "planPath": "data_raw/cn_official/round_11/advanced_conditions/questionnaire_pair_plan.json",
+        "planExpectedPath": "data_raw/cn_official/round_11/advanced_conditions/questionnaire_pair_plan.json"
+      },
+      "covoteMatrices": {
+        "character": {
+          "sourceItems": 244,
+          "expectedPairs": 29646,
+          "availablePairs": 29646,
+          "complete": true
+        },
+        "music": {
+          "sourceItems": 612,
+          "expectedPairs": 186966,
+          "availablePairs": 186966,
+          "complete": true
+        }
+      },
+      "officialQueryDefects": [
+        {
+          "dimension": "music_any",
+          "sourceIndex": 60,
+          "sourceName": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+          "officialGuiQueryName": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+          "normalizedProbeName": "越轨者们的无碍光　～ Kingdam of Nothingness.",
+          "normalizedProbeTransformation": "rstrip_trailing_tab_cr_lf",
+          "removedTrailingCodePoints": [
+            "U+0009"
+          ],
+          "expectedCohort": 434,
+          "officialGuiQuery": "musics: [\"越轨者们的无碍光　～ Kingdam of Nothingness.\\t\"]",
+          "officialGuiObservedCohort": 0,
+          "reason": "official GUI catalogue value contains trailing control characters; the official HTTP-200 advanced-search response is an empty cohort although the unfiltered ranking reports 434 votes",
+          "responsePath": "data_raw/cn_official/round_11/advanced_conditions/responses/music_any/source_0060.json",
+          "responseSha256": "a9cacd0a09fac78544f1700232ae1ce76d4b10db18005e64528ee4a233f4de1e",
+          "normalizedProbePath": "data_raw/cn_official/round_11/advanced_conditions/official_query_defect_probes/music_any/source_0060_normalized.json",
+          "normalizedProbeSha256": "1fef56b421fcec7bd79e38cc98d213f5e7e6408a8628075bf85a34c0a5e7ffa5"
+        },
+        {
+          "dimension": "music_any",
+          "sourceIndex": 507,
+          "sourceName": "令人心跳的司空见惯幻想乡\t",
+          "officialGuiQueryName": "令人心跳的司空见惯幻想乡\t",
+          "normalizedProbeName": "令人心跳的司空见惯幻想乡",
+          "normalizedProbeTransformation": "rstrip_trailing_tab_cr_lf",
+          "removedTrailingCodePoints": [
+            "U+0009"
+          ],
+          "expectedCohort": 4,
+          "officialGuiQuery": "musics: [\"令人心跳的司空见惯幻想乡\\t\"]",
+          "officialGuiObservedCohort": 0,
+          "reason": "official GUI catalogue value contains trailing control characters; the official HTTP-200 advanced-search response is an empty cohort although the unfiltered ranking reports 4 votes",
+          "responsePath": "data_raw/cn_official/round_11/advanced_conditions/responses/music_any/source_0507.json",
+          "responseSha256": "95f6bc41dcc9f1044bfa3a848bfad18f700b6b034d67e8ad62f9459f950812a1",
+          "normalizedProbePath": "data_raw/cn_official/round_11/advanced_conditions/official_query_defect_probes/music_any/source_0507_normalized.json",
+          "normalizedProbeSha256": "9ef80bdea60dca2d0805a5a7c0ff90db69e052348c72323292d6573f03ad98bd"
+        },
+        {
+          "dimension": "music_first",
+          "sourceIndex": 60,
+          "sourceName": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+          "officialGuiQueryName": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+          "normalizedProbeName": "越轨者们的无碍光　～ Kingdam of Nothingness.",
+          "normalizedProbeTransformation": "rstrip_trailing_tab_cr_lf",
+          "removedTrailingCodePoints": [
+            "U+0009"
+          ],
+          "expectedCohort": 16,
+          "officialGuiQuery": "musics_first=\"越轨者们的无碍光　～ Kingdam of Nothingness.\\t\"",
+          "officialGuiObservedCohort": 0,
+          "reason": "official GUI catalogue value contains trailing control characters; the official HTTP-200 advanced-search response is an empty cohort although the unfiltered ranking reports 16 votes",
+          "responsePath": "data_raw/cn_official/round_11/advanced_conditions/responses/music_first/source_0060.json",
+          "responseSha256": "bc6c5257597b22823daca89078c14368b1cc1eecae0e40181303d4103f2e357c",
+          "normalizedProbePath": "data_raw/cn_official/round_11/advanced_conditions/official_query_defect_probes/music_first/source_0060_normalized.json",
+          "normalizedProbeSha256": "b7132f48e21314a1dbcfe83a9de8ada4fd70d3edf12d90958fe04a4eb5d18343"
+        }
+      ],
+      "invalidDetails": [],
+      "indexPath": "data_raw/cn_official/round_11/advanced_conditions/index.json",
+      "boundedCoveragePolicy": {
+        "captured": [
+          "every categorical questionnaire-answer singleton -> global + character/music/CP rankings",
+          "every character-any singleton -> global + character/music/CP rankings",
+          "every nonzero character-first singleton -> global + character/music/CP rankings",
+          "every music-any singleton was issued through the official GUI spelling; successful responses and reproducible official empty-cohort defects are both archived",
+          "every nonzero music-first singleton was issued through the official GUI spelling; successful responses and reproducible official empty-cohort defects are both archived",
+          "every categorical questionnaire pair -> every answer intersection count via explicit Boolean cell queries"
+        ],
+        "notEnumerated": [
+          "higher-order and mixed-family AND/OR products beyond the finite two-question legacy parity surface",
+          "zero-cohort first-choice constraints (official base firstVoteCount=0)",
+          "front-end keyword/rank/count display filters reproducible locally from archived rankings"
+        ],
+        "contentExcluded": [
+          "recommendation reasons and comments",
+          "images and fonts",
+          "private vote-token interfaces"
+        ],
+        "officialDefectPolicy": "a HTTP-200 empty response for a nonzero catalogue item is only accounted as an official_query_defect when the catalogue name ends in TAB/CR/LF and a separately archived control-trimmed probe also returns zero; it is never treated as a real zero cohort"
+      },
+      "coverage_contract": {
+        "schemaVersion": 2,
+        "conditionFamilies": [
+          {
+            "id": "questionnaire_answer",
+            "unit": "one questionnaire answer option",
+            "queryForm": "q<questionId>=<answerId>",
+            "questionTypes": [
+              "Single",
+              "Multiple"
+            ],
+            "excludedQuestionTypes": [
+              "Input",
+              "open_text"
+            ],
+            "comparableRankingTargets": [
+              "character",
+              "music"
+            ],
+            "legacyResultScopes": [
+              "character",
+              "music"
+            ],
+            "modernResultScopes": [
+              "global_stats",
+              "character",
+              "music",
+              "cp"
+            ],
+            "modernAdditionalResultScopes": [
+              "global_stats",
+              "cp"
+            ],
+            "combination": "singleton; multiple clauses are an explicit Boolean query",
+            "legacyComponent": "questionnaire_atomic_rankings",
+            "modernComponent": "questionnaireAnswerConditions"
+          },
+          {
+            "id": "questionnaire_pair",
+            "unit": "unordered pair of distinct eligible questions",
+            "queryForm": "all answer cross-cells for question A × question B",
+            "questionTypes": [
+              "Single",
+              "Multiple"
+            ],
+            "excludedQuestionTypes": [
+              "Input",
+              "open_text"
+            ],
+            "comparableTargets": [
+              "global"
+            ],
+            "resultScopes": [
+              "pair_cells",
+              "conditional_percentages"
+            ],
+            "combination": "one unordered pair per eligible question pair",
+            "legacyComponent": "questionnaire_unordered_pairs",
+            "modernComponent": "questionnaireUnorderedPairs",
+            "status": "available_crawled",
+            "statusReason": "modern GraphQL archive has no official all-answer questionnaire cross-tab operation; parity uses explicit qA=a AND qB=b cell queries"
+          },
+          {
+            "id": "entity_vote",
+            "unit": "one named character or music entity",
+            "queryForms": [
+              "chars: [<name>]",
+              "chars_first=<name>",
+              "musics: [<name>]",
+              "musics_first=<name>"
+            ],
+            "sourceCategories": [
+              "character",
+              "music"
+            ],
+            "conditionKinds": [
+              "any",
+              "first"
+            ],
+            "comparableRankingTargets": [
+              "character",
+              "music"
+            ],
+            "legacyResultScopes": [
+              "character",
+              "music"
+            ],
+            "modernResultScopes": [
+              "global_stats",
+              "character",
+              "music",
+              "cp"
+            ],
+            "modernAdditionalResultScopes": [
+              "global_stats",
+              "cp"
+            ],
+            "combination": "singleton; zero-sized first cohorts are excluded",
+            "legacyComponent": "entity_atomic_rankings",
+            "modernComponent": "entityAtomicConditions"
+          }
+        ],
+        "booleanQueryLanguage": {
+          "operators": [
+            "AND",
+            "OR"
+          ],
+          "grouping": [
+            "(",
+            ")"
+          ],
+          "capturedAsRawQueries": true,
+          "cartesianEnumeration": false,
+          "reason": "the official query language permits unbounded Boolean products"
+        },
+        "parityInterpretation": {
+          "atomicFamiliesMustMatch": true,
+          "comparableAtomicTargets": [
+            "character",
+            "music"
+          ],
+          "modernAdditionalScopesAreExtensions": [
+            "global_stats",
+            "cp"
+          ],
+          "questionnairePairMatrixMustBeReportedSeparately": true,
+          "modernPairEndpointEquivalentToLegacy": false,
+          "modernEnumeratedCellsEquivalentToLegacyDataset": true,
+          "note": "The modern endpoint has no bulk cross-table operation. Enumerating every qA=answerA AND qB=answerB cell restores the same finite count/percentage dataset with different transport provenance."
+        }
+      }
+    }
+  ],
+  "allRequiredChecksPassed": true,
+  "statusPolicy": "fetch_failed is never converted to official_not_offered; official_query_defect requires archived HTTP-200 official-GUI and normalized-name zero responses plus a contradictory nonzero unfiltered catalogue cohort"
+}

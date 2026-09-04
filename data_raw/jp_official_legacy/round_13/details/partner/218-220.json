@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/218-220.php",
+    "effective_url": "https://toho-vote.info/result13/partner/218-220.php",
+    "retrieved_at": "2026-08-15T09:56:33+00:00",
+    "http_status": 200,
+    "bytes": 26437,
+    "sha256": "7b5a3e7e9787a36d995a8124070747df3e4deba61d00f2854ac0e861591b7902",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "218-220",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：西行寺 幽々子と八雲 紫 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "西行寺 幽々子と八雲 紫（12位）",
+      "numbers": [
+        {
+          "raw": "12位",
+          "value": 12,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：2402点 ｜ 得票数：1951票 ｜ 一押し数：451票 ｜ コメント数：315件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "2402点",
+          "value": 2402,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1951票",
+          "value": 1951,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "451票",
+          "value": 451,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "315件",
+          "value": 315,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

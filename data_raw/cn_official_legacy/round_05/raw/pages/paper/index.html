@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="全体投票群问卷信息">
+	
+	<title>全体投票群问卷信息 - 东方Project人气投票 第五回 - THBWiki</title>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<link href="https://touhou.vote/v5/style/bootstrap.min.css" rel="stylesheet">
+	<link href="https://touhou.vote/v5/style/bootstrap-theme.min.css" rel="stylesheet">
+	
+	<link type="text/css" href="https://touhou.vote/v5/style/selectize.css" rel="stylesheet">
+	<link type="text/css" href="https://touhou.vote/v5/style/selectize.default.css" rel="stylesheet">
+	
+  	<link href="https://touhou.vote/v5/style/footable.bootstrap.css" rel="stylesheet">
+	<link href="https://touhou.vote/v5/style/result.css" rel="stylesheet">
+	
+	<script src="https://touhou.vote/v5/js/jquery-3.1.1.min.js"></script>
+	
+	<script type="text/javascript">
+		var type = "",
+			vote = [{"name":"总数","vote":"8067","votes":"-","first":"-","ratio":"-","sratio":"-","vratio":"-","male":"6548","female":"1498","mratio":"81.17%","fratio":"18.57%","hmratio":"-","hfratio":"-"},{"name":"角色","vote":"7296","votes":"44710","first":"7010","ratio":"96.08%","sratio":"76.6% (6 / 8)","vratio":"90.44%","male":"5946","female":"1345","mratio":"81.5%","fratio":"18.43%","hmratio":"90.81%","hfratio":"89.79%"},{"name":"音乐","vote":"5999","votes":"50845","first":"5618","ratio":"93.65%","sratio":"70.63% (8 / 12)","vratio":"74.36%","male":"4884","female":"1112","mratio":"81.41%","fratio":"18.54%","hmratio":"74.59%","hfratio":"74.23%"},{"name":"作品","vote":"5577","votes":"16731","first":"-","ratio":"-","sratio":"-","vratio":"69.13%","male":"4526","female":"1048","mratio":"81.15%","fratio":"18.79%","hmratio":"69.12%","hfratio":"69.96%"},{"name":"组合","vote":"5501","votes":"19320","first":"5105","ratio":"92.8%","sratio":"70.24% (4 / 5)","vratio":"68.19%","male":"4421","female":"1078","mratio":"80.37%","fratio":"19.6%","hmratio":"67.52%","hfratio":"71.96%"},{"name":"游戏","vote":"4661","votes":"4661","first":"-","ratio":"-","sratio":"-","vratio":"57.78%","male":"3820","female":"839","mratio":"81.96%","fratio":"18%","hmratio":"58.34%","hfratio":"56.01%"}],
+			paperall = [ {"1":["eda8afdfc227577a7ff0c299b7e7bYd0zSJ6b7e7","f81a726ed4ea2ae9463d213292e1mvINMhK992e1","9e5354c6c9102cba01b3afcf6f06QlA7yH2F6f06"],"2":["047ea047fd4115104f07cec0e173zenK10r0e173","e9689867795db5e30258902dbf9dg1SBOFMXbf9d","d1cc7514d48622c0976d15ac8cbc7Kn6P0dE8cbc","0e03be98d2b3f363d887850ffc89duzaHYrufc89","5436376bc2e27afc23b18f45bgXFFtpk3a306d5d","8d5ef8cc0bdc503c8e0c30d62e51avmJ216Z2e51","ab577e8ddad93adbc94ef7cb6ed3SPA1sbGB6ed3","de626b0508a274a396b53b993443qP2DCBQJ3443","b0bb4dfebe9a60f874ae6fafd20ditQP2laRd20d","e15a950e3ffe655b753eaf7b4c3cPQxkd41K4c3c","f6992640f44bfe5ef70853c8ccb0nQpwxefSccb0","f03e2e1b79be521d957ea20f2acffuD8nEpa2acf","980992cceb96317e0291c970c940vyfWpQr0c940","go5r3ikstjsgg1r345zolyixuMQ4mnPgV1FCF3vg","b446969c56dcbb2dc769dd0b6ac3kR8BE7Qb6ac3"],"3":["c80c82d38b4a37b6c789f722035dZe9IDQdk035d","9959d721fb7461ea46d60efc4096kBgdoj494096","78b817aec074f7593537c69fa84aRiDyP2VYa84a","e60e373a5eb472571b9c9796e153ZODGn2Hme153","7773bffd98e688478a36b31e4b1eD4D2hYZW4b1e","04ecbcb6380c6806d66ec1bf6f07LEho5YLG6f07","b6943734bf84a171e46981a12a7aTuhaTY7U2a7a","bb521cafb95b97be25e55c62183fmX2D6pcx183f","4a1f840cfdeb918a995556efeb1duh2V0pOheb1d","dd3bf35f43f934cd745248909349bkZqb8pa9349","32205a96cf323ad843283fdfa947zEx2vizia947","2d4aa96b294283500dccd4054f59rEpElIdq4f59","b3c504918090bb56c942c0e4221dYlMZMb4F221d","e3e0e454711dccf7ddb351847336NOhCzsZC7336","db84fd91b513a78b0074601f6eafFs5uJSjK6eaf","0843aba7947c1213682910180291wPcFulAj0291","8a22cd4cc7c2bc4a24a2f6c9b012KP0RkLKLb012","615a0dad1275606ca2259c723372Ctsd4vyT3372","317285d0fb8c06b0344ee1dc982fatGpuz8b982f","303d08a619f0d711d7aa532e9c6eHQnAVoZU9c6e","c0443beddeec4fbc3c06317a7550638J8Z4x7550","6f9696f5c0aa6074348b899f33befM5WpmBW33be","971619f064a945078284f9158e4efwH0BoPi8e4e","36d16e4c63906453136ac55b9ed9UZcdo5Of9ed9","ffc7c35fce41b2c0f0f4f3eb163anCxGRMtc163a","cf4e10edc70f06fe722f4460af81vMx2pMfMaf81","49dad0f82db2a3c073293f52be42Rwd2hOt2be42"],"4":["c9c6399841dbdd88e1bc22031b548zgNIDKR1b54","2121006448b9c00e150923451394hQPQrYhm1394","3d0687015c93367b72128d3b9e09OTwlSr8B9e09","d7f1c7c4d80f3e5df911b98c677bGxoxmRIJ677b","14ac7aac82fb018a02c5ef645ce9xULINkji5ce9","dfb89cc6efc90d8129761cbd7c68LUj0DKtq7c68","c5818ad103f5321952e69665f4b6byzONUhaf4b6","3e93bf3bef5fb0f41548c0ebbe05TSNaD4ribe05","c300f96139a9696f852b65d15538AzuvoNIb5538"]} ],
+			section = [ {"1":"投票群相关","2":"原作相关调查","3":"二次同人相关","4":"日常相关","5":"主办方追加问题"} ],
+			all = 8067, male = 6548, female = 1498;
+			paperall = paperall[0];
+			section = section[0];
+			var questlist = [{"name":"您的性别","value":"9efa3c03ae5d70367f914e336b2cGXSZOvuL6b2c","group":1},{"name":"您的年龄阶段","value":"2d3f1fec929088b7e092bb901ab5LidwhSl81ab5","group":1},{"name":"您正式接触东方Project多久","value":"eda8afdfc227577a7ff0c299b7e7bYd0zSJ6b7e7","group":1},{"name":"您的受教育程度","value":"f81a726ed4ea2ae9463d213292e1mvINMhK992e1","group":1},{"name":"您的工作类型是","value":"9e5354c6c9102cba01b3afcf6f06QlA7yH2F6f06","group":1},{"name":"您的居住地是","value":"82319152879cc05c8b5d19a450d5QBydcjoZ50d5","group":1},{"name":"您更喜欢官方游戏中的哪一类","value":"047ea047fd4115104f07cec0e173zenK10r0e173","group":2},{"name":"您是否玩过旧五作","value":"e9689867795db5e30258902dbf9dg1SBOFMXbf9d","group":2},{"name":"您是否玩过 东方绀珠传","value":"d1cc7514d48622c0976d15ac8cbc7Kn6P0dE8cbc","group":2},{"name":"您是否玩过 东方深秘录","value":"0e03be98d2b3f363d887850ffc89duzaHYrufc89","group":2},{"name":"您关注哪些此时正在连载的官方连载作品","value":"5436376bc2e27afc23b18f45bgXFFtpk3a306d5d","group":2},{"name":"您最喜欢东方原作的哪方面","value":"8d5ef8cc0bdc503c8e0c30d62e51avmJ216Z2e51","group":2},{"name":"购买过正版的实体原作吗（官方游戏，官方CD，官方出版物）","value":"ab577e8ddad93adbc94ef7cb6ed3SPA1sbGB6ed3","group":2},{"name":"购买实体正版的渠道是","value":"de626b0508a274a396b53b993443qP2DCBQJ3443","group":2},{"name":"因何原因阻碍了购买","value":"b0bb4dfebe9a60f874ae6fafd20ditQP2laRd20d","group":2},{"name":"您的购买力范围是（原作单个作品的购买价，含运费）","value":"e15a950e3ffe655b753eaf7b4c3cPQxkd41K4c3c","group":2},{"name":"因为什么原因您没有使用代购作为您的购买渠道","value":"f6992640f44bfe5ef70853c8ccb0nQpwxefSccb0","group":2},{"name":"环境中存在什么样的购买原作的阻碍","value":"f03e2e1b79be521d957ea20f2acffuD8nEpa2acf","group":2},{"name":"是否购买过盗版的东方官方作品","value":"980992cceb96317e0291c970c940vyfWpQr0c940","group":2},{"name":"对于正版中文版的官方书籍你能接受什么价位（如若将来存在）","value":"go5r3ikstjsgg1r345zolyixuMQ4mnPgV1FCF3vg","group":2},{"name":"是否会购买最新的官方杂志 东方外来韦编","value":"b446969c56dcbb2dc769dd0b6ac3kR8BE7Qb6ac3","group":2},{"name":"对二次同人是否有兴趣","value":"c80c82d38b4a37b6c789f722035dZe9IDQdk035d","group":3},{"name":"在二次同人中您最关注","value":"9959d721fb7461ea46d60efc4096kBgdoj494096","group":3},{"name":"购买过二次同人作品吗（非国内作品）","value":"78b817aec074f7593537c69fa84aRiDyP2VYa84a","group":3},{"name":"购买过什么类型的二次创作（非国内作品）","value":"e60e373a5eb472571b9c9796e153ZODGn2Hme153","group":3},{"name":"购买二次创作的渠道一般是（非国内作品）","value":"7773bffd98e688478a36b31e4b1eD4D2hYZW4b1e","group":3},{"name":"能接受的单个作品购买价（包括运费）上限是（非国内作品）","value":"04ecbcb6380c6806d66ec1bf6f07LEho5YLG6f07","group":3},{"name":"因何原因阻碍了购买（非国内作品）","value":"b6943734bf84a171e46981a12a7aTuhaTY7U2a7a","group":3},{"name":"您的购买力范围是（单个作品的购买价，含运费）（非国内作品）","value":"bb521cafb95b97be25e55c62183fmX2D6pcx183f","group":3},{"name":"因为什么原因您没有使用代购作为您的购买渠道（非国内作品）","value":"4a1f840cfdeb918a995556efeb1duh2V0pOheb1d","group":3},{"name":"环境中存在什么样的购买二次同人作品的阻碍（非国内作品）","value":"dd3bf35f43f934cd745248909349bkZqb8pa9349","group":3},{"name":"购买过国内创作的二次同人作品吗","value":"32205a96cf323ad843283fdfa947zEx2vizia947","group":3},{"name":"购买过什么类型的二次创作（国内作品）","value":"2d4aa96b294283500dccd4054f59rEpElIdq4f59","group":3},{"name":"购买二次创作的渠道一般是（国内作品）","value":"b3c504918090bb56c942c0e4221dYlMZMb4F221d","group":3},{"name":"能接受的单个作品购买价上限是（国内作品）","value":"e3e0e454711dccf7ddb351847336NOhCzsZC7336","group":3},{"name":"因何原因阻碍了购买（国内作品）","value":"db84fd91b513a78b0074601f6eafFs5uJSjK6eaf","group":3},{"name":"您的购买力范围是（单个作品的购买价，含运费）（国内作品）","value":"0843aba7947c1213682910180291wPcFulAj0291","group":3},{"name":"环境中存在什么样的购买二次同人作品的阻碍（国内作品）","value":"8a22cd4cc7c2bc4a24a2f6c9b012KP0RkLKLb012","group":3},{"name":"有想过做东方的同人创作吗","value":"615a0dad1275606ca2259c723372Ctsd4vyT3372","group":3},{"name":"想做或者做过什么类型的创作","value":"317285d0fb8c06b0344ee1dc982fatGpuz8b982f","group":3},{"name":"因何原因阻碍了创作的实行","value":"303d08a619f0d711d7aa532e9c6eHQnAVoZU9c6e","group":3},{"name":"是否还在继续进行着东方的同人创作","value":"c0443beddeec4fbc3c06317a7550638J8Z4x7550","group":3},{"name":"在创作过程中遇到过什么样的困难","value":"6f9696f5c0aa6074348b899f33befM5WpmBW33be","group":3},{"name":"停止创作的直接原因是","value":"971619f064a945078284f9158e4efwH0BoPi8e4e","group":3},{"name":"原作和二次同人您更热衷于","value":"36d16e4c63906453136ac55b9ed9UZcdo5Of9ed9","group":3},{"name":"是否购买实物型周边（手办、抱枕、挂链、钱包、贴纸、挂画等类）","value":"ffc7c35fce41b2c0f0f4f3eb163anCxGRMtc163a","group":3},{"name":"购买周边的时候是否会介意它是否是盗版或存在盗图情况","value":"cf4e10edc70f06fe722f4460af81vMx2pMfMaf81","group":3},{"name":"是否购买过盗版的东方相关画集","value":"49dad0f82db2a3c073293f52be42Rwd2hOt2be42","group":3},{"name":"是否参加过东方专门同人展","value":"c9c6399841dbdd88e1bc22031b548zgNIDKR1b54","group":4},{"name":"过去一年内有没有参加过东方专门同人展","value":"2121006448b9c00e150923451394hQPQrYhm1394","group":4},{"name":"没有参加过展会的原因是","value":"3d0687015c93367b72128d3b9e09OTwlSr8B9e09","group":4},{"name":"是否只考虑参加本地或附近地区的同人展","value":"d7f1c7c4d80f3e5df911b98c677bGxoxmRIJ677b","group":4},{"name":"浏览东方project主题站点的频率如何","value":"14ac7aac82fb018a02c5ef645ce9xULINkji5ce9","group":4},{"name":"平日里接触东方信息的渠道是","value":"dfb89cc6efc90d8129761cbd7c68LUj0DKtq7c68","group":4},{"name":"是否会主动向周围的人介绍东方Project","value":"c5818ad103f5321952e69665f4b6byzONUhaf4b6","group":4},{"name":"选择了什么方式去介绍","value":"3e93bf3bef5fb0f41548c0ebbe05TSNaD4ribe05","group":4},{"name":"介绍的效果如何","value":"c300f96139a9696f852b65d15538AzuvoNIb5538","group":4}];
+			var questgroup = [{"label":"投票群相关","value":1},{"label":"原作相关调查","value":2},{"label":"二次同人相关","value":3},{"label":"日常相关","value":4}];
+	</script>
+</head>
+
+<body>
+		<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">导航条</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="." class="navbar-brand">东方Project人气投票</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="https://touhou.vote/v5/">问卷部分</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">本届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v5/?m=chara">角色部分</a></li>
+							<li><a href="https://touhou.vote/v5/?m=music">音乐部分</a></li>
+							<li><a href="https://touhou.vote/v5/?m=work">作品部分</a></li>
+							<li><a href="https://touhou.vote/v5/?m=cp">组合部分</a></li>
+							<li><a href="https://touhou.vote/v5/?m=game">游戏部分</a></li>
+							<li><a href="https://touhou.vote/v5/?m=paper">问卷部分</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">往届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v5/../v4" target="_blank">第四回</a></li>
+							<li><a href="https://touhou.vote/v5/../v3" target="_blank">第三回</a></li>
+							<li><a href="https://touhou.vote/v5/../v2" target="_blank">第二回</a></li>
+							<li><a href="https://touhou.vote/v5/../v1" target="_blank">第一回</a></li>
+						</ul>
+					</li>
+					<li><a href="https://thwiki.cc" target="_blank">THBWiki主站</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>	<!-- Header -->
+	<div class="jumbotron bitlower">
+	
+		<div class="container">
+			<h2>问卷信息</h2>
+			<h1>全体投票群问卷信息</h1>
+		</div>
+	
+	</div>
+	<!-- Content -->
+	<div class="container">
+	
+		<div class="callout callout-info">
+			<h4>说明</h4>
+			<ul>
+				<li>
+					本页面为单独问卷的详细信息页面，下面每个栏目的内容分别有各自的说明。
+				</li>
+				<li>
+					投票理由请在基本信息的投票理由链接中查看。
+				</li>
+				<li>
+					每一个图表等数据栏目均可通过单击对应表头隐藏或显示。
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div id="maininfo-div" class="block-div">
+				<h3>基本信息</h3>
+				<table class="table" id="list" data-show-toggle="false" data-stop-propagation="true" data-expand-all="true">
+					<thead>
+						<tr>
+							<th data-name="name">项目</th>
+							<th data-name="vote">投票人数</th>
+							<th data-name="votes">总分票数</th>
+							<th data-name="sratio">平均票位比例</th>
+							<th data-name="first">本命票数</th>
+							<th data-name="ratio">本命票投率</th>
+							<th data-name="vratio">项目投票率</th>
+							<th data-name="male">男性人数</th>
+							<th data-name="female">女性人数</th>
+							<th data-name="mratio">男性率</th>
+							<th data-name="fratio">女性率</th>
+							<th data-name="hmratio">男性投票率</th>
+							<th data-name="hfratio">女性投票率</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+			<div id="progress-div" class="block-div">
+				<h3>投票演进</h3>
+				<table class="table footable" id="progressTab" data-show-toggle="false" data-expand-all="true" data-show-header="false">
+					<thead class="footable-header">
+						<tr>
+							<th>投票人数变化</th>
+							<th style="display: none;">图表说明</th>
+							<th style="display: none;">图表</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="footable-detail-row clickable-row" id="progressHeader" data-toggle="progress">
+							<td>投票期间：2016-10-01 20:00:00 至 2016-10-16 20:00:00</td>
+							<td style="display: none;"></td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr class="footable-detail-row" id="progressTr">
+							<td colspan="3">
+								<table class="footable-details table">
+									<tbody>
+										<tr>
+											<td style="display: table-cell;">
+												<div class="callout callout-info">
+													<h4>说明</h4>
+													<ul>
+														<li>
+															该图表表示该问卷随着投票进程的票数变化情况。
+														</li>
+														<li>
+															其中减少的票数是因为投票人修改自己的投票去掉该问卷而导致的。
+														</li>
+														<li>
+															通过拖动底部和右侧的滑柄或在图表上缩放（鼠标或手指）可以筛选数据范围，也可以点击顶部的图例开关某个数据的显示。
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="type-change-row" style="display: table-cell;" data-div="progress-chart" data-chart="progress">点击这里切换图表数据</td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><div class="chart-div" id="progress-chart"></div></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div id="paper-div" class="block-div">
+				<h3>投票群体</h3>
+				<table class="table footable" id="sexTab" data-show-toggle="false" data-expand-all="true" data-show-header="false">
+					<thead class="footable-header">
+						<tr>
+							<th>基本信息</th>
+							<th style="display: none;">图表说明</th>
+							<th style="display: none;">图表</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="footable-detail-row clickable-row" id="sexHeader" data-toggle="sex">
+							<td>问卷：8067<br>
+							男性问卷：6548（男性比例：81.17%）<br>
+							女性问卷：1498（女性比例：18.57%）</td>
+							<td style="display: none;"></td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr class="footable-detail-row" id="sexTr">
+							<td colspan="3">
+								<table class="footable-details table">
+									<tbody>
+										<tr>
+											<td colspan="2" style="display: table-cell;">
+												<div class="callout callout-info">
+													<h4>说明</h4>
+													<ul>
+														<li>
+															该图表显示该问卷投票群体的年龄与性别等基础信息。
+														</li>
+														<li>
+															表格可在扇形图和柱形图之间切换显示。点击图表顶部的图例可以隐藏或显示一类数据。
+														</li>
+														<li>
+															如果出现无记录的人数显示则说明存在极少数问卷信息缺损的情况。
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="type-change-row" style="display: table-cell;" data-div="sex-chart" data-chart="sex">点击这里切换图表类型</td>
+										</tr>
+										<tr>
+											<td colspan="2" style="display: table-cell;"><div class="chart-div" id="sex-chart"></div></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table footable" id="geoTab" data-show-toggle="false" data-expand-all="true" data-show-header="false">
+					<thead class="footable-header">
+						<tr>
+							<th>地理信息</th>
+							<th style="display: none;">图表说明</th>
+							<th style="display: none;">图表</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="footable-detail-row clickable-row" id="geoHeader" data-toggle="geo">
+							<td>问卷：8067</td>
+							<td style="display: none;"></td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr class="footable-detail-row" id="geoTr">
+							<td colspan="3">
+								<table class="footable-details table">
+									<tbody>
+										<tr>
+											<td colspan="2" style="display: table-cell;">
+												<div class="callout callout-info">
+													<h4>说明</h4>
+													<ul>
+														<li>
+															该图表显示该问卷投票群体在地理位置上的分布。
+														</li>
+														<li>
+															点击图表顶部的图例可以隐藏或显示一类数据，其中地区总人数是指的该地区全部参加者数量，当男性与女性票同时开启时，显示的数据是二者之和。
+														</li>
+														<li>
+															通过拖动左下角的滑柄可以筛选数据范围，缩放则可以放大缩小地图显示。
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2" class="type-change-row" style="display: table-cell;" data-div="geo-chart" data-chart="geo">点击这里切换图表类型</td>
+										</tr>
+										<tr>
+											<td colspan="2" style="display: table-cell;"><div class="chart-div" id="geo-chart"></div></td>
+										</tr>
+										<tr>
+											<th>中国</th><td style="display: table-cell;" id="geo-china"></td>
+										</tr>
+										<tr>
+											<th>日本</th><td style="display: table-cell;" id="geo-japan"></td>
+										</tr>
+										<tr>
+											<th>亚洲其他地区</th><td style="display: table-cell;" id="geo-asia"></td>
+										</tr>
+										<tr>
+											<th>北美洲</th><td style="display: table-cell;" id="geo-northamerica"></td>
+										</tr>
+										<tr>
+											<th>南美洲</th><td style="display: table-cell;" id="geo-southamerica"></td>
+										</tr>
+										<tr>
+											<th>大洋洲</th><td style="display: table-cell;" id="geo-oceania"></td>
+										</tr>
+										<tr>
+											<th>欧洲</th><td style="display: table-cell;" id="geo-europa"></td>
+										</tr>
+										<tr>
+											<th>非洲</th><td style="display: table-cell;" id="geo-africa"></td>
+										</tr>
+										<tr>
+											<th>其他</th><td style="display: table-cell;" id="geo-other"></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>文本回答</h3>
+				<table class="table footable" id="reasonTab" data-show-toggle="false" data-expand-all="true" data-show-header="false">
+					<thead class="footable-header">
+						<tr>
+							<th>问卷：你是如何接触到东方的（请简短回答）</th>
+							<th style="display: none;"></th>
+							<th style="display: none;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="footable-detail-row clickable-row" id="sexHeader" data-toggle="sex">
+							<td>数量：7948</td>
+							<td style="display: none;"></td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr class="footable-detail-row" id="sexTr">
+							<td colspan="3">
+								<a href="https://touhou.vote/v5/?m=reason&type=all" target="_blank">点击查看该问题回答集</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div id="cross-div" class="block-div">
+				<h3>自定义问题交互</h3>
+				<table class="table footable" id="crossTab" data-show-toggle="false" data-expand-all="true" data-show-header="false">
+					<thead class="footable-header">
+						<tr>
+							<th>选择两个自定义问题，将自动生成它们的综合图表。</th>
+							<th style="display: none;"></th>
+							<th style="display: none;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="footable-detail-row" id="crossTr">
+							<td colspan="3">
+								<table class="footable-details table">
+									<tbody>
+										<tr>
+											<td colspan="2" style="display: table-cell;">
+												<div class="callout callout-info">
+													<h4>说明</h4>
+													<ul>
+														<li>
+															<b>注意：生成该图表的功能尚未完善，在选择互斥、答案人群不重合的问题时，会产生错误的结果，请注意。</b>
+														</li>
+														<li>
+															该图表通过交叉两个问卷问题的结果产生综合图表。
+														</li>
+														<li>
+															表格可在两种类型之间切换显示。点击图表顶部的图例可以隐藏或显示一类数据。
+														</li>
+														<li>
+															如果出现无记录的人数显示则说明存在极少数问卷信息缺损的情况。
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+  												<div class="col-xs-5">
+													问题1：
+													<select tabindex="-1" class="cross-select" id="quest1" placeholder="请选择问题" title="可以通过搜索的方式选择"></select>
+													<span class="help-block">选择主条件，该问卷问题将作为图表的主体元素。</span>
+  												</div>
+											</td>
+											<td style="display: none;"></td>
+										</tr>
+										<tr>
+											<td>
+  												<div class="col-xs-5">
+													问题2：
+													<select tabindex="-1" class="cross-select" id="quest2" placeholder="请选择问题" title="可以通过搜索的方式选择"></select>
+													<span class="help-block">选择次要条件，该问卷问题将作为图表的次要元素。</span>
+  												</div>
+											</td>
+											<td style="display: none;"></td>
+										</tr>
+										<tr>
+											<td>
+												<div id="alert-success" class="alert alert-success" role="alert">载入完毕...</div>
+												<div id="alert-info" class="alert alert-info" role="alert">载入中...</div>
+												<div id="alert-warning" class="alert alert-warning" role="alert">请确保选择两个不同的问题</div>
+												<div id="alert-cross" class="alert alert-warning" role="alert">您选择的两个问题存在逻辑冲突</div>
+												<div id="alert-danger" class="alert alert-danger" role="alert">载入失败</div>
+												<button type="button" id="button" class="btn btn-primary" value="提交图表生成请求" class="bt-blue">提交图表生成请求</button>
+											</td>
+											<td style="display: none;"></td>
+										</tr>
+										<tr id="cross-change">
+											<td class="type-change-row" style="display: table-cell;" data-div="cross-chart" data-chart="cross">点击这里切换图表类型</td>
+										</tr>
+										<tr>
+											<td colspan="2" style="display: table-cell;">
+												<div class="chart-div" id="cross-chart"></div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			
+			
+			
+			<br />
+			<a href="https://touhou.vote/v5/" id="button" value="返回首页" class="bt-blue">返回问卷部门目录</a>
+						
+			<h5></h5>
+			<span id="bottom">TBSGroup - <a href="https://touhou.vote/v5/" title="东方Project人气投票">东方Project人气投票</a></span>
+		</div>
+				<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2e5ba8781d699fe45b54547f88ffeec5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	</div>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<script src="https://touhou.vote/v5/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://touhou.vote/v5/js/ie10-viewport-bug-workaround.js"></script>
+	
+	<script src="https://touhou.vote/v5/js/footable.js"></script>
+	<script src="https://touhou.vote/v5/js/echarts.js"></script>
+	
+	<script src="https://touhou.vote/v5/js/selectize.js"></script>
+	
+	<script src="https://touhou.vote/v5/js/paperinfo.js"></script>
+</body>
+</html>

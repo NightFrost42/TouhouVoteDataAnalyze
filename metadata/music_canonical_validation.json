@@ -1,0 +1,325 @@
+{
+  "schema_version": 2,
+  "source_rows": 14764,
+  "merged_rows": 14714,
+  "round_coverage": {
+    "jp": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "cn": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "required_rounds": {
+    "jp": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "cn": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "round_coverage_complete": true,
+  "source_kind_counts": {
+    "user_repaired_workbook": 13534,
+    "normalized_jp_official": 1230
+  },
+  "jp_official_supplement_mapping": {
+    "rows": 1230,
+    "matched_existing_repaired_mapping": 1199,
+    "unmatched_kept_as_official_japanese": 31,
+    "audit_path": "data_processed/music_canonical/jp_official_supplement_mapping_audit.csv",
+    "policy": "never guess or overwrite missing translations; keep the official Japanese title and expose it for manual review"
+  },
+  "jp22_character_theme_overlay": {
+    "path": "metadata/jp22_character_theme_tags.csv",
+    "rows": 3,
+    "mapped_source_rows": 0,
+    "workbook_authoritative_rows": 3,
+    "policy": "add only missing JP22 character-theme mappings; never overwrite repaired workbook ownership"
+  },
+  "groups_with_multiple_rows_same_round": 37,
+  "conservation": [
+    {
+      "site": "cn",
+      "round": 1,
+      "source_total_score": 35122.0,
+      "merged_total_score": 35122.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 2,
+      "source_total_score": 31657.0,
+      "merged_total_score": 31657.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 3,
+      "source_total_score": 36487.0,
+      "merged_total_score": 36487.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 4,
+      "source_total_score": 46383.0,
+      "merged_total_score": 46383.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 5,
+      "source_total_score": 50845.0,
+      "merged_total_score": 50845.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 6,
+      "source_total_score": 56450.0,
+      "merged_total_score": 56450.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 7,
+      "source_total_score": 52943.0,
+      "merged_total_score": 52943.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 8,
+      "source_total_score": 62572.0,
+      "merged_total_score": 62572.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 9,
+      "source_total_score": 82416.0,
+      "merged_total_score": 82416.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 10,
+      "source_total_score": 165145.0,
+      "merged_total_score": 165145.0,
+      "conserved": true
+    },
+    {
+      "site": "cn",
+      "round": 11,
+      "source_total_score": 93466.0,
+      "merged_total_score": 93466.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 3,
+      "source_total_score": 17270.0,
+      "merged_total_score": 17270.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 4,
+      "source_total_score": 18746.0,
+      "merged_total_score": 18746.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 5,
+      "source_total_score": 53178.0,
+      "merged_total_score": 53178.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 6,
+      "source_total_score": 128392.0,
+      "merged_total_score": 128392.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 7,
+      "source_total_score": 191693.0,
+      "merged_total_score": 191693.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 8,
+      "source_total_score": 199660.0,
+      "merged_total_score": 199660.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 9,
+      "source_total_score": 223275.0,
+      "merged_total_score": 223275.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 10,
+      "source_total_score": 157733.0,
+      "merged_total_score": 157733.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 11,
+      "source_total_score": 160865.0,
+      "merged_total_score": 160865.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 12,
+      "source_total_score": 321841.0,
+      "merged_total_score": 321841.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 13,
+      "source_total_score": 267576.0,
+      "merged_total_score": 267576.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 14,
+      "source_total_score": 226739.0,
+      "merged_total_score": 226739.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 15,
+      "source_total_score": 178266.0,
+      "merged_total_score": 178266.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 16,
+      "source_total_score": 249929.0,
+      "merged_total_score": 249929.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 17,
+      "source_total_score": 279071.0,
+      "merged_total_score": 279071.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 18,
+      "source_total_score": 340445.0,
+      "merged_total_score": 340445.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 19,
+      "source_total_score": 327810.0,
+      "merged_total_score": 327810.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 20,
+      "source_total_score": 338934.0,
+      "merged_total_score": 338934.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 21,
+      "source_total_score": 413828.0,
+      "merged_total_score": 413828.0,
+      "conserved": true
+    },
+    {
+      "site": "jp",
+      "round": 22,
+      "source_total_score": 472869.0,
+      "merged_total_score": 472869.0,
+      "conserved": true
+    }
+  ],
+  "all_score_totals_conserved": true,
+  "cn11_yaoya_bahu_check": {
+    "source_row_count": 3,
+    "score": 151.0,
+    "primary_count": 5.0
+  },
+  "rule": "sum additive fields within site+round+merge_group_id; never across rounds"
+}

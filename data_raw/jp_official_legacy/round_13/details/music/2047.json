@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2047.php",
+    "effective_url": "https://toho-vote.info/result13/music/2047.php",
+    "retrieved_at": "2026-08-15T09:56:10+00:00",
+    "http_status": 200,
+    "bytes": 3539,
+    "sha256": "f6aad6b45897544eaa4552b5b634d7d3fab0db7ae97126413bcc4b89e1333468",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2047",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：魔法鐘愛 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "魔法鐘愛（415位）",
+      "numbers": [
+        {
+          "raw": "415位",
+          "value": 415,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：10点 ｜ 得票数：9票 ｜ 一押し数：1票 ｜ コメント数：0件 継続投票率：50.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "10点",
+          "value": 10,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

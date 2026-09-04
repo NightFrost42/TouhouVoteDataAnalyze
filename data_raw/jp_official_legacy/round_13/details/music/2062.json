@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2062.php",
+    "effective_url": "https://toho-vote.info/result13/music/2062.php",
+    "retrieved_at": "2026-08-15T09:56:11+00:00",
+    "http_status": 200,
+    "bytes": 3459,
+    "sha256": "16f95c55f454ea85eb642a8c63a86d4efe4c849362c9836376f5c9258c90623b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2062",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Break the Sabbath - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Break the Sabbath（461位）",
+      "numbers": [
+        {
+          "raw": "461位",
+          "value": 461,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：4点 ｜ 得票数：3票 ｜ 一押し数：1票 ｜ コメント数：1件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "4点",
+          "value": 4,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

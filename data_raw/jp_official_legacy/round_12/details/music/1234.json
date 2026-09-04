@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1234.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1234.php",
+    "retrieved_at": "2026-08-15T09:54:18+00:00",
+    "http_status": 200,
+    "bytes": 7268,
+    "sha256": "0db78f28945c28bcd3f4d193f0e0c2d34757423bf47555f83aa9407ac91046c7",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1234",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：ルーズレイン - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "ルーズレイン（202位）",
+      "numbers": [
+        {
+          "raw": "202位",
+          "value": 202,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：228点 ｜ 得票数：219票 ｜ 一押し数：9票 ｜ コメント数：29件 継続投票率：57.1%（21名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "228点",
+          "value": 228,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "219票",
+          "value": 219,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "29件",
+          "value": 29,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "57.1%",
+          "value": 57.1,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "21名",
+          "value": 21,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

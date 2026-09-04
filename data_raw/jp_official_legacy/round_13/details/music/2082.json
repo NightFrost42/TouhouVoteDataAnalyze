@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2082.php",
+    "effective_url": "https://toho-vote.info/result13/music/2082.php",
+    "retrieved_at": "2026-08-15T09:56:13+00:00",
+    "http_status": 200,
+    "bytes": 3748,
+    "sha256": "a988c46d5e982602efcfdcf81504537b985b6ffb7b6dc48342f21ca2023bf8eb",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2082",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Incomplete Plot - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Incomplete Plot（449位）",
+      "numbers": [
+        {
+          "raw": "449位",
+          "value": 449,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：5点 ｜ 得票数：5票 ｜ 一押し数：0票 ｜ コメント数：3件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "5点",
+          "value": 5,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3件",
+          "value": 3,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

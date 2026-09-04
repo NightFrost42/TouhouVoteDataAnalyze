@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1207.php",
+    "effective_url": "https://toho-vote.info/result13/music/1207.php",
+    "retrieved_at": "2026-08-15T09:55:56+00:00",
+    "http_status": 200,
+    "bytes": 3868,
+    "sha256": "ae836d5f8abb8abd65d02e0f3e0fe152b33aaa924f389162dbddebd78852e7c8",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1207",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：人形のある風景 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "人形のある風景（345位）",
+      "numbers": [
+        {
+          "raw": "345位",
+          "value": 345,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：39点 ｜ 得票数：37票 ｜ 一押し数：2票 ｜ コメント数：5件 継続投票率：33.3%（12名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "39点",
+          "value": 39,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "37票",
+          "value": 37,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "33.3%",
+          "value": 33.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "12名",
+          "value": 12,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

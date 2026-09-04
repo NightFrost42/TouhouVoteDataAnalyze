@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/203-210.php",
+    "effective_url": "https://toho-vote.info/result13/partner/203-210.php",
+    "retrieved_at": "2026-08-15T09:56:29+00:00",
+    "http_status": 200,
+    "bytes": 5851,
+    "sha256": "6ac89b429f607dd4167a38a872f811f67f9702281c2298ce775535c234764cbc",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "203-210",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：チルノとレティ・ホワイトロック - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "チルノとレティ・ホワイトロック（95位）",
+      "numbers": [
+        {
+          "raw": "95位",
+          "value": 95,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：225点 ｜ 得票数：200票 ｜ 一押し数：25票 ｜ コメント数：34件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "225点",
+          "value": 225,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "200票",
+          "value": 200,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "25票",
+          "value": 25,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "34件",
+          "value": 34,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

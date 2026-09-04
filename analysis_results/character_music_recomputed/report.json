@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-15T17:52:00Z",
+  "method": {
+    "weights": [
+      1.0,
+      0.75,
+      0.5,
+      "0.25 for every subsequent associated track"
+    ],
+    "weighted_sum": "sum(weight_i * music_z_i)",
+    "weighted_mean": "sum(weight_i * music_z_i) / sum(weight_i)",
+    "ordering": "associated tracks sorted by within-site music z-score descending",
+    "bootstrap": "paired nonparametric percentile interval; seed=352; B=5000"
+  },
+  "correlations": [
+    {
+      "site": "cn",
+      "metric": "weighted_sum",
+      "universe": "matched_characters_only",
+      "n": 118,
+      "spearman_rho": 0.5599197248303903,
+      "p_value": 4.3421891314088017e-11,
+      "bootstrap_95_ci_low": 0.41749339696059073,
+      "bootstrap_95_ci_high": 0.6784346550633633,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "cn",
+      "metric": "weighted_mean",
+      "universe": "matched_characters_only",
+      "n": 118,
+      "spearman_rho": 0.6308489891399517,
+      "p_value": 1.9110856221808562e-14,
+      "bootstrap_95_ci_low": 0.49005941295172273,
+      "bootstrap_95_ci_high": 0.7413637164315405,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "cn",
+      "metric": "weighted_sum",
+      "universe": "all_characters_missing_music_as_zero",
+      "n": 122,
+      "spearman_rho": 0.5297607935878117,
+      "p_value": 3.5092216130933454e-10,
+      "bootstrap_95_ci_low": 0.38156451218744514,
+      "bootstrap_95_ci_high": 0.6529891817365562,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "cn",
+      "metric": "weighted_mean",
+      "universe": "all_characters_missing_music_as_zero",
+      "n": 122,
+      "spearman_rho": 0.595308397829735,
+      "p_value": 4.770570755042139e-13,
+      "bootstrap_95_ci_low": 0.45910207438088546,
+      "bootstrap_95_ci_high": 0.7133536328534871,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "cn",
+      "metric": "song_count_vs_weighted_sum",
+      "universe": "matched_characters_only",
+      "n": 118,
+      "spearman_rho": -0.04528992345807261,
+      "p_value": 0.6262673047317422,
+      "bootstrap_95_ci_low": -0.2551889304617512,
+      "bootstrap_95_ci_high": 0.17383844331740753,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "cn",
+      "metric": "song_count_vs_weighted_mean",
+      "universe": "matched_characters_only",
+      "n": 118,
+      "spearman_rho": 0.17696227290308053,
+      "p_value": 0.05523828853186424,
+      "bootstrap_95_ci_low": 0.0012306436185321392,
+      "bootstrap_95_ci_high": 0.3473190639513289,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "jp",
+      "metric": "weighted_sum",
+      "universe": "matched_characters_only",
+      "n": 118,
+      "spearman_rho": 0.6408914032052099,
+      "p_value": 5.427335505101969e-15,
+      "bootstrap_95_ci_low": 0.504481083066605,
+      "bootstrap_95_ci_high": 0.7513817222175388,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "jp",
+      "metric": "weighted_mean",
+      "universe": "matched_characters_only",
+      "n": 118,
+      "spearman_rho": 0.7174392976878535,
+      "p_value": 6.26886005645777e-20,
+      "bootstrap_95_ci_low": 0.5884339359632778,
+      "bootstrap_95_ci_high": 0.8161771949453387,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "jp",
+      "metric": "weighted_sum",
+      "universe": "all_characters_missing_music_as_zero",
+      "n": 122,
+      "spearman_rho": 0.6045784627937472,
+      "p_value": 1.6568821395475948e-13,
+      "bootstrap_95_ci_low": 0.46395320491645264,
+      "bootstrap_95_ci_high": 0.7218639776514351,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "jp",
+      "metric": "weighted_mean",
+      "universe": "all_characters_missing_music_as_zero",
+      "n": 122,
+      "spearman_rho": 0.6757784297762731,
+      "p_value": 1.3521100056075362e-17,
+      "bootstrap_95_ci_low": 0.5441796992404542,
+      "bootstrap_95_ci_high": 0.7809890967615403,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "jp",
+      "metric": "song_count_vs_weighted_sum",
+      "universe": "matched_characters_only",
+      "n": 118,
+      "spearman_rho": -0.04010890685998121,
+      "p_value": 0.6663012909612738,
+      "bootstrap_95_ci_low": -0.2554344177040487,
+      "bootstrap_95_ci_high": 0.17806548852974285,
+      "bootstrap_repetitions": 5000
+    },
+    {
+      "site": "jp",
+      "metric": "song_count_vs_weighted_mean",
+      "universe": "matched_characters_only",
+      "n": 118,
+      "spearman_rho": 0.1946199669194936,
+      "p_value": 0.03469963795357512,
+      "bootstrap_95_ci_low": 0.014545763398669103,
+      "bootstrap_95_ci_high": 0.3754654207157917,
+      "bootstrap_repetitions": 5000
+    }
+  ],
+  "input_files": [
+    {
+      "path": "TouhouVote_cn.xlsx",
+      "bytes": 175656,
+      "sha256": "e9aa71505e61b5763fb72b826e4a916eea9e69578b58f29e9bbbd343b66e02e9"
+    },
+    {
+      "path": "TouhouVote_cn_grouped.xlsx",
+      "bytes": 95724,
+      "sha256": "03b8daffa9bdbb396a5068c015db9b867c8a9148b8a6cafc30e9f85997f1a9d6"
+    },
+    {
+      "path": "TouhouVote_jp.xlsx",
+      "bytes": 173972,
+      "sha256": "d930aef4106638e1700957db813d41e74f4bec9461890c595d04c6596d83ea8c"
+    },
+    {
+      "path": "TouhouVote_jp_grouped.xlsx",
+      "bytes": 102454,
+      "sha256": "856fcad6480a0b010cc84ffa9607c85b010cb751ecd74ab90721faf6abc8b182"
+    },
+    {
+      "path": "TouhouVote_music_cn.xlsx",
+      "bytes": 473333,
+      "sha256": "08e729fbd4391e598f8eb6eff366ce9aaba439449e5362f232b973dcd2881bda"
+    },
+    {
+      "path": "TouhouVote_music_cn_grouped.xlsx",
+      "bytes": 195506,
+      "sha256": "5e96b185c1ddca9c6fb3a4f70c581b11b77c10e70f5c3ed66eaf13da8c0bd748"
+    },
+    {
+      "path": "TouhouVote_music_jp.xlsx",
+      "bytes": 396349,
+      "sha256": "172120e26286c03b9e9ecd67120bddaa3d219408489cf6f046a52814ea89e865"
+    },
+    {
+      "path": "TouhouVote_music_jp_grouped.xlsx",
+      "bytes": 205110,
+      "sha256": "9e539052605b03cfbc2d47422a90a3905cd04ab911e927dbd16009ab33c29798"
+    },
+    {
+      "path": "fun.xlsx",
+      "bytes": 27568,
+      "sha256": "572e082656a0a1bebab3efb1ef9303af6529a99dc54c13e2007585524e742486"
+    }
+  ],
+  "output_files": [
+    {
+      "path": "analysis_results/character_music_recomputed/character_music_metrics.csv",
+      "bytes": 42587,
+      "sha256": "8314a032339dc64bdf7c49df3e63a71bd13f7a3c16136240224066cc1099e4b5"
+    },
+    {
+      "path": "analysis_results/character_music_recomputed/correlations.csv",
+      "bytes": 1784,
+      "sha256": "c84289c894c510f760e1b3e9f9269d757e4d8614e59aa09f73a0811e9d4277a1"
+    }
+  ]
+}

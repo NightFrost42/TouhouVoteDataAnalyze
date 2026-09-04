@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/217-225.php",
+    "effective_url": "https://toho-vote.info/result13/partner/217-225.php",
+    "retrieved_at": "2026-08-15T09:56:33+00:00",
+    "http_status": 200,
+    "bytes": 15999,
+    "sha256": "97286644b69d484e380cea410ca9a04a2e79ac20fcc0c91460924a405c0dfe3c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "217-225",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：魂魄 妖夢と鈴仙・優曇華院・イナバ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "魂魄 妖夢と鈴仙・優曇華院・イナバ（19位）",
+      "numbers": [
+        {
+          "raw": "19位",
+          "value": 19,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1688点 ｜ 得票数：1380票 ｜ 一押し数：308票 ｜ コメント数：175件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1688点",
+          "value": 1688,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1380票",
+          "value": 1380,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "308票",
+          "value": 308,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "175件",
+          "value": 175,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

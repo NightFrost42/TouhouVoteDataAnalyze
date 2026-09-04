@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1201.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1201.php",
+    "retrieved_at": "2026-08-15T09:54:15+00:00",
+    "http_status": 200,
+    "bytes": 5133,
+    "sha256": "9a81ea604faa42a7f1a51b1703235e51b306dcd7216661d33acecfe11305b521",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1201",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：空の帰り道 ～ Sky Dream - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "空の帰り道 ～ Sky Dream（279位）",
+      "numbers": [
+        {
+          "raw": "279位",
+          "value": 279,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：80点 ｜ 得票数：76票 ｜ 一押し数：4票 ｜ コメント数：15件 継続投票率：33.3%（9名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "80点",
+          "value": 80,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "76票",
+          "value": 76,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "15件",
+          "value": 15,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "33.3%",
+          "value": 33.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "9名",
+          "value": 9,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

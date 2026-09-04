@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2031.php",
+    "effective_url": "https://toho-vote.info/result13/music/2031.php",
+    "retrieved_at": "2026-08-15T09:56:08+00:00",
+    "http_status": 200,
+    "bytes": 3992,
+    "sha256": "c03b5b43de7e84426712a796c6fc93dc3e2c3d04196bb5c79bd8eaf3e280d14b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2031",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗神社境内 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗神社境内（345位）",
+      "numbers": [
+        {
+          "raw": "345位",
+          "value": 345,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：39点 ｜ 得票数：35票 ｜ 一押し数：4票 ｜ コメント数：5件 継続投票率：50.0%（6名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "39点",
+          "value": 39,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "35票",
+          "value": 35,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "6名",
+          "value": 6,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

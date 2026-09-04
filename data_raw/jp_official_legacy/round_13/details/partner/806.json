@@ -1,0 +1,243 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/806.php",
+    "effective_url": "https://toho-vote.info/result13/partner/806.php",
+    "retrieved_at": "2026-08-15T09:56:50+00:00",
+    "http_status": 200,
+    "bytes": 4075,
+    "sha256": "27406d5b9678855130495646fd85552530e0a6b400d3a5049156813dfce72518",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "806",
+  "discovery_label": "月の都の門番",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：月の都の門番とのベストパートナー順位 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "月の都の門番とのベストパートナー順位",
+      "numbers": []
+    },
+    {
+      "kind": "item_statistics",
+      "text": "門番は単発黒髪の男性の方で(白雀)",
+      "numbers": []
+    }
+  ],
+  "numeric_tables": [
+    {
+      "table_index": 0,
+      "context_heading": "月の都の門番とのベストパートナー順位",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "順位",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "名前",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "ポイント",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "一押し",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "コメント",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "1378",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1378",
+                  "value": 1378,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "夢子と月の都の門番",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "1",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1",
+                  "value": 1,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "0",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0",
+                  "value": 0,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "0",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0",
+                  "value": 0,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "1378",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1378",
+                  "value": 1378,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "レイセンと月の都の門番",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "1",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1",
+                  "value": 1,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "0",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0",
+                  "value": 0,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "1",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1",
+                  "value": 1,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "コメント",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

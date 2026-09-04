@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/240-242.php",
+    "effective_url": "https://toho-vote.info/result13/partner/240-242.php",
+    "retrieved_at": "2026-08-15T09:56:37+00:00",
+    "http_status": 200,
+    "bytes": 4934,
+    "sha256": "f367f9885d9752f22fef379e9f253aade6f469e36905a838133ef3aff65ff8f0",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "240-242",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：東風谷 早苗と洩矢 諏訪子 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "東風谷 早苗と洩矢 諏訪子（74位）",
+      "numbers": [
+        {
+          "raw": "74位",
+          "value": 74,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：302点 ｜ 得票数：261票 ｜ 一押し数：41票 ｜ コメント数：23件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "302点",
+          "value": 302,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "261票",
+          "value": 261,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "41票",
+          "value": 41,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "23件",
+          "value": 23,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

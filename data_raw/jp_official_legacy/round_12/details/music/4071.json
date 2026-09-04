@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4071.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4071.php",
+    "retrieved_at": "2026-08-15T09:54:57+00:00",
+    "http_status": 200,
+    "bytes": 6138,
+    "sha256": "5e19fbc803cfb8e5b19ea75ec5aa5934f18bf2f71f523968907e1279abf7fdfb",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4071",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：牛に引かれて善光寺参り - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "牛に引かれて善光寺参り（239位）",
+      "numbers": [
+        {
+          "raw": "239位",
+          "value": 239,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：123点 ｜ 得票数：116票 ｜ 一押し数：7票 ｜ コメント数：19件 継続投票率：58.3%（12名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "123点",
+          "value": 123,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "116票",
+          "value": 116,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "19件",
+          "value": 19,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "58.3%",
+          "value": 58.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "12名",
+          "value": 12,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

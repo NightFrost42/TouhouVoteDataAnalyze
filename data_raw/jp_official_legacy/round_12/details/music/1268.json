@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1268.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1268.php",
+    "retrieved_at": "2026-08-15T09:54:23+00:00",
+    "http_status": 200,
+    "bytes": 6428,
+    "sha256": "5513b0fa563d5bac329c178c70540bfffa10c48bf276757fd196f36fab4f9ab6",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1268",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：心綺楼囃子 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "心綺楼囃子（204位）",
+      "numbers": [
+        {
+          "raw": "204位",
+          "value": 204,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：226点 ｜ 得票数：215票 ｜ 一押し数：11票 ｜ コメント数：25件 継続投票率：50.0%（26名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "226点",
+          "value": 226,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "215票",
+          "value": 215,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "11票",
+          "value": 11,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "25件",
+          "value": 25,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "26名",
+          "value": 26,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

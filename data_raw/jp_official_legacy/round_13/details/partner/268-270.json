@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/268-270.php",
+    "effective_url": "https://toho-vote.info/result13/partner/268-270.php",
+    "retrieved_at": "2026-08-15T09:56:42+00:00",
+    "http_status": 200,
+    "bytes": 5894,
+    "sha256": "0a620c96a45581f82584c1b39081758ee4602895c2cec38457b372ad6207334c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "268-270",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：豊聡耳 神子と秦 こころ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "豊聡耳 神子と秦 こころ（84位）",
+      "numbers": [
+        {
+          "raw": "84位",
+          "value": 84,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：266点 ｜ 得票数：240票 ｜ 一押し数：26票 ｜ コメント数：36件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "266点",
+          "value": 266,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "240票",
+          "value": 240,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "26票",
+          "value": 26,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "36件",
+          "value": 36,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

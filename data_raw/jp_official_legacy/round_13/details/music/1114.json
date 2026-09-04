@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1114.php",
+    "effective_url": "https://toho-vote.info/result13/music/1114.php",
+    "retrieved_at": "2026-08-15T09:55:48+00:00",
+    "http_status": 200,
+    "bytes": 4193,
+    "sha256": "d4e27ae627b0afb866175ff09020cce96ef8a37c707dab6859ea0737e89fe204",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1114",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：天狗が見ている ～ Black Eyes - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "天狗が見ている ～ Black Eyes（260位）",
+      "numbers": [
+        {
+          "raw": "260位",
+          "value": 260,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：93点 ｜ 得票数：90票 ｜ 一押し数：3票 ｜ コメント数：6件 継続投票率：40.0%（10名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "93点",
+          "value": 93,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "90票",
+          "value": 90,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "40.0%",
+          "value": 40.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "10名",
+          "value": 10,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

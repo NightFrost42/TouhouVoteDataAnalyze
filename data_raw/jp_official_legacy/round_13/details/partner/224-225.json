@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/224-225.php",
+    "effective_url": "https://toho-vote.info/result13/partner/224-225.php",
+    "retrieved_at": "2026-08-15T09:56:34+00:00",
+    "http_status": 200,
+    "bytes": 8578,
+    "sha256": "66577b695dcc8f4740e8f298c913f9babef3814dcdd3edc7e0c11da5401f9b70",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "224-225",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：因幡 てゐと鈴仙・優曇華院・イナバ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "因幡 てゐと鈴仙・優曇華院・イナバ（39位）",
+      "numbers": [
+        {
+          "raw": "39位",
+          "value": 39,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：784点 ｜ 得票数：693票 ｜ 一押し数：91票 ｜ コメント数：69件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "784点",
+          "value": 784,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "693票",
+          "value": 693,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "91票",
+          "value": 91,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "69件",
+          "value": 69,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

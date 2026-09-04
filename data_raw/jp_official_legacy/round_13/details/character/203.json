@@ -1,0 +1,6831 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/character/203.php",
+    "effective_url": "https://toho-vote.info/result13/character/203.php",
+    "retrieved_at": "2026-08-15T09:55:19+00:00",
+    "http_status": 200,
+    "bytes": 50037,
+    "sha256": "7752167af5201a16daadbb098f980767fa06d5044b4a2a62e965e956172ef751",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "character",
+  "item_id": "203",
+  "discovery_label": "詳細情報",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：チルノ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "チルノ（35位）",
+      "numbers": [
+        {
+          "raw": "35位",
+          "value": 35,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：2679点 ｜ 得票数：2241票 ｜ 一押し数：438票 ｜ コメント数：478件 ｜ 支援作品数： 10件 継続投票率：67.0%（209名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "2679点",
+          "value": 2679,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "2241票",
+          "value": 2241,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "438票",
+          "value": 438,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "478件",
+          "value": 478,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "10件",
+          "value": 10,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "67.0%",
+          "value": 67.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "209名",
+          "value": 209,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [
+    {
+      "table_index": 0,
+      "context_heading": "アンケートより",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "年齢回答",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "～9歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "9歳",
+                  "value": 9,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "2",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2",
+                  "value": 2,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "0.21%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.21%",
+                  "value": 0.21,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "0.11%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.11%",
+                  "value": 0.11,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.10pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.10pt",
+                  "value": 0.1,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "10～14歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "10",
+                  "value": 10,
+                  "unit": null,
+                  "kind": "number"
+                },
+                {
+                  "raw": "14歳",
+                  "value": 14,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "102",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "102",
+                  "value": 102,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "10.76%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "10.76%",
+                  "value": 10.76,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "6.61%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "6.61%",
+                  "value": 6.61,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+4.15pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+4.15pt",
+                  "value": 4.15,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "15～19歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "15",
+                  "value": 15,
+                  "unit": null,
+                  "kind": "number"
+                },
+                {
+                  "raw": "19歳",
+                  "value": 19,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "374",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "374",
+                  "value": 374,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "39.45%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "39.45%",
+                  "value": 39.45,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "36.31%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "36.31%",
+                  "value": 36.31,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+3.14pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+3.14pt",
+                  "value": 3.14,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 4,
+          "cells": [
+            {
+              "text": "20～24歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "20",
+                  "value": 20,
+                  "unit": null,
+                  "kind": "number"
+                },
+                {
+                  "raw": "24歳",
+                  "value": 24,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "242",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "242",
+                  "value": 242,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "25.53%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "25.53%",
+                  "value": 25.53,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "29.10%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "29.10%",
+                  "value": 29.1,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-3.57pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-3.57pt",
+                  "value": -3.57,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 5,
+          "cells": [
+            {
+              "text": "25～29歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "25",
+                  "value": 25,
+                  "unit": null,
+                  "kind": "number"
+                },
+                {
+                  "raw": "29歳",
+                  "value": 29,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "99",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "99",
+                  "value": 99,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "10.44%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "10.44%",
+                  "value": 10.44,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "14.92%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "14.92%",
+                  "value": 14.92,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-4.48pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-4.48pt",
+                  "value": -4.48,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 6,
+          "cells": [
+            {
+              "text": "30～34歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "30",
+                  "value": 30,
+                  "unit": null,
+                  "kind": "number"
+                },
+                {
+                  "raw": "34歳",
+                  "value": 34,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "71",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "71",
+                  "value": 71,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "7.49%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7.49%",
+                  "value": 7.49,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "7.76%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7.76%",
+                  "value": 7.76,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.27pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.27pt",
+                  "value": -0.27,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 7,
+          "cells": [
+            {
+              "text": "35～39歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "35",
+                  "value": 35,
+                  "unit": null,
+                  "kind": "number"
+                },
+                {
+                  "raw": "39歳",
+                  "value": 39,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "31",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "31",
+                  "value": 31,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "3.27%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "3.27%",
+                  "value": 3.27,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "3.18%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "3.18%",
+                  "value": 3.18,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.09pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.09pt",
+                  "value": 0.09,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 8,
+          "cells": [
+            {
+              "text": "40～44歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "40",
+                  "value": 40,
+                  "unit": null,
+                  "kind": "number"
+                },
+                {
+                  "raw": "44歳",
+                  "value": 44,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "13",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13",
+                  "value": 13,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "1.37%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.37%",
+                  "value": 1.37,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "1.30%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.30%",
+                  "value": 1.3,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.07pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.07pt",
+                  "value": 0.07,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 9,
+          "cells": [
+            {
+              "text": "45～49歳",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "45",
+                  "value": 45,
+                  "unit": null,
+                  "kind": "number"
+                },
+                {
+                  "raw": "49歳",
+                  "value": 49,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "7",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7",
+                  "value": 7,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "0.74%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.74%",
+                  "value": 0.74,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "0.34%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.34%",
+                  "value": 0.34,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.40pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.40pt",
+                  "value": 0.4,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 10,
+          "cells": [
+            {
+              "text": "50歳～",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "50歳",
+                  "value": 50,
+                  "unit": "歳",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "7",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7",
+                  "value": 7,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "0.74%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.74%",
+                  "value": 0.74,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "0.38%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.38%",
+                  "value": 0.38,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.36pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.36pt",
+                  "value": 0.36,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 1,
+      "context_heading": "アンケートより",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "性別回答",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "男性",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "856",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "856",
+                  "value": 856,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "86.64%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "86.64%",
+                  "value": 86.64,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "86.61%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "86.61%",
+                  "value": 86.61,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.03pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.03pt",
+                  "value": 0.03,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "女性",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "132",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "132",
+                  "value": 132,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "13.36%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13.36%",
+                  "value": 13.36,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "13.39%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13.39%",
+                  "value": 13.39,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.03pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.03pt",
+                  "value": -0.03,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 2,
+      "context_heading": "アンケートより",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "東方を知った時期回答",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "旧作～秋霜玉（2000年12月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2000",
+                  "value": 2000,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "13",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13",
+                  "value": 13,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "1.31%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.31%",
+                  "value": 1.31,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "0.67%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.67%",
+                  "value": 0.67,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.64pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.64pt",
+                  "value": 0.64,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "秋霜玉～紅魔郷（2002年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2002",
+                  "value": 2002,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "13",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13",
+                  "value": 13,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "1.31%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.31%",
+                  "value": 1.31,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "1.11%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.11%",
+                  "value": 1.11,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.20pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.20pt",
+                  "value": 0.2,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "紅魔郷～妖々夢（2003年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2003",
+                  "value": 2003,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "53",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "53",
+                  "value": 53,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "5.34%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "5.34%",
+                  "value": 5.34,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "4.28%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "4.28%",
+                  "value": 4.28,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.06pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.06pt",
+                  "value": 1.06,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 4,
+          "cells": [
+            {
+              "text": "妖々夢～永夜抄（2004年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2004",
+                  "value": 2004,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "26",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "26",
+                  "value": 26,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "2.62%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2.62%",
+                  "value": 2.62,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "2.93%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2.93%",
+                  "value": 2.93,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.31pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.31pt",
+                  "value": -0.31,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 5,
+          "cells": [
+            {
+              "text": "永夜抄～萃夢想（2004年12月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2004",
+                  "value": 2004,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "15",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "15",
+                  "value": 15,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "1.51%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.51%",
+                  "value": 1.51,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "2.21%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2.21%",
+                  "value": 2.21,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.70pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.70pt",
+                  "value": -0.7,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 6,
+          "cells": [
+            {
+              "text": "萃夢想～花映塚（2005年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2005",
+                  "value": 2005,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "10",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "10",
+                  "value": 10,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "1.01%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.01%",
+                  "value": 1.01,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "1.47%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.47%",
+                  "value": 1.47,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.46pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.46pt",
+                  "value": -0.46,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 7,
+          "cells": [
+            {
+              "text": "花映塚～文花帖（2005年12月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2005",
+                  "value": 2005,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "9",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "9",
+                  "value": 9,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "0.91%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.91%",
+                  "value": 0.91,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "1.46%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.46%",
+                  "value": 1.46,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.55pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.55pt",
+                  "value": -0.55,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 8,
+          "cells": [
+            {
+              "text": "文花帖～求聞史紀（2006年12月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2006",
+                  "value": 2006,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "15",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "15",
+                  "value": 15,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "1.51%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.51%",
+                  "value": 1.51,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "2.04%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2.04%",
+                  "value": 2.04,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.53pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.53pt",
+                  "value": -0.53,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 9,
+          "cells": [
+            {
+              "text": "求聞史紀～風神録（2007年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2007",
+                  "value": 2007,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "54",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "54",
+                  "value": 54,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "5.44%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "5.44%",
+                  "value": 5.44,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "6.37%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "6.37%",
+                  "value": 6.37,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.93pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.93pt",
+                  "value": -0.93,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 10,
+          "cells": [
+            {
+              "text": "風神録～地霊殿（2008年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2008",
+                  "value": 2008,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "109",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "109",
+                  "value": 109,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "10.99%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "10.99%",
+                  "value": 10.99,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "12.92%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "12.92%",
+                  "value": 12.92,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-1.93pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-1.93pt",
+                  "value": -1.93,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 11,
+          "cells": [
+            {
+              "text": "地霊殿～星蓮船（2009年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2009",
+                  "value": 2009,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "92",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "92",
+                  "value": 92,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "9.27%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "9.27%",
+                  "value": 9.27,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "9.07%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "9.07%",
+                  "value": 9.07,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.20pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.20pt",
+                  "value": 0.2,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 12,
+          "cells": [
+            {
+              "text": "星蓮船～妖精大戦争（2010年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2010",
+                  "value": 2010,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "84",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "84",
+                  "value": 84,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "8.47%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "8.47%",
+                  "value": 8.47,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "7.26%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7.26%",
+                  "value": 7.26,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.21pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.21pt",
+                  "value": 1.21,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 13,
+          "cells": [
+            {
+              "text": "妖精大戦争～神霊廟（2011年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2011",
+                  "value": 2011,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "70",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "70",
+                  "value": 70,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "7.06%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7.06%",
+                  "value": 7.06,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "7.02%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7.02%",
+                  "value": 7.02,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.04pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.04pt",
+                  "value": 0.04,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 14,
+          "cells": [
+            {
+              "text": "神霊廟～求聞口授（2012年4月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2012",
+                  "value": 2012,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "76",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "76",
+                  "value": 76,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "7.66%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7.66%",
+                  "value": 7.66,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "9.12%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "9.12%",
+                  "value": 9.12,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-1.46pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-1.46pt",
+                  "value": -1.46,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 15,
+          "cells": [
+            {
+              "text": "求聞口授～輝針城（2013年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2013",
+                  "value": 2013,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "94",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "94",
+                  "value": 94,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "9.48%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "9.48%",
+                  "value": 9.48,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "9.57%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "9.57%",
+                  "value": 9.57,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.09pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.09pt",
+                  "value": -0.09,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 16,
+          "cells": [
+            {
+              "text": "輝針城～アマノジャク（2014年5月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2014",
+                  "value": 2014,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "107",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "107",
+                  "value": 107,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "10.79%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "10.79%",
+                  "value": 10.79,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "10.40%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "10.40%",
+                  "value": 10.4,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.39pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.39pt",
+                  "value": 0.39,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 17,
+          "cells": [
+            {
+              "text": "アマノジャク～紺珠伝（2015年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2015",
+                  "value": 2015,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "88",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "88",
+                  "value": 88,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "8.87%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "8.87%",
+                  "value": 8.87,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "8.18%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "8.18%",
+                  "value": 8.18,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.69pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.69pt",
+                  "value": 0.69,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 18,
+          "cells": [
+            {
+              "text": "紺珠伝～旧約酒場（2016年8月）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2016",
+                  "value": 2016,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "46",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "46",
+                  "value": 46,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "4.64%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "4.64%",
+                  "value": 4.64,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "2.97%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2.97%",
+                  "value": 2.97,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.67pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.67pt",
+                  "value": 1.67,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 19,
+          "cells": [
+            {
+              "text": "旧約酒場～現在",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "18",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18",
+                  "value": 18,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "1.81%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "1.81%",
+                  "value": 1.81,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "0.94%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "0.94%",
+                  "value": 0.94,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.87pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.87pt",
+                  "value": 0.87,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 3,
+      "context_heading": "アンケートより",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "人気投票への投票回答",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "今回がはじめて",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "432",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "432",
+                  "value": 432,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "42.02%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "42.02%",
+                  "value": 42.02,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "31.04%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "31.04%",
+                  "value": 31.04,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+10.98pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+10.98pt",
+                  "value": 10.98,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "過去1～3回投票したことがある",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "3回",
+                  "value": 3,
+                  "unit": "回",
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "430",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "430",
+                  "value": 430,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "41.83%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "41.83%",
+                  "value": 41.83,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "47.36%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "47.36%",
+                  "value": 47.36,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-5.53pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-5.53pt",
+                  "value": -5.53,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "過去4回以上投票したことがある",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "166",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "166",
+                  "value": 166,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "16.15%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "16.15%",
+                  "value": 16.15,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "21.61%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "21.61%",
+                  "value": 21.61,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-5.46pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-5.46pt",
+                  "value": -5.46,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 4,
+      "context_heading": "アンケートより",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "同人誌即売会への参加",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の回答率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "回答率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "参加している",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "554",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "554",
+                  "value": 554,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "55.57%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "55.57%",
+                  "value": 55.57,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "54.03%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "54.03%",
+                  "value": 54.03,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.54pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.54pt",
+                  "value": 1.54,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "うちサークル参加",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "81",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "81",
+                  "value": 81,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "14.62%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "14.62%",
+                  "value": 14.62,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "19.51%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "19.51%",
+                  "value": 19.51,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-4.89pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-4.89pt",
+                  "value": -4.89,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "うちコスプレ参加",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "37",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "37",
+                  "value": 37,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "6.68%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "6.68%",
+                  "value": 6.68,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "7.23%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "7.23%",
+                  "value": 7.23,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.55pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.55pt",
+                  "value": -0.55,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 5,
+      "context_heading": "人妖部門への投票状況",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "投票対象",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "フランドール・スカーレット",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "725",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "725",
+                  "value": 725,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "32.35%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "32.35%",
+                  "value": 32.35,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "19.01%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "19.01%",
+                  "value": 19.01,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+13.34pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+13.34pt",
+                  "value": 13.34,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "博麗 霊夢",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "631",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "631",
+                  "value": 631,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "28.16%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "28.16%",
+                  "value": 28.16,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "24.33%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "24.33%",
+                  "value": 24.33,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+3.83pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+3.83pt",
+                  "value": 3.83,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "霧雨 魔理沙",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "593",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "593",
+                  "value": 593,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "26.46%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "26.46%",
+                  "value": 26.46,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "20.99%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "20.99%",
+                  "value": 20.99,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+5.47pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+5.47pt",
+                  "value": 5.47,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 4,
+          "cells": [
+            {
+              "text": "レミリア・スカーレット",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "543",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "543",
+                  "value": 543,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "24.23%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "24.23%",
+                  "value": 24.23,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "18.03%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18.03%",
+                  "value": 18.03,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+6.20pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+6.20pt",
+                  "value": 6.2,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 5,
+          "cells": [
+            {
+              "text": "ルーミア",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "491",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "491",
+                  "value": 491,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "21.91%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "21.91%",
+                  "value": 21.91,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "8.40%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "8.40%",
+                  "value": 8.4,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+13.51pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+13.51pt",
+                  "value": 13.51,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 6,
+          "cells": [
+            {
+              "text": "魂魄 妖夢",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "452",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "452",
+                  "value": 452,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "20.17%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "20.17%",
+                  "value": 20.17,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "18.72%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18.72%",
+                  "value": 18.72,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.45pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.45pt",
+                  "value": 1.45,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 7,
+          "cells": [
+            {
+              "text": "古明地 こいし",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "430",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "430",
+                  "value": 430,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "19.19%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "19.19%",
+                  "value": 19.19,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "20.69%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "20.69%",
+                  "value": 20.69,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-1.50pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-1.50pt",
+                  "value": -1.5,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 8,
+          "cells": [
+            {
+              "text": "十六夜 咲夜",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "415",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "415",
+                  "value": 415,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "18.52%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18.52%",
+                  "value": 18.52,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "19.28%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "19.28%",
+                  "value": 19.28,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.76pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.76pt",
+                  "value": -0.76,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 9,
+          "cells": [
+            {
+              "text": "大妖精",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "363",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "363",
+                  "value": 363,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "16.20%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "16.20%",
+                  "value": 16.2,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "3.46%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "3.46%",
+                  "value": 3.46,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+12.74pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+12.74pt",
+                  "value": 12.74,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 10,
+          "cells": [
+            {
+              "text": "古明地 さとり",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "337",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "337",
+                  "value": 337,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "15.04%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "15.04%",
+                  "value": 15.04,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "16.69%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "16.69%",
+                  "value": 16.69,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-1.65pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-1.65pt",
+                  "value": -1.65,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 11,
+          "cells": [
+            {
+              "text": "アリス・マーガトロイド",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "296",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "296",
+                  "value": 296,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "13.21%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13.21%",
+                  "value": 13.21,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "15.14%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "15.14%",
+                  "value": 15.14,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-1.93pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-1.93pt",
+                  "value": -1.93,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 6,
+      "context_heading": "人妖部門への投票状況",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "投票対象",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "ルーミア",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "491",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "491",
+                  "value": 491,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "21.91%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "21.91%",
+                  "value": 21.91,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "8.40%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "8.40%",
+                  "value": 8.4,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+13.51pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+13.51pt",
+                  "value": 13.51,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "フランドール・スカーレット",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "725",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "725",
+                  "value": 725,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "32.35%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "32.35%",
+                  "value": 32.35,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "19.01%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "19.01%",
+                  "value": 19.01,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+13.34pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+13.34pt",
+                  "value": 13.34,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "大妖精",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "363",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "363",
+                  "value": 363,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "16.20%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "16.20%",
+                  "value": 16.2,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "3.46%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "3.46%",
+                  "value": 3.46,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+12.74pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+12.74pt",
+                  "value": 12.74,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 4,
+          "cells": [
+            {
+              "text": "レミリア・スカーレット",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "543",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "543",
+                  "value": 543,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "24.23%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "24.23%",
+                  "value": 24.23,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "18.03%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18.03%",
+                  "value": 18.03,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+6.20pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+6.20pt",
+                  "value": 6.2,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 5,
+          "cells": [
+            {
+              "text": "霧雨 魔理沙",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "593",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "593",
+                  "value": 593,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "26.46%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "26.46%",
+                  "value": 26.46,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "20.99%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "20.99%",
+                  "value": 20.99,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+5.47pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+5.47pt",
+                  "value": 5.47,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 6,
+          "cells": [
+            {
+              "text": "博麗 霊夢",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "631",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "631",
+                  "value": 631,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "28.16%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "28.16%",
+                  "value": 28.16,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "24.33%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "24.33%",
+                  "value": 24.33,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+3.83pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+3.83pt",
+                  "value": 3.83,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 7,
+      "context_heading": "音楽部門への投票状況",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "投票対象",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "U.N.オーエンは彼女なのか？",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "705",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "705",
+                  "value": 705,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "43.57%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "43.57%",
+                  "value": 43.57,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "27.61%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "27.61%",
+                  "value": 27.61,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+15.96pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+15.96pt",
+                  "value": 15.96,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "おてんば恋娘",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "688",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "688",
+                  "value": 688,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "42.52%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "42.52%",
+                  "value": 42.52,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "6.94%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "6.94%",
+                  "value": 6.94,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+35.58pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+35.58pt",
+                  "value": 35.58,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "亡き王女の為のセプテット",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "626",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "626",
+                  "value": 626,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "38.69%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "38.69%",
+                  "value": 38.69,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "28.01%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "28.01%",
+                  "value": 28.01,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+10.68pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+10.68pt",
+                  "value": 10.68,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 4,
+          "cells": [
+            {
+              "text": "恋色マスタースパーク（恋色マジック）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "371",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "371",
+                  "value": 371,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "22.93%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "22.93%",
+                  "value": 22.93,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "13.95%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13.95%",
+                  "value": 13.95,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+8.98pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+8.98pt",
+                  "value": 8.98,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 5,
+          "cells": [
+            {
+              "text": "神々が恋した幻想郷",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "348",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "348",
+                  "value": 348,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "21.51%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "21.51%",
+                  "value": 21.51,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "16.63%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "16.63%",
+                  "value": 16.63,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+4.88pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+4.88pt",
+                  "value": 4.88,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 6,
+          "cells": [
+            {
+              "text": "月まで届け、不死の煙",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "305",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "305",
+                  "value": 305,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "18.85%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18.85%",
+                  "value": 18.85,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "18.50%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18.50%",
+                  "value": 18.5,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.35pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.35pt",
+                  "value": 0.35,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 7,
+          "cells": [
+            {
+              "text": "幽雅に咲かせ、墨染の桜 ～ Border of Life",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "286",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "286",
+                  "value": 286,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "17.68%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "17.68%",
+                  "value": 17.68,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "18.45%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18.45%",
+                  "value": 18.45,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-0.77pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-0.77pt",
+                  "value": -0.77,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 8,
+          "cells": [
+            {
+              "text": "ネクロファンタジア",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "286",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "286",
+                  "value": 286,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "17.68%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "17.68%",
+                  "value": 17.68,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "17.31%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "17.31%",
+                  "value": 17.31,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+0.37pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+0.37pt",
+                  "value": 0.37,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 9,
+          "cells": [
+            {
+              "text": "上海紅茶館 ～ Chinese Tea",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "282",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "282",
+                  "value": 282,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "17.43%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "17.43%",
+                  "value": 17.43,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "15.80%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "15.80%",
+                  "value": 15.8,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.63pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.63pt",
+                  "value": 1.63,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 10,
+          "cells": [
+            {
+              "text": "ハルトマンの妖怪少女",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "276",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "276",
+                  "value": 276,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "17.06%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "17.06%",
+                  "value": 17.06,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "19.51%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "19.51%",
+                  "value": 19.51,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-2.45pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-2.45pt",
+                  "value": -2.45,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 11,
+          "cells": [
+            {
+              "text": "月時計 ～ ルナ・ダイアル",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "220",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "220",
+                  "value": 220,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "13.60%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13.60%",
+                  "value": 13.6,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "11.12%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "11.12%",
+                  "value": 11.12,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+2.48pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+2.48pt",
+                  "value": 2.48,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 8,
+      "context_heading": "音楽部門への投票状況",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "投票対象",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "おてんば恋娘",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "688",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "688",
+                  "value": 688,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "42.52%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "42.52%",
+                  "value": 42.52,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "6.94%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "6.94%",
+                  "value": 6.94,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+35.58pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+35.58pt",
+                  "value": 35.58,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "U.N.オーエンは彼女なのか？",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "705",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "705",
+                  "value": 705,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "43.57%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "43.57%",
+                  "value": 43.57,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "27.61%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "27.61%",
+                  "value": 27.61,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+15.96pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+15.96pt",
+                  "value": 15.96,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "亡き王女の為のセプテット",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "626",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "626",
+                  "value": 626,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "38.69%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "38.69%",
+                  "value": 38.69,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "28.01%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "28.01%",
+                  "value": 28.01,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+10.68pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+10.68pt",
+                  "value": 10.68,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 4,
+          "cells": [
+            {
+              "text": "恋色マスタースパーク（恋色マジック）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "371",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "371",
+                  "value": 371,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "22.93%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "22.93%",
+                  "value": 22.93,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "13.95%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13.95%",
+                  "value": 13.95,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+8.98pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+8.98pt",
+                  "value": 8.98,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 5,
+          "cells": [
+            {
+              "text": "ルーネイトエルフ",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "141",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "141",
+                  "value": 141,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "8.71%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "8.71%",
+                  "value": 8.71,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "2.64%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "2.64%",
+                  "value": 2.64,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+6.07pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+6.07pt",
+                  "value": 6.07,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 6,
+          "cells": [
+            {
+              "text": "神々が恋した幻想郷",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "348",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "348",
+                  "value": 348,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "21.51%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "21.51%",
+                  "value": 21.51,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "16.63%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "16.63%",
+                  "value": 16.63,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+4.88pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+4.88pt",
+                  "value": 4.88,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 9,
+      "context_heading": "作品部門への投票状況",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "投票対象",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "東方紅魔郷",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "783",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "783",
+                  "value": 783,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "62.74%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "62.74%",
+                  "value": 62.74,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "43.21%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "43.21%",
+                  "value": 43.21,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+19.53pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+19.53pt",
+                  "value": 19.53,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "東方妖々夢",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "494",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "494",
+                  "value": 494,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "39.58%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "39.58%",
+                  "value": 39.58,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "38.32%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "38.32%",
+                  "value": 38.32,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.26pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.26pt",
+                  "value": 1.26,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "東方永夜抄",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "470",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "470",
+                  "value": 470,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "37.66%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "37.66%",
+                  "value": 37.66,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "42.35%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "42.35%",
+                  "value": 42.35,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-4.69pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-4.69pt",
+                  "value": -4.69,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 4,
+          "cells": [
+            {
+              "text": "東方風神録",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "397",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "397",
+                  "value": 397,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "31.81%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "31.81%",
+                  "value": 31.81,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "34.25%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "34.25%",
+                  "value": 34.25,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-2.44pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-2.44pt",
+                  "value": -2.44,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 5,
+          "cells": [
+            {
+              "text": "東方地霊殿",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "329",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "329",
+                  "value": 329,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "26.36%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "26.36%",
+                  "value": 26.36,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "29.49%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "29.49%",
+                  "value": 29.49,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-3.13pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-3.13pt",
+                  "value": -3.13,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 6,
+          "cells": [
+            {
+              "text": "東方紺珠伝",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "300",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "300",
+                  "value": 300,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "24.04%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "24.04%",
+                  "value": 24.04,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "27.66%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "27.66%",
+                  "value": 27.66,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-3.62pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-3.62pt",
+                  "value": -3.62,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 7,
+          "cells": [
+            {
+              "text": "妖精大戦争",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "248",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "248",
+                  "value": 248,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "19.87%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "19.87%",
+                  "value": 19.87,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "4.79%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "4.79%",
+                  "value": 4.79,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+15.08pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+15.08pt",
+                  "value": 15.08,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 8,
+          "cells": [
+            {
+              "text": "東方非想天則",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "219",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "219",
+                  "value": 219,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "17.55%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "17.55%",
+                  "value": 17.55,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "15.39%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "15.39%",
+                  "value": 15.39,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+2.16pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+2.16pt",
+                  "value": 2.16,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 9,
+          "cells": [
+            {
+              "text": "東方鈴奈庵",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "212",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "212",
+                  "value": 212,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "16.99%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "16.99%",
+                  "value": 16.99,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "23.06%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "23.06%",
+                  "value": 23.06,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-6.07pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-6.07pt",
+                  "value": -6.07,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 10,
+          "cells": [
+            {
+              "text": "東方輝針城",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "206",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "206",
+                  "value": 206,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "16.51%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "16.51%",
+                  "value": 16.51,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "18.15%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "18.15%",
+                  "value": 18.15,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-1.64pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-1.64pt",
+                  "value": -1.64,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 11,
+          "cells": [
+            {
+              "text": "東方茨歌仙",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "167",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "167",
+                  "value": 167,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "13.38%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "13.38%",
+                  "value": 13.38,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "14.60%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "14.60%",
+                  "value": 14.6,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "-1.22pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "-1.22pt",
+                  "value": -1.22,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_index": 10,
+      "context_heading": "作品部門への投票状況",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "投票対象",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票数",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "全体の投票率",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "投票率の差",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "東方紅魔郷",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "783",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "783",
+                  "value": 783,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "62.74%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "62.74%",
+                  "value": 62.74,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "43.21%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "43.21%",
+                  "value": 43.21,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+19.53pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+19.53pt",
+                  "value": 19.53,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "妖精大戦争",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "248",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "248",
+                  "value": 248,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "19.87%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "19.87%",
+                  "value": 19.87,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "4.79%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "4.79%",
+                  "value": 4.79,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+15.08pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+15.08pt",
+                  "value": 15.08,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 3,
+          "cells": [
+            {
+              "text": "東方三月精",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "159",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "159",
+                  "value": 159,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "12.74%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "12.74%",
+                  "value": 12.74,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "6.55%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "6.55%",
+                  "value": 6.55,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+6.19pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+6.19pt",
+                  "value": 6.19,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 4,
+          "cells": [
+            {
+              "text": "東方非想天則",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "219",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "219",
+                  "value": 219,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "17.55%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "17.55%",
+                  "value": 17.55,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "15.39%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "15.39%",
+                  "value": 15.39,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+2.16pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+2.16pt",
+                  "value": 2.16,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 5,
+          "cells": [
+            {
+              "text": "東方幻想郷",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "72",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "72",
+                  "value": 72,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "5.77%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "5.77%",
+                  "value": 5.77,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "3.83%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "3.83%",
+                  "value": 3.83,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.94pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.94pt",
+                  "value": 1.94,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 6,
+          "cells": [
+            {
+              "text": "東方花映塚",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "161",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "161",
+                  "value": 161,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "12.90%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "12.90%",
+                  "value": 12.9,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "11.06%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "11.06%",
+                  "value": 11.06,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            },
+            {
+              "text": "+1.84pt",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "+1.84pt",
+                  "value": 1.84,
+                  "unit": "pt",
+                  "kind": "number"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

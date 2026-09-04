@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2107.php",
+    "effective_url": "https://toho-vote.info/result13/music/2107.php",
+    "retrieved_at": "2026-08-15T09:56:15+00:00",
+    "http_status": 200,
+    "bytes": 5004,
+    "sha256": "70e0d04272286cf4b3f38950176e9337aef461c8e707292fa8d55ec33882cab4",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2107",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Peaceful Romancer - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Peaceful Romancer（306位）",
+      "numbers": [
+        {
+          "raw": "306位",
+          "value": 306,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：55点 ｜ 得票数：49票 ｜ 一押し数：6票 ｜ コメント数：14件 継続投票率：50.0%（6名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "55点",
+          "value": 55,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "49票",
+          "value": 49,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "14件",
+          "value": 14,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "6名",
+          "value": 6,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

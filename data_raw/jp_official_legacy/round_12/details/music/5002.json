@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/5002.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/5002.php",
+    "retrieved_at": "2026-08-15T09:54:57+00:00",
+    "http_status": 200,
+    "bytes": 5276,
+    "sha256": "be03b15f9c1f84b49f05db262e14d18081bec7501464958bafb8b953d9503aad",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5002",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：フォルスストロベリー - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "フォルスストロベリー（319位）",
+      "numbers": [
+        {
+          "raw": "319位",
+          "value": 319,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：52点 ｜ 得票数：47票 ｜ 一押し数：5票 ｜ コメント数：10件 継続投票率：71.4%（7名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "52点",
+          "value": 52,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "47票",
+          "value": 47,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "10件",
+          "value": 10,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "71.4%",
+          "value": 71.4,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "7名",
+          "value": 7,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

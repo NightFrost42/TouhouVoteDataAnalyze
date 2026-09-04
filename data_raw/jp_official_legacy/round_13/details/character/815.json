@@ -1,0 +1,77 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/character/815.php",
+    "effective_url": "https://toho-vote.info/result13/character/815.php",
+    "retrieved_at": "2026-08-15T09:55:34+00:00",
+    "http_status": 200,
+    "bytes": 3533,
+    "sha256": "1b04dafaf668210b74172470246f244bccbf14d3da5d8fa4157f94fac3778dc2",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "character",
+  "item_id": "815",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：ヤマネ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "ヤマネ（175位）",
+      "numbers": [
+        {
+          "raw": "175位",
+          "value": 175,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：5点 ｜ 得票数：4票 ｜ 一押し数：1票 ｜ コメント数：1件 ｜ 支援作品数： 0件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "5点",
+          "value": 5,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

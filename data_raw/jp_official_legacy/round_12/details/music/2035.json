@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2035.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2035.php",
+    "retrieved_at": "2026-08-15T09:54:41+00:00",
+    "http_status": 200,
+    "bytes": 4122,
+    "sha256": "0fb9873f7fbc54711e223ee690a0ed1da2c738e191dabb10db5905d6b726e402",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2035",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Selection - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Selection（408位）",
+      "numbers": [
+        {
+          "raw": "408位",
+          "value": 408,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：12点 ｜ 得票数：11票 ｜ 一押し数：1票 ｜ コメント数：6件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "12点",
+          "value": 12,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "11票",
+          "value": 11,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

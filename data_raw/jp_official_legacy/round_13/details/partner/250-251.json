@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/250-251.php",
+    "effective_url": "https://toho-vote.info/result13/partner/250-251.php",
+    "retrieved_at": "2026-08-15T09:56:39+00:00",
+    "http_status": 200,
+    "bytes": 14884,
+    "sha256": "9df6d8535e55029fdb91efe969c752f499f26ef86bdc11339346526acb3e89f6",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "250-251",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：火焔猫 燐と霊烏路 空 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "火焔猫 燐と霊烏路 空（24位）",
+      "numbers": [
+        {
+          "raw": "24位",
+          "value": 24,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1414点 ｜ 得票数：1197票 ｜ 一押し数：217票 ｜ コメント数：154件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1414点",
+          "value": 1414,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1197票",
+          "value": 1197,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "217票",
+          "value": 217,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "154件",
+          "value": 154,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

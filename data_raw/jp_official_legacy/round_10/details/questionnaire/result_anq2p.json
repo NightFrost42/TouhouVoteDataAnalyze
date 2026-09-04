@@ -1,0 +1,47 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote10/result_anq2p.html",
+    "effective_url": "http://thwiki.info/th/vote10/result_anq2p.html",
+    "retrieved_at": "2026-08-15T09:50:53+00:00",
+    "http_status": 200,
+    "bytes": 155694,
+    "sha256": "efc725cf3df4301b0662cca08ace52e971bfe2b5a5dd64ac2f71c437d8052a22",
+    "charset": "euc_jp",
+    "header_charset": null
+  },
+  "round": 10,
+  "role": "detail",
+  "category": "questionnaire",
+  "item_id": "result_anq2p",
+  "discovery_label": "コメント一覧",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "第１０回東方シリーズ人気投票 投票者アンケート結果 作品別コメント",
+      "numbers": []
+    },
+    {
+      "kind": "item_header",
+      "text": "東方輝針城 平均：4.32点 コメント数:2386",
+      "numbers": [
+        {
+          "raw": "4.32点",
+          "value": 4.32,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "2386",
+          "value": 2386,
+          "unit": null,
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

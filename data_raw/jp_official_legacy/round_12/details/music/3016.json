@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/3016.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/3016.php",
+    "retrieved_at": "2026-08-15T09:54:51+00:00",
+    "http_status": 200,
+    "bytes": 4925,
+    "sha256": "717bf217ebd14851eec5b151e68056bca3d059d6f6aae10b4858baff94f32397",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3016",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：二つの世界 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "二つの世界（289位）",
+      "numbers": [
+        {
+          "raw": "289位",
+          "value": 289,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：71点 ｜ 得票数：63票 ｜ 一押し数：8票 ｜ コメント数：10件 継続投票率：42.9%（7名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "71点",
+          "value": 71,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "63票",
+          "value": 63,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8票",
+          "value": 8,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "10件",
+          "value": 10,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "42.9%",
+          "value": 42.9,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "7名",
+          "value": 7,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1086.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1086.php",
+    "retrieved_at": "2026-08-15T09:53:58+00:00",
+    "http_status": 200,
+    "bytes": 6409,
+    "sha256": "11b01121433016ed3073bf7075f38a200ee1b2287863494b0b52711b66a30b3c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1086",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：仰空 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "仰空（225位）",
+      "numbers": [
+        {
+          "raw": "225位",
+          "value": 225,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：160点 ｜ 得票数：146票 ｜ 一押し数：14票 ｜ コメント数：28件 継続投票率：64.7%（17名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "160点",
+          "value": 160,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "146票",
+          "value": 146,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "14票",
+          "value": 14,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "28件",
+          "value": 28,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "64.7%",
+          "value": 64.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "17名",
+          "value": 17,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

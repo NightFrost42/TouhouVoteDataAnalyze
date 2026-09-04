@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/227-228.php",
+    "effective_url": "https://toho-vote.info/result13/partner/227-228.php",
+    "retrieved_at": "2026-08-15T09:56:35+00:00",
+    "http_status": 200,
+    "bytes": 28640,
+    "sha256": "78b77415bde4e257758bc4ef53437e45a9f82e2b91a3ed8d8e7f4a54c98a71e3",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "227-228",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：蓬莱山 輝夜と藤原 妹紅 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "蓬莱山 輝夜と藤原 妹紅（10位）",
+      "numbers": [
+        {
+          "raw": "10位",
+          "value": 10,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：2771点 ｜ 得票数：2381票 ｜ 一押し数：390票 ｜ コメント数：300件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "2771点",
+          "value": 2771,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "2381票",
+          "value": 2381,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "390票",
+          "value": 390,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "300件",
+          "value": 300,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

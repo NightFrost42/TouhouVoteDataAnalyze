@@ -1,0 +1,77 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/character/807.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/character/807.php",
+    "retrieved_at": "2026-08-15T09:53:35+00:00",
+    "http_status": 200,
+    "bytes": 3725,
+    "sha256": "8bc4076acb8b2fe536009965d97fd99183ad60264821a8574277002a15da6869",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "character",
+  "item_id": "807",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：水江浦島子 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "水江浦島子（169位）",
+      "numbers": [
+        {
+          "raw": "169位",
+          "value": 169,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：4点 ｜ 得票数：4票 ｜ 一押し数：0票 ｜ コメント数：0件 ｜ 支援作品数： 0件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "4点",
+          "value": 4,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

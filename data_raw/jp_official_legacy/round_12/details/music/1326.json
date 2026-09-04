@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1326.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1326.php",
+    "retrieved_at": "2026-08-15T09:54:30+00:00",
+    "http_status": 200,
+    "bytes": 4521,
+    "sha256": "704a81ccd30e9ce41fc3ae60304d8830d04baebc8272bfd80aee6d8ffd9c8a0e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1326",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：オカルトアラカルト - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "オカルトアラカルト（248位）",
+      "numbers": [
+        {
+          "raw": "248位",
+          "value": 248,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：114点 ｜ 得票数：109票 ｜ 一押し数：5票 ｜ コメント数：9件 継続投票率：66.7%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "114点",
+          "value": 114,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "109票",
+          "value": 109,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "66.7%",
+          "value": 66.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

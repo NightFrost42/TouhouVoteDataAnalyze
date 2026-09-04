@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1190.php",
+    "effective_url": "https://toho-vote.info/result13/music/1190.php",
+    "retrieved_at": "2026-08-15T09:55:54+00:00",
+    "http_status": 200,
+    "bytes": 4858,
+    "sha256": "e662507751b23f52d93cbbfed5c02439523b01296e0fc4ebc7193452769bb098",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1190",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：スカイルーイン - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "スカイルーイン（241位）",
+      "numbers": [
+        {
+          "raw": "241位",
+          "value": 241,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：121点 ｜ 得票数：118票 ｜ 一押し数：3票 ｜ コメント数：12件 継続投票率：50.0%（16名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "121点",
+          "value": 121,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "118票",
+          "value": 118,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "12件",
+          "value": 12,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "16名",
+          "value": 16,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

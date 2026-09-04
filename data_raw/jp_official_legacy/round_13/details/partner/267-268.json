@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/267-268.php",
+    "effective_url": "https://toho-vote.info/result13/partner/267-268.php",
+    "retrieved_at": "2026-08-15T09:56:42+00:00",
+    "http_status": 200,
+    "bytes": 6074,
+    "sha256": "c96cfcfd0e07c17b208e8f57d8c5c91b358d43cf8bfcb153a61638d273d12ea5",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "267-268",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：物部 布都と豊聡耳 神子 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "物部 布都と豊聡耳 神子（69位）",
+      "numbers": [
+        {
+          "raw": "69位",
+          "value": 69,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：324点 ｜ 得票数：277票 ｜ 一押し数：47票 ｜ コメント数：29件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "324点",
+          "value": 324,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "277票",
+          "value": 277,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "47票",
+          "value": 47,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "29件",
+          "value": 29,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

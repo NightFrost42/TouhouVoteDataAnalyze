@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1321.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1321.php",
+    "retrieved_at": "2026-08-15T09:54:32+00:00",
+    "http_status": 200,
+    "bytes": 3984,
+    "sha256": "f90e40291c02734f23468c46b5d4fce5bc05540e19c8196b40b9c501bd0ee2ab",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1321",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：可能性を信じて - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "可能性を信じて（453位）",
+      "numbers": [
+        {
+          "raw": "453位",
+          "value": 453,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：5点 ｜ 得票数：5票 ｜ 一押し数：0票 ｜ コメント数：3件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "5点",
+          "value": 5,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3件",
+          "value": 3,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

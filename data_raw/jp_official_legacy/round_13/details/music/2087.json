@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2087.php",
+    "effective_url": "https://toho-vote.info/result13/music/2087.php",
+    "retrieved_at": "2026-08-15T09:56:13+00:00",
+    "http_status": 200,
+    "bytes": 4392,
+    "sha256": "54479599597edb8c58975a80d4ed5183f58b020f9bfcf86345485ab1a3324266",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2087",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Dream Express - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Dream Express（310位）",
+      "numbers": [
+        {
+          "raw": "310位",
+          "value": 310,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：53点 ｜ 得票数：46票 ｜ 一押し数：7票 ｜ コメント数：8件 継続投票率：57.1%（7名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "53点",
+          "value": 53,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "46票",
+          "value": 46,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8件",
+          "value": 8,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "57.1%",
+          "value": 57.1,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "7名",
+          "value": 7,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

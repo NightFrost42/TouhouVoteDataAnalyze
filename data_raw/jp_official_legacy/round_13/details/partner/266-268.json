@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/266-268.php",
+    "effective_url": "https://toho-vote.info/result13/partner/266-268.php",
+    "retrieved_at": "2026-08-15T09:56:42+00:00",
+    "http_status": 200,
+    "bytes": 7130,
+    "sha256": "e9ecc646bc7b212e2f01b25c8de3043729df172714f445ef118d9fc1f9a01140",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "266-268",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：蘇我 屠自古と豊聡耳 神子 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "蘇我 屠自古と豊聡耳 神子（60位）",
+      "numbers": [
+        {
+          "raw": "60位",
+          "value": 60,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：418点 ｜ 得票数：354票 ｜ 一押し数：64票 ｜ コメント数：59件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "418点",
+          "value": 418,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "354票",
+          "value": 354,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "64票",
+          "value": 64,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "59件",
+          "value": 59,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

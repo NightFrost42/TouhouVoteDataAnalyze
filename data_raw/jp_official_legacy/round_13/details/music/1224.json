@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1224.php",
+    "effective_url": "https://toho-vote.info/result13/music/1224.php",
+    "retrieved_at": "2026-08-15T09:55:56+00:00",
+    "http_status": 200,
+    "bytes": 4913,
+    "sha256": "afdb53a6bd885daccc4666aa99cdebc2fa55976267f548b4f3551d1d843070de",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1224",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：妖怪モダンコロニー - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "妖怪モダンコロニー（234位）",
+      "numbers": [
+        {
+          "raw": "234位",
+          "value": 234,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：135点 ｜ 得票数：129票 ｜ 一押し数：6票 ｜ コメント数：18件 継続投票率：48.0%（25名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "135点",
+          "value": 135,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "129票",
+          "value": 129,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "18件",
+          "value": 18,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "48.0%",
+          "value": 48.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "25名",
+          "value": 25,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

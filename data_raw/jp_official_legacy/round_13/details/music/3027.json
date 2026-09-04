@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/3027.php",
+    "effective_url": "https://toho-vote.info/result13/music/3027.php",
+    "retrieved_at": "2026-08-15T09:56:16+00:00",
+    "http_status": 200,
+    "bytes": 4975,
+    "sha256": "a64345b545278b1cc36b2acfa78de3fd34bf7e2cd8112189fc454c31e0c4ebc7",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3027",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：スプートニク幻夜 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "スプートニク幻夜（262位）",
+      "numbers": [
+        {
+          "raw": "262位",
+          "value": 262,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：89点 ｜ 得票数：85票 ｜ 一押し数：4票 ｜ コメント数：19件 継続投票率：60.0%（10名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "89点",
+          "value": 89,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "85票",
+          "value": 85,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "19件",
+          "value": 19,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "60.0%",
+          "value": 60.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "10名",
+          "value": 10,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

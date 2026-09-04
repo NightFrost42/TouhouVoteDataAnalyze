@@ -1,0 +1,279 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-08-15T18:54:12Z",
+  "rule": "sum additive fields within site+round+merge_group_id; never across rounds",
+  "source_rows": 14141,
+  "merged_rows": 14092,
+  "rows_collapsed": 49,
+  "same_round_multi_source_groups": 36,
+  "groups_by_site_round": [
+    {
+      "site": "cn",
+      "round": 1,
+      "groups": 2
+    },
+    {
+      "site": "cn",
+      "round": 2,
+      "groups": 1
+    },
+    {
+      "site": "cn",
+      "round": 3,
+      "groups": 1
+    },
+    {
+      "site": "cn",
+      "round": 4,
+      "groups": 1
+    },
+    {
+      "site": "cn",
+      "round": 5,
+      "groups": 1
+    },
+    {
+      "site": "cn",
+      "round": 6,
+      "groups": 2
+    },
+    {
+      "site": "cn",
+      "round": 7,
+      "groups": 2
+    },
+    {
+      "site": "cn",
+      "round": 8,
+      "groups": 1
+    },
+    {
+      "site": "cn",
+      "round": 9,
+      "groups": 1
+    },
+    {
+      "site": "cn",
+      "round": 10,
+      "groups": 1
+    },
+    {
+      "site": "cn",
+      "round": 11,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 3,
+      "groups": 3
+    },
+    {
+      "site": "jp",
+      "round": 4,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 5,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 6,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 7,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 8,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 9,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 10,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 11,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 12,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 13,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 14,
+      "groups": 2
+    },
+    {
+      "site": "jp",
+      "round": 15,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 16,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 17,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 18,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 19,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 20,
+      "groups": 1
+    },
+    {
+      "site": "jp",
+      "round": 21,
+      "groups": 1
+    }
+  ],
+  "rank_effect": {
+    "improved_vs_best_source": 34,
+    "unchanged_vs_best_source": 2,
+    "worsened_vs_best_source": 0,
+    "largest_improvement": 76.0
+  },
+  "all_score_totals_conserved": true,
+  "round_coverage": {
+    "jp": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "cn": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "round_coverage_complete": true,
+  "cn11_yaoya_bahu": {
+    "site": "cn",
+    "round": 11,
+    "merge_group_id": "music:fc15babf3f3705f8",
+    "canonical_track": "妖妖跋扈",
+    "source_row_count": 3,
+    "source_titles_jp_json": "[]",
+    "source_titles_cn_json": "[\"妖妖跋扈\", \"妖妖跋扈 ~ Speed Fox!\", \"妖妖跋扈 ~ Who done it!\"]",
+    "source_ranks_json": "[186, 218, 476]",
+    "best_source_rank": 186.0,
+    "merged_rank": 140.0,
+    "rank_improvement_vs_best_source": 46.0,
+    "best_source_score": 83.0,
+    "merged_score": 151.0,
+    "score_added_by_other_reprints": 68.0,
+    "primary_count": 5.0
+  },
+  "jp21_yaoya_bakkou": {
+    "site": "jp",
+    "round": 21,
+    "merge_group_id": "music:fc15babf3f3705f8",
+    "canonical_track": "妖妖跋扈",
+    "source_row_count": 2,
+    "source_titles_jp_json": "[\"妖々跋扈\", \"妖々跋扈 ~ Who done it!\"]",
+    "source_titles_cn_json": "[\"妖妖跋扈\", \"妖妖跋扈 ~ Who done it!\"]",
+    "source_ranks_json": "[154, 213]",
+    "best_source_rank": 154.0,
+    "merged_rank": 106.0,
+    "rank_improvement_vs_best_source": 48.0,
+    "best_source_score": 506.0,
+    "merged_score": 792.0,
+    "score_added_by_other_reprints": 286.0,
+    "primary_count": 41.0
+  },
+  "jp20_un_owen_official_scope_discrepancy": {
+    "round": 20,
+    "track": "U.N.オーエンは彼女なのか？",
+    "official_aggregate_point": 17483,
+    "official_detail_source_sum_point": 17484,
+    "difference_detail_minus_aggregate": 1,
+    "policy": "retain both official values with their source scope; do not silently reconcile"
+  },
+  "inputs": [
+    {
+      "path": "data_processed/music_canonical/local_music_source_rows.csv",
+      "bytes": 2687104,
+      "sha256": "12ce6eabce9fef2ad1362e3f87e822762435b07edd820effc3eaf72f572c3ade"
+    },
+    {
+      "path": "data_processed/music_canonical/local_music_merged.csv",
+      "bytes": 2458130,
+      "sha256": "a390a4596ac8467a5e16fd2f5a84dbf6e77278b07e36ba241dacf7e308df779a"
+    },
+    {
+      "path": "metadata/music_canonical_validation.json",
+      "bytes": 6405,
+      "sha256": "ef77ed122a0ec6d607f0b4fcda88b3a3efe2893baf5d46eb67c53e21601c4b78"
+    },
+    {
+      "path": "data_processed/jp_official/rankings.csv",
+      "bytes": 258528,
+      "sha256": "4fe7a392731be600c92099a4913c3a6d59b49a01274e29be78058729960776c1"
+    },
+    {
+      "path": "data_processed/jp_official/detail_items.csv",
+      "bytes": 362336,
+      "sha256": "621499ea172cbc6b774e0344b53f88f316612ae79a1108ee703684068bc1ba4a"
+    }
+  ],
+  "output": {
+    "path": "analysis_results/music_merge/same_round_merge_effects.csv",
+    "bytes": 7285,
+    "sha256": "bd13af01fc92b2ed0cd1e2d96e0f0059f03a9e3a745d11c60258dc9a3218eb6c"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/101-102.php",
+    "effective_url": "https://toho-vote.info/result13/partner/101-102.php",
+    "retrieved_at": "2026-08-15T09:56:26+00:00",
+    "http_status": 200,
+    "bytes": 99382,
+    "sha256": "43932690874631fba066084d66e95dbcb00a01e66bcf5b6b8bc4b2b1ce61cc40",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "101-102",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 霊夢と霧雨 魔理沙 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 霊夢と霧雨 魔理沙（1位）",
+      "numbers": [
+        {
+          "raw": "1位",
+          "value": 1,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：12063点 ｜ 得票数：8154票 ｜ 一押し数：3909票 ｜ コメント数：1380件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "12063点",
+          "value": 12063,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "8154票",
+          "value": 8154,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3909票",
+          "value": 3909,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1380件",
+          "value": 1380,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

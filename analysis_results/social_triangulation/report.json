@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "round": 21,
+  "source_files": {
+    "aggregate_character": "data_raw\\jp_official\\round_21\\aggregate\\character.json",
+    "aggregate_questionnaire": "data_raw\\jp_official\\round_21\\aggregate\\questionnaire.json",
+    "character_details": "data_raw\\jp_official\\round_21\\detail\\character"
+  },
+  "scoring": {
+    "published_scheme": "primary=3, secondary=2, other selected=1",
+    "counterfactual_scheme": "primary=2, all other selected=1",
+    "formula": "counterfactual = published - primary - secondary",
+    "top10_counterfactual": [
+      {
+        "entity_id": 2,
+        "name": "霧雨 魔理沙",
+        "official_rank": 2,
+        "published_points_3_2_1": 27553,
+        "primary_count_3pt": 3777,
+        "secondary_count_2pt": 3364,
+        "other_count_1pt": 9494,
+        "counterfactual_points_2_1": 20412,
+        "counterfactual_rank_2_1": 1,
+        "rank_change_old_minus_official": 1
+      },
+      {
+        "entity_id": 1,
+        "name": "博麗 霊夢",
+        "official_rank": 3,
+        "published_points_3_2_1": 27408,
+        "primary_count_3pt": 3618,
+        "secondary_count_2pt": 3430,
+        "other_count_1pt": 9694,
+        "counterfactual_points_2_1": 20360,
+        "counterfactual_rank_2_1": 2,
+        "rank_change_old_minus_official": 1
+      },
+      {
+        "entity_id": 54,
+        "name": "古明地 こいし",
+        "official_rank": 1,
+        "published_points_3_2_1": 27688,
+        "primary_count_3pt": 5133,
+        "secondary_count_2pt": 2607,
+        "other_count_1pt": 7075,
+        "counterfactual_points_2_1": 19948,
+        "counterfactual_rank_2_1": 3,
+        "rank_change_old_minus_official": -2
+      },
+      {
+        "entity_id": 11,
+        "name": "フランドール・スカーレット",
+        "official_rank": 4,
+        "published_points_3_2_1": 23917,
+        "primary_count_3pt": 3726,
+        "secondary_count_2pt": 2617,
+        "other_count_1pt": 7505,
+        "counterfactual_points_2_1": 17574,
+        "counterfactual_rank_2_1": 4,
+        "rank_change_old_minus_official": 0
+      },
+      {
+        "entity_id": 9,
+        "name": "十六夜 咲夜",
+        "official_rank": 5,
+        "published_points_3_2_1": 19804,
+        "primary_count_3pt": 2518,
+        "secondary_count_2pt": 2060,
+        "other_count_1pt": 8130,
+        "counterfactual_points_2_1": 15226,
+        "counterfactual_rank_2_1": 5,
+        "rank_change_old_minus_official": 0
+      },
+      {
+        "entity_id": 10,
+        "name": "レミリア・スカーレット",
+        "official_rank": 6,
+        "published_points_3_2_1": 19638,
+        "primary_count_3pt": 2366,
+        "secondary_count_2pt": 2354,
+        "other_count_1pt": 7832,
+        "counterfactual_points_2_1": 14918,
+        "counterfactual_rank_2_1": 6,
+        "rank_change_old_minus_official": 0
+      },
+      {
+        "entity_id": 19,
+        "name": "魂魄 妖夢",
+        "official_rank": 7,
+        "published_points_3_2_1": 18435,
+        "primary_count_3pt": 2933,
+        "secondary_count_2pt": 1620,
+        "other_count_1pt": 6396,
+        "counterfactual_points_2_1": 13882,
+        "counterfactual_rank_2_1": 7,
+        "rank_change_old_minus_official": 0
+      },
+      {
+        "entity_id": 51,
+        "name": "古明地 さとり",
+        "official_rank": 8,
+        "published_points_3_2_1": 13504,
+        "primary_count_3pt": 1399,
+        "secondary_count_2pt": 1774,
+        "other_count_1pt": 5759,
+        "counterfactual_points_2_1": 10331,
+        "counterfactual_rank_2_1": 8,
+        "rank_change_old_minus_official": 0
+      },
+      {
+        "entity_id": 5,
+        "name": "チルノ",
+        "official_rank": 10,
+        "published_points_3_2_1": 12447,
+        "primary_count_3pt": 1575,
+        "secondary_count_2pt": 1164,
+        "other_count_1pt": 5394,
+        "counterfactual_points_2_1": 9708,
+        "counterfactual_rank_2_1": 9,
+        "rank_change_old_minus_official": 1
+      },
+      {
+        "entity_id": 30,
+        "name": "藤原 妹紅",
+        "official_rank": 9,
+        "published_points_3_2_1": 12665,
+        "primary_count_3pt": 1755,
+        "secondary_count_2pt": 1284,
+        "other_count_1pt": 4832,
+        "counterfactual_points_2_1": 9626,
+        "counterfactual_rank_2_1": 10,
+        "rank_change_old_minus_official": -1
+      }
+    ]
+  },
+  "questionnaire": {
+    "round": 21,
+    "age": {
+      "respondent_n": 15236,
+      "under20_count": 8887,
+      "under20_share_pct": 58.329
+    },
+    "discovery_trigger": {
+      "respondent_n": 15208,
+      "youtube_count": 6356,
+      "youtube_share_pct": 41.7938
+    },
+    "poll_history": {
+      "respondent_n": 15771,
+      "first_time_count": 5987,
+      "first_time_share_pct": 37.9621
+    },
+    "top3_entity_questionnaire": [
+      {
+        "official_rank": 1,
+        "name": "古明地 こいし",
+        "age_respondent_n": 3389,
+        "under20_count": 2320,
+        "under20_share_pct": 68.4568,
+        "first_time_poll_share_pct": 43.1273
+      },
+      {
+        "official_rank": 2,
+        "name": "霧雨 魔理沙",
+        "age_respondent_n": 4270,
+        "under20_count": 2782,
+        "under20_share_pct": 65.1522,
+        "first_time_poll_share_pct": 44.8377
+      },
+      {
+        "official_rank": 3,
+        "name": "博麗 霊夢",
+        "age_respondent_n": 4031,
+        "under20_count": 2399,
+        "under20_share_pct": 59.5138,
+        "first_time_poll_share_pct": 42.4608
+      }
+    ],
+    "caution": "All questionnaire figures describe voluntary respondents. Entity-level questionnaires have their own denominators and do not identify a causal effect of social-media exposure."
+  },
+  "feedback_theme_mentions": [
+    {
+      "theme": "scoring_or_primary_secondary_pick",
+      "matching_feedback_count": 19,
+      "all_feedback_count": 4229,
+      "matching_feedback_share_pct": 0.4493,
+      "interpretation_limit": "Substring-coded mentions in self-selected open text; not an estimate of support, opposition, or population opinion share."
+    },
+    {
+      "theme": "number_of_vote_slots",
+      "matching_feedback_count": 41,
+      "all_feedback_count": 4229,
+      "matching_feedback_share_pct": 0.9695,
+      "interpretation_limit": "Substring-coded mentions in self-selected open text; not an estimate of support, opposition, or population opinion share."
+    },
+    {
+      "theme": "fraud_or_verification",
+      "matching_feedback_count": 4,
+      "all_feedback_count": 4229,
+      "matching_feedback_share_pct": 0.0946,
+      "interpretation_limit": "Substring-coded mentions in self-selected open text; not an estimate of support, opposition, or population opinion share."
+    },
+    {
+      "theme": "social_media_or_post_result_discussion",
+      "matching_feedback_count": 28,
+      "all_feedback_count": 4229,
+      "matching_feedback_share_pct": 0.6621,
+      "interpretation_limit": "Substring-coded mentions in self-selected open text; not an estimate of support, opposition, or population opinion share."
+    }
+  ]
+}

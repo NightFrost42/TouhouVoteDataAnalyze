@@ -1,0 +1,10 @@
+query QuestionnairePairCell(
+  $query: String!
+  $voteStart: DateTimeUtc!
+  $voteYear: Int!
+) {
+  queryGlobalStats(query: $query, voteStart: $voteStart, voteYear: $voteYear) {
+    voteYear
+    numVote
+  }
+}

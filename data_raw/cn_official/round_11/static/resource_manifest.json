@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "round": 11,
+  "createdAt": "2026-08-15T18:39:52Z",
+  "scope": "official HTML, CSS, hashed JavaScript, and available source maps; images/fonts excluded",
+  "resources": [
+    {
+      "url": "https://touhou.vote/v11/",
+      "localPath": "data_raw/cn_official/round_11/static/index.html",
+      "status": "resumed",
+      "bytes": 516,
+      "sha256": "db5a1024b9f5ed9e046410c03ef1c981cc1c697ba5d901c5288a87086d642548"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/index-b8ee4048.css",
+      "localPath": "data_raw/cn_official/round_11/static/assets/index-b8ee4048.css",
+      "status": "resumed",
+      "bytes": 34208,
+      "sha256": "38da43c108c784706176a8f4a68337f7c1ef24c70143ffa1ba2aba62b9b9c791"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/index-c1d6c5d6.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/index-c1d6c5d6.js",
+      "status": "resumed",
+      "bytes": 325160,
+      "sha256": "cbbecf42d4d9d1cf238f3b1cfbf77b46df63e1f3627b755de246ddfc65319aa1"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/AdvancedSearch.vue_vue_type_script_setup_true_lang-5a7fd4f0.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/AdvancedSearch.vue_vue_type_script_setup_true_lang-5a7fd4f0.js",
+      "status": "resumed",
+      "bytes": 16147,
+      "sha256": "3fba849f59ebc76cdc966cbfe6d7db52bbc53aed5bc8fa6d4c4ad969dd02d3ef"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/CharacterReason-3a5c8577.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/CharacterReason-3a5c8577.js",
+      "status": "resumed",
+      "bytes": 3680,
+      "sha256": "4c487f00ac388d3f3a9addd1b9dfe8c6a655cefb9f705d4f653e33c90e17253e"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Couple-af1abe21.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Couple-af1abe21.js",
+      "status": "resumed",
+      "bytes": 2924,
+      "sha256": "299f73f585c7040339796009e0cd18f209d0cf9d902ef9d30881f0e880440af8"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/CoupleDetail-fbcdfb55.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/CoupleDetail-fbcdfb55.js",
+      "status": "resumed",
+      "bytes": 12282,
+      "sha256": "3ba96b2f19c3904d772b603cdce29a62baf4fbed8e398d5438e27a31674c181c"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/CoupleReason-59592b6a.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/CoupleReason-59592b6a.js",
+      "status": "resumed",
+      "bytes": 6415,
+      "sha256": "82efd44a81f25cf72170cfcdbb24573f2afc6dd818908783545cf4d176ac4aa9"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/CoupleSingleDetail-23e5fe25.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/CoupleSingleDetail-23e5fe25.js",
+      "status": "resumed",
+      "bytes": 7783,
+      "sha256": "8d25123c1a6893ecd2543fe93b8533afd803d2e4fdd449fac8387a1429f3b2fc"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Doujin-f64f63b8.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Doujin-f64f63b8.js",
+      "status": "resumed",
+      "bytes": 32064,
+      "sha256": "46ca2b5daab2a6f977c0a7df2dc4a042899b71debeb3e0126f707f115375947c"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Graph-4e483fd9.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Graph-4e483fd9.js",
+      "status": "resumed",
+      "bytes": 583781,
+      "sha256": "79e7f257e50b8f2d086fc2baf355c00c29df8b227f6d661636399201d84fddb3"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Music-706c2c9c.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Music-706c2c9c.js",
+      "status": "resumed",
+      "bytes": 3172,
+      "sha256": "3b0b4552b5142d0d5b571507b9fac6ff22741700312a78425879891654087792"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicCompare-538f63cc.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicCompare-538f63cc.js",
+      "status": "resumed",
+      "bytes": 12183,
+      "sha256": "c2a11870b65926005eb72e94b863ee6297802058e18df1916247b075f06a165c"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicConnect-8f9d5fef.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicConnect-8f9d5fef.js",
+      "status": "resumed",
+      "bytes": 275,
+      "sha256": "20f5720a8658b71c53ae1afb07f84316a5394656c56782a84344c8e9d2702bda"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicDetail-50ca87bf.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicDetail-50ca87bf.js",
+      "status": "resumed",
+      "bytes": 11678,
+      "sha256": "96d039ae4eff776923d0fbd9332e811eb7033df94dc56b199f0d8da0c074a5a7"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicEvolution-5ca45e38.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicEvolution-5ca45e38.js",
+      "status": "resumed",
+      "bytes": 6330,
+      "sha256": "7dd4a3a8c8e3ec94886033619b018a9c0f3e5470809b54aeb736c0929eebdda8"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicReason-3056d23c.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicReason-3056d23c.js",
+      "status": "resumed",
+      "bytes": 3499,
+      "sha256": "52962d8ebfd24e2f426c8a606acea268425908aaaf011bbc7ab73f8a0684ce99"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicSingleDetail-6401f043.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicSingleDetail-6401f043.js",
+      "status": "resumed",
+      "bytes": 4770,
+      "sha256": "e0f5a1cfa60f265a2fe4537a53f40b3ec9be3741f21ea586c4edf257a8555949"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Questionnaire-c74696dd.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Questionnaire-c74696dd.js",
+      "status": "resumed",
+      "bytes": 1478,
+      "sha256": "aba6d2fd6ed2af078065b86ec772eb57f3028a28c77557b7e667c7f3dacb75fb"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Questionnaire.vue_vue_type_script_setup_true_lang-49f6f247.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Questionnaire.vue_vue_type_script_setup_true_lang-49f6f247.js",
+      "status": "resumed",
+      "bytes": 728236,
+      "sha256": "609cbf7139b62cb716b52628945a49a83f964057f5fb34df646ea36d6dc13866"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/QuestionnaireDetail-3e0c9466.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/QuestionnaireDetail-3e0c9466.js",
+      "status": "resumed",
+      "bytes": 5215,
+      "sha256": "8e5c2696801bd499b3d3158437cd0f85f41bdd858d955252671743766c4f4b67"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/QuestionnaireInputDetail-3f819ef5.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/QuestionnaireInputDetail-3f819ef5.js",
+      "status": "resumed",
+      "bytes": 3299,
+      "sha256": "f514ec55ba957ee1394fe85ef24eae90554b845feb7a69a49d48413e543e2dcc"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Test-facb6d42.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Test-facb6d42.js",
+      "status": "resumed",
+      "bytes": 456,
+      "sha256": "21a092b96bf621c6274dbfeb919c0c49fd426b1e1273b8d006dabe72a122c6f6"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/VoteSelect.vue_vue_type_script_setup_true_lang-851b5569.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/VoteSelect.vue_vue_type_script_setup_true_lang-851b5569.js",
+      "status": "resumed",
+      "bytes": 1681,
+      "sha256": "504d0984d74dc30894138a5c3589950316a6f5f0113a33da132719c069537847"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/_...all_-530e4070.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/_...all_-530e4070.js",
+      "status": "resumed",
+      "bytes": 214,
+      "sha256": "bbbd420d3135512942ac6f503f1540f50a57f9965c8c00a88d024401f35a9464"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/blank-1400e0b4.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/blank-1400e0b4.js",
+      "status": "resumed",
+      "bytes": 221,
+      "sha256": "ebedf25ee73ab2fc90ef3cefcc6c49bf380a66fac76d59e56ae3c81954ca4781"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/character-1c00da53.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/character-1c00da53.js",
+      "status": "resumed",
+      "bytes": 3221,
+      "sha256": "305726883c47b2989d18975868643cfa700cc2f8135fadf278b392b0cb4af222"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/character-85fa06ec.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/character-85fa06ec.js",
+      "status": "resumed",
+      "bytes": 82776,
+      "sha256": "335e72742f57e9c8387712d51d34aee1d278d92b07b7af1faaa53ee2946c8a88"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterCompare-4096e5d7.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterCompare-4096e5d7.js",
+      "status": "resumed",
+      "bytes": 12382,
+      "sha256": "b1c3dd389d004d2c5bae8e887e414ab91b33c7b9f27fa5fa5bd05469b57d7a98"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterConnect-946e2dca.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterConnect-946e2dca.js",
+      "status": "resumed",
+      "bytes": 283,
+      "sha256": "e9db649abd219c2a21288589184e066bb59c2eafbc8975ef1a5ed459d956d1a7"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterDetail-7a3887a9.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterDetail-7a3887a9.js",
+      "status": "resumed",
+      "bytes": 11866,
+      "sha256": "b9cc8c9052d8627d997ea816b5546daf71e325ba2a91e05e161cdc10b7f38c71"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterEvolution-d6e86d45.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterEvolution-d6e86d45.js",
+      "status": "resumed",
+      "bytes": 6376,
+      "sha256": "e7481071f6b1818ae31aaaa514fee763dfd982f2a2468ad2f5d8884b61b0ec34"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterSingleDetail-d4f45fd7.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterSingleDetail-d4f45fd7.js",
+      "status": "resumed",
+      "bytes": 4962,
+      "sha256": "47149590333c9d74fe08032c687e64829b23eea5e444bee2a22e69cc1d186da0"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/decodeAdditionalConstraint-7c1b9997.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/decodeAdditionalConstraint-7c1b9997.js",
+      "status": "resumed",
+      "bytes": 744,
+      "sha256": "fbcaa7d822270c298c0479363156e51260e799e75db0f0df6eece1cce0022eb7"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/defaultCharacterImage-0a8ceaa4.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/defaultCharacterImage-0a8ceaa4.js",
+      "status": "resumed",
+      "bytes": 132,
+      "sha256": "1de692174afde4149eba9b9d08b8d3aed35ad42e7c10454f06ffb28ffbf05d40"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/lz-string-35001fa0.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/lz-string-35001fa0.js",
+      "status": "resumed",
+      "bytes": 4827,
+      "sha256": "e2c569965775bd095e25521c3f993889c195ac71390f564fa1f547ea750fcb39"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/music-ed4ffed9.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/music-ed4ffed9.js",
+      "status": "resumed",
+      "bytes": 228436,
+      "sha256": "08cd55bd4a9657203acdf78d8275ecf2b797d68bd89d92f89fd98c366323e1a3"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/numberFormat-0203f5e2.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/numberFormat-0203f5e2.js",
+      "status": "resumed",
+      "bytes": 199,
+      "sha256": "e871ecb66479efa44177962a70514ba424452259202eac761ae831953e7c5b08"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/questionnaire-b69f5aad.js",
+      "localPath": "data_raw/cn_official/round_11/static/assets/questionnaire-b69f5aad.js",
+      "status": "resumed",
+      "bytes": 45450,
+      "sha256": "15cb1f13448d51035370d730ade396b84931ee100023e60526caf6184ca9d581"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/AdvancedSearch.vue_vue_type_script_setup_true_lang-5a7fd4f0.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/AdvancedSearch.vue_vue_type_script_setup_true_lang-5a7fd4f0.js.map",
+      "status": "resumed",
+      "bytes": 39710,
+      "sha256": "a0e25ed29742613a0136946cb1212f049972d2ec23ead246cbbe0e262b0a6fa3"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/CharacterReason-3a5c8577.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/CharacterReason-3a5c8577.js.map",
+      "status": "resumed",
+      "bytes": 9014,
+      "sha256": "a05e9f35fb686a7fed116184eb477ac4547b83d79fcea8eddac75f325fa2dbdb"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Couple-af1abe21.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Couple-af1abe21.js.map",
+      "status": "resumed",
+      "bytes": 6028,
+      "sha256": "ffc74e4bc30e7cc84fc46f1017a40f77d409df31a0e70893463cdd9f0187cc44"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/CoupleDetail-fbcdfb55.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/CoupleDetail-fbcdfb55.js.map",
+      "status": "resumed",
+      "bytes": 32744,
+      "sha256": "5a67c1a9ba9e2e3b63bbffedb0ee4d343582793ac1e6b26836ad2d06beb8ff9a"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/CoupleReason-59592b6a.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/CoupleReason-59592b6a.js.map",
+      "status": "resumed",
+      "bytes": 15987,
+      "sha256": "08be58cb6eecf5e0d2fdbc5f657fbb0d6bf8894a5d6b9d204f015a709cc60460"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/CoupleSingleDetail-23e5fe25.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/CoupleSingleDetail-23e5fe25.js.map",
+      "status": "resumed",
+      "bytes": 18807,
+      "sha256": "d35ba489f7810369905cbd75cffd6a1c8940971ac0b1868f2f2be8a0be1d5e84"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Doujin-f64f63b8.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Doujin-f64f63b8.js.map",
+      "status": "resumed",
+      "bytes": 39126,
+      "sha256": "e0591711537dca0cda5e2eedf728898230188e76b3beab9060a6ecd39b8f2a98"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Graph-4e483fd9.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Graph-4e483fd9.js.map",
+      "status": "resumed",
+      "bytes": 3268605,
+      "sha256": "5f412d1a75381ed0a7dcef3227b32a266bff4d38295bff4c88d63e7584ff4a97"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Music-706c2c9c.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Music-706c2c9c.js.map",
+      "status": "resumed",
+      "bytes": 6582,
+      "sha256": "be28be0f94fbeb9c942aadde8b33e46adf5c974be68653ceefa1172c4a6e48d1"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicCompare-538f63cc.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicCompare-538f63cc.js.map",
+      "status": "resumed",
+      "bytes": 32910,
+      "sha256": "29035ff8093ef10c12e31bfa86a630238449de5079c2a6e6f68c67806a9fe412"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicConnect-8f9d5fef.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicConnect-8f9d5fef.js.map",
+      "status": "resumed",
+      "bytes": 393,
+      "sha256": "d41be9de5eeda1ccf755f9e8715be4f6f369d281d83f22fccbe434f9c5d58e07"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicDetail-50ca87bf.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicDetail-50ca87bf.js.map",
+      "status": "resumed",
+      "bytes": 31074,
+      "sha256": "cb3a26e121258a7fdbd33143882634fdd938630b8782f2e7c9ce717e691e0ce4"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicEvolution-5ca45e38.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicEvolution-5ca45e38.js.map",
+      "status": "resumed",
+      "bytes": 16505,
+      "sha256": "8899d7964dd83b1e5d0caf0325247f22dbc74881c861b44b0db4302cfb252983"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicReason-3056d23c.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicReason-3056d23c.js.map",
+      "status": "resumed",
+      "bytes": 8559,
+      "sha256": "b175f8b15cd867b515bf062051a490d4fc13dd15fc59ee89439f219a9ee577c8"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/MusicSingleDetail-6401f043.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/MusicSingleDetail-6401f043.js.map",
+      "status": "resumed",
+      "bytes": 11181,
+      "sha256": "253e6dabad6d6ff6bd5194b3c375c2764fad69ea470fc800fbd0d6eee70982a6"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Questionnaire-c74696dd.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Questionnaire-c74696dd.js.map",
+      "status": "resumed",
+      "bytes": 5560,
+      "sha256": "e7c1f94469d7c66f71e566c3c4ef54c10649297c7def79ba88f56a84e3c583d4"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Questionnaire.vue_vue_type_script_setup_true_lang-49f6f247.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Questionnaire.vue_vue_type_script_setup_true_lang-49f6f247.js.map",
+      "status": "resumed",
+      "bytes": 2428483,
+      "sha256": "7635ad82df335a902a72ecb80c1a101d168dc7effff3db92b253150114ccae33"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/QuestionnaireDetail-3e0c9466.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/QuestionnaireDetail-3e0c9466.js.map",
+      "status": "resumed",
+      "bytes": 11758,
+      "sha256": "9c8a84f72a93ebafa489fbbbc3743f5a547560ac2506d39153016cf54406d8e1"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/QuestionnaireInputDetail-3f819ef5.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/QuestionnaireInputDetail-3f819ef5.js.map",
+      "status": "resumed",
+      "bytes": 7380,
+      "sha256": "ec97a6c55f69df462b3807b445a33219186207e3c4b52c4ac708334070ec590f"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/Test-facb6d42.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/Test-facb6d42.js.map",
+      "status": "resumed",
+      "bytes": 1265,
+      "sha256": "de916b75ef7d6187a7111982b8c2ecc458c75cd74aef4aaf316ae95b8b1a4ed4"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/VoteSelect.vue_vue_type_script_setup_true_lang-851b5569.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/VoteSelect.vue_vue_type_script_setup_true_lang-851b5569.js.map",
+      "status": "resumed",
+      "bytes": 4145,
+      "sha256": "8bca4734b1ab9b6adced18bb18c4c210d9f659089699b710ee94fcb5300afafc"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/_...all_-530e4070.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/_...all_-530e4070.js.map",
+      "status": "resumed",
+      "bytes": 248,
+      "sha256": "067fc5b8a9bcb91e07f9d02e14d6807e050a1dc669290438fe7e6333b244a0f2"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/blank-1400e0b4.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/blank-1400e0b4.js.map",
+      "status": "resumed",
+      "bytes": 98,
+      "sha256": "8bffeecdac3ed5c48577876b8476ae9098b8ed4bd5ae1b6c14ad89961a548c60"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/character-1c00da53.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/character-1c00da53.js.map",
+      "status": "resumed",
+      "bytes": 6684,
+      "sha256": "81cad8dec844e9ba8be527d18726dadc79bd262d44fc999a0e1ea2f5affdd694"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/character-85fa06ec.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/character-85fa06ec.js.map",
+      "status": "resumed",
+      "bytes": 160519,
+      "sha256": "51232049d66eb65dd849d602e5fb5b55d74792f9ad8a06dd64b30d0eb6143d81"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterCompare-4096e5d7.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterCompare-4096e5d7.js.map",
+      "status": "resumed",
+      "bytes": 33365,
+      "sha256": "e23e1a062f218b81523f4856102c6817315921a52e8698cae310ec33fcac4e4d"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterConnect-946e2dca.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterConnect-946e2dca.js.map",
+      "status": "resumed",
+      "bytes": 405,
+      "sha256": "b0f14b4d75003879d88560ccf2f7ef70b9048a09e6cf04d58c20d42bc14458b1"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterDetail-7a3887a9.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterDetail-7a3887a9.js.map",
+      "status": "resumed",
+      "bytes": 31508,
+      "sha256": "72ec1067b17715f6a20fd48f1fc97b4bc02d286d10a9be909f4b19a40d9d7894"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterEvolution-d6e86d45.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterEvolution-d6e86d45.js.map",
+      "status": "resumed",
+      "bytes": 16992,
+      "sha256": "11cf1abef0e37a8e945095aa2fee6799696509ffae770b1dffff679e2f8f8a66"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/characterSingleDetail-d4f45fd7.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/characterSingleDetail-d4f45fd7.js.map",
+      "status": "resumed",
+      "bytes": 11663,
+      "sha256": "913e5386e984bc9f772705f4c3cd4b3407ade864e1412e8f32b7db25042daa64"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/decodeAdditionalConstraint-7c1b9997.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/decodeAdditionalConstraint-7c1b9997.js.map",
+      "status": "resumed",
+      "bytes": 2557,
+      "sha256": "9e4ee45433553719516a35bef89530dd943771545780141906ac3ff23d039e5c"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/defaultCharacterImage-0a8ceaa4.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/defaultCharacterImage-0a8ceaa4.js.map",
+      "status": "resumed",
+      "bytes": 242,
+      "sha256": "341ca6d6bb8c3de2cd96b3a62258c7a0e8398b87e958428ee96e7c86026e232d"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/index-c1d6c5d6.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/index-c1d6c5d6.js.map",
+      "status": "resumed",
+      "bytes": 2183734,
+      "sha256": "cd8c29d229adb07f2fd7f6010a750c85c3843d1ef5dc2e57499a0812b21f0668"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/lz-string-35001fa0.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/lz-string-35001fa0.js.map",
+      "status": "resumed",
+      "bytes": 25474,
+      "sha256": "47569f1ea0cf7060f142c9de4e9944aaf99d6ea3546d0e9d9f3211e9b445fb0d"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/music-ed4ffed9.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/music-ed4ffed9.js.map",
+      "status": "resumed",
+      "bytes": 395639,
+      "sha256": "bb8eaa4afe3030fabf26c547c633e2fde9231b4b4494758929e13797d290541c"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/numberFormat-0203f5e2.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/numberFormat-0203f5e2.js.map",
+      "status": "resumed",
+      "bytes": 700,
+      "sha256": "c8bf557102ea4b77de0b32a25d3fe983e15cf3a267b883401edfa5720f48c144"
+    },
+    {
+      "url": "https://touhou.vote/v11/assets/questionnaire-b69f5aad.js.map",
+      "localPath": "data_raw/cn_official/round_11/static/assets/questionnaire-b69f5aad.js.map",
+      "status": "resumed",
+      "bytes": 117777,
+      "sha256": "134ca51d6e40d94c17d907b1c58ad895d3e5f48d7290a3979755b233d8d1360e"
+    }
+  ]
+}

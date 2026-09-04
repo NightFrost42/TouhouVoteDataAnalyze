@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "round": 11,
+  "sourceSite": "https://touhou.vote/v11/",
+  "families": [
+    {
+      "id": "questionnaire_answer",
+      "conditionCount": 406,
+      "eligibleConditionCount": 403,
+      "excludedConditionCount": 3,
+      "questionTypes": [
+        "Single",
+        "Multiple"
+      ],
+      "excludedQuestionTypes": [
+        "Input",
+        "open_text"
+      ],
+      "queryForm": "q<questionId>=<answerId>",
+      "combination": "singleton; AND may combine multiple answers"
+    },
+    {
+      "id": "entity_vote",
+      "conditionCount": 1387,
+      "sourceCategories": [
+        "character",
+        "music"
+      ],
+      "conditionKinds": [
+        "any",
+        "first"
+      ],
+      "queryForms": [
+        "chars: [<name>]",
+        "chars_first=<name>",
+        "musics: [<name>]",
+        "musics_first=<name>"
+      ],
+      "combination": "singleton; Boolean products are on-demand"
+    },
+    {
+      "id": "questionnaire_pair",
+      "conditionCount": 2628,
+      "eligibleConditionCount": 2628,
+      "answerCellCount": 79239,
+      "queryForm": "qA=a AND qB=b",
+      "combination": "unordered question pair with all answer cross-cells",
+      "status": "available_crawled",
+      "availableConditionCount": 2628,
+      "availableAnswerCellCount": 79239,
+      "reason": "modern GraphQL archive has no official all-answer questionnaire cross-tab operation; parity is restored by the resumable explicit Boolean answer-cell crawl"
+    }
+  ],
+  "booleanQueryLanguage": {
+    "operators": [
+      "AND",
+      "OR"
+    ],
+    "grouping": [
+      "(",
+      ")"
+    ],
+    "enumerated": false,
+    "reason": "the official DSL permits an unbounded product of atomic clauses"
+  },
+  "legacyParityComplete": true,
+  "legacyParityReason": "modern GraphQL archive has no official all-answer questionnaire cross-tab operation; parity is restored by the resumable explicit Boolean answer-cell crawl"
+}

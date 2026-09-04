@@ -1,0 +1,21 @@
+{
+  "round": 10,
+  "officialEndpoint": "https://touhou.vote/res-be/graphql",
+  "interpretation": "The public all-pairs operation was offered but its current upstream response could not be decoded. This is a fetch failure, not evidence that the component was not officially offered.",
+  "categories": {
+    "character": {
+      "recordedAt": "2026-08-15T18:58:09Z",
+      "fullOperation": "CharacterCovote",
+      "fullError": "RuntimeError: CharacterCovote: [{\"message\": \"Error\", \"locations\": [{\"line\": 7, \"column\": 3}], \"path\": [\"queryCharsCovote\"], \"extensions\": {\"service\": \"gateway\", \"url\": \"http://result-query/v1/chars-covote/\", \"error_kind\": \"JSON_DECODE_ERROR\", \"error_message\": \"reqwest::Error { kind: Decode, source: Error(\\\"invalid type: null, expected f64\\\", line: 1, column: 3554685) }\", \"human_readable_message\": null, \"upstream_response_string\": null}}]",
+      "countOnlyOperation": "CharacterCovoteCounts",
+      "countOnlyError": "RuntimeError: CharacterCovoteCounts: [{\"message\": \"Error\", \"locations\": [{\"line\": 7, \"column\": 3}], \"path\": [\"queryCharsCovote\"], \"extensions\": {\"service\": \"gateway\", \"url\": \"http://result-query/v1/chars-covote/\", \"error_kind\": \"JSON_DECODE_ERROR\", \"error_message\": \"reqwest::Error { kind: Decode, source: Error(\\\"invalid type: null, expected f64\\\", line: 1, column: 3554685) }\", \"human_readable_message\": null, \"upstream_response_string\": null}}]"
+    },
+    "music": {
+      "recordedAt": "2026-08-15T18:58:33Z",
+      "fullOperation": "MusicCovote",
+      "fullError": "RuntimeError: MusicCovote: [{\"message\": \"Error\", \"locations\": [{\"line\": 7, \"column\": 3}], \"path\": [\"queryMusicsCovote\"], \"extensions\": {\"service\": \"result-query\", \"url\": null, \"error_kind\": \"INTERNAL_SERVER_ERROR\", \"error_message\": \"Error { kind: InvalidArgument { message: \\\"document exceeds maxBsonObjectSize\\\" }, labels: {}, wire_version: Some(13), source: None }\", \"human_readable_message\": null, \"upstream_response_string\": null}}]",
+      "countOnlyOperation": "MusicCovoteCounts",
+      "countOnlyError": "RuntimeError: MusicCovoteCounts: [{\"message\": \"Error\", \"locations\": [{\"line\": 7, \"column\": 3}], \"path\": [\"queryMusicsCovote\"], \"extensions\": {\"service\": \"result-query\", \"url\": null, \"error_kind\": \"INTERNAL_SERVER_ERROR\", \"error_message\": \"Error { kind: InvalidArgument { message: \\\"document exceeds maxBsonObjectSize\\\" }, labels: {}, wire_version: Some(13), source: None }\", \"human_readable_message\": null, \"upstream_response_string\": null}}]"
+    }
+  }
+}

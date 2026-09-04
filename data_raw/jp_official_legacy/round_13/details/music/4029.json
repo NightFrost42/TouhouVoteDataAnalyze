@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/4029.php",
+    "effective_url": "https://toho-vote.info/result13/music/4029.php",
+    "retrieved_at": "2026-08-15T09:56:18+00:00",
+    "http_status": 200,
+    "bytes": 3893,
+    "sha256": "8d47ab11a4762c91583d1f4ad214f5ad5cef9b5ad218ce95d259794093686c6e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4029",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：科学世紀の少年少女 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "科学世紀の少年少女（298位）",
+      "numbers": [
+        {
+          "raw": "298位",
+          "value": 298,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：59点 ｜ 得票数：52票 ｜ 一押し数：7票 ｜ コメント数：4件 継続投票率：40.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "59点",
+          "value": 59,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "52票",
+          "value": 52,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4件",
+          "value": 4,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "40.0%",
+          "value": 40.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

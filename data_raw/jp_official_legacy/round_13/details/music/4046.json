@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/4046.php",
+    "effective_url": "https://toho-vote.info/result13/music/4046.php",
+    "retrieved_at": "2026-08-15T09:56:19+00:00",
+    "http_status": 200,
+    "bytes": 6338,
+    "sha256": "c917370e32201998561d49a602a18a82e2d9b124d42e3a81a9b34c261f4f3341",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4046",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：最も澄みわたる空と海 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "最も澄みわたる空と海（228位）",
+      "numbers": [
+        {
+          "raw": "228位",
+          "value": 228,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：144点 ｜ 得票数：134票 ｜ 一押し数：10票 ｜ コメント数：26件 継続投票率：56.2%（16名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "144点",
+          "value": 144,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "134票",
+          "value": 134,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "10票",
+          "value": 10,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "26件",
+          "value": 26,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "56.2%",
+          "value": 56.2,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "16名",
+          "value": 16,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

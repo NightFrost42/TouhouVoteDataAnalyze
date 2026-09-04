@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/6005.php",
+    "effective_url": "https://toho-vote.info/result13/music/6005.php",
+    "retrieved_at": "2026-08-15T09:56:25+00:00",
+    "http_status": 200,
+    "bytes": 3637,
+    "sha256": "cf40a7369a957ab5aab1d44c3e8c0aa352028f81f1644ad0d3efbbb884d0264a",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "6005",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Inventive City - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Inventive City（439位）",
+      "numbers": [
+        {
+          "raw": "439位",
+          "value": 439,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：6点 ｜ 得票数：6票 ｜ 一押し数：0票 ｜ コメント数：3件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "6点",
+          "value": 6,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3件",
+          "value": 3,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

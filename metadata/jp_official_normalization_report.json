@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "normalizer": {
+    "path": "scripts_pipeline/normalize_jp_official.py",
+    "sha256": "111d2b4f239c03a8efa28e437e1da4790091fbc582b458a11edea1df10d710c5"
+  },
+  "input_root": "data_raw/jp_official",
+  "output_root": "data_processed/jp_official",
+  "available_rounds": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "manifest_rounds": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "manifest_detail_rounds": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "expected_detail_file_counts": {
+    "17:character": 206,
+    "17:music": 567,
+    "17:work": 54,
+    "18:character": 208,
+    "18:music": 579,
+    "18:work": 57,
+    "19:character": 216,
+    "19:music": 595,
+    "19:work": 58,
+    "20:character": 217,
+    "20:music": 599,
+    "20:work": 59,
+    "21:character": 221,
+    "21:music": 607,
+    "21:work": 61,
+    "22:character": 225,
+    "22:music": 623,
+    "22:work": 62
+  },
+  "detail_file_counts": {
+    "17:character": 206,
+    "17:music": 567,
+    "17:work": 54,
+    "18:character": 208,
+    "18:music": 579,
+    "18:work": 57,
+    "19:character": 216,
+    "19:music": 595,
+    "19:work": 58,
+    "20:character": 217,
+    "20:music": 599,
+    "20:work": 59,
+    "21:character": 221,
+    "21:music": 607,
+    "21:work": 61,
+    "22:character": 225,
+    "22:music": 623,
+    "22:work": 62
+  },
+  "row_counts": {
+    "rankings.csv": 5214,
+    "ballot_counts.csv": 18,
+    "questionnaire_long.csv": 1734,
+    "questionnaire_feedback_counts.csv": 4,
+    "detail_items.csv": 5214,
+    "detail_questionnaire_long.csv": 227482,
+    "detail_associations.csv": 233976,
+    "detail_breakdowns.csv": 1953
+  },
+  "outputs": [
+    {
+      "path": "data_processed/jp_official/rankings.csv",
+      "bytes": 320603,
+      "sha256": "fbccf66a10f7a6b88a56fc9313ce92636dd28623f9205ebe49e031f7d1a1446f",
+      "rows": 5214
+    },
+    {
+      "path": "data_processed/jp_official/ballot_counts.csv",
+      "bytes": 333,
+      "sha256": "ad1b70cef24502c0cf49d750d7f79e42554746bb5ed1012117d46e5f65381f5b",
+      "rows": 18
+    },
+    {
+      "path": "data_processed/jp_official/questionnaire_long.csv",
+      "bytes": 167750,
+      "sha256": "34c2aceeb2c100df4a73041b401093cc2f2bb01798fc171bc330ac37ab2d25d9",
+      "rows": 1734
+    },
+    {
+      "path": "data_processed/jp_official/questionnaire_feedback_counts.csv",
+      "bytes": 110,
+      "sha256": "7a92e7209164045c811f6b86ac0c619e537151e23ddc43c24293dbfe06749c1a",
+      "rows": 4
+    },
+    {
+      "path": "data_processed/jp_official/detail_items.csv",
+      "bytes": 440982,
+      "sha256": "cf118ca2647d819a7d7ead226e1ae263d07a20d0aafb4ccff02ad0e5915c3493",
+      "rows": 5214
+    },
+    {
+      "path": "data_processed/jp_official/detail_questionnaire_long.csv",
+      "bytes": 46242659,
+      "sha256": "3868659b9bae9b895d94276de50775dcc405e4ea3992a1b1642d51ec343ce1fc",
+      "rows": 227482
+    },
+    {
+      "path": "data_processed/jp_official/detail_associations.csv",
+      "bytes": 91272297,
+      "sha256": "302824b19844c8bac25da94a5896ed2a729ec0d9e3a836125d89fd71f2f40956",
+      "rows": 233976
+    },
+    {
+      "path": "data_processed/jp_official/detail_breakdowns.csv",
+      "bytes": 207040,
+      "sha256": "c27f795c821bcf802573f12ca7c231833e70171380361905f435c40d990d6025",
+      "rows": 1953
+    }
+  ],
+  "validations": {
+    "all_manifest_outputs_present": true,
+    "all_manifest_source_hashes_match": true,
+    "all_requested_detail_counts_match_manifest": true,
+    "all_rates_finite": true,
+    "no_invalid_intersection_overall_denominator_field": true,
+    "published_association_baselines_retained_without_overwrite": true
+  },
+  "association_scope_diagnostics": {
+    "rows": 233976,
+    "rows_matching_current_aggregate_ballot_snapshot": 196873,
+    "rows_with_detail_vs_current_aggregate_snapshot_difference": 37103,
+    "rows_where_points_minus_primary_is_not_the_published_baseline": 117804
+  }
+}

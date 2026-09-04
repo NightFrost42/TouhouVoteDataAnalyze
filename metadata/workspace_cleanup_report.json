@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-19T04:00:14.707513+08:00",
+  "mode": "executed",
+  "queue_verified_stopped": true,
+  "archive_actions": [
+    {
+      "source": "CharacterTagAnalyze-clusters.py",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-clusters.py",
+      "files": 1,
+      "bytes": 4373,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "CharacterTagAnalyze-freq.py",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-freq.py",
+      "files": 1,
+      "bytes": 3571,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "CharacterTagAnalyze-LDA.py",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-LDA.py",
+      "files": 1,
+      "bytes": 4772,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "CharacterTagAnalyze-textrank.py",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-textrank.py",
+      "files": 1,
+      "bytes": 4760,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "CharacterTagAnalyze-tfidf.py",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-tfidf.py",
+      "files": 1,
+      "bytes": 4938,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "TagGetMoeWiki.py",
+      "destination": "archive_legacy/tag_analysis_v1/TagGetMoeWiki.py",
+      "files": 1,
+      "bytes": 3685,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "CharacterTagAnalyze-results-freq",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-results-freq",
+      "files": 242,
+      "bytes": 38293586,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "CharacterTagAnalyze-results-LDA",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-results-LDA",
+      "files": 34,
+      "bytes": 2477227,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "CharacterTagAnalyze-results-textrank",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-results-textrank",
+      "files": 242,
+      "bytes": 16381685,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "CharacterTagAnalyze-results-tfidf",
+      "destination": "archive_legacy/tag_analysis_v1/CharacterTagAnalyze-results-tfidf",
+      "files": 242,
+      "bytes": 41055128,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "keyword_clusters",
+      "destination": "archive_legacy/tag_analysis_v1/keyword_clusters",
+      "files": 4,
+      "bytes": 45386,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "cache",
+      "destination": "archive_legacy/tag_analysis_v1/cache",
+      "files": 122,
+      "bytes": 25484515,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "cache_data",
+      "destination": "archive_legacy/tag_analysis_v1/cache_data",
+      "files": 363,
+      "bytes": 9600390,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "stopwords.txt",
+      "destination": "archive_legacy/tag_analysis_v1/stopwords.txt",
+      "files": 1,
+      "bytes": 675,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "方正书宋简体.ttf",
+      "destination": "archive_legacy/tag_analysis_v1/方正书宋简体.ttf",
+      "files": 1,
+      "bytes": 2881696,
+      "reason": "Legacy tag/text-analysis bundle removed from the maintained numeric vote-analysis path."
+    },
+    {
+      "source": "SummarizeAllData.py",
+      "destination": "archive_legacy/monolithic_vote_json_v1/SummarizeAllData.py",
+      "files": 1,
+      "bytes": 10707,
+      "reason": "Deprecated monolithic data model; JP gender fields are known empty and supplemental official data is incomplete."
+    },
+    {
+      "source": "touhou_vote.json",
+      "destination": "archive_legacy/monolithic_vote_json_v1/touhou_vote.json",
+      "files": 1,
+      "bytes": 1913105,
+      "reason": "Deprecated monolithic data model; JP gender fields are known empty and supplemental official data is incomplete."
+    },
+    {
+      "source": "data_statistic",
+      "destination": "archive_legacy/monolithic_vote_json_v1/data_statistic",
+      "files": 6,
+      "bytes": 514444,
+      "reason": "Deprecated monolithic data model; JP gender fields are known empty and supplemental official data is incomplete."
+    },
+    {
+      "source": "TouhouVote.py",
+      "destination": "archive_legacy/vote_plotting_v1/TouhouVote.py",
+      "files": 1,
+      "bytes": 1558,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "TouhouVoteMusic.py",
+      "destination": "archive_legacy/vote_plotting_v1/TouhouVoteMusic.py",
+      "files": 1,
+      "bytes": 3386,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "top7.py",
+      "destination": "archive_legacy/vote_plotting_v1/top7.py",
+      "files": 1,
+      "bytes": 2638,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "top15.py",
+      "destination": "archive_legacy/vote_plotting_v1/top15.py",
+      "files": 1,
+      "bytes": 2845,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "top30.py",
+      "destination": "archive_legacy/vote_plotting_v1/top30.py",
+      "files": 1,
+      "bytes": 2845,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "GroupAnalyze_jp.py",
+      "destination": "archive_legacy/vote_plotting_v1/GroupAnalyze_jp.py",
+      "files": 1,
+      "bytes": 4249,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "CharacterAnalyze_cn.py",
+      "destination": "archive_legacy/vote_plotting_v1/CharacterAnalyze_cn.py",
+      "files": 1,
+      "bytes": 3135,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "difference.py",
+      "destination": "archive_legacy/vote_plotting_v1/difference.py",
+      "files": 1,
+      "bytes": 3371,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "top7_percentage.png",
+      "destination": "archive_legacy/vote_plotting_v1/top7_percentage.png",
+      "files": 1,
+      "bytes": 342658,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "group_percentages.png",
+      "destination": "archive_legacy/vote_plotting_v1/group_percentages.png",
+      "files": 1,
+      "bytes": 535530,
+      "reason": "Legacy plotting/normalization implementation superseded by the maintained reproducible pipeline."
+    },
+    {
+      "source": "readme.md",
+      "destination": "archive_legacy/root_readme_2025.md",
+      "files": 1,
+      "bytes": 1192,
+      "reason": "Historical root README describes programs now retained as legacy bundles."
+    },
+    {
+      "source": ".tmp_cn_probe_headers.txt",
+      "destination": "archive_legacy/network_diagnostics/2026-08-15-cn-probes/.tmp_cn_probe_headers.txt",
+      "files": 1,
+      "bytes": 587,
+      "reason": "Retained HTTP diagnostic without analysis value in the main workspace."
+    },
+    {
+      "source": ".tmp_cn_probe_v2_body.html",
+      "destination": "archive_legacy/network_diagnostics/2026-08-15-cn-probes/.tmp_cn_probe_v2_body.html",
+      "files": 1,
+      "bytes": 66,
+      "reason": "Retained HTTP diagnostic without analysis value in the main workspace."
+    },
+    {
+      "source": ".tmp_cn_probe_v2_headers.txt",
+      "destination": "archive_legacy/network_diagnostics/2026-08-15-cn-probes/.tmp_cn_probe_v2_headers.txt",
+      "files": 1,
+      "bytes": 298,
+      "reason": "Retained HTTP diagnostic without analysis value in the main workspace."
+    },
+    {
+      "source": ".tmp_cn_probe_v2_i1_body.html",
+      "destination": "archive_legacy/network_diagnostics/2026-08-15-cn-probes/.tmp_cn_probe_v2_i1_body.html",
+      "files": 1,
+      "bytes": 65,
+      "reason": "Retained HTTP diagnostic without analysis value in the main workspace."
+    },
+    {
+      "source": ".tmp_cn_probe_v2_i1_headers.txt",
+      "destination": "archive_legacy/network_diagnostics/2026-08-15-cn-probes/.tmp_cn_probe_v2_i1_headers.txt",
+      "files": 1,
+      "bytes": 298,
+      "reason": "Retained HTTP diagnostic without analysis value in the main workspace."
+    }
+  ],
+  "archive_files": 1281,
+  "archive_bytes": 139589364,
+  "staged_cn_probe_files": 0,
+  "staged_cn_probe_bytes": 0,
+  "deleted_duplicate_probe_files": 110,
+  "deleted_invalid_probe_files": 14,
+  "archived_diagnostic_probe_files": 5,
+  "probe_cleanup_index": "metadata/cn_probe_cleanup.csv",
+  "deleted_regenerable_cache_files": 28,
+  "deleted_regenerable_cache_bytes": 1486083,
+  "deleted_cache_paths": [
+    "scripts_pipeline/__pycache__",
+    "tests/__pycache__",
+    "metadata/logs/data_crawl_queue/runner.stdout.log",
+    "metadata/logs/data_crawl_queue/runner.stderr.log"
+  ],
+  "removed_empty_directories": [],
+  "removed_broken_environment": {
+    "path": ".venv",
+    "files": 15715,
+    "bytes": 500316466,
+    "action": "deleted_after_dependency_inventory",
+    "reason": "Broken Python 3.11 environment points to a missing interpreter and an old workspace location.",
+    "dependency_inventory": "archive_legacy/environment_py311_broken/packages.csv"
+  },
+  "protected_paths": [
+    "data_raw/",
+    "data_processed/",
+    "metadata/*manifest*",
+    "metadata/*coverage*",
+    "metadata/*validation*",
+    "Character-MusicAnalyze.py",
+    "CharacterAnalyze_jp.py",
+    "人气拉表统计.opju",
+    "*.xlsx"
+  ],
+  "deleted_semantic_or_non_data_probe_files": 2,
+  "deleted_semantic_or_non_data_probe_bytes": 3929,
+  "staging_removed_after_semantic_verification": true,
+  "post_cleanup_regenerated_cache": {
+    "path": "scripts_pipeline/__pycache__",
+    "files": 1,
+    "bytes": 25881,
+    "action": "deleted",
+    "deleted_at": "2026-08-19T04:09:24.1642165+08:00",
+    "reason": "The safe-stop script regenerated one bytecode cache after the main cleanup pass."
+  },
+  "total_deleted_bytes_including_post_cleanup_cache": 508818216
+}

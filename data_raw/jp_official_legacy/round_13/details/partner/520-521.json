@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/520-521.php",
+    "effective_url": "https://toho-vote.info/result13/partner/520-521.php",
+    "retrieved_at": "2026-08-15T09:56:47+00:00",
+    "http_status": 200,
+    "bytes": 6547,
+    "sha256": "ca666b6478a168d71d1abc772c266c33b9750412577a44bda347f8f150986f20",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "520-521",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：夢月と幻月 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "夢月と幻月（66位）",
+      "numbers": [
+        {
+          "raw": "66位",
+          "value": 66,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：360点 ｜ 得票数：321票 ｜ 一押し数：39票 ｜ コメント数：53件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "360点",
+          "value": 360,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "321票",
+          "value": 321,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "39票",
+          "value": 39,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "53件",
+          "value": 53,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

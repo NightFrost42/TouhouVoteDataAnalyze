@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1292.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1292.php",
+    "retrieved_at": "2026-08-15T09:54:27+00:00",
+    "http_status": 200,
+    "bytes": 5761,
+    "sha256": "205cd6055a03413f20b48763daf5e63ce1545db37206face76806dd1d110c935",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1292",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：不思議な不思議な道具達 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "不思議な不思議な道具達（240位）",
+      "numbers": [
+        {
+          "raw": "240位",
+          "value": 240,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：121点 ｜ 得票数：115票 ｜ 一押し数：6票 ｜ コメント数：20件 継続投票率：36.4%（11名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "121点",
+          "value": 121,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "115票",
+          "value": 115,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "20件",
+          "value": 20,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "36.4%",
+          "value": 36.4,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "11名",
+          "value": 11,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/102-212.php",
+    "effective_url": "https://toho-vote.info/result13/partner/102-212.php",
+    "retrieved_at": "2026-08-15T09:56:28+00:00",
+    "http_status": 200,
+    "bytes": 41971,
+    "sha256": "085787d0a5ecc675e364e9dc5ed60f8f93ccfaf9d7de5713c53a9c8b3946726a",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "102-212",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：霧雨 魔理沙とアリス・マーガトロイド - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "霧雨 魔理沙とアリス・マーガトロイド（3位）",
+      "numbers": [
+        {
+          "raw": "3位",
+          "value": 3,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：4946点 ｜ 得票数：3804票 ｜ 一押し数：1142票 ｜ コメント数：515件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "4946点",
+          "value": 4946,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "3804票",
+          "value": 3804,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1142票",
+          "value": 1142,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "515件",
+          "value": 515,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-15T18:01:55Z",
+  "definition": "share of age-question respondents aged 19 or younger",
+  "scope_warning": "repeated cross-sectional voluntary respondents; this is not personal retention, and changes can reflect response composition or questionnaire design",
+  "rounds_3_4": "the official questionnaires did not publish a comparable age table",
+  "series": [
+    {
+      "round": 5,
+      "under20_count": 2784,
+      "respondent_n": 7909,
+      "under20_share": 0.35200404602351754,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "http://thwiki.info/th/vote5/result_anq.html",
+      "source_file": "data_raw/jp_official_legacy/round_05/questionnaire/result_anq.html.tables.json"
+    },
+    {
+      "round": 6,
+      "under20_count": 5221,
+      "respondent_n": 13479,
+      "under20_share": 0.38734327472364416,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "http://thwiki.info/th/vote6/result_anq.html",
+      "source_file": "data_raw/jp_official_legacy/round_06/questionnaire/result_anq.html.tables.json"
+    },
+    {
+      "round": 7,
+      "under20_count": 7408,
+      "respondent_n": 19624,
+      "under20_share": 0.37749694251936405,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "http://thwiki.info/th/vote7/result_anq.html",
+      "source_file": "data_raw/jp_official_legacy/round_07/questionnaire/result_anq.html.tables.json"
+    },
+    {
+      "round": 8,
+      "under20_count": 7257,
+      "respondent_n": 19273,
+      "under20_share": 0.37653712447465365,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "http://thwiki.info/th/vote8/result_anq.html",
+      "source_file": "data_raw/jp_official_legacy/round_08/questionnaire/result_anq.html.tables.json"
+    },
+    {
+      "round": 9,
+      "under20_count": 6423,
+      "respondent_n": 18210,
+      "under20_share": 0.35271828665568367,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "http://thwiki.info/th/vote9/result_anq.html",
+      "source_file": "data_raw/jp_official_legacy/round_09/questionnaire/result_anq.html.tables.json"
+    },
+    {
+      "round": 10,
+      "under20_count": 5044,
+      "respondent_n": 13636,
+      "under20_share": 0.36990319741859784,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "http://thwiki.info/th/vote10/result_anq.html",
+      "source_file": "data_raw/jp_official_legacy/round_10/questionnaire/result_anq.html.tables.json"
+    },
+    {
+      "round": 11,
+      "under20_count": 3992,
+      "respondent_n": 9664,
+      "under20_share": 0.41307947019867547,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "http://thwiki.info/th/vote11/result_questionnaire.php",
+      "source_file": "data_raw/jp_official_legacy/round_11/questionnaire/result_questionnaire.php.html.tables.json"
+    },
+    {
+      "round": 12,
+      "under20_count": 7846,
+      "respondent_n": 16869,
+      "under20_share": 0.4651135218448041,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "http://thwiki.info/th/vote12/result_list_questionnaire.php",
+      "source_file": "data_raw/jp_official_legacy/round_12/questionnaire/result_list_questionnaire.php.html.tables.json"
+    },
+    {
+      "round": 13,
+      "under20_count": 6504,
+      "respondent_n": 15118,
+      "under20_share": 0.4302156369890197,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "https://toho-vote.info/result13/result_list_questionnaire.php",
+      "source_file": "data_raw/jp_official_legacy/round_13/questionnaire/result_list_questionnaire.php.html.tables.json"
+    },
+    {
+      "round": 14,
+      "under20_count": 5335,
+      "respondent_n": 13060,
+      "under20_share": 0.40849923430321594,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "https://toho-vote.info/result14/result_list_questionnaire.php",
+      "source_file": "data_raw/jp_official_legacy/round_14/questionnaire/result_list_questionnaire.php.html.tables.json"
+    },
+    {
+      "round": 15,
+      "under20_count": 4072,
+      "respondent_n": 10163,
+      "under20_share": 0.40066909377152415,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "https://toho-vote.info/result15/result_list_questionnaire.php",
+      "source_file": "data_raw/jp_official_legacy/round_15/questionnaire/result_list_questionnaire.php.html.tables.json"
+    },
+    {
+      "round": 16,
+      "under20_count": 6050,
+      "respondent_n": 13370,
+      "under20_share": 0.4525056095736724,
+      "source_generation": "legacy_official",
+      "age_representation": "official broad bins; first three bins through 15-19",
+      "source_url": "https://toho-vote.info/result16/result_list_questionnaire.php",
+      "source_file": "data_raw/jp_official_legacy/round_16/questionnaire/result_list_questionnaire.php.html.tables.json"
+    },
+    {
+      "round": 17,
+      "under20_count": 5609,
+      "respondent_n": 11384,
+      "under20_share": 0.49270906535488407,
+      "source_generation": "modern_official",
+      "age_representation": "official exact ages; summed ages <=19",
+      "source_url": "https://toho-vote.info/",
+      "source_file": "data_processed/jp_official/questionnaire_long.csv"
+    },
+    {
+      "round": 18,
+      "under20_count": 8289,
+      "respondent_n": 15135,
+      "under20_share": 0.5476709613478692,
+      "source_generation": "modern_official",
+      "age_representation": "official exact ages; summed ages <=19",
+      "source_url": "https://toho-vote.info/",
+      "source_file": "data_processed/jp_official/questionnaire_long.csv"
+    },
+    {
+      "round": 19,
+      "under20_count": 8366,
+      "respondent_n": 15273,
+      "under20_share": 0.5477640280233091,
+      "source_generation": "modern_official",
+      "age_representation": "official exact ages; summed ages <=19",
+      "source_url": "https://toho-vote.info/",
+      "source_file": "data_processed/jp_official/questionnaire_long.csv"
+    },
+    {
+      "round": 20,
+      "under20_count": 9277,
+      "respondent_n": 16030,
+      "under20_share": 0.578727386150967,
+      "source_generation": "modern_official",
+      "age_representation": "official exact ages; summed ages <=19",
+      "source_url": "https://toho-vote.info/",
+      "source_file": "data_processed/jp_official/questionnaire_long.csv"
+    },
+    {
+      "round": 21,
+      "under20_count": 8887,
+      "respondent_n": 15236,
+      "under20_share": 0.583289577316881,
+      "source_generation": "modern_official",
+      "age_representation": "official exact ages; summed ages <=19",
+      "source_url": "https://toho-vote.info/",
+      "source_file": "data_processed/jp_official/questionnaire_long.csv"
+    }
+  ],
+  "trend_summaries": [
+    {
+      "round_start": 5,
+      "round_end": 20,
+      "n_rounds": 16,
+      "start_share": 0.35200404602351754,
+      "end_share": 0.578727386150967,
+      "change_percentage_points": 22.672334012744944,
+      "ols_slope_percentage_points_per_round": 1.3540417234546187,
+      "spearman_round_vs_under20_share": 0.8823529411764706,
+      "minimum": 0.35200404602351754,
+      "maximum": 0.578727386150967
+    },
+    {
+      "round_start": 17,
+      "round_end": 20,
+      "n_rounds": 4,
+      "start_share": 0.49270906535488407,
+      "end_share": 0.578727386150967,
+      "change_percentage_points": 8.60183207960829,
+      "ols_slope_percentage_points_per_round": 2.5814802906368866,
+      "spearman_round_vs_under20_share": 1.0,
+      "minimum": 0.49270906535488407,
+      "maximum": 0.578727386150967
+    },
+    {
+      "round_start": 5,
+      "round_end": 21,
+      "n_rounds": 17,
+      "start_share": 0.35200404602351754,
+      "end_share": 0.583289577316881,
+      "change_percentage_points": 23.12855312933635,
+      "ols_slope_percentage_points_per_round": 1.4199951074985417,
+      "spearman_round_vs_under20_share": 0.9019607843137255,
+      "minimum": 0.35200404602351754,
+      "maximum": 0.583289577316881
+    }
+  ],
+  "inputs": [
+    {
+      "path": "data_processed/jp_official_legacy/questionnaire_long.csv",
+      "bytes": 3487600,
+      "sha256": "ff4044403e15d6da3ed0ba94add351849dd6f5f362ef0131a1011868d1751abc"
+    },
+    {
+      "path": "data_processed/jp_official/questionnaire_long.csv",
+      "bytes": 138456,
+      "sha256": "ac177a85b1f40ef4a36ffef8faa9128b192a19faedc4580c312f25d80639f6a3"
+    }
+  ],
+  "output": {
+    "path": "analysis_results/jp_age_trend/under20_share_by_round.csv",
+    "bytes": 3829,
+    "sha256": "86481c1497918aff62c9b8e92c3f0600096575713698431089ad16aaa52d771b"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/5036.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/5036.php",
+    "retrieved_at": "2026-08-15T09:55:00+00:00",
+    "http_status": 200,
+    "bytes": 6241,
+    "sha256": "c8ed78d118dad707d052ad423b98211363d7236a452ee9517ab478cfb5695166",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5036",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：キュアリアス上海古牌 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "キュアリアス上海古牌（208位）",
+      "numbers": [
+        {
+          "raw": "208位",
+          "value": 208,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：217点 ｜ 得票数：200票 ｜ 一押し数：17票 ｜ コメント数：29件 継続投票率：64.7%（17名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "217点",
+          "value": 217,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "200票",
+          "value": 200,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "17票",
+          "value": 17,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "29件",
+          "value": 29,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "64.7%",
+          "value": 64.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "17名",
+          "value": 17,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

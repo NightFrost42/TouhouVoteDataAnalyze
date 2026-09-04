@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1224.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1224.php",
+    "retrieved_at": "2026-08-15T09:54:17+00:00",
+    "http_status": 200,
+    "bytes": 6731,
+    "sha256": "ccddd6396c74e7e50ed54b7045e0244378d79a64328b1b2db0b6d2d8450533b5",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1224",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：妖怪モダンコロニー - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "妖怪モダンコロニー（224位）",
+      "numbers": [
+        {
+          "raw": "224位",
+          "value": 224,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：162点 ｜ 得票数：151票 ｜ 一押し数：11票 ｜ コメント数：29件 継続投票率：60.0%（15名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "162点",
+          "value": 162,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "151票",
+          "value": 151,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "11票",
+          "value": 11,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "29件",
+          "value": 29,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "60.0%",
+          "value": 60.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "15名",
+          "value": 15,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

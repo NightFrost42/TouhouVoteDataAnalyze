@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1056.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1056.php",
+    "retrieved_at": "2026-08-15T09:53:54+00:00",
+    "http_status": 200,
+    "bytes": 4037,
+    "sha256": "6c5d5a372a2a16782a37845794278daec115dd1ee1e4e5309a18918fc5bb9e11",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1056",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：月見草 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "月見草（338位）",
+      "numbers": [
+        {
+          "raw": "338位",
+          "value": 338,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：42点 ｜ 得票数：41票 ｜ 一押し数：1票 ｜ コメント数：5件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "42点",
+          "value": 42,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "41票",
+          "value": 41,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

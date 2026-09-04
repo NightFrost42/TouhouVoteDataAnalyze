@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1137.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1137.php",
+    "retrieved_at": "2026-08-15T09:54:04+00:00",
+    "http_status": 200,
+    "bytes": 3652,
+    "sha256": "76e5da8b0a9a3c12642a93a53e0d994ad89aaec6bf82bb871aa0411bb73689c3",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1137",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：日常坐臥 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "日常坐臥（384位）",
+      "numbers": [
+        {
+          "raw": "384位",
+          "value": 384,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：19点 ｜ 得票数：17票 ｜ 一押し数：2票 ｜ コメント数：1件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "19点",
+          "value": 19,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "17票",
+          "value": 17,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

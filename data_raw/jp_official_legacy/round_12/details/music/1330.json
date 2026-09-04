@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1330.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1330.php",
+    "retrieved_at": "2026-08-15T09:54:31+00:00",
+    "http_status": 200,
+    "bytes": 6681,
+    "sha256": "ce9fb34cd56edb8d863abaf5fcdb0212871f4ff9227d8e49fad201cc8b9e1ac8",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1330",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：竹林インフレイム - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "竹林インフレイム（230位）",
+      "numbers": [
+        {
+          "raw": "230位",
+          "value": 230,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：150点 ｜ 得票数：148票 ｜ 一押し数：2票 ｜ コメント数：29件 継続投票率：45.5%（11名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "150点",
+          "value": 150,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "148票",
+          "value": 148,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "29件",
+          "value": 29,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "45.5%",
+          "value": 45.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "11名",
+          "value": 11,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

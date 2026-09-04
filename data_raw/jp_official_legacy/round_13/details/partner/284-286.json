@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/284-286.php",
+    "effective_url": "https://toho-vote.info/result13/partner/284-286.php",
+    "retrieved_at": "2026-08-15T09:56:44+00:00",
+    "http_status": 200,
+    "bytes": 6497,
+    "sha256": "85bcbd75b1479b8d4079359e121e1eeacb1b1939567d6de0672c84be62be32fb",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "284-286",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：クラウンピースとヘカーティア・ラピスラズリ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "クラウンピースとヘカーティア・ラピスラズリ（61位）",
+      "numbers": [
+        {
+          "raw": "61位",
+          "value": 61,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：406点 ｜ 得票数：377票 ｜ 一押し数：29票 ｜ コメント数：48件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "406点",
+          "value": 406,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "377票",
+          "value": 377,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "29票",
+          "value": 29,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "48件",
+          "value": 48,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

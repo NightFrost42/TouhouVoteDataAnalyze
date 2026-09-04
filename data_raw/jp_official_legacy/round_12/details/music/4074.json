@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4074.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4074.php",
+    "retrieved_at": "2026-08-15T09:54:57+00:00",
+    "http_status": 200,
+    "bytes": 5773,
+    "sha256": "bcaf0bfe0e19b54ffc8ed8d1dfc62c47e93b229e8cf3f5a244151d0a927530ae",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4074",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：アガルタの風 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "アガルタの風（227位）",
+      "numbers": [
+        {
+          "raw": "227位",
+          "value": 227,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：158点 ｜ 得票数：149票 ｜ 一押し数：9票 ｜ コメント数：24件 継続投票率：77.8%（18名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "158点",
+          "value": 158,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "149票",
+          "value": 149,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "24件",
+          "value": 24,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "77.8%",
+          "value": 77.8,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "18名",
+          "value": 18,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

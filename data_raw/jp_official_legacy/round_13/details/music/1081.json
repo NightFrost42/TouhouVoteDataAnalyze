@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1081.php",
+    "effective_url": "https://toho-vote.info/result13/music/1081.php",
+    "retrieved_at": "2026-08-15T09:55:45+00:00",
+    "http_status": 200,
+    "bytes": 3571,
+    "sha256": "5e7d878b38f26c706d63b908dfec374752e6525eb3cb624058cb0464a4238c5e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1081",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：遍参 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "遍参（439位）",
+      "numbers": [
+        {
+          "raw": "439位",
+          "value": 439,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：6点 ｜ 得票数：6票 ｜ 一押し数：0票 ｜ コメント数：1件 継続投票率：100.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "6点",
+          "value": 6,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

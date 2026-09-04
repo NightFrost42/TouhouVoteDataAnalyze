@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1294.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1294.php",
+    "retrieved_at": "2026-08-15T09:54:26+00:00",
+    "http_status": 200,
+    "bytes": 4583,
+    "sha256": "38673c0f24d0b38b0bb0d0a5f43367b426ecf1638ff1dc0509504aee9fc96180",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1294",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：反則の狼煙を上げろ - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "反則の狼煙を上げろ（265位）",
+      "numbers": [
+        {
+          "raw": "265位",
+          "value": 265,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：90点 ｜ 得票数：87票 ｜ 一押し数：3票 ｜ コメント数：8件 継続投票率：50.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "90点",
+          "value": 90,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "87票",
+          "value": 87,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8件",
+          "value": 8,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

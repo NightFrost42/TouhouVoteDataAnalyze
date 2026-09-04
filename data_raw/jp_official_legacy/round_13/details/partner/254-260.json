@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/254-260.php",
+    "effective_url": "https://toho-vote.info/result13/partner/254-260.php",
+    "retrieved_at": "2026-08-15T09:56:39+00:00",
+    "http_status": 200,
+    "bytes": 5423,
+    "sha256": "9de6cbf9ea29f160c9fc1939620e6ce84e4fe801551fb9cb853bc9b102d1b367",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "254-260",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：多々良 小傘と封獣 ぬえ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "多々良 小傘と封獣 ぬえ（65位）",
+      "numbers": [
+        {
+          "raw": "65位",
+          "value": 65,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：381点 ｜ 得票数：316票 ｜ 一押し数：65票 ｜ コメント数：33件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "381点",
+          "value": 381,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "316票",
+          "value": 316,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "65票",
+          "value": 65,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "33件",
+          "value": 33,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4037.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4037.php",
+    "retrieved_at": "2026-08-15T09:54:54+00:00",
+    "http_status": 200,
+    "bytes": 5398,
+    "sha256": "a9cb8cc218f13e2b97c48550a21bf878768f664015b6d9175b40d2ad78a7956c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4037",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：53ミニッツの青い海 - 第12回 東方Project 人気投票",
+      "numbers": [
+        {
+          "raw": "53",
+          "value": 53,
+          "unit": null,
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_heading",
+      "text": "53ミニッツの青い海（217位）",
+      "numbers": [
+        {
+          "raw": "53",
+          "value": 53,
+          "unit": null,
+          "kind": "number"
+        },
+        {
+          "raw": "217位",
+          "value": 217,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：180点 ｜ 得票数：159票 ｜ 一押し数：21票 ｜ コメント数：18件 継続投票率：60.0%（15名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "180点",
+          "value": 180,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "159票",
+          "value": 159,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "21票",
+          "value": 21,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "18件",
+          "value": 18,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "60.0%",
+          "value": 60.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "15名",
+          "value": 15,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

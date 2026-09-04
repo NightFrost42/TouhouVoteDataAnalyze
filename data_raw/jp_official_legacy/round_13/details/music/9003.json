@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/9003.php",
+    "effective_url": "https://toho-vote.info/result13/music/9003.php",
+    "retrieved_at": "2026-08-15T09:56:25+00:00",
+    "http_status": 200,
+    "bytes": 5348,
+    "sha256": "310bfadfca59c8c3aee9961a940176e1b2564c10b5b678a44636ba7564c71aac",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "9003",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：サーカスレヴァリエ（機械サーカス） - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "サーカスレヴァリエ（機械サーカス）（288位）",
+      "numbers": [
+        {
+          "raw": "288位",
+          "value": 288,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：68点 ｜ 得票数：65票 ｜ 一押し数：3票 ｜ コメント数：18件 継続投票率：45.5%（11名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "68点",
+          "value": 68,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "65票",
+          "value": 65,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "18件",
+          "value": 18,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "45.5%",
+          "value": 45.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "11名",
+          "value": 11,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

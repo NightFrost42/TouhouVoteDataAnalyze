@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2017.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2017.php",
+    "retrieved_at": "2026-08-15T09:54:39+00:00",
+    "http_status": 200,
+    "bytes": 4464,
+    "sha256": "c51eb5963495dc5c371476bc7198245831c7298c912bd02e4ea09422d4c82b92",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2017",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 ～ Eastern Wind - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 ～ Eastern Wind（327位）",
+      "numbers": [
+        {
+          "raw": "327位",
+          "value": 327,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：49点 ｜ 得票数：46票 ｜ 一押し数：3票 ｜ コメント数：6件 継続投票率：100.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "49点",
+          "value": 49,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "46票",
+          "value": 46,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

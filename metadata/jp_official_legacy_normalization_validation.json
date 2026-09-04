@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "normalizer_version": "jp-official-legacy-normalizer-v2",
+  "offline_only": true,
+  "crawl_coverage_complete": true,
+  "files": [
+    {
+      "path": "data_processed/jp_official_legacy/questionnaire_long.csv",
+      "bytes": 3487600,
+      "sha256": "ff4044403e15d6da3ed0ba94add351849dd6f5f362ef0131a1011868d1751abc",
+      "rows": 5040,
+      "expected_rows": 5040,
+      "row_count_matches": true
+    },
+    {
+      "path": "data_processed/jp_official_legacy/entity_questionnaire_long.csv",
+      "bytes": 48639072,
+      "sha256": "57f800ed92aed50d0435c6973a4f55ea58d973a8389b8c0e81c1ca15e52fa85a",
+      "rows": 125706,
+      "expected_rows": 125706,
+      "row_count_matches": true
+    },
+    {
+      "path": "data_processed/jp_official_legacy/entity_association_long.csv",
+      "bytes": 60893522,
+      "sha256": "78f25de48fcb61e7518a780eb4f21ca8c454106b8b2fb83b90abd84398fb8fd1",
+      "rows": 118746,
+      "expected_rows": 118746,
+      "row_count_matches": true
+    },
+    {
+      "path": "data_processed/jp_official_legacy/source_entity_metrics.csv",
+      "bytes": 1475541,
+      "sha256": "c75e57f5cc7489c025c4539a282e7bcd347f61a1690c7c0dc8447705193f7c10",
+      "rows": 4770,
+      "expected_rows": 4770,
+      "row_count_matches": true
+    },
+    {
+      "path": "data_processed/jp_official_legacy/normalization_exceptions.csv",
+      "bytes": 83,
+      "sha256": "f9712fa88f1efdb1445db24a8a027fbfb22377e3b2cc8fc592ff44987aab707b",
+      "rows": 0,
+      "expected_rows": 0,
+      "row_count_matches": true
+    },
+    {
+      "path": "metadata/jp_official_legacy_component_status.json",
+      "bytes": 9172,
+      "sha256": "708ff5c143295abcc61e3485a9dd1f39e3c87cd629de9ed206513de61c64905d",
+      "rows": null
+    }
+  ],
+  "semantics": {
+    "checks": {
+      "questionnaire_rows": 5040,
+      "entity_question_rows": 125706,
+      "association_rows": 118746
+    },
+    "semantic_failures": []
+  },
+  "normalization_exceptions": 0,
+  "source_data_warnings": {
+    "inconsistent_published_count_percentage_rows": 31,
+    "inconsistent_published_overall_baseline_rows": 54,
+    "do_not_treat_as_pipeline_failure": true
+  },
+  "issues": [],
+  "valid": true
+}

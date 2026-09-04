@@ -1,0 +1,15 @@
+query MusicCovotePartitionStats(
+  $query: String!
+  $voteStart: DateTimeUtc!
+  $voteYear: Int!
+) {
+  queryGlobalStats(query: $query, voteStart: $voteStart, voteYear: $voteYear) {
+    voteYear
+    numVote
+    numMusic
+  }
+  queryMusicRanking(query: $query, voteStart: $voteStart, voteYear: $voteYear) {
+    global { totalUniqueItems totalVotes }
+    entries { rank displayRank name voteCount }
+  }
+}

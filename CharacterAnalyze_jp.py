@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import re
 
-TARGET_NAME = 'チルノ'
+TARGET_NAME = '西行寺 幽々子'
 EXCEL_FILE= 'TouhouVote_jp_grouped.xlsx'
 EXCEL_FILE_RAW = 'TouhouVote_jp.xlsx'
 OUTPUT_IMAGE = 'TouhouVote_character.png'

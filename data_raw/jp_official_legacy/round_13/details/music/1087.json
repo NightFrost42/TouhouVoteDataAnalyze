@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1087.php",
+    "effective_url": "https://toho-vote.info/result13/music/1087.php",
+    "retrieved_at": "2026-08-15T09:55:45+00:00",
+    "http_status": 200,
+    "bytes": 3524,
+    "sha256": "43a2f6c74934b3bda6f4976ceb9c60f9ffb4214d8fb22526e972a1a2d57b1172",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1087",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：幽境 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "幽境（467位）",
+      "numbers": [
+        {
+          "raw": "467位",
+          "value": 467,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：3点 ｜ 得票数：3票 ｜ 一押し数：0票 ｜ コメント数：1件 継続投票率：0.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "3点",
+          "value": 3,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0.0%",
+          "value": 0.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

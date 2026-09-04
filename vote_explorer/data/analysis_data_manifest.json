@@ -1,0 +1,470 @@
+{
+  "schema_version": 9,
+  "generated_at": "2026-09-04T07:23:07.818515+00:00",
+  "scope": {
+    "cn_rounds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "jp_rounds": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ]
+  },
+  "excluded_scope": {},
+  "availability": {
+    "ranking_metrics": "CN1-11, JP3-22",
+    "music_metrics": "CN1-11, JP3-22",
+    "jp_rich_character_metrics": "JP17-22 (fields vary by round)",
+    "covote": "JP11-22 plus complete CN10/11 character and music matrices; source_type distinguishes departments and origins",
+    "cp": "Official CP/组合 rankings where published (CN2-11); combination table falls back to co-vote pairs when a CP row is absent",
+    "questionnaire": "CN1-11 static/modern aggregate tables plus JP17-22 (question availability varies by round)",
+    "entity_questionnaire_links": "CN2-4 official detail-page vote-group marginals, CN5-11 questionnaire-conditioned character/music/CP rows, plus JP17-22 character/music/work",
+    "cn_advanced_search": "CN5-11 normalized atomic questionnaire/entity conditions; CN5-9 include the official questionnaire pair matrix; CN10-11 expose Boolean AND/OR queries on demand but no legacy all-answer pair endpoint",
+    "cn_advanced_search_contract": "scripts_pipeline/cn_advanced_contract.py",
+    "work_catalog": "CN legacy translated catalogue plus maintained JP modern additions; release_order is independent of vote rank",
+    "character_factions": "THBWiki-backed conservative original-setting groups plus separate first-appearance work cohorts; unverified characters remain unclassified",
+    "character_music_links": "CN1-11, JP3-22 from local_music_merged mapped_character tags",
+    "character_music_covote": "CN10-11 official advanced-condition checkpoints plus JP17-22 official character detail pages; count=P(character and music), rate=P(music|character voters participating in music)",
+    "music_arrangement_counts": "JP4-22 and CN2-11 THBWiki original-song inter-vote increments, cumulative dated counts through each vote end, and crawl-time all-history totals; CN1 is baseline-only and same-numbered JP/CN rounds use independent calendars",
+    "music_arrangement_cross": "JP4-22 and CN2-11 song-vote and character-vote scatter analysis with three selectable x-axis scopes: inter-vote increment, cumulative dated count through vote end, or crawl-time cumulative total; CN1 has no inter-vote increment; character totals deduplicate mapped canonical original songs",
+    "music_catalog_standardization": {
+      "source": "TouhouMusicInfo.xlsx D/E columns",
+      "matched_rows": 14342,
+      "total_rows": 14684,
+      "coverage": 0.9767093435031327,
+      "unmatched_unique_rows": 342,
+      "unmatched_output": "analysis_music_catalog_unmatched.csv",
+      "note": "Unmatched titles are retained with source names; no ambiguous fuzzy merge is forced."
+    }
+  },
+  "character_music_link_coverage": {
+    "CN1": {
+      "music_rows": 399,
+      "tagged_music_rows": 106,
+      "character_music_relations": 121
+    },
+    "CN2": {
+      "music_rows": 435,
+      "tagged_music_rows": 102,
+      "character_music_relations": 114
+    },
+    "CN3": {
+      "music_rows": 440,
+      "tagged_music_rows": 106,
+      "character_music_relations": 118
+    },
+    "CN4": {
+      "music_rows": 476,
+      "tagged_music_rows": 129,
+      "character_music_relations": 143
+    },
+    "CN5": {
+      "music_rows": 488,
+      "tagged_music_rows": 136,
+      "character_music_relations": 152
+    },
+    "CN6": {
+      "music_rows": 512,
+      "tagged_music_rows": 143,
+      "character_music_relations": 163
+    },
+    "CN7": {
+      "music_rows": 546,
+      "tagged_music_rows": 149,
+      "character_music_relations": 170
+    },
+    "CN8": {
+      "music_rows": 563,
+      "tagged_music_rows": 156,
+      "character_music_relations": 175
+    },
+    "CN9": {
+      "music_rows": 565,
+      "tagged_music_rows": 156,
+      "character_music_relations": 175
+    },
+    "CN10": {
+      "music_rows": 588,
+      "tagged_music_rows": 169,
+      "character_music_relations": 188
+    },
+    "CN11": {
+      "music_rows": 605,
+      "tagged_music_rows": 181,
+      "character_music_relations": 202
+    },
+    "JP3": {
+      "music_rows": 158,
+      "tagged_music_rows": 41,
+      "character_music_relations": 46
+    },
+    "JP4": {
+      "music_rows": 205,
+      "tagged_music_rows": 52,
+      "character_music_relations": 57
+    },
+    "JP5": {
+      "music_rows": 265,
+      "tagged_music_rows": 70,
+      "character_music_relations": 76
+    },
+    "JP6": {
+      "music_rows": 317,
+      "tagged_music_rows": 85,
+      "character_music_relations": 91
+    },
+    "JP7": {
+      "music_rows": 352,
+      "tagged_music_rows": 93,
+      "character_music_relations": 99
+    },
+    "JP8": {
+      "music_rows": 375,
+      "tagged_music_rows": 100,
+      "character_music_relations": 115
+    },
+    "JP9": {
+      "music_rows": 392,
+      "tagged_music_rows": 110,
+      "character_music_relations": 125
+    },
+    "JP10": {
+      "music_rows": 430,
+      "tagged_music_rows": 120,
+      "character_music_relations": 136
+    },
+    "JP11": {
+      "music_rows": 457,
+      "tagged_music_rows": 127,
+      "character_music_relations": 143
+    },
+    "JP12": {
+      "music_rows": 474,
+      "tagged_music_rows": 138,
+      "character_music_relations": 154
+    },
+    "JP13": {
+      "music_rows": 485,
+      "tagged_music_rows": 138,
+      "character_music_relations": 154
+    },
+    "JP14": {
+      "music_rows": 523,
+      "tagged_music_rows": 149,
+      "character_music_relations": 170
+    },
+    "JP15": {
+      "music_rows": 528,
+      "tagged_music_rows": 153,
+      "character_music_relations": 174
+    },
+    "JP16": {
+      "music_rows": 543,
+      "tagged_music_rows": 161,
+      "character_music_relations": 182
+    },
+    "JP17": {
+      "music_rows": 566,
+      "tagged_music_rows": 171,
+      "character_music_relations": 192
+    },
+    "JP18": {
+      "music_rows": 578,
+      "tagged_music_rows": 173,
+      "character_music_relations": 194
+    },
+    "JP19": {
+      "music_rows": 594,
+      "tagged_music_rows": 181,
+      "character_music_relations": 202
+    },
+    "JP20": {
+      "music_rows": 598,
+      "tagged_music_rows": 181,
+      "character_music_relations": 202
+    },
+    "JP21": {
+      "music_rows": 606,
+      "tagged_music_rows": 187,
+      "character_music_relations": 208
+    },
+    "JP22": {
+      "music_rows": 621,
+      "tagged_music_rows": 190,
+      "character_music_relations": 211
+    }
+  },
+  "cn_advanced_contract": {
+    "scope": "CN5–11 official bounded advanced-search extracts; CN10–11 rebuild the legacy pair-cell surface with explicit Boolean intersection queries",
+    "coverage": {
+      "1": {
+        "status": "official_not_offered",
+        "rows": 0,
+        "pairs": 0
+      },
+      "2": {
+        "status": "official_not_offered",
+        "rows": 0,
+        "pairs": 0
+      },
+      "3": {
+        "status": "official_not_offered",
+        "rows": 0,
+        "pairs": 0
+      },
+      "4": {
+        "status": "official_not_offered",
+        "rows": 0,
+        "pairs": 0
+      },
+      "5": {
+        "status": "available",
+        "ranking_rows": 318814,
+        "questionnaire_rows": 135360,
+        "pair_rows": 45419
+      },
+      "6": {
+        "status": "available",
+        "ranking_rows": 359728,
+        "questionnaire_rows": 152141,
+        "pair_rows": 51390
+      },
+      "7": {
+        "status": "available",
+        "ranking_rows": 362424,
+        "questionnaire_rows": 155167,
+        "pair_rows": 51387
+      },
+      "8": {
+        "status": "available",
+        "ranking_rows": 395761,
+        "questionnaire_rows": 165588,
+        "pair_rows": 51706
+      },
+      "9": {
+        "status": "available",
+        "ranking_rows": 438052,
+        "questionnaire_rows": 177551,
+        "pair_rows": 52362
+      },
+      "10": {
+        "status": "available",
+        "ranking_rows": 772064,
+        "questionnaire_rows": 349064,
+        "questionnaire_condition_counts": {
+          "Single": 239,
+          "Multiple": 148,
+          "Input": 3
+        },
+        "questionnaire_categorical_expected": 387,
+        "questionnaire_categorical_available": 387,
+        "entity_condition_counts": {
+          "sourceCategory": {
+            "character": 414,
+            "music": 1001
+          },
+          "conditionKind": {
+            "any": 834,
+            "first": 581
+          },
+          "status": {
+            "available_crawled": 1415
+          }
+        },
+        "entity_condition_expected": 1415,
+        "entity_condition_available": 1415,
+        "pair_status": "available_crawled",
+        "pair_expected": 2701,
+        "pair_available": 2701,
+        "pair_cells_expected": 73168,
+        "pair_cells_available": 73168,
+        "pair_reason": "modern GraphQL has no legacy all-answer questionnaire cross-tab endpoint; the crawler enumerates every explicit Boolean answer cell"
+      },
+      "11": {
+        "status": "available",
+        "ranking_rows": 663461,
+        "questionnaire_rows": 316277,
+        "questionnaire_condition_counts": {
+          "Single": 242,
+          "Multiple": 161,
+          "Input": 3
+        },
+        "questionnaire_categorical_expected": 403,
+        "questionnaire_categorical_available": 403,
+        "entity_condition_counts": {
+          "sourceCategory": {
+            "character": 416,
+            "music": 971
+          },
+          "conditionKind": {
+            "any": 856,
+            "first": 531
+          },
+          "status": {
+            "available_crawled": 1384,
+            "official_query_defect": 3
+          }
+        },
+        "entity_condition_expected": 1387,
+        "entity_condition_available": 1384,
+        "pair_status": "available_crawled",
+        "pair_expected": 2628,
+        "pair_available": 2628,
+        "pair_cells_expected": 79239,
+        "pair_cells_available": 79239,
+        "pair_reason": "modern GraphQL has no legacy all-answer questionnaire cross-tab endpoint; the crawler enumerates every explicit Boolean answer cell"
+      }
+    },
+    "required_rounds": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "legacy_pair_matrix_rounds": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "modern_pair_matrix_rounds": [
+      10,
+      11
+    ],
+    "coverage_contract": "scripts_pipeline/cn_advanced_contract.py",
+    "outputs": {
+      "all_condition_rankings": "cn_legacy_advanced_rankings.csv.gz",
+      "questionnaire_conditions": "cn_legacy_advanced_questionnaire.csv",
+      "questionnaire_pairs": "cn_legacy_advanced_pairs.csv.gz",
+      "unified_condition_rankings": "cn_advanced_rankings.csv.gz",
+      "unified_questionnaire_conditions": "cn_advanced_questionnaire.csv",
+      "unified_questionnaire_pairs": "cn_advanced_pairs.csv.gz"
+    }
+  },
+  "outputs": {
+    "analysis_character_metrics_all.csv": {
+      "rows": 5482,
+      "sha256": "5417cdb7d52a65e185b128be2f83f4e2e6b85ce64e79406822eb85b2b27f5b5a"
+    },
+    "analysis_music_metrics_all.csv": {
+      "rows": 14684,
+      "sha256": "b74e1336ccfd48ce4579030d83760c87faf1ada607d0f0dd0a194f9b58d35474"
+    },
+    "analysis_covote_pairs_all.csv": {
+      "rows": 408419,
+      "sha256": "e03673c9b3e953be50038f46c7b85abd3f6786d23ee7522387bf5b2ecca55d3c"
+    },
+    "analysis_cp_metrics_all.csv": {
+      "rows": 11257,
+      "sha256": "f35228393cb874595beb9c1aa9d7d892431ba0b70b6609fb5aadf464df286d6c"
+    },
+    "analysis_vote_combinations_all.csv": {
+      "rows": 92489,
+      "sha256": "7a25a9cd3697fdb8e576521385ddeec7fede4d1cb4075b920f97dd839ebec932"
+    },
+    "analysis_character_factions.csv": {
+      "rows": 371,
+      "sha256": "d1788773541ab8b3a6d65f50a3a2d2e632475e0f349c7535b1f8c1c9a402bbeb"
+    },
+    "analysis_questionnaire_all.csv": {
+      "rows": 3138,
+      "sha256": "a9d0f475af4ea43e5e3f71dbb5747c3716e59587569750a629943894a5bbd95c"
+    },
+    "analysis_entity_questionnaire_all.csv.gz": {
+      "rows": 1758271,
+      "sha256": "48fc1d13cbaaa6593aeb9838afd62df1af04cb0f30ac158b0b9519806c2e9ac5"
+    },
+    "analysis_character_music_links_all.csv": {
+      "rows": 4652,
+      "sha256": "127daf71bfe542f06699516b2dfb1385f6db56d1205bda6c2b70d154ff594ce0"
+    },
+    "analysis_character_music_covote_all.csv": {
+      "rows": 126103,
+      "sha256": "c7c1f6b29c330be48bc87b1afa5f4de2d02df9d56ed11b4a6f7e9b47ca788293"
+    },
+    "analysis_work_catalog.csv": {
+      "rows": 110,
+      "sha256": "61743ebe10af3ea41a9f74cb7b42fdb87470f9b635809f47553b0a2721f9fc5e"
+    },
+    "analysis_music_catalog_unmatched.csv": {
+      "rows": 342,
+      "sha256": "72e3a912beb4ae8829dca7c9d085895fe026241e81e6cb7fccc5b7a6567a3c65"
+    },
+    "analysis_cn_advanced_pairs_all.csv.gz": {
+      "rows": 404671,
+      "sha256": "31cf3898c8ba050e5714733cf1de799c678daf856227d1da73ff32d1555f1715"
+    }
+  },
+  "storage": {
+    "split_files": {
+      "analysis_covote_pairs_all.csv": {
+        "parts_manifest": "analysis_covote_pairs_all.csv.parts.json",
+        "original_bytes": 145449204,
+        "original_sha256": "e03673c9b3e953be50038f46c7b85abd3f6786d23ee7522387bf5b2ecca55d3c",
+        "parts": [
+          "analysis_covote_pairs_all.csv.part-001",
+          "analysis_covote_pairs_all.csv.part-002"
+        ]
+      },
+      "cn_advanced_questionnaire.csv": {
+        "parts_manifest": "cn_advanced_questionnaire.csv.parts.json",
+        "original_bytes": 662193825,
+        "original_sha256": "5b810153ef04afeb3833892b91c23172f8fd76bfc4c57e215f0ae29f1cdec8d6",
+        "parts": [
+          "cn_advanced_questionnaire.csv.part-001",
+          "cn_advanced_questionnaire.csv.part-002",
+          "cn_advanced_questionnaire.csv.part-003",
+          "cn_advanced_questionnaire.csv.part-004",
+          "cn_advanced_questionnaire.csv.part-005",
+          "cn_advanced_questionnaire.csv.part-006",
+          "cn_advanced_questionnaire.csv.part-007",
+          "cn_advanced_questionnaire.csv.part-008"
+        ]
+      },
+      "cn_legacy_advanced_questionnaire.csv": {
+        "parts_manifest": "cn_legacy_advanced_questionnaire.csv.parts.json",
+        "original_bytes": 372189398,
+        "original_sha256": "5c1e8dfaf81adebb45a422bec2e76d76c6ba3151048d1cfc1a4a5caa9cfdfb4c",
+        "parts": [
+          "cn_legacy_advanced_questionnaire.csv.part-001",
+          "cn_legacy_advanced_questionnaire.csv.part-002",
+          "cn_legacy_advanced_questionnaire.csv.part-003",
+          "cn_legacy_advanced_questionnaire.csv.part-004",
+          "cn_legacy_advanced_questionnaire.csv.part-005"
+        ]
+      }
+    }
+  }
+}

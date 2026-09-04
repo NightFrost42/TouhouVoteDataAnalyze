@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/240-254.php",
+    "effective_url": "https://toho-vote.info/result13/partner/240-254.php",
+    "retrieved_at": "2026-08-15T09:56:37+00:00",
+    "http_status": 200,
+    "bytes": 9103,
+    "sha256": "f86b45bc45b2998736ca8087656d4425a75467953d40bd9b93c2f7dcc5af69c5",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "240-254",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：東風谷 早苗と多々良 小傘 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "東風谷 早苗と多々良 小傘（45位）",
+      "numbers": [
+        {
+          "raw": "45位",
+          "value": 45,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：687点 ｜ 得票数：565票 ｜ 一押し数：122票 ｜ コメント数：91件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "687点",
+          "value": 687,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "565票",
+          "value": 565,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "122票",
+          "value": 122,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "91件",
+          "value": 91,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

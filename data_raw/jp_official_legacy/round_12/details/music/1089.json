@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1089.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1089.php",
+    "retrieved_at": "2026-08-15T09:53:58+00:00",
+    "http_status": 200,
+    "bytes": 3625,
+    "sha256": "87ce02b30cc89febdef8ea58357ef77a9700efbc4d539a420e9f3595e6f0753e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1089",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：紅夜 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "紅夜（396位）",
+      "numbers": [
+        {
+          "raw": "396位",
+          "value": 396,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：16点 ｜ 得票数：15票 ｜ 一押し数：1票 ｜ コメント数：0件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "16点",
+          "value": 16,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "15票",
+          "value": 15,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

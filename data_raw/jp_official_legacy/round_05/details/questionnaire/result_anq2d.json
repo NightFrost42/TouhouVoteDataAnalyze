@@ -1,0 +1,47 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote5/result_anq2d.html",
+    "effective_url": "http://thwiki.info/th/vote5/result_anq2d.html",
+    "retrieved_at": "2026-08-15T09:43:14+00:00",
+    "http_status": 200,
+    "bytes": 126084,
+    "sha256": "7dbc91441f97a822855c0be61131c33d1fd1ec2bd4cad87c833f92d7a9a95907",
+    "charset": "euc_jp",
+    "header_charset": null
+  },
+  "round": 5,
+  "role": "detail",
+  "category": "questionnaire",
+  "item_id": "result_anq2d",
+  "discovery_label": "コメント一覧",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "第５回東方シリーズ人気投票 投票者アンケート結果 作品別コメント",
+      "numbers": []
+    },
+    {
+      "kind": "item_header",
+      "text": "東方永夜抄 平均：4.47点 コメント数:2241",
+      "numbers": [
+        {
+          "raw": "4.47点",
+          "value": 4.47,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "2241",
+          "value": 2241,
+          "unit": null,
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

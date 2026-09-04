@@ -1,0 +1,238 @@
+{
+  "source": "data_raw/cn_official_legacy/round_09/raw/pages/chara/m_chara__type_progress.html",
+  "headings": [
+    {
+      "level": "h2",
+      "text": "角色投票演进对比"
+    },
+    {
+      "level": "h1",
+      "text": "角色部分"
+    },
+    {
+      "level": "h4",
+      "text": "总体投票情况"
+    },
+    {
+      "level": "h3",
+      "text": "选择角色"
+    },
+    {
+      "level": "h4",
+      "text": "使用说明"
+    },
+    {
+      "level": "h3",
+      "text": "投票演进"
+    },
+    {
+      "level": "h4",
+      "text": "说明"
+    }
+  ],
+  "tables": [
+    {
+      "index": 0,
+      "heading": "选择角色",
+      "id": "",
+      "class": "footable-details table",
+      "rows": [
+        [
+          {
+            "tag": "td",
+            "colspan": 2,
+            "rowspan": 1,
+            "text": "使用说明 注意：该功能尚在测试中，如果出现BUG属于正常情况。 通过下方的下拉框选择角色，该下拉框为多选框，如果需要删除角色请选中并按Del或BackSpace键，或者点击标签上的×。 可以通过打字的方式搜索角色。",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "选择主条件，该问卷问题将作为图表的主体元素。",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "载入完毕... 载入中...请耐心等候 提交的列表无法获取到数据 载入失败 提交图表生成请求",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "heading": "投票演进",
+      "id": "progressTab",
+      "class": "table footable",
+      "rows": [
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "票数演进变化",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表说明",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "投票期间：2020-12-18 18:00:00 至 2020-12-31 23:59:59",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": [
+              2020,
+              12,
+              18,
+              18,
+              0,
+              0,
+              2020,
+              12,
+              31,
+              23,
+              59,
+              59
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "index": 2,
+      "heading": "投票演进",
+      "id": "",
+      "class": "footable-details table",
+      "rows": [
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "说明 该图表表示该角色随着投票进程的票数变化情况。 其中减少的票数是因为投票人修改自己的投票去掉该角色而导致的。 通过拖动底部和右侧的滑柄或在图表上缩放（鼠标或手指）可以筛选数据范围，也可以点击顶部的图例开关某个数据的显示。",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "总票数演进",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "总本命票数演进",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ]
+      ]
+    }
+  ],
+  "parse_error": ""
+}

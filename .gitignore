@@ -1,0 +1,47 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Reproducible local build environments used by the Windows packagers
+vote_explorer/.build_python/
+vote_explorer/.build_tcl/
+vote_explorer/.build_tk/
+.pyinstaller_vendor/
+
+# PyInstaller 构建中间目录和本地发布包（均不上传）
+build/
+dist/
+vote_explorer/build/
+vote_explorer/build_single/
+vote_explorer/dist/
+*.spec
+*.zip
+
+# Temporary files created by atomic writers and local tooling
+*.tmp
+.tmp*
+*.log
+
+# 网络诊断响应头及临时响应文件
+*_headers.txt
+archive_legacy/network_diagnostics/**/.tmp*
+
+# Resumable crawler state is machine-local; published manifests remain tracked
+metadata/.thwiki_arrangement_counts_checkpoint.json
+metadata/thwiki_arrangement_counts_queue_status.json
+metadata/*_queue_status.json
+metadata/data_crawl_queue_state.json
+metadata/data_crawl_queue_pid.json
+metadata/data_crawl_queue.stop
+metadata/*.lock
+metadata/logs/
+
+# 工作区清单包含本机状态，只在本地生成
+metadata/workspace_inventory.json
+metadata/workspace_inventory_files.csv
+
+# README files that only describe archived snapshots/local broken environments
+archive_legacy/vote_datasets/**/README.md
+archive_legacy/environment_py311_broken/README.md

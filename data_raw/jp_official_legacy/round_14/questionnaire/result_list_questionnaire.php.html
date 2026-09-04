@@ -1,0 +1,439 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
+    <meta name="description" content="東方Projectシリーズの第14回人気投票のページです。">
+    <meta property="og:url" content="http://thwiki.info/th/vote14/">
+    <meta property="og:description" content="東方Projectシリーズの第14回人気投票のページです。">
+    <meta property="og:title" content="第14回東方Project人気投票">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/PluginToggle.js"></script>
+    <script src="../js/PluginCdown.js"></script>
+    <script src="../js/scriptTohoVote.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+    <link href="css/styleTohoVoteCommon.css" rel="stylesheet" type="text/css">
+    <link href="css/styleTohoVoteResult.css" rel="stylesheet" type="text/css">
+    <title>アンケート部門集計結果 - 第14回 東方Project 人気投票</title>
+</head>
+<body id="TohoProjectPopularityVote">
+
+
+<header>
+    <h1 id="SiteTitle"><a href="index.php">第14回 東方Project 人気投票</a></h1>
+    <p id="HeldPeriod"><em>開催期間</em> <time>2018年1月14日（日）</time>　～　<time>2018年1月20日（土）</time></p>
+</header>
+<aside id="GlobalNavi">
+    <nav>
+        <ul>
+        	<li><a href="index.php" title="第14回トップ">第14回トップ</a></li><!--
+        	--><li><a href="result_list_character.php" title="人妖部門結果">人妖部門結果</a></li><!--
+        	--><li><a href="result_list_music.php" title="音楽部門結果">音楽部門結果</a></li><!--
+        	--><li><a href="result_list_title.php" title="作品部門結果">作品部門結果</a></li>
+        </ul>
+    </nav>
+</aside>
+
+
+<section>
+<article>
+<h2>01.年齢</h2>
+<div id="age_summary" style="display:block;">
+<p>有効回答数：13060件　<button onclick="document.getElementById('age_detail').style.display='block';document.getElementById('age_summary').style.display='none'">詳細表示</button></p>
+<table class="result">
+<col style="width:8em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>～10歳</th><td>14</td><td>0.11%</td></tr>
+<tr><th>10歳～14歳</th><td>761</td><td>5.83%</td></tr>
+<tr><th>15歳～19歳</th><td>4560</td><td>34.92%</td></tr>
+<tr><th>20歳～24歳</th><td>3850</td><td>29.48%</td></tr>
+<tr><th>25歳～29歳</th><td>2024</td><td>15.5%</td></tr>
+<tr><th>30歳～34歳</th><td>1077</td><td>8.25%</td></tr>
+<tr><th>35歳～39歳</th><td>480</td><td>3.68%</td></tr>
+<tr><th>40歳～44歳</th><td>188</td><td>1.44%</td></tr>
+<tr><th>45歳～49歳</th><td>67</td><td>0.51%</td></tr>
+<tr><th>50歳～</th><td>39</td><td>0.3%</td></tr>
+</table>
+</div>
+
+<div id="age_detail" style="display:none;">
+<p>有効回答数：13060件　<button onclick="document.getElementById('age_summary').style.display='block';document.getElementById('age_detail').style.display='none'">簡易表示</button></p>
+<table class="result">
+<col style="width:8em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>5歳</th><td>7</td><td>0.05%</td></tr>
+<tr><th>7歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>9歳</th><td>6</td><td>0.05%</td></tr>
+<tr><th>10歳</th><td>14</td><td>0.11%</td></tr>
+<tr><th>11歳</th><td>22</td><td>0.17%</td></tr>
+<tr><th>12歳</th><td>92</td><td>0.7%</td></tr>
+<tr><th>13歳</th><td>225</td><td>1.72%</td></tr>
+<tr><th>14歳</th><td>408</td><td>3.12%</td></tr>
+<tr><th>15歳</th><td>632</td><td>4.84%</td></tr>
+<tr><th>16歳</th><td>925</td><td>7.08%</td></tr>
+<tr><th>17歳</th><td>1014</td><td>7.76%</td></tr>
+<tr><th>18歳</th><td>1041</td><td>7.97%</td></tr>
+<tr><th>19歳</th><td>948</td><td>7.26%</td></tr>
+<tr><th>20歳</th><td>978</td><td>7.49%</td></tr>
+<tr><th>21歳</th><td>830</td><td>6.36%</td></tr>
+<tr><th>22歳</th><td>776</td><td>5.94%</td></tr>
+<tr><th>23歳</th><td>665</td><td>5.09%</td></tr>
+<tr><th>24歳</th><td>601</td><td>4.6%</td></tr>
+<tr><th>25歳</th><td>540</td><td>4.13%</td></tr>
+<tr><th>26歳</th><td>412</td><td>3.15%</td></tr>
+<tr><th>27歳</th><td>434</td><td>3.32%</td></tr>
+<tr><th>28歳</th><td>341</td><td>2.61%</td></tr>
+<tr><th>29歳</th><td>297</td><td>2.27%</td></tr>
+<tr><th>30歳</th><td>318</td><td>2.43%</td></tr>
+<tr><th>31歳</th><td>255</td><td>1.95%</td></tr>
+<tr><th>32歳</th><td>204</td><td>1.56%</td></tr>
+<tr><th>33歳</th><td>153</td><td>1.17%</td></tr>
+<tr><th>34歳</th><td>147</td><td>1.13%</td></tr>
+<tr><th>35歳</th><td>159</td><td>1.22%</td></tr>
+<tr><th>36歳</th><td>102</td><td>0.78%</td></tr>
+<tr><th>37歳</th><td>83</td><td>0.64%</td></tr>
+<tr><th>38歳</th><td>70</td><td>0.54%</td></tr>
+<tr><th>39歳</th><td>66</td><td>0.51%</td></tr>
+<tr><th>40歳</th><td>55</td><td>0.42%</td></tr>
+<tr><th>41歳</th><td>48</td><td>0.37%</td></tr>
+<tr><th>42歳</th><td>27</td><td>0.21%</td></tr>
+<tr><th>43歳</th><td>35</td><td>0.27%</td></tr>
+<tr><th>44歳</th><td>23</td><td>0.18%</td></tr>
+<tr><th>45歳</th><td>23</td><td>0.18%</td></tr>
+<tr><th>46歳</th><td>11</td><td>0.08%</td></tr>
+<tr><th>47歳</th><td>16</td><td>0.12%</td></tr>
+<tr><th>48歳</th><td>8</td><td>0.06%</td></tr>
+<tr><th>49歳</th><td>9</td><td>0.07%</td></tr>
+<tr><th>50歳</th><td>6</td><td>0.05%</td></tr>
+<tr><th>51歳</th><td>2</td><td>0.02%</td></tr>
+<tr><th>52歳</th><td>4</td><td>0.03%</td></tr>
+<tr><th>53歳</th><td>4</td><td>0.03%</td></tr>
+<tr><th>54歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>55歳</th><td>2</td><td>0.02%</td></tr>
+<tr><th>56歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>57歳</th><td>2</td><td>0.02%</td></tr>
+<tr><th>63歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>79歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>88歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>92歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>98歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>99歳</th><td>1</td><td>0.01%</td></tr>
+<tr><th>100歳</th><td>11</td><td>0.08%</td></tr>
+</table>
+</div>
+
+
+<h2>02.性別</h2>
+<p>有効回答数：13353件</p>
+<table class="result">
+<col style="width:6em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>男性</th><td>11442</td><td>85.69%</td></tr>
+<tr><th>女性</th><td>1911</td><td>14.31%</td></tr>
+</table>
+
+<h2>03.お住まいの地域</h2>
+<p>有効回答数：12763件</p>
+<table class="result">
+<col style="width:20em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>北海道</th><td>491</td><td>3.85%</td></tr>
+<tr><th>北東北（青森・岩手・秋田）</th><td>272</td><td>2.13%</td></tr>
+<tr><th>南東北（宮城・山形・福島）</th><td>444</td><td>3.48%</td></tr>
+<tr><th>北関東（茨城・栃木・群馬）</th><td>634</td><td>4.97%</td></tr>
+<tr><th>南関東（埼玉・千葉・東京・神奈川）</th><td>3813</td><td>29.88%</td></tr>
+<tr><th>北陸（富山・石川・福井）</th><td>255</td><td>2%</td></tr>
+<tr><th>甲信越（新潟・山梨・長野）</th><td>471</td><td>3.69%</td></tr>
+<tr><th>東海（愛知・三重・岐阜・静岡）</th><td>1285</td><td>10.07%</td></tr>
+<tr><th>近畿（大阪・京都・兵庫・奈良・滋賀・和歌山）</th><td>1675</td><td>13.12%</td></tr>
+<tr><th>中国（鳥取・島根・岡山・広島・山口）</th><td>558</td><td>4.37%</td></tr>
+<tr><th>四国（徳島・愛媛・香川・高知）</th><td>242</td><td>1.9%</td></tr>
+<tr><th>九州北部（福岡・佐賀・長崎・大分）</th><td>502</td><td>3.93%</td></tr>
+<tr><th>九州南部（熊本・宮崎・鹿児島・沖縄）</th><td>313</td><td>2.45%</td></tr>
+<tr><th>日本国外：東アジア（中国・台湾・韓国など）</th><td>1258</td><td>9.86%</td></tr>
+<tr><th>日本国外：東南アジア</th><td>91</td><td>0.71%</td></tr>
+<tr><th>日本国外：南・中央・西アジア</th><td>11</td><td>0.09%</td></tr>
+<tr><th>日本国外：ヨーロッパ</th><td>147</td><td>1.15%</td></tr>
+<tr><th>日本国外：アフリカ</th><td>10</td><td>0.08%</td></tr>
+<tr><th>日本国外：北アメリカ</th><td>204</td><td>1.6%</td></tr>
+<tr><th>日本国外：南アメリカ</th><td>58</td><td>0.45%</td></tr>
+<tr><th>日本国外：オセアニア</th><td>29</td><td>0.23%</td></tr>
+</table>
+
+
+<h2>04.ノーコンテニューでクリアできた難易度</h2>
+<table class="result">
+<col style="width:7em;"><col style="width:5em;"><col style="width:7em;"><col style="width:7em;"><col style="width:7em;"><col style="width:7em;"><col style="width:7em;">
+<tr><th>作品名</th><th>有効回答</th><th>未購入</th><th>Easy未クリア</th><th>Easyクリア</th><th>Normalクリア</th><th>Hardクリア</th><th>Lunaticクリア</th></tr>
+<tr><th rowspan="3">東方紅魔郷</th><td rowspan="3">11440</td><td>2502</td><td>1077</td><td>1956</td><td>3900</td><td>1199</td><td>806</td></tr>
+<tr><td>－</td><td>12.05%</td><td>21.88%</td><td>43.63%</td><td>13.41%</td><td>9.02%</td></tr>
+<tr><td>21.87%</td><td colspan="5" style="text-align:center;">78.13%</td></tr>
+<tr><th rowspan="3">東方妖々夢</th><td rowspan="3">11197</td><td>2769</td><td>1010</td><td>1676</td><td>3656</td><td>1187</td><td>899</td></tr>
+<tr><td>－</td><td>11.98%</td><td>19.89%</td><td>43.38%</td><td>14.08%</td><td>10.67%</td></tr>
+<tr><td>24.73%</td><td colspan="5" style="text-align:center;">75.27%</td></tr>
+<tr><th rowspan="3">東方永夜抄</th><td rowspan="3">11173</td><td>2716</td><td>688</td><td>1751</td><td>3760</td><td>1269</td><td>989</td></tr>
+<tr><td>－</td><td>8.14%</td><td>20.7%</td><td>44.46%</td><td>15.01%</td><td>11.69%</td></tr>
+<tr><td>24.31%</td><td colspan="5" style="text-align:center;">75.69%</td></tr>
+<tr><th rowspan="3">東方花映塚</th><td rowspan="3">10767</td><td>4292</td><td>747</td><td>1589</td><td>2796</td><td>571</td><td>772</td></tr>
+<tr><td>－</td><td>11.54%</td><td>24.54%</td><td>43.18%</td><td>8.82%</td><td>11.92%</td></tr>
+<tr><td>39.86%</td><td colspan="5" style="text-align:center;">60.14%</td></tr>
+<tr><th rowspan="3">東方風神録</th><td rowspan="3">10977</td><td>3033</td><td>982</td><td>1388</td><td>3620</td><td>1102</td><td>852</td></tr>
+<tr><td>－</td><td>12.36%</td><td>17.47%</td><td>45.57%</td><td>13.87%</td><td>10.73%</td></tr>
+<tr><td>27.63%</td><td colspan="5" style="text-align:center;">72.37%</td></tr>
+<tr><th rowspan="3">東方地霊殿</th><td rowspan="3">10820</td><td>3354</td><td>1345</td><td>1906</td><td>2819</td><td>779</td><td>617</td></tr>
+<tr><td>－</td><td>18.02%</td><td>25.53%</td><td>37.76%</td><td>10.43%</td><td>8.26%</td></tr>
+<tr><td>31%</td><td colspan="5" style="text-align:center;">69%</td></tr>
+<tr><th rowspan="3">東方星蓮船</th><td rowspan="3">10725</td><td>3845</td><td>1365</td><td>1584</td><td>2884</td><td>598</td><td>449</td></tr>
+<tr><td>－</td><td>19.84%</td><td>23.02%</td><td>41.92%</td><td>8.69%</td><td>6.53%</td></tr>
+<tr><td>35.85%</td><td colspan="5" style="text-align:center;">64.15%</td></tr>
+<tr><th rowspan="3">東方神霊廟</th><td rowspan="3">10750</td><td>3888</td><td>955</td><td>1381</td><td>3050</td><td>840</td><td>636</td></tr>
+<tr><td>－</td><td>13.92%</td><td>20.13%</td><td>44.45%</td><td>12.24%</td><td>9.27%</td></tr>
+<tr><td>36.17%</td><td colspan="5" style="text-align:center;">63.83%</td></tr>
+<tr><th rowspan="3">東方輝針城</th><td rowspan="3">10734</td><td>3983</td><td>993</td><td>1531</td><td>2900</td><td>723</td><td>604</td></tr>
+<tr><td>－</td><td>14.71%</td><td>22.68%</td><td>42.96%</td><td>10.71%</td><td>8.95%</td></tr>
+<tr><td>37.11%</td><td colspan="5" style="text-align:center;">62.89%</td></tr>
+<tr><th rowspan="3">東方紺珠伝（完全無欠）</th><td rowspan="3">10728</td><td>4080</td><td>1168</td><td>1544</td><td>2695</td><td>524</td><td>717</td></tr>
+<tr><td>－</td><td>17.57%</td><td>23.23%</td><td>40.54%</td><td>7.88%</td><td>10.79%</td></tr>
+<tr><td>38.03%</td><td colspan="5" style="text-align:center;">61.97%</td></tr>
+<tr><th rowspan="3">東方紺珠伝（レガシー）</th><td rowspan="3">10318</td><td>4149</td><td>2991</td><td>1077</td><td>1304</td><td>332</td><td>465</td></tr>
+<tr><td>－</td><td>48.48%</td><td>17.46%</td><td>21.14%</td><td>5.38%</td><td>7.54%</td></tr>
+<tr><td>40.21%</td><td colspan="5" style="text-align:center;">59.79%</td></tr>
+<tr><th rowspan="3">東方天空璋</th><td rowspan="3">10732</td><td>4445</td><td>1252</td><td>1554</td><td>2431</td><td>441</td><td>609</td></tr>
+<tr><td>－</td><td>19.91%</td><td>24.72%</td><td>38.67%</td><td>7.01%</td><td>9.69%</td></tr>
+<tr><td>41.42%</td><td colspan="5" style="text-align:center;">58.58%</td></tr>
+</table>
+
+
+<h2>05.現在購読している雑誌連載作品</h2>
+<h3>東方茨歌仙</h3>
+<p>有効回答数：11097件</p>
+<table class="result">
+<col style="width:20em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>購入していない</th><td>4141</td><td>37.32%</td></tr>
+<tr><th>単行本が出たら購入している</th><td>6623</td><td>59.68%</td></tr>
+<tr><th>連載誌（Febri）を継続購入している</th><td>333</td><td>3%</td></tr>
+</table>
+
+<h3>東方三月精</h3>
+<p>有効回答数：10748件</p>
+<table class="result">
+<col style="width:20em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>購入していない</th><td>5332</td><td>49.61%</td></tr>
+<tr><th>単行本が出たら購入している</th><td>4979</td><td>46.32%</td></tr>
+<tr><th>連載誌（コンプエース）を継続購入している</th><td>437</td><td>4.07%</td></tr>
+</table>
+
+<h3>東方外來韋編</h3>
+<p>有効回答数：10590件</p>
+<table class="result">
+<col style="width:20em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>購入していない</th><td>6221</td><td>58.74%</td></tr>
+<tr><th>連載誌（外來韋編）を購入した</th><td>4369</td><td>41.26%</td></tr>
+</table>
+
+
+<h2>06.東方Projectに魅力を感じているところ（複数回答可）</h2>
+<p>有効回答数：14094件</p>
+<table class="result">
+<col style="width:20em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>音楽</th><td>13483</td><td>95.66%</td></tr>
+<tr><th>ゲーム性</th><td>8251</td><td>58.54%</td></tr>
+<tr><th>キャラクタ</th><td>13018</td><td>92.37%</td></tr>
+<tr><th>ストーリー</th><td>8920</td><td>63.29%</td></tr>
+<tr><th>世界観</th><td>11630</td><td>82.52%</td></tr>
+<tr><th>二次創作作品</th><td>10521</td><td>74.65%</td></tr>
+<tr><th>東方作品を通じた交流</th><td>5550</td><td>39.38%</td></tr>
+</table>
+
+
+<h2>07.東方Projectを知った時期</h2>
+<p>有効回答数：13710件</p>
+<table class="result">
+<col style="width:20em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>旧作～秋霜玉（2000年12月）</th><td>73</td><td>0.53%</td></tr>
+<tr><th>秋霜玉～紅魔郷（2002年8月）</th><td>155</td><td>1.13%</td></tr>
+<tr><th>紅魔郷～妖々夢（2003年8月）</th><td>489</td><td>3.57%</td></tr>
+<tr><th>妖々夢～永夜抄（2004年8月）</th><td>354</td><td>2.58%</td></tr>
+<tr><th>永夜抄～萃夢想（2004年12月）</th><td>292</td><td>2.13%</td></tr>
+<tr><th>萃夢想～花映塚（2005年8月）</th><td>161</td><td>1.17%</td></tr>
+<tr><th>花映塚～文花帖（2005年12月）</th><td>174</td><td>1.27%</td></tr>
+<tr><th>文花帖～求聞史紀（2006年12月）</th><td>242</td><td>1.77%</td></tr>
+<tr><th>求聞史紀～風神録（2007年8月）</th><td>797</td><td>5.81%</td></tr>
+<tr><th>風神録～地霊殿（2008年8月）</th><td>1600</td><td>11.67%</td></tr>
+<tr><th>地霊殿～星蓮船（2009年8月）</th><td>1139</td><td>8.31%</td></tr>
+<tr><th>星蓮船～妖精大戦争（2010年8月）</th><td>989</td><td>7.21%</td></tr>
+<tr><th>妖精大戦争～神霊廟（2011年8月）</th><td>910</td><td>6.64%</td></tr>
+<tr><th>神霊廟～求聞口授（2012年4月）</th><td>1204</td><td>8.78%</td></tr>
+<tr><th>求聞口授～輝針城（2013年8月）</th><td>1164</td><td>8.49%</td></tr>
+<tr><th>輝針城～アマノジャク（2014年5月）</th><td>1398</td><td>10.2%</td></tr>
+<tr><th>アマノジャク～紺珠伝（2015年8月）</th><td>1259</td><td>9.18%</td></tr>
+<tr><th>紺珠伝～旧約酒場（2016年8月）</th><td>915</td><td>6.67%</td></tr>
+<tr><th>旧約酒場～天空璋（2017年8月）</th><td>297</td><td>2.17%</td></tr>
+<tr><th>天空璋～現在</th><td>98</td><td>0.71%</td></tr>
+</table>
+
+
+<h2>07.年齢（東方Projectを知った時期別）</h2>
+<table class="result">
+<col style="width:5.5em;">
+<tr><th>　</th><th>～9歳</th><th>10～14歳</th><th>15～19歳</th><th>20～24歳</th><th>25～29歳</th><th>30～34歳</th><th>35～39歳</th><th>40～44歳</th><th>45～49歳</th><th>50歳～</th></tr><tr><th rowspan="2">旧作～秋霜玉（2000年12月）</th><td>0</td><td>13</td><td>7</td><td>14</td><td>4</td><td>10</td><td>7</td><td>7</td><td>3</td><td>8</td></tr>
+<td>0%</td><td>17.81%</td><td>9.59%</td><td>19.18%</td><td>5.48%</td><td>13.7%</td><td>9.59%</td><td>9.59%</td><td>4.11%</td><td>10.96%</td></tr>
+<tr><th rowspan="2">秋霜玉～紅魔郷（2002年8月）</th><td>2</td><td>22</td><td>34</td><td>24</td><td>16</td><td>22</td><td>22</td><td>10</td><td>1</td><td>2</td></tr>
+<td>1.29%</td><td>14.19%</td><td>21.94%</td><td>15.48%</td><td>10.32%</td><td>14.19%</td><td>14.19%</td><td>6.45%</td><td>0.65%</td><td>1.29%</td></tr>
+<tr><th rowspan="2">紅魔郷～妖々夢（2003年8月）</th><td>0</td><td>81</td><td>55</td><td>82</td><td>62</td><td>102</td><td>67</td><td>30</td><td>9</td><td>1</td></tr>
+<td>0%</td><td>16.56%</td><td>11.25%</td><td>16.77%</td><td>12.68%</td><td>20.86%</td><td>13.7%</td><td>6.13%</td><td>1.84%</td><td>0.2%</td></tr>
+<tr><th rowspan="2">妖々夢～永夜抄（2004年8月）</th><td>0</td><td>28</td><td>28</td><td>51</td><td>83</td><td>94</td><td>52</td><td>14</td><td>2</td><td>2</td></tr>
+<td>0%</td><td>7.91%</td><td>7.91%</td><td>14.41%</td><td>23.45%</td><td>26.55%</td><td>14.69%</td><td>3.95%</td><td>0.56%</td><td>0.56%</td></tr>
+<tr><th rowspan="2">永夜抄～萃夢想（2004年12月）</th><td>0</td><td>21</td><td>18</td><td>35</td><td>85</td><td>83</td><td>40</td><td>7</td><td>3</td><td>0</td></tr>
+<td>0%</td><td>7.19%</td><td>6.16%</td><td>11.99%</td><td>29.11%</td><td>28.42%</td><td>13.7%</td><td>2.4%</td><td>1.03%</td><td>0%</td></tr>
+<tr><th rowspan="2">萃夢想～花映塚（2005年8月）</th><td>0</td><td>12</td><td>8</td><td>19</td><td>49</td><td>38</td><td>28</td><td>6</td><td>0</td><td>1</td></tr>
+<td>0%</td><td>7.45%</td><td>4.97%</td><td>11.8%</td><td>30.43%</td><td>23.6%</td><td>17.39%</td><td>3.73%</td><td>0%</td><td>0.62%</td></tr>
+<tr><th rowspan="2">花映塚～文花帖（2005年12月）</th><td>0</td><td>10</td><td>11</td><td>35</td><td>63</td><td>32</td><td>19</td><td>2</td><td>2</td><td>0</td></tr>
+<td>0%</td><td>5.75%</td><td>6.32%</td><td>20.11%</td><td>36.21%</td><td>18.39%</td><td>10.92%</td><td>1.15%</td><td>1.15%</td><td>0%</td></tr>
+<tr><th rowspan="2">文花帖～求聞史紀（2006年12月）</th><td>0</td><td>23</td><td>27</td><td>38</td><td>67</td><td>58</td><td>16</td><td>9</td><td>2</td><td>2</td></tr>
+<td>0%</td><td>9.5%</td><td>11.16%</td><td>15.7%</td><td>27.69%</td><td>23.97%</td><td>6.61%</td><td>3.72%</td><td>0.83%</td><td>0.83%</td></tr>
+<tr><th rowspan="2">求聞史紀～風神録（2007年8月）</th><td>0</td><td>52</td><td>64</td><td>205</td><td>281</td><td>136</td><td>43</td><td>10</td><td>4</td><td>2</td></tr>
+<td>0%</td><td>6.52%</td><td>8.03%</td><td>25.72%</td><td>35.26%</td><td>17.06%</td><td>5.4%</td><td>1.25%</td><td>0.5%</td><td>0.25%</td></tr>
+<tr><th rowspan="2">風神録～地霊殿（2008年8月）</th><td>3</td><td>119</td><td>203</td><td>479</td><td>479</td><td>209</td><td>66</td><td>28</td><td>11</td><td>3</td></tr>
+<td>0.19%</td><td>7.44%</td><td>12.69%</td><td>29.94%</td><td>29.94%</td><td>13.06%</td><td>4.13%</td><td>1.75%</td><td>0.69%</td><td>0.19%</td></tr>
+<tr><th rowspan="2">地霊殿～星蓮船（2009年8月）</th><td>0</td><td>88</td><td>183</td><td>464</td><td>245</td><td>96</td><td>31</td><td>25</td><td>6</td><td>1</td></tr>
+<td>0%</td><td>7.73%</td><td>16.07%</td><td>40.74%</td><td>21.51%</td><td>8.43%</td><td>2.72%</td><td>2.19%</td><td>0.53%</td><td>0.09%</td></tr>
+<tr><th rowspan="2">星蓮船～妖精大戦争（2010年8月）</th><td>1</td><td>84</td><td>252</td><td>414</td><td>151</td><td>46</td><td>23</td><td>10</td><td>5</td><td>3</td></tr>
+<td>0.1%</td><td>8.49%</td><td>25.48%</td><td>41.86%</td><td>15.27%</td><td>4.65%</td><td>2.33%</td><td>1.01%</td><td>0.51%</td><td>0.3%</td></tr>
+<tr><th rowspan="2">妖精大戦争～神霊廟（2011年8月）</th><td>0</td><td>85</td><td>322</td><td>358</td><td>88</td><td>27</td><td>22</td><td>5</td><td>2</td><td>1</td></tr>
+<td>0%</td><td>9.34%</td><td>35.38%</td><td>39.34%</td><td>9.67%</td><td>2.97%</td><td>2.42%</td><td>0.55%</td><td>0.22%</td><td>0.11%</td></tr>
+<tr><th rowspan="2">神霊廟～求聞口授（2012年4月）</th><td>0</td><td>150</td><td>520</td><td>391</td><td>100</td><td>28</td><td>7</td><td>4</td><td>2</td><td>2</td></tr>
+<td>0%</td><td>12.46%</td><td>43.19%</td><td>32.48%</td><td>8.31%</td><td>2.33%</td><td>0.58%</td><td>0.33%</td><td>0.17%</td><td>0.17%</td></tr>
+<tr><th rowspan="2">求聞口授～輝針城（2013年8月）</th><td>3</td><td>167</td><td>574</td><td>331</td><td>53</td><td>17</td><td>13</td><td>1</td><td>3</td><td>2</td></tr>
+<td>0.26%</td><td>14.35%</td><td>49.31%</td><td>28.44%</td><td>4.55%</td><td>1.46%</td><td>1.12%</td><td>0.09%</td><td>0.26%</td><td>0.17%</td></tr>
+<tr><th rowspan="2">輝針城～アマノジャク（2014年5月）</th><td>1</td><td>246</td><td>732</td><td>315</td><td>65</td><td>20</td><td>8</td><td>8</td><td>2</td><td>1</td></tr>
+<td>0.07%</td><td>17.6%</td><td>52.36%</td><td>22.53%</td><td>4.65%</td><td>1.43%</td><td>0.57%</td><td>0.57%</td><td>0.14%</td><td>0.07%</td></tr>
+<tr><th rowspan="2">アマノジャク～紺珠伝（2015年8月）</th><td>0</td><td>227</td><td>702</td><td>241</td><td>47</td><td>23</td><td>11</td><td>5</td><td>2</td><td>1</td></tr>
+<td>0%</td><td>18.03%</td><td>55.76%</td><td>19.14%</td><td>3.73%</td><td>1.83%</td><td>0.87%</td><td>0.4%</td><td>0.16%</td><td>0.08%</td></tr>
+<tr><th rowspan="2">紺珠伝～旧約酒場（2016年8月）</th><td>2</td><td>209</td><td>466</td><td>192</td><td>27</td><td>11</td><td>2</td><td>0</td><td>3</td><td>3</td></tr>
+<td>0.22%</td><td>22.84%</td><td>50.93%</td><td>20.98%</td><td>2.95%</td><td>1.2%</td><td>0.22%</td><td>0%</td><td>0.33%</td><td>0.33%</td></tr>
+<tr><th rowspan="2">旧約酒場～天空璋（2017年8月）</th><td>2</td><td>66</td><td>165</td><td>52</td><td>9</td><td>2</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<td>0.67%</td><td>22.22%</td><td>55.56%</td><td>17.51%</td><td>3.03%</td><td>0.67%</td><td>0%</td><td>0%</td><td>0%</td><td>0.34%</td></tr>
+<tr><th rowspan="2">天空璋～現在</th><td>0</td><td>32</td><td>44</td><td>16</td><td>4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<td>0%</td><td>32.65%</td><td>44.9%</td><td>16.33%</td><td>4.08%</td><td>1.02%</td><td>0%</td><td>1.02%</td><td>0%</td><td>0%</td></tr>
+</table>
+
+
+<h2>08.東方Projectを知ったきっかけ</h2>
+<p>有効回答数：12996件</p>
+<table class="result">
+<col style="width:36em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>学校、部活、家族などオフラインでのつながりから教えてもらった</th><td>3401</td><td>26.17%</td></tr>
+<tr><th>オンラインゲーム、チャット（IRC）などネットでのつながりから教えてもらった</th><td>525</td><td>4.04%</td></tr>
+<tr><th>個人サイト、ブログ、ニュースサイトなどで話題になっているのをみて知った</th><td>470</td><td>3.62%</td></tr>
+<tr><th>pixiv、ニジエ、TINAMIなどイラストSNSで話題になっているのをみて知った</th><td>409</td><td>3.15%</td></tr>
+<tr><th>2ちゃんねる、ふたば、したらばなど匿名掲示板で話題になっているのをみて知った</th><td>292</td><td>2.25%</td></tr>
+<tr><th>ニコニコ動画（生放送なども含む）で話題になっているのをみて知った</th><td>3176</td><td>24.44%</td></tr>
+<tr><th>Youtubeなどその他の動画サイトで話題になっているのをみて知った</th><td>3196</td><td>24.59%</td></tr>
+<tr><th>Twitterで話題になっているのをみて知った</th><td>53</td><td>0.41%</td></tr>
+<tr><th>雑誌連載、雑誌記事、TV番組などをみて知った</th><td>58</td><td>0.45%</td></tr>
+<tr><th>同人誌即売会（コミケなど）、サークル告知などでみかけて知った</th><td>123</td><td>0.95%</td></tr>
+<tr><th>同人ショップ、一般書店などでみかけて知った</th><td>221</td><td>1.7%</td></tr>
+<tr><th>音楽ゲームに東方曲があるのをみて知った</th><td>636</td><td>4.89%</td></tr>
+<tr><th>面白いゲームを探していたときにみつけた</th><td>436</td><td>3.35%</td></tr>
+</table>
+
+
+
+<h2>08.東方を知ったきっかけ（東方Projectを知った時期別）</h2>
+<table class="result">
+<col style="width:4em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;"><col style="width:4.2em;">
+<tr><th></th><th>オフライン</th><th>オンライン</th><th>個人サイト</th><th>イラストSNS</th><th>匿名掲示板</th><th>ニコ動</th><th>他動画サイト</th><th>Twitter</th><th>雑誌・TV</th><th>同人誌即売会</th><th>同人ショップ</th><th>STGゲーム</th><th>格闘ゲーム</th></tr>
+<tr><th rowspan="2">旧作～秋霜玉（2000年12月）</th><td>31</td><td>8</td><td>0</td><td>1</td><td>1</td><td>3</td><td>4</td><td>1</td><td>2</td><td>9</td><td>1</td><td>2</td><td>5</td></tr>
+<td>45.59%</td><td>11.76%</td><td>0%</td><td>1.47%</td><td>1.47%</td><td>4.41%</td><td>5.88%</td><td>1.47%</td><td>2.94%</td><td>13.24%</td><td>1.47%</td><td>2.94%</td><td>7.35%</td></tr>
+<tr><th rowspan="2">秋霜玉～紅魔郷（2002年8月）</th><td>37</td><td>15</td><td>14</td><td>6</td><td>5</td><td>12</td><td>13</td><td>1</td><td>3</td><td>5</td><td>8</td><td>8</td><td>16</td></tr>
+<td>25.87%</td><td>10.49%</td><td>9.79%</td><td>4.2%</td><td>3.5%</td><td>8.39%</td><td>9.09%</td><td>0.7%</td><td>2.1%</td><td>3.5%</td><td>5.59%</td><td>5.59%</td><td>11.19%</td></tr>
+<tr><th rowspan="2">紅魔郷～妖々夢（2003年8月）</th><td>164</td><td>33</td><td>44</td><td>16</td><td>14</td><td>50</td><td>34</td><td>2</td><td>9</td><td>13</td><td>22</td><td>24</td><td>42</td></tr>
+<td>35.12%</td><td>7.07%</td><td>9.42%</td><td>3.43%</td><td>3%</td><td>10.71%</td><td>7.28%</td><td>0.43%</td><td>1.93%</td><td>2.78%</td><td>4.71%</td><td>5.14%</td><td>8.99%</td></tr>
+<tr><th rowspan="2">妖々夢～永夜抄（2004年8月）</th><td>126</td><td>30</td><td>42</td><td>6</td><td>18</td><td>28</td><td>16</td><td>4</td><td>3</td><td>8</td><td>15</td><td>10</td><td>29</td></tr>
+<td>37.61%</td><td>8.96%</td><td>12.54%</td><td>1.79%</td><td>5.37%</td><td>8.36%</td><td>4.78%</td><td>1.19%</td><td>0.9%</td><td>2.39%</td><td>4.48%</td><td>2.99%</td><td>8.66%</td></tr>
+<tr><th rowspan="2">永夜抄～萃夢想（2004年12月）</th><td>81</td><td>14</td><td>36</td><td>4</td><td>19</td><td>42</td><td>19</td><td>1</td><td>1</td><td>4</td><td>21</td><td>14</td><td>24</td></tr>
+<td>28.93%</td><td>5%</td><td>12.86%</td><td>1.43%</td><td>6.79%</td><td>15%</td><td>6.79%</td><td>0.36%</td><td>0.36%</td><td>1.43%</td><td>7.5%</td><td>5%</td><td>8.57%</td></tr>
+<tr><th rowspan="2">萃夢想～花映塚（2005年8月）</th><td>58</td><td>8</td><td>18</td><td>0</td><td>13</td><td>21</td><td>2</td><td>0</td><td>2</td><td>2</td><td>9</td><td>5</td><td>17</td></tr>
+<td>37.42%</td><td>5.16%</td><td>11.61%</td><td>0%</td><td>8.39%</td><td>13.55%</td><td>1.29%</td><td>0%</td><td>1.29%</td><td>1.29%</td><td>5.81%</td><td>3.23%</td><td>10.97%</td></tr>
+<tr><th rowspan="2">花映塚～文花帖（2005年12月）</th><td>53</td><td>13</td><td>18</td><td>1</td><td>9</td><td>25</td><td>15</td><td>0</td><td>0</td><td>4</td><td>10</td><td>6</td><td>11</td></tr>
+<td>32.12%</td><td>7.88%</td><td>10.91%</td><td>0.61%</td><td>5.45%</td><td>15.15%</td><td>9.09%</td><td>0%</td><td>0%</td><td>2.42%</td><td>6.06%</td><td>3.64%</td><td>6.67%</td></tr>
+<tr><th rowspan="2">文花帖～求聞史紀（2006年12月）</th><td>67</td><td>15</td><td>21</td><td>3</td><td>20</td><td>36</td><td>19</td><td>1</td><td>4</td><td>5</td><td>12</td><td>6</td><td>14</td></tr>
+<td>30.04%</td><td>6.73%</td><td>9.42%</td><td>1.35%</td><td>8.97%</td><td>16.14%</td><td>8.52%</td><td>0.45%</td><td>1.79%</td><td>2.24%</td><td>5.38%</td><td>2.69%</td><td>6.28%</td></tr>
+<tr><th rowspan="2">求聞史紀～風神録（2007年8月）</th><td>177</td><td>18</td><td>39</td><td>11</td><td>28</td><td>323</td><td>87</td><td>1</td><td>2</td><td>9</td><td>14</td><td>15</td><td>23</td></tr>
+<td>23.69%</td><td>2.41%</td><td>5.22%</td><td>1.47%</td><td>3.75%</td><td>43.24%</td><td>11.65%</td><td>0.13%</td><td>0.27%</td><td>1.2%</td><td>1.87%</td><td>2.01%</td><td>3.08%</td></tr>
+<tr><th rowspan="2">風神録～地霊殿（2008年8月）</th><td>382</td><td>39</td><td>44</td><td>44</td><td>34</td><td>653</td><td>185</td><td>3</td><td>4</td><td>18</td><td>22</td><td>29</td><td>38</td></tr>
+<td>25.55%</td><td>2.61%</td><td>2.94%</td><td>2.94%</td><td>2.27%</td><td>43.68%</td><td>12.37%</td><td>0.2%</td><td>0.27%</td><td>1.2%</td><td>1.47%</td><td>1.94%</td><td>2.54%</td></tr>
+<tr><th rowspan="2">地霊殿～星蓮船（2009年8月）</th><td>295</td><td>43</td><td>34</td><td>23</td><td>18</td><td>365</td><td>200</td><td>0</td><td>4</td><td>4</td><td>12</td><td>37</td><td>27</td></tr>
+<td>27.78%</td><td>4.05%</td><td>3.2%</td><td>2.17%</td><td>1.69%</td><td>34.37%</td><td>18.83%</td><td>0%</td><td>0.38%</td><td>0.38%</td><td>1.13%</td><td>3.48%</td><td>2.54%</td></tr>
+<tr><th rowspan="2">星蓮船～妖精大戦争（2010年8月）</th><td>221</td><td>47</td><td>27</td><td>39</td><td>24</td><td>254</td><td>211</td><td>2</td><td>8</td><td>2</td><td>11</td><td>30</td><td>35</td></tr>
+<td>24.26%</td><td>5.16%</td><td>2.96%</td><td>4.28%</td><td>2.63%</td><td>27.88%</td><td>23.16%</td><td>0.22%</td><td>0.88%</td><td>0.22%</td><td>1.21%</td><td>3.29%</td><td>3.84%</td></tr>
+<tr><th rowspan="2">妖精大戦争～神霊廟（2011年8月）</th><td>230</td><td>29</td><td>21</td><td>44</td><td>12</td><td>226</td><td>230</td><td>2</td><td>3</td><td>5</td><td>9</td><td>28</td><td>24</td></tr>
+<td>26.65%</td><td>3.36%</td><td>2.43%</td><td>5.1%</td><td>1.39%</td><td>26.19%</td><td>26.65%</td><td>0.23%</td><td>0.35%</td><td>0.58%</td><td>1.04%</td><td>3.24%</td><td>2.78%</td></tr>
+<tr><th rowspan="2">神霊廟～求聞口授（2012年4月）</th><td>261</td><td>41</td><td>24</td><td>52</td><td>16</td><td>256</td><td>378</td><td>2</td><td>5</td><td>5</td><td>15</td><td>54</td><td>20</td></tr>
+<td>23.12%</td><td>3.63%</td><td>2.13%</td><td>4.61%</td><td>1.42%</td><td>22.67%</td><td>33.48%</td><td>0.18%</td><td>0.44%</td><td>0.44%</td><td>1.33%</td><td>4.78%</td><td>1.77%</td></tr>
+<tr><th rowspan="2">求聞口授～輝針城（2013年8月）</th><td>270</td><td>36</td><td>16</td><td>31</td><td>11</td><td>221</td><td>377</td><td>9</td><td>4</td><td>9</td><td>9</td><td>55</td><td>19</td></tr>
+<td>25.3%</td><td>3.37%</td><td>1.5%</td><td>2.91%</td><td>1.03%</td><td>20.71%</td><td>35.33%</td><td>0.84%</td><td>0.37%</td><td>0.84%</td><td>0.84%</td><td>5.15%</td><td>1.78%</td></tr>
+<tr><th rowspan="2">輝針城～アマノジャク（2014年5月）</th><td>339</td><td>34</td><td>18</td><td>40</td><td>18</td><td>245</td><td>468</td><td>6</td><td>2</td><td>7</td><td>12</td><td>84</td><td>23</td></tr>
+<td>26.16%</td><td>2.62%</td><td>1.39%</td><td>3.09%</td><td>1.39%</td><td>18.9%</td><td>36.11%</td><td>0.46%</td><td>0.15%</td><td>0.54%</td><td>0.93%</td><td>6.48%</td><td>1.77%</td></tr>
+<tr><th rowspan="2">アマノジャク～紺珠伝（2015年8月）</th><td>280</td><td>33</td><td>21</td><td>48</td><td>11</td><td>188</td><td>431</td><td>6</td><td>1</td><td>6</td><td>9</td><td>90</td><td>31</td></tr>
+<td>24.24%</td><td>2.86%</td><td>1.82%</td><td>4.16%</td><td>0.95%</td><td>16.28%</td><td>37.32%</td><td>0.52%</td><td>0.09%</td><td>0.52%</td><td>0.78%</td><td>7.79%</td><td>2.68%</td></tr>
+<tr><th rowspan="2">紺珠伝～旧約酒場（2016年8月）</th><td>188</td><td>42</td><td>22</td><td>24</td><td>9</td><td>117</td><td>308</td><td>9</td><td>1</td><td>2</td><td>4</td><td>77</td><td>21</td></tr>
+<td>22.82%</td><td>5.1%</td><td>2.67%</td><td>2.91%</td><td>1.09%</td><td>14.2%</td><td>37.38%</td><td>1.09%</td><td>0.12%</td><td>0.24%</td><td>0.49%</td><td>9.34%</td><td>2.55%</td></tr>
+<tr><th rowspan="2">旧約酒場～天空璋（2017年8月）</th><td>55</td><td>13</td><td>6</td><td>10</td><td>5</td><td>43</td><td>90</td><td>2</td><td>0</td><td>3</td><td>2</td><td>31</td><td>9</td></tr>
+<td>20.45%</td><td>4.83%</td><td>2.23%</td><td>3.72%</td><td>1.86%</td><td>15.99%</td><td>33.46%</td><td>0.74%</td><td>0%</td><td>1.12%</td><td>0.74%</td><td>11.52%</td><td>3.35%</td></tr>
+<tr><th rowspan="2">天空璋～現在</th><td>24</td><td>3</td><td>4</td><td>1</td><td>2</td><td>8</td><td>34</td><td>1</td><td>0</td><td>0</td><td>1</td><td>11</td><td>3</td></tr>
+<td>26.09%</td><td>3.26%</td><td>4.35%</td><td>1.09%</td><td>2.17%</td><td>8.7%</td><td>36.96%</td><td>1.09%</td><td>0%</td><td>0%</td><td>1.09%</td><td>11.96%</td><td>3.26%</td></tr>
+</table>
+
+
+<h2>09.コミケや例大祭など同人誌即売会に参加する際の目当て（複数回答可）</h2>
+<p>有効回答数：13550件</p>
+<table class="result">
+<col style="width:20em;"><col style="width:5em;"><col style="width:5em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>参加していない</th><td>－</td><td>－</td><td>6268</td><td>46.26%</td></tr>
+<tr><th>公式原作の購入</th><td>3753</td><td>51.54%</td><td rowspan="15">7282</td><td rowspan="15">53.74%</td></tr>
+<tr><th>同人誌作品の購入</th><td>5941</td><td>81.58%</td></tr>
+<tr><th>音楽同人作品の購入</th><td>4663</td><td>64.03%</td></tr>
+<tr><th>同人ソフト作品の購入</th><td>2828</td><td>38.84%</td></tr>
+<tr><th>同人グッズ作品の購入</th><td>4080</td><td>56.03%</td></tr>
+<tr><th>企業制作作品の購入</th><td>1046</td><td>14.36%</td></tr>
+<tr><th>作品頒布（サークル）</th><td>1290</td><td>17.71%</td></tr>
+<tr><th>裏方作業（スタッフ）</th><td>174</td><td>2.39%</td></tr>
+<tr><th>サークルや友人との交流</th><td>2129</td><td>29.24%</td></tr>
+<tr><th>コスプレ（する側）</th><td>456</td><td>6.26%</td></tr>
+<tr><th>コスプレ（見る・撮影する側）</th><td>1103</td><td>15.15%</td></tr>
+<tr><th>音ゲーなどのコラボ企画</th><td>663</td><td>9.1%</td></tr>
+<tr><th>音楽ライブ（併催されるとき）</th><td>732</td><td>10.05%</td></tr>
+</table>
+
+
+<h2>10.これまでに東方Project（シリーズ）人気投票へ投票したことはありますか？</h2>
+<p>有効回答数：13975件</p>
+<table class="result">
+<col style="width:20em;"><col style="width:5em;"><col style="width:5em;">
+<tr><th>今回がはじめて</th><td>4084</td><td>29.22%</td></tr>
+<tr><th>過去1～3回投票したことがある</th><td>6445</td><td>46.12%</td></tr>
+<tr><th>過去4回以上投票したことがある</th><td>3446</td><td>24.66%</td></tr>
+</table>
+</article>
+</section>
+
+
+<footer>
+    <p class="banner"><a href="./"><img src="bnr468_60.png"></a></p>
+    <dl>
+        <dt>東方人気投票運営</dt>
+        <dd>東方人気投票実行委員会</dd>
+        <dt>東方Project制作元</dt>
+        <dd><a href="http://www16.big.or.jp/~zun/">上海アリス幻樂団</a></dd>
+    </dl>
+    <dl>
+        <dt>イラスト</dt>
+        <dd>おいもとじろう（<a href="http://oimoto.mimoza.jp/">おいもと</a>）</dd>
+        <dt>Web</dt>
+        <dd>妹尾ありか（<a href="http://imoni.org/">ありや</a>）</dd>
+    </dl>
+</footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"d7849c779eb04c88be62bbf323cac151","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>

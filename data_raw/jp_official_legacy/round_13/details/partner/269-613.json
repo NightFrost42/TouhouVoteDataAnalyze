@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/269-613.php",
+    "effective_url": "https://toho-vote.info/result13/partner/269-613.php",
+    "retrieved_at": "2026-08-15T09:56:42+00:00",
+    "http_status": 200,
+    "bytes": 6234,
+    "sha256": "e3376ecd1d7ba871ce9a2634fb59668cb72eebbcfeb2ab818b11ff182307cd26",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "269-613",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：二ッ岩 マミゾウと本居 小鈴 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "二ッ岩 マミゾウと本居 小鈴（88位）",
+      "numbers": [
+        {
+          "raw": "88位",
+          "value": 88,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：245点 ｜ 得票数：222票 ｜ 一押し数：23票 ｜ コメント数：31件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "245点",
+          "value": 245,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "222票",
+          "value": 222,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "23票",
+          "value": 23,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "31件",
+          "value": 31,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

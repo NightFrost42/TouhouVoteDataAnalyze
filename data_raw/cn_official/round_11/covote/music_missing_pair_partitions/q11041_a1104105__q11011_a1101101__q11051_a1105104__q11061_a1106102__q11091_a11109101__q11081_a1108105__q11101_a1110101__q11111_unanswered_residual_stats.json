@@ -1,0 +1,861 @@
+{
+  "schemaVersion": 1,
+  "round": 11,
+  "generatedAt": "2026-08-17T17:44:49Z",
+  "role": "conditional refinement via fanwork_interest_with_unanswered",
+  "axisName": "fanwork_interest_with_unanswered",
+  "residualAxisIndex": 3,
+  "conditionalParentRequirement": null,
+  "conditionalParentRequirementSatisfied": true,
+  "method": "exact parent minus 4 explicit official answer cohorts",
+  "parent": {
+    "filters": [
+      {
+        "questionId": 11041,
+        "answerId": 1104105
+      },
+      {
+        "questionId": 11011,
+        "answerId": 1101101
+      },
+      {
+        "questionId": 11051,
+        "answerId": 1105104
+      },
+      {
+        "questionId": 11061,
+        "answerId": 1106102
+      },
+      {
+        "questionId": 11091,
+        "answerId": 11109101
+      },
+      {
+        "questionId": 11081,
+        "answerId": 1108105
+      },
+      {
+        "questionId": 11101,
+        "answerId": 1110101
+      }
+    ],
+    "query": "q11041=1104105 AND q11011=1101101 AND q11051=1105104 AND q11061=1106102 AND q11091=11109101 AND q11081=1108105 AND q11101=1110101",
+    "numVote": 19,
+    "numMusic": 14,
+    "rankingEntryCount": 91,
+    "rankingNamesByRank": [
+      "众神眷恋的幻想乡",
+      "献给已逝公主的七重奏",
+      "永远之巫女",
+      "熙攘市场今何在　～ Immemorial Marketeers",
+      "辉光之针的小人族　～ Little Princess",
+      "少女曾见的日本原风景",
+      "蓬莱传说",
+      "哈德曼的妖怪少女",
+      "飘上月球，不死之烟",
+      "陶瓷的杖刀人",
+      "幽雅地绽放吧，墨染的樱花　～ Border of Life",
+      "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+      "梦消失 ～ Lost Dream",
+      "少女觉 ～ 3rd eye",
+      "Pure Furies　～ 心之所在",
+      "卫星鸟船",
+      "未知之花 魅知之旅",
+      "信仰是为了虚幻之人",
+      "飞翔于宇宙的不可思议巫女",
+      "最澄澈的空与海",
+      "东方妖恋谈",
+      "识文解意的爱书人",
+      "U.N.OWEN就是她吗？",
+      "寄世界于偶像　～ Idoratrize World",
+      "星之器 ～ Casket of Star",
+      "故乡之星倒映之海",
+      "Demystify Feast",
+      "童祭 ～ Innocent Treasures",
+      "Tiny Shangri-La",
+      "东方绯想天",
+      "Captain Murasa",
+      "世间万物皆可爱",
+      "A Sacred Lot",
+      "彼岸归航　～ Riverside View",
+      "轮椅上的未来宇宙",
+      "End of Daylight",
+      "Beast Metropolis",
+      "以犯规对不可能的弹幕",
+      "红楼 ～ Eastern Dream…",
+      "科学世纪的少年少女",
+      "今宵是飘逸的利己主义者(Live ver)　～ Egoistic Flowers.",
+      "夜幕降临 ～ Evening Star",
+      "七石之狼、登天吞云",
+      "薛定谔的怪猫",
+      "Strawberry Crisis!!",
+      "圣德太子的天马　～ Dark Pegasus",
+      "Dream Land",
+      "被秘匿的四个季节",
+      "53分钟的蓝色大海",
+      "花映塚　～ Higan Retour",
+      "悠久山上鬼",
+      "上海红茶馆　～ Chinese Tea",
+      "宿醉者的同床异梦",
+      "废狱摇篮曲",
+      "不可思议之国的爱丽丝",
+      "感情的摩天楼　～ Cosmic Mind",
+      "永远的三日天下",
+      "九月的南瓜",
+      "春色小径　～ Colorful Path",
+      "吸血怪兽卓柏卡布拉",
+      "漫游旧地狱街道",
+      "妖魔夜行",
+      "Voyage1969",
+      "卫星露天咖啡座",
+      "不可思议的驱魔棒",
+      "风之神社",
+      "架起虹桥的幻想乡",
+      "Complete Darkness",
+      "Reverse Ideology",
+      "黑市无处不在",
+      "令人心跳的司空见惯幻想乡\t",
+      "幻梦界",
+      "日日是红日 ～ Folksy Touhou days.",
+      "二色莲花蝶　～ Ancients（二色莲花蝶　～ Red and White）",
+      "樱花之恋塚　～ Flower of Japan",
+      "广重36号 ～ Neo Super-Express",
+      "广有射怪鸟事 ～ Till When?",
+      "驹草盛开的万年积雪",
+      "遥遥38万公里的航程",
+      "风神少女",
+      "月时计　～ Luna Dial",
+      "湖上倒映着洁净的月光",
+      "竹取飞翔　～ Lunatic Princess",
+      "未知物Ｘ　～ Unfound Adventure（未知物X　～ Occultly Madness）",
+      "Necro-Fantasia",
+      "the Grimoire of Alice",
+      "第六十年的东方审判　～ Fate of Sixty Years",
+      "兔已着陆",
+      "二人不值一提的博物志",
+      "灵知的太阳信仰 ～ Nuclear Fusion",
+      "天魔之山漫天星"
+    ],
+    "rankingNamesByRankSha256": "52c614b5ac625c8ea95baa1d02c48d89706e0b9c5c20a61d543ae14f8dd742e9",
+    "rankingVoteCountsByRank": [
+      5,
+      4,
+      4,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rankingVoteCountsByRankSha256": "cf0052d0fe01e6e870e836a61e6fa11b13f799a7e95f443c29712149eee214e7",
+    "targetA": {
+      "name": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+      "voteCount": 2,
+      "rank": 12
+    },
+    "targetB": {
+      "name": "令人心跳的司空见惯幻想乡\t",
+      "voteCount": 1,
+      "rank": 71
+    },
+    "statsEvidence": {
+      "path": "data_raw/cn_official/round_11/covote/music_missing_pair_partitions/q11041_a1104105__q11011_a1101101__q11051_a1105104__q11061_a1106102__q11091_a11109101__q11081_a1108105__q11101_a1110101_stats.json",
+      "exists": true,
+      "bytes": 8590,
+      "sha256": "d5e097d5e5af985cb47b19a3881b1805b084c7a67618b9892dfd4748b2de288c",
+      "operation": "MusicCovotePartitionStats",
+      "reusedCheckpoint": true
+    }
+  },
+  "questionDefinitionProof": {
+    "questionTypeIsSingle": true,
+    "answerIdsAreUnique": true,
+    "allDefinedOptionsCovered": true,
+    "officialResultAnswerSetEqualsDefinedOptionSet": true,
+    "sumOfficialExplicitOptionVoters": 14593,
+    "officialQuestionTotalAnswers": 14593,
+    "roundNumVote": 14594,
+    "unansweredResidualDefinedAsRoundMinusExplicitAnswers": 1,
+    "unansweredResidualWithinSafeMaximum": true,
+    "explicitAnswersPlusResidualEqualsRoundNumVote": true,
+    "explicitAnswersAreMutuallyExclusiveAndResidualIsTheirComplement": true
+  },
+  "explicitChildren": [
+    {
+      "filters": [
+        {
+          "questionId": 11041,
+          "answerId": 1104105
+        },
+        {
+          "questionId": 11011,
+          "answerId": 1101101
+        },
+        {
+          "questionId": 11051,
+          "answerId": 1105104
+        },
+        {
+          "questionId": 11061,
+          "answerId": 1106102
+        },
+        {
+          "questionId": 11091,
+          "answerId": 11109101
+        },
+        {
+          "questionId": 11081,
+          "answerId": 1108105
+        },
+        {
+          "questionId": 11101,
+          "answerId": 1110101
+        },
+        {
+          "questionId": 11111,
+          "answerId": 1111101
+        }
+      ],
+      "query": "q11041=1104105 AND q11011=1101101 AND q11051=1105104 AND q11061=1106102 AND q11091=11109101 AND q11081=1108105 AND q11101=1110101 AND q11111=1111101",
+      "numVote": 9,
+      "numMusic": 6,
+      "rankingEntryCount": 51,
+      "rankingNamesByRank": [
+        "众神眷恋的幻想乡",
+        "蓬莱传说",
+        "故乡之星倒映之海",
+        "Pure Furies　～ 心之所在",
+        "熙攘市场今何在　～ Immemorial Marketeers",
+        "卫星鸟船",
+        "梦消失 ～ Lost Dream",
+        "永远之巫女",
+        "识文解意的爱书人",
+        "辉光之针的小人族　～ Little Princess",
+        "童祭 ～ Innocent Treasures",
+        "哈德曼的妖怪少女",
+        "Captain Murasa",
+        "世间万物皆可爱",
+        "废狱摇篮曲",
+        "漫游旧地狱街道",
+        "Voyage1969",
+        "春色小径　～ Colorful Path",
+        "今宵是飘逸的利己主义者(Live ver)　～ Egoistic Flowers.",
+        "寄世界于偶像　～ Idoratrize World",
+        "遥遥38万公里的航程",
+        "未知之花 魅知之旅",
+        "Necro-Fantasia",
+        "飞翔于宇宙的不可思议巫女",
+        "夜幕降临 ～ Evening Star",
+        "以犯规对不可能的弹幕",
+        "卫星露天咖啡座",
+        "七石之狼、登天吞云",
+        "最澄澈的空与海",
+        "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+        "献给已逝公主的七重奏",
+        "U.N.OWEN就是她吗？",
+        "东方妖恋谈",
+        "日日是红日 ～ Folksy Touhou days.",
+        "幽雅地绽放吧，墨染的樱花　～ Border of Life",
+        "不可思议的驱魔棒",
+        "不可思议之国的爱丽丝",
+        "少女曾见的日本原风景",
+        "灵知的太阳信仰 ～ Nuclear Fusion",
+        "风神少女",
+        "天魔之山漫天星",
+        "圣德太子的天马　～ Dark Pegasus",
+        "架起虹桥的幻想乡",
+        "宿醉者的同床异梦",
+        "飘上月球，不死之烟",
+        "驹草盛开的万年积雪",
+        "上海红茶馆　～ Chinese Tea",
+        "少女觉 ～ 3rd eye",
+        "广重36号 ～ Neo Super-Express",
+        "红楼 ～ Eastern Dream…",
+        "第六十年的东方审判　～ Fate of Sixty Years"
+      ],
+      "rankingNamesByRankSha256": "e089d5cdbd106cff8b8f56c01850080471d9445f116316e02d73bf9731103565",
+      "rankingVoteCountsByRank": [
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rankingVoteCountsByRankSha256": "84f80569eae72817bb9c852380970b15ceb3c0119218cd206002578d407c0b91",
+      "targetA": {
+        "name": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+        "voteCount": 1,
+        "rank": 30
+      },
+      "targetB": {
+        "name": "令人心跳的司空见惯幻想乡\t",
+        "voteCount": 0,
+        "rank": null
+      },
+      "statsEvidence": {
+        "path": "data_raw/cn_official/round_11/covote/music_missing_pair_partitions/q11041_a1104105__q11011_a1101101__q11051_a1105104__q11061_a1106102__q11091_a11109101__q11081_a1108105__q11101_a1110101__q11111_a1111101_stats.json",
+        "exists": true,
+        "bytes": 5589,
+        "sha256": "1303e9873d260e3e3ba798ce094fbeac0e2ebaaa125836bb1e1d3a7a69dfba27",
+        "operation": "MusicCovotePartitionStats",
+        "reusedCheckpoint": true
+      }
+    },
+    {
+      "filters": [
+        {
+          "questionId": 11041,
+          "answerId": 1104105
+        },
+        {
+          "questionId": 11011,
+          "answerId": 1101101
+        },
+        {
+          "questionId": 11051,
+          "answerId": 1105104
+        },
+        {
+          "questionId": 11061,
+          "answerId": 1106102
+        },
+        {
+          "questionId": 11091,
+          "answerId": 11109101
+        },
+        {
+          "questionId": 11081,
+          "answerId": 1108105
+        },
+        {
+          "questionId": 11101,
+          "answerId": 1110101
+        },
+        {
+          "questionId": 11111,
+          "answerId": 1111102
+        }
+      ],
+      "query": "q11041=1104105 AND q11011=1101101 AND q11051=1105104 AND q11061=1106102 AND q11091=11109101 AND q11081=1108105 AND q11101=1110101 AND q11111=1111102",
+      "numVote": 8,
+      "numMusic": 6,
+      "rankingEntryCount": 36,
+      "rankingNamesByRank": [
+        "献给已逝公主的七重奏",
+        "陶瓷的杖刀人",
+        "东方绯想天",
+        "Demystify Feast",
+        "未知物Ｘ　～ Unfound Adventure（未知物X　～ Occultly Madness）",
+        "永远之巫女",
+        "少女觉 ～ 3rd eye",
+        "风之神社",
+        "A Sacred Lot",
+        "寄世界于偶像　～ Idoratrize World",
+        "the Grimoire of Alice",
+        "辉光之针的小人族　～ Little Princess",
+        "感情的摩天楼　～ Cosmic Mind",
+        "星之器 ～ Casket of Star",
+        "九月的南瓜",
+        "U.N.OWEN就是她吗？",
+        "广有射怪鸟事 ～ Till When?",
+        "竹取飞翔　～ Lunatic Princess",
+        "月时计　～ Luna Dial",
+        "信仰是为了虚幻之人",
+        "东方妖恋谈",
+        "妖魔夜行",
+        "众神眷恋的幻想乡",
+        "哈德曼的妖怪少女",
+        "湖上倒映着洁净的月光",
+        "Reverse Ideology",
+        "Beast Metropolis",
+        "兔已着陆",
+        "薛定谔的怪猫",
+        "飘上月球，不死之烟",
+        "永远的三日天下",
+        "幽雅地绽放吧，墨染的樱花　～ Border of Life",
+        "飞翔于宇宙的不可思议巫女",
+        "吸血怪兽卓柏卡布拉",
+        "花映塚　～ Higan Retour",
+        "悠久山上鬼"
+      ],
+      "rankingNamesByRankSha256": "b00eec9dfabe5848c9901152a60a84feb6d615b72ccd444dc6d60aec9621c561",
+      "rankingVoteCountsByRank": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rankingVoteCountsByRankSha256": "18c92896a1054f7ad910ff37b7e4f37db7f1693d2b698d71ed4dd0ce90584aaa",
+      "targetA": {
+        "name": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+        "voteCount": 0,
+        "rank": null
+      },
+      "targetB": {
+        "name": "令人心跳的司空见惯幻想乡\t",
+        "voteCount": 0,
+        "rank": null
+      },
+      "statsEvidence": {
+        "path": "data_raw/cn_official/round_11/covote/music_missing_pair_partitions/q11041_a1104105__q11011_a1101101__q11051_a1105104__q11061_a1106102__q11091_a11109101__q11081_a1108105__q11101_a1110101__q11111_a1111102_stats.json",
+        "exists": true,
+        "bytes": 4240,
+        "sha256": "4ffd923b4d049186a327e7e458d2b6007f24dd2c3d0da395411277514fe877ab",
+        "operation": "MusicCovotePartitionStats",
+        "reusedCheckpoint": true
+      }
+    },
+    {
+      "filters": [
+        {
+          "questionId": 11041,
+          "answerId": 1104105
+        },
+        {
+          "questionId": 11011,
+          "answerId": 1101101
+        },
+        {
+          "questionId": 11051,
+          "answerId": 1105104
+        },
+        {
+          "questionId": 11061,
+          "answerId": 1106102
+        },
+        {
+          "questionId": 11091,
+          "answerId": 11109101
+        },
+        {
+          "questionId": 11081,
+          "answerId": 1108105
+        },
+        {
+          "questionId": 11101,
+          "answerId": 1110101
+        },
+        {
+          "questionId": 11111,
+          "answerId": 1111103
+        }
+      ],
+      "query": "q11041=1104105 AND q11011=1101101 AND q11051=1105104 AND q11061=1106102 AND q11091=11109101 AND q11081=1108105 AND q11101=1110101 AND q11111=1111103",
+      "numVote": 2,
+      "numMusic": 2,
+      "rankingEntryCount": 24,
+      "rankingNamesByRank": [
+        "Tiny Shangri-La",
+        "少女曾见的日本原风景",
+        "Complete Darkness",
+        "被秘匿的四个季节",
+        "最澄澈的空与海",
+        "53分钟的蓝色大海",
+        "End of Daylight",
+        "樱花之恋塚　～ Flower of Japan",
+        "Strawberry Crisis!!",
+        "令人心跳的司空见惯幻想乡\t",
+        "信仰是为了虚幻之人",
+        "熙攘市场今何在　～ Immemorial Marketeers",
+        "彼岸归航　～ Riverside View",
+        "黑市无处不在",
+        "永远之巫女",
+        "未知之花 魅知之旅",
+        "二人不值一提的博物志",
+        "幻梦界",
+        "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+        "科学世纪的少年少女",
+        "星之器 ～ Casket of Star",
+        "二色莲花蝶　～ Ancients（二色莲花蝶　～ Red and White）",
+        "Dream Land",
+        "轮椅上的未来宇宙"
+      ],
+      "rankingNamesByRankSha256": "12152fd09f743a1b37e150bbd96ad72d774a0000f69634cfedf93bcfbc605910",
+      "rankingVoteCountsByRank": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rankingVoteCountsByRankSha256": "5e4dbbf2b3110522c40261ca284b73d503f59061fdd3eb974cbc6dd5a2ab69ce",
+      "targetA": {
+        "name": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+        "voteCount": 1,
+        "rank": 19
+      },
+      "targetB": {
+        "name": "令人心跳的司空见惯幻想乡\t",
+        "voteCount": 1,
+        "rank": 10
+      },
+      "statsEvidence": {
+        "path": "data_raw/cn_official/round_11/covote/music_missing_pair_partitions/q11041_a1104105__q11011_a1101101__q11051_a1105104__q11061_a1106102__q11091_a11109101__q11081_a1108105__q11101_a1110101__q11111_a1111103_stats.json",
+        "exists": true,
+        "bytes": 3356,
+        "sha256": "49d355c4ea2dd3c7b23f15f1af5fcdce1efced81abee97c2b0f83ac7c5c1d0dd",
+        "operation": "MusicCovotePartitionStats",
+        "reusedCheckpoint": true
+      }
+    },
+    {
+      "filters": [
+        {
+          "questionId": 11041,
+          "answerId": 1104105
+        },
+        {
+          "questionId": 11011,
+          "answerId": 1101101
+        },
+        {
+          "questionId": 11051,
+          "answerId": 1105104
+        },
+        {
+          "questionId": 11061,
+          "answerId": 1106102
+        },
+        {
+          "questionId": 11091,
+          "answerId": 11109101
+        },
+        {
+          "questionId": 11081,
+          "answerId": 1108105
+        },
+        {
+          "questionId": 11101,
+          "answerId": 1110101
+        },
+        {
+          "questionId": 11111,
+          "answerId": 1111104
+        }
+      ],
+      "query": "q11041=1104105 AND q11011=1101101 AND q11051=1105104 AND q11061=1106102 AND q11091=11109101 AND q11081=1108105 AND q11101=1110101 AND q11111=1111104",
+      "numVote": 0,
+      "numMusic": 0,
+      "rankingEntryCount": 0,
+      "rankingNamesByRank": [],
+      "rankingNamesByRankSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "rankingVoteCountsByRank": [],
+      "rankingVoteCountsByRankSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "targetA": {
+        "name": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+        "voteCount": 0,
+        "rank": null
+      },
+      "targetB": {
+        "name": "令人心跳的司空见惯幻想乡\t",
+        "voteCount": 0,
+        "rank": null
+      },
+      "statsEvidence": {
+        "path": "data_raw/cn_official/round_11/covote/music_missing_pair_partitions/q11041_a1104105__q11011_a1101101__q11051_a1105104__q11061_a1106102__q11091_a11109101__q11081_a1108105__q11101_a1110101__q11111_a1111104_stats.json",
+        "exists": true,
+        "bytes": 1456,
+        "sha256": "c0b552faef9eb0d64ea746c33ef9dcaf9b7906123954a715d7c58a2bf7062ed2",
+        "operation": "MusicCovotePartitionStats",
+        "reusedCheckpoint": true
+      }
+    }
+  ],
+  "residual": {
+    "filters": [
+      {
+        "questionId": 11041,
+        "answerId": 1104105
+      },
+      {
+        "questionId": 11011,
+        "answerId": 1101101
+      },
+      {
+        "questionId": 11051,
+        "answerId": 1105104
+      },
+      {
+        "questionId": 11061,
+        "answerId": 1106102
+      },
+      {
+        "questionId": 11091,
+        "answerId": 11109101
+      },
+      {
+        "questionId": 11081,
+        "answerId": 1108105
+      },
+      {
+        "questionId": 11101,
+        "answerId": 1110101
+      }
+    ],
+    "query": null,
+    "numVote": 0,
+    "numMusic": 0,
+    "targetA": {
+      "name": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+      "voteCount": 0,
+      "rank": null
+    },
+    "targetB": {
+      "name": "令人心跳的司空见惯幻想乡\t",
+      "voteCount": 0,
+      "rank": null
+    },
+    "residualDefinition": {
+      "questionId": 11111,
+      "explicitAnswerIds": [
+        1111101,
+        1111102,
+        1111103,
+        1111104
+      ],
+      "operation": "exact parent minus explicit official child statistics",
+      "hasDirectOfficialQuery": false,
+      "maxGlobalUnansweredVoters": 1
+    }
+  },
+  "residualDerivationProof": {
+    "method": "component-wise parent minus all explicit answer children",
+    "questionId": 11111,
+    "explicitAnswerIdsExpected": [
+      1111101,
+      1111102,
+      1111103,
+      1111104
+    ],
+    "explicitAnswerIdsObserved": [
+      1111101,
+      1111102,
+      1111103,
+      1111104
+    ],
+    "explicitChildCount": 4,
+    "subtractions": {
+      "numVote": {
+        "parent": 19,
+        "explicitChildrenSum": 19,
+        "residual": 0,
+        "identityPassed": true
+      },
+      "numMusic": {
+        "parent": 14,
+        "explicitChildrenSum": 14,
+        "residual": 0,
+        "identityPassed": true
+      },
+      "targetAVoteCount": {
+        "parent": 2,
+        "explicitChildrenSum": 2,
+        "residual": 0,
+        "identityPassed": true
+      },
+      "targetBVoteCount": {
+        "parent": 1,
+        "explicitChildrenSum": 1,
+        "residual": 0,
+        "identityPassed": true
+      }
+    },
+    "nonnegativeResidualPassed": true,
+    "residualNumVoteWithinGlobalMaximum": true,
+    "combinedExactConservationProof": {
+      "observedSums": {
+        "numVote": 19,
+        "numMusic": 14,
+        "targetAVoteCount": 2,
+        "targetBVoteCount": 1
+      },
+      "expectedParentValues": {
+        "numVote": 19,
+        "numMusic": 14,
+        "targetAVoteCount": 2,
+        "targetBVoteCount": 1
+      },
+      "passed": true
+    }
+  }
+}

@@ -1,0 +1,624 @@
+{
+  "schema_version": 1,
+  "queue_name": "touhou-official-data-crawl-jp3-22-cn1-11",
+  "poll_seconds": 30,
+  "retry_initial_seconds": 120,
+  "retry_max_seconds": 3600,
+  "failure_policy": {
+    "max_consecutive_stage_failures": 15,
+    "stop_when_reached": true
+  },
+  "notifications": {
+    "enabled": true,
+    "failed_attempt_threshold": 15,
+    "notify_on_complete": true
+  },
+  "scope": {
+    "japanese_rounds": "3-22 (round 22 crawl and validation queued first)",
+    "chinese_rounds": "1-11 (CN10-11 modern-site stages resumed from existing checkpoints)",
+    "excluded": [
+      "article analysis",
+      "social-media search",
+      "recommendation reasons and other open text",
+      "images and fonts",
+      "client-only keyword/min/max display filters",
+      "unbounded Boolean combinations of advanced-search atoms"
+    ]
+  },
+  "stages": [
+    {
+      "id": "jp_modern_round22",
+      "label": "日区第22届完整结果抓取",
+      "kind": "crawl",
+      "description": "Fetch JP22 official aggregate rankings/questionnaire and every character/music/work detail module; reuse all JP17-21 checkpoints",
+      "command": [
+        "{node}",
+        "scripts_pipeline/crawl_jp_official.mjs",
+        "--rounds",
+        "17,18,19,20,21,22",
+        "--detail-rounds",
+        "17,18,19,20,21,22",
+        "--concurrency",
+        "3"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_official_download_manifest.json",
+          "json_path": [
+            "rounds"
+          ],
+          "equals": [
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_official_download_manifest.json",
+          "json_path": [
+            "expected_counts",
+            "22:detail:character"
+          ],
+          "equals": 225
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_official_download_manifest.json",
+          "json_path": [
+            "expected_counts",
+            "22:detail:music"
+          ],
+          "equals": 623
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_official_download_manifest.json",
+          "json_path": [
+            "expected_counts",
+            "22:detail:work"
+          ],
+          "equals": 62
+        }
+      ]
+    },
+    {
+      "id": "jp_modern_normalize_22",
+      "label": "日区第17–22届现代站数据整理",
+      "kind": "transform",
+      "description": "Normalize JP17-22 official aggregate and per-entity modules after the JP22 crawl",
+      "command": [
+        "{python}",
+        "scripts_pipeline/normalize_jp_official.py"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_official_normalization_report.json",
+          "json_path": [
+            "available_rounds"
+          ],
+          "equals": [
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_official_normalization_report.json",
+          "json_path": [
+            "validations",
+            "all_requested_detail_counts_match_manifest"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "jp_unified_build_22",
+      "label": "日区第3–22届统一数据重建",
+      "kind": "transform",
+      "description": "Rebuild the analysis-ready JP3-22 questionnaire and association layer",
+      "command": [
+        "{python}",
+        "scripts_pipeline/build_jp_unified.py"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_unified_report.json",
+          "json_path": [
+            "validations",
+            "aggregate_rounds_exactly_3_to_22"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_unified_report.json",
+          "json_path": [
+            "validations",
+            "entity_question_rounds_cover_all_officially_published_detail_rounds"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/jp_unified_report.json",
+          "json_path": [
+            "validations",
+            "association_rounds_cover_all_officially_published_detail_rounds"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "jp_unified_validate_22",
+      "label": "日区第3–22届独立完整性验证",
+      "kind": "validation",
+      "description": "Independently audit JP3-22 row conservation, hashes, rates and published association scope",
+      "command": [
+        "{python}",
+        "scripts_pipeline/validate_jp_unified.py"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "analysis_results/jp_unified_validation.json",
+          "json_path": [
+            "status"
+          ],
+          "equals": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "cn_legacy_advanced",
+      "adaptive_tuning": true,
+      "worker_ceiling": 8,
+      "request_limit_ceiling": 30,
+      "batch_pause_ceiling": 6.0,
+      "label": "国区第5–9届高级搜索与关联问卷",
+      "kind": "crawl",
+      "description": "CN5-9 official questionnaire cross-tabs and character/music advanced filters",
+      "command": [
+        "{python}",
+        "scripts_pipeline/crawl_cn_legacy.py",
+        "--rounds",
+        "5-9",
+        "--workers",
+        "3",
+        "--request-limit",
+        "30",
+        "--batch-pause",
+        "6.0",
+        "--worker-ceiling",
+        "8",
+        "--request-limit-ceiling",
+        "30",
+        "--batch-pause-ceiling",
+        "6.0",
+        "--retries",
+        "5",
+        "--transient-failure-threshold",
+        "3",
+        "--timeout",
+        "180",
+        "--advanced-only"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_advanced_coverage.json",
+          "json_path": [
+            "allRequiredChecksPassed"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "cn_legacy_remaining",
+      "adaptive_tuning": true,
+      "worker_ceiling": 8,
+      "request_limit_ceiling": 30,
+      "batch_pause_ceiling": 3.0,
+      "reuse_local_workbooks": true,
+      "label": "国区第1–9届详情、问卷与必要排名补全",
+      "kind": "crawl",
+      "description": "Resume required CN1-9 official detail, questionnaire, item API and unique ranking data; reuse validated local workbooks for redundant v1 ranking views",
+      "command": [
+        "{python}",
+        "scripts_pipeline/crawl_cn_legacy.py",
+        "--rounds",
+        "1-9",
+        "--workers",
+        "4",
+        "--request-limit",
+        "30",
+        "--batch-pause",
+        "3.0",
+        "--worker-ceiling",
+        "8",
+        "--request-limit-ceiling",
+        "30",
+        "--batch-pause-ceiling",
+        "3.0",
+        "--retries",
+        "5",
+        "--timeout",
+        "180",
+        "--transient-failure-threshold",
+        "3",
+        "--reuse-local-workbooks",
+        "--import-existing-temp"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_validation.json",
+          "json_path": [
+            "ok"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_validation.json",
+          "json_path": [
+            "manifest_integrity_ok"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_validation.json",
+          "json_path": [
+            "required_data_complete"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_validation.json",
+          "json_path": [
+            "local_source_integrity_ok"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "cn_legacy_rebuild_validate",
+      "label": "国区第1–9届离线重建与校验",
+      "kind": "validation",
+      "description": "Offline rebuild and final validation for CN1-9",
+      "reuse_local_workbooks": true,
+      "command": [
+        "{python}",
+        "scripts_pipeline/crawl_cn_legacy.py",
+        "--rounds",
+        "1-9",
+        "--workers",
+        "1",
+        "--reuse-local-workbooks",
+        "--rebuild-only"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_validation.json",
+          "json_path": [
+            "ok"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_validation.json",
+          "json_path": [
+            "manifest_integrity_ok"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_validation.json",
+          "json_path": [
+            "required_data_complete"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_legacy_validation.json",
+          "json_path": [
+            "local_source_integrity_ok"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "cn_modern_advanced",
+      "adaptive_tuning": true,
+      "worker_ceiling": 10,
+      "request_limit_ceiling": 30,
+      "batch_pause_ceiling": 3.0,
+      "label": "国区第10–11届高级搜索与问卷",
+      "kind": "crawl",
+      "description": "Resume the bounded CN10-11 modern-site questionnaire-answer, entity-condition and co-vote crawl from existing manifests and checkpoints",
+      "command": [
+        "{python}",
+        "scripts_pipeline/crawl_cn_modern_advanced.py",
+        "--rounds",
+        "10,11",
+        "--resume",
+        "--delay",
+        "0.5",
+        "--workers",
+        "6",
+        "--request-limit",
+        "30",
+        "--batch-pause",
+        "0.75",
+        "--worker-ceiling",
+        "10",
+        "--request-limit-ceiling",
+        "30",
+        "--batch-pause-ceiling",
+        "3.0",
+        "--retries",
+        "5",
+        "--transient-failure-threshold",
+        "3",
+        "--timeout",
+        "180"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_modern_advanced_coverage.json",
+          "json_path": [
+            "allRequiredChecksPassed"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_modern_advanced_coverage.json",
+          "json_path": [
+            "rounds",
+            0,
+            "legacyParityComplete"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_modern_advanced_coverage.json",
+          "json_path": [
+            "rounds",
+            1,
+            "legacyParityComplete"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "cn_modern_normalize",
+      "label": "国区第10–11届数据整理",
+      "kind": "transform",
+      "description": "Normalize CN10-11 modern aggregate, questionnaire, condition-ranking and co-vote snapshots after the crawl",
+      "command": [
+        "{python}",
+        "scripts_pipeline/normalize_cn_official.py",
+        "--rounds",
+        "10,11"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_official_normalization_report.json",
+          "json_path": [
+            "complete"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "cn_modern_validate",
+      "label": "国区第10–11届高级搜索校验",
+      "kind": "validation",
+      "description": "Re-validate the bounded CN10-11 advanced-search manifest and co-vote matrices",
+      "command": [
+        "{python}",
+        "scripts_pipeline/crawl_cn_modern_advanced.py",
+        "--rounds",
+        "10,11",
+        "--validate-only"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_modern_advanced_coverage.json",
+          "json_path": [
+            "allRequiredChecksPassed"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_modern_advanced_coverage.json",
+          "json_path": [
+            "rounds",
+            0,
+            "legacyParityComplete"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_modern_advanced_coverage.json",
+          "json_path": [
+            "rounds",
+            1,
+            "legacyParityComplete"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "cn_modern_entity_questionnaire",
+      "adaptive_tuning": true,
+      "worker_ceiling": 10,
+      "request_limit_ceiling": 30,
+      "batch_pause_ceiling": 3.0,
+      "label": "国区第10–11届实体问卷明细补抓",
+      "kind": "crawl",
+      "description": "Resume per-character and per-music queryQuestionnaire snapshots for CN10-11 without deleting existing responses or checkpoints",
+      "command": [
+        "{python}",
+        "scripts_pipeline/crawl_cn_modern_entity_questionnaire.py",
+        "--rounds",
+        "10,11",
+        "--resume",
+        "--workers",
+        "6",
+        "--request-limit",
+        "30",
+        "--batch-pause",
+        "0.5",
+        "--worker-ceiling",
+        "10",
+        "--request-limit-ceiling",
+        "30",
+        "--batch-pause-ceiling",
+        "3.0",
+        "--retries",
+        "5",
+        "--transient-failure-threshold",
+        "3",
+        "--timeout",
+        "180"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_modern_entity_questionnaire_coverage.json",
+          "json_path": [
+            "allRequiredChecksPassed"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "cn_component_verification",
+      "label": "国区1–11届问卷组件离线验证",
+      "kind": "validation",
+      "description": "Verify CN1-11 trend and entity-questionnaire components against stable local snapshots before coverage aggregation",
+      "command": [
+        "{python}",
+        "scripts_pipeline/verify_cn_component_coverage.py"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_component_verification.json",
+          "json_path": [
+            "ok"
+          ],
+          "equals": true
+        },
+        {
+          "type": "json_path_equals",
+          "path": "metadata/cn_component_verification.json",
+          "json_path": [
+            "verification_complete"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "unified_coverage",
+      "label": "日区3–22届与国区1–11届覆盖检查",
+      "kind": "coverage",
+      "description": "Rebuild offline JP3-22 and CN1-11 component coverage matrix",
+      "command": [
+        "{python}",
+        "scripts_pipeline/build_unified_coverage.py",
+        "--workspace",
+        "{workspace}"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/unified_component_coverage.json",
+          "json_path": [
+            "validation",
+            "all_required_components_complete"
+          ],
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "thwiki_arrangement_counts",
+      "label": "THBWiki 原曲同人曲计数、半年与日区结束区间",
+      "kind": "crawl",
+      "description": "Count arrangements per original song, exact release dates, half-years, and Japanese vote-end-to-vote-end intervals without downloading track details",
+      "command": [
+        "{python}",
+        "scripts_pipeline/crawl_thwiki_arrangement_counts.py",
+        "--batch-size",
+        "10",
+        "--initial-delay",
+        "0.25",
+        "--min-delay",
+        "0.05",
+        "--max-delay",
+        "4.0",
+        "--max-retries",
+        "5",
+        "--timeout",
+        "90"
+      ],
+      "success_checks": [
+        {
+          "type": "json_path_equals",
+          "path": "metadata/thwiki_arrangement_counts_manifest.json",
+          "json_path": [
+            "status"
+          ],
+          "equals": "complete"
+        },
+        {
+          "type": "file_exists",
+          "path": "data_raw/thwiki_music/original_song_arrangement_counts.csv"
+        },
+        {
+          "type": "file_exists",
+          "path": "data_raw/thwiki_music/original_song_arrangement_counts_half_year.csv"
+        },
+        {
+          "type": "file_exists",
+          "path": "data_raw/thwiki_music/original_song_arrangement_counts_jp_vote_windows.csv"
+        }
+      ]
+    }
+  ]
+}

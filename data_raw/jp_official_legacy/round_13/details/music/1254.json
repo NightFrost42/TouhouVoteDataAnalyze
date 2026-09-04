@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1254.php",
+    "effective_url": "https://toho-vote.info/result13/music/1254.php",
+    "retrieved_at": "2026-08-15T09:55:59+00:00",
+    "http_status": 200,
+    "bytes": 4726,
+    "sha256": "f6933307c43e7285f6c5961356745a73cd8728af3a9817840a66db6413abbf71",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1254",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：デザイアドリーム - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "デザイアドリーム（240位）",
+      "numbers": [
+        {
+          "raw": "240位",
+          "value": 240,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：123点 ｜ 得票数：121票 ｜ 一押し数：2票 ｜ コメント数：14件 継続投票率：35.7%（14名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "123点",
+          "value": 123,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "121票",
+          "value": 121,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "14件",
+          "value": 14,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "35.7%",
+          "value": 35.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "14名",
+          "value": 14,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

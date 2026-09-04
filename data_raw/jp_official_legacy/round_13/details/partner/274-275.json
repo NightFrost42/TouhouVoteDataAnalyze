@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/274-275.php",
+    "effective_url": "https://toho-vote.info/result13/partner/274-275.php",
+    "retrieved_at": "2026-08-15T09:56:43+00:00",
+    "http_status": 200,
+    "bytes": 10473,
+    "sha256": "cd02e362b7e79eea0778d5e593dbbf6c0872a4a51909404f8704ab3a25cdc2ba",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "274-275",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：九十九 弁々と九十九 八橋 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "九十九 弁々と九十九 八橋（62位）",
+      "numbers": [
+        {
+          "raw": "62位",
+          "value": 62,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：403点 ｜ 得票数：347票 ｜ 一押し数：56票 ｜ コメント数：74件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "403点",
+          "value": 403,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "347票",
+          "value": 347,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "56票",
+          "value": 56,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "74件",
+          "value": 74,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

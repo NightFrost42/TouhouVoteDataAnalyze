@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/4056.php",
+    "effective_url": "https://toho-vote.info/result13/music/4056.php",
+    "retrieved_at": "2026-08-15T09:56:20+00:00",
+    "http_status": 200,
+    "bytes": 5308,
+    "sha256": "9f3fdad09158c22c99355933a4e4cd1eaa549962dd947de44379ef93ef069f7f",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4056",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：向こう側の月 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "向こう側の月（247位）",
+      "numbers": [
+        {
+          "raw": "247位",
+          "value": 247,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：105点 ｜ 得票数：98票 ｜ 一押し数：7票 ｜ コメント数：15件 継続投票率：36.4%（11名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "105点",
+          "value": 105,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "98票",
+          "value": 98,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "15件",
+          "value": 15,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "36.4%",
+          "value": 36.4,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "11名",
+          "value": 11,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

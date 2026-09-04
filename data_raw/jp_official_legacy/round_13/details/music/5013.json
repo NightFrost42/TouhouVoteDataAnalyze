@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/5013.php",
+    "effective_url": "https://toho-vote.info/result13/music/5013.php",
+    "retrieved_at": "2026-08-15T09:56:23+00:00",
+    "http_status": 200,
+    "bytes": 3668,
+    "sha256": "a55a4fc429ef1cabac5201c499d6e5301d886fccf124997215e5719cf54f27c7",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5013",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：夢機械 ～ Innocent Power - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "夢機械 ～ Innocent Power（461位）",
+      "numbers": [
+        {
+          "raw": "461位",
+          "value": 461,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：4点 ｜ 得票数：4票 ｜ 一押し数：0票 ｜ コメント数：1件 継続投票率：100.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "4点",
+          "value": 4,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

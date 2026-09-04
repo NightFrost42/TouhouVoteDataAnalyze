@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/5022.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/5022.php",
+    "retrieved_at": "2026-08-15T09:54:58+00:00",
+    "http_status": 200,
+    "bytes": 4459,
+    "sha256": "8e7d44310ad842ff65c151f1d9703e95bd4e11a7ec86aee407596414d8fbd104",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5022",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：天鵞絨少女戦 ～ Velvet Battle - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "天鵞絨少女戦 ～ Velvet Battle（339位）",
+      "numbers": [
+        {
+          "raw": "339位",
+          "value": 339,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：41点 ｜ 得票数：41票 ｜ 一押し数：0票 ｜ コメント数：9件 継続投票率：100.0%（6名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "41点",
+          "value": 41,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "41票",
+          "value": 41,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "6名",
+          "value": 6,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>东方Project人气投票 第二回 - THBWiki</title>
+	
+	<meta http-equiv="Content-Language" content="zh-cn" />
+	<meta name="description" content="天朝东方Project人气投票 第二回" />
+	<meta name="keywords" content="东方Project 东方 人气投票 TBSGroup" />
+	<meta name="author" content="TBSGroup" />
+
+	<link href="./style/result/site.css" rel="stylesheet" type="text/css" />
+	<!--[if lt IE 8]>
+		<link href="./style/result/site_ie.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<style type="text/css">
+		body {
+			background-image: url(./style/result/image/content_bg.jpg);
+		}
+		.pchart {
+			display:none;
+		}
+		.wikitable3 {
+		  margin-left: 65px;
+		  margin-top: 20px;
+		  border: 0px #696969 solid !important;
+		  border-collapse: collapse !important;
+		  font-size: 95% !important;
+		  display:none;
+		}
+	</style>
+	<!-- 加载jQuery类库 -->
+	<script src="./js/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<link href="./style/result/table.css" rel="stylesheet" type="text/css" />
+	<script src="./js/highcharts.src.js" type="text/javascript"></script>
+	<script src="./js/paper.js" type="text/javascript"></script>
+</head>
+
+<body id="site_vote_form" class="site">
+	<div id="bar"></div>
+
+	<div id="wrap" class="clearfix">
+		<div id="header" style="left: 0px; top: 0px">
+			<div id="logo"><a href="./">第二回东方Project人气投票</a></div>
+		</div>
+
+		<div id="content">
+			<div id="content_header">
+			<h1>调查问卷</h1>
+
+			<p style="font-size:95%">天朝第二回东方Project人气投票活动结果发布中</p>
+		</div>
+
+<div id="vote_form">
+	<div id="form">
+
+		<fieldset id="fieldset_explain">
+			<legend>结果说明</legend>
+
+			<table>
+			<tr>
+				<td>
+				<p class="step0p"><br /></p>
+				<p class="step1p">本页面为人气投票问卷结果统计页，<a href='./'><b>点击这里返回首页</b></a>。</p>
+				<p class="step1p">总有效问卷数7469<br /></p>	
+				</td>
+			</tr>
+			</table>
+
+		</fieldset>
+		<fieldset id="fieldset_member">
+		<br />
+			<legend>投票群相关</legend>
+			
+			<h2 id="vote_member">投票群相关</h2>
+			
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>性别</b></th></tr>
+<tr><td>男性：</td><td>5367票，占71.86%</td></tr>
+<tr><td>女性：</td><td>2102票，占28.14%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart11');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart11' style='width: 610px; min-height: 230px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>年龄阶段</b></th></tr>
+<tr><td>15-19岁：</td><td>3760票，占50.34%</td></tr>
+<tr><td>20-24岁：</td><td>2524票，占33.79%</td></tr>
+<tr><td>10-14岁：</td><td>767票，占10.27%</td></tr>
+<tr><td>25-29岁：</td><td>366票，占4.9%</td></tr>
+<tr><td>30-40岁：</td><td>31票，占0.42%</td></tr>
+<tr><td>未满10岁：</td><td>16票，占0.21%</td></tr>
+<tr><td>40岁以上：</td><td>5票，占0.07%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart12');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart12' style='width: 610px; min-height: 400px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>学历阶段</b></th></tr>
+<tr><td>大学及以上：</td><td>3585票，占48%</td></tr>
+<tr><td>高中：</td><td>2665票，占35.68%</td></tr>
+<tr><td>初中：</td><td>991票，占13.27%</td></tr>
+<tr><td>其他：</td><td>130票，占1.74%</td></tr>
+<tr><td>小学：</td><td>98票，占1.31%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart13');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart13' style='width: 610px; min-height: 350px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>接触东方的时间</b></th></tr>
+<tr><td>一年到三年：</td><td>3780票，占50.61%</td></tr>
+<tr><td>三年以上：</td><td>2128票，占28.49%</td></tr>
+<tr><td>半年到一年：</td><td>1128票，占15.1%</td></tr>
+<tr><td>半年以内：</td><td>368票，占4.93%</td></tr>
+<tr><td>不到一个月：</td><td>65票，占0.87%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart14');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart14' style='width: 610px; min-height: 350px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>所在地区</b></th></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('stable3');">+ 数据</div></td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart15');">+ 图表</div></td></tr>
+</table>
+<table class='wikitable3' id='stable3'>
+<tr><td>广东：</td><td>1032票，占13.82%</td></tr>
+<tr><td>上海：</td><td>720票，占9.64%</td></tr>
+<tr><td>北京：</td><td>586票，占7.85%</td></tr>
+<tr><td>江苏：</td><td>586票，占7.85%</td></tr>
+<tr><td>浙江：</td><td>499票，占6.68%</td></tr>
+<tr><td>四川：</td><td>384票，占5.14%</td></tr>
+<tr><td>湖北：</td><td>349票，占4.67%</td></tr>
+<tr><td>福建：</td><td>325票，占4.35%</td></tr>
+<tr><td>广西：</td><td>267票，占3.57%</td></tr>
+<tr><td>山东：</td><td>250票，占3.35%</td></tr>
+<tr><td>重庆：</td><td>186票，占2.49%</td></tr>
+<tr><td>湖南：</td><td>169票，占2.26%</td></tr>
+<tr><td>辽宁：</td><td>167票，占2.24%</td></tr>
+<tr><td>安徽：</td><td>167票，占2.24%</td></tr>
+<tr><td>河南：</td><td>167票，占2.24%</td></tr>
+<tr><td>天津：</td><td>164票，占2.2%</td></tr>
+<tr><td>美洲：</td><td>158票，占2.12%</td></tr>
+<tr><td>河北：</td><td>132票，占1.77%</td></tr>
+<tr><td>江西：</td><td>131票，占1.75%</td></tr>
+<tr><td>陕西：</td><td>124票，占1.66%</td></tr>
+<tr><td>黑龙江：</td><td>118票，占1.58%</td></tr>
+<tr><td>香港：</td><td>95票，占1.27%</td></tr>
+<tr><td>台湾：</td><td>72票，占0.96%</td></tr>
+<tr><td>吉林：</td><td>72票，占0.96%</td></tr>
+<tr><td>山西：</td><td>66票，占0.88%</td></tr>
+<tr><td>云南：</td><td>64票，占0.86%</td></tr>
+<tr><td>贵州：</td><td>57票，占0.76%</td></tr>
+<tr><td>内蒙古：</td><td>50票，占0.67%</td></tr>
+<tr><td>亚洲：</td><td>46票，占0.62%</td></tr>
+<tr><td>欧洲：</td><td>42票，占0.56%</td></tr>
+<tr><td>海南：</td><td>39票，占0.52%</td></tr>
+<tr><td>澳洲：</td><td>35票，占0.47%</td></tr>
+<tr><td>新疆：</td><td>35票，占0.47%</td></tr>
+<tr><td>日本：</td><td>32票，占0.43%</td></tr>
+<tr><td>其他：</td><td>28票，占0.37%</td></tr>
+<tr><td>宁夏：</td><td>20票，占0.27%</td></tr>
+<tr><td>甘肃：</td><td>19票，占0.25%</td></tr>
+<tr><td>澳门：</td><td>5票，占0.07%</td></tr>
+<tr><td>青海：</td><td>5票，占0.07%</td></tr>
+<tr><td>西藏：</td><td>4票，占0.05%</td></tr>
+<tr><td>非洲：</td><td>2票，占0.03%</td></tr>
+</table>
+<div class='pchart' id='chart15' style='width: 610px; min-height: 400px; margin: 0 auto'></div>
+
+			
+		</fieldset>
+		<fieldset id="fieldset_original">
+		<br />
+			<legend>原作相关调查</legend>
+			
+			<h2 id="vote_original">原作相关调查</h2>
+			
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否玩过旧作</b></th></tr>
+<tr><td>否：</td><td>4901票，占65.62%</td></tr>
+<tr><td>是：</td><td>2568票，占34.38%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart21');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart21' style='width: 610px; min-height: 230px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>原作游戏中更喜欢</b></th></tr>
+<tr><td>STG：</td><td>3493票，占46.77%</td></tr>
+<tr><td>都差不多：</td><td>2322票，占31.09%</td></tr>
+<tr><td>FTG：</td><td>1654票，占22.14%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart22');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart22' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否玩过辉针城</b></th></tr>
+<tr><td>玩过但尚未通关：</td><td>2790票，占37.35%</td></tr>
+<tr><td>已通关：</td><td>2539票，占33.99%</td></tr>
+<tr><td>未玩过：</td><td>2140票，占28.65%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart23');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart23' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否玩过心绮楼</b></th></tr>
+<tr><td>已通关：</td><td>3369票，占45.11%</td></tr>
+<tr><td>玩过但尚未通关：</td><td>2205票，占29.52%</td></tr>
+<tr><td>未玩过：</td><td>1895票，占25.37%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart24');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart24' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否听过伊奘诺</b></th></tr>
+<tr><td>听过：</td><td>2888票，占38.67%</td></tr>
+<tr><td>知道但未听过：</td><td>2471票，占33.08%</td></tr>
+<tr><td>不知道：</td><td>2110票，占28.25%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart25');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart25' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否看过铃奈庵</b></th></tr>
+<tr><td>看过：</td><td>3659票，占48.99%</td></tr>
+<tr><td>知道但未看过：</td><td>2593票，占34.72%</td></tr>
+<tr><td>不知道：</td><td>1217票，占16.29%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart26');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart26' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>更喜欢原作的方面</b></th></tr>
+<tr><td>人物：</td><td>6338票，占84.86%</td></tr>
+<tr><td>音乐：</td><td>6107票，占81.76%</td></tr>
+<tr><td>故事设定：</td><td>5123票，占68.59%</td></tr>
+<tr><td>游戏本身：</td><td>4187票，占56.06%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart27');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart27' style='width: 610px; min-height: 300px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否有购买过正版原作</b></th></tr>
+<tr><td>想买但没有机会：</td><td>4677票，占62.62%</td></tr>
+<tr><td>有：</td><td>1825票，占24.43%</td></tr>
+<tr><td>没有考虑过：</td><td>967票，占12.95%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart28');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart28' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>平时是否关注ZUN的动态</b></th></tr>
+<tr><td>是的：</td><td>5524票，占73.96%</td></tr>
+<tr><td>不知道如何关注：</td><td>1338票，占17.91%</td></tr>
+<tr><td>没有：</td><td>607票，占8.13%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart29');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart29' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			
+		</fieldset>
+		<fieldset id="fieldset_doujin">
+		<br />
+			<legend>二次同人相关</legend>
+
+			<h2 id="vote_doujin">二次同人相关</h2>				
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>较为关注的二次创作类型</b></th></tr>
+<tr><td>音乐：</td><td>5659票，占75.77%</td></tr>
+<tr><td>视频：</td><td>4477票，占59.94%</td></tr>
+<tr><td>漫画：</td><td>4442票，占59.47%</td></tr>
+<tr><td>绘画：</td><td>4397票，占58.87%</td></tr>
+<tr><td>游戏：</td><td>3813票，占51.05%</td></tr>
+<tr><td>小说：</td><td>1977票，占26.47%</td></tr>
+<tr><td>其他：</td><td>1110票，占14.86%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart31');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart31' style='width: 610px; min-height: 400px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否有购买过日本的二次创作</b></th></tr>
+<tr><td>想买但没有机会：</td><td>3759票，占50.33%</td></tr>
+<tr><td>有：</td><td>2543票，占34.05%</td></tr>
+<tr><td>没有考虑过：</td><td>1167票，占15.62%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart32');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart32' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否有购买国人的二次创作</b></th></tr>
+<tr><td>有：</td><td>3727票，占49.9%</td></tr>
+<tr><td>想买但没有机会：</td><td>2350票，占31.46%</td></tr>
+<tr><td>没有考虑过：</td><td>1392票，占18.64%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart33');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart33' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否进行过同人创作</b></th></tr>
+<tr><td>想过还没做：</td><td>3343票，占44.76%</td></tr>
+<tr><td>没有想过：</td><td>2399票，占32.12%</td></tr>
+<tr><td>已经做过或正在做：</td><td>1727票，占23.12%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart34');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart34' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>原作和二次创作更热衷</b></th></tr>
+<tr><td>都差不多：</td><td>3952票，占52.91%</td></tr>
+<tr><td>原作：</td><td>1898票，占25.41%</td></tr>
+<tr><td>二次同人：</td><td>1619票，占21.68%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart35');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart35' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否有购买过实物周边</b></th></tr>
+<tr><td>有：</td><td>4281票，占57.32%</td></tr>
+<tr><td>想买但没有机会：</td><td>2123票，占28.42%</td></tr>
+<tr><td>没有考虑过：</td><td>1065票，占14.26%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart36');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart36' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			
+		</fieldset>
+		<fieldset id="fieldset_diary">
+		<br />
+			<legend>日常相关</legend>
+			
+			<h2 id="vote_diary">日常相关</h2>				
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>过去一年内是否有参加东方专门展</b></th></tr>
+<tr><td>没有：</td><td>5941票，占79.54%</td></tr>
+<tr><td>有：</td><td>1528票，占20.46%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart41');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart41' style='width: 610px; min-height: 230px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否有购买过国内的东方刊物</b></th></tr>
+<tr><td>有：</td><td>3876票，占51.89%</td></tr>
+<tr><td>没有：</td><td>2928票，占39.2%</td></tr>
+<tr><td>不知道有这样的刊物：</td><td>665票，占8.9%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart42');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart42' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>浏览东方project主题站点的频率</b></th></tr>
+<tr><td>经常：</td><td>3909票，占52.34%</td></tr>
+<tr><td>偶尔：</td><td>2714票，占36.34%</td></tr>
+<tr><td>很少：</td><td>628票，占8.41%</td></tr>
+<tr><td>从不：</td><td>218票，占2.92%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart43');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart43' style='width: 610px; min-height: 300px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>对于国内出版社的盗版东方书籍</b></th></tr>
+<tr><td>无所谓：</td><td>3754票，占50.26%</td></tr>
+<tr><td>厌恶：</td><td>2997票，占40.13%</td></tr>
+<tr><td>会购买：</td><td>718票，占9.61%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart44');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart44' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否会主动向周围的人介绍东方Project</b></th></tr>
+<tr><td>会：</td><td>4427票，占59.27%</td></tr>
+<tr><td>不会：</td><td>3042票，占40.73%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart45');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart45' style='width: 610px; min-height: 230px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否会在日常中主动展示东方相关的东西</b></th></tr>
+<tr><td>偶尔会：</td><td>3973票，占53.19%</td></tr>
+<tr><td>会：</td><td>2390票，占32%</td></tr>
+<tr><td>从不：</td><td>1106票，占14.81%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart46');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart46' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			<table class='wikitable2' id='stable'>
+<tr><th colspan='2'><b>是否会刻意隐藏自己作为东方爱好者的身份</b></th></tr>
+<tr><td>从不：</td><td>4797票，占64.23%</td></tr>
+<tr><td>偶尔会：</td><td>2157票，占28.88%</td></tr>
+<tr><td>会：</td><td>515票，占6.9%</td></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('chart47');">+ 图表</div></td></tr>
+</table>
+<div class='pchart' id='chart47' style='width: 610px; min-height: 260px; margin: 0 auto'></div>
+
+			
+
+			<table class="wikitable2" id='stable'>
+				<tr><th colspan="2"><b><a href="./?m=5&t=1">简述如何接触到东方的</a></b></th></tr>
+			</table>
+		</fieldset>
+	
+		<div id="form_footer">	
+			<button class="button" id="btn_sign_up" title="返回首页" type="button" onclick="window.location.href='./'"><span>返回首页</span></button>
+
+			<p>返回首页</p>
+
+		</div>
+	</div>
+		
+</div>
+
+		</div>
+
+		<div id="footer">
+			<p id="copyright">2013 THBWiki, TBSGroup</p>
+			<ul id="footer_menu">
+				<li><a href="https://weibo.com/touhouvote">新浪微博</a></li>
+				<li><a href="mailto:vote@tbsgroup.info">联系组委会</a></li>
+				<li><a href="#">TBSGroup</a></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+	function chartshow(id) {
+		$("#"+id).slideToggle("slow");
+	}
+	</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " https://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2e5ba8781d699fe45b54547f88ffeec5' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

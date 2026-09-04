@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2020.php",
+    "effective_url": "https://toho-vote.info/result13/music/2020.php",
+    "retrieved_at": "2026-08-15T09:56:07+00:00",
+    "http_status": 200,
+    "bytes": 3946,
+    "sha256": "95537ba46a8f18c3a1af2cce2e8845447f8ca95e9eebd5b3b15e08524f6975c5",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2020",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：やみのちから - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "やみのちから（368位）",
+      "numbers": [
+        {
+          "raw": "368位",
+          "value": 368,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：26点 ｜ 得票数：26票 ｜ 一押し数：0票 ｜ コメント数：4件 継続投票率：60.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "26点",
+          "value": 26,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "26票",
+          "value": 26,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4件",
+          "value": 4,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "60.0%",
+          "value": 60.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

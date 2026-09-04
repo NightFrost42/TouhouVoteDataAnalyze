@@ -1,0 +1,11 @@
+﻿platform,free_source,access_status,login_needed,coverage,user_action_if_needed,observed_at
+Niconico视频,yes,public_access,no,東方Project人気投票标签显示204条，当前可公开复核197条,无,2026-08-25
+Bilibili,yes,public_search_and_visible_sample_access,yes_for_full_comment_threads,人气投票主查询34页；13组角色首屏510条已落盘；本轮通过已登录搜索界面补采饭纲丸龙、莲子、梅莉、日狭美、磨弓等候选；评论/弹幕仅保存可见质性样本,无；若页面再次要求验证或需要不可见楼层，再提醒,2026-08-25
+X,yes,logged_in_search_sampled,already_available,已用登录会话回溯第7—21回，抽样原帖、回复、长期梗与小众角色；不是API全量归档,当前无需操作；若平台再次要求验证再提醒,2026-08-25
+Pixiv,yes,logged_in_artwork_and_tag_sampled,already_available,已核实2011第8回应援、2015易者、阿求年龄企划及10个角色的2026-08-23标签累计快照；没有历年标签时间序列,当前无需操作；若触发频率限制再提醒,2026-08-25
+百度贴吧,yes,pc_web_fulltext_via_pagination_and_virtual_scroll,already_available,PC UA网页端可读分页全文；帖子索引18条，含7条第22回与第12—21回历史材料。第14回Twitter晒票帖保存99条文本；第21回评价帖保存416条文本（163个角色标题、252条楼中楼、1条完结说明）。第10—11回部分索引原帖当前不再渲染。,当前无需操作；只有页面确实删除、折叠无法展开或图片文字无法辨识时才需要截图/导出,2026-08-25
+Yahoo!リアルタイム検索,yes,historical_limit,sometimes,普通Yahoo日本网页搜索可用；实时/X历史窗口有限,如需登录后的历史功能，请授权可用会话,2026-08-25
+Google Trends,yes,public_but_normalized,no_for_basic,可按时间/地区读取0—100相对搜索兴趣，不提供绝对搜索次数,无,2026-08-25
+GetDayTrends,yes,blocked_cloudflare_520,unknown,当前无法复核,如你能访问，请提供导出或授权浏览器会话,2026-08-25
+THBWiki,yes,alternate_site_verified,no,备用站 thbwiki.cc 可访问并核实丰姬、神绮、大妖精、小恶魔等一设；不把二次设定段落当官方设定,无；若需被WAF拦截的原站历史页面，再提供授权会话或导出,2026-08-25
+Reddit,yes,captcha_or_login_for_threads,sometimes,只有公开索引片段，未完整读取评论串,若需英语社区完整评论，请登录/完成人机验证后告知,2026-08-25

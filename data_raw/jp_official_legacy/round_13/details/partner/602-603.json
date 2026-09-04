@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/602-603.php",
+    "effective_url": "https://toho-vote.info/result13/partner/602-603.php",
+    "retrieved_at": "2026-08-15T09:56:48+00:00",
+    "http_status": 200,
+    "bytes": 65569,
+    "sha256": "a692526b90586a9d284a1bddf1917c87ca7d790717c8558d520afc192bc58293",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "602-603",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：宇佐見 蓮子とマエリベリー・ハーン - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "宇佐見 蓮子とマエリベリー・ハーン（2位）",
+      "numbers": [
+        {
+          "raw": "2位",
+          "value": 2,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：5178点 ｜ 得票数：3927票 ｜ 一押し数：1251票 ｜ コメント数：826件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "5178点",
+          "value": 5178,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "3927票",
+          "value": 3927,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1251票",
+          "value": 1251,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "826件",
+          "value": 826,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

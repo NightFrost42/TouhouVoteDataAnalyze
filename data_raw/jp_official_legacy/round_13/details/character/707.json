@@ -1,0 +1,89 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/character/707.php",
+    "effective_url": "https://toho-vote.info/result13/character/707.php",
+    "retrieved_at": "2026-08-15T09:55:33+00:00",
+    "http_status": 200,
+    "bytes": 3967,
+    "sha256": "e5907c7f1795ec47ebc2ce716cc11e84c32b0ed54253e9155fd613ae05aa728d",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "character",
+  "item_id": "707",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：毘沙門天 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "毘沙門天（168位）",
+      "numbers": [
+        {
+          "raw": "168位",
+          "value": 168,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：11点 ｜ 得票数：10票 ｜ 一押し数：1票 ｜ コメント数：2件 ｜ 支援作品数： 0件 継続投票率：100.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "11点",
+          "value": 11,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "10票",
+          "value": 10,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

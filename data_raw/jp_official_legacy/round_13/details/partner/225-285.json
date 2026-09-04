@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/225-285.php",
+    "effective_url": "https://toho-vote.info/result13/partner/225-285.php",
+    "retrieved_at": "2026-08-15T09:56:34+00:00",
+    "http_status": 200,
+    "bytes": 20118,
+    "sha256": "c3b1a77a6b242ec4de59c695fad8244055a5191ed7f0acd85a24b1bd3fcc3d50",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "225-285",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：鈴仙・優曇華院・イナバと純狐 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "鈴仙・優曇華院・イナバと純狐（26位）",
+      "numbers": [
+        {
+          "raw": "26位",
+          "value": 26,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1283点 ｜ 得票数：1083票 ｜ 一押し数：200票 ｜ コメント数：206件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1283点",
+          "value": 1283,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1083票",
+          "value": 1083,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "200票",
+          "value": 200,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "206件",
+          "value": 206,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

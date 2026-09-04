@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1108.php",
+    "effective_url": "https://toho-vote.info/result13/music/1108.php",
+    "retrieved_at": "2026-08-15T09:55:47+00:00",
+    "http_status": 200,
+    "bytes": 3568,
+    "sha256": "5aaf46cd2c80920926db917b9c090cec38bba76e9d9d25c529c6372d8f0e0aed",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1108",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：花の映る塚 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "花の映る塚（352位）",
+      "numbers": [
+        {
+          "raw": "352位",
+          "value": 352,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：34点 ｜ 得票数：33票 ｜ 一押し数：1票 ｜ コメント数：1件 継続投票率：33.3%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "34点",
+          "value": 34,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "33票",
+          "value": 33,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "33.3%",
+          "value": 33.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

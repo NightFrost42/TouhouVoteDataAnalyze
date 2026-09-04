@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/3001.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/3001.php",
+    "retrieved_at": "2026-08-15T09:54:50+00:00",
+    "http_status": 200,
+    "bytes": 6393,
+    "sha256": "d5e49102d732c741ace49805697d377252d47087a95cd25abf8a8592b58463d7",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3001",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：テーマ・オブ・イースタンストーリー - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "テーマ・オブ・イースタンストーリー（233位）",
+      "numbers": [
+        {
+          "raw": "233位",
+          "value": 233,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：138点 ｜ 得票数：125票 ｜ 一押し数：13票 ｜ コメント数：30件 継続投票率：83.3%（12名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "138点",
+          "value": 138,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "125票",
+          "value": 125,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "13票",
+          "value": 13,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "30件",
+          "value": 30,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "83.3%",
+          "value": 83.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "12名",
+          "value": 12,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

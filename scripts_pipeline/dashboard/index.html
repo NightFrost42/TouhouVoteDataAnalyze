@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="csrf-token" content="__CONTROL_TOKEN__">
+  <title>东方投票数据爬取控制台</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">LOCAL CRAWL CONTROL · 仅限本机</p>
+        <h1>东方投票数据爬取控制台</h1>
+        <p class="subtitle">实时查看队列，按保存的配置继续断点，安全启停。</p>
+      </div>
+      <div class="live-block" aria-live="polite">
+        <span class="live-dot" id="live-dot"></span>
+        <div>
+          <strong id="connection-label">正在连接</strong>
+          <span id="last-refresh">尚未刷新</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="overview-grid" aria-label="队列概览">
+        <article class="status-card status-primary">
+          <div class="card-label">队列状态</div>
+          <div class="status-line">
+            <span class="status-badge is-loading" id="queue-status">读取中</span>
+            <span class="muted" id="queue-name">—</span>
+          </div>
+          <p class="card-note" id="queue-note">正在读取本地状态文件</p>
+        </article>
+
+        <article class="status-card">
+          <div class="card-label">当前抓取内容</div>
+          <strong class="metric compact" id="stage-id">—</strong>
+          <p class="card-note clamp" id="stage-description">正在读取具体任务</p>
+        </article>
+
+        <article class="status-card">
+          <div class="card-label">进程</div>
+          <div class="pid-grid">
+            <div><span>Runner</span><strong id="runner-pid">—</strong></div>
+            <div><span>Child</span><strong id="child-pid">—</strong></div>
+          </div>
+          <p class="card-note" id="process-note">正在核对进程身份</p>
+        </article>
+
+        <article class="status-card">
+          <div class="card-label">失败计数</div>
+          <div class="pid-grid">
+            <div><span>连续</span><strong id="consecutive-failures">0</strong></div>
+            <div><span>历史</span><strong id="total-failures">0</strong></div>
+          </div>
+          <p class="card-note" id="failure-note">达到上限后队列会停机</p>
+        </article>
+      </section>
+
+      <section class="panel progress-panel" aria-labelledby="progress-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">CURRENT WORK</p>
+            <h2 id="progress-title">阶段进度</h2>
+          </div>
+          <strong class="progress-percent" id="progress-percent">—</strong>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+          <span id="progress-bar"></span>
+        </div>
+        <div class="progress-details">
+          <span id="progress-count">尚无可用计数</span>
+          <span class="progress-eta" id="progress-eta">当前子阶段预计剩余：估算中</span>
+          <span id="progress-phase">阶段：—</span>
+          <span id="progress-updated">更新时间：—</span>
+        </div>
+      </section>
+
+      <section class="panel queue-overview-panel" aria-labelledby="queue-overview-title">
+        <details class="collapsible-details" id="queue-overview-details" open>
+          <summary class="section-heading queue-overview-heading collapsible-summary" aria-controls="queue-task-list">
+            <div>
+              <p class="section-kicker">QUEUE OVERVIEW</p>
+              <h2 id="queue-overview-title">任务队列总览</h2>
+            </div>
+            <div class="collapsible-summary-side">
+              <p class="hint" id="task-summary">正在读取任务状态</p>
+              <span class="collapsible-toggle" aria-hidden="true"></span>
+            </div>
+          </summary>
+          <ol class="queue-task-list" id="queue-task-list" aria-live="polite">
+            <li class="queue-task is-loading">正在载入队列任务……</li>
+          </ol>
+        </details>
+      </section>
+
+      <section class="panel current-task-details-panel" aria-labelledby="current-task-details-title">
+        <details class="collapsible-details" id="current-task-details-wrap" open>
+          <summary class="section-heading current-task-details-heading collapsible-summary" aria-controls="current-task-details">
+            <div>
+              <p class="section-kicker">CURRENT TASK</p>
+              <h2 id="current-task-details-title">当前任务详情</h2>
+            </div>
+            <div class="collapsible-summary-side">
+              <p class="hint" id="current-task-summary">正在读取当前任务</p>
+              <span class="collapsible-toggle" aria-hidden="true"></span>
+            </div>
+          </summary>
+          <ul class="content-list current-task-details" id="current-task-details" aria-live="polite">
+            <li class="content-entry is-loading">正在载入当前任务详情……</li>
+          </ul>
+        </details>
+      </section>
+
+      <section class="panel content-list-panel" aria-labelledby="content-list-title">
+        <details class="collapsible-details" id="content-list-details" open>
+          <summary class="section-heading content-list-heading collapsible-summary" aria-controls="content-list">
+            <div>
+              <p class="section-kicker">CONTENT PLAN</p>
+              <h2 id="content-list-title">抓取内容列表</h2>
+            </div>
+            <div class="collapsible-summary-side">
+              <p class="hint" id="content-summary">正在读取当前抓取内容</p>
+              <span class="collapsible-toggle" aria-hidden="true"></span>
+            </div>
+          </summary>
+          <ul class="content-list" id="content-list" aria-live="polite">
+            <li class="content-entry is-loading">正在载入抓取内容……</li>
+          </ul>
+        </details>
+      </section>
+
+      <section class="panel controls-panel" aria-labelledby="controls-title">
+        <div class="section-heading controls-heading">
+          <div>
+            <p class="section-kicker">QUEUE CONTROL</p>
+            <h2 id="controls-title">启停控制</h2>
+          </div>
+          <p class="hint">停止会保留成功哈希和检查点；再次开始仅补失败或缺失项。</p>
+        </div>
+        <div class="button-row">
+          <button type="button" class="button primary" id="start-button">开始 / 继续抓取</button>
+          <button type="button" class="button danger" id="stop-button">安全停止</button>
+          <button type="button" class="button secondary" id="restart-button">按已保存配置重启</button>
+          <button type="button" class="button secondary" id="rebenchmark-button">重新测速（恢复配置上限）</button>
+        </div>
+        <p class="action-message" id="action-message" role="status" aria-live="polite">控制台不会自动改变队列状态。</p>
+        <p class="hint" id="rebenchmark-hint">重新测速会保留已抓取文件、成功哈希和断点，只清除当前阶段学到的安全并发与冷却。</p>
+      </section>
+
+      <section class="panel settings-panel" aria-labelledby="settings-title">
+        <details class="collapsible-details" id="settings-details" open>
+          <summary class="section-heading settings-heading collapsible-summary" aria-controls="settings-form">
+            <div>
+              <p class="section-kicker">PERSISTENT SETTINGS</p>
+              <h2 id="settings-title">速度与熔断配置</h2>
+            </div>
+            <div class="collapsible-summary-side">
+              <p class="hint" id="settings-summary">正在读取已保存配置……</p>
+              <span class="collapsible-toggle" aria-hidden="true"></span>
+            </div>
+          </summary>
+
+          <form id="settings-form">
+          <div class="stage-settings-grid">
+            <fieldset class="stage-settings" data-stage="cn_legacy_advanced">
+              <legend>
+                <span>国区 5–9 届高级搜索</span>
+                <code>cn_legacy_advanced</code>
+              </legend>
+              <div class="field-grid">
+                <label><span>并发请求数</span><input data-field="workers" type="number" min="1" max="32" step="1" required><small>自动调节开启时为起始值；关闭后固定使用此值</small></label>
+                <label><span>每批请求数上限</span><input data-field="batchSize" type="number" min="1" max="300" step="1" required><small>达到后保存检查点并进入冷却；不能超过每批护栏</small></label>
+                <label><span>批间冷却（秒）</span><input data-field="batchPause" type="number" min="0" max="60" step="any" required><small>自动调节开启时为起始值；关闭后固定使用此值</small></label>
+                <label class="guardrail-field"><span>并发护栏</span><input data-field="workerCeiling" type="number" min="1" max="32" step="1" required><small>本阶段可配置上限；程序绝对上限 32</small></label>
+                <label class="guardrail-field"><span>每批护栏</span><input data-field="requestLimitCeiling" type="number" min="1" max="300" step="1" required><small>本阶段可配置上限；程序绝对上限 300</small></label>
+                <label class="guardrail-field"><span>正常冷却护栏（秒）</span><input data-field="batchPauseCeiling" type="number" min="0" max="60" step="any" required><small>本阶段正常冷却上限；错误恢复可临时延长，程序绝对上限 60</small></label>
+                <label class="checkbox-field"><span>自动调节速度</span><input data-field="adaptiveTuning" type="checkbox"><small>关闭后使用上面的并发与冷却作为手动固定速度；网络请求仍会重试并熔断保护</small></label>
+                <label><span>单请求重试</span><input data-field="retries" type="number" min="1" max="20" step="1" required><small>1–20</small></label>
+                <label><span>请求超时（秒）</span><input data-field="timeout" type="number" min="10" max="3600" step="1" required><small>10–3600</small></label>
+                <label><span>瞬时错误熔断</span><input data-field="transientFailureThreshold" type="number" min="1" max="30" step="1" required><small>1–30，且不能超过每批请求数</small></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="stage-settings" data-stage="cn_legacy_remaining">
+              <legend>
+                <span>国区 1–9 届剩余数据</span>
+                <code>cn_legacy_remaining</code>
+              </legend>
+              <div class="field-grid">
+                <label><span>并发请求数</span><input data-field="workers" type="number" min="1" max="32" step="1" required><small>自动调节开启时为起始值；关闭后固定使用此值</small></label>
+                <label><span>每批请求数上限</span><input data-field="batchSize" type="number" min="1" max="300" step="1" required><small>达到后保存检查点并进入冷却；不能超过每批护栏</small></label>
+                <label><span>批间冷却（秒）</span><input data-field="batchPause" type="number" min="0" max="60" step="any" required><small>自动调节开启时为起始值；关闭后固定使用此值</small></label>
+                <label class="guardrail-field"><span>并发护栏</span><input data-field="workerCeiling" type="number" min="1" max="32" step="1" required><small>本阶段可配置上限；程序绝对上限 32</small></label>
+                <label class="guardrail-field"><span>每批护栏</span><input data-field="requestLimitCeiling" type="number" min="1" max="300" step="1" required><small>本阶段可配置上限；程序绝对上限 300</small></label>
+                <label class="guardrail-field"><span>正常冷却护栏（秒）</span><input data-field="batchPauseCeiling" type="number" min="0" max="60" step="any" required><small>本阶段正常冷却上限；错误恢复可临时延长，程序绝对上限 60</small></label>
+                <label class="checkbox-field"><span>自动调节速度</span><input data-field="adaptiveTuning" type="checkbox"><small>关闭后使用上面的并发与冷却作为手动固定速度；网络请求仍会重试并熔断保护</small></label>
+                <label><span>单请求重试</span><input data-field="retries" type="number" min="1" max="20" step="1" required><small>1–20</small></label>
+                <label><span>请求超时（秒）</span><input data-field="timeout" type="number" min="10" max="3600" step="1" required><small>10–3600</small></label>
+                <label><span>瞬时错误熔断</span><input data-field="transientFailureThreshold" type="number" min="1" max="30" step="1" required><small>1–30，且不能超过每批请求数</small></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="stage-settings" data-stage="cn_modern_advanced">
+              <legend><span>国区 10–11 届高级搜索</span><code>cn_modern_advanced</code></legend>
+              <div class="field-grid">
+                <label><span>并发请求数</span><input data-field="workers" type="number" min="1" max="32" step="1" required><small>自动调速起始值</small></label>
+                <label><span>每批请求数上限</span><input data-field="batchSize" type="number" min="1" max="300" step="1" required><small>共享请求窗口</small></label>
+                <label><span>批间冷却（秒）</span><input data-field="batchPause" type="number" min="0" max="60" step="any" required><small>自动调速起始值</small></label>
+                <label class="guardrail-field"><span>并发护栏</span><input data-field="workerCeiling" type="number" min="1" max="32" step="1" required></label>
+                <label class="guardrail-field"><span>每批护栏</span><input data-field="requestLimitCeiling" type="number" min="1" max="300" step="1" required></label>
+                <label class="guardrail-field"><span>正常冷却护栏（秒）</span><input data-field="batchPauseCeiling" type="number" min="0" max="60" step="any" required></label>
+                <label class="checkbox-field"><span>自动调节速度</span><input data-field="adaptiveTuning" type="checkbox"></label>
+                <label><span>单请求重试</span><input data-field="retries" type="number" min="1" max="20" step="1" required></label>
+                <label><span>请求超时（秒）</span><input data-field="timeout" type="number" min="10" max="3600" step="1" required></label>
+                <label><span>瞬时错误熔断</span><input data-field="transientFailureThreshold" type="number" min="1" max="30" step="1" required></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="stage-settings" data-stage="cn_modern_entity_questionnaire">
+              <legend><span>国区 10–11 届实体问卷</span><code>cn_modern_entity_questionnaire</code></legend>
+              <div class="field-grid">
+                <label><span>并发请求数</span><input data-field="workers" type="number" min="1" max="32" step="1" required></label>
+                <label><span>每批请求数上限</span><input data-field="batchSize" type="number" min="1" max="300" step="1" required></label>
+                <label><span>批间冷却（秒）</span><input data-field="batchPause" type="number" min="0" max="60" step="any" required></label>
+                <label class="guardrail-field"><span>并发护栏</span><input data-field="workerCeiling" type="number" min="1" max="32" step="1" required></label>
+                <label class="guardrail-field"><span>每批护栏</span><input data-field="requestLimitCeiling" type="number" min="1" max="300" step="1" required></label>
+                <label class="guardrail-field"><span>正常冷却护栏（秒）</span><input data-field="batchPauseCeiling" type="number" min="0" max="60" step="any" required></label>
+                <label class="checkbox-field"><span>自动调节速度</span><input data-field="adaptiveTuning" type="checkbox"></label>
+                <label><span>单请求重试</span><input data-field="retries" type="number" min="1" max="20" step="1" required></label>
+                <label><span>请求超时（秒）</span><input data-field="timeout" type="number" min="10" max="3600" step="1" required></label>
+                <label><span>瞬时错误熔断</span><input data-field="transientFailureThreshold" type="number" min="1" max="30" step="1" required></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="failure-policy-row">
+            <label>
+              <span>连续阶段失败停机阈值</span>
+              <input id="max-stage-failures" type="number" min="1" max="100" step="1" required>
+              <small>同一阶段连续失败达到此值时真正停机；手动开始后重置本轮计数。</small>
+            </label>
+          </div>
+
+          <div class="button-row settings-actions">
+            <button type="submit" class="button secondary" id="save-button">保存配置（下次启动生效）</button>
+            <button type="button" class="button primary" id="save-restart-button">保存并安全重启</button>
+            <span class="dirty-indicator" id="dirty-indicator">配置与磁盘一致</span>
+          </div>
+          </form>
+        </details>
+      </section>
+
+      <section class="panel diagnostics-panel" aria-labelledby="diagnostics-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">DIAGNOSTICS</p>
+            <h2 id="diagnostics-title">错误与运行日志</h2>
+          </div>
+          <p class="hint">最多显示本地日志末尾约 200 行。</p>
+        </div>
+        <div class="error-box" id="last-error" hidden>
+          <div class="error-box-heading">
+            <strong>最近错误</strong>
+            <button type="button" class="error-close-button" id="close-last-error" aria-label="关闭最近错误">关闭</button>
+          </div>
+          <pre id="last-error-text"></pre>
+        </div>
+        <div class="log-grid">
+          <article class="log-card">
+            <div class="log-heading">
+              <strong>队列日志</strong>
+              <div class="log-heading-actions">
+                <span>queue.log</span>
+                <button type="button" class="log-copy-button" data-copy-log="queue" id="copy-queue-log">复制</button>
+              </div>
+            </div>
+            <pre class="log-output" id="queue-log" tabindex="0">暂无日志</pre>
+          </article>
+          <article class="log-card">
+            <div class="log-heading">
+              <strong>当前阶段日志</strong>
+              <div class="log-heading-actions">
+                <span id="stage-log-name">—</span>
+                <button type="button" class="log-copy-button" data-copy-log="stage" id="copy-stage-log">复制</button>
+              </div>
+            </div>
+            <pre class="log-output" id="stage-log" tabindex="0">暂无日志</pre>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>只监听 127.0.0.1 · 不开放局域网访问</span>
+      <span id="generated-at">状态生成时间：—</span>
+    </footer>
+  </div>
+  <script src="/eta.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>

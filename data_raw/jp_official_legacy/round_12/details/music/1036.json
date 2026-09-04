@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1036.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1036.php",
+    "retrieved_at": "2026-08-15T09:53:50+00:00",
+    "http_status": 200,
+    "bytes": 3812,
+    "sha256": "43be5970d91bfab2162372eb1a308368977d4f9efe13ff02b1574d31ff687311",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1036",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：春風の夢 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "春風の夢（350位）",
+      "numbers": [
+        {
+          "raw": "350位",
+          "value": 350,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：34点 ｜ 得票数：32票 ｜ 一押し数：2票 ｜ コメント数：2件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "34点",
+          "value": 34,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "32票",
+          "value": 32,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

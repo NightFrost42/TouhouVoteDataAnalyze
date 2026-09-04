@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1269.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1269.php",
+    "retrieved_at": "2026-08-15T09:54:22+00:00",
+    "http_status": 200,
+    "bytes": 3748,
+    "sha256": "2e5a30c5c44f490b1d1636d43724f58f5430a4113e43e07d2c94c97e10bd16d5",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1269",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：人気のある場所 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "人気のある場所（398位）",
+      "numbers": [
+        {
+          "raw": "398位",
+          "value": 398,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：15点 ｜ 得票数：14票 ｜ 一押し数：1票 ｜ コメント数：2件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "15点",
+          "value": 15,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "14票",
+          "value": 14,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

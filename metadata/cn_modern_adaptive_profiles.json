@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stages": {
+    "cn_modern_advanced": {
+      "adaptive_workers": 10,
+      "adaptive_pause_seconds": 0.75,
+      "adaptive_safe_worker_ceiling": 10,
+      "adaptive_safe_pause_floor": 0.75,
+      "pending_transient_failures": 0,
+      "failure_evidence_clean_successes": 0,
+      "failure_threshold": 3,
+      "adaptive_pause_rollback": 0.0,
+      "adaptive_pause_probe_blocked_until_unix": 1788358427.885665,
+      "worker_ceiling": 10,
+      "pause_ceiling": 3.0,
+      "updated_at": "2026-09-02T14:08:47Z"
+    }
+  }
+}

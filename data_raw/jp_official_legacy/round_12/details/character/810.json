@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/character/810.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/character/810.php",
+    "retrieved_at": "2026-08-15T09:53:37+00:00",
+    "http_status": 200,
+    "bytes": 4001,
+    "sha256": "4564477d8731494861330cf9fe8df69aa76a75cf0e6b971f6c99c499bcf0bc8e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "character",
+  "item_id": "810",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：仙台四郎（福の神） - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "仙台四郎（福の神）（158位）",
+      "numbers": [
+        {
+          "raw": "158位",
+          "value": 158,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：20点 ｜ 得票数：19票 ｜ 一押し数：1票 ｜ コメント数：6件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "20点",
+          "value": 20,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "19票",
+          "value": 19,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

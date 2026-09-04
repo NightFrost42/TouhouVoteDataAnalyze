@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/4092.php",
+    "effective_url": "https://toho-vote.info/result13/music/4092.php",
+    "retrieved_at": "2026-08-15T09:56:21+00:00",
+    "http_status": 200,
+    "bytes": 5370,
+    "sha256": "d14bbba75b271bd795dd180999f92b380d423e682dd8c87ea1c1829410a21d88",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4092",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：燕石博物誌が連れてきた闇 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "燕石博物誌が連れてきた闇（289位）",
+      "numbers": [
+        {
+          "raw": "289位",
+          "value": 289,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：67点 ｜ 得票数：65票 ｜ 一押し数：2票 ｜ コメント数：17件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "67点",
+          "value": 67,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "65票",
+          "value": 65,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "17件",
+          "value": 17,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

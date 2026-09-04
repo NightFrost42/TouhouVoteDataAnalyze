@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2099.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2099.php",
+    "retrieved_at": "2026-08-15T09:54:50+00:00",
+    "http_status": 200,
+    "bytes": 3910,
+    "sha256": "551590ac9f2b69c40f9d464cf08df2cf3f8b8f451d71e680c286d7b309f9c1f1",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2099",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：世界の果て ～ World's End - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "世界の果て ～ World's End（408位）",
+      "numbers": [
+        {
+          "raw": "408位",
+          "value": 408,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：12点 ｜ 得票数：11票 ｜ 一押し数：1票 ｜ コメント数：4件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "12点",
+          "value": 12,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "11票",
+          "value": 11,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4件",
+          "value": 4,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

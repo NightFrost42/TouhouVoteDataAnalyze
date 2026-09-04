@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/5034.php",
+    "effective_url": "https://toho-vote.info/result13/music/5034.php",
+    "retrieved_at": "2026-08-15T09:56:24+00:00",
+    "http_status": 200,
+    "bytes": 4467,
+    "sha256": "37de521dc079b6d76914b7b6126cfd687fd79cbf3887a7a4c529c989e3522815",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5034",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：AN ORDEAL FROM GOD - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "AN ORDEAL FROM GOD（321位）",
+      "numbers": [
+        {
+          "raw": "321位",
+          "value": 321,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：49点 ｜ 得票数：47票 ｜ 一押し数：2票 ｜ コメント数：11件 継続投票率：71.4%（7名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "49点",
+          "value": 49,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "47票",
+          "value": 47,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "11件",
+          "value": 11,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "71.4%",
+          "value": 71.4,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "7名",
+          "value": 7,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

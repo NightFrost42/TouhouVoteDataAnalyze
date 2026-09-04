@@ -1,0 +1,62 @@
+{
+  "round": 11,
+  "category": "music",
+  "sourceItems": 612,
+  "sourceCheckpointsAvailable": 610,
+  "missingConditionalSources": [
+    {
+      "sourceIndex": 60,
+      "sourceName": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+      "officialGuiQueryName": "越轨者们的无碍光　～ Kingdam of Nothingness.\t",
+      "normalizedProbeName": "越轨者们的无碍光　～ Kingdam of Nothingness.",
+      "normalizedProbeTransformation": "rstrip_trailing_tab_cr_lf",
+      "removedTrailingCodePoints": [
+        "U+0009"
+      ],
+      "reason": "official_query_defect"
+    },
+    {
+      "sourceIndex": 507,
+      "sourceName": "令人心跳的司空见惯幻想乡\t",
+      "officialGuiQueryName": "令人心跳的司空见惯幻想乡\t",
+      "normalizedProbeName": "令人心跳的司空见惯幻想乡",
+      "normalizedProbeTransformation": "rstrip_trailing_tab_cr_lf",
+      "removedTrailingCodePoints": [
+        "U+0009"
+      ],
+      "reason": "official_query_defect"
+    }
+  ],
+  "expectedPairs": 186966,
+  "observedPairs": 186966,
+  "universe": 10185,
+  "pairEvidenceCounts": {
+    "twoConditionalDirections": 185745,
+    "oneReciprocalConditionalDirection": 1220,
+    "officialQuestionnairePartitionSum": 1
+  },
+  "cellConvention": {
+    "m00": "both selected (intersection)",
+    "m01": "a not selected, b selected",
+    "m10": "a selected, b not selected",
+    "m11": "neither selected"
+  },
+  "allMarginalAndUniverseIdentitiesPassed": true,
+  "allAvailableConditionalSymmetryChecksPassed": true,
+  "symmetryPairsChecked": 185745,
+  "directTopKCrosscheck": {
+    "available": true,
+    "topK": 10,
+    "pairsChecked": 45,
+    "mismatches": []
+  },
+  "questionnairePartitionBridge": {
+    "proofPath": "data_raw/cn_official/round_11/covote/music_missing_pair_partition_proof.json",
+    "proofSha256": "632ff929d2e3a8f6877476be60cb22ad4c9e4a5fcae141f3cd490ed80614a6a5",
+    "attemptsPath": "data_raw/cn_official/round_11/covote/music_missing_pair_partition_attempts.json",
+    "attemptsSha256": "d22a038cb31a46de0259698601eaff00f484528254d294ed592d9210231af9dd",
+    "finalLeafCount": 53,
+    "refinementSplitCount": 12,
+    "pairsUsed": 1
+  }
+}

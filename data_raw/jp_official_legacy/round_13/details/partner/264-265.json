@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/264-265.php",
+    "effective_url": "https://toho-vote.info/result13/partner/264-265.php",
+    "retrieved_at": "2026-08-15T09:56:41+00:00",
+    "http_status": 200,
+    "bytes": 7357,
+    "sha256": "253e19fbfaa82bb8fd70029ca32bb1672705f1fccd3f9b37c5a4f278b39fb327",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "264-265",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：宮古 芳香と霍 青娥 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "宮古 芳香と霍 青娥（50位）",
+      "numbers": [
+        {
+          "raw": "50位",
+          "value": 50,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：606点 ｜ 得票数：524票 ｜ 一押し数：82票 ｜ コメント数：60件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "606点",
+          "value": 606,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "524票",
+          "value": 524,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "82票",
+          "value": 82,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "60件",
+          "value": 60,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,526 @@
+{
+  "schema_version": 2,
+  "status": "PASS",
+  "independent_implementation": true,
+  "build_report": "metadata/jp_unified_report.json",
+  "hard_checks": {
+    "report_file_hashes_and_sizes_match": true,
+    "reported_output_row_counts_match": true,
+    "coverage_round_sets_match": true,
+    "grand_total_row_conservation": true,
+    "round_by_round_row_conservation": true,
+    "analysis_rates_within_zero_one_or_blank": true,
+    "two_official_rate_anomalies_preserved_and_quarantined": true,
+    "modern_association_dedup_exact": true,
+    "published_leading_scope_not_complete_matrix": true,
+    "percentage_policy_excludes_raw_provenance_fields": true
+  },
+  "warnings": [],
+  "coverage_checks": {
+    "aggregate_questionnaire": true,
+    "entity_questionnaire": true,
+    "entity_association": true
+  },
+  "source_stats": {
+    "aggregate_legacy": {
+      "rows": 5040,
+      "by_round": {
+        "3": 102,
+        "4": 161,
+        "5": 154,
+        "6": 183,
+        "7": 227,
+        "8": 261,
+        "9": 529,
+        "10": 216,
+        "11": 617,
+        "12": 614,
+        "13": 665,
+        "14": 270,
+        "15": 514,
+        "16": 527
+      }
+    },
+    "aggregate_modern": {
+      "rows": 1734,
+      "by_round": {
+        "17": 236,
+        "18": 248,
+        "19": 272,
+        "20": 319,
+        "21": 350,
+        "22": 309
+      }
+    },
+    "entity_question_legacy": {
+      "rows": 125706,
+      "by_round": {
+        "11": 10240,
+        "12": 13209,
+        "13": 13644,
+        "14": 28652,
+        "15": 28956,
+        "16": 31005
+      }
+    },
+    "entity_question_modern": {
+      "rows": 227482,
+      "by_round": {
+        "17": 33080,
+        "18": 34393,
+        "19": 39745,
+        "20": 40035,
+        "21": 40665,
+        "22": 39564
+      }
+    },
+    "association_legacy": {
+      "rows": 118746,
+      "by_round": {
+        "11": 2849,
+        "12": 15915,
+        "13": 20608,
+        "14": 26214,
+        "15": 26417,
+        "16": 26743
+      }
+    },
+    "association_modern": {
+      "rows": 233976,
+      "by_round": {
+        "17": 37103,
+        "18": 37857,
+        "19": 38922,
+        "20": 39292,
+        "21": 39953,
+        "22": 40849
+      }
+    }
+  },
+  "output_stats": {
+    "aggregate_questionnaire": {
+      "rows": 6774,
+      "by_round": {
+        "3": 102,
+        "4": 161,
+        "5": 154,
+        "6": 183,
+        "7": 227,
+        "8": 261,
+        "9": 529,
+        "10": 216,
+        "11": 617,
+        "12": 614,
+        "13": 665,
+        "14": 270,
+        "15": 514,
+        "16": 527,
+        "17": 236,
+        "18": 248,
+        "19": 272,
+        "20": 319,
+        "21": 350,
+        "22": 309
+      },
+      "by_generation": {
+        "legacy_official": 5040,
+        "modern_official": 1734
+      },
+      "by_generation_round": {
+        "legacy_official": {
+          "3": 102,
+          "4": 161,
+          "5": 154,
+          "6": 183,
+          "7": 227,
+          "8": 261,
+          "9": 529,
+          "10": 216,
+          "11": 617,
+          "12": 614,
+          "13": 665,
+          "14": 270,
+          "15": 514,
+          "16": 527
+        },
+        "modern_official": {
+          "17": 236,
+          "18": 248,
+          "19": 272,
+          "20": 319,
+          "21": 350,
+          "22": 309
+        }
+      },
+      "populated_rate_cells": {
+        "rate": 6733
+      },
+      "blank_rate_cells": {
+        "rate": 41
+      },
+      "rate_violations": []
+    },
+    "entity_questionnaire": {
+      "rows": 353188,
+      "by_round": {
+        "11": 10240,
+        "12": 13209,
+        "13": 13644,
+        "14": 28652,
+        "15": 28956,
+        "16": 31005,
+        "17": 33080,
+        "18": 34393,
+        "19": 39745,
+        "20": 40035,
+        "21": 40665,
+        "22": 39564
+      },
+      "by_generation": {
+        "legacy_official": 125706,
+        "modern_official": 227482
+      },
+      "by_generation_round": {
+        "legacy_official": {
+          "11": 10240,
+          "12": 13209,
+          "13": 13644,
+          "14": 28652,
+          "15": 28956,
+          "16": 31005
+        },
+        "modern_official": {
+          "17": 33080,
+          "18": 34393,
+          "19": 39745,
+          "20": 40035,
+          "21": 40665,
+          "22": 39564
+        }
+      },
+      "populated_rate_cells": {
+        "conditional_rate": 349998,
+        "overall_rate": 353169
+      },
+      "blank_rate_cells": {
+        "overall_rate": 19,
+        "conditional_rate": 3190
+      },
+      "rate_violations": []
+    },
+    "entity_association": {
+      "rows": 296796,
+      "by_round": {
+        "11": 2849,
+        "12": 15915,
+        "13": 20608,
+        "14": 26214,
+        "15": 26417,
+        "16": 26743,
+        "17": 28359,
+        "18": 29043,
+        "19": 29489,
+        "20": 29806,
+        "21": 30345,
+        "22": 31008
+      },
+      "by_generation": {
+        "legacy_official": 118746,
+        "modern_official": 178050
+      },
+      "by_generation_round": {
+        "legacy_official": {
+          "11": 2849,
+          "12": 15915,
+          "13": 20608,
+          "14": 26214,
+          "15": 26417,
+          "16": 26743
+        },
+        "modern_official": {
+          "17": 28359,
+          "18": 29043,
+          "19": 29489,
+          "20": 29806,
+          "21": 30345,
+          "22": 31008
+        }
+      },
+      "populated_rate_cells": {
+        "conditional_rate": 292204,
+        "overall_rate": 290872
+      },
+      "blank_rate_cells": {
+        "overall_rate": 5924,
+        "conditional_rate": 4592
+      },
+      "rate_violations": []
+    }
+  },
+  "row_conservation": {
+    "aggregate_questionnaire": {
+      "legacy_source_rows": 5040,
+      "modern_expected_rows": 1734,
+      "expected_output_rows": 6774,
+      "output_rows": 6774,
+      "output_generation_rows": {
+        "legacy_official": 5040,
+        "modern_official": 1734
+      },
+      "pass": true
+    },
+    "entity_questionnaire": {
+      "legacy_source_rows": 125706,
+      "modern_expected_rows": 227482,
+      "expected_output_rows": 353188,
+      "output_rows": 353188,
+      "output_generation_rows": {
+        "legacy_official": 125706,
+        "modern_official": 227482
+      },
+      "pass": true
+    },
+    "entity_association": {
+      "legacy_source_rows": 118746,
+      "modern_expected_rows": 178050,
+      "expected_output_rows": 296796,
+      "output_rows": 296796,
+      "output_generation_rows": {
+        "legacy_official": 118746,
+        "modern_official": 178050
+      },
+      "pass": true
+    }
+  },
+  "round_conservation": {
+    "aggregate_legacy": true,
+    "aggregate_modern": true,
+    "entity_question_legacy": true,
+    "entity_question_modern": true,
+    "association_legacy": true,
+    "association_modern_unique": true
+  },
+  "entity_rate_anomalies": {
+    "source_out_of_domain_rows": 2,
+    "output_out_of_domain_status_rows": 2,
+    "fully_preserved_and_quarantined_rows": 2,
+    "detail_mismatches": [],
+    "status_rule_violations": 0,
+    "modern_rate_status_counts": {
+      "official_rate_missing": 3188,
+      "official_rate_outside_proportion_domain": 2,
+      "valid_official_proportion": 224292
+    },
+    "report_anomaly_keys_match_source": true,
+    "anomalies": [
+      {
+        "round": 18,
+        "source_category": "character",
+        "source_id": "192",
+        "question": "intention",
+        "option": "　　うちサークル参加",
+        "count": 2,
+        "official_conditional_rate_raw": 2.0,
+        "conditional_denominator": 1,
+        "official_delta_points_raw": 185.52500356176094
+      },
+      {
+        "round": 21,
+        "source_category": "music",
+        "source_id": "91",
+        "question": "intention",
+        "option": "　　うちコスプレ参加",
+        "count": 2,
+        "official_conditional_rate_raw": 2.0,
+        "conditional_denominator": 1,
+        "official_delta_points_raw": 184.7341610951926
+      }
+    ]
+  },
+  "modern_association_dedup": {
+    "raw_rows": 233976,
+    "unique_pair_rows": 178050,
+    "rows_collapsed": 55926,
+    "duplicate_groups": 55926,
+    "multiplicity_counts": {
+      "1": 122124,
+      "2": 55926
+    },
+    "raw_ordering_counts": {
+      "count": 155833,
+      "diff": 78143
+    },
+    "duplicate_material_mismatches": 0,
+    "output_modern_rows": 178050,
+    "output_rounds": {
+      "17": 28359,
+      "18": 29043,
+      "19": 29489,
+      "20": 29806,
+      "21": 30345,
+      "22": 31008
+    },
+    "missing_output_keys": 0,
+    "output_keys_not_in_raw": 0,
+    "duplicate_output_keys": 0,
+    "ordering_position_mismatches": 0,
+    "value_mismatches": 0,
+    "association_kind_counts": {
+      "published_leading_conditional_co_vote": 178050
+    },
+    "association_context_counts": {
+      "others": 178050
+    },
+    "published_ordering_memberships": {
+      "count": 155833,
+      "diff": 78143
+    },
+    "published_scope_evidence": {
+      "observed_unique_pairs": 178050,
+      "possible_pairs_in_published_source_target_contexts": 4528605,
+      "observed_fraction_of_candidate_universe": 0.03931674323549968,
+      "context_coverage_min": 0.0016835016835016834,
+      "context_coverage_median": 0.05429864253393665,
+      "context_coverage_max": 0.25925925925925924,
+      "contexts": 15632
+    }
+  },
+  "report_file_checks": [
+    {
+      "role": "input",
+      "path": "data_processed/jp_official_legacy/questionnaire_long.csv",
+      "exists": true,
+      "reported_bytes": 3487600,
+      "actual_bytes": 3487600,
+      "reported_sha256": "ff4044403e15d6da3ed0ba94add351849dd6f5f362ef0131a1011868d1751abc",
+      "actual_sha256": "ff4044403e15d6da3ed0ba94add351849dd6f5f362ef0131a1011868d1751abc",
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "input",
+      "path": "data_processed/jp_official_legacy/entity_questionnaire_long.csv",
+      "exists": true,
+      "reported_bytes": 48639072,
+      "actual_bytes": 48639072,
+      "reported_sha256": "57f800ed92aed50d0435c6973a4f55ea58d973a8389b8c0e81c1ca15e52fa85a",
+      "actual_sha256": "57f800ed92aed50d0435c6973a4f55ea58d973a8389b8c0e81c1ca15e52fa85a",
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "input",
+      "path": "data_processed/jp_official_legacy/entity_association_long.csv",
+      "exists": true,
+      "reported_bytes": 60893522,
+      "actual_bytes": 60893522,
+      "reported_sha256": "78f25de48fcb61e7518a780eb4f21ca8c454106b8b2fb83b90abd84398fb8fd1",
+      "actual_sha256": "78f25de48fcb61e7518a780eb4f21ca8c454106b8b2fb83b90abd84398fb8fd1",
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "input",
+      "path": "data_processed/jp_official_legacy/source_entity_metrics.csv",
+      "exists": true,
+      "reported_bytes": 1475541,
+      "actual_bytes": 1475541,
+      "reported_sha256": "c75e57f5cc7489c025c4539a282e7bcd347f61a1690c7c0dc8447705193f7c10",
+      "actual_sha256": "c75e57f5cc7489c025c4539a282e7bcd347f61a1690c7c0dc8447705193f7c10",
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "input",
+      "path": "data_processed/jp_official/questionnaire_long.csv",
+      "exists": true,
+      "reported_bytes": 167750,
+      "actual_bytes": 167750,
+      "reported_sha256": "34c2aceeb2c100df4a73041b401093cc2f2bb01798fc171bc330ac37ab2d25d9",
+      "actual_sha256": "34c2aceeb2c100df4a73041b401093cc2f2bb01798fc171bc330ac37ab2d25d9",
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "input",
+      "path": "data_processed/jp_official/detail_questionnaire_long.csv",
+      "exists": true,
+      "reported_bytes": 46242659,
+      "actual_bytes": 46242659,
+      "reported_sha256": "3868659b9bae9b895d94276de50775dcc405e4ea3992a1b1642d51ec343ce1fc",
+      "actual_sha256": "3868659b9bae9b895d94276de50775dcc405e4ea3992a1b1642d51ec343ce1fc",
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "input",
+      "path": "data_processed/jp_official/detail_associations.csv",
+      "exists": true,
+      "reported_bytes": 91272297,
+      "actual_bytes": 91272297,
+      "reported_sha256": "302824b19844c8bac25da94a5896ed2a729ec0d9e3a836125d89fd71f2f40956",
+      "actual_sha256": "302824b19844c8bac25da94a5896ed2a729ec0d9e3a836125d89fd71f2f40956",
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "input",
+      "path": "metadata/jp_official_download_manifest.json",
+      "exists": true,
+      "reported_bytes": 3513082,
+      "actual_bytes": 3513082,
+      "reported_sha256": "04fca70da195bcc388f74b9f43ceaae8db3f8879c37c49028322b9a32745ae91",
+      "actual_sha256": "04fca70da195bcc388f74b9f43ceaae8db3f8879c37c49028322b9a32745ae91",
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "output",
+      "path": "data_processed/jp_unified/aggregate_questionnaire_long.csv.gz",
+      "exists": true,
+      "reported_bytes": 159526,
+      "actual_bytes": 159526,
+      "reported_sha256": "7771058a4e41842d908cfdef2c6e7360b84921f14956332d62376f316e2956a8",
+      "actual_sha256": "7771058a4e41842d908cfdef2c6e7360b84921f14956332d62376f316e2956a8",
+      "bytes_match": true,
+      "sha256_match": true,
+      "reported_rows": 6774,
+      "actual_rows": 6774,
+      "rows_match": true
+    },
+    {
+      "role": "output",
+      "path": "data_processed/jp_unified/entity_questionnaire_long.csv.gz",
+      "exists": true,
+      "reported_bytes": 12384902,
+      "actual_bytes": 12384902,
+      "reported_sha256": "4d242606403450eea633658d25841650e8e03bb80291c72d59649b205cca3303",
+      "actual_sha256": "4d242606403450eea633658d25841650e8e03bb80291c72d59649b205cca3303",
+      "bytes_match": true,
+      "sha256_match": true,
+      "reported_rows": 353188,
+      "actual_rows": 353188,
+      "rows_match": true
+    },
+    {
+      "role": "output",
+      "path": "data_processed/jp_unified/entity_association_long.csv.gz",
+      "exists": true,
+      "reported_bytes": 14499545,
+      "actual_bytes": 14499545,
+      "reported_sha256": "c8d5d868dda07aca64c52221a62d595c64a305f59753816f2b9775ad1a6c0c47",
+      "actual_sha256": "c8d5d868dda07aca64c52221a62d595c64a305f59753816f2b9775ad1a6c0c47",
+      "bytes_match": true,
+      "sha256_match": true,
+      "reported_rows": 296796,
+      "actual_rows": 296796,
+      "rows_match": true
+    }
+  ],
+  "legacy_association_kind_counts": {
+    "conditional_co_vote": 112822,
+    "merged_entry_component": 1332,
+    "partner_ranking": 4592
+  },
+  "association_scope_violations": 0
+}

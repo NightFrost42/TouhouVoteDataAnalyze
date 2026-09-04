@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/character/942.php",
+    "effective_url": "https://toho-vote.info/result13/character/942.php",
+    "retrieved_at": "2026-08-15T09:55:36+00:00",
+    "http_status": 200,
+    "bytes": 3652,
+    "sha256": "cfd7c50c5da921524e029162ce6df24e48a62aebd279ef5b70e7be238eefd7d7",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "character",
+  "item_id": "942",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：天狗（香霖堂の天狗、大天狗他） - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "天狗（香霖堂の天狗、大天狗他）（162位）",
+      "numbers": [
+        {
+          "raw": "162位",
+          "value": 162,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：22点 ｜ 得票数：22票 ｜ 一押し数：0票 ｜ コメント数：2件 継続投票率：0.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "22点",
+          "value": 22,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "22票",
+          "value": 22,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0.0%",
+          "value": 0.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

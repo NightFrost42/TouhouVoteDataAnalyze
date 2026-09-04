@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2103.php",
+    "effective_url": "https://toho-vote.info/result13/music/2103.php",
+    "retrieved_at": "2026-08-15T09:56:15+00:00",
+    "http_status": 200,
+    "bytes": 3667,
+    "sha256": "0d5a9469022ac6e43855ea051452ef9a5b8d346c59c49bb162c79c78b1340187",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2103",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：神社 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "神社（467位）",
+      "numbers": [
+        {
+          "raw": "467位",
+          "value": 467,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：3点 ｜ 得票数：3票 ｜ 一押し数：0票 ｜ コメント数：1件 継続投票率：0.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "3点",
+          "value": 3,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0.0%",
+          "value": 0.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

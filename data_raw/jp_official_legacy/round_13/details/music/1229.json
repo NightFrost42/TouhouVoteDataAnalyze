@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1229.php",
+    "effective_url": "https://toho-vote.info/result13/music/1229.php",
+    "retrieved_at": "2026-08-15T09:55:56+00:00",
+    "http_status": 200,
+    "bytes": 5356,
+    "sha256": "f4ac9f4fb901de4608aac8e2dd91cc64aebac7b69d7f755b25d1fd556a8de156",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1229",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：可愛い大戦争のリフレーン - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "可愛い大戦争のリフレーン（230位）",
+      "numbers": [
+        {
+          "raw": "230位",
+          "value": 230,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：141点 ｜ 得票数：135票 ｜ 一押し数：6票 ｜ コメント数：17件 継続投票率：44.0%（25名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "141点",
+          "value": 141,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "135票",
+          "value": 135,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "17件",
+          "value": 17,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "44.0%",
+          "value": 44.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "25名",
+          "value": 25,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/252-270.php",
+    "effective_url": "https://toho-vote.info/result13/partner/252-270.php",
+    "retrieved_at": "2026-08-15T09:56:39+00:00",
+    "http_status": 200,
+    "bytes": 26227,
+    "sha256": "eda057252b9ddf4ac3b9acbfdbc76016fb59dd4522e891827475a29d556d848d",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "252-270",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：古明地 こいしと秦 こころ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "古明地 こいしと秦 こころ（11位）",
+      "numbers": [
+        {
+          "raw": "11位",
+          "value": 11,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：2576点 ｜ 得票数：2092票 ｜ 一押し数：484票 ｜ コメント数：292件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "2576点",
+          "value": 2576,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "2092票",
+          "value": 2092,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "484票",
+          "value": 484,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "292件",
+          "value": 292,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "round": 11,
+  "generatedAt": "2026-08-15T18:42:28Z",
+  "failures": [
+    {
+      "stage": "complete covote matrices",
+      "error": "RuntimeError: CharacterCovoteCounts: [{\"message\": \"Error\", \"locations\": [{\"line\": 7, \"column\": 3}], \"path\": [\"queryCharsCovote\"], \"extensions\": {\"service\": \"gateway\", \"url\": \"http://result-query/v1/chars-covote/\", \"error_kind\": \"JSON_DECODE_ERROR\", \"error_message\": \"reqwest::Error { kind: Decode, source: Error(\\\"invalid type: null, expected f64\\\", line: 1, column: 3286770) }\", \"human_readable_message\": null, \"upstream_response_string\": null}}]"
+    }
+  ]
+}

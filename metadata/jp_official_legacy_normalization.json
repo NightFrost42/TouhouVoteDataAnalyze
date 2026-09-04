@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "normalizer_version": "jp-official-legacy-normalizer-v2",
+  "offline_only": true,
+  "input": {
+    "raw_root": "data_raw/jp_official_legacy",
+    "crawl_manifest": "metadata/jp_official_legacy_manifest.json",
+    "crawl_manifest_sha256": "32f70135876e03bc31bb84811d85089dc30e9819683d73fbb676c31421b14ffc",
+    "crawl_coverage": "metadata/jp_official_legacy_coverage.json",
+    "crawl_coverage_sha256": "e1629af9f79115a5e11ccd57ac06c14ff36d8b248dd87bf5726f72c4b92f0e22"
+  },
+  "program": {
+    "path": "scripts_pipeline/normalize_jp_official_legacy.py",
+    "sha256": "32a9f9949aa137fb361283716cd2a60700c5707c6b7a69e743df33e290edc6f1"
+  },
+  "output_root": "data_processed/jp_official_legacy",
+  "outputs": [
+    {
+      "path": "data_processed/jp_official_legacy/questionnaire_long.csv",
+      "bytes": 3487600,
+      "sha256": "ff4044403e15d6da3ed0ba94add351849dd6f5f362ef0131a1011868d1751abc",
+      "rows": 5040,
+      "expected_rows": 5040,
+      "row_count_matches": true
+    },
+    {
+      "path": "data_processed/jp_official_legacy/entity_questionnaire_long.csv",
+      "bytes": 48639072,
+      "sha256": "57f800ed92aed50d0435c6973a4f55ea58d973a8389b8c0e81c1ca15e52fa85a",
+      "rows": 125706,
+      "expected_rows": 125706,
+      "row_count_matches": true
+    },
+    {
+      "path": "data_processed/jp_official_legacy/entity_association_long.csv",
+      "bytes": 60893522,
+      "sha256": "78f25de48fcb61e7518a780eb4f21ca8c454106b8b2fb83b90abd84398fb8fd1",
+      "rows": 118746,
+      "expected_rows": 118746,
+      "row_count_matches": true
+    },
+    {
+      "path": "data_processed/jp_official_legacy/source_entity_metrics.csv",
+      "bytes": 1475541,
+      "sha256": "c75e57f5cc7489c025c4539a282e7bcd347f61a1690c7c0dc8447705193f7c10",
+      "rows": 4770,
+      "expected_rows": 4770,
+      "row_count_matches": true
+    },
+    {
+      "path": "data_processed/jp_official_legacy/normalization_exceptions.csv",
+      "bytes": 83,
+      "sha256": "f9712fa88f1efdb1445db24a8a027fbfb22377e3b2cc8fc592ff44987aab707b",
+      "rows": 0,
+      "expected_rows": 0,
+      "row_count_matches": true
+    },
+    {
+      "path": "metadata/jp_official_legacy_component_status.json",
+      "bytes": 9172,
+      "sha256": "708ff5c143295abcc61e3485a9dd1f39e3c87cd629de9ed206513de61c64905d",
+      "rows": null
+    }
+  ],
+  "row_counts": {
+    "entity_association_rows": 118746,
+    "entity_question_rows": 125706,
+    "questionnaire_rows": 5040,
+    "source_metric_rows": 4770
+  },
+  "row_counts_by_round": {
+    "3": {
+      "questionnaire_rows": 102
+    },
+    "4": {
+      "questionnaire_rows": 161
+    },
+    "5": {
+      "questionnaire_rows": 154
+    },
+    "6": {
+      "questionnaire_rows": 183
+    },
+    "7": {
+      "questionnaire_rows": 227
+    },
+    "8": {
+      "questionnaire_rows": 261
+    },
+    "9": {
+      "questionnaire_rows": 529
+    },
+    "10": {
+      "questionnaire_rows": 216
+    },
+    "11": {
+      "entity_association_rows": 2849,
+      "entity_question_rows": 10240,
+      "questionnaire_rows": 617,
+      "source_metric_rows": 630
+    },
+    "12": {
+      "entity_association_rows": 15915,
+      "entity_question_rows": 13209,
+      "questionnaire_rows": 614,
+      "source_metric_rows": 685
+    },
+    "13": {
+      "entity_association_rows": 20608,
+      "entity_question_rows": 13644,
+      "questionnaire_rows": 665,
+      "source_metric_rows": 1141
+    },
+    "14": {
+      "entity_association_rows": 26214,
+      "entity_question_rows": 28652,
+      "questionnaire_rows": 270,
+      "source_metric_rows": 757
+    },
+    "15": {
+      "entity_association_rows": 26417,
+      "entity_question_rows": 28956,
+      "questionnaire_rows": 514,
+      "source_metric_rows": 762
+    },
+    "16": {
+      "entity_association_rows": 26743,
+      "entity_question_rows": 31005,
+      "questionnaire_rows": 527,
+      "source_metric_rows": 795
+    }
+  },
+  "denominator_basis_counts": {
+    "ambiguous_integer_candidates_from_official_rounded_percentages": 81,
+    "derived_unique_integer_from_official_rounded_percentages": 78620,
+    "explicit_official_heading": 2446,
+    "explicit_official_table_cell": 422,
+    "inconsistent_count_percentage_pairs": 31,
+    "not_applicable": 4592,
+    "not_available": 3099,
+    "overall:ambiguous_integer_candidates_from_official_rounded_percentages": 91790,
+    "overall:derived_unique_integer_from_official_rounded_percentages": 20978,
+    "overall:inconsistent_count_percentage_pairs": 54,
+    "overall:not_applicable": 5924,
+    "published_parent_option_count": 6192,
+    "published_source_vote_count_from_points_minus_first_choice": 37103,
+    "published_table_conditional_base_count": 65,
+    "sum_of_complete_cross_tab_row": 1765,
+    "sum_of_complete_entity_question_options": 113562,
+    "sum_of_complete_merged_entry_components": 1329,
+    "sum_of_complete_mutually_exclusive_official_counts": 185
+  },
+  "source_numeric_anomalies": {
+    "conditional_or_question_rows_with_inconsistent_published_pairs": 31,
+    "overall_baseline_rows_with_inconsistent_published_pairs": 54,
+    "interpretation": "These rows preserve official values but leave the denominator blank because no integer is compatible with all printed counts/percentages. They are source-data warnings, not normalizer failures."
+  },
+  "denominator_policy": {
+    "official": "explicit values printed in a heading or table cell",
+    "exact_sum": "sum only when published percentages prove a complete mutually-exclusive partition",
+    "scoring_rule": "vote_count = published points - published first-choice count",
+    "rounded_percent_solver": "populate only when all official count/percentage pairs yield one and only one integer inside their printed-precision intervals (tie boundaries inclusive); ambiguous cases stay blank and retain candidate bounds",
+    "manual_or_estimated_values": 0
+  }
+}

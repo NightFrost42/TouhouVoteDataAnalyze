@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4070.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4070.php",
+    "retrieved_at": "2026-08-15T09:54:57+00:00",
+    "http_status": 200,
+    "bytes": 5818,
+    "sha256": "5c1862ba5153e464805835821562ff114f4a2038499f602c698b83aaf213da5f",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4070",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：緑のサナトリウム - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "緑のサナトリウム（218位）",
+      "numbers": [
+        {
+          "raw": "218位",
+          "value": 218,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：177点 ｜ 得票数：170票 ｜ 一押し数：7票 ｜ コメント数：22件 継続投票率：75.0%（20名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "177点",
+          "value": 177,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "170票",
+          "value": 170,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "22件",
+          "value": 22,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "75.0%",
+          "value": 75.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "20名",
+          "value": 20,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

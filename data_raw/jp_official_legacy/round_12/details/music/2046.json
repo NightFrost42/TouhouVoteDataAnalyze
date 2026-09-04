@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2046.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2046.php",
+    "retrieved_at": "2026-08-15T09:54:43+00:00",
+    "http_status": 200,
+    "bytes": 3966,
+    "sha256": "0f4c2c36f47a3a7e6171bd13d7c1a1843cd443f7cf10ef3a0f4e58676201f6db",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2046",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：非統一魔法世界論 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "非統一魔法世界論（332位）",
+      "numbers": [
+        {
+          "raw": "332位",
+          "value": 332,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：46点 ｜ 得票数：44票 ｜ 一押し数：2票 ｜ コメント数：3件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "46点",
+          "value": 46,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "44票",
+          "value": 44,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3件",
+          "value": 3,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1231.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1231.php",
+    "retrieved_at": "2026-08-15T09:54:18+00:00",
+    "http_status": 200,
+    "bytes": 5425,
+    "sha256": "06d8945fcd1d182d7861842c17fa5a29acaea2699b1cdfae848b405c26f11f6b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1231",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：年中夢中の好奇心 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "年中夢中の好奇心（209位）",
+      "numbers": [
+        {
+          "raw": "209位",
+          "value": 209,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：205点 ｜ 得票数：198票 ｜ 一押し数：7票 ｜ コメント数：25件 継続投票率：38.5%（13名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "205点",
+          "value": 205,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "198票",
+          "value": 198,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "25件",
+          "value": 25,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "38.5%",
+          "value": 38.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "13名",
+          "value": 13,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

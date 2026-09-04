@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/4084.php",
+    "effective_url": "https://toho-vote.info/result13/music/4084.php",
+    "retrieved_at": "2026-08-15T09:56:21+00:00",
+    "http_status": 200,
+    "bytes": 4270,
+    "sha256": "27b995ab5bce9719dabb1e6859dc1426a3daf038f86c94a7387ab0689004cf36",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4084",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：須臾はプランクを超えて - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "須臾はプランクを超えて（331位）",
+      "numbers": [
+        {
+          "raw": "331位",
+          "value": 331,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：46点 ｜ 得票数：42票 ｜ 一押し数：4票 ｜ コメント数：9件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "46点",
+          "value": 46,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "42票",
+          "value": 42,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

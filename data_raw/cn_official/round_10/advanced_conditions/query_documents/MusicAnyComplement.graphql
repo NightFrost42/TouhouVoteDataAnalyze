@@ -1,0 +1,23 @@
+query MusicAnyComplement(
+  $query: String!
+  $voteStart: DateTimeUtc!
+  $voteYear: Int!
+) {
+  queryGlobalStats(query: $query, voteStart: $voteStart, voteYear: $voteYear) {
+    
+voteYear numVote numChar numMusic numCp numDoujin numMale numFemale
+
+  }
+  queryCharacterRanking(query: $query, voteStart: $voteStart, voteYear: $voteYear) {
+    global { 
+totalUniqueItems totalFirst totalVotes averageVotesPerItem medianVotesPerItem
+ }
+    entries { rank displayRank name voteCount firstVoteCount }
+  }
+  queryCPRanking(query: $query, voteStart: $voteStart, voteYear: $voteYear) {
+    global { 
+totalUniqueItems totalFirst totalVotes averageVotesPerItem medianVotesPerItem
+ }
+    entries { rank displayRank cp { a b c } voteCount firstVoteCount }
+  }
+}

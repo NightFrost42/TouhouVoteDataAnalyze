@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/249-252.php",
+    "effective_url": "https://toho-vote.info/result13/partner/249-252.php",
+    "retrieved_at": "2026-08-15T09:56:39+00:00",
+    "http_status": 200,
+    "bytes": 31295,
+    "sha256": "6a698d27adaebb4471bd9f2dbe5872ad739e40a0763b3a504980eac1bf4432ea",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "249-252",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：古明地 さとりと古明地 こいし - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "古明地 さとりと古明地 こいし（5位）",
+      "numbers": [
+        {
+          "raw": "5位",
+          "value": 5,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：3679点 ｜ 得票数：3007票 ｜ 一押し数：672票 ｜ コメント数：400件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "3679点",
+          "value": 3679,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "3007票",
+          "value": 3007,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "672票",
+          "value": 672,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "400件",
+          "value": 400,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/character/814.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/character/814.php",
+    "retrieved_at": "2026-08-15T09:53:37+00:00",
+    "http_status": 200,
+    "bytes": 5267,
+    "sha256": "d6ea3cea54af5c4311f6206e1835140d6bfa361a7ff0f5f950173a02035a2333",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "character",
+  "item_id": "814",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：万歳楽 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "万歳楽（153位）",
+      "numbers": [
+        {
+          "raw": "153位",
+          "value": 153,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：33点 ｜ 得票数：31票 ｜ 一押し数：2票 ｜ コメント数：17件 ｜ 支援作品数： 0件 継続投票率：50.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "33点",
+          "value": 33,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "31票",
+          "value": 31,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "17件",
+          "value": 17,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

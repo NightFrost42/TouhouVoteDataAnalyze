@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2021.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2021.php",
+    "retrieved_at": "2026-08-15T09:54:41+00:00",
+    "http_status": 200,
+    "bytes": 4025,
+    "sha256": "f438aea64941ed92e4c6eaaa594a0ba7c1518579b69da1bffd4c2a93ed48516c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2021",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：幻夢界 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "幻夢界（393位）",
+      "numbers": [
+        {
+          "raw": "393位",
+          "value": 393,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：17点 ｜ 得票数：16票 ｜ 一押し数：1票 ｜ コメント数：4件 継続投票率：100.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "17点",
+          "value": 17,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "16票",
+          "value": 16,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4件",
+          "value": 4,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

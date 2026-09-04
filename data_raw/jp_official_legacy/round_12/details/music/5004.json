@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/5004.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/5004.php",
+    "retrieved_at": "2026-08-15T09:54:57+00:00",
+    "http_status": 200,
+    "bytes": 3741,
+    "sha256": "03bde16f7624b5b598ec9ed1d31511c5b1e80ca8d10d858d66980b996e5ed22b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5004",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：幻想帝都 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "幻想帝都（419位）",
+      "numbers": [
+        {
+          "raw": "419位",
+          "value": 419,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：10点 ｜ 得票数：9票 ｜ 一押し数：1票 ｜ コメント数：0件 継続投票率：66.7%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "10点",
+          "value": 10,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "66.7%",
+          "value": 66.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

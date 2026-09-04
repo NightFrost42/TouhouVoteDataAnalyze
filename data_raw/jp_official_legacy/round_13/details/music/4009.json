@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/4009.php",
+    "effective_url": "https://toho-vote.info/result13/music/4009.php",
+    "retrieved_at": "2026-08-15T09:56:17+00:00",
+    "http_status": 200,
+    "bytes": 7302,
+    "sha256": "954dac0a208fea9744f075af69d99bb6d078b7b7326b699fb1341e74713c3279",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4009",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Witch of Love Potion - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Witch of Love Potion（212位）",
+      "numbers": [
+        {
+          "raw": "212位",
+          "value": 212,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：183点 ｜ 得票数：159票 ｜ 一押し数：24票 ｜ コメント数：40件 継続投票率：77.4%（31名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "183点",
+          "value": 183,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "159票",
+          "value": 159,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "24票",
+          "value": 24,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "40件",
+          "value": 40,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "77.4%",
+          "value": 77.4,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "31名",
+          "value": 31,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

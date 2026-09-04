@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4009.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4009.php",
+    "retrieved_at": "2026-08-15T09:54:52+00:00",
+    "http_status": 200,
+    "bytes": 7750,
+    "sha256": "6c31e0ccd4b76eb5f717740e9cd092f651660e3989ff3a1bc6b3b2d17803638a",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4009",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Witch of Love Potion - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Witch of Love Potion（212位）",
+      "numbers": [
+        {
+          "raw": "212位",
+          "value": 212,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：195点 ｜ 得票数：170票 ｜ 一押し数：25票 ｜ コメント数：39件 継続投票率：66.7%（18名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "195点",
+          "value": 195,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "170票",
+          "value": 170,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "25票",
+          "value": 25,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "39件",
+          "value": 39,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "66.7%",
+          "value": 66.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "18名",
+          "value": 18,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

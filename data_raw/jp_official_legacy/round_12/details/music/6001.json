@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/6001.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/6001.php",
+    "retrieved_at": "2026-08-15T09:54:59+00:00",
+    "http_status": 200,
+    "bytes": 4363,
+    "sha256": "5a690879a10b57ab1570a2763ddc501dd98c6ca86dd3da53f39fdf0f96679194",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "6001",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：宵闇の魔術師 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "宵闇の魔術師（297位）",
+      "numbers": [
+        {
+          "raw": "297位",
+          "value": 297,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：63点 ｜ 得票数：58票 ｜ 一押し数：5票 ｜ コメント数：9件 継続投票率：60.0%（10名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "63点",
+          "value": 63,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "58票",
+          "value": 58,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "60.0%",
+          "value": 60.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "10名",
+          "value": 10,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

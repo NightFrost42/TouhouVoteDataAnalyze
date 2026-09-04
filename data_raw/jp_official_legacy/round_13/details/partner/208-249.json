@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/208-249.php",
+    "effective_url": "https://toho-vote.info/result13/partner/208-249.php",
+    "retrieved_at": "2026-08-15T09:56:31+00:00",
+    "http_status": 200,
+    "bytes": 9383,
+    "sha256": "61c45b1f9e0bee04d66b8c14bd9b6963e9c6cd0bf749c2541d7a04fac4852e3b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "208-249",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：レミリア・スカーレットと古明地 さとり - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "レミリア・スカーレットと古明地 さとり（55位）",
+      "numbers": [
+        {
+          "raw": "55位",
+          "value": 55,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：490点 ｜ 得票数：405票 ｜ 一押し数：85票 ｜ コメント数：77件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "490点",
+          "value": 490,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "405票",
+          "value": 405,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "85票",
+          "value": 85,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "77件",
+          "value": 77,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

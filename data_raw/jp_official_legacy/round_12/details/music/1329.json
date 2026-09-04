@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1329.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1329.php",
+    "retrieved_at": "2026-08-15T09:54:31+00:00",
+    "http_status": 200,
+    "bytes": 5525,
+    "sha256": "59366cb7c9f46bf3f472cead64dfffc9581b44b8879da8fd78193ff3bf57049b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1329",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：対蹠地の鐘 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "対蹠地の鐘（293位）",
+      "numbers": [
+        {
+          "raw": "293位",
+          "value": 293,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：65点 ｜ 得票数：64票 ｜ 一押し数：1票 ｜ コメント数：16件 継続投票率：83.3%（6名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "65点",
+          "value": 65,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "64票",
+          "value": 64,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "16件",
+          "value": 16,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "83.3%",
+          "value": 83.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "6名",
+          "value": 6,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

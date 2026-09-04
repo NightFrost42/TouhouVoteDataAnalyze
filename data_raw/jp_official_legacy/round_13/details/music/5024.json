@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/5024.php",
+    "effective_url": "https://toho-vote.info/result13/music/5024.php",
+    "retrieved_at": "2026-08-15T09:56:23+00:00",
+    "http_status": 200,
+    "bytes": 4025,
+    "sha256": "c2a1f2481d8325e4285531016493d8980deeb7233953979409044b2f6a76f5d4",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5024",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：オルフェの詩 ～ Pseudoclassic - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "オルフェの詩 ～ Pseudoclassic（383位）",
+      "numbers": [
+        {
+          "raw": "383位",
+          "value": 383,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：20点 ｜ 得票数：19票 ｜ 一押し数：1票 ｜ コメント数：4件 継続投票率：60.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "20点",
+          "value": 20,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "19票",
+          "value": 19,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4件",
+          "value": 4,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "60.0%",
+          "value": 60.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

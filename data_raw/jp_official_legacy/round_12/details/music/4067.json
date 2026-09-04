@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4067.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4067.php",
+    "retrieved_at": "2026-08-15T09:54:57+00:00",
+    "http_status": 200,
+    "bytes": 4984,
+    "sha256": "66f6fa6807a181ba41114198b8671094520505c09e6e549a88d9da7879bef7d0",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4067",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：天鳥船神社の結界 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "天鳥船神社の結界（299位）",
+      "numbers": [
+        {
+          "raw": "299位",
+          "value": 299,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：61点 ｜ 得票数：59票 ｜ 一押し数：2票 ｜ コメント数：11件 継続投票率：25.0%（8名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "61点",
+          "value": 61,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "59票",
+          "value": 59,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "11件",
+          "value": 11,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "25.0%",
+          "value": 25.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "8名",
+          "value": 8,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,22 @@
+import{d as A,e as _,f as r,g as Y,h as B,w as M,s as E,i as m,r as F,o as c,a as C,b as e,t as a,u as s,c as I,v as U,j as l,n as D,q as j,l as P}from"./index-c1d6c5d6.js";import{t as y}from"./numberFormat-0203f5e2.js";import{g as $,a as T,s as G,d as O,G as Q,_ as z}from"./Graph-4e483fd9.js";import{g as p}from"./decodeAdditionalConstraint-7c1b9997.js";import{_ as H}from"./Questionnaire.vue_vue_type_script_setup_true_lang-49f6f247.js";import"./lz-string-35001fa0.js";import"./Questionnaire-c74696dd.js";import"./questionnaire-b69f5aad.js";const J={class:"mx-1 my-3"},K={class:"mb-0 md:mx-5 p-3 space-y-3 bg-white bg-opacity-80 rounded-t md:bg-opacity-0 md:rounded md:flex md:flex-wrap md:justify-between md:items-center"},L={class:"flex items-end"},W={class:"text-4xl font-light"},X={class:"grid grid-cols-3 md:grid-cols-6 gap-1 text-sm md:text-base text-center"},Z={key:1},h={class:"md:mx-5 p-3"},ee={class:"py-1 bg-white bg-opacity-80 rounded-b md:bg-opacity-0 text-sm italic text-gray-700"},te=A({__name:"MusicSingleDetail",setup(se){const i=_(),o=r(Number(i.query.rank?Array.isArray(i.query.rank)?i.query.rank[0]:i.query.rank:1)),u=j(()=>String(i.query.q?Array.isArray(i.query.q)?i.query.q[0]:i.query.q:"")),d=r("ID："+o.value),f=r(-1),q=r(-1),x=r(-1),S=r(-1),b=r(-1),v=r(-1),k=r([]),w=r("NONE"),{result:n,loading:V,onError:N}=Y(B`
+    query ($voteStart: DateTimeUtc!, $voteYear: Int!, $rank: Int!, $query: String) {
+      queryMusicSingle(voteStart: $voteStart, voteYear: $voteYear, rank: $rank, query: $query) {
+        name
+        voteCount
+        firstVoteCount
+        firstVotePercentage
+        votePercentage
+        firstPercentage
+        numReasons
+        trend {
+          hrs
+          cnt
+        }
+        trendFirst {
+          hrs
+          cnt
+        }
+      }
+    }
+  `,p(u.value)===""?{voteStart:new Date(Date.UTC(2023,11,29,10)),voteYear:11,rank:o.value}:{voteStart:new Date(Date.UTC(2023,11,29,10)),voteYear:11,rank:o.value,query:p(u.value)});return M(()=>{n.value&&n.value.queryMusicSingle&&(d.value=n.value.queryMusicSingle.name,E(d.value),w.value='musics:["'+d.value+'"]',f.value=n.value.queryMusicSingle.voteCount,q.value=n.value.queryMusicSingle.firstVoteCount,x.value=y(n.value.queryMusicSingle.firstVotePercentage),S.value=y(n.value.queryMusicSingle.votePercentage),b.value=y(n.value.queryMusicSingle.firstPercentage),v.value=n.value.queryMusicSingle.numReasons,k.value.push($("总票数",n.value.queryMusicSingle.trend),T("新增票数",n.value.queryMusicSingle.trend),$("总本命票数",n.value.queryMusicSingle.trendFirst),T("新增本命票",n.value.queryMusicSingle.trendFirst)))}),N(g=>{alert(g.message),console.log(g.message)}),M(()=>{V.value?m.isStarted()||m.start():m.isStarted()&&m.done()}),(g,t)=>{const R=F("router-link");return c(),C("div",J,[e("div",K,[e("div",L,[t[0]||(t[0]=e("img",{src:"https://asset.lilywhite.cc/thvote/imgs/nav/music@100px.png",class:"w-10 h-10 col-span-1 row-span-2 rounded"},null,-1)),e("h2",W,a(s(d)),1),t[1]||(t[1]=e("span",{class:"ml-3 text-xl"},"曲目信息",-1))]),e("div",X,[e("div",null,[t[2]||(t[2]=e("div",null,"票数",-1)),e("div",null,a(s(f)),1)]),e("div",null,[t[3]||(t[3]=e("div",null,"本命票数",-1)),e("div",null,a(s(q)),1)]),e("div",null,[t[4]||(t[4]=e("div",null,"本命率",-1)),e("div",null,a(s(x)),1)]),e("div",null,[t[5]||(t[5]=e("div",null,"票数全局占比",-1)),e("div",null,a(s(S)),1)]),e("div",null,[t[6]||(t[6]=e("div",null,"本命全局占比",-1)),e("div",null,a(s(b)),1)]),e("div",null,[t[7]||(t[7]=e("div",null,"投票理由",-1)),s(v)>0?(c(),I(R,{key:0,class:"underline",to:"/musicReason?rank="+s(o)+(s(p)(s(u))===""?"":"&q="+s(u))},{default:U(()=>[l(a(s(v)+"(点此查看)"),1)]),_:1},8,["to"])):(c(),C("div",Z,a(s(v)),1))])])]),t[13]||(t[13]=e("div",{class:"md:mx-5 p-3 py-1 bg-white bg-opacity-80 rounded-b md:bg-opacity-0 text-sm italic text-gray-700"},[l(" * 本页面为单独曲目的详细信息页面，下面每个栏目的内容分别有各自的说明"),e("br")],-1)),e("div",h,[t[12]||(t[12]=e("div",{class:"text-2xl py-0.5 border-b border-accent-600"},"投票演进",-1)),e("div",ee,[t[8]||(t[8]=l(" * 该图表表示该曲目随着投票进程的票数变化情况。",-1)),t[9]||(t[9]=e("br",null,null,-1)),l(" * 投票日期："+a(s(G)+" ~ "+s(O))+"。",1),t[10]||(t[10]=e("br",null,null,-1)),t[11]||(t[11]=l(" * 通过拖动底部和右侧的滑柄或在图表上缩放（鼠标或手指）可以筛选数据范围，也可以点击顶部的图例开关某个数据的显示。 ",-1))]),D(z,{"x-axis":s(Q),data:s(k),class:"max-w-4xl pt-3 mx-auto"},null,8,["x-axis","data"])]),D(H,{class:"md:mx-5",q:s(w)},null,8,["q"])])}}});typeof P=="function"&&P(te);export{te as default};
+//# sourceMappingURL=MusicSingleDetail-6401f043.js.map

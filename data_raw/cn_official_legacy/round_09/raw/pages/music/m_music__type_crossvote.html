@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="音乐同投可视化">
+	
+	<title>音乐同投可视化 - 东方Project人气投票 第⑨回 - THBWiki</title>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<link href="https://touhou.vote/v9/style/bootstrap.min.css" rel="stylesheet">
+	<link href="https://touhou.vote/v9/style/bootstrap-theme.min.css" rel="stylesheet">
+	
+	<link type="text/css" href="https://touhou.vote/v9/style/selectize.css" rel="stylesheet">
+	<link type="text/css" href="https://touhou.vote/v9/style/selectize.default.css" rel="stylesheet">
+	<link type="text/css" href="https://touhou.vote/v9/style/list.css" rel="stylesheet">';
+	
+  	<link href="https://touhou.vote/v9/style/footable.bootstrap.css" rel="stylesheet">
+	<link href="https://touhou.vote/v9/style/result.css?v=20191024" rel="stylesheet">
+	
+	<script src="https://touhou.vote/v9/js/jquery-3.1.1.min.js"></script>
+	
+	<script type="text/javascript">
+		var type = "music";
+		var typeWord = "音乐";
+		var number = "30";
+		var filter = "5";
+		var footable;
+		var sitetitle = "第⑨回中文东方Project人气投票"
+	</script>
+</head>
+
+<body>
+		<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">导航条</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="." class="navbar-brand">东方Project人气投票</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="https://touhou.vote/v9/?m=music">音乐部分</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">本届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v9/?m=chara">角色部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=music">音乐部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=work">作品部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=cp">组合部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=game">游戏部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=paper">问卷部分</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">往届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v9/../v8" target="_blank">第八回</a></li>
+							<li><a href="https://touhou.vote/v9/../v7" target="_blank">第七回</a></li>
+							<li><a href="https://touhou.vote/v9/../v6" target="_blank">第六回</a></li>
+							<li><a href="https://touhou.vote/v9/../v5" target="_blank">第五回</a></li>
+							<li><a href="https://touhou.vote/v9/../v4" target="_blank">第四回</a></li>
+							<li><a href="https://touhou.vote/v9/../v3" target="_blank">第三回</a></li>
+							<li><a href="https://touhou.vote/v9/../v2" target="_blank">第二回</a></li>
+							<li><a href="https://touhou.vote/v9/../v1" target="_blank">第一回</a></li>
+						</ul>
+					</li>
+					<li><a href="https://thwiki.cc" target="_blank">THBWiki主站</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>	<!-- Header -->
+	<div class="jumbotron bitlower">
+	
+		<div class="container">
+			<h2>音乐同投可视化</h2>
+			<h1>音乐部分</h1>
+		</div>
+	
+	</div>
+	<!-- Content -->
+	<div class="container">
+	
+		<div class="callout callout-info">
+			<h4>总体投票情况</h4>
+			<ul>
+				<li>
+					本页面为音乐前<b>30</b>名的同投可视化图表，过滤倍率<b>5</b>。
+				</li>
+				<li>
+					总有效票数<b>9201</b>，
+					总本命票数<b>8759</b>，
+					参投音乐总数<b>571</b>。
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div id="graph-div" class="block-div">
+				<h3>投票演进</h3>
+				<table class="table footable" id="graphTab" data-show-toggle="false" data-expand-all="true" data-show-header="false">
+					<thead class="footable-header">
+						<tr>
+							<th>同投可视化</th>
+							<th style="display: none;">图表说明</th>
+							<th style="display: none;">图表</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="footable-detail-row clickable-row" id="graphHeader" data-toggle="graph">
+							<td>投票期间：2020-12-18 18:00:00 至 2020-12-31 23:59:59</td>
+							<td style="display: none;"></td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr class="footable-detail-row" id="graphTr">
+							<td colspan="3">
+								<table class="footable-details table">
+									<tbody>
+										<tr>
+											<td style="display: table-cell;">
+												<div class="callout callout-info">
+													<h4>说明</h4>
+													<ul>
+														<li>
+															该图表表示该音乐部门前<b>30</b>名的过滤倍率<b>5</b>的统计学关系图网。
+														</li>
+														<li>
+															其中气泡的尺寸由该音乐的票数决定，尺寸越大的气泡意味着得票数越多。
+														</li>
+														<li>
+															气泡之间的连线则取决于下面列出的三个计算值。
+														</li>
+														<li>
+															其中
+															 <i><b>c</b></i> 为两者同投数，
+															 <i><b>N</b></i> 为总票数，
+															 <i><b>V<sub>1</sub></b></i> 为项目1票数，
+															 <i><b>V<sub>2</sub></b></i> 为项目2票数，
+															 <i><b>V<sub>1</sub></b></i> 为项目1票数，
+															 <i><b>V<sub>2</sub></b></i> 为项目2票数，
+															 <i><b>a<sub>1</sub></b></i> 为仅项目1票数，
+															 <i><b>a<sub>2</sub></b></i> 为仅项目2票数，
+															 <i><b>b</b></i> 为两项均无票数。
+														</li>
+														<li>
+															气泡之间是否存在关联由卡方检验判定：<i><b>N</b></i>(<i><b>c</b></i><i><b>b</b></i>-<i><b>a<sub>1</sub></b></i><i><b>a<sub>2</sub></b></i>)<sup>2</sup> / (<i><b>c</b></i>+<i><b>a<sub>1</sub></b></i>)(<i><b>a<sub>2</sub></b></i>+<i><b>b</b></i>)(<i><b>c</b></i>+<i><b>a<sub>2</sub></b></i>)(<i><b>a<sub>1</sub></b></i>+<i><b>b</b></i>) ，卡方值需要大于给定阈值。
+														</li>
+														<li>
+															气泡间的引力数值与气泡之间的<b>基准距离</b>均由该卡方值与点互信息相关性综合计算决定，越相关越近，并通过引力斥力作用迭代出最终位置。
+														</li>
+														<li>
+															同时提供点互信息的相关性运算：<b>R</b> = <i><b>c</b></i><i><b>N</b></i> / <i><b>V<sub>1</sub></b></i><i><b>V<sub>2</sub></b></i> 的结果在鼠标移动到项目上时显示出来以供参考。
+														</li>
+														<li>
+															气泡间连线的粗细由两者之间的同投率决定：<i><b>V<sub>1</sub></b></i>∩<i><b>V<sub>2</sub></b></i> / <i><b>V<sub>1</sub></b></i>∪<i><b>V<sub>2</sub></b></i> ，由该同投率计算连线的粗细，越粗表示同投率越高。
+														</li>
+														<li>
+															请注意：没有连线的气泡互相没有关系因素决定二者的距离，如若没有连线的气泡离得比较近，则主要是因为其他气泡的引力和斥力将其挤压到了当前位置，并非是因为关系本身近所致。
+														</li>
+														<li>
+															每个气泡均可拖动以更改位置，通过鼠标滚轮或手指在图表上缩放可以放大缩小，也可以点击顶部的图例开关某组数据的显示。
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><b>同投可视化</b></td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="wide container">
+		<div class="chart-div tall" id="graph-chart"></div>
+	</div>
+	<div class="container">
+			<br />
+			<a href="https://touhou.vote/v9/?m=music" id="button" value="返回音乐部门目录" class="bt-blue">返回音乐部门目录</a>
+						
+			<h5></h5>
+			<span id="bottom">THBWiki - <a href="https://touhou.vote/v9/" title="东方Project人气投票">东方Project人气投票</a></span>
+		</div>
+				<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2e5ba8781d699fe45b54547f88ffeec5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	</div>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<script src="https://touhou.vote/v9/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://touhou.vote/v9/js/ie10-viewport-bug-workaround.js"></script>
+	
+	<script src="https://touhou.vote/v9/js/footable.js"></script>
+	<script src="https://touhou.vote/v9/js/echarts.js?v=20191024"></script>
+	<!-- <script src="https://touhou.vote/v9/js/echarts-gl.js"></script> -->
+	<script src="https://touhou.vote/v9/js/selectize.js"></script>
+	
+	<script src="https://touhou.vote/v9/js/crossvote.js?v=2019102410"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1222.php",
+    "effective_url": "https://toho-vote.info/result13/music/1222.php",
+    "retrieved_at": "2026-08-15T09:55:56+00:00",
+    "http_status": 200,
+    "bytes": 4016,
+    "sha256": "86455e9b6a3cecda084b7da2647f8e36ab1f11c4fac6e2a8471dc40cdb46afa1",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1222",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：ニュースハウンド - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "ニュースハウンド（362位）",
+      "numbers": [
+        {
+          "raw": "362位",
+          "value": 362,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：29点 ｜ 得票数：29票 ｜ 一押し数：0票 ｜ コメント数：6件 継続投票率：0.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "29点",
+          "value": 29,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "29票",
+          "value": 29,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0.0%",
+          "value": 0.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

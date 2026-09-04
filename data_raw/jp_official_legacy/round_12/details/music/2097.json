@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2097.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2097.php",
+    "retrieved_at": "2026-08-15T09:54:50+00:00",
+    "http_status": 200,
+    "bytes": 4904,
+    "sha256": "388abe938e84815581b73c5e0f381534d5de15384167f04f3ebe6430dba1ba27",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2097",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：the Last Judgement - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "the Last Judgement（286位）",
+      "numbers": [
+        {
+          "raw": "286位",
+          "value": 286,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：76点 ｜ 得票数：74票 ｜ 一押し数：2票 ｜ コメント数：14件 継続投票率：62.5%（8名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "76点",
+          "value": 76,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "74票",
+          "value": 74,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "14件",
+          "value": 14,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "62.5%",
+          "value": 62.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "8名",
+          "value": 8,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

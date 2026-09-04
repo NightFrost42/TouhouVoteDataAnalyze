@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1147.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1147.php",
+    "retrieved_at": "2026-08-15T09:54:06+00:00",
+    "http_status": 200,
+    "bytes": 4190,
+    "sha256": "85058744120b0bcdb82b112094aa8854857b43e6408453aa3dc69b0439ed0984",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1147",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：雲外蒼天 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "雲外蒼天（332位）",
+      "numbers": [
+        {
+          "raw": "332位",
+          "value": 332,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：46点 ｜ 得票数：45票 ｜ 一押し数：1票 ｜ コメント数：7件 継続投票率：80.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "46点",
+          "value": 46,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "45票",
+          "value": 45,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7件",
+          "value": 7,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "80.0%",
+          "value": 80.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

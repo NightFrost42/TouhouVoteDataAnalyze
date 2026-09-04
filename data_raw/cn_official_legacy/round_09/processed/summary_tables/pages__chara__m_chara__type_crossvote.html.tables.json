@@ -1,0 +1,151 @@
+{
+  "source": "data_raw/cn_official_legacy/round_09/raw/pages/chara/m_chara__type_crossvote.html",
+  "headings": [
+    {
+      "level": "h2",
+      "text": "角色同投可视化"
+    },
+    {
+      "level": "h1",
+      "text": "角色部分"
+    },
+    {
+      "level": "h4",
+      "text": "总体投票情况"
+    },
+    {
+      "level": "h3",
+      "text": "投票演进"
+    },
+    {
+      "level": "h4",
+      "text": "说明"
+    }
+  ],
+  "tables": [
+    {
+      "index": 0,
+      "heading": "投票演进",
+      "id": "graphTab",
+      "class": "table footable",
+      "rows": [
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "同投可视化",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表说明",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "投票期间：2020-12-18 18:00:00 至 2020-12-31 23:59:59",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": [
+              2020,
+              12,
+              18,
+              18,
+              0,
+              0,
+              2020,
+              12,
+              31,
+              23,
+              59,
+              59
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "index": 1,
+      "heading": "投票演进",
+      "id": "",
+      "class": "footable-details table",
+      "rows": [
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "说明 该图表表示该角色部门前50名的过滤倍率5的统计学关系图网。 其中气泡的尺寸由该角色的票数决定，尺寸越大的气泡意味着得票数越多。 气泡之间的连线则取决于下面列出的三个计算值。 其中 c 为两者同投数， N 为总票数， V1 为项目1票数， V2 为项目2票数， V1 为项目1票数， V2 为项目2票数， a1 为仅项目1票数， a2 为仅项目2票数， b 为两项均无票数。 气泡之间是否存在关联由卡方检验判定：N(cb-a1a2)2 / (c+a1)(a2+b)(c+a2)(a1+b) ，卡方值需要大于给定阈值。 气泡间的引力数值与气泡之间的基准距离均由该卡方值与点互信息相关性综合计算决定，越相关越近，并通过引力斥力作用迭代出最终位置。 同时提供点互信息的相关性运算：R = cN / V1V2 的结果在鼠标移动到项目上时显示出来以供参考。 气泡间连线的粗细由两者之间的同投率决定：V1∩V2 / V1∪V2 ，由该同投率计算连线的粗细，越粗表示同投率越高。 请注意：没有连线的气泡互相没有关系因素决定二者的距离，如若没有连线的气泡离得比较近，则主要是因为其他气泡的引力和斥力将其挤压到了当前位置，并非是因为关系本身近所致。 每个气泡均可拖动以更改位置，通过鼠标滚轮或手指在图表上缩放可以放大缩小，也可以点击顶部的图例开关某组数据的显示。",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": [
+              2
+            ]
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "同投可视化",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ]
+      ]
+    }
+  ],
+  "parse_error": ""
+}

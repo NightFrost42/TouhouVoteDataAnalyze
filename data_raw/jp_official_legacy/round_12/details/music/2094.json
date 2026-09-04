@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2094.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2094.php",
+    "retrieved_at": "2026-08-15T09:54:48+00:00",
+    "http_status": 200,
+    "bytes": 4552,
+    "sha256": "48a87df731dd3a4b52fe9db8a3fefbc9513fde4f63aca28e04fc6bd38c62f7eb",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2094",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：禁断の魔法 ～ Forbidden Magic - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "禁断の魔法 ～ Forbidden Magic（355位）",
+      "numbers": [
+        {
+          "raw": "355位",
+          "value": 355,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：32点 ｜ 得票数：30票 ｜ 一押し数：2票 ｜ コメント数：8件 継続投票率：75.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "32点",
+          "value": 32,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "30票",
+          "value": 30,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8件",
+          "value": 8,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "75.0%",
+          "value": 75.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

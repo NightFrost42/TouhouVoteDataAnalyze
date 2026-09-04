@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1289.php",
+    "effective_url": "https://toho-vote.info/result13/music/1289.php",
+    "retrieved_at": "2026-08-15T09:56:01+00:00",
+    "http_status": 200,
+    "bytes": 4592,
+    "sha256": "d70088151da191e1f770bd2dee5ceb59f830b97899c8bbc7dd273707381aa02e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1289",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：魔力の雷雲 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "魔力の雷雲（267位）",
+      "numbers": [
+        {
+          "raw": "267位",
+          "value": 267,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：84点 ｜ 得票数：79票 ｜ 一押し数：5票 ｜ コメント数：11件 継続投票率：40.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "84点",
+          "value": 84,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "79票",
+          "value": 79,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "11件",
+          "value": 11,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "40.0%",
+          "value": 40.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

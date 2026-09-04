@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1315.php",
+    "effective_url": "https://toho-vote.info/result13/music/1315.php",
+    "retrieved_at": "2026-08-15T09:56:02+00:00",
+    "http_status": 200,
+    "bytes": 4069,
+    "sha256": "1bed157b40614087b7a223fad939354bf36f3e417d93e5ee3dd7c3f9372dc499",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1315",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：心揺さぶる都市伝説 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "心揺さぶる都市伝説（321位）",
+      "numbers": [
+        {
+          "raw": "321位",
+          "value": 321,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：49点 ｜ 得票数：48票 ｜ 一押し数：1票 ｜ コメント数：5件 継続投票率：27.3%（11名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "49点",
+          "value": 49,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "48票",
+          "value": 48,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "27.3%",
+          "value": 27.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "11名",
+          "value": 11,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

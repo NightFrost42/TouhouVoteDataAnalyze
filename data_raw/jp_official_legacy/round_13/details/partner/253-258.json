@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/253-258.php",
+    "effective_url": "https://toho-vote.info/result13/partner/253-258.php",
+    "retrieved_at": "2026-08-15T09:56:39+00:00",
+    "http_status": 200,
+    "bytes": 16173,
+    "sha256": "64103ffcb05ea3780e78fa4b5a7d6873204a6d348f45af89880b13611844f670",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "253-258",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：ナズーリンと寅丸 星 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "ナズーリンと寅丸 星（22位）",
+      "numbers": [
+        {
+          "raw": "22位",
+          "value": 22,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1523点 ｜ 得票数：1265票 ｜ 一押し数：258票 ｜ コメント数：150件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1523点",
+          "value": 1523,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1265票",
+          "value": 1265,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "258票",
+          "value": 258,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "150件",
+          "value": 150,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

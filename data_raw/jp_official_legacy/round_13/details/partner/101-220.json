@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/101-220.php",
+    "effective_url": "https://toho-vote.info/result13/partner/101-220.php",
+    "retrieved_at": "2026-08-15T09:56:27+00:00",
+    "http_status": 200,
+    "bytes": 24375,
+    "sha256": "d0dca7361f780e851f11d5ef4c90cef7e4001ab8fe9cd03a81494bfa5b453656",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "101-220",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 霊夢と八雲 紫 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 霊夢と八雲 紫（14位）",
+      "numbers": [
+        {
+          "raw": "14位",
+          "value": 14,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：2247点 ｜ 得票数：1770票 ｜ 一押し数：477票 ｜ コメント数：259件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "2247点",
+          "value": 2247,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1770票",
+          "value": 1770,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "477票",
+          "value": 477,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "259件",
+          "value": 259,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

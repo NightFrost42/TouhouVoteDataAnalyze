@@ -9,7 +9,10 @@ from scipy.stats import spearmanr
 
 # --- 用户可设置的常数 ---\
 PROPORTION_THRESHOLD_CROSS_REGION = 0.5  # 同理
+PROPORTION_THRESHOLD_CROSS_REGION_JP = 1.3  # 同理
 OUTLIER_THRESHOLD_INTERNAL = 2.5
+OUTLIER_THRESHOLD_CR_OUTER = 1.4
+OUTLIER_THRESHOLD_MR_OUTER = 2.0
 
 
 # --- 文件路径和列名定义 ---
@@ -103,19 +106,92 @@ df_music_jp_grouped['标准化得票率'] = scaler.fit_transform(df_music_jp_gro
 print("\n得票率和标准化处理完成。")
 
 # --- 计算每个角色的平均歌曲人气 (区域内分析) ---
+# def calculate_character_avg_music_popularity_for_region(
+#         df_char_grouped, df_music_grouped,
+#         region_name, char_name_col_char_df):
+#     """
+#     计算每个角色在指定区域的：
+#       - 原始得票率平均（平均歌曲得票率 raw）
+#       - 标准化得票率平均（平均歌曲标准化得票率 std）
+#       - 关联歌曲数量
+#     并与角色自身的得票率等信息合并后返回 DataFrame。
+#     """
+#     print(f"\n正在为 {region_name} 区计算角色平均歌曲人气…")
+
+#     # 1) 准备一个容器：角色 -> list of {'std': ..., 'raw': ...}
+#     character_song_data = {}
+
+#     for _, row in df_music_grouped.iterrows():
+#         std_rate = row['标准化得票率']
+#         raw_rate = row['得票率']
+#         assoc = row[COL_MUSIC_CHAR_ASSOCIATION]
+#         if pd.isna(assoc):
+#             continue
+
+#         for char_orig in assoc.split('|'):
+#             char_orig = char_orig.strip()
+#             # 统一角色名字
+#             if region_name == '国区':
+#                 char_unified = char_orig
+#             else:
+#                 char_unified = char_name_map.get(char_orig, char_orig)
+
+#             character_song_data.setdefault(char_unified, []).append({
+#                 'std': std_rate,
+#                 'raw': raw_rate
+#             })
+
+#     # 2) 构造汇总结果列表
+#     results = []
+#     for char, recs in character_song_data.items():
+#         stds = [r['std'] for r in recs]
+#         raws = [r['raw'] for r in recs]
+#         results.append({
+#             '角色名称_统一': char,
+#             '平均歌曲标准化得票率': np.mean(stds),
+#             '平均歌曲得票率':        np.mean(raws),
+#             '关联歌曲数量':         len(stds)
+#         })
+
+#     df_result_music_avg = pd.DataFrame(results)
+
+#     # 3) 把角色自身数据准备好，用于 merge
+#     df_char = df_char_grouped.copy()
+#     if region_name == '国区':
+#         df_char['角色名称_统一'] = df_char[char_name_col_char_df]
+#     else:
+#         df_char['角色名称_统一'] = df_char[char_name_col_char_df].map(char_name_map)\
+#                                                          .fillna(df_char[char_name_col_char_df])
+
+#     # 4) 合并：角色自身得票率 + 平均歌曲人气
+#     merged = pd.merge(
+#         df_char,
+#         df_result_music_avg,
+#         on='角色名称_统一',
+#         how='left'
+#     )
+
+#     # 5) 对缺失值填 0
+#     merged['平均歌曲标准化得票率'] = merged['平均歌曲标准化得票率'].fillna(0)
+#     merged['平均歌曲得票率']        = merged['平均歌曲得票率']       .fillna(0)
+#     merged['关联歌曲数量']         = merged['关联歌曲数量']         .fillna(0).astype(int)
+
+#     print(f"{region_name} 区角色平均歌曲人气计算完成。")
+#     return merged
+
+# --- calculate_character_avg_music_popularity_for_region 修改后 (只加权求和) ---
 def calculate_character_avg_music_popularity_for_region(
         df_char_grouped, df_music_grouped,
         region_name, char_name_col_char_df):
     """
     计算每个角色在指定区域的：
-      - 原始得票率平均（平均歌曲得票率 raw）
-      - 标准化得票率平均（平均歌曲标准化得票率 std）
+      - 原始得票率加权和（歌曲原始得票率加权和 raw）
+      - 标准化得票率加权和（歌曲标准化得票率加权和 std）
       - 关联歌曲数量
     并与角色自身的得票率等信息合并后返回 DataFrame。
     """
-    print(f"\n正在为 {region_name} 区计算角色平均歌曲人气…")
+    print(f"\n正在为 {region_name} 区计算角色加权歌曲人气…")
 
-    # 1) 准备一个容器：角色 -> list of {'std': ..., 'raw': ...}
     character_song_data = {}
 
     for _, row in df_music_grouped.iterrows():
@@ -127,32 +203,54 @@ def calculate_character_avg_music_popularity_for_region(
 
         for char_orig in assoc.split('|'):
             char_orig = char_orig.strip()
-            # 统一角色名字
             if region_name == '国区':
                 char_unified = char_orig
             else:
                 char_unified = char_name_map.get(char_orig, char_orig)
 
+            # 存储 (std_rate, raw_rate) 以便排序
             character_song_data.setdefault(char_unified, []).append({
                 'std': std_rate,
                 'raw': raw_rate
             })
 
-    # 2) 构造汇总结果列表
     results = []
     for char, recs in character_song_data.items():
-        stds = [r['std'] for r in recs]
-        raws = [r['raw'] for r in recs]
+        # 按标准化得票率降序排序歌曲
+        sorted_recs = sorted(recs, key=lambda x: x['std'], reverse=True)
+
+        weighted_stds = []
+        weighted_raws = []
+        # total_weight = 0 # 移除：不再需要总权重
+
+        for i, rec in enumerate(sorted_recs):
+            weight = 0
+            if i == 0:
+                weight = 1.0
+            elif i == 1:
+                weight = 0.75
+            elif i == 2:
+                weight = 0.5
+            else:
+                weight = 0.25
+            
+            weighted_stds.append(rec['std'] * weight)
+            weighted_raws.append(rec['raw'] * weight)
+            # total_weight += weight # 移除：不再需要累加总权重
+
+        # 直接求和，不再除以总权重
+        sum_std = np.sum(weighted_stds)
+        sum_raw = np.sum(weighted_raws)
+
         results.append({
             '角色名称_统一': char,
-            '平均歌曲标准化得票率': np.mean(stds),
-            '平均歌曲得票率':        np.mean(raws),
-            '关联歌曲数量':         len(stds)
+            '平均歌曲标准化得票率': sum_std, # 更改列名以反映是“加权和”更合适，或者在后续解释中说明
+            '平均歌曲得票率':        sum_raw, # 同上
+            '关联歌曲数量':         len(sorted_recs)
         })
 
     df_result_music_avg = pd.DataFrame(results)
 
-    # 3) 把角色自身数据准备好，用于 merge
     df_char = df_char_grouped.copy()
     if region_name == '国区':
         df_char['角色名称_统一'] = df_char[char_name_col_char_df]
@@ -160,7 +258,6 @@ def calculate_character_avg_music_popularity_for_region(
         df_char['角色名称_统一'] = df_char[char_name_col_char_df].map(char_name_map)\
                                                          .fillna(df_char[char_name_col_char_df])
 
-    # 4) 合并：角色自身得票率 + 平均歌曲人气
     merged = pd.merge(
         df_char,
         df_result_music_avg,
@@ -168,12 +265,11 @@ def calculate_character_avg_music_popularity_for_region(
         how='left'
     )
 
-    # 5) 对缺失值填 0
     merged['平均歌曲标准化得票率'] = merged['平均歌曲标准化得票率'].fillna(0)
     merged['平均歌曲得票率']        = merged['平均歌曲得票率']       .fillna(0)
     merged['关联歌曲数量']         = merged['关联歌曲数量']         .fillna(0).astype(int)
 
-    print(f"{region_name} 区角色平均歌曲人气计算完成。")
+    print(f"{region_name} 区角色加权歌曲人气计算完成。")
     return merged
 
 df_analysis_cn = calculate_character_avg_music_popularity_for_region(df_char_cn_grouped, df_music_cn_grouped, '国区', COL_CHAR_CN_NAME)
@@ -435,13 +531,18 @@ df_final_diff_analysis = pd.merge(
 df_final_diff_analysis['char_ratio']  = df_final_diff_analysis['国区_raw_rate']  / df_final_diff_analysis['日区_raw_rate']
 df_final_diff_analysis['music_ratio'] = df_final_diff_analysis['国区_avg_song_rate'] / df_final_diff_analysis['日区_avg_song_rate']
 
+df_final_diff_analysis['char_ratio_inverse'] = 1 / df_final_diff_analysis['char_ratio']
+df_final_diff_analysis['music_ratio_inverse'] = 1 / df_final_diff_analysis['music_ratio']
+
 # impact = df_final_diff_analysis[
 #     (abs(df_final_diff_analysis['char_ratio'] - 1) > PROPORTION_THRESHOLD_CROSS_REGION) &
 #     (abs(df_final_diff_analysis['music_ratio'] - 1) > PROPORTION_THRESHOLD_CROSS_REGION)
 # ]
 
 impact = df_final_diff_analysis[
-    abs(df_final_diff_analysis['char_ratio']/df_final_diff_analysis['music_ratio'] - 1) > PROPORTION_THRESHOLD_CROSS_REGION
+    # (df_final_diff_analysis['char_ratio']/df_final_diff_analysis['music_ratio'] - 1 > PROPORTION_THRESHOLD_CROSS_REGION_JP) 
+    # |
+    df_final_diff_analysis['char_ratio']/df_final_diff_analysis['music_ratio'] - 1 < -PROPORTION_THRESHOLD_CROSS_REGION
 ]
 if not impact.empty:
     print("\n**受歌曲人气差异显著影响的角色（比例偏离）：**")
@@ -453,6 +554,34 @@ if not impact.empty:
 else:
     print("未发现因歌曲差异而导致角色人气有显著比例偏离的特异点。")
 
+impact_reverse = df_final_diff_analysis[
+    (df_final_diff_analysis['char_ratio']/df_final_diff_analysis['music_ratio'] - 1 > PROPORTION_THRESHOLD_CROSS_REGION_JP) 
+    # # |
+    # df_final_diff_analysis['char_ratio']/df_final_diff_analysis['music_ratio'] - 1 < -PROPORTION_THRESHOLD_CROSS_REGION
+]
+if not impact_reverse.empty:
+    print("\n**受歌曲人气差异显著影响的角色（比例偏离）：**")
+    for _, row in impact_reverse.iterrows():
+        name = row['角色名称_统一']
+        cr = row['char_ratio'] if row['char_ratio'] > 1 else 1 / row['char_ratio']
+        mr = row['music_ratio'] if row['music_ratio'] > 1 else 1 / row['music_ratio']
+        print(f"- **{name}**: 角色偏离={cr:.2f}, 歌曲偏离={mr:.2f}")
+else:
+    print("未发现因歌曲差异而导致角色人气有显著比例偏离的特异点。")
+
+impact_far = df_final_diff_analysis[
+    (df_final_diff_analysis['char_ratio'] > OUTLIER_THRESHOLD_CR_OUTER) &
+    (df_final_diff_analysis['music_ratio'] > OUTLIER_THRESHOLD_MR_OUTER)
+]
+if not impact_far.empty:
+    print("\n**受歌曲人气差异显著影响的角色（数值偏离）：**")
+    for _, row in impact_far.iterrows():
+        name = row['角色名称_统一']
+        cr = row['char_ratio']
+        mr = row['music_ratio']
+        print(f"- **{name}**: 角色偏离={cr:.2f}, 歌曲偏离={mr:.2f}")
+else:
+    print("未发现因歌曲差异而导致角色人气有显著比例偏离的特异点。")
 # plt.figure(figsize=(10, 7))
 # sns.scatterplot(x='角色自身人气差异', y='关联歌曲平均人气差异', data=df_final_diff_analysis)
 # plt.title('角色自身人气差异 vs. 关联歌曲平均人气差异')
@@ -500,50 +629,50 @@ else:
 print("\n独有歌曲输出完成。")
 
 # 统一在一个 Figure 中绘制三个子图：国区、人区、和跨区域差异
-fig, axes = plt.subplots(1, 3, figsize=(20, 6))
+fig, axes = plt.subplots(2,2, figsize=(20, 6))
 
 # 子图 1：国区 角色 vs 平均歌曲人气
 sns.scatterplot(
     x='标准化得票率', y='平均歌曲标准化得票率',
-    data=df_analysis_cn, ax=axes[0]
+    data=df_analysis_cn, ax=axes[0,0]
 )
-axes[0].set_title('国区：角色人气 vs. 平均歌曲人气')
-axes[0].set_xlabel('角色标准化得票率')
-axes[0].set_ylabel('平均歌曲标准化得票率')
-axes[0].grid(True)
-axes[0].text(
+axes[0,0].set_title('国区：角色人气 vs. 平均歌曲人气')
+axes[0,0].set_xlabel('角色标准化得票率')
+axes[0,0].set_ylabel('平均歌曲标准化得票率')
+axes[0,0].grid(True)
+axes[0,0].text(
     0.05, 0.95,
     f'Spearman r = {correlation_cn:.2f}\np-value = {pvalue_cn:.3f}',
-    transform=axes[0].transAxes,
+    transform=axes[0,0].transAxes,
     fontsize=12, verticalalignment='top',
     bbox=dict(boxstyle='round,pad=0.5', fc='wheat', alpha=0.5)
 )
 
 # 在国区图上标注超标点
 for _, row in outliers_cn_internal.iterrows():
-    axes[0].text(row['标准化得票率'], row['平均歌曲标准化得票率'],
+    axes[0,0].text(row['标准化得票率'], row['平均歌曲标准化得票率'],
             row['角色名称_统一'],
             fontsize=9, ha='right', va='bottom')
 
 # 子图 2：日区 角色 vs 平均歌曲人气
 sns.scatterplot(
     x='标准化得票率', y='平均歌曲标准化得票率',
-    data=df_analysis_jp, ax=axes[1]
+    data=df_analysis_jp, ax=axes[0,1]
 )
-axes[1].set_title('日区：角色人气 vs. 平均歌曲人气')
-axes[1].set_xlabel('角色标准化得票率')
-axes[1].set_ylabel('平均歌曲标准化得票率')
-axes[1].grid(True)
-axes[1].text(
+axes[0,1].set_title('日区：角色人气 vs. 平均歌曲人气')
+axes[0,1].set_xlabel('角色标准化得票率')
+axes[0,1].set_ylabel('平均歌曲标准化得票率')
+axes[0,1].grid(True)
+axes[0,1].text(
     0.05, 0.95,
     f'Spearman r = {correlation_jp:.2f}\np-value = {pvalue_jp:.3f}',
-    transform=axes[1].transAxes,
+    transform=axes[0,1].transAxes,
     fontsize=12, verticalalignment='top',
     bbox=dict(boxstyle='round,pad=0.5', fc='wheat', alpha=0.5)
 )
 
 for _, row in outliers_jp_internal.iterrows():
-    axes[1].text(row['标准化得票率'], row['平均歌曲标准化得票率'],
+    axes[0,1].text(row['标准化得票率'], row['平均歌曲标准化得票率'],
             row['角色名称_统一'],
             fontsize=9, ha='right', va='bottom')
 
@@ -551,20 +680,41 @@ for _, row in outliers_jp_internal.iterrows():
 # 子图 3：跨区域 差异分析
 sns.scatterplot(
     x='char_ratio', y='music_ratio',
-    data=df_final_diff_analysis, ax=axes[2]
+    data=df_final_diff_analysis, ax=axes[1,0]
 )
-axes[2].set_title('跨区域：自身人气差异 vs. 歌曲人气差异')
-axes[2].set_xlabel('角色自身中日人气差异 (国区 - 日区)')
-axes[2].set_ylabel('关联歌曲平均中日人气差异 (国区 - 日区)')
-axes[2].grid(True)
-axes[2].axhline(0, color='grey', linestyle='--', linewidth=0.8)
-axes[2].axvline(0, color='grey', linestyle='--', linewidth=0.8)
+axes[1,0].set_title('跨区域：自身人气差异 vs. 歌曲人气差异')
+axes[1,0].set_xlabel('角色自身中日人气差异 (国区 / 日区)')
+axes[1,0].set_ylabel('关联歌曲平均中日人气差异 (国区 / 日区)')
+axes[1,0].grid(True)
+axes[1,0].axhline(0, color='grey', linestyle='--', linewidth=0.8)
+axes[1,0].axvline(0, color='grey', linestyle='--', linewidth=0.8)
 
 # 标记显著影响的角色
 for idx, row in impact.iterrows():
-    axes[2].text(
+    axes[1,0].text(
         row['char_ratio'],
         row['music_ratio'],
+        row['角色名称_统一'],
+        ha='center', va='bottom', fontsize=9, color='red'
+    )
+
+sns.scatterplot(
+    x='char_ratio_inverse', y='music_ratio_inverse', # X和Y轴都使用倒数
+    data=df_final_diff_analysis, ax=axes[1, 1]
+)
+axes[1, 1].set_title('跨区域：角色自身差异 vs. 歌曲人气差异') # 更新标题
+axes[1, 1].set_xlabel('角色自身中日人气差异 (日区 / 国区)') # 更新X轴标签
+axes[1, 1].set_ylabel('关联歌曲平均中日人气差异 (日区 / 国区)') # 更新Y轴标签
+axes[1,1].grid(True)
+axes[1,1].axhline(0, color='grey', linestyle='--', linewidth=0.8)
+axes[1,1].axvline(0, color='grey', linestyle='--', linewidth=0.8)
+
+
+# 标记显著影响的角色
+for idx, row in impact_reverse.iterrows():
+    axes[1,1].text(
+        row['char_ratio_inverse'],
+        row['music_ratio_inverse'],
         row['角色名称_统一'],
         ha='center', va='bottom', fontsize=9, color='red'
     )

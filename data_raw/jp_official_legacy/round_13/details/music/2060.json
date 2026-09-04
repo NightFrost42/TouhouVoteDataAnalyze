@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2060.php",
+    "effective_url": "https://toho-vote.info/result13/music/2060.php",
+    "retrieved_at": "2026-08-15T09:56:11+00:00",
+    "http_status": 200,
+    "bytes": 3606,
+    "sha256": "a26466d028d6ae37086cdca7b1622146ed9928bfd9293240d4fb831d3d8d63b6",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2060",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Selene's light - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Selene's light（411位）",
+      "numbers": [
+        {
+          "raw": "411位",
+          "value": 411,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：12点 ｜ 得票数：12票 ｜ 一押し数：0票 ｜ コメント数：1件 継続投票率：33.3%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "12点",
+          "value": 12,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "12票",
+          "value": 12,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "33.3%",
+          "value": 33.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

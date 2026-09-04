@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2003.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2003.php",
+    "retrieved_at": "2026-08-15T09:54:37+00:00",
+    "http_status": 200,
+    "bytes": 4352,
+    "sha256": "df776a3db0dee2c32a41b4c91d6965ce7bf3705980cac1aabb9c75be319e59f8",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2003",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：The Positive and Negative - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "The Positive and Negative（376位）",
+      "numbers": [
+        {
+          "raw": "376位",
+          "value": 376,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：22点 ｜ 得票数：21票 ｜ 一押し数：1票 ｜ コメント数：5件 継続投票率：100.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "22点",
+          "value": 22,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "21票",
+          "value": 21,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/230-240.php",
+    "effective_url": "https://toho-vote.info/result13/partner/230-240.php",
+    "retrieved_at": "2026-08-15T09:56:35+00:00",
+    "http_status": 200,
+    "bytes": 5130,
+    "sha256": "ccaff2d91e8f93d73a057c48aecb112bd1084681c6affed1328dd7278c3bc68a",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "230-240",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：射命丸 文と東風谷 早苗 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "射命丸 文と東風谷 早苗（91位）",
+      "numbers": [
+        {
+          "raw": "91位",
+          "value": 91,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：237点 ｜ 得票数：195票 ｜ 一押し数：42票 ｜ コメント数：23件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "237点",
+          "value": 237,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "195票",
+          "value": 195,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "42票",
+          "value": 42,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "23件",
+          "value": 23,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

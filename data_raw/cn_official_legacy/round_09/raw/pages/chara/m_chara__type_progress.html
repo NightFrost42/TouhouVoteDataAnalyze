@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="角色投票演进对比">
+	
+	<title>角色投票演进对比 - 东方Project人气投票 第⑨回 - THBWiki</title>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<link href="https://touhou.vote/v9/style/bootstrap.min.css" rel="stylesheet">
+	<link href="https://touhou.vote/v9/style/bootstrap-theme.min.css" rel="stylesheet">
+	
+	<link type="text/css" href="https://touhou.vote/v9/style/selectize.css" rel="stylesheet">
+	<link type="text/css" href="https://touhou.vote/v9/style/selectize.default.css" rel="stylesheet">
+	<link type="text/css" href="https://touhou.vote/v9/style/list.css" rel="stylesheet">';
+	
+  	<link href="https://touhou.vote/v9/style/footable.bootstrap.css" rel="stylesheet">
+	<link href="https://touhou.vote/v9/style/result.css?v=20191021" rel="stylesheet">
+	
+	<script src="https://touhou.vote/v9/js/jquery-3.1.1.min.js"></script>
+	
+	<script type="text/javascript">
+		var votelist = [ {"optgroup":"主角","value":1,"url":"https://upload.thwiki.cc/1/1e/%E5%8D%9A%E4%B8%BD%E7%81%B5%E6%A2%A6%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"博丽灵梦","jpname":"博麗霊夢","optlist":[0]},
+{"optgroup":"主角","value":2,"url":"https://upload.thwiki.cc/4/4d/%E9%9B%BE%E9%9B%A8%E9%AD%94%E7%90%86%E6%B2%99%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"雾雨魔理沙","jpname":"霧雨魔理沙","optlist":[0]},
+{"optgroup":"东方红魔乡","value":3,"url":"https://upload.thwiki.cc/5/56/%E9%9C%B2%E7%B1%B3%E5%A8%85%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"露米娅","jpname":"ルーミア","optlist":[6]},
+{"optgroup":"东方红魔乡","value":4,"url":"https://upload.thwiki.cc/3/3b/%E5%A4%A7%E5%A6%96%E7%B2%BE%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"大妖精","jpname":"大妖精","optlist":[6]},
+{"optgroup":"东方红魔乡","value":5,"url":"https://upload.thwiki.cc/3/36/%E7%90%AA%E9%9C%B2%E8%AF%BA%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"琪露诺","jpname":"チルノ","optlist":[6,7,10,16,21,59],"optlistall":[44]},
+{"optgroup":"东方红魔乡","value":6,"url":"https://upload.thwiki.cc/9/99/%E7%BA%A2%E7%BE%8E%E9%93%83%EF%BC%88%E9%9D%9E%E6%83%B3%E5%A4%A9%E5%88%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"红美铃","jpname":"紅美鈴","optlist":[6,8,16],"optlistall":[44]},
+{"optgroup":"东方红魔乡","value":7,"url":"https://upload.thwiki.cc/0/0d/%E5%B0%8F%E6%81%B6%E9%AD%94%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"小恶魔","jpname":"小悪魔","optlist":[6]},
+{"optgroup":"东方红魔乡","value":8,"url":"https://upload.thwiki.cc/f/fc/%E5%B8%95%E7%A7%8B%E8%8E%89%C2%B7%E8%AF%BA%E8%95%BE%E5%A7%AC%EF%BC%88%E7%BB%AF%E6%83%B3%E5%A4%A9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"帕秋莉·诺蕾姬","jpname":"パチュリー·ノーレッジ","optlist":[6,8,9,10,13,14,16],"optlistall":[43,44,45,50]},
+{"optgroup":"东方红魔乡","value":9,"url":"https://upload.thwiki.cc/4/4b/%E5%8D%81%E5%85%AD%E5%A4%9C%E5%92%B2%E5%A4%9C%EF%BC%88%E7%BB%AF%E6%83%B3%E5%A4%A9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"十六夜咲夜","jpname":"十六夜咲夜","optlist":[6,7,8,9,10,13,21,46,59],"optlistall":[43,44,45,47,51,63]},
+{"optgroup":"东方红魔乡","value":10,"url":"https://upload.thwiki.cc/d/d1/%E8%95%BE%E7%B1%B3%E8%8E%89%E4%BA%9A%C2%B7%E6%96%AF%E5%8D%A1%E8%95%BE%E7%89%B9%EF%BC%88%E7%BB%AF%E6%83%B3%E5%A4%A9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"蕾米莉亚·斯卡蕾特","jpname":"レミリア·スカーレット","optlist":[6,8,9,10,13,21],"optlistall":[43,44,45,46,47,49,51]},
+{"optgroup":"东方红魔乡","value":11,"url":"https://upload.thwiki.cc/4/4d/%E8%8A%99%E5%85%B0%E6%9C%B5%E9%9C%B2%C2%B7%E6%96%AF%E5%8D%A1%E8%95%BE%E7%89%B9%EF%BC%88%E7%BA%A2%E9%AD%94%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"芙兰朵露·斯卡蕾特","jpname":"フランドール·スカーレット","optlist":[6]},
+{"optgroup":"东方红魔乡","value":12,"url":"","name":"冴月麟","jpname":"さつき りん","optlist":[6]},
+{"optgroup":"东方妖妖梦","value":13,"url":"https://upload.thwiki.cc/0/0a/%E8%95%BE%E8%92%82%C2%B7%E9%9C%8D%E7%93%A6%E7%89%B9%E6%B4%9B%E5%85%8B%EF%BC%88%E5%A6%96%E5%A6%96%E6%A2%A6%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"蕾蒂·霍瓦特洛克","jpname":"レティ·ホワイトロック","optlist":[7]},
+{"optgroup":"东方妖妖梦","value":14,"url":"https://upload.thwiki.cc/f/f6/%E6%A9%99%EF%BC%88%E5%A6%96%E5%A6%96%E6%A2%A6%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"橙","jpname":"橙","optlist":[7,8,9]},
+{"optgroup":"东方妖妖梦","value":15,"url":"https://upload.thwiki.cc/8/84/%E7%88%B1%E4%B8%BD%E4%B8%9D%C2%B7%E7%8E%9B%E6%A0%BC%E7%89%B9%E6%B4%9B%E4%BE%9D%E5%BE%B7%EF%BC%88%E7%BB%AF%E6%83%B3%E5%A4%A9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"爱丽丝·玛格特洛依德","jpname":"アリス·マーガトロイド","optlist":[5,7,8,9,13,14,16],"optlistall":[44,50,51]},
+{"optgroup":"东方妖妖梦","value":16,"url":"https://upload.thwiki.cc/f/fc/%E8%8E%89%E8%8E%89%E7%99%BD%EF%BC%88%E6%B1%82%E9%97%BB%E5%8F%B2%E7%BA%AA%EF%BC%89.jpg","name":"莉莉白","jpname":"リリーホワイト","optlist":[7,10,18,59]},
+{"optgroup":"东方妖妖梦","value":17,"url":"https://upload.thwiki.cc/8/82/%E9%9C%B2%E5%A8%9C%E8%90%A8%C2%B7%E6%99%AE%E8%8E%89%E5%85%B9%E5%A7%86%E5%88%A9%E5%B7%B4%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"露娜萨·普莉兹姆利巴","jpname":"ルナサ·プリズムリバー","optlist":[7,10]},
+{"optgroup":"东方妖妖梦","value":18,"url":"https://upload.thwiki.cc/a/aa/%E6%A2%85%E9%9C%B2%E5%85%B0%C2%B7%E6%99%AE%E8%8E%89%E5%85%B9%E5%A7%86%E5%88%A9%E5%B7%B4%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"梅露兰·普莉兹姆利巴","jpname":"メルラン·プリズムリバー","optlist":[7,10]},
+{"optgroup":"东方妖妖梦","value":19,"url":"https://upload.thwiki.cc/8/80/%E8%8E%89%E8%8E%89%E5%8D%A1%C2%B7%E6%99%AE%E8%8E%89%E5%85%B9%E5%A7%86%E5%88%A9%E5%B7%B4%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"莉莉卡·普莉兹姆利巴","jpname":"リリカ·プリズムリバー","optlist":[7,10]},
+{"optgroup":"东方妖妖梦","value":20,"url":"https://upload.thwiki.cc/b/b8/%E9%AD%82%E9%AD%84%E5%A6%96%E6%A2%A6%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"魂魄妖梦","jpname":"魂魄妖夢","optlist":[7,8,9,10,13,19,64],"optlistall":[43,44,45,49,51,63]},
+{"optgroup":"东方妖妖梦","value":21,"url":"https://upload.thwiki.cc/3/3b/%E8%A5%BF%E8%A1%8C%E5%AF%BA%E5%B9%BD%E5%B9%BD%E5%AD%90%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"西行寺幽幽子","jpname":"西行寺幽々子","optlist":[7,8,9,10,13,19,45,64],"optlistall":[44,51]},
+{"optgroup":"东方妖妖梦","value":22,"url":"https://upload.thwiki.cc/b/b5/%E5%85%AB%E4%BA%91%E8%93%9D%EF%BC%88%E5%A6%96%E5%A6%96%E6%A2%A6%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"八云蓝","jpname":"八雲藍","optlist":[7,8,9],"optlistall":[45]},
+{"optgroup":"东方妖妖梦","value":23,"url":"https://upload.thwiki.cc/4/4e/%E5%85%AB%E4%BA%91%E7%B4%AB%EF%BC%88%E7%BB%AF%E6%83%B3%E5%A4%A9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"八云紫","jpname":"八雲紫","optlist":[7,8,9,13,14,24,44,45,46,47,52,58,63],"optlistall":[43,51]},
+{"optgroup":"东方妖妖梦","value":24,"url":"","name":"魂魄妖忌","jpname":"魂魄妖忌","optlist":[7]},
+{"optgroup":"东方妖妖梦","value":25,"url":"","name":"蕾拉·普莉兹姆利巴","jpname":"レイラ·プリズムリバー","optlist":[7]},
+{"optgroup":"东方萃梦想","value":26,"url":"https://upload.thwiki.cc/9/9f/%E4%BC%8A%E5%90%B9%E8%90%83%E9%A6%99%EF%BC%88%E7%BB%AF%E6%83%B3%E5%A4%A9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"伊吹萃香","jpname":"伊吹萃香","optlist":[8,13,14,46],"optlistall":[44]},
+{"optgroup":"东方永夜抄","value":27,"url":"https://upload.thwiki.cc/1/10/%E8%8E%89%E6%A0%BC%E9%9C%B2%C2%B7%E5%A5%88%E7%89%B9%E5%B7%B4%E6%A0%BC%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"莉格露·奈特巴格","jpname":"リグル·ナイトバグ","optlist":[9]},
+{"optgroup":"东方永夜抄","value":28,"url":"https://upload.thwiki.cc/b/bc/%E7%B1%B3%E6%96%AF%E8%92%82%E5%A8%85%C2%B7%E8%90%9D%E8%95%BE%E6%8B%89%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"米斯蒂娅·萝蕾拉","jpname":"ミスティア·ローレライ","optlist":[9,10]},
+{"optgroup":"东方永夜抄","value":29,"url":"https://upload.thwiki.cc/f/f1/%E4%B8%8A%E7%99%BD%E6%B3%BD%E6%85%A7%E9%9F%B3%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"上白泽慧音","jpname":"上白沢慧音","optlist":[9]},
+{"optgroup":"东方永夜抄","value":30,"url":"https://upload.thwiki.cc/2/28/%E5%9B%A0%E5%B9%A1%E5%B8%9D%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"因幡天为（因幡帝）","jpname":"因幡てゐ","optlist":[9,10,24,45],"optlistall":[44,46]},
+{"optgroup":"东方永夜抄","value":31,"url":"https://upload.thwiki.cc/a/a3/%E9%93%83%E4%BB%99%C2%B7%E4%BC%98%E6%98%99%E5%8D%8E%E9%99%A2%C2%B7%E5%9B%A0%E5%B9%A1%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"铃仙·优昙华院·因幡","jpname":"鈴仙·優曇華院·イナバ","optlist":[9,10,13,23,24,45,57,58],"optlistall":[44,47]},
+{"optgroup":"东方永夜抄","value":32,"url":"https://upload.thwiki.cc/9/9e/%E5%85%AB%E6%84%8F%E6%B0%B8%E7%90%B3%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"八意永琳","jpname":"八意永琳","optlist":[9,10,13,24,45,46],"optlistall":[44]},
+{"optgroup":"东方永夜抄","value":33,"url":"https://upload.thwiki.cc/9/9c/%E8%93%AC%E8%8E%B1%E5%B1%B1%E8%BE%89%E5%A4%9C%EF%BC%88%E6%B0%B8%E5%A4%9C%E6%8A%84%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"蓬莱山辉夜","jpname":"蓬莱山輝夜","optlist":[9,24,45],"optlistall":[44]},
+{"optgroup":"东方永夜抄","value":34,"url":"https://upload.thwiki.cc/8/8c/%E8%97%A4%E5%8E%9F%E5%A6%B9%E7%BA%A2%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"藤原妹红","jpname":"藤原妹紅","optlist":[9,23,57,58],"optlistall":[45,46]},
+{"optgroup":"东方花映塚","value":35,"url":"https://upload.thwiki.cc/d/d3/%E5%B0%84%E5%91%BD%E4%B8%B8%E6%96%87%EF%BC%88%E9%9D%9E%E6%83%B3%E5%A4%A9%E5%88%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"射命丸文","jpname":"射命丸文","optlist":[10,11,12,13,14,17,18,51,53,60],"optlistall":[44,45,46,47,49]},
+{"optgroup":"东方花映塚","value":36,"url":"https://upload.thwiki.cc/7/7b/%E6%A2%85%E8%92%82%E6%AC%A3%C2%B7%E6%A2%85%E5%85%B0%E5%8F%AF%E8%8E%89%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"梅蒂欣·梅兰可莉","jpname":"メディスン·メランコリー","optlist":[10]},
+{"optgroup":"东方花映塚","value":37,"url":"https://upload.thwiki.cc/d/d5/%E9%A3%8E%E8%A7%81%E5%B9%BD%E9%A6%99%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"风见幽香","jpname":"風見幽香","optlist":[4,10]},
+{"optgroup":"东方花映塚","value":38,"url":"https://upload.thwiki.cc/5/5d/%E5%B0%8F%E9%87%8E%E5%A1%9A%E5%B0%8F%E7%94%BA%EF%BC%88%E9%9D%9E%E6%83%B3%E5%A4%A9%E5%88%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"小野塚小町","jpname":"小野塚小町","optlist":[10,13,46],"optlistall":[44]},
+{"optgroup":"东方花映塚","value":39,"url":"https://upload.thwiki.cc/e/e5/%E5%9B%9B%E5%AD%A3%E6%98%A0%E5%A7%AC%EF%BC%88%E8%8A%B1%E6%98%A0%E5%A1%9A%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"四季映姬·夜摩仙那度","jpname":"四季映姫·ヤマザナドゥ","optlist":[10,64],"optlistall":[44]},
+{"optgroup":"东方风神录","value":40,"url":"https://upload.thwiki.cc/0/05/%E7%A7%8B%E9%9D%99%E5%8F%B6%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"秋静叶","jpname":"秋静葉","optlist":[12]},
+{"optgroup":"东方风神录","value":41,"url":"https://upload.thwiki.cc/d/d1/%E7%A7%8B%E7%A9%B0%E5%AD%90%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"秋穰子","jpname":"秋穣子","optlist":[12]},
+{"optgroup":"东方风神录","value":42,"url":"https://upload.thwiki.cc/1/12/%E9%94%AE%E5%B1%B1%E9%9B%8F%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"键山雏","jpname":"鍵山雛","optlist":[12]},
+{"optgroup":"东方风神录","value":43,"url":"https://upload.thwiki.cc/b/b4/%E6%B2%B3%E5%9F%8E%E8%8D%B7%E5%8F%96%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"河城荷取","jpname":"河城にとり","optlist":[12,14,20,23,57,58],"optlistall":[46,47,63]},
+{"optgroup":"东方风神录","value":44,"url":"https://upload.thwiki.cc/8/8b/%E4%B8%9C%E6%96%B9%E6%B1%82%E9%97%BB%E5%8F%A3%E6%8E%88%EF%BC%88%E6%8F%92%E5%9B%BE176%EF%BC%89.jpg","name":"犬走椛","jpname":"犬走椛","optlist":[12],"optlistall":[46,53]},
+{"optgroup":"东方风神录","value":45,"url":"https://upload.thwiki.cc/8/87/%E4%B8%9C%E9%A3%8E%E8%B0%B7%E6%97%A9%E8%8B%97%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"东风谷早苗","jpname":"東風谷早苗","optlist":[12,14,16,19,24,46],"optlistall":[47,49,63]},
+{"optgroup":"东方风神录","value":46,"url":"https://upload.thwiki.cc/3/3e/%E5%85%AB%E5%9D%82%E7%A5%9E%E5%A5%88%E5%AD%90%EF%BC%88%E9%A3%8E%E7%A5%9E%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"八坂神奈子","jpname":"八坂神奈子","optlist":[12,16,24,46],"optlistall":[47,49]},
+{"optgroup":"东方风神录","value":47,"url":"https://upload.thwiki.cc/9/97/%E6%B4%A9%E7%9F%A2%E8%AF%B9%E8%AE%BF%E5%AD%90%EF%BC%88%E9%9D%9E%E6%83%B3%E5%A4%A9%E5%88%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"洩矢诹访子","jpname":"洩矢諏訪子","optlist":[12,16,24],"optlistall":[46,47,49]},
+{"optgroup":"东方绯想天","value":48,"url":"https://upload.thwiki.cc/9/95/%E6%B0%B8%E6%B1%9F%E8%A1%A3%E7%8E%96%EF%BC%88%E7%BB%AF%E6%83%B3%E5%A4%A9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"永江衣玖","jpname":"永江衣玖","optlist":[13]},
+{"optgroup":"东方绯想天","value":49,"url":"https://upload.thwiki.cc/0/06/%E6%AF%94%E9%82%A3%E5%90%8D%E5%B1%85%E5%A4%A9%E5%AD%90%EF%BC%88%E7%BB%AF%E6%83%B3%E5%A4%A9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"比那名居天子","jpname":"比那名居天子","optlist":[13,58],"optlistall":[46]},
+{"optgroup":"东方地灵殿","value":50,"url":"https://upload.thwiki.cc/b/b8/%E7%90%AA%E6%96%AF%E7%BE%8E%EF%BC%88%E5%9C%B0%E7%81%B5%E6%AE%BF%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"琪斯美","jpname":"キスメ","optlist":[14]},
+{"optgroup":"东方地灵殿","value":51,"url":"https://upload.thwiki.cc/7/7c/%E9%BB%91%E8%B0%B7%E5%B1%B1%E5%A5%B3%EF%BC%88%E5%9C%B0%E7%81%B5%E6%AE%BF%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"黑谷山女","jpname":"黒谷ヤマメ","optlist":[14]},
+{"optgroup":"东方地灵殿","value":52,"url":"https://upload.thwiki.cc/e/e2/%E6%B0%B4%E6%A1%A5%E5%B8%95%E9%9C%B2%E8%A5%BF%EF%BC%88%E5%9C%B0%E7%81%B5%E6%AE%BF%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"水桥帕露西","jpname":"水橋パルスィ","optlist":[14]},
+{"optgroup":"东方地灵殿","value":53,"url":"https://upload.thwiki.cc/5/5e/%E6%98%9F%E7%86%8A%E5%8B%87%E4%BB%AA%EF%BC%88%E5%9C%B0%E7%81%B5%E6%AE%BF%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"星熊勇仪","jpname":"星熊勇儀","optlist":[14,20]},
+{"optgroup":"东方地灵殿","value":54,"url":"https://upload.thwiki.cc/c/cf/%E5%8F%A4%E6%98%8E%E5%9C%B0%E8%A7%89%EF%BC%88%E5%9C%B0%E7%81%B5%E6%AE%BF%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"古明地觉","jpname":"古明地さとり","optlist":[14,23],"optlistall":[46]},
+{"optgroup":"东方地灵殿","value":55,"url":"https://upload.thwiki.cc/4/4d/%E7%81%AB%E7%84%B0%E7%8C%AB%E7%87%90%EF%BC%88%E5%9C%B0%E7%81%B5%E6%AE%BF%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"火焰猫燐","jpname":"火焔猫燐","optlist":[14],"optlistall":[46]},
+{"optgroup":"东方地灵殿","value":56,"url":"https://upload.thwiki.cc/d/df/%E7%81%B5%E4%B9%8C%E8%B7%AF%E7%A9%BA%EF%BC%88%E9%9D%9E%E6%83%B3%E5%A4%A9%E5%88%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"灵乌路空","jpname":"霊烏路空","optlist":[14,16]},
+{"optgroup":"东方地灵殿","value":57,"url":"https://upload.thwiki.cc/2/22/%E5%8F%A4%E6%98%8E%E5%9C%B0%E6%81%8B%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"古明地恋","jpname":"古明地こいし","optlist":[14,20,23,57,58]},
+{"optgroup":"东方星莲船","value":58,"url":"https://upload.thwiki.cc/4/42/%E5%A8%9C%E5%85%B9%E7%8E%B2%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"娜兹玲","jpname":"ナズーリン","optlist":[15]},
+{"optgroup":"东方星莲船","value":59,"url":"https://upload.thwiki.cc/a/a0/%E5%A4%9A%E5%A4%9A%E8%89%AF%E5%B0%8F%E4%BC%9E%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"多多良小伞","jpname":"多々良小傘","optlist":[15,19],"optlistall":[46]},
+{"optgroup":"东方星莲船","value":60,"url":"https://upload.thwiki.cc/a/ad/%E4%BA%91%E5%B1%B1%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"云山","jpname":"雲山","optlist":[15,20,23,57,58],"optlistall":[46]},
+{"optgroup":"东方星莲船","value":61,"url":"https://upload.thwiki.cc/6/6c/%E4%BA%91%E5%B1%85%E4%B8%80%E8%BD%AE%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"云居一轮","jpname":"雲居一輪","optlist":[15,20,23,57,58],"optlistall":[46]},
+{"optgroup":"东方星莲船","value":62,"url":"https://upload.thwiki.cc/8/86/%E6%9D%91%E7%BA%B1%E6%B0%B4%E8%9C%9C%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"村纱水蜜","jpname":"村紗水蜜","optlist":[15]},
+{"optgroup":"东方星莲船","value":63,"url":"https://upload.thwiki.cc/3/3c/%E5%AF%85%E4%B8%B8%E6%98%9F%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"寅丸星","jpname":"寅丸星","optlist":[15]},
+{"optgroup":"东方星莲船","value":64,"url":"https://upload.thwiki.cc/7/78/%E5%9C%A3%E7%99%BD%E8%8E%B2%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"圣白莲","jpname":"聖白蓮","optlist":[15,20,23,58,59],"optlistall":[46,47,49]},
+{"optgroup":"东方星莲船","value":65,"url":"https://upload.thwiki.cc/d/d4/%E5%B0%81%E5%85%BD%E9%B5%BA%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"封兽鵺","jpname":"封獣ぬえ","optlist":[15,19],"optlistall":[47]},
+{"optgroup":"东方星莲船","value":66,"url":"","name":"命莲","jpname":"命蓮","optlist":[15]},
+{"optgroup":"东方非想天则","value":67,"url":"https://upload.thwiki.cc/2/29/%E5%A4%A7%E9%B2%B6%E9%B1%BC%EF%BC%88%E9%9D%9E%E6%83%B3%E5%A4%A9%E5%88%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"大鲶鱼","jpname":"大ナマズ","optlist":[16]},
+{"optgroup":"东方非想天则","value":68,"url":"https://upload.thwiki.cc/4/47/%E9%9D%9E%E6%83%B3%E5%A4%A9%E5%88%99%EF%BC%88%E9%9D%9E%E6%83%B3%E5%A4%A9%E5%88%992%EF%BC%89.png","name":"非想天则","jpname":"非想天則","optlist":[16]},
+{"optgroup":"东方文花帖DS","value":69,"url":"https://upload.thwiki.cc/5/5e/%E5%A7%AC%E6%B5%B7%E6%A3%A0%E6%9E%9C%EF%BC%88%E6%96%87%E8%8A%B1%E5%B8%96DS%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"姬海棠果","jpname":"姫海棠はたて","optlist":[17],"optlistall":[49,60]},
+{"optgroup":"东方神灵庙","value":70,"url":"https://upload.thwiki.cc/7/7c/%E5%B9%BD%E8%B0%B7%E5%93%8D%E5%AD%90%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"幽谷响子","jpname":"幽谷響子","optlist":[19],"optlistall":[46]},
+{"optgroup":"东方神灵庙","value":71,"url":"https://upload.thwiki.cc/c/ca/%E5%AE%AB%E5%8F%A4%E8%8A%B3%E9%A6%99%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"宫古芳香","jpname":"宮古芳香","optlist":[19]},
+{"optgroup":"东方神灵庙","value":72,"url":"https://upload.thwiki.cc/1/18/%E9%9C%8D%E9%9D%92%E5%A8%A5%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"霍青娥","jpname":"霍青娥","optlist":[19],"optlistall":[46]},
+{"optgroup":"东方神灵庙","value":73,"url":"https://upload.thwiki.cc/b/bb/%E8%8B%8F%E6%88%91%E5%B1%A0%E8%87%AA%E5%8F%A4%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"苏我屠自古","jpname":"蘇我屠自古","optlist":[19]},
+{"optgroup":"东方神灵庙","value":74,"url":"https://upload.thwiki.cc/a/a7/%E7%89%A9%E9%83%A8%E5%B8%83%E9%83%BD%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"物部布都","jpname":"物部布都","optlist":[19,20,23,57,58]},
+{"optgroup":"东方神灵庙","value":75,"url":"https://upload.thwiki.cc/1/15/%E4%B8%B0%E8%81%AA%E8%80%B3%E7%A5%9E%E5%AD%90%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"丰聪耳神子","jpname":"豊聡耳神子","optlist":[19,20,23,57,58],"optlistall":[46,49]},
+{"optgroup":"东方神灵庙","value":76,"url":"https://upload.thwiki.cc/6/6b/%E4%BA%8C%E5%B2%A9%E7%8C%AF%E8%97%8F%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"二岩猯藏","jpname":"二ッ岩マミゾウ","optlist":[19,20,22,23,47,57,58],"optlistall":[46]},
+{"optgroup":"东方心绮楼","value":77,"url":"https://upload.thwiki.cc/8/89/%E7%A7%A6%E5%BF%83%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"秦心","jpname":"秦こころ","optlist":[20,23,57,58],"optlistall":[47]},
+{"optgroup":"东方心绮楼","value":78,"url":"","name":"秦河胜","jpname":"秦河胜","optlist":[20]},
+{"optgroup":"东方辉针城","value":79,"url":"https://upload.thwiki.cc/1/14/%E8%8B%A5%E9%B9%AD%E5%A7%AC%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"若鹭姬","jpname":"わかさぎ姫","optlist":[21]},
+{"optgroup":"东方辉针城","value":80,"url":"https://upload.thwiki.cc/8/87/%E8%B5%A4%E8%9B%AE%E5%A5%87%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"赤蛮奇","jpname":"赤蛮奇","optlist":[21]},
+{"optgroup":"东方辉针城","value":81,"url":"https://upload.thwiki.cc/d/d3/%E4%BB%8A%E6%B3%89%E5%BD%B1%E7%8B%BC%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"今泉影狼","jpname":"今泉影狼","optlist":[21,22]},
+{"optgroup":"东方辉针城","value":82,"url":"https://upload.thwiki.cc/8/86/%E4%B9%9D%E5%8D%81%E4%B9%9D%E5%BC%81%E5%BC%81%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"九十九弁弁","jpname":"九十九弁々","optlist":[21],"optlistall":[47]},
+{"optgroup":"东方辉针城","value":83,"url":"https://upload.thwiki.cc/7/7c/%E4%B9%9D%E5%8D%81%E4%B9%9D%E5%85%AB%E6%A1%A5%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"九十九八桥","jpname":"九十九八橋","optlist":[21,22],"optlistall":[47]},
+{"optgroup":"东方辉针城","value":84,"url":"https://upload.thwiki.cc/7/7b/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"鬼人正邪","jpname":"鬼人正邪","optlist":[21,22,63]},
+{"optgroup":"东方辉针城","value":85,"url":"https://upload.thwiki.cc/e/e8/%E5%B0%91%E5%90%8D%E9%92%88%E5%A6%99%E4%B8%B8%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"少名针妙丸","jpname":"少名針妙丸","optlist":[21,22,23,57,58,63],"optlistall":[47]},
+{"optgroup":"东方辉针城","value":86,"url":"https://upload.thwiki.cc/a/ae/%E5%A0%80%E5%B7%9D%E9%9B%B7%E9%BC%93%EF%BC%88%E8%BE%89%E9%92%88%E5%9F%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"堀川雷鼓","jpname":"堀川雷鼓","optlist":[21,22]},
+{"optgroup":"东方深秘录","value":87,"url":"https://upload.thwiki.cc/b/bf/%E5%AE%87%E4%BD%90%E8%A7%81%E5%A0%87%E5%AD%90%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"宇佐见堇子","jpname":"宇佐見菫子","optlist":[23,43,46,57,58,62,63]},
+{"optgroup":"东方深秘录","value":88,"url":"https://upload.thwiki.cc/0/05/%E7%BB%BF%E5%B7%A8%E4%BA%BA%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"绿巨人","jpname":"緑の巨人","optlistother":[23,57,58]},
+{"optgroup":"东方深秘录","value":89,"url":"https://upload.thwiki.cc/9/9c/%E9%98%BF%E8%8F%8A%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"阿菊","jpname":"お菊","optlistother":[23,57,58]},
+{"optgroup":"东方深秘录","value":90,"url":"https://upload.thwiki.cc/4/41/%E5%85%AB%E5%B0%BA%E5%A4%A7%E4%BA%BA%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"八尺大人","jpname":"八尺さま","optlistother":[23,57,58]},
+{"optgroup":"东方深秘录","value":91,"url":"https://upload.thwiki.cc/f/fc/%E5%BD%AD%E7%A5%96%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"彭祖","jpname":"彭祖","optlistother":[23,57,58]},
+{"optgroup":"东方深秘录","value":92,"url":"https://upload.thwiki.cc/5/57/%E9%BB%84%E5%B8%9D%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"黄帝","jpname":"黄帝","optlistother":[23,57,58]},
+{"optgroup":"东方深秘录","value":93,"url":"https://upload.thwiki.cc/0/03/%E5%B0%BC%E8%A5%BF%E5%8F%B7%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"尼西号","jpname":"ネッシー号","optlistother":[23,57,58]},
+{"optgroup":"东方绀珠传","value":94,"url":"https://upload.thwiki.cc/4/4c/%E6%B8%85%E5%85%B0%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"清兰","jpname":"清蘭","optlist":[24,62]},
+{"optgroup":"东方绀珠传","value":95,"url":"https://upload.thwiki.cc/e/ed/%E9%93%83%E7%91%9A%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"铃瑚","jpname":"鈴瑚","optlist":[24,62]},
+{"optgroup":"东方绀珠传","value":96,"url":"https://upload.thwiki.cc/9/93/%E5%93%86%E6%9D%A5%E5%92%AA%C2%B7%E8%8B%8F%E4%BC%8A%E7%89%B9%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"哆来咪·苏伊特","jpname":"ドレミー・スイート","optlist":[24,58,62]},
+{"optgroup":"东方绀珠传","value":97,"url":"https://upload.thwiki.cc/9/96/%E7%A8%80%E7%A5%9E%E6%8E%A2%E5%A5%B3%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"稀神探女","jpname":"稀神サグメ","optlist":[24]},
+{"optgroup":"东方绀珠传","value":98,"url":"https://upload.thwiki.cc/d/da/%E5%85%8B%E5%8A%B3%E6%81%A9%E7%9A%AE%E4%B8%9D%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"克劳恩皮丝","jpname":"クラウンピース","optlist":[24,44]},
+{"optgroup":"东方绀珠传","value":99,"url":"https://upload.thwiki.cc/f/fd/%E7%BA%AF%E7%8B%90%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"纯狐","jpname":"純狐","optlist":[24]},
+{"optgroup":"东方绀珠传","value":100,"url":"https://upload.thwiki.cc/5/54/%E8%B5%AB%E5%8D%A1%E6%8F%90%E4%BA%9A%C2%B7%E6%8B%89%E7%A2%A7%E6%96%AF%E6%8B%89%E7%A5%96%E5%88%A9%EF%BC%88%E7%BB%80%E7%8F%A0%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"赫卡提亚·拉碧斯拉祖利","jpname":"ヘカーティア・ラピスラズリ","optlist":[24],"optlistall":[44]},
+{"optgroup":"东方灵异传","value":101,"url":"https://upload.thwiki.cc/6/62/%E7%A5%9E%E7%8E%894%EF%BC%88%E7%81%B5%E5%BC%82%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"神玉","jpname":"神玉","optlist":[1]},
+{"optgroup":"东方灵异传","value":102,"url":"https://upload.thwiki.cc/e/e9/%E9%AD%85%E9%AD%942%EF%BC%88%E6%80%AA%E7%BB%AE%E8%B0%88%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"魅魔","jpname":"魅魔","optlist":[1,2,3,5]},
+{"optgroup":"东方灵异传","value":103,"url":"https://upload.thwiki.cc/0/0a/%E8%8F%8A%E7%90%86%EF%BC%88%E7%81%B5%E5%BC%82%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"菊理","jpname":"きくり","optlist":[1]},
+{"optgroup":"东方灵异传","value":104,"url":"https://upload.thwiki.cc/a/af/%E7%9F%9C%E7%BE%AF%E7%BD%97%EF%BC%88%E7%81%B5%E5%BC%82%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"矜羯罗","jpname":"矜羯羅","optlist":[1]},
+{"optgroup":"东方灵异传","value":105,"url":"https://upload.thwiki.cc/6/65/%E5%B9%BD%E5%B9%BB%E9%AD%94%E7%9C%BC%EF%BC%88%E7%81%B5%E5%BC%82%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"幽玄魔眼","jpname":"幽幻魔眼","optlist":[1]},
+{"optgroup":"东方灵异传","value":106,"url":"https://upload.thwiki.cc/5/52/%E4%BE%9D%E8%8E%89%E4%B8%9D%EF%BC%88%E7%81%B5%E5%BC%82%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"依莉斯","jpname":"エリス","optlist":[1]},
+{"optgroup":"东方灵异传","value":107,"url":"https://upload.thwiki.cc/8/8a/%E8%90%A8%E4%B8%BD%E8%89%BE%E5%B0%94%EF%BC%88%E7%81%B5%E5%BC%82%E4%BC%A0%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"萨丽爱尔","jpname":"サリエル","optlist":[1]},
+{"optgroup":"东方封魔录","value":108,"url":"https://upload.thwiki.cc/9/90/%E7%8E%84%E7%88%B7%EF%BC%88%E5%B0%81%E9%AD%94%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"玄爷","jpname":"玄爺","optlist":[2,3,4,5]},
+{"optgroup":"东方封魔录","value":109,"url":"https://upload.thwiki.cc/b/b2/%E9%87%8C%E9%A6%99%EF%BC%88%E5%B0%81%E9%AD%94%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"里香","jpname":"里香","optlist":[2]},
+{"optgroup":"东方封魔录","value":110,"url":"https://upload.thwiki.cc/c/cd/%E6%98%8E%E7%BD%97%EF%BC%88%E5%B0%81%E9%AD%94%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"明罗","jpname":"明羅","optlist":[2]},
+{"optgroup":"东方封魔录","value":111,"url":"https://upload.thwiki.cc/0/0c/Flower%EF%BD%9E%E6%88%98%E8%BD%A6%EF%BC%88%E5%B0%81%E9%AD%94%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"Flower～战车","jpname":"ふらわ～戦車","optlist":[2]},
+{"optgroup":"东方封魔录","value":112,"url":"https://upload.thwiki.cc/f/f8/%E9%82%AA%E7%9C%BC%E8%A5%BF%E6%A0%BC%E7%8E%9B%EF%BC%88%E5%B0%81%E9%AD%94%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"邪眼西格玛","jpname":"イビルアイ∑","optlist":[2]},
+{"optgroup":"东方梦时空","value":113,"url":"https://upload.thwiki.cc/b/b7/%E7%88%B1%E8%8E%B2%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"爱莲","jpname":"エレン","optlist":[3]},
+{"optgroup":"东方梦时空","value":114,"url":"https://upload.thwiki.cc/1/18/%E5%B0%8F%E5%85%94%E5%A7%AC%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"小兔姬","jpname":"小兎姫","optlist":[3]},
+{"optgroup":"东方梦时空","value":115,"url":"https://upload.thwiki.cc/0/0c/%E5%8D%A1%E5%A8%9C%C2%B7%E5%AE%89%E5%A8%9C%E8%B4%9D%E6%8B%89%E5%B0%94%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"卡娜·安娜贝拉尔","jpname":"カナ·アナベラル","optlist":[3]},
+{"optgroup":"东方梦时空","value":116,"url":"https://upload.thwiki.cc/1/1a/%E6%9C%9D%E4%BB%93%E7%90%86%E9%A6%99%E5%AD%90%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"朝仓理香子","jpname":"朝倉理香子","optlist":[3]},
+{"optgroup":"东方梦时空","value":117,"url":"https://upload.thwiki.cc/c/c9/%E5%8C%97%E7%99%BD%E6%B2%B3%E5%8D%83%E7%99%BE%E5%90%88%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"北白河千百合","jpname":"北白河ちゆり","optlist":[3]},
+{"optgroup":"东方梦时空","value":118,"url":"https://upload.thwiki.cc/d/df/%E5%86%88%E5%B4%8E%E6%A2%A6%E7%BE%8E.png","name":"冈崎梦美","jpname":"岡崎夢美","optlist":[3]},
+{"optgroup":"东方梦时空","value":119,"url":"https://upload.thwiki.cc/4/44/%E5%92%AA%E5%92%AA%E5%8F%B7%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"咪咪号","jpname":"ミミちゃん","optlist":[3]},
+{"optgroup":"东方梦时空","value":120,"url":"https://upload.thwiki.cc/2/28/%E7%95%99%E7%90%B4%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"留琴","jpname":"る～こと","optlist":[3]},
+{"optgroup":"东方梦时空","value":121,"url":"https://upload.thwiki.cc/4/44/%E7%8E%9B%E2%97%8B%E5%A5%87%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"玛○奇","jpname":"ま○ち","optlist":[3]},
+{"optgroup":"东方梦时空","value":122,"url":"https://upload.thwiki.cc/9/94/%E8%8B%8F%E6%A0%BC%E6%8B%89%E5%BA%95%EF%BC%88%E6%A2%A6%E6%97%B6%E7%A9%BA%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"苏格拉底","jpname":"ソクラテス","optlist":[3]},
+{"optgroup":"东方幻想乡","value":123,"url":"https://upload.thwiki.cc/8/83/%E5%A5%A5%E8%8E%B2%E5%A7%AC%EF%BC%88%E5%B9%BB%E6%83%B3%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"奥莲姬","jpname":"オレンジ","optlist":[4]},
+{"optgroup":"东方幻想乡","value":124,"url":"https://upload.thwiki.cc/4/47/%E8%83%A1%E6%A1%83%EF%BC%88%E4%B8%9C%E6%96%B9%E5%B9%BB%E6%83%B3%E4%B9%A1%EF%BC%89.png","name":"胡桃","jpname":"くるみ","optlist":[4]},
+{"optgroup":"东方幻想乡","value":125,"url":"https://upload.thwiki.cc/6/61/%E8%89%BE%E4%B8%BD%EF%BC%88%E5%B9%BB%E6%83%B3%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"艾丽","jpname":"エリー","optlist":[4]},
+{"optgroup":"东方幻想乡","value":126,"url":"https://upload.thwiki.cc/d/de/%E6%A2%A6%E6%9C%88%EF%BC%88%E5%B9%BB%E6%83%B3%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"梦月","jpname":"夢月","optlist":[4]},
+{"optgroup":"东方幻想乡","value":127,"url":"https://upload.thwiki.cc/a/a2/%E5%B9%BB%E6%9C%88%EF%BC%88%E5%B9%BB%E6%83%B3%E4%B9%A1%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"幻月","jpname":"幻月","optlist":[4]},
+{"optgroup":"东方怪绮谈","value":128,"url":"https://upload.thwiki.cc/4/4a/%E8%90%A8%E6%8B%89%EF%BC%88%E6%80%AA%E7%BB%AE%E8%B0%88%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"萨拉","jpname":"サラ","optlist":[5]},
+{"optgroup":"东方怪绮谈","value":129,"url":"https://upload.thwiki.cc/1/14/%E9%9C%B2%E6%98%93%E5%85%B9%EF%BC%88%E6%80%AA%E7%BB%AE%E8%B0%88%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"露易兹","jpname":"ルイズ","optlist":[5]},
+{"optgroup":"东方怪绮谈","value":130,"url":"https://upload.thwiki.cc/c/cb/%E9%9B%AA%EF%BC%88%E6%80%AA%E7%BB%AE%E8%B0%88%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"雪","jpname":"ユキ","optlist":[5]},
+{"optgroup":"东方怪绮谈","value":131,"url":"https://upload.thwiki.cc/b/b8/%E8%88%9E%EF%BC%88%E6%80%AA%E7%BB%AE%E8%B0%88%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"舞","jpname":"マイ","optlist":[5]},
+{"optgroup":"东方怪绮谈","value":132,"url":"https://upload.thwiki.cc/b/be/%E6%A2%A6%E5%AD%90%EF%BC%88%E6%80%AA%E7%BB%AE%E8%B0%88%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"梦子","jpname":"夢子","optlist":[5]},
+{"optgroup":"东方怪绮谈","value":133,"url":"https://upload.thwiki.cc/e/e3/%E7%A5%9E%E7%BB%AE%EF%BC%88%E6%80%AA%E7%BB%AE%E8%B0%88%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"神绮","jpname":"神綺","optlist":[5]},
+{"optgroup":"音乐CD","value":134,"url":"https://upload.thwiki.cc/0/09/%E5%AE%87%E4%BD%90%E8%A7%81%E8%8E%B2%E5%AD%90%EF%BC%88%E9%B8%9F%E8%88%B9%E9%81%97%E8%BF%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"宇佐见莲子","jpname":"宇佐見蓮子","optlist":[26,27,28,29,30,31,32,54,55]},
+{"optgroup":"音乐CD","value":135,"url":"https://upload.thwiki.cc/2/23/%E6%A2%85%E8%8E%89%EF%BC%88%E9%B8%9F%E8%88%B9%E9%81%97%E8%BF%B9%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"玛艾露贝莉·赫恩（梅莉）","jpname":"マエリベリー·ハーン（メリー）","optlist":[26,27,28,29,30,31,32,54,55]},
+{"optgroup":"官方出版物","value":136,"url":"https://upload.thwiki.cc/e/eb/%E7%A8%97%E7%94%B0%E9%98%BF%E6%B1%82%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"稗田阿求","jpname":"稗田阿求","optlist":[47,48,49]},
+{"optgroup":"官方出版物","value":137,"url":"https://upload.thwiki.cc/c/cb/%E6%A3%AE%E8%BF%91%E9%9C%96%E4%B9%8B%E5%8A%A9%EF%BC%88%E9%A6%99%E9%9C%96%E5%A0%82%EF%BC%89.jpg","name":"森近霖之助","jpname":"森近霖之助","optlist":[43],"optlistall":[45,46,47]},
+{"optgroup":"官方出版物","value":138,"url":"https://upload.thwiki.cc/8/8b/%E6%9C%B1%E9%B9%AD%E5%AD%90%EF%BC%88%E9%A6%99%E9%9C%96%E5%A0%821%EF%BC%89.png","name":"无名的读书妖怪（朱鹭子）","jpname":"名無しの本読み妖怪（朱鷺子）","optlistother":[43]},
+{"optgroup":"官方出版物","value":139,"url":"https://upload.thwiki.cc/a/a7/%E6%A1%91%E5%B0%BC%E7%B1%B3%E5%B0%94%E5%85%8B%EF%BC%88%E5%A4%A7%E6%88%98%E4%BA%89%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"桑尼米尔克","jpname":"サニーミルク","optlist":[18,20,44],"optlistall":[43]},
+{"optgroup":"官方出版物","value":140,"url":"https://upload.thwiki.cc/6/64/%E9%9C%B2%E5%A8%9C%E5%88%87%E4%BA%91%E5%BE%B7%EF%BC%88%E5%A4%A7%E6%88%98%E4%BA%89%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"露娜切尔德","jpname":"ルナチャイルド","optlist":[18,20,44],"optlistall":[43]},
+{"optgroup":"官方出版物","value":141,"url":"https://upload.thwiki.cc/5/5a/%E6%96%AF%E5%A1%94%E8%90%A8%E8%8F%B2%E9%9B%85%EF%BC%88%E5%A4%A7%E6%88%98%E4%BA%89%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"斯塔萨菲雅","jpname":"スターサファイア","optlist":[18,20,44],"optlistall":[43]},
+{"optgroup":"官方出版物","value":142,"url":"https://upload.thwiki.cc/6/66/%E7%BB%B5%E6%9C%88%E4%B8%B0%E5%A7%AC%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E6%BC%AB%E7%94%BB%EF%BC%89.jpg","name":"绵月丰姬","jpname":"綿月豊姫","optlist":[45]},
+{"optgroup":"官方出版物","value":143,"url":"https://upload.thwiki.cc/0/0a/%E7%BB%B5%E6%9C%88%E4%BE%9D%E5%A7%AC%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E6%BC%AB%E7%94%BB%EF%BC%89.jpg","name":"绵月依姬","jpname":"綿月依姫","optlist":[45]},
+{"optgroup":"官方出版物","value":144,"url":"https://upload.thwiki.cc/e/eb/%E9%93%83%E4%BB%99%E4%BA%8C%E5%8F%B7%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E5%B0%8F%E8%AF%B4%EF%BC%89.jpg","name":"Reisen","jpname":"レイセン","optlist":[45]},
+{"optgroup":"官方出版物","value":145,"url":"https://upload.thwiki.cc/3/30/%E8%8C%A8%E6%9C%A8%E5%8D%8E%E6%89%87%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"茨木华扇","jpname":"茨木華扇","optlist":[23,46,57,58,64],"optlistall":[44]},
+{"optgroup":"官方出版物","value":146,"url":"https://upload.thwiki.cc/6/68/%E6%9C%AC%E5%B1%85%E5%B0%8F%E9%93%83%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%E5%B0%81%E9%9D%A2%EF%BC%89.png","name":"本居小铃","jpname":"本居小鈴","optlist":[47]},
+{"optgroup":"官方出版物","value":147,"url":"https://upload.thwiki.cc/9/9b/%E9%BE%99%EF%BC%88%E6%B1%82%E9%97%BB%E5%8F%B2%E7%BA%AA%EF%BC%89.jpg","name":"龙神","jpname":"龍神","optlistother":[48]},
+{"optgroup":"官方出版物","value":148,"url":"","name":"月夜见","jpname":"月夜見","optlistother":[45]},
+{"optgroup":"官方出版物","value":149,"url":"","name":"石长姬","jpname":"磐長姫","optlistother":[45]},
+{"optgroup":"官方出版物","value":150,"url":"","name":"木花咲耶姬","jpname":"木花咲耶姫","optlistother":[45]},
+{"optgroup":"官方出版物","value":151,"url":"https://upload.thwiki.cc/b/bc/%E5%A4%A9%E7%85%A7%E5%A4%A7%E5%BE%A1%E7%A5%9E%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E6%BC%AB%E7%94%BB%EF%BC%89.jpg","name":"天照大御神","jpname":"天照大御神","optlistother":[45]},
+{"optgroup":"官方出版物","value":152,"url":"https://upload.thwiki.cc/1/1c/%E7%9F%B3%E5%87%9D%E8%80%81%E5%91%BD%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E6%BC%AB%E7%94%BB%EF%BC%89.jpg","name":"石凝老命","jpname":"石凝老命","optlistother":[45]},
+{"optgroup":"官方出版物","value":153,"url":"https://upload.thwiki.cc/3/36/%E5%A4%A9%E5%AE%87%E5%8F%97%E5%8D%96%E5%91%BD%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E6%BC%AB%E7%94%BB%EF%BC%89.jpg","name":"天宇受卖命","jpname":"天宇受売命","optlistother":[45]},
+{"optgroup":"官方出版物","value":154,"url":"https://upload.thwiki.cc/a/af/%E4%BC%8A%E8%B1%86%E8%83%BD%E5%8D%96%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E6%BC%AB%E7%94%BB%EF%BC%89.jpg","name":"伊豆能卖","jpname":"伊豆能売","optlistother":[45]},
+{"optgroup":"官方出版物","value":155,"url":"https://upload.thwiki.cc/f/fd/%E7%81%AB%E9%9B%B7%E7%A5%9E%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E6%BC%AB%E7%94%BB%EF%BC%89.jpg","name":"火雷神","jpname":"火雷神","optlistother":[45]},
+{"optgroup":"官方出版物","value":156,"url":"https://upload.thwiki.cc/6/60/%E5%B2%A9%E7%AC%A0%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E5%B0%8F%E8%AF%B4%EF%BC%89.png","name":"岩笠","jpname":"岩笠","optlistother":[45]},
+{"optgroup":"官方出版物","value":157,"url":"","name":"瑞江浦岛子","jpname":"瑞江浦嶋子","optlistother":[45]},
+{"optgroup":"官方出版物","value":158,"url":"https://upload.thwiki.cc/3/3e/%E5%89%8D%E9%AC%BC%E5%90%8E%E9%AC%BC%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%E6%BC%AB%E7%94%BB%EF%BC%89.jpg","name":"前鬼 / 后鬼","jpname":"前鬼 / 後鬼","optlistother":[45]},
+{"optgroup":"官方出版物","value":159,"url":"https://upload.thwiki.cc/7/7e/%E6%B1%82%E9%97%BB%E5%8F%B2%E7%BA%AA%E4%B8%AD%E7%9A%84%E5%8F%97%E8%AE%BF%E4%BA%BA%E7%BE%A4.jpg","name":"求闻史纪中的受访人群","jpname":"","optlistother":[48]},
+{"optgroup":"官方出版物","value":160,"url":"https://upload.thwiki.cc/5/58/%E9%87%8E%E6%A7%8C%EF%BC%88%E4%B8%89%E6%9C%88%E7%B2%BE%EF%BC%89.jpg","name":"野槌","jpname":"ツチノコ","optlistother":[44]},
+{"optgroup":"官方出版物","value":161,"url":"https://upload.thwiki.cc/f/fd/%E9%85%92%E8%99%AB%EF%BC%88%E4%B8%89%E6%9C%88%E7%B2%BE%EF%BC%89.jpg","name":"酒虫","jpname":"酒虫","optlistother":[44]},
+{"optgroup":"官方出版物","value":162,"url":"https://upload.thwiki.cc/f/fc/%E9%9B%B7%E5%85%BD%E5%8A%A1%E5%85%89%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"雷兽（务光）","jpname":"雷獣（務光）","optlistother":[23,46]},
+{"optgroup":"官方出版物","value":163,"url":"https://upload.thwiki.cc/c/c7/%E8%BF%90%E6%9D%BE%E7%BF%81%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"运松翁","jpname":"運松の爺","optlistother":[46]},
+{"optgroup":"官方出版物","value":164,"url":"https://upload.thwiki.cc/9/9c/%E7%AB%BF%E6%89%93%EF%BC%88%E6%B7%B1%E7%A7%98%E5%BD%95%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"久米 / 竿打","jpname":"久米 / 竿打","optlistother":[23,46]},
+{"optgroup":"官方出版物","value":165,"url":"https://upload.thwiki.cc/b/b2/%E7%AE%A1%E7%8B%90%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"管狐","jpname":"管狐","optlistother":[46]},
+{"optgroup":"官方出版物","value":166,"url":"","name":"水鬼鬼神长","jpname":"水鬼鬼神長","optlistother":[46]},
+{"optgroup":"官方出版物","value":167,"url":"https://upload.thwiki.cc/4/49/%E4%B8%87%E5%B2%81%E4%B9%90%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"万岁乐","jpname":"万歲楽","optlistother":[23,46]},
+{"optgroup":"官方出版物","value":168,"url":"https://upload.thwiki.cc/e/e4/%E4%BA%BA%E9%9D%A2%E7%8A%AC%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"人面犬","jpname":"人面犬","optlistother":[46]},
+{"optgroup":"官方出版物","value":169,"url":"https://upload.thwiki.cc/2/2f/%E9%82%AA%E9%BE%99%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"邪龙","jpname":"邪龍（邪竜）","optlistother":[47]},
+{"optgroup":"官方出版物","value":170,"url":"https://upload.thwiki.cc/6/62/%E7%83%9F%E7%83%9F%E7%BD%97.jpg","name":"烟烟罗","jpname":"煙々羅","optlistother":[47]},
+{"optgroup":"官方出版物","value":171,"url":"https://upload.thwiki.cc/f/f1/%E5%8D%93%E6%9F%8F%E5%8D%A1%E5%B8%83%E6%8B%89%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"卓柏卡布拉","jpname":"チュパカブラ","optlistother":[47]},
+{"optgroup":"官方出版物","value":172,"url":"https://upload.thwiki.cc/b/b2/%E6%B2%93%E9%A2%8A%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"沓颊","jpname":"沓頬","optlistother":[47]},
+{"optgroup":"官方出版物","value":173,"url":"https://upload.thwiki.cc/b/b2/%E7%A8%BB%E8%8D%B7%E5%A4%A7%E4%BA%BA%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"稻荷大人","jpname":"お稲荷さん","optlistother":[47]},
+{"optgroup":"官方出版物","value":174,"url":"https://upload.thwiki.cc/4/48/%E6%80%A8%E7%81%B5%E5%B0%91%E5%A5%B3%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"怨灵少女","jpname":"怨霊（少女の怨霊）","optlistother":[47]},
+{"optgroup":"官方出版物","value":175,"url":"https://upload.thwiki.cc/1/1b/%E4%BD%91%E4%B8%8A%E5%A4%A9%E4%BA%BA%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"佑天上人","jpname":"祐天上人","optlistother":[47]},
+{"optgroup":"官方出版物","value":176,"url":"https://upload.thwiki.cc/f/f6/%E8%AF%BB%E4%B9%A6%E7%8B%90%E7%8B%B8%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"读书狐狸","jpname":"子狐","optlistother":[47]},
+{"optgroup":"官方出版物","value":177,"url":"https://upload.thwiki.cc/6/69/%E7%99%BD%E4%BB%99%E5%92%8C%E5%B0%9A%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"白仙和尚","jpname":"白仙坊主","optlistother":[47]},
+{"optgroup":"官方出版物","value":178,"url":"https://upload.thwiki.cc/f/fd/%E5%8D%A0%E5%8D%9C%E5%B8%88%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"占卜师（易者）","jpname":"易者","optlistother":[47]},
+{"optgroup":"数量不定群组","value":179,"url":"https://upload.thwiki.cc/6/60/%E6%AF%9B%E7%8E%89.png","name":"毛玉","jpname":"毛玉","optlistother":[6,7,9,10,12,14,15,18,19,21,24]},
+{"optgroup":"数量不定群组","value":180,"url":"https://upload.thwiki.cc/1/19/%E5%A6%96%E7%B2%BE.jpg","name":"妖精（含持花妖精，僵尸妖精）","jpname":"妖精","optlistother":[6,7,9,10,12,14,15,18,19,21,24]},
+{"optgroup":"数量不定群组","value":181,"url":"https://upload.thwiki.cc/8/87/UFO%EF%BC%88%E6%98%9F%E8%8E%B2%E8%88%B9%EF%BC%89.png","name":"UFO","jpname":"UFO","optlistother":[15]},
+{"optgroup":"数量不定群组","value":182,"url":"https://upload.thwiki.cc/2/26/%E6%80%A8%E7%81%B5%EF%BC%88%E5%9C%B0%E7%81%B5%E6%AE%BF%EF%BC%89.png","name":"怨灵","jpname":"怨霊","optlistother":[14,46]},
+{"optgroup":"数量不定群组","value":183,"url":"https://upload.thwiki.cc/b/b6/%E4%BA%BA%E5%81%B6.png","name":"人偶（含上海人偶、哥利亚人偶）","jpname":"人形","optlistother":[7,8,9,13,14,16]},
+{"optgroup":"数量不定群组","value":184,"url":"https://upload.thwiki.cc/0/08/%E4%B8%80%E9%9D%A2%E9%81%93%E4%B8%AD%EF%BC%88%E7%A5%9E%E7%81%B5%E5%BA%99%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"幽灵","jpname":"幽霊","optlistother":[7]},
+{"optgroup":"数量不定群组","value":185,"url":"https://upload.thwiki.cc/f/f9/%E9%98%B4%E9%98%B3%E7%8E%89.png","name":"阴阳玉","jpname":"陰陽玉","optlistother":[6,7,9,10,12,14,15,18,19,21,24]},
+{"optgroup":"数量不定群组","value":186,"url":"https://upload.thwiki.cc/9/9f/%E7%8B%B8%E7%8C%AB%EF%BC%88%E5%BF%83%E7%BB%AE%E6%A5%BC%EF%BC%89.png","name":"狸猫","jpname":"化け狸","optlistother":[20,44,46,47]},
+{"optgroup":"数量不定群组","value":187,"url":"https://upload.thwiki.cc/9/91/%E6%B2%B3%E7%AB%A5%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"河童（含山童）","jpname":"河童（山童）","optlistother":[44,46,47]},
+{"optgroup":"数量不定群组","value":188,"url":"https://upload.thwiki.cc/6/67/%E9%87%8E%E9%93%81%E7%82%AE%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"野铁炮","jpname":"野鉄砲","optlistother":[46]},
+{"optgroup":"数量不定群组","value":189,"url":"https://upload.thwiki.cc/f/f4/%E5%9C%B0%E7%B2%BE%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"地精","jpname":"ホフゴブリン","optlistother":[46]},
+{"optgroup":"数量不定群组","value":190,"url":"https://upload.thwiki.cc/8/86/%E5%BA%A7%E6%95%B7%E7%AB%A5%E5%AD%90%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"座敷童子","jpname":"座敷童子","optlistother":[46]},
+{"optgroup":"数量不定群组","value":191,"url":"https://upload.thwiki.cc/8/82/%E6%97%A0%E5%90%8D%E8%A7%92%E8%89%B2.png","name":"STG作品中没有名称的角色","jpname":"","optlistother":[1,2,4,5]},
+{"optgroup":"音乐CD","value":192,"url":"","name":"酒吧老板","jpname":"バーのマスター","optlistother":[55]},
+{"optgroup":"官方出版物","value":193,"url":"https://upload.thwiki.cc/5/5d/%E9%95%BF%E7%9B%B8%E9%85%B7%E4%BC%BC%E5%91%A8%E6%9D%B0%E4%BC%A6%E7%9A%84%E5%8F%82%E6%8B%9C%E5%AE%A2%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"长相酷似周杰伦的参拜客","jpname":"抗鬱薬おじさん","optlistother":[47]},
+{"optgroup":"官方出版物","value":194,"url":"https://upload.thwiki.cc/6/63/%E7%9B%90%E5%AE%B6%E8%80%81%E6%9D%BF%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"盐家老板","jpname":"塩屋敷の旦那","optlistother":[47]},
+{"optgroup":"官方出版物","value":195,"url":"https://upload.thwiki.cc/2/29/%E9%A9%AC%E5%87%AD%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"马凭","jpname":"馬憑き","optlistother":[47]},
+{"optgroup":"官方出版物","value":196,"url":"https://upload.thwiki.cc/f/f2/%E7%AB%B9%E6%89%AB%E5%B8%9A%E4%BB%98%E4%B8%A7%E7%A5%9E%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"竹扫帚付丧神","jpname":"付喪神の竹箒","optlistother":[47]},
+{"optgroup":"官方出版物","value":197,"url":"https://upload.thwiki.cc/8/82/%E5%A4%A7%E8%80%81%E7%88%B7%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"大老爷","jpname":"大旦那","optlistother":[47]},
+{"optgroup":"官方出版物","value":198,"url":"https://upload.thwiki.cc/3/33/%E6%9D%80%E6%AD%BB%E5%A4%A7%E8%80%81%E7%88%B7%E7%9A%84%E4%BE%8D%E7%AB%A5%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"杀死大老爷的侍童","jpname":"小間使い","optlistother":[47]},
+{"optgroup":"数量不定群组","value":199,"url":"https://upload.thwiki.cc/1/1c/%E5%A6%96%E6%80%AA%E5%85%94%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"妖怪兔","jpname":"妖怪兎","optlistother":[46]},
+{"optgroup":"数量不定群组","value":200,"url":"","name":"酒吧客人","jpname":"バーの客","optlistother":[55]},
+{"optgroup":"官方出版物","value":201,"url":"https://upload.thwiki.cc/5/5f/%E5%AB%A6%E5%A8%A5%EF%BC%88%E5%84%9A%E6%9C%88%E6%8A%84%EF%BC%89.jpg","name":"嫦娥","jpname":"嫦娥","optlistother":[45]},
+{"optgroup":"官方出版物","value":202,"url":"https://upload.thwiki.cc/a/a5/%E5%85%9C%E9%A3%8E%E5%9B%9B%E4%BA%BA%E7%BB%84%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"兜风四人组","jpname":"四人の若者","optlistother":[47]},
+{"optgroup":"官方出版物","value":203,"url":"https://upload.thwiki.cc/1/12/%E5%AF%BC%E8%88%AA%EF%BC%88%E9%93%83%E5%A5%88%E5%BA%B5%EF%BC%89.jpg","name":"导航","jpname":"カーナビ","optlistother":[47]},
+{"optgroup":"东方天空璋","value":204,"url":"https://upload.thwiki.cc/b/ba/%E7%88%B1%E5%A1%94%E5%A6%AE%E7%BC%87%E6%8B%89%E5%B0%94%E7%93%A6%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"爱塔妮缇拉尔瓦","jpname":"エタニティラルバ","optlist":[59],"optlistall":[44]},
+{"optgroup":"东方天空璋","value":205,"url":"https://upload.thwiki.cc/0/08/%E5%9D%82%E7%94%B0%E5%90%88%E6%AC%A2%E4%B9%83%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"坂田合欢乃","jpname":"坂田ネムノ","optlist":[59]},
+{"optgroup":"东方天空璋","value":206,"url":"https://upload.thwiki.cc/e/e2/%E9%AB%98%E4%B8%BD%E9%87%8E%E9%98%BF%E5%90%BD%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"高丽野阿吽","jpname":"高麗野あうん","optlist":[59],"optlistall":[46]},
+{"optgroup":"东方天空璋","value":207,"url":"https://upload.thwiki.cc/8/82/%E7%9F%A2%E7%94%B0%E5%AF%BA%E6%88%90%E7%BE%8E%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"矢田寺成美","jpname":"矢田寺成美","optlist":[59]},
+{"optgroup":"东方天空璋","value":208,"url":"https://upload.thwiki.cc/4/47/%E5%B0%94%E5%AD%90%E7%94%B0%E9%87%8C%E4%B9%83%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"尔子田里乃","jpname":"爾子田里乃","optlist":[59]},
+{"optgroup":"东方天空璋","value":209,"url":"https://upload.thwiki.cc/4/4d/%E4%B8%81%E7%A4%BC%E7%94%B0%E8%88%9E%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"丁礼田舞","jpname":"丁礼田舞","optlist":[59]},
+{"optgroup":"东方天空璋","value":210,"url":"https://upload.thwiki.cc/5/5e/%E6%91%A9%E5%A4%9A%E7%BD%97%E9%9A%90%E5%B2%90%E5%A5%88%EF%BC%88%E5%A4%A9%E7%A9%BA%E7%92%8B%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"摩多罗隐岐奈","jpname":"摩多羅隠岐奈","optlist":[59,63],"optlistall":[44,46]},
+{"optgroup":"官方出版物","value":211,"url":"","name":"百鬼夜行绘卷妖怪（黑鬼）","jpname":"百鬼夜行絵巻妖怪（黒い鬼）","optlistother":[47]},
+{"optgroup":"官方出版物","value":212,"url":"","name":"卖脚婆","jpname":"足売り婆さん","optlistother":[46]},
+{"optgroup":"官方出版物","value":213,"url":"","name":"袈裟罗婆娑罗","jpname":"ケサランパサラン","optlistother":[46]},
+{"optgroup":"官方出版物","value":214,"url":"","name":"饿神","jpname":"ヒダル神","optlistother":[46]},
+{"optgroup":"官方出版物","value":215,"url":"","name":"睡鼠","jpname":"ヤマネ","optlistother":[46]},
+{"optgroup":"东方凭依华","value":216,"url":"https://upload.thwiki.cc/0/02/%E4%BE%9D%E7%A5%9E%E5%A5%B3%E8%8B%91%EF%BC%88%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"依神女苑","jpname":"依神女苑","optlist":[58]},
+{"optgroup":"东方凭依华","value":217,"url":"https://upload.thwiki.cc/0/01/%E4%BE%9D%E7%A5%9E%E7%B4%AB%E8%8B%91%EF%BC%88%E5%87%AD%E4%BE%9D%E5%8D%8E%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"依神紫苑","jpname":"依神紫苑","optlist":[58],"optlistall":[46]},
+{"optgroup":"官方出版物","value":218,"url":"https://upload.thwiki.cc/a/aa/%E5%81%87%E6%89%AE%E9%AD%94%E7%90%86%E6%B2%99%E7%9A%84%E5%A6%96%E7%8B%90_%E6%9C%AC%E4%BD%93%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.jpg","name":"假扮魔理沙的妖狐","jpname":"","optlistother":[46]},
+{"optgroup":"官方出版物","value":219,"url":"https://upload.thwiki.cc/7/70/%E8%8C%A8%E6%9C%A8%E7%AB%A5%E5%AD%90%E4%B9%8B%E8%87%82%EF%BC%88%E8%8C%A8%E6%AD%8C%E4%BB%99%EF%BC%89.png","name":"茨木童子之臂","jpname":"茨木童子の腕","optlist":[46]},
+{"optgroup":"东方鬼形兽","value":220,"url":"https://upload.thwiki.cc/c/cd/%E6%88%8E%E7%92%8E%E8%8A%B1%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"戎璎花","jpname":"戎瓔花","optlist":[64]},
+{"optgroup":"东方鬼形兽","value":221,"url":"https://upload.thwiki.cc/f/f4/%E7%89%9B%E5%B4%8E%E6%B6%A6%E7%BE%8E%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"牛崎润美","jpname":"牛崎潤美","optlist":[64]},
+{"optgroup":"东方鬼形兽","value":222,"url":"https://upload.thwiki.cc/1/12/%E5%BA%AD%E6%B8%A1%E4%B9%85%E4%BE%98%E6%AD%8C%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"庭渡久侘歌","jpname":"庭渡久侘歌","optlist":[64]},
+{"optgroup":"东方鬼形兽","value":223,"url":"https://upload.thwiki.cc/e/ed/%E5%90%89%E5%90%8A%E5%85%AB%E5%8D%83%E6%85%A7%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"吉吊八千慧","jpname":"吉弔八千慧","optlist":[64]},
+{"optgroup":"东方鬼形兽","value":224,"url":"https://upload.thwiki.cc/3/3b/%E6%9D%96%E5%88%80%E5%81%B6%E7%A3%A8%E5%BC%93%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"杖刀偶磨弓","jpname":"杖刀偶磨弓","optlist":[64]},
+{"optgroup":"东方鬼形兽","value":225,"url":"https://upload.thwiki.cc/a/ac/%E5%9F%B4%E5%AE%89%E7%A5%9E%E8%A2%BF%E5%A7%AC%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"埴安神袿姬","jpname":"埴安神袿姫","optlist":[64]},
+{"optgroup":"东方鬼形兽","value":226,"url":"https://upload.thwiki.cc/c/c4/%E9%AA%8A%E9%A9%B9%E6%97%A9%E9%AC%BC%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%E7%AB%8B%E7%BB%98%EF%BC%89.png","name":"骊驹早鬼","jpname":"驪駒早鬼","optlist":[64]},
+{"optgroup":"数量不定群组","value":227,"url":"https://upload.thwiki.cc/b/b1/%E5%8A%A8%E7%89%A9%E7%81%B5%EF%BC%88%E9%AC%BC%E5%BD%A2%E5%85%BD%EF%BC%89.png","name":"动物灵（含野狼、水獭、大鹫）","jpname":"動物霊","optlistother":[64]},
+{"optgroup":"官方出版物","value":228,"url":"https://upload.thwiki.cc/1/18/%E5%A5%A5%E9%87%8E%E7%94%B0%E7%BE%8E%E5%AE%B5%EF%BC%88%E9%86%89%E8%9D%B6%E5%8D%8E%EF%BC%89.jpg","name":"奥野田美宵","jpname":"奥野田美宵","optlist":[67]},
+{"optgroup":"官方出版物","value":229,"url":"","name":"反狱王","jpname":"","optlistother":[66]} ];
+		var type = "chara";
+		var footable;
+	</script>
+</head>
+
+<body>
+		<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">导航条</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="." class="navbar-brand">东方Project人气投票</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="https://touhou.vote/v9/?m=chara">角色部分</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">本届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v9/?m=chara">角色部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=music">音乐部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=work">作品部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=cp">组合部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=game">游戏部分</a></li>
+							<li><a href="https://touhou.vote/v9/?m=paper">问卷部分</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">往届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v9/../v8" target="_blank">第八回</a></li>
+							<li><a href="https://touhou.vote/v9/../v7" target="_blank">第七回</a></li>
+							<li><a href="https://touhou.vote/v9/../v6" target="_blank">第六回</a></li>
+							<li><a href="https://touhou.vote/v9/../v5" target="_blank">第五回</a></li>
+							<li><a href="https://touhou.vote/v9/../v4" target="_blank">第四回</a></li>
+							<li><a href="https://touhou.vote/v9/../v3" target="_blank">第三回</a></li>
+							<li><a href="https://touhou.vote/v9/../v2" target="_blank">第二回</a></li>
+							<li><a href="https://touhou.vote/v9/../v1" target="_blank">第一回</a></li>
+						</ul>
+					</li>
+					<li><a href="https://thwiki.cc" target="_blank">THBWiki主站</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>	<!-- Header -->
+	<div class="jumbotron bitlower">
+	
+		<div class="container">
+			<h2>角色投票演进对比</h2>
+			<h1>角色部分</h1>
+		</div>
+	
+	</div>
+	<!-- Content -->
+	<div class="container">
+	
+		<div class="callout callout-info">
+			<h4>总体投票情况</h4>
+			<ul>
+				<li>
+					本页面为单独角色投票的演进对比页面。
+				</li>
+				<li>
+					总有效票数<b>11351</b>，
+					总本命票数<b>11004</b>，
+					参投角色总数<b>229</b>。
+				</li>
+				<li>
+					请在下方下拉框中选择您要对比的角色，最多可选择10个。
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div id="maininfo-div" class="block-div">
+				<h3>选择角色</h3>
+				<table class="footable-details table">
+					<tbody>
+						<tr>
+							<td colspan="2" style="display: table-cell;">
+								<div class="callout callout-info">
+									<h4>使用说明</h4>
+									<ul>
+										<li>
+											<b>注意：该功能尚在测试中，如果出现BUG属于正常情况。</b>
+										</li>
+										<li>
+											通过下方的下拉框选择角色，该下拉框为多选框，如果需要删除角色请选中并按Del或BackSpace键，或者点击标签上的×。
+										</li>
+										<li>
+											可以通过打字的方式搜索角色。
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+	  							<div class="col-xs-8">
+									<select
+										tabindex="-1"
+										id="item-box"
+										class="chara itemselect" 
+										name="item-box[]" 
+										placeholder="请选择角色" 
+										title="可以通过搜索的方式选择"
+									>
+									<span class="help-block">选择主条件，该问卷问题将作为图表的主体元素。</span>
+	  							</div>
+							</td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr>
+							<td>
+								<div id="alert-success" class="alert alert-success" role="alert">载入完毕...</div>
+								<div id="alert-info" class="alert alert-info" role="alert">载入中...请耐心等候</div>
+								<div id="alert-warning" class="alert alert-warning" role="alert">提交的列表无法获取到数据</div>
+								<div id="alert-danger" class="alert alert-danger" role="alert">载入失败</div>
+								<button type="button" id="button" class="btn btn-primary" value="提交图表生成请求" class="bt-blue">提交图表生成请求</button>
+							</td>
+							<td style="display: none;"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="progress-div" class="block-div">
+				<h3>投票演进</h3>
+				<table class="table footable" id="progressTab" data-show-toggle="false" data-expand-all="true" data-show-header="false">
+					<thead class="footable-header">
+						<tr>
+							<th>票数演进变化</th>
+							<th style="display: none;">图表说明</th>
+							<th style="display: none;">图表</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="footable-detail-row clickable-row" id="progressHeader" data-toggle="progress">
+							<td>投票期间：2020-12-18 18:00:00 至 2020-12-31 23:59:59</td>
+							<td style="display: none;"></td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr class="footable-detail-row" id="progressTr">
+							<td colspan="3">
+								<table class="footable-details table">
+									<tbody>
+										<tr>
+											<td style="display: table-cell;">
+												<div class="callout callout-info">
+													<h4>说明</h4>
+													<ul>
+														<li>
+															该图表表示该角色随着投票进程的票数变化情况。
+														</li>
+														<li>
+															其中减少的票数是因为投票人修改自己的投票去掉该角色而导致的。
+														</li>
+														<li>
+															通过拖动底部和右侧的滑柄或在图表上缩放（鼠标或手指）可以筛选数据范围，也可以点击顶部的图例开关某个数据的显示。
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><b>总票数演进</b></td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><div class="chart-div" id="progress-chart-1"></div></td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><b>总本命票数演进</b></td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><div class="chart-div" id="progress-chart-2"></div></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<br />
+			<a href="https://touhou.vote/v9/?m=chara" id="button" value="返回角色部门目录" class="bt-blue">返回角色部门目录</a>
+						
+			<h5></h5>
+			<span id="bottom">THBWiki - <a href="https://touhou.vote/v9/" title="东方Project人气投票">东方Project人气投票</a></span>
+		</div>
+				<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2e5ba8781d699fe45b54547f88ffeec5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	</div>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<script src="https://touhou.vote/v9/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://touhou.vote/v9/js/ie10-viewport-bug-workaround.js"></script>
+	
+	<script src="https://touhou.vote/v9/js/footable.js"></script>
+	<script src="https://touhou.vote/v9/js/echarts.js"></script>
+	<script src="https://touhou.vote/v9/js/selectize.js"></script>
+	
+	<script src="https://touhou.vote/v9/js/progress.js?v=20191023"></script>
+</body>
+</html>

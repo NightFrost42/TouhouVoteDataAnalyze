@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2073.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2073.php",
+    "retrieved_at": "2026-08-15T09:54:46+00:00",
+    "http_status": 200,
+    "bytes": 4567,
+    "sha256": "85326f6ad81b483a0daff327964de8eaf075d2e17dfc564e4a9e7caf5e31ba57",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2073",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：禁じざるをえない遊戯 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "禁じざるをえない遊戯（256位）",
+      "numbers": [
+        {
+          "raw": "256位",
+          "value": 256,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：99点 ｜ 得票数：98票 ｜ 一押し数：1票 ｜ コメント数：13件 継続投票率：60.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "99点",
+          "value": 99,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "98票",
+          "value": 98,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "13件",
+          "value": 13,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "60.0%",
+          "value": 60.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

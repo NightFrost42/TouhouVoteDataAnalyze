@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1298.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1298.php",
+    "retrieved_at": "2026-08-15T09:54:28+00:00",
+    "http_status": 200,
+    "bytes": 4138,
+    "sha256": "edfce6eb7a71f036a021cfa41f8c12437bbc2e19b60c6aec14cf0f6dd0385be6",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1298",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：ミッドナイトスペルカード - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "ミッドナイトスペルカード（311位）",
+      "numbers": [
+        {
+          "raw": "311位",
+          "value": 311,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：56点 ｜ 得票数：54票 ｜ 一押し数：2票 ｜ コメント数：5件 継続投票率：44.4%（9名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "56点",
+          "value": 56,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "54票",
+          "value": 54,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "44.4%",
+          "value": 44.4,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "9名",
+          "value": 9,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

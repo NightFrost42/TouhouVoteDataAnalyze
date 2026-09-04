@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1333.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1333.php",
+    "retrieved_at": "2026-08-15T09:54:31+00:00",
+    "http_status": 200,
+    "bytes": 5734,
+    "sha256": "4f4c4fa5e700019e02a3d8f37c0bfc64751443a677f96241a1bc551f36afb420",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1333",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：宇宙巫女現る - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "宇宙巫女現る（241位）",
+      "numbers": [
+        {
+          "raw": "241位",
+          "value": 241,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：119点 ｜ 得票数：113票 ｜ 一押し数：6票 ｜ コメント数：21件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "119点",
+          "value": 119,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "113票",
+          "value": 113,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "21件",
+          "value": 21,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

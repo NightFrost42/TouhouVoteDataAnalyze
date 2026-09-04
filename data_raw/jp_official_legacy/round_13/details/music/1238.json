@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1238.php",
+    "effective_url": "https://toho-vote.info/result13/music/1238.php",
+    "retrieved_at": "2026-08-15T09:55:57+00:00",
+    "http_status": 200,
+    "bytes": 4377,
+    "sha256": "24061cf368e102d2d8bc0ecbbe45e210aa017cb640634986b8370b8633a87481",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1238",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：欲深き霊魂 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "欲深き霊魂（298位）",
+      "numbers": [
+        {
+          "raw": "298位",
+          "value": 298,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：59点 ｜ 得票数：57票 ｜ 一押し数：2票 ｜ コメント数：11件 継続投票率：50.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "59点",
+          "value": 59,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "57票",
+          "value": 57,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "11件",
+          "value": 11,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

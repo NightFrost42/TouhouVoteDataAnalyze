@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1113.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1113.php",
+    "retrieved_at": "2026-08-15T09:54:00+00:00",
+    "http_status": 200,
+    "bytes": 4427,
+    "sha256": "41b35f0e65ed404df0ddf57e1e180dbb20ed46edad9a5f5fedec9777b8c37e0e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1113",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：風の循環 ～ Wind Tour - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "風の循環 ～ Wind Tour（270位）",
+      "numbers": [
+        {
+          "raw": "270位",
+          "value": 270,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：85点 ｜ 得票数：81票 ｜ 一押し数：4票 ｜ コメント数：8件 継続投票率：60.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "85点",
+          "value": 85,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "81票",
+          "value": 81,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8件",
+          "value": 8,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "60.0%",
+          "value": 60.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,10 @@
+query CharacterCovoteConditionalSource(
+  $query: String!
+  $voteStart: DateTimeUtc!
+  $voteYear: Int!
+) {
+  queryCharacterRanking(query: $query, voteStart: $voteStart, voteYear: $voteYear) {
+    global { totalUniqueItems totalFirst totalVotes }
+    entries { name voteCount firstVoteCount }
+  }
+}

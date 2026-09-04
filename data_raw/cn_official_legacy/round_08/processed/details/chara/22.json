@@ -1,0 +1,671 @@
+{
+  "round": 8,
+  "category": "chara",
+  "id": "22",
+  "title": "八云蓝 - 东方Project人气投票 第八回 - THBWiki",
+  "headings": [
+    "角色信息",
+    "八云蓝",
+    "说明",
+    "基本信息",
+    "投票演进",
+    "说明",
+    "投票群体",
+    "说明",
+    "说明"
+  ],
+  "source": "data_raw/cn_official_legacy/round_08/raw/details/chara/22.html",
+  "reason_body_included": false,
+  "tables": [
+    {
+      "index": 0,
+      "heading": "基本信息",
+      "id": "list",
+      "class": "table",
+      "rows": [
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "票数",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "本命票数",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "本命率",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "票数全局占比",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "本命全局占比",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "投票理由",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "220",
+            "number": 220,
+            "percent": null,
+            "numeric_tokens": [
+              220
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "21",
+            "number": 21,
+            "percent": null,
+            "numeric_tokens": [
+              21
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "9.55%",
+            "number": null,
+            "percent": 9.55,
+            "numeric_tokens": [
+              9.55
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "2.7%",
+            "number": null,
+            "percent": 2.7,
+            "numeric_tokens": [
+              2.7
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "0.27%",
+            "number": null,
+            "percent": 0.27,
+            "numeric_tokens": [
+              0.27
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "95个（点击查看详情）",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": [
+              95
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "heading": "投票演进",
+      "id": "progressTab",
+      "class": "table footable",
+      "rows": [
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "投票人数变化",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表说明",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "投票期间：2019-09-30 18:00:00 至 2019-10-15 20:00:00",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": [
+              2019,
+              9,
+              30,
+              18,
+              0,
+              0,
+              2019,
+              10,
+              15,
+              20,
+              0,
+              0
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "index": 2,
+      "heading": "投票演进",
+      "id": "",
+      "class": "footable-details table",
+      "rows": [
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "说明 该图表表示该角色随着投票进程的票数变化情况。 其中减少的票数是因为投票人修改自己的投票去掉该角色而导致的。 通过拖动底部和右侧的滑柄或在图表上缩放（鼠标或手指）可以筛选数据范围，也可以点击顶部的图例开关某个数据的显示。",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "heading": "投票群体",
+      "id": "sexTab",
+      "class": "table footable",
+      "rows": [
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "基本信息",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表说明",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "票数：220 男性票数：183（男性比例：83.18%，占全局男性比例：2.61%） 女性票数：37（女性比例：16.82%，占全局女性比例：2.75%）",
+            "number": null,
+            "percent": 83.18,
+            "numeric_tokens": [
+              220,
+              183,
+              83.18,
+              2.61,
+              37,
+              16.82,
+              2.75
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "index": 4,
+      "heading": "投票群体",
+      "id": "",
+      "class": "footable-details table",
+      "rows": [
+        [
+          {
+            "tag": "td",
+            "colspan": 2,
+            "rowspan": 1,
+            "text": "说明 该图表显示该角色投票群体的年龄与性别等基础信息。 表格可在扇形图和柱形图之间切换显示。点击图表顶部的图例可以隐藏或显示一类数据。 如果出现无记录的人数显示则说明存在极少数问卷信息缺损的情况。",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "点击这里切换图表类型",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 2,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "heading": "说明",
+      "id": "geoTab",
+      "class": "table footable",
+      "rows": [
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "地理信息",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表说明",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "图表",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "票数：220，全局占比：2.7%",
+            "number": null,
+            "percent": 2.7,
+            "numeric_tokens": [
+              220,
+              2.7
+            ]
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "index": 6,
+      "heading": "说明",
+      "id": "",
+      "class": "footable-details table",
+      "rows": [
+        [
+          {
+            "tag": "td",
+            "colspan": 2,
+            "rowspan": 1,
+            "text": "说明 该图表显示该角色投票群体在地理位置上的分布。 点击图表顶部的图例可以隐藏或显示一类数据，其中地区总人数是指的该地区全部参加者数量，当男性与女性票同时开启时，显示的数据是二者之和。 通过拖动左下角的滑柄可以筛选数据范围，缩放则可以放大缩小地图显示。",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 2,
+            "rowspan": 1,
+            "text": "点击这里切换图表类型",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "td",
+            "colspan": 2,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "中国",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "日本",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "亚洲其他地区",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "北美洲",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "南美洲",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "大洋洲",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "欧洲",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "非洲",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ],
+        [
+          {
+            "tag": "th",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "其他",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          },
+          {
+            "tag": "td",
+            "colspan": 1,
+            "rowspan": 1,
+            "text": "",
+            "number": null,
+            "percent": null,
+            "numeric_tokens": []
+          }
+        ]
+      ]
+    }
+  ],
+  "parse_error": ""
+}

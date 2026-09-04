@@ -1,0 +1,198 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result14/music/1268.php",
+    "effective_url": "https://toho-vote.info/result14/music/1268.php",
+    "retrieved_at": "2026-08-15T09:57:43+00:00",
+    "http_status": 200,
+    "bytes": 5597,
+    "sha256": "7eccb5ed22462469e5ce13483ea3c84cf541bc63915e7f0d23bd55af5646af1a",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 14,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1268",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：心綺楼囃子 - 第14回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "心綺楼囃子（203位）",
+      "numbers": [
+        {
+          "raw": "203位",
+          "value": 203,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：194点 ｜ 得票数：185票 ｜ 一押し数：9票 ｜ コメント数：12件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "194点",
+          "value": 194,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "185票",
+          "value": 185,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "12件",
+          "value": 12,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [
+    {
+      "table_index": 0,
+      "context_heading": "同一票としてカウントされたアレンジ別の投票状況",
+      "rows": [
+        {
+          "row_index": 0,
+          "cells": [
+            {
+              "text": "心綺楼囃子（東方心綺楼）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "152",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "152",
+                  "value": 152,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "82.16%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "82.16%",
+                  "value": 82.16,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 1,
+          "cells": [
+            {
+              "text": "心綺楼祭囃子（東方心綺楼）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "22",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "22",
+                  "value": 22,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "11.89%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "11.89%",
+                  "value": 11.89,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row_index": 2,
+          "cells": [
+            {
+              "text": "心綺楼演舞（東方憑依華）",
+              "is_header": true,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": []
+            },
+            {
+              "text": "11",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "11",
+                  "value": 11,
+                  "unit": null,
+                  "kind": "number"
+                }
+              ]
+            },
+            {
+              "text": "5.95%",
+              "is_header": false,
+              "rowspan": 1,
+              "colspan": 1,
+              "numbers": [
+                {
+                  "raw": "5.95%",
+                  "value": 5.95,
+                  "unit": "%",
+                  "kind": "percentage"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

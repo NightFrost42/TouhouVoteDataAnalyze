@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1167.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1167.php",
+    "retrieved_at": "2026-08-15T09:54:08+00:00",
+    "http_status": 200,
+    "bytes": 5218,
+    "sha256": "15b3961037e705bee19979de65306a6580f357ce9b1b1ca728155415c1dca867",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1167",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：地霊達の起床 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "地霊達の起床（260位）",
+      "numbers": [
+        {
+          "raw": "260位",
+          "value": 260,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：97点 ｜ 得票数：97票 ｜ 一押し数：0票 ｜ コメント数：18件 継続投票率：16.7%（6名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "97点",
+          "value": 97,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "97票",
+          "value": 97,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "18件",
+          "value": 18,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "16.7%",
+          "value": 16.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "6名",
+          "value": 6,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

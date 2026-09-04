@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2092.php",
+    "effective_url": "https://toho-vote.info/result13/music/2092.php",
+    "retrieved_at": "2026-08-15T09:56:14+00:00",
+    "http_status": 200,
+    "bytes": 5118,
+    "sha256": "d24a5e0801662e28af7fa858c369825c7f4837ed02fb74013c63cf02acfbe2bc",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2092",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：プラスチックマインド - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "プラスチックマインド（215位）",
+      "numbers": [
+        {
+          "raw": "215位",
+          "value": 215,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：174点 ｜ 得票数：168票 ｜ 一押し数：6票 ｜ コメント数：25件 継続投票率：75.0%（20名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "174点",
+          "value": 174,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "168票",
+          "value": 168,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "25件",
+          "value": 25,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "75.0%",
+          "value": 75.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "20名",
+          "value": 20,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

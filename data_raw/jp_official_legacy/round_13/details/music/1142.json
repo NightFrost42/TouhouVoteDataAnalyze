@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1142.php",
+    "effective_url": "https://toho-vote.info/result13/music/1142.php",
+    "retrieved_at": "2026-08-15T09:55:50+00:00",
+    "http_status": 200,
+    "bytes": 4247,
+    "sha256": "45b831424358cff18fddfd2e6f35403e43b7f239fbbcc80faa19ea4a08dc2a77",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1142",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：踊る水飛沫 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "踊る水飛沫（254位）",
+      "numbers": [
+        {
+          "raw": "254位",
+          "value": 254,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：96点 ｜ 得票数：93票 ｜ 一押し数：3票 ｜ コメント数：10件 継続投票率：41.7%（12名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "96点",
+          "value": 96,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "93票",
+          "value": 93,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "10件",
+          "value": 10,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "41.7%",
+          "value": 41.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "12名",
+          "value": 12,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

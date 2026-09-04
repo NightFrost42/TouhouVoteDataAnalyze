@@ -1,0 +1,525 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-02T14:13:55Z",
+  "ok": true,
+  "verification_complete": true,
+  "scope": "CN1-11 questionnaire trend and entity questionnaire component probes",
+  "rounds": {
+    "1": {
+      "questionnaire_trends": {
+        "status": "official_not_offered",
+        "status_basis": "explicit_metadata+interface_probe",
+        "observed_records": 0,
+        "expected_records": 0,
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_01/raw"
+        ],
+        "markers": [],
+        "action": "none",
+        "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "official_not_offered",
+        "status_basis": "explicit_metadata+interface_probe",
+        "observed_records": 0,
+        "expected_records": 0,
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_01/raw"
+        ],
+        "markers": [],
+        "action": "none",
+        "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "2": {
+      "questionnaire_trends": {
+        "status": "official_not_offered",
+        "status_basis": "explicit_metadata+interface_probe",
+        "observed_records": 0,
+        "expected_records": 0,
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_02/raw"
+        ],
+        "markers": [],
+        "action": "none",
+        "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "official_not_offered",
+        "status_basis": "explicit_metadata+interface_probe",
+        "observed_records": 0,
+        "expected_records": 0,
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_02/raw"
+        ],
+        "markers": [],
+        "action": "none",
+        "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "3": {
+      "questionnaire_trends": {
+        "status": "official_not_offered",
+        "status_basis": "explicit_metadata+interface_probe",
+        "observed_records": 0,
+        "expected_records": 0,
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_03/raw"
+        ],
+        "markers": [],
+        "action": "none",
+        "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "official_not_offered",
+        "status_basis": "explicit_metadata+interface_probe",
+        "observed_records": 0,
+        "expected_records": 0,
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_03/raw"
+        ],
+        "markers": [],
+        "action": "none",
+        "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "4": {
+      "questionnaire_trends": {
+        "status": "official_not_offered",
+        "status_basis": "explicit_metadata+interface_probe",
+        "observed_records": 0,
+        "expected_records": 0,
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_04/raw"
+        ],
+        "markers": [],
+        "action": "none",
+        "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "official_not_offered",
+        "status_basis": "explicit_metadata+interface_probe",
+        "observed_records": 0,
+        "expected_records": 0,
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_04/raw"
+        ],
+        "markers": [],
+        "action": "none",
+        "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "5": {
+      "questionnaire_trends": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 1998,
+        "expected_records": 1998,
+        "observed_by_endpoint": {
+          "votedate": 1998,
+          "votesex": 1998,
+          "votegeo": 1998,
+          "votepaper": 1998
+        },
+        "expected_by_endpoint": {
+          "votedate": 1998,
+          "votesex": 1998,
+          "votegeo": 1998,
+          "votepaper": 1998
+        },
+        "total_observed_records": 7992,
+        "total_expected_records": 7992,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_05/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 1998,
+        "expected_records": 1998,
+        "observed_by_endpoint": {
+          "votedate": 1998,
+          "votesex": 1998,
+          "votegeo": 1998,
+          "votepaper": 1998
+        },
+        "expected_by_endpoint": {
+          "votedate": 1998,
+          "votesex": 1998,
+          "votegeo": 1998,
+          "votepaper": 1998
+        },
+        "total_observed_records": 7992,
+        "total_expected_records": 7992,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_05/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "6": {
+      "questionnaire_trends": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 2082,
+        "expected_records": 2082,
+        "observed_by_endpoint": {
+          "votedate": 2082,
+          "votesex": 2082,
+          "votegeo": 2082,
+          "votepaper": 2082
+        },
+        "expected_by_endpoint": {
+          "votedate": 2082,
+          "votesex": 2082,
+          "votegeo": 2082,
+          "votepaper": 2082
+        },
+        "total_observed_records": 8328,
+        "total_expected_records": 8328,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_06/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 2082,
+        "expected_records": 2082,
+        "observed_by_endpoint": {
+          "votedate": 2082,
+          "votesex": 2082,
+          "votegeo": 2082,
+          "votepaper": 2082
+        },
+        "expected_by_endpoint": {
+          "votedate": 2082,
+          "votesex": 2082,
+          "votegeo": 2082,
+          "votepaper": 2082
+        },
+        "total_observed_records": 8328,
+        "total_expected_records": 8328,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_06/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "7": {
+      "questionnaire_trends": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 2054,
+        "expected_records": 2054,
+        "observed_by_endpoint": {
+          "votedate": 2054,
+          "votesex": 2054,
+          "votegeo": 2054,
+          "votepaper": 2054
+        },
+        "expected_by_endpoint": {
+          "votedate": 2054,
+          "votesex": 2054,
+          "votegeo": 2054,
+          "votepaper": 2054
+        },
+        "total_observed_records": 8216,
+        "total_expected_records": 8216,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_07/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 2054,
+        "expected_records": 2054,
+        "observed_by_endpoint": {
+          "votedate": 2054,
+          "votesex": 2054,
+          "votegeo": 2054,
+          "votepaper": 2054
+        },
+        "expected_by_endpoint": {
+          "votedate": 2054,
+          "votesex": 2054,
+          "votegeo": 2054,
+          "votepaper": 2054
+        },
+        "total_observed_records": 8216,
+        "total_expected_records": 8216,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_07/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "8": {
+      "questionnaire_trends": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 2037,
+        "expected_records": 2037,
+        "observed_by_endpoint": {
+          "votedate": 2037,
+          "votesex": 2037,
+          "votegeo": 2037,
+          "votepaper": 2037
+        },
+        "expected_by_endpoint": {
+          "votedate": 2037,
+          "votesex": 2037,
+          "votegeo": 2037,
+          "votepaper": 2037
+        },
+        "total_observed_records": 8148,
+        "total_expected_records": 8148,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_08/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 2037,
+        "expected_records": 2037,
+        "observed_by_endpoint": {
+          "votedate": 2037,
+          "votesex": 2037,
+          "votegeo": 2037,
+          "votepaper": 2037
+        },
+        "expected_by_endpoint": {
+          "votedate": 2037,
+          "votesex": 2037,
+          "votegeo": 2037,
+          "votepaper": 2037
+        },
+        "total_observed_records": 8148,
+        "total_expected_records": 8148,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_08/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "9": {
+      "questionnaire_trends": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 2263,
+        "expected_records": 2263,
+        "observed_by_endpoint": {
+          "votedate": 2263,
+          "votesex": 2263,
+          "votegeo": 2263,
+          "votepaper": 2263
+        },
+        "expected_by_endpoint": {
+          "votedate": 2263,
+          "votesex": 2263,
+          "votegeo": 2263,
+          "votepaper": 2263
+        },
+        "total_observed_records": 9052,
+        "total_expected_records": 9052,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_09/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "questionnaire_trends"
+      },
+      "entity_questionnaire_details": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 2263,
+        "expected_records": 2263,
+        "observed_by_endpoint": {
+          "votedate": 2263,
+          "votesex": 2263,
+          "votegeo": 2263,
+          "votepaper": 2263
+        },
+        "expected_by_endpoint": {
+          "votedate": 2263,
+          "votesex": 2263,
+          "votegeo": 2263,
+          "votepaper": 2263
+        },
+        "total_observed_records": 9052,
+        "total_expected_records": 9052,
+        "invalid_files": [],
+        "evidence": [
+          "metadata/cn_official_legacy_coverage.json",
+          "data_raw/cn_official_legacy/round_09/raw/api/items"
+        ],
+        "action": "none",
+        "refetch_plan": [],
+        "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。",
+        "component": "entity_questionnaire_details"
+      }
+    },
+    "10": {
+      "entity_questionnaire_details": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 834,
+        "expected_records": 834,
+        "valid_records": 834,
+        "invalid_records": [],
+        "fetch_failed": 0,
+        "evidence": [
+          "metadata/cn_modern_coverage.json",
+          "metadata/cn_official_normalization_report.json",
+          "metadata/cn_modern_entity_questionnaire_coverage.json",
+          "data_raw/cn_official/round_10/static"
+        ],
+        "action": "none",
+        "note": "每个角色/曲目实体的 queryQuestionnaire 过滤快照均存在且可解析。",
+        "marker_files": [],
+        "aggregate_operation_files": [
+          "data_raw/cn_official/round_10/static/assets/Questionnaire.vue_vue_type_script_setup_true_lang-2fa7606f.js",
+          "data_raw/cn_official/round_10/static/assets/Questionnaire.vue_vue_type_script_setup_true_lang-2fa7606f.js.map",
+          "data_raw/cn_official/round_10/static/assets/QuestionnaireDetail-18ee9de7.js",
+          "data_raw/cn_official/round_10/static/assets/QuestionnaireDetail-18ee9de7.js.map",
+          "data_raw/cn_official/round_10/static/assets/QuestionnaireInputDetail-a879cb80.js",
+          "data_raw/cn_official/round_10/static/assets/QuestionnaireInputDetail-a879cb80.js.map"
+        ],
+        "coverage_complete": false
+      }
+    },
+    "11": {
+      "entity_questionnaire_details": {
+        "status": "available_crawled",
+        "status_basis": "offline_raw_verification",
+        "observed_records": 856,
+        "expected_records": 856,
+        "valid_records": 856,
+        "invalid_records": [],
+        "fetch_failed": 0,
+        "evidence": [
+          "metadata/cn_modern_coverage.json",
+          "metadata/cn_official_normalization_report.json",
+          "metadata/cn_modern_entity_questionnaire_coverage.json",
+          "data_raw/cn_official/round_11/static"
+        ],
+        "action": "none",
+        "note": "每个角色/曲目实体的 queryQuestionnaire 过滤快照均存在且可解析。",
+        "marker_files": [],
+        "aggregate_operation_files": [
+          "data_raw/cn_official/round_11/static/assets/Questionnaire.vue_vue_type_script_setup_true_lang-49f6f247.js",
+          "data_raw/cn_official/round_11/static/assets/Questionnaire.vue_vue_type_script_setup_true_lang-49f6f247.js.map",
+          "data_raw/cn_official/round_11/static/assets/QuestionnaireDetail-3e0c9466.js",
+          "data_raw/cn_official/round_11/static/assets/QuestionnaireDetail-3e0c9466.js.map",
+          "data_raw/cn_official/round_11/static/assets/QuestionnaireInputDetail-3f819ef5.js",
+          "data_raw/cn_official/round_11/static/assets/QuestionnaireInputDetail-3f819ef5.js.map"
+        ],
+        "coverage_complete": false
+      }
+    }
+  },
+  "pending": [],
+  "refetch_plan": [],
+  "input_snapshots": [
+    {
+      "path": "metadata/cn_modern_coverage.json",
+      "bytes": 7425,
+      "modified_time_ns": 1786820240063386900,
+      "sha256": "77ab54943812a0136476de4db75d1c0e0423cefe7a3e142ae63ce8dc12220fc9"
+    },
+    {
+      "path": "metadata/cn_modern_entity_questionnaire_coverage.json",
+      "bytes": 875440,
+      "modified_time_ns": 1788358433885438900,
+      "sha256": "581adc051ae442ea8b7257d022c115380cb61a9b1a60195c3259d20baa3bd177"
+    },
+    {
+      "path": "metadata/cn_official_legacy_coverage.json",
+      "bytes": 93736,
+      "modified_time_ns": 1787735706120956800,
+      "sha256": "c6089404a2ac517b26e5713e3c0d00e82a274f13e5c878bcd16f771bdfccd02f"
+    },
+    {
+      "path": "metadata/cn_official_legacy_validation.json",
+      "bytes": 867,
+      "modified_time_ns": 1787735799963318700,
+      "sha256": "826c3874899fc58fc7c6521d763ccf24f29cb637a674fc149d34b1bfae983314"
+    },
+    {
+      "path": "metadata/cn_official_normalization_report.json",
+      "bytes": 4519,
+      "modified_time_ns": 1788358412808532400,
+      "sha256": "cf5a077fce1dae56f7bb64c534a4deda17b527025ef54e334984e08845c7fd89"
+    }
+  ],
+  "notes": [
+    "本产物只验证稳定本地快照，不发起网络请求。",
+    "refetch_plan 由现有断点抓取阶段消费；验证阶段不会删除或覆盖 raw/cache/checkpoint。"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-02T14:13:32Z",
+  "normalizer": "scripts_pipeline/normalize_cn_official.py",
+  "rounds": [
+    {
+      "round": 10,
+      "available": true,
+      "questions": 111,
+      "options": 390,
+      "categorical_questions": 74,
+      "condition_files": 390,
+      "condition_files_expected": 390,
+      "conditions_complete": true,
+      "single_question_sum_mismatches": [],
+      "covote": {
+        "character": {
+          "observed_pairs": 28441,
+          "expected_pairs": 28441,
+          "complete": true
+        },
+        "music": {
+          "observed_pairs": 176715,
+          "expected_pairs": 176715,
+          "complete": true
+        }
+      }
+    },
+    {
+      "round": 11,
+      "available": true,
+      "questions": 112,
+      "options": 406,
+      "categorical_questions": 73,
+      "condition_files": 406,
+      "condition_files_expected": 406,
+      "conditions_complete": true,
+      "single_question_sum_mismatches": [],
+      "covote": {
+        "character": {
+          "observed_pairs": 29646,
+          "expected_pairs": 29646,
+          "complete": true
+        },
+        "music": {
+          "observed_pairs": 186966,
+          "expected_pairs": 186966,
+          "complete": true
+        }
+      }
+    }
+  ],
+  "row_counts": {
+    "ballot_counts.csv": 14,
+    "questionnaire_questions.csv": 223,
+    "questionnaire_options.csv": 796,
+    "questionnaire_completion.csv": 16,
+    "doujin_rankings.csv": 20,
+    "questionnaire_long.csv": 790,
+    "open_text_answers.csv.gz": 107964,
+    "questionnaire_trends.csv.gz": 62817,
+    "condition_option_summary.csv": 796,
+    "condition_rankings.csv.gz": 665341,
+    "covote_metrics.csv.gz": 421768,
+    "rankings.csv": 3073
+  },
+  "outputs": [
+    {
+      "path": "data_processed/cn_official/ballot_counts.csv",
+      "bytes": 246,
+      "sha256": "1f27dce8e5c660a2136b453ab043bb9f47b5939470226cc6dd18c527c4c6ad6d"
+    },
+    {
+      "path": "data_processed/cn_official/condition_option_summary.csv",
+      "bytes": 153904,
+      "sha256": "565bdbdbbab0733b65504ee438cc9b83fb396e1e5c4afcd44c6c2fdf965c98ad"
+    },
+    {
+      "path": "data_processed/cn_official/condition_rankings.csv.gz",
+      "bytes": 13094793,
+      "sha256": "9900041e9ad08e012fd171176fd68a6943ffec71c82ab2a20a0bc7792d4593c5"
+    },
+    {
+      "path": "data_processed/cn_official/covote_metrics.csv.gz",
+      "bytes": 25450912,
+      "sha256": "b332daa9a4529a78604719629a3a56d960f4087619dc8748cc809f473ea93b87"
+    },
+    {
+      "path": "data_processed/cn_official/doujin_rankings.csv",
+      "bytes": 3819,
+      "sha256": "76890b188783682c82df630d1b0aab9af9e5f7fecbf74c12ba254eae178c3b7d"
+    },
+    {
+      "path": "data_processed/cn_official/open_text_answers.csv.gz",
+      "bytes": 2048173,
+      "sha256": "a4c44e1257cf6820377723a66889ababd4d22da086191d35e983c974b6e871fa"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_completion.csv",
+      "bytes": 646,
+      "sha256": "4fb0eb6c98c93819307ab1d73138862e076ea695c0431dd1a556a63235f5fa8c"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_long.csv",
+      "bytes": 193054,
+      "sha256": "0eaefb6a9f2742199f1db97275aa96443fc27fbf1cec5e0fbb7a72c59c8f3c8e"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_options.csv",
+      "bytes": 88154,
+      "sha256": "ddead3befc56e2759197e1975f33b55c54aedcdfc2390e3faf5d70d9c4882a59"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_questions.csv",
+      "bytes": 34982,
+      "sha256": "6b97cf5a3f6481d3356e257d1083c40a39426dcc4eabfcbb9d1fe4da2bd8688c"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_trends.csv.gz",
+      "bytes": 184188,
+      "sha256": "f8186fc5906207cf23b6d139ec76b763698a54686e33b44cd17c86f76004a192"
+    },
+    {
+      "path": "data_processed/cn_official/rankings.csv",
+      "bytes": 746468,
+      "sha256": "b300ccbcdc5a2cb81e661298b75ce7421be7f98b6dd00498b9c7e8abc1b8ab6e"
+    }
+  ],
+  "metric_definitions": {
+    "cell_convention": "official API: 0=selected, 1=not selected; m00=intersection, m11=neither",
+    "count_a": "m00 + m10",
+    "count_b": "m00 + m01",
+    "count_ab": "m00",
+    "lift": "m00 * N / (count_a * count_b)",
+    "jaccard": "m00 / (m00 + m01 + m10)",
+    "pmi": "ln(lift)",
+    "npmi": "pmi / -ln(m00 / N)"
+  },
+  "complete": true
+}

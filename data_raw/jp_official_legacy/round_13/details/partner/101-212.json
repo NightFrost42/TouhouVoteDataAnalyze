@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/101-212.php",
+    "effective_url": "https://toho-vote.info/result13/partner/101-212.php",
+    "retrieved_at": "2026-08-15T09:56:26+00:00",
+    "http_status": 200,
+    "bytes": 9271,
+    "sha256": "6ff6d8596143eeecf23e04d546b5ad24e549b8fa13c322b8311489393c92847f",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "101-212",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 霊夢とアリス・マーガトロイド - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 霊夢とアリス・マーガトロイド（51位）",
+      "numbers": [
+        {
+          "raw": "51位",
+          "value": 51,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：598点 ｜ 得票数：465票 ｜ 一押し数：133票 ｜ コメント数：83件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "598点",
+          "value": 598,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "465票",
+          "value": 465,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "133票",
+          "value": 133,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "83件",
+          "value": 83,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

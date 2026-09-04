@@ -1,0 +1,74 @@
+{
+  "round": 11,
+  "category": "character",
+  "sourceItems": 244,
+  "sourceCheckpoints": 244,
+  "expectedPairs": 29646,
+  "observedPairs": 29646,
+  "universe": 13283,
+  "cellConvention": {
+    "m00": "both selected (intersection)",
+    "m01": "a not selected, b selected",
+    "m10": "a selected, b not selected",
+    "m11": "neither selected"
+  },
+  "allMarginalAndUniverseIdentitiesPassed": true,
+  "allConditionalSymmetryChecksPassed": true,
+  "symmetryPairsChecked": 29646,
+  "identitySamples": [
+    {
+      "a": "雾雨魔理沙",
+      "b": "博丽灵梦",
+      "m00": 2838,
+      "m01": 1987,
+      "m10": 1833,
+      "m11": 6625,
+      "pairIndex": 0,
+      "countAFromCells": 4671,
+      "countAOfficialRanking": 4671,
+      "countBFromCells": 4825,
+      "countBOfficialRanking": 4825,
+      "universeFromCells": 13283,
+      "universeOfficial": 13283,
+      "reverseConditionalIntersection": 2838
+    },
+    {
+      "a": "大鲶鱼",
+      "b": "苏我屠自古",
+      "m00": 0,
+      "m01": 89,
+      "m10": 12,
+      "m11": 13182,
+      "pairIndex": 14823,
+      "countAFromCells": 12,
+      "countAOfficialRanking": 12,
+      "countBFromCells": 89,
+      "countBOfficialRanking": 89,
+      "universeFromCells": 13283,
+      "universeOfficial": 13283,
+      "reverseConditionalIntersection": 0
+    },
+    {
+      "a": "火雷神",
+      "b": "兜风四人组",
+      "m00": 0,
+      "m01": 0,
+      "m10": 0,
+      "m11": 13283,
+      "pairIndex": 29645,
+      "countAFromCells": 0,
+      "countAOfficialRanking": 0,
+      "countBFromCells": 0,
+      "countBOfficialRanking": 0,
+      "universeFromCells": 13283,
+      "universeOfficial": 13283,
+      "reverseConditionalIntersection": 0
+    }
+  ],
+  "directTopKCrosscheck": {
+    "available": true,
+    "topK": 10,
+    "pairsChecked": 45,
+    "mismatches": []
+  }
+}

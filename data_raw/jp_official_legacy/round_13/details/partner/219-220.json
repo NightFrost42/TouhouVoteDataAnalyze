@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/219-220.php",
+    "effective_url": "https://toho-vote.info/result13/partner/219-220.php",
+    "retrieved_at": "2026-08-15T09:56:33+00:00",
+    "http_status": 200,
+    "bytes": 7662,
+    "sha256": "82732b2c44abc462d40123f6bfd4c7e935a899ab82a6e98ec3b19150bcce65e2",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "219-220",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：八雲 藍と八雲 紫 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "八雲 藍と八雲 紫（46位）",
+      "numbers": [
+        {
+          "raw": "46位",
+          "value": 46,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：683点 ｜ 得票数：591票 ｜ 一押し数：92票 ｜ コメント数：64件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "683点",
+          "value": 683,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "591票",
+          "value": 591,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "92票",
+          "value": 92,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "64件",
+          "value": 64,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

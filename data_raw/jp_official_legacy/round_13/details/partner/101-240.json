@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/101-240.php",
+    "effective_url": "https://toho-vote.info/result13/partner/101-240.php",
+    "retrieved_at": "2026-08-15T09:56:27+00:00",
+    "http_status": 200,
+    "bytes": 14017,
+    "sha256": "d83247658e6f78cfc8c696c964b3e1f0043aee6878c71c1b312d746e4a72491f",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "101-240",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 霊夢と東風谷 早苗 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 霊夢と東風谷 早苗（27位）",
+      "numbers": [
+        {
+          "raw": "27位",
+          "value": 27,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1223点 ｜ 得票数：987票 ｜ 一押し数：236票 ｜ コメント数：154件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1223点",
+          "value": 1223,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "987票",
+          "value": 987,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "236票",
+          "value": 236,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "154件",
+          "value": 154,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

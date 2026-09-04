@@ -1,0 +1,489 @@
+<!DOCTYPEhtml>
+<html lang="zh">
+<head>
+	<title>问卷统计结果 - 东方Project人气投票 第四回 - THBWiki</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="问卷统计结果" />
+
+	<link href="https://touhou.vote/v4/style/result/site.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		body {
+			background-image: url(./style/result/image/content_bg.jpg);
+		}
+		.pchart {
+			display:none;
+		}
+		.wikitable3 {
+		  margin-left: 65px;
+		  margin-top: 20px;
+		  border: 0px #696969 solid !important;
+		  border-collapse: collapse !important;
+		  font-size: 95% !important;
+		  display:none;
+		}
+	</style>
+	<!-- 加载jQuery类库 -->
+	<script src="https://touhou.vote/v4/js/jquery-latest.min.js"></script>
+	<link href="https://touhou.vote/v4/style/result/table.css" rel="stylesheet" type="text/css" />
+	<script src="https://touhou.vote/v4/js/highcharts.src.js" type="text/javascript"></script>
+	<script src="https://touhou.vote/v4/js/paper.js" type="text/javascript"></script>
+</head>
+
+<body id="site_vote_form" class="site">
+	<div id="bar"></div>
+
+	<div id="wrap" class="clearfix">
+		<div id="header" style="left: 0px; top: 0px">
+			<div id="logo"><a href="./">第四回东方Project人气投票</a></div>
+		</div>
+
+		<div id="content">
+			<div id="content_header">
+			<h1>调查问卷</h1>
+
+			<p style="font-size:95%">天朝第四回东方Project人气投票活动结果发布中</p>
+		</div>
+
+<div id="vote_form">
+	<div id="form">
+
+		<fieldset id="fieldset_explain">
+			<legend>结果说明</legend>
+
+			<table>
+			<tr>
+				<td>
+				<p class="step0p"><br /></p>
+				<p class="step1p">本页面为人气投票问卷结果统计页，<a href='./'><b>点击这里返回首页</b></a>。</p>
+				<p class="step1p">总有效问卷数6040。</p>
+				
+				<!--<p class="step1p"><b>包含性别信息的图表仍在制作中，请稍后。</b></p>	-->
+				</td>
+			</tr>
+			</table>
+
+		</fieldset>
+		<fieldset id="fieldset_member">
+		<br />
+			<legend>投票群相关</legend>
+			
+			<h2 id="vote_member">投票群相关</h2>
+			
+			<table class='wikitable2' id='stable'><tr><th colspan='2'><b>1.1. 您的性别</b></th></tr>
+<tr><td>男性：</td><td>4607票，占76.27%</td></tr>
+<tr><td>女性：</td><td>1433票，占23.73%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>1.2. 您的年龄阶段</b></th></tr>
+<tr><td>未满10岁：</td><td>9票，占0.15%</td></tr>
+<tr><td>10-14岁：</td><td>411票，占6.8%</td></tr>
+<tr><td>15-19岁：</td><td>3356票，占55.56%</td></tr>
+<tr><td>20-24岁：</td><td>1923票，占31.84%</td></tr>
+<tr><td>25-29岁：</td><td>300票，占4.97%</td></tr>
+<tr><td>30-40岁：</td><td>37票，占0.61%</td></tr>
+<tr><td>40岁以上：</td><td>4票，占0.07%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>1.3. 您的受教育程度</b></th></tr>
+<tr><td>小学及以下：</td><td>38票，占0.63%</td></tr>
+<tr><td>初中：</td><td>713票，占11.8%</td></tr>
+<tr><td>高中：</td><td>2224票，占36.82%</td></tr>
+<tr><td>大学及以上：</td><td>2964票，占49.07%</td></tr>
+<tr><td>其他：</td><td>101票，占1.67%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>1.4. 您正式接触东方Project多久</b></th></tr>
+<tr><td>不到一个月：</td><td>28票，占0.46%</td></tr>
+<tr><td>半年以内：</td><td>307票，占5.08%</td></tr>
+<tr><td>半年到一年（2014年下半年之后）：</td><td>953票，占15.78%</td></tr>
+<tr><td>一年到三年（2012年之后）：</td><td>2483票，占41.11%</td></tr>
+<tr><td>三年到五年（2010年之后）：</td><td>1532票，占25.36%</td></tr>
+<tr><td>五年到七年（2008年之后）：</td><td>597票，占9.88%</td></tr>
+<tr><td>七年到十年（2005年之后）：</td><td>120票，占1.99%</td></tr>
+<tr><td>十年以上：</td><td>20票，占0.33%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>1.5. 您的居住地是</b></th></tr>
+<tr><td colspan='2'><div class='click' onclick="chartshow('stable3');">+ 数据</div></td></tr><table class='wikitable3' id='stable3'><tr><td>广东：</td><td>841票，占13.92%</td></tr><tr><td>上海：</td><td>499票，占8.26%</td></tr><tr><td>江苏：</td><td>440票，占7.28%</td></tr><tr><td>北京：</td><td>416票，占6.89%</td></tr><tr><td>浙江：</td><td>405票，占6.71%</td></tr><tr><td>四川：</td><td>348票，占5.76%</td></tr><tr><td>福建：</td><td>268票，占4.44%</td></tr><tr><td>湖北：</td><td>264票，占4.37%</td></tr><tr><td>山东：</td><td>254票，占4.21%</td></tr><tr><td>广西：</td><td>229票，占3.79%</td></tr><tr><td>安徽：</td><td>156票，占2.58%</td></tr><tr><td>河南：</td><td>153票，占2.53%</td></tr><tr><td>辽宁：</td><td>153票，占2.53%</td></tr><tr><td>湖南：</td><td>151票，占2.5%</td></tr><tr><td>江西：</td><td>134票，占2.22%</td></tr><tr><td>天津：</td><td>129票，占2.14%</td></tr><tr><td>重庆：</td><td>124票，占2.05%</td></tr><tr><td>河北：</td><td>118票，占1.95%</td></tr><tr><td>黑龙：</td><td>116票，占1.92%</td></tr><tr><td>北美：</td><td>106票，占1.75%</td></tr><tr><td>陕西：</td><td>104票，占1.72%</td></tr><tr><td>吉林：</td><td>65票，占1.08%</td></tr><tr><td>台湾：</td><td>63票，占1.04%</td></tr><tr><td>山西：</td><td>60票，占0.99%</td></tr><tr><td>云南：</td><td>56票，占0.93%</td></tr><tr><td>香港：</td><td>55票，占0.91%</td></tr><tr><td>贵州：</td><td>53票，占0.88%</td></tr><tr><td>内蒙：</td><td>41票，占0.68%</td></tr><tr><td>海南：</td><td>40票，占0.66%</td></tr><tr><td>欧洲：</td><td>29票，占0.48%</td></tr><tr><td>澳洲：</td><td>25票，占0.41%</td></tr><tr><td>新疆：</td><td>25票，占0.41%</td></tr><tr><td>甘肃：</td><td>23票，占0.38%</td></tr><tr><td>日本：</td><td>23票，占0.38%</td></tr><tr><td>其他：</td><td>23票，占0.38%</td></tr><tr><td>亚洲：</td><td>21票，占0.35%</td></tr><tr><td>宁夏：</td><td>14票，占0.23%</td></tr><tr><td>非洲：</td><td>5票，占0.08%</td></tr><tr><td>澳门：</td><td>4票，占0.07%</td></tr><tr><td>青海：</td><td>4票，占0.07%</td></tr><tr><td>南美：</td><td>3票，占0.05%</td></tr><tr><td>西藏：</td><td>0票，占0%</td></tr><table class='wikitable2' id='stable'><tr><th colspan='2'><b>1.6. 您的工作类型是</b></th></tr>
+<tr><td>在校学生：</td><td>5015票，占83.03%</td></tr>
+<tr><td>固定工作者：</td><td>640票，占10.6%</td></tr>
+<tr><td>自由职业者：</td><td>152票，占2.52%</td></tr>
+<tr><td>待业/无业/失业：</td><td>133票，占2.2%</td></tr>
+<tr><td>其他：</td><td>100票，占1.66%</td></tr>
+</table>			
+		</fieldset>
+		<fieldset id="fieldset_original">
+		<br />
+			<legend>原作相关调查</legend>
+			
+			<h2 id="vote_original">原作相关调查</h2>
+			
+			<table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.1. 您是否玩过旧五作</b></th></tr>
+<tr><td>玩过：</td><td>2062票，占34.14%</td></tr>
+<tr><td>并未玩过：</td><td>3919票，占64.88%</td></tr>
+<tr><td>不知道旧五作是什么：</td><td>59票，占0.98%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.2. 您更喜欢官方游戏中的哪一类</b></th></tr>
+<tr><td>STG（射击类）：</td><td>2411票，占39.92%</td></tr>
+<tr><td>FTG（格斗类）：</td><td>1049票，占17.37%</td></tr>
+<tr><td>都喜欢：</td><td>2414票，占39.97%</td></tr>
+<tr><td>对原作游戏不感兴趣：</td><td>166票，占2.75%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.3. 您是否玩过最新作 东方绀珠传</b></th></tr>
+<tr><td>玩过：</td><td>3981票，占65.91%</td></tr>
+<tr><td>未玩过：</td><td>2039票，占33.76%</td></tr>
+<tr><td>不知道是什么：</td><td>20票，占0.33%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.4. 您是否玩过 东方深秘录</b></th></tr>
+<tr><td>玩过：</td><td>3255票，占53.89%</td></tr>
+<tr><td>未玩过：</td><td>2732票，占45.23%</td></tr>
+<tr><td>不知道是什么：</td><td>53票，占0.88%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.5. 您是否关注官方漫画 东方铃奈庵</b></th></tr>
+<tr><td>十分关注：</td><td>2189票，占36.24%</td></tr>
+<tr><td>偶尔会看：</td><td>2954票，占48.91%</td></tr>
+<tr><td>不感兴趣：</td><td>650票，占10.76%</td></tr>
+<tr><td>没听说过：</td><td>247票，占4.09%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.6. 您是否关注官方漫画 东方茨歌仙</b></th></tr>
+<tr><td>十分关注：</td><td>2146票，占35.53%</td></tr>
+<tr><td>偶尔会看：</td><td>2932票，占48.54%</td></tr>
+<tr><td>不感兴趣：</td><td>741票，占12.27%</td></tr>
+<tr><td>没听说过：</td><td>221票，占3.66%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.7. 您最喜欢东方原作的哪方面（多选）</b></th></tr>
+<tr><td>游戏本身：</td><td>3670票，占60.76%</td></tr>
+<tr><td>音乐曲目：</td><td>5403票，占89.45%</td></tr>
+<tr><td>人物设定：</td><td>5344票，占88.48%</td></tr>
+<tr><td>故事剧情：</td><td>3993票，占66.11%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.8. 购买过正版的实体原作吗（官方游戏，官方CD，官方出版物）</b></th></tr>
+<tr><td>热衷于收集：</td><td>281票，占4.65%</td></tr>
+<tr><td>购买过：</td><td>1333票，占22.07%</td></tr>
+<tr><td>想买但是没有条件：</td><td>3652票，占60.46%</td></tr>
+<tr><td>没有考虑过：</td><td>774票，占12.81%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.81. 购买实体正版的渠道是（多选）</b></th></tr>
+<tr><td>通过代购：</td><td>1191票，占 2.8 选择 热衷于收集 , 购买过 的投票人中的 73.79%</td></tr>
+<tr><td>购买二手：</td><td>229票，占 2.8 选择 热衷于收集 , 购买过 的投票人中的 14.19%</td></tr>
+<tr><td>委托朋友：</td><td>373票，占 2.8 选择 热衷于收集 , 购买过 的投票人中的 23.11%</td></tr>
+<tr><td>实地购买：</td><td>410票，占 2.8 选择 热衷于收集 , 购买过 的投票人中的 25.4%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.82. 因何原因阻碍了购买（多选）</b></th></tr>
+<tr><td>价格过高：</td><td>806票，占 2.8 选择 想买但是没有条件 的投票人中的 22.07%</td></tr>
+<tr><td>缺少渠道：</td><td>2631票，占 2.8 选择 想买但是没有条件 的投票人中的 72.04%</td></tr>
+<tr><td>环境阻碍：</td><td>1375票，占 2.8 选择 想买但是没有条件 的投票人中的 37.65%</td></tr>
+<tr><td>不懂日文：</td><td>1842票，占 2.8 选择 想买但是没有条件 的投票人中的 50.44%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.821. 您的购买力范围是（原作单个作品的购买价，含运费）</b></th></tr>
+<tr><td>没有自主购买能力：</td><td>158票，占 2.82 选择 价格过高 的投票人中的 19.6%</td></tr>
+<tr><td>总价50RMB以内：</td><td>110票，占 2.82 选择 价格过高 的投票人中的 13.65%</td></tr>
+<tr><td>总价100RMB以内：</td><td>297票，占 2.82 选择 价格过高 的投票人中的 36.85%</td></tr>
+<tr><td>总价150RMB以内：</td><td>140票，占 2.82 选择 价格过高 的投票人中的 17.37%</td></tr>
+<tr><td>总价200RMB以内：</td><td>72票，占 2.82 选择 价格过高 的投票人中的 8.93%</td></tr>
+<tr><td>总价300RMB以内：</td><td>28票，占 2.82 选择 价格过高 的投票人中的 3.47%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.822. 因为什么原因您没有使用代购作为您的购买渠道</b></th></tr>
+<tr><td>认为代购加价过高：</td><td>533票，占 2.82 选择 缺少渠道 的投票人中的 20.26%</td></tr>
+<tr><td>没有或无法使用网银：</td><td>1132票，占 2.82 选择 缺少渠道 的投票人中的 43.03%</td></tr>
+<tr><td>不知道存在这样的代购：</td><td>856票，占 2.82 选择 缺少渠道 的投票人中的 32.54%</td></tr>
+<tr><td>身居海外难以使用以大陆为主的代购：</td><td>110票，占 2.82 选择 缺少渠道 的投票人中的 4.18%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.823. 环境中存在什么样的购买原作的阻碍（多选）</b></th></tr>
+<tr><td>家人或朋友的反对：</td><td>596票，占 2.82 选择 环境阻碍 的投票人中的 43.35%</td></tr>
+<tr><td>居所没有放置空间：</td><td>235票，占 2.82 选择 环境阻碍 的投票人中的 17.09%</td></tr>
+<tr><td>其他方面的障碍：</td><td>881票，占 2.82 选择 环境阻碍 的投票人中的 64.07%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.9. 是否会购买下载版的正版官方游戏</b></th></tr>
+<tr><td>已经购买：</td><td>308票，占5.1%</td></tr>
+<tr><td>考虑购买：</td><td>4232票，占70.07%</td></tr>
+<tr><td>不会购买：</td><td>1500票，占24.83%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.10. 是否会购买最新的官方杂志 东方外来韦编</b></th></tr>
+<tr><td>已经购买：</td><td>434票，占7.19%</td></tr>
+<tr><td>考虑购买：</td><td>3571票，占59.12%</td></tr>
+<tr><td>不会购买：</td><td>1304票，占21.59%</td></tr>
+<tr><td>不知道是什么：</td><td>731票，占12.1%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>2.11. 是否购买过盗版的东方官方作品</b></th></tr>
+<tr><td>已经购买（并且知道它是盗版）：</td><td>684票，占11.32%</td></tr>
+<tr><td>已经购买（但不知道那是盗版）：</td><td>724票，占11.99%</td></tr>
+<tr><td>没有购买：</td><td>3287票，占54.42%</td></tr>
+<tr><td>没有购买并且对其感到厌恶：</td><td>1345票，占22.27%</td></tr>
+</table>			
+		</fieldset>
+		<fieldset id="fieldset_doujin">
+		<br />
+			<legend>二次同人相关</legend>
+
+			<h2 id="vote_doujin">二次同人相关</h2>				
+
+			<table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.0. 对二次同人是否有兴趣</b></th></tr>
+<tr><td>非常热衷：</td><td>3830票，占63.41%</td></tr>
+<tr><td>有些兴趣：</td><td>2155票，占35.68%</td></tr>
+<tr><td>完全不感兴趣：</td><td>55票，占0.91%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.1. 在二次同人中您最关注（多选）</b></th></tr>
+<tr><td>音乐：</td><td>4797票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 80.15%</td></tr>
+<tr><td>漫画：</td><td>4036票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 67.44%</td></tr>
+<tr><td>游戏：</td><td>3258票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 54.44%</td></tr>
+<tr><td>绘画：</td><td>3423票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 57.19%</td></tr>
+<tr><td>视频：</td><td>3485票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 58.23%</td></tr>
+<tr><td>小说：</td><td>1728票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 28.87%</td></tr>
+<tr><td>实物：</td><td>1421票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 23.74%</td></tr>
+<tr><td>其他：</td><td>711票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 11.88%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.2. 购买过二次同人作品吗（非国内作品）</b></th></tr>
+<tr><td>热衷于购买：</td><td>538票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 8.99%</td></tr>
+<tr><td>购买过：</td><td>1691票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 28.25%</td></tr>
+<tr><td>想买但是没有条件：</td><td>2405票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 40.18%</td></tr>
+<tr><td>没有考虑过：</td><td>1351票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 22.57%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.21. 购买过什么类型的二次创作（非国内作品）（多选）</b></th></tr>
+<tr><td>音乐类：</td><td>1218票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 54.64%</td></tr>
+<tr><td>漫画类：</td><td>1215票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 54.51%</td></tr>
+<tr><td>插画类：</td><td>928票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 41.63%</td></tr>
+<tr><td>小说类：</td><td>294票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 13.19%</td></tr>
+<tr><td>视频类：</td><td>221票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 9.91%</td></tr>
+<tr><td>软件类：</td><td>244票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 10.95%</td></tr>
+<tr><td>实物类：</td><td>759票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 34.05%</td></tr>
+<tr><td>其他：</td><td>133票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 5.97%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.22. 购买二次创作的渠道一般是（非国内作品）（多选）</b></th></tr>
+<tr><td>通过代购：</td><td>1514票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 67.92%</td></tr>
+<tr><td>购买二手：</td><td>335票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 15.03%</td></tr>
+<tr><td>委托朋友：</td><td>555票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 24.9%</td></tr>
+<tr><td>实地购买：</td><td>698票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 31.31%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.23. 能接受的单个作品购买价（包括运费）上限是（非国内作品）</b></th></tr>
+<tr><td>总价50RMB以内：</td><td>127票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 5.7%</td></tr>
+<tr><td>总价100RMB以内：</td><td>396票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 17.77%</td></tr>
+<tr><td>总价150RMB以内：</td><td>388票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 17.41%</td></tr>
+<tr><td>总价200RMB以内：</td><td>457票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 20.5%</td></tr>
+<tr><td>总价300RMB以内：</td><td>326票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 14.63%</td></tr>
+<tr><td>总价500RMB以内：</td><td>265票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 11.89%</td></tr>
+<tr><td>总价500RMB以上：</td><td>270票，占 3.2 选择 热衷于购买 , 购买过 的投票人中的 12.11%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.24. 因何原因阻碍了购买（非国内作品）（多选）</b></th></tr>
+<tr><td>价格过高：</td><td>660票，占 3.2 选择 想买但是没有条件 的投票人中的 27.44%</td></tr>
+<tr><td>缺少渠道：</td><td>1626票，占 3.2 选择 想买但是没有条件 的投票人中的 67.61%</td></tr>
+<tr><td>环境阻碍：</td><td>775票，占 3.2 选择 想买但是没有条件 的投票人中的 32.22%</td></tr>
+<tr><td>不懂日文（或其他外语）：</td><td>1055票，占 3.2 选择 想买但是没有条件 的投票人中的 43.87%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.241. 您的购买力范围是（单个作品的购买价，含运费）（非国内作品）</b></th></tr>
+<tr><td>没有自主购买能力：</td><td>121票，占 3.24 选择 价格过高 的投票人中的 18.33%</td></tr>
+<tr><td>总价50RMB以内：</td><td>97票，占 3.24 选择 价格过高 的投票人中的 14.7%</td></tr>
+<tr><td>总价100RMB以内：</td><td>241票，占 3.24 选择 价格过高 的投票人中的 36.52%</td></tr>
+<tr><td>总价150RMB以内：</td><td>76票，占 3.24 选择 价格过高 的投票人中的 11.52%</td></tr>
+<tr><td>总价200RMB以内：</td><td>68票，占 3.24 选择 价格过高 的投票人中的 10.3%</td></tr>
+<tr><td>总价300RMB以内：</td><td>36票，占 3.24 选择 价格过高 的投票人中的 5.45%</td></tr>
+<tr><td>总价500RMB以内：</td><td>20票，占 3.24 选择 价格过高 的投票人中的 3.03%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.242. 因为什么原因您没有使用代购作为您的购买渠道（非国内作品）</b></th></tr>
+<tr><td>认为代购加价过高：</td><td>310票，占 3.24 选择 缺少渠道 的投票人中的 19.07%</td></tr>
+<tr><td>没有或无法使用网银：</td><td>735票，占 3.24 选择 缺少渠道 的投票人中的 45.2%</td></tr>
+<tr><td>不知道存在这样的代购：</td><td>515票，占 3.24 选择 缺少渠道 的投票人中的 31.67%</td></tr>
+<tr><td>身居海外难以使用以大陆为主的代购：</td><td>66票，占 3.24 选择 缺少渠道 的投票人中的 4.06%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.243. 环境中存在什么样的购买二次同人作品的阻碍（非国内作品）（多选）</b></th></tr>
+<tr><td>家人或朋友的反对：</td><td>393票，占 3.24 选择 环境阻碍 的投票人中的 50.71%</td></tr>
+<tr><td>居所没有放置空间：</td><td>166票，占 3.24 选择 环境阻碍 的投票人中的 21.42%</td></tr>
+<tr><td>其他方面的障碍：</td><td>474票，占 3.24 选择 环境阻碍 的投票人中的 61.16%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.3. 购买过国内创作的二次同人作品吗</b></th></tr>
+<tr><td>热衷于购买：</td><td>694票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 11.6%</td></tr>
+<tr><td>购买过：</td><td>2378票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 39.73%</td></tr>
+<tr><td>想买但是没有条件：</td><td>1372票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 22.92%</td></tr>
+<tr><td>没有考虑过：</td><td>1541票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 25.75%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.31. 购买过什么类型的二次创作（国内作品）（多选）</b></th></tr>
+<tr><td>音乐类：</td><td>1257票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 40.92%</td></tr>
+<tr><td>漫画类：</td><td>1833票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 59.67%</td></tr>
+<tr><td>插画类：</td><td>1619票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 52.7%</td></tr>
+<tr><td>小说类：</td><td>591票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 19.24%</td></tr>
+<tr><td>视频类：</td><td>535票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 17.42%</td></tr>
+<tr><td>软件类：</td><td>279票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 9.08%</td></tr>
+<tr><td>实物类：</td><td>1039票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 33.82%</td></tr>
+<tr><td>其他：</td><td>240票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 7.81%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.32. 购买二次创作的渠道一般是（国内作品）（多选）</b></th></tr>
+<tr><td>展会购买：</td><td>2036票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 66.28%</td></tr>
+<tr><td>网络通贩：</td><td>2114票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 68.82%</td></tr>
+<tr><td>他人转手：</td><td>260票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 8.46%</td></tr>
+<tr><td>其他形式：</td><td>264票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 8.59%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.33. 能接受的单个作品购买价上限是（国内作品）</b></th></tr>
+<tr><td>40RMB以内：</td><td>77票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 2.51%</td></tr>
+<tr><td>50RMB以内：</td><td>217票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 7.06%</td></tr>
+<tr><td>100RMB以内：</td><td>1014票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 33.01%</td></tr>
+<tr><td>150RMB以内：</td><td>573票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 18.65%</td></tr>
+<tr><td>200RMB以内：</td><td>582票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 18.95%</td></tr>
+<tr><td>300RMB以内：</td><td>366票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 11.91%</td></tr>
+<tr><td>300RMB以上：</td><td>243票，占 3.3 选择 热衷于购买 , 购买过 的投票人中的 7.91%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.34. 因何原因阻碍了购买（国内作品）（多选）</b></th></tr>
+<tr><td>价格过高：</td><td>273票，占 3.3 选择 想买但是没有条件 的投票人中的 19.9%</td></tr>
+<tr><td>渠道不便：</td><td>841票，占 3.3 选择 想买但是没有条件 的投票人中的 61.3%</td></tr>
+<tr><td>环境阻碍：</td><td>605票，占 3.3 选择 想买但是没有条件 的投票人中的 44.1%</td></tr>
+<tr><td>没喜欢的：</td><td>188票，占 3.3 选择 想买但是没有条件 的投票人中的 13.7%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.341. 您的购买力范围是（单个作品的购买价，含运费）（国内作品）</b></th></tr>
+<tr><td>没有自主购买能力：</td><td>81票，占 3.34 选择 价格过高 的投票人中的 29.67%</td></tr>
+<tr><td>总价50RMB以内：</td><td>61票，占 3.34 选择 价格过高 的投票人中的 22.34%</td></tr>
+<tr><td>总价100RMB以内：</td><td>86票，占 3.34 选择 价格过高 的投票人中的 31.5%</td></tr>
+<tr><td>总价150RMB以内：</td><td>20票，占 3.34 选择 价格过高 的投票人中的 7.33%</td></tr>
+<tr><td>总价200RMB以内：</td><td>16票，占 3.34 选择 价格过高 的投票人中的 5.86%</td></tr>
+<tr><td>总价300RMB以内：</td><td>5票，占 3.34 选择 价格过高 的投票人中的 1.83%</td></tr>
+<tr><td>总价500RMB以内：</td><td>3票，占 3.34 选择 价格过高 的投票人中的 1.1%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.342. 环境中存在什么样的购买二次同人作品的阻碍（国内作品）（多选）</b></th></tr>
+<tr><td>家人或朋友的反对：</td><td>284票，占 3.34 选择 环境阻碍 的投票人中的 46.94%</td></tr>
+<tr><td>居所没有放置空间：</td><td>132票，占 3.34 选择 环境阻碍 的投票人中的 21.82%</td></tr>
+<tr><td>其他方面的障碍：</td><td>353票，占 3.34 选择 环境阻碍 的投票人中的 58.35%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.4. 有想过做东方的同人创作吗</b></th></tr>
+<tr><td>已经做过或正在做：</td><td>1298票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 21.69%</td></tr>
+<tr><td>想过还没有实际做过：</td><td>2732票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 45.65%</td></tr>
+<tr><td>没有想过：</td><td>1955票，占 3.0 选择 非常热衷 , 有些兴趣 的投票人中的 32.66%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.41. 想做或者做过什么类型的创作（多选）</b></th></tr>
+<tr><td>音乐类：</td><td>1027票，占 3.4 选择 已经做过或正在做 , 想过还没有实际做过 的投票人中的 25.48%</td></tr>
+<tr><td>漫画类：</td><td>1140票，占 3.4 选择 已经做过或正在做 , 想过还没有实际做过 的投票人中的 28.29%</td></tr>
+<tr><td>插画类：</td><td>1357票，占 3.4 选择 已经做过或正在做 , 想过还没有实际做过 的投票人中的 33.67%</td></tr>
+<tr><td>小说类：</td><td>1419票，占 3.4 选择 已经做过或正在做 , 想过还没有实际做过 的投票人中的 35.21%</td></tr>
+<tr><td>视频类：</td><td>1094票，占 3.4 选择 已经做过或正在做 , 想过还没有实际做过 的投票人中的 27.15%</td></tr>
+<tr><td>软件类：</td><td>852票，占 3.4 选择 已经做过或正在做 , 想过还没有实际做过 的投票人中的 21.14%</td></tr>
+<tr><td>实物类：</td><td>260票，占 3.4 选择 已经做过或正在做 , 想过还没有实际做过 的投票人中的 6.45%</td></tr>
+<tr><td>其他：</td><td>394票，占 3.4 选择 已经做过或正在做 , 想过还没有实际做过 的投票人中的 9.78%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.42. 因何原因阻碍了创作的实行（多选）</b></th></tr>
+<tr><td>没有时间：</td><td>1756票，占 3.4 选择 想过还没有实际做过 的投票人中的 64.28%</td></tr>
+<tr><td>技术不够：</td><td>2144票，占 3.4 选择 想过还没有实际做过 的投票人中的 78.48%</td></tr>
+<tr><td>环境阻碍：</td><td>396票，占 3.4 选择 想过还没有实际做过 的投票人中的 14.49%</td></tr>
+<tr><td>资金不足：</td><td>386票，占 3.4 选择 想过还没有实际做过 的投票人中的 14.13%</td></tr>
+<tr><td>缺乏人脉：</td><td>482票，占 3.4 选择 想过还没有实际做过 的投票人中的 17.64%</td></tr>
+<tr><td>自身惰性：</td><td>1209票，占 3.4 选择 想过还没有实际做过 的投票人中的 44.25%</td></tr>
+<tr><td>兴趣转移：</td><td>75票，占 3.4 选择 想过还没有实际做过 的投票人中的 2.75%</td></tr>
+<tr><td>其他原因：</td><td>182票，占 3.4 选择 想过还没有实际做过 的投票人中的 6.66%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.43. 是否还在继续进行着东方的同人创作</b></th></tr>
+<tr><td>是：</td><td>1130票，占 3.4 选择 已经做过或正在做 的投票人中的 87.06%</td></tr>
+<tr><td>否：</td><td>168票，占 3.4 选择 已经做过或正在做 的投票人中的 12.94%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.431. 在创作过程中遇到过什么样的困难（多选）</b></th></tr>
+<tr><td>需要从其他事情上分时间与精力：</td><td>797票，占 3.4 选择 已经做过或正在做 的投票人中的 61.4%</td></tr>
+<tr><td>资金十分紧张或缺乏：</td><td>97票，占 3.4 选择 已经做过或正在做 的投票人中的 7.47%</td></tr>
+<tr><td>发展人脉的过程非常艰难：</td><td>177票，占 3.4 选择 已经做过或正在做 的投票人中的 13.64%</td></tr>
+<tr><td>感到到自身水平或技术不足：</td><td>918票，占 3.4 选择 已经做过或正在做 的投票人中的 70.72%</td></tr>
+<tr><td>没有人关注或支持：</td><td>285票，占 3.4 选择 已经做过或正在做 的投票人中的 21.96%</td></tr>
+<tr><td>难以维持自己的动力：</td><td>292票，占 3.4 选择 已经做过或正在做 的投票人中的 22.5%</td></tr>
+<tr><td>缺少发布或交流的渠道与平台：</td><td>137票，占 3.4 选择 已经做过或正在做 的投票人中的 10.55%</td></tr>
+<tr><td>周边氛围对创作非常不友好：</td><td>117票，占 3.4 选择 已经做过或正在做 的投票人中的 9.01%</td></tr>
+<tr><td>其他困难：</td><td>83票，占 3.4 选择 已经做过或正在做 的投票人中的 6.39%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.432. 停止创作的直接原因是（多选）</b></th></tr>
+<tr><td>没有时间：</td><td>114票，占 3.43 选择 否 的投票人中的 67.86%</td></tr>
+<tr><td>环境阻碍：</td><td>28票，占 3.43 选择 否 的投票人中的 16.67%</td></tr>
+<tr><td>缺乏条件：</td><td>26票，占 3.43 选择 否 的投票人中的 15.48%</td></tr>
+<tr><td>兴趣转移：</td><td>42票，占 3.43 选择 否 的投票人中的 25%</td></tr>
+<tr><td>想要休息：</td><td>26票，占 3.43 选择 否 的投票人中的 15.48%</td></tr>
+<tr><td>缺乏创意：</td><td>56票，占 3.43 选择 否 的投票人中的 33.33%</td></tr>
+<tr><td>其他原因：</td><td>19票，占 3.43 选择 否 的投票人中的 11.31%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.5. 原作和二次同人您更热衷于</b></th></tr>
+<tr><td>原作：</td><td>1257票，占20.81%</td></tr>
+<tr><td>二次同人：</td><td>532票，占8.81%</td></tr>
+<tr><td>都很喜欢：</td><td>4249票，占70.35%</td></tr>
+<tr><td>都没兴趣：</td><td>2票，占0.03%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.6. 是否购买实物型周边（手办抱枕挂链钱包贴纸挂画等类）</b></th></tr>
+<tr><td>有购买：</td><td>3576票，占59.21%</td></tr>
+<tr><td>想买但是没有机会：</td><td>1402票，占23.21%</td></tr>
+<tr><td>没有考虑过：</td><td>1062票，占17.58%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.61. 购买周边的时候是否会介意它是否是盗版或存在盗图情况</b></th></tr>
+<tr><td>非常介意：</td><td>1718票，占 3.6 选择 有购买 , 想买但是没有机会 的投票人中的 34.51%</td></tr>
+<tr><td>略微在意：</td><td>2713票，占 3.6 选择 有购买 , 想买但是没有机会 的投票人中的 54.5%</td></tr>
+<tr><td>完全不在乎：</td><td>176票，占 3.6 选择 有购买 , 想买但是没有机会 的投票人中的 3.54%</td></tr>
+<tr><td>没有想过这个问题：</td><td>371票，占 3.6 选择 有购买 , 想买但是没有机会 的投票人中的 7.45%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>3.7. 是否购买过盗版的东方相关画集</b></th></tr>
+<tr><td>购买过（并且知道是盗版）：</td><td>555票，占9.19%</td></tr>
+<tr><td>购买过（当时以为是正版）：</td><td>807票，占13.36%</td></tr>
+<tr><td>没有购买过（持无所谓态度）：</td><td>1833票，占30.35%</td></tr>
+<tr><td>没有购买过（持抵制态度）：</td><td>2845票，占47.1%</td></tr>
+</table>			
+		</fieldset>
+		<fieldset id="fieldset_diary">
+		<br />
+			<legend>日常相关</legend>
+			
+			<h2 id="vote_diary">日常相关</h2>	
+			
+			<table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.1. 是否参加过东方专门同人展</b></th></tr>
+<tr><td>有：</td><td>1008票，占16.69%</td></tr>
+<tr><td>没有：</td><td>5032票，占83.31%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.11. 过去一年内有没有参加过东方专门同人展</b></th></tr>
+<tr><td>有：</td><td>629票，占 4.1 选择 有 的投票人中的 62.4%</td></tr>
+<tr><td>没有：</td><td>379票，占 4.1 选择 有 的投票人中的 37.6%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.12. 没有参加过展会的原因是</b></th></tr>
+<tr><td>路费太贵：</td><td>1973票，占 4.1 选择 没有 的投票人中的 39.21%</td></tr>
+<tr><td>没有时间：</td><td>4020票，占 4.1 选择 没有 的投票人中的 79.89%</td></tr>
+<tr><td>家里阻拦：</td><td>930票，占 4.1 选择 没有 的投票人中的 18.48%</td></tr>
+<tr><td>不感兴趣：</td><td>477票，占 4.1 选择 没有 的投票人中的 9.48%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.13. 是否只考虑参加本地或附近地区的同人展</b></th></tr>
+<tr><td>仅参加本地或附近地区的：</td><td>4028票，占72.41%</td></tr>
+<tr><td>异地的展会也会去：</td><td>1535票，占27.59%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.2. 浏览东方project主题站点的频率如何</b></th></tr>
+<tr><td>经常：</td><td>3318票，占54.93%</td></tr>
+<tr><td>偶尔：</td><td>2239票，占37.07%</td></tr>
+<tr><td>很少：</td><td>406票，占6.72%</td></tr>
+<tr><td>从不：</td><td>77票，占1.27%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.3. 平日里接触东方信息的渠道是（多选）</b></th></tr>
+<tr><td>论坛贴吧等主题社区：</td><td>5127票，占84.88%</td></tr>
+<tr><td>微博推特类网站：</td><td>2093票，占34.65%</td></tr>
+<tr><td>社交网络（如人人，FB，G+等）：</td><td>914票，占15.13%</td></tr>
+<tr><td>视频网站：</td><td>4120票，占68.21%</td></tr>
+<tr><td>即时通信工具（包括群）：</td><td>2154票，占35.66%</td></tr>
+<tr><td>现实生活：</td><td>907票，占15.02%</td></tr>
+<tr><td>其他途径：</td><td>715票，占11.84%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.4. 是否有在身边发展东方同好的欲望</b></th></tr>
+<tr><td>有：</td><td>3886票，占64.34%</td></tr>
+<tr><td>没有：</td><td>2154票，占35.66%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.41. 是否会主动向周围的人介绍东方Project</b></th></tr>
+<tr><td>会：</td><td>2847票，占 4.4 选择 有 的投票人中的 73.26%</td></tr>
+<tr><td>不会：</td><td>1039票，占 4.4 选择 有 的投票人中的 26.74%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.411. 选择了什么方式去介绍</b></th></tr>
+<tr><td>详细入微的对各方面进行说明：</td><td>715票，占 4.41 选择 会 的投票人中的 25.11%</td></tr>
+<tr><td>通过二次创作吸引对方：</td><td>834票，占 4.41 选择 会 的投票人中的 29.29%</td></tr>
+<tr><td>以官方作品来进行介绍：</td><td>643票，占 4.41 选择 会 的投票人中的 22.59%</td></tr>
+<tr><td>给予相关网站或资料任其自由发展：</td><td>262票，占 4.41 选择 会 的投票人中的 9.2%</td></tr>
+<tr><td>仅仅进行了简单的说明：</td><td>393票，占 4.41 选择 会 的投票人中的 13.8%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.412. 介绍的效果如何</b></th></tr>
+<tr><td>对方成为了东方爱好者：</td><td>766票，占 4.41 选择 会 的投票人中的 26.91%</td></tr>
+<tr><td>对方知道了东方但是不感兴趣：</td><td>1745票，占 4.41 选择 会 的投票人中的 61.29%</td></tr>
+<tr><td>对方没能明白东方是什么：</td><td>250票，占 4.41 选择 会 的投票人中的 8.78%</td></tr>
+<tr><td>对方不愿意听你的介绍：</td><td>76票，占 4.41 选择 会 的投票人中的 2.67%</td></tr>
+<tr><td>对方对东方产生了反感：</td><td>10票，占 4.41 选择 会 的投票人中的 0.35%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.42. 是否会在日常中主动展示东方相关的东西</b></th></tr>
+<tr><td>经常：</td><td>1455票，占24.09%</td></tr>
+<tr><td>偶尔：</td><td>3657票，占60.55%</td></tr>
+<tr><td>从不：</td><td>928票，占15.36%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.43. 是否会刻意隐藏自己东方爱好者的身份</b></th></tr>
+<tr><td>是：</td><td>424票，占 4.4 选择 没有 的投票人中的 19.68%</td></tr>
+<tr><td>否：</td><td>1730票，占 4.4 选择 没有 的投票人中的 80.32%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.5. 对于「东方厨」这个词汇的认知是</b></th></tr>
+<tr><td>贬义词：</td><td>1841票，占30.48%</td></tr>
+<tr><td>中性词：</td><td>3734票，占61.82%</td></tr>
+<tr><td>褒义词：</td><td>465票，占7.7%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.51. 您是否自称东方厨</b></th></tr>
+<tr><td>直到现在也仍然这样自称：</td><td>1449票，占23.99%</td></tr>
+<tr><td>过去曾经这样自称过：</td><td>1287票，占21.31%</td></tr>
+<tr><td>从未这样自称过：</td><td>3304票，占54.7%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.6. 对于东方黑（明确厌恶东方的人）您怎么看待</b></th></tr>
+<tr><td>感到厌烦：</td><td>875票，占14.49%</td></tr>
+<tr><td>并不在乎，自己喜欢就好：</td><td>3418票，占56.59%</td></tr>
+<tr><td>是合理性的存在：</td><td>1163票，占19.25%</td></tr>
+<tr><td>没有遇到过这样的人：</td><td>584票，占9.67%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.61. 是否与东方黑发生过冲突</b></th></tr>
+<tr><td>有：</td><td>523票，占 4.6 选择 没有遇到过这样的人之外 的投票人中的 10.51%</td></tr>
+<tr><td>没有：</td><td>4933票，占 4.6 选择 没有遇到过这样的人之外 的投票人中的 99.1%</td></tr>
+</table><table class='wikitable2' id='stable'><tr><th colspan='2'><b>4.7. 接触东方之后您认为您的生活有什么样的变化</b></th></tr>
+<tr><td>变的更加充实了：</td><td>4102票，占67.91%</td></tr>
+<tr><td>没有什么变化：</td><td>1857票，占30.75%</td></tr>
+<tr><td>反而变的不好了：</td><td>81票，占1.34%</td></tr>
+</table>
+			<table class="wikitable2" id='stable'>
+				<tr><th colspan="2"><b><a href="./?v=result&m=paper&s=1">简述如何接触到东方的</a></b></th></tr>
+			</table>
+		</fieldset>
+	
+		<div id="form_footer">	
+			<button class="button" id="btn_sign_up" title="返回首页" type="button" onclick="window.location.href='./'"><span>返回首页</span></button>
+
+			<p>返回首页</p>
+
+		</div>
+	</div>
+		
+</div>
+
+		</div>
+
+		<div id="footer">
+			<p id="copyright">2015 THBWiki, TBSGroup</p>
+			<ul id="footer_menu">
+				<li><a href="https://weibo.com/touhouvote">新浪微博</a></li>
+				<li><a href="mailto:vote@tbsgroup.info">联系组委会</a></li>
+				<li><a href="#">TBSGroup</a></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+	function chartshow(id) {
+		$("#"+id).slideToggle("normal");
+	}
+	</script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2e5ba8781d699fe45b54547f88ffeec5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

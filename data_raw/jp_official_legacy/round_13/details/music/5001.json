@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/5001.php",
+    "effective_url": "https://toho-vote.info/result13/music/5001.php",
+    "retrieved_at": "2026-08-15T09:56:22+00:00",
+    "http_status": 200,
+    "bytes": 3681,
+    "sha256": "d13b1124e2686cbcd480f91258d451fc55ad7f69d8c6bd5ac1ca29dc628f0130",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5001",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：秋霜玉 ～ Clockworks - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "秋霜玉 ～ Clockworks（411位）",
+      "numbers": [
+        {
+          "raw": "411位",
+          "value": 411,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：12点 ｜ 得票数：10票 ｜ 一押し数：2票 ｜ コメント数：1件 継続投票率：50.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "12点",
+          "value": 12,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "10票",
+          "value": 10,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

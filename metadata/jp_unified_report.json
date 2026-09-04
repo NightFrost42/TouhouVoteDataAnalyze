@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-29T14:25:49Z",
+  "scope": "Japanese official rounds 3-22",
+  "name_policy": "official Japanese labels retained; no automatic translation or entity merging",
+  "percentage_policy": "all analysis-ready normalized rate fields are proportions in [0,1]; out-of-domain official raw values remain in explicitly named provenance fields",
+  "published_scope_policy": "detail associations are the official leading lists, not an invented complete pair matrix",
+  "rounds": {
+    "aggregate_questionnaire": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "entity_questionnaire": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "entity_association": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ]
+  },
+  "row_counts": {
+    "aggregate_questionnaire_long.csv.gz": 6774,
+    "entity_questionnaire_long.csv.gz": 353188,
+    "entity_association_long.csv.gz": 296796
+  },
+  "modern_association_duplicate_ordering_rows_collapsed": 55926,
+  "modern_entity_question_official_rate_anomalies": [
+    {
+      "round": 18,
+      "source_category": "character",
+      "source_id": "192",
+      "source_name": "天狗（香霖堂の天狗、大天狗 他）",
+      "question": "intention",
+      "option": "　　うちサークル参加",
+      "count": 2,
+      "official_conditional_rate_raw": 2.0,
+      "conditional_denominator": 1,
+      "source_url": "https://toho-vote.info/assets/192-yjIHOTiK.js"
+    },
+    {
+      "round": 21,
+      "source_category": "music",
+      "source_id": "91",
+      "source_name": "禍機",
+      "question": "intention",
+      "option": "　　うちコスプレ参加",
+      "count": 2,
+      "official_conditional_rate_raw": 2.0,
+      "conditional_denominator": 1,
+      "source_url": "https://toho-vote.info/assets/91-iiXyBwxL.js"
+    }
+  ],
+  "source_generation_counts": {
+    "aggregate_questionnaire": {
+      "legacy_official": 5040,
+      "modern_official": 1734
+    },
+    "entity_questionnaire": {
+      "legacy_official": 125706,
+      "modern_official": 227482
+    },
+    "entity_association": {
+      "legacy_official": 118746,
+      "modern_official": 178050
+    }
+  },
+  "inputs": [
+    {
+      "path": "data_processed/jp_official_legacy/questionnaire_long.csv",
+      "bytes": 3487600,
+      "sha256": "ff4044403e15d6da3ed0ba94add351849dd6f5f362ef0131a1011868d1751abc"
+    },
+    {
+      "path": "data_processed/jp_official_legacy/entity_questionnaire_long.csv",
+      "bytes": 48639072,
+      "sha256": "57f800ed92aed50d0435c6973a4f55ea58d973a8389b8c0e81c1ca15e52fa85a"
+    },
+    {
+      "path": "data_processed/jp_official_legacy/entity_association_long.csv",
+      "bytes": 60893522,
+      "sha256": "78f25de48fcb61e7518a780eb4f21ca8c454106b8b2fb83b90abd84398fb8fd1"
+    },
+    {
+      "path": "data_processed/jp_official_legacy/source_entity_metrics.csv",
+      "bytes": 1475541,
+      "sha256": "c75e57f5cc7489c025c4539a282e7bcd347f61a1690c7c0dc8447705193f7c10"
+    },
+    {
+      "path": "data_processed/jp_official/questionnaire_long.csv",
+      "bytes": 167750,
+      "sha256": "34c2aceeb2c100df4a73041b401093cc2f2bb01798fc171bc330ac37ab2d25d9"
+    },
+    {
+      "path": "data_processed/jp_official/detail_questionnaire_long.csv",
+      "bytes": 46242659,
+      "sha256": "3868659b9bae9b895d94276de50775dcc405e4ea3992a1b1642d51ec343ce1fc"
+    },
+    {
+      "path": "data_processed/jp_official/detail_associations.csv",
+      "bytes": 91272297,
+      "sha256": "302824b19844c8bac25da94a5896ed2a729ec0d9e3a836125d89fd71f2f40956"
+    },
+    {
+      "path": "metadata/jp_official_download_manifest.json",
+      "bytes": 3513082,
+      "sha256": "04fca70da195bcc388f74b9f43ceaae8db3f8879c37c49028322b9a32745ae91"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data_processed/jp_unified/aggregate_questionnaire_long.csv.gz",
+      "bytes": 159526,
+      "sha256": "7771058a4e41842d908cfdef2c6e7360b84921f14956332d62376f316e2956a8",
+      "rows": 6774
+    },
+    {
+      "path": "data_processed/jp_unified/entity_questionnaire_long.csv.gz",
+      "bytes": 12384902,
+      "sha256": "4d242606403450eea633658d25841650e8e03bb80291c72d59649b205cca3303",
+      "rows": 353188
+    },
+    {
+      "path": "data_processed/jp_unified/entity_association_long.csv.gz",
+      "bytes": 14499545,
+      "sha256": "c8d5d868dda07aca64c52221a62d595c64a305f59753816f2b9775ad1a6c0c47",
+      "rows": 296796
+    }
+  ],
+  "validations": {
+    "aggregate_rounds_exactly_3_to_22": true,
+    "entity_question_rounds_cover_all_officially_published_detail_rounds": true,
+    "association_rounds_cover_all_officially_published_detail_rounds": true,
+    "aggregate_rates_within_zero_one": true,
+    "entity_question_rates_within_zero_one": true,
+    "association_rates_within_zero_one": true,
+    "associations_explicitly_marked_as_incomplete_published_lists": true,
+    "all_modern_detail_sources_mapped": true
+  }
+}

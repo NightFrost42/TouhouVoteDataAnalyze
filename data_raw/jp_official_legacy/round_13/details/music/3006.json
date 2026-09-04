@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/3006.php",
+    "effective_url": "https://toho-vote.info/result13/music/3006.php",
+    "retrieved_at": "2026-08-15T09:56:15+00:00",
+    "http_status": 200,
+    "bytes": 4707,
+    "sha256": "5e524ef5580f7339784c875bd5c11551aea0a548f50057fbff419d22fd30d4f8",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3006",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：阿礼の子供 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "阿礼の子供（293位）",
+      "numbers": [
+        {
+          "raw": "293位",
+          "value": 293,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：62点 ｜ 得票数：57票 ｜ 一押し数：5票 ｜ コメント数：8件 継続投票率：33.3%（9名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "62点",
+          "value": 62,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "57票",
+          "value": 57,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8件",
+          "value": 8,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "33.3%",
+          "value": 33.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "9名",
+          "value": 9,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

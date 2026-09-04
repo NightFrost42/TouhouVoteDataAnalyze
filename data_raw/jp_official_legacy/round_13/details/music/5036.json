@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/5036.php",
+    "effective_url": "https://toho-vote.info/result13/music/5036.php",
+    "retrieved_at": "2026-08-15T09:56:24+00:00",
+    "http_status": 200,
+    "bytes": 5213,
+    "sha256": "dbc785ba2b5cc2ec86788f5291eb5ea0c57e7f7295a2dae0fda12072ee705045",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5036",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：キュアリアス上海古牌 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "キュアリアス上海古牌（209位）",
+      "numbers": [
+        {
+          "raw": "209位",
+          "value": 209,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：188点 ｜ 得票数：166票 ｜ 一押し数：22票 ｜ コメント数：21件 継続投票率：42.9%（21名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "188点",
+          "value": 188,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "166票",
+          "value": 166,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "22票",
+          "value": 22,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "21件",
+          "value": 21,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "42.9%",
+          "value": 42.9,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "21名",
+          "value": 21,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2063.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2063.php",
+    "retrieved_at": "2026-08-15T09:54:46+00:00",
+    "http_status": 200,
+    "bytes": 4890,
+    "sha256": "816118f84c2e7c8210ae628446ad1d7f13cd2a18055935ec4978c29c8cc974d2",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2063",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：紅響曲 ～ Scarlet Phoneme - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "紅響曲 ～ Scarlet Phoneme（292位）",
+      "numbers": [
+        {
+          "raw": "292位",
+          "value": 292,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：67点 ｜ 得票数：61票 ｜ 一押し数：6票 ｜ コメント数：10件 継続投票率：80.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "67点",
+          "value": 67,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "61票",
+          "value": 61,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "10件",
+          "value": 10,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "80.0%",
+          "value": 80.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

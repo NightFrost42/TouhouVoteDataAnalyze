@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1234.php",
+    "effective_url": "https://toho-vote.info/result13/music/1234.php",
+    "retrieved_at": "2026-08-15T09:55:57+00:00",
+    "http_status": 200,
+    "bytes": 6028,
+    "sha256": "10acf98305eb87cdd7c2d494eaadd90ba2ecb822eb7c200bf51b345866a5d498",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1234",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：ルーズレイン - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "ルーズレイン（210位）",
+      "numbers": [
+        {
+          "raw": "210位",
+          "value": 210,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：187点 ｜ 得票数：179票 ｜ 一押し数：8票 ｜ コメント数：23件 継続投票率：65.6%（32名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "187点",
+          "value": 187,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "179票",
+          "value": 179,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8票",
+          "value": 8,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "23件",
+          "value": 23,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "65.6%",
+          "value": 65.6,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "32名",
+          "value": 32,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

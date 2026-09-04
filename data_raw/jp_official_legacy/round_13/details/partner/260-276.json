@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/260-276.php",
+    "effective_url": "https://toho-vote.info/result13/partner/260-276.php",
+    "retrieved_at": "2026-08-15T09:56:41+00:00",
+    "http_status": 200,
+    "bytes": 6197,
+    "sha256": "3ce4208f68d8b07cd9ad9da96086a32f517d29a5f9585466adf746a89b4efed6",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "260-276",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：封獣 ぬえと鬼人 正邪 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "封獣 ぬえと鬼人 正邪（64位）",
+      "numbers": [
+        {
+          "raw": "64位",
+          "value": 64,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：387点 ｜ 得票数：319票 ｜ 一押し数：68票 ｜ コメント数：41件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "387点",
+          "value": 387,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "319票",
+          "value": 319,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "68票",
+          "value": 68,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "41件",
+          "value": 41,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

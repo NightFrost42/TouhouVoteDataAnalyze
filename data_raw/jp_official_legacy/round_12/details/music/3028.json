@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/3028.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/3028.php",
+    "retrieved_at": "2026-08-15T09:54:51+00:00",
+    "http_status": 200,
+    "bytes": 4635,
+    "sha256": "7c5ab32b7757b0e44feb17532db3e5a9bd87ae6617716e7607646845a2b6415e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3028",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：綿月のスペルカード ～ Lunatic Blue - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "綿月のスペルカード ～ Lunatic Blue（262位）",
+      "numbers": [
+        {
+          "raw": "262位",
+          "value": 262,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：95点 ｜ 得票数：89票 ｜ 一押し数：6票 ｜ コメント数：12件 継続投票率：57.1%（7名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "95点",
+          "value": 95,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "89票",
+          "value": 89,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "12件",
+          "value": 12,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "57.1%",
+          "value": 57.1,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "7名",
+          "value": 7,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

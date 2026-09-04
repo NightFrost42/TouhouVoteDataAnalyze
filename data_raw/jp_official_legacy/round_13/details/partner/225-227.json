@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/225-227.php",
+    "effective_url": "https://toho-vote.info/result13/partner/225-227.php",
+    "retrieved_at": "2026-08-15T09:56:34+00:00",
+    "http_status": 200,
+    "bytes": 6483,
+    "sha256": "df20bbb437565f62a4b8ad65a87c4e43ad958bfd4651529bb43cdb526a8d309c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "225-227",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：鈴仙・優曇華院・イナバと蓬莱山 輝夜 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "鈴仙・優曇華院・イナバと蓬莱山 輝夜（94位）",
+      "numbers": [
+        {
+          "raw": "94位",
+          "value": 94,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：227点 ｜ 得票数：190票 ｜ 一押し数：37票 ｜ コメント数：33件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "227点",
+          "value": 227,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "190票",
+          "value": 190,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "37票",
+          "value": 37,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "33件",
+          "value": 33,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

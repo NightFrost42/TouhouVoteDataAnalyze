@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1296.php",
+    "effective_url": "https://toho-vote.info/result13/music/1296.php",
+    "retrieved_at": "2026-08-15T09:56:02+00:00",
+    "http_status": 200,
+    "bytes": 5648,
+    "sha256": "c215d1289852c70e213b576d467e4d8f1e242a8c50ff67b2fad0807ad8573a84",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1296",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：不可能弾幕には反則を - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "不可能弾幕には反則を（217位）",
+      "numbers": [
+        {
+          "raw": "217位",
+          "value": 217,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：171点 ｜ 得票数：163票 ｜ 一押し数：8票 ｜ コメント数：19件 継続投票率：38.5%（26名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "171点",
+          "value": 171,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "163票",
+          "value": 163,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8票",
+          "value": 8,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "19件",
+          "value": 19,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "38.5%",
+          "value": 38.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "26名",
+          "value": 26,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

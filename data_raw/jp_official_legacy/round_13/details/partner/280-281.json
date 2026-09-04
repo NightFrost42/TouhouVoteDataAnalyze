@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/280-281.php",
+    "effective_url": "https://toho-vote.info/result13/partner/280-281.php",
+    "retrieved_at": "2026-08-15T09:56:44+00:00",
+    "http_status": 200,
+    "bytes": 16634,
+    "sha256": "b5d3e54c77d13cac30bcb054122acaa166062103cc2043fa8d5b579a247a71cc",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "280-281",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：清蘭と鈴瑚 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "清蘭と鈴瑚（33位）",
+      "numbers": [
+        {
+          "raw": "33位",
+          "value": 33,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：899点 ｜ 得票数：806票 ｜ 一押し数：93票 ｜ コメント数：179件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "899点",
+          "value": 899,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "806票",
+          "value": 806,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "93票",
+          "value": 93,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "179件",
+          "value": 179,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

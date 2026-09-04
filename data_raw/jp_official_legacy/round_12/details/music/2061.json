@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2061.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2061.php",
+    "retrieved_at": "2026-08-15T09:54:45+00:00",
+    "http_status": 200,
+    "bytes": 4351,
+    "sha256": "3c97646320f8d3250d3a17681c243300850b25838e571ceca3bc3ecc6837394c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2061",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：装飾戦 ～ Decoration Battle - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "装飾戦 ～ Decoration Battle（358位）",
+      "numbers": [
+        {
+          "raw": "358位",
+          "value": 358,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：31点 ｜ 得票数：28票 ｜ 一押し数：3票 ｜ コメント数：5件 継続投票率：100.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "31点",
+          "value": 31,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "28票",
+          "value": 28,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

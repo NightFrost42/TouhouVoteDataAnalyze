@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/3017.php",
+    "effective_url": "https://toho-vote.info/result13/music/3017.php",
+    "retrieved_at": "2026-08-15T09:56:16+00:00",
+    "http_status": 200,
+    "bytes": 3731,
+    "sha256": "8ce2f74b16fa067fba61236ddd5f9b69ecfb3a396a57338d25ef2460038ae1fb",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3017",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：神域のかくれんぼ暮らし - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "神域のかくれんぼ暮らし（379位）",
+      "numbers": [
+        {
+          "raw": "379位",
+          "value": 379,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：23点 ｜ 得票数：22票 ｜ 一押し数：1票 ｜ コメント数：2件 継続投票率：40.0%（5名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "23点",
+          "value": 23,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "22票",
+          "value": 22,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "40.0%",
+          "value": 40.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "5名",
+          "value": 5,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

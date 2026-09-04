@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/3010.php",
+    "effective_url": "https://toho-vote.info/result13/music/3010.php",
+    "retrieved_at": "2026-08-15T09:56:16+00:00",
+    "http_status": 200,
+    "bytes": 3943,
+    "sha256": "5d56ad6edfce04a38213752a9ff0847c3402ec3b91bfe2df6e38b07e4b9147fa",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3010",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：妖精燦々として - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "妖精燦々として（357位）",
+      "numbers": [
+        {
+          "raw": "357位",
+          "value": 357,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：32点 ｜ 得票数：30票 ｜ 一押し数：2票 ｜ コメント数：5件 継続投票率：100.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "32点",
+          "value": 32,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "30票",
+          "value": 30,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

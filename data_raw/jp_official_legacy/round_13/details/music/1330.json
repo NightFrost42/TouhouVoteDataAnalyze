@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1330.php",
+    "effective_url": "https://toho-vote.info/result13/music/1330.php",
+    "retrieved_at": "2026-08-15T09:56:03+00:00",
+    "http_status": 200,
+    "bytes": 5798,
+    "sha256": "49e9faa0a1b79044776910d433eb76c7b9073e0011597790bbc8511a127d6ca7",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1330",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：竹林インフレイム - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "竹林インフレイム（205位）",
+      "numbers": [
+        {
+          "raw": "205位",
+          "value": 205,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：193点 ｜ 得票数：187票 ｜ 一押し数：6票 ｜ コメント数：28件 継続投票率：64.0%（25名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "193点",
+          "value": 193,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "187票",
+          "value": 187,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "28件",
+          "value": 28,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "64.0%",
+          "value": 64.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "25名",
+          "value": 25,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

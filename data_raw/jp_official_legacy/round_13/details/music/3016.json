@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/3016.php",
+    "effective_url": "https://toho-vote.info/result13/music/3016.php",
+    "retrieved_at": "2026-08-15T09:56:16+00:00",
+    "http_status": 200,
+    "bytes": 4687,
+    "sha256": "8c0a9bedd6f8a0a21a0562f10b7477492af7ad0fd9b68cd3bd341e362bb041f4",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3016",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：二つの世界 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "二つの世界（332位）",
+      "numbers": [
+        {
+          "raw": "332位",
+          "value": 332,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：44点 ｜ 得票数：40票 ｜ 一押し数：4票 ｜ コメント数：9件 継続投票率：66.7%（9名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "44点",
+          "value": 44,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "40票",
+          "value": 40,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "66.7%",
+          "value": 66.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "9名",
+          "value": 9,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/3015.php",
+    "effective_url": "https://toho-vote.info/result13/music/3015.php",
+    "retrieved_at": "2026-08-15T09:56:16+00:00",
+    "http_status": 200,
+    "bytes": 4393,
+    "sha256": "b8e0626ed27a56dd8b19d02793b3dcf5e0064c716d0358fcca796c7d4e2b8926",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3015",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：フェアリー冒険譚 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "フェアリー冒険譚（342位）",
+      "numbers": [
+        {
+          "raw": "342位",
+          "value": 342,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：40点 ｜ 得票数：37票 ｜ 一押し数：3票 ｜ コメント数：5件 継続投票率：33.3%（6名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "40点",
+          "value": 40,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "37票",
+          "value": 37,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "33.3%",
+          "value": 33.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "6名",
+          "value": 6,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

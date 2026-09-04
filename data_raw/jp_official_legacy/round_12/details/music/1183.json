@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1183.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1183.php",
+    "retrieved_at": "2026-08-15T09:54:11+00:00",
+    "http_status": 200,
+    "bytes": 4668,
+    "sha256": "c2165ad97714f2a72a81a9454148b19ef8b7e0fd905a68f46bb291a475f14fb2",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1183",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：エネルギー黎明 ～ Future Dream... - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "エネルギー黎明 ～ Future Dream...（284位）",
+      "numbers": [
+        {
+          "raw": "284位",
+          "value": 284,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：77点 ｜ 得票数：70票 ｜ 一押し数：7票 ｜ コメント数：9件 継続投票率：100.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "77点",
+          "value": 77,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "70票",
+          "value": 70,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

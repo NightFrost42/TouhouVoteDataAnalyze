@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1038.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1038.php",
+    "retrieved_at": "2026-08-15T09:53:50+00:00",
+    "http_status": 200,
+    "bytes": 4773,
+    "sha256": "2cf68e2459484b80d2ce99b92f7671360b0de3cca0ff2229da3fe10f58bd0414",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1038",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：永夜抄 ～ Eastern Night. - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "永夜抄 ～ Eastern Night.（223位）",
+      "numbers": [
+        {
+          "raw": "223位",
+          "value": 223,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：168点 ｜ 得票数：159票 ｜ 一押し数：9票 ｜ コメント数：12件 継続投票率：50.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "168点",
+          "value": 168,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "159票",
+          "value": 159,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "12件",
+          "value": 12,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

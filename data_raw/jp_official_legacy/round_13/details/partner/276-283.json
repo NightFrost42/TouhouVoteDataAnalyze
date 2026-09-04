@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/276-283.php",
+    "effective_url": "https://toho-vote.info/result13/partner/276-283.php",
+    "retrieved_at": "2026-08-15T09:56:43+00:00",
+    "http_status": 200,
+    "bytes": 6860,
+    "sha256": "13598611c870af71254863573c0847e11223a4b2626b4613d18fd9d6f2fd72c7",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "276-283",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：鬼人 正邪と稀神 サグメ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "鬼人 正邪と稀神 サグメ（77位）",
+      "numbers": [
+        {
+          "raw": "77位",
+          "value": 77,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：290点 ｜ 得票数：250票 ｜ 一押し数：40票 ｜ コメント数：51件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "290点",
+          "value": 290,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "250票",
+          "value": 250,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "40票",
+          "value": 40,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "51件",
+          "value": 51,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

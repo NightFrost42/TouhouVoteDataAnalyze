@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/3005.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/3005.php",
+    "retrieved_at": "2026-08-15T09:54:50+00:00",
+    "http_status": 200,
+    "bytes": 5920,
+    "sha256": "67c7d4e49e3d712642c0b08fe4463b468975d3d17d49b9d2a05b9f6bb890d9c1",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3005",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：ジャパニーズサーガ - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "ジャパニーズサーガ（214位）",
+      "numbers": [
+        {
+          "raw": "214位",
+          "value": 214,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：182点 ｜ 得票数：169票 ｜ 一押し数：13票 ｜ コメント数：21件 継続投票率：41.7%（12名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "182点",
+          "value": 182,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "169票",
+          "value": 169,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "13票",
+          "value": 13,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "21件",
+          "value": 21,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "41.7%",
+          "value": 41.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "12名",
+          "value": 12,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

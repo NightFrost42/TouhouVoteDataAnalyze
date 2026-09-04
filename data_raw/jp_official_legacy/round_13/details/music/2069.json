@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2069.php",
+    "effective_url": "https://toho-vote.info/result13/music/2069.php",
+    "retrieved_at": "2026-08-15T09:56:12+00:00",
+    "http_status": 200,
+    "bytes": 4428,
+    "sha256": "3540c93f5d4266be548fb736b3512f6694b5a43eb94a1692c06fe0357da064b2",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2069",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Lotus Love - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Lotus Love（277位）",
+      "numbers": [
+        {
+          "raw": "277位",
+          "value": 277,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：76点 ｜ 得票数：72票 ｜ 一押し数：4票 ｜ コメント数：11件 継続投票率：29.4%（17名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "76点",
+          "value": 76,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "72票",
+          "value": 72,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "11件",
+          "value": 11,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "29.4%",
+          "value": 29.4,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "17名",
+          "value": 17,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/character/902.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/character/902.php",
+    "retrieved_at": "2026-08-15T09:53:39+00:00",
+    "http_status": 200,
+    "bytes": 4404,
+    "sha256": "111bff783b815bf73cc32a9bc614ad3321d8c1e5ff69d76201e91b9592c4526b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "character",
+  "item_id": "902",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：幽霊（怨霊、神霊、化け化け含む） - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "幽霊（怨霊、神霊、化け化け含む）（160位）",
+      "numbers": [
+        {
+          "raw": "160位",
+          "value": 160,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：15点 ｜ 得票数：15票 ｜ 一押し数：0票 ｜ コメント数：7件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "15点",
+          "value": 15,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "15票",
+          "value": 15,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7件",
+          "value": 7,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

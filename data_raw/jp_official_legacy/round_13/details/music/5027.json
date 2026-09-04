@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/5027.php",
+    "effective_url": "https://toho-vote.info/result13/music/5027.php",
+    "retrieved_at": "2026-08-15T09:56:24+00:00",
+    "http_status": 200,
+    "bytes": 3731,
+    "sha256": "d1f3e48f4bfb2674f0babb1b50c736edf420299e68e3360d2d3fdaa7861a3488",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5027",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：My Maid, Sweet Maid - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "My Maid, Sweet Maid（449位）",
+      "numbers": [
+        {
+          "raw": "449位",
+          "value": 449,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：5点 ｜ 得票数：4票 ｜ 一押し数：1票 ｜ コメント数：2件 継続投票率：50.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "5点",
+          "value": 5,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

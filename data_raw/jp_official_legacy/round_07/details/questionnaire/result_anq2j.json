@@ -1,0 +1,47 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote7/result_anq2j.html",
+    "effective_url": "http://thwiki.info/th/vote7/result_anq2j.html",
+    "retrieved_at": "2026-08-15T09:46:24+00:00",
+    "http_status": 200,
+    "bytes": 315017,
+    "sha256": "67c1bf6d0724bb3fb5077e654918e7569caa3e4b5abd374bd704b0ff4474b20d",
+    "charset": "euc_jp",
+    "header_charset": null
+  },
+  "round": 7,
+  "role": "detail",
+  "category": "questionnaire",
+  "item_id": "result_anq2j",
+  "discovery_label": "コメント一覧",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "第７回東方シリーズ人気投票 投票者アンケート結果 作品別コメント",
+      "numbers": []
+    },
+    {
+      "kind": "item_header",
+      "text": "東方星蓮船 平均：4.21点 コメント数:5176",
+      "numbers": [
+        {
+          "raw": "4.21点",
+          "value": 4.21,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "5176",
+          "value": 5176,
+          "unit": null,
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

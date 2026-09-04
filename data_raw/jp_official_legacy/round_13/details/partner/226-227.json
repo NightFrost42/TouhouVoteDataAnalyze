@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/226-227.php",
+    "effective_url": "https://toho-vote.info/result13/partner/226-227.php",
+    "retrieved_at": "2026-08-15T09:56:35+00:00",
+    "http_status": 200,
+    "bytes": 10199,
+    "sha256": "e8dfe70f26553b718fc0719b8f3bf95e8f5defab431b0b7f6e94572ba21da9d0",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "226-227",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：八意 永琳と蓬莱山 輝夜 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "八意 永琳と蓬莱山 輝夜（41位）",
+      "numbers": [
+        {
+          "raw": "41位",
+          "value": 41,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：734点 ｜ 得票数：629票 ｜ 一押し数：105票 ｜ コメント数：70件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "734点",
+          "value": 734,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "629票",
+          "value": 629,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "105票",
+          "value": 105,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "70件",
+          "value": 70,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/209-252.php",
+    "effective_url": "https://toho-vote.info/result13/partner/209-252.php",
+    "retrieved_at": "2026-08-15T09:56:32+00:00",
+    "http_status": 200,
+    "bytes": 16617,
+    "sha256": "682f8761820c723f788911d3ce4552ab4392f037404a04fb3d0b3ae97267539e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "209-252",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：フランドール・スカーレットと古明地 こいし - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "フランドール・スカーレットと古明地 こいし（18位）",
+      "numbers": [
+        {
+          "raw": "18位",
+          "value": 18,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1725点 ｜ 得票数：1326票 ｜ 一押し数：399票 ｜ コメント数：175件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1725点",
+          "value": 1725,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1326票",
+          "value": 1326,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "399票",
+          "value": 399,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "175件",
+          "value": 175,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

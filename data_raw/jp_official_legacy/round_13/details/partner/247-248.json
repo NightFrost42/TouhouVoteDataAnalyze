@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/247-248.php",
+    "effective_url": "https://toho-vote.info/result13/partner/247-248.php",
+    "retrieved_at": "2026-08-15T09:56:38+00:00",
+    "http_status": 200,
+    "bytes": 12342,
+    "sha256": "fc8e3063d2b191aa33be07095f1ad0814c6b5fc56736971a314262c2c0dbc128",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "247-248",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：水橋 パルスィと星熊 勇儀 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "水橋 パルスィと星熊 勇儀（25位）",
+      "numbers": [
+        {
+          "raw": "25位",
+          "value": 25,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1324点 ｜ 得票数：1088票 ｜ 一押し数：236票 ｜ コメント数：130件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1324点",
+          "value": 1324,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1088票",
+          "value": 1088,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "236票",
+          "value": 236,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "130件",
+          "value": 130,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

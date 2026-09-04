@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4008.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4008.php",
+    "retrieved_at": "2026-08-15T09:54:51+00:00",
+    "http_status": 200,
+    "bytes": 4454,
+    "sha256": "0b4c75bb2a66145655ff4e9a63e34093b1b037a4994df31ab5b23ef5815b6323",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4008",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：人形の森 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "人形の森（339位）",
+      "numbers": [
+        {
+          "raw": "339位",
+          "value": 339,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：41点 ｜ 得票数：35票 ｜ 一押し数：6票 ｜ コメント数：9件 継続投票率：66.7%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "41点",
+          "value": 41,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "35票",
+          "value": 35,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "66.7%",
+          "value": 66.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

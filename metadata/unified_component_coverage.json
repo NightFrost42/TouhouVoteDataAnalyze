@@ -1,0 +1,4223 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-02T14:14:01Z",
+  "scope": {
+    "JP": [
+      3,
+      22
+    ],
+    "CN": [
+      1,
+      11
+    ]
+  },
+  "offline_only": true,
+  "input_roots": [
+    "metadata",
+    "data_processed"
+  ],
+  "status_definitions": {
+    "available_crawled": "公开组件已抓取，且现有元数据/规范化表足以确认该组件完成",
+    "official_not_offered": "现有官方站覆盖元数据明确记录该组件未提供；不是抓取失败",
+    "fetch_failed": "现有覆盖元数据明确记录应抓组件请求失败；不得解释为官网未提供",
+    "not_applicable": "统一矩阵中的组件不属于该平台/代际接口的同类功能",
+    "pending": "尚未抓取、只抓到部分、尚未规范化，或现有证据不足以判定完整性"
+  },
+  "components": [
+    {
+      "component": "main_rankings",
+      "label": "主榜",
+      "description": "角色、音乐、作品等官网主要排名部门"
+    },
+    {
+      "component": "questionnaire_definitions",
+      "label": "问卷定义",
+      "description": "アンケート题目、选项和分组定义"
+    },
+    {
+      "component": "questionnaire_results",
+      "label": "问卷结果",
+      "description": "アンケート选项计数、比例和分母"
+    },
+    {
+      "component": "questionnaire_trends",
+      "label": "问卷趋势",
+      "description": "官网公开的按时间变化问卷序列"
+    },
+    {
+      "component": "entity_questionnaire_details",
+      "label": "实体问卷明细",
+      "description": "逐角色、曲目、作品等实体的问卷拆分"
+    },
+    {
+      "component": "associations_covote",
+      "label": "关联/共投",
+      "description": "实体关联、共投或交叉投票数据"
+    },
+    {
+      "component": "condition_rankings",
+      "label": "条件榜",
+      "description": "按问卷选项等条件筛选后的排名"
+    },
+    {
+      "component": "open_text",
+      "label": "开放文本",
+      "description": "官网公开的问卷自由回答或反馈文本"
+    }
+  ],
+  "rows": [
+    {
+      "platform": "JP",
+      "round": 3,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 3,
+      "expected_records": 3,
+      "record_unit": "ranking_categories",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music, spell；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 3,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 102 行、约 5 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 3,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 102,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 102 行、约 5 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 3,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 3,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 0 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 3,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 0 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 3,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 3,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "official_comment_pages",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "现有覆盖元数据没有明确证明开放文本已提供或已完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 4,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": 2,
+      "record_unit": "ranking_categories",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 4,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 7,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 161 行、约 7 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 4,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 161,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 161 行、约 7 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 4,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 4,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 0 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 4,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 0 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 4,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 4,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "official_comment_pages",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "现有覆盖元数据没有明确证明开放文本已提供或已完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 5,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": 2,
+      "record_unit": "ranking_categories",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 5,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 9,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 154 行、约 9 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 5,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 154,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 154 行、约 9 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 5,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 5,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 0 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 5,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 0 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 5,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 5,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 25,
+      "expected_records": 25,
+      "record_unit": "official_comment_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "官方 questionnaire_comment 页面已抓 25 页；当前矩阵只确认页面覆盖。"
+    },
+    {
+      "platform": "JP",
+      "round": 6,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": 2,
+      "record_unit": "ranking_categories",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 6,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 9,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 183 行、约 9 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 6,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 183,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 183 行、约 9 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 6,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 6,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 0 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 6,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 0 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 6,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 6,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 22,
+      "expected_records": 22,
+      "record_unit": "official_comment_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "官方 questionnaire_comment 页面已抓 22 页；当前矩阵只确认页面覆盖。"
+    },
+    {
+      "platform": "JP",
+      "round": 7,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": 2,
+      "record_unit": "ranking_categories",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 7,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 8,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 227 行、约 8 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 7,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 227,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 227 行、约 8 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 7,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 7,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 0 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 7,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 0 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 7,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 7,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 24,
+      "expected_records": 24,
+      "record_unit": "official_comment_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "官方 questionnaire_comment 页面已抓 24 页；当前矩阵只确认页面覆盖。"
+    },
+    {
+      "platform": "JP",
+      "round": 8,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": 2,
+      "record_unit": "ranking_categories",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 8,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 8,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 261 行、约 8 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 8,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 261,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 261 行、约 8 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 8,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 8,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 0 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 8,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 0 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 8,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 8,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 16,
+      "expected_records": 16,
+      "record_unit": "official_comment_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "官方 questionnaire_comment 页面已抓 16 页；当前矩阵只确认页面覆盖。"
+    },
+    {
+      "platform": "JP",
+      "round": 9,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": 2,
+      "record_unit": "ranking_categories",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 9,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 9,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 529 行、约 9 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 9,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 529,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 529 行、约 9 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 9,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 9,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 0 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 9,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 0 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 9,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 9,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 26,
+      "expected_records": 26,
+      "record_unit": "official_comment_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "官方 questionnaire_comment 页面已抓 26 页；当前矩阵只确认页面覆盖。"
+    },
+    {
+      "platform": "JP",
+      "round": 10,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": 2,
+      "record_unit": "ranking_categories",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 10,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 7,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 216 行、约 7 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 10,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 216,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 216 行、约 7 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 10,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 10,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 0 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 10,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 0 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 10,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 10,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 22,
+      "expected_records": 22,
+      "record_unit": "official_comment_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "官方 questionnaire_comment 页面已抓 22 页；当前矩阵只确认页面覆盖。"
+    },
+    {
+      "platform": "JP",
+      "round": 11,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 630,
+      "expected_records": 2,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 11,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 11,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 617 行、约 11 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 11,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 617,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 617 行、约 11 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 11,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 11,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 10240,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 10240 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 11,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 2849,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 2849 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 11,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 11,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "official_comment_pages",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "现有覆盖元数据没有明确证明开放文本已提供或已完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 12,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 685,
+      "expected_records": 3,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music, work；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 12,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 12,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 614 行、约 12 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 12,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 614,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 614 行、约 12 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 12,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 12,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 13209,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 13209 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 12,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 15915,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 15915 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 12,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 12,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "official_comment_pages",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "现有覆盖元数据没有明确证明开放文本已提供或已完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 13,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 1141,
+      "expected_records": 4,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music, partner, work；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 13,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 12,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 665 行、约 12 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 13,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 665,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 665 行、约 12 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 13,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 13,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 13644,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 13644 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 13,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 20608,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 20608 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 13,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 13,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "official_comment_pages",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "现有覆盖元数据没有明确证明开放文本已提供或已完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 14,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 757,
+      "expected_records": 3,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music, work；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 14,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 12,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 270 行、约 12 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 14,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 270,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 270 行、约 12 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 14,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 14,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 28652,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 28652 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 14,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 26214,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 26214 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 14,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 14,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "official_comment_pages",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "现有覆盖元数据没有明确证明开放文本已提供或已完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 15,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 762,
+      "expected_records": 3,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music, work；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 15,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 11,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 514 行、约 11 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 15,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 514,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 514 行、约 11 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 15,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 15,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 28956,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 28956 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 15,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 26417,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 26417 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 15,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 15,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "official_comment_pages",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "现有覆盖元数据没有明确证明开放文本已提供或已完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 16,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 795,
+      "expected_records": 3,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/source_entity_metrics.csv"
+      ],
+      "note": "官网已抓排名类别：character, music, work；抓取失败记录 0 条。"
+    },
+    {
+      "platform": "JP",
+      "round": 16,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 11,
+      "expected_records": null,
+      "record_unit": "questions",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 527 行、约 11 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 16,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 527,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/questionnaire_long.csv"
+      ],
+      "note": "legacy normalizer 问卷长表 527 行、约 11 个题目键。"
+    },
+    {
+      "platform": "JP",
+      "round": 16,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 静态アンケート页没有与 CN 现代接口按小时趋势表同构的组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 16,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 31005,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 31005 行；官网组件状态由 legacy normalizer 明确给出。"
+    },
+    {
+      "platform": "JP",
+      "round": 16,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 26743,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "explicit_metadata+processed_table",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json",
+        "data_processed/jp_official_legacy/entity_association_long.csv"
+      ],
+      "note": "逐实体关联明细 26743 行；与实体 numeric profile 同源。"
+    },
+    {
+      "platform": "JP",
+      "round": 16,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_legacy_component_status.json"
+      ],
+      "note": "JP legacy 逐实体关联不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 16,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "official_comment_pages",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/jp_official_legacy_coverage.json"
+      ],
+      "note": "现有覆盖元数据没有明确证明开放文本已提供或已完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 17,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 827,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/rankings.csv"
+      ],
+      "note": "官网现站规范化主榜 827 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 17,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 10,
+      "expected_records": null,
+      "record_unit": "question_keys",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート模块含 10 个 question_key。"
+    },
+    {
+      "platform": "JP",
+      "round": 17,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 236,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート结果长表 236 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 17,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 现站模块没有与 CN 现代接口按小时趋势表同构的公开组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 17,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 33080,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 33080 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 17,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 37103,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_associations.csv"
+      ],
+      "note": "逐实体关联明细 37103 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 17,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 逐实体关联页不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 17,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "feedback_responses",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "data_processed/jp_official/questionnaire_feedback_counts.csv",
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "当前 processed/manifest 未证明该回开放反馈完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 18,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 844,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/rankings.csv"
+      ],
+      "note": "官网现站规范化主榜 844 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 18,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 10,
+      "expected_records": null,
+      "record_unit": "question_keys",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート模块含 10 个 question_key。"
+    },
+    {
+      "platform": "JP",
+      "round": 18,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 248,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート结果长表 248 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 18,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 现站模块没有与 CN 现代接口按小时趋势表同构的公开组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 18,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 34393,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 34393 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 18,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 37857,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_associations.csv"
+      ],
+      "note": "逐实体关联明细 37857 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 18,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 逐实体关联页不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 18,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "feedback_responses",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "data_processed/jp_official/questionnaire_feedback_counts.csv",
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "当前 processed/manifest 未证明该回开放反馈完整抓取，保守记 pending。"
+    },
+    {
+      "platform": "JP",
+      "round": 19,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 869,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/rankings.csv"
+      ],
+      "note": "官网现站规范化主榜 869 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 19,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 12,
+      "expected_records": null,
+      "record_unit": "question_keys",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート模块含 12 个 question_key。"
+    },
+    {
+      "platform": "JP",
+      "round": 19,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 272,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート结果长表 272 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 19,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 现站模块没有与 CN 现代接口按小时趋势表同构的公开组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 19,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 39745,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 39745 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 19,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 38922,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_associations.csv"
+      ],
+      "note": "逐实体关联明细 38922 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 19,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 逐实体关联页不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 19,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 3902,
+      "expected_records": null,
+      "record_unit": "feedback_responses",
+      "status_basis": "processed_table",
+      "evidence": [
+        "data_processed/jp_official/questionnaire_feedback_counts.csv",
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "官方 questionnaire feedback 数组记录 3902 个回答；规范化表保存回答数。"
+    },
+    {
+      "platform": "JP",
+      "round": 20,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 875,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/rankings.csv"
+      ],
+      "note": "官网现站规范化主榜 875 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 20,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 15,
+      "expected_records": null,
+      "record_unit": "question_keys",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート模块含 15 个 question_key。"
+    },
+    {
+      "platform": "JP",
+      "round": 20,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 319,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート结果长表 319 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 20,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 现站模块没有与 CN 现代接口按小时趋势表同构的公开组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 20,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 40035,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 40035 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 20,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 39292,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_associations.csv"
+      ],
+      "note": "逐实体关联明细 39292 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 20,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 逐实体关联页不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 20,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 4386,
+      "expected_records": null,
+      "record_unit": "feedback_responses",
+      "status_basis": "processed_table",
+      "evidence": [
+        "data_processed/jp_official/questionnaire_feedback_counts.csv",
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "官方 questionnaire feedback 数组记录 4386 个回答；规范化表保存回答数。"
+    },
+    {
+      "platform": "JP",
+      "round": 21,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 889,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/rankings.csv"
+      ],
+      "note": "官网现站规范化主榜 889 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 21,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 20,
+      "expected_records": null,
+      "record_unit": "question_keys",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート模块含 20 个 question_key。"
+    },
+    {
+      "platform": "JP",
+      "round": 21,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 350,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート结果长表 350 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 21,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 现站模块没有与 CN 现代接口按小时趋势表同构的公开组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 21,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 40665,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 40665 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 21,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 39953,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_associations.csv"
+      ],
+      "note": "逐实体关联明细 39953 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 21,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 逐实体关联页不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 21,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 4229,
+      "expected_records": null,
+      "record_unit": "feedback_responses",
+      "status_basis": "processed_table",
+      "evidence": [
+        "data_processed/jp_official/questionnaire_feedback_counts.csv",
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "官方 questionnaire feedback 数组记录 4229 个回答；规范化表保存回答数。"
+    },
+    {
+      "platform": "JP",
+      "round": 22,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 910,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/rankings.csv"
+      ],
+      "note": "官网现站规范化主榜 910 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 22,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 11,
+      "expected_records": null,
+      "record_unit": "question_keys",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート模块含 11 个 question_key。"
+    },
+    {
+      "platform": "JP",
+      "round": 22,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 309,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/questionnaire_long.csv"
+      ],
+      "note": "アンケート结果长表 309 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 22,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 现站模块没有与 CN 现代接口按小时趋势表同构的公开组件。"
+    },
+    {
+      "platform": "JP",
+      "round": 22,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 39564,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_questionnaire_long.csv"
+      ],
+      "note": "逐实体问卷明细 39564 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 22,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 40849,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json",
+        "metadata/jp_official_normalization_report.json",
+        "data_processed/jp_official/detail_associations.csv"
+      ],
+      "note": "逐实体关联明细 40849 行。"
+    },
+    {
+      "platform": "JP",
+      "round": 22,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "JP 逐实体关联页不等同于 CN 现代站的任意问卷选项条件榜。"
+    },
+    {
+      "platform": "JP",
+      "round": 22,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 5085,
+      "expected_records": null,
+      "record_unit": "feedback_responses",
+      "status_basis": "processed_table",
+      "evidence": [
+        "data_processed/jp_official/questionnaire_feedback_counts.csv",
+        "metadata/jp_official_download_manifest.json"
+      ],
+      "note": "官方 questionnaire feedback 数组记录 5085 个回答；规范化表保存回答数。"
+    },
+    {
+      "platform": "CN",
+      "round": 1,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 16,
+      "expected_records": 16,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 16/16；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 1,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 1,
+      "expected_records": 1,
+      "record_unit": "official_questionnaire_page",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 1/1。"
+    },
+    {
+      "platform": "CN",
+      "round": 1,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 1,
+      "expected_records": 1,
+      "record_unit": "official_questionnaire_page",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 1/1。"
+    },
+    {
+      "platform": "CN",
+      "round": 1,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "explicit_metadata+interface_probe",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。"
+    },
+    {
+      "platform": "CN",
+      "round": 1,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "explicit_metadata+interface_probe",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。"
+    },
+    {
+      "platform": "CN",
+      "round": 1,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 official_not_offered；默认公开参数成功类别 0。"
+    },
+    {
+      "platform": "CN",
+      "round": 1,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 1,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 2,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 16,
+      "expected_records": 16,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 16/16；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 2,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 1,
+      "expected_records": 1,
+      "record_unit": "official_questionnaire_page",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 1/1。"
+    },
+    {
+      "platform": "CN",
+      "round": 2,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 1,
+      "expected_records": 1,
+      "record_unit": "official_questionnaire_page",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 1/1。"
+    },
+    {
+      "platform": "CN",
+      "round": 2,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "explicit_metadata+interface_probe",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。"
+    },
+    {
+      "platform": "CN",
+      "round": 2,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "explicit_metadata+interface_probe",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。"
+    },
+    {
+      "platform": "CN",
+      "round": 2,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 official_not_offered；默认公开参数成功类别 0。"
+    },
+    {
+      "platform": "CN",
+      "round": 2,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 2,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 3,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 16,
+      "expected_records": 16,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 16/16；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 3,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 1,
+      "expected_records": 1,
+      "record_unit": "official_questionnaire_page",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 1/1。"
+    },
+    {
+      "platform": "CN",
+      "round": 3,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 1,
+      "expected_records": 1,
+      "record_unit": "official_questionnaire_page",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 1/1。"
+    },
+    {
+      "platform": "CN",
+      "round": 3,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "explicit_metadata+interface_probe",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。"
+    },
+    {
+      "platform": "CN",
+      "round": 3,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "explicit_metadata+interface_probe",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。"
+    },
+    {
+      "platform": "CN",
+      "round": 3,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 official_not_offered；默认公开参数成功类别 0。"
+    },
+    {
+      "platform": "CN",
+      "round": 3,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 3,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 4,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 17,
+      "expected_records": 17,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 17/17；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 4,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 1,
+      "expected_records": 1,
+      "record_unit": "official_questionnaire_page",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 1/1。"
+    },
+    {
+      "platform": "CN",
+      "round": 4,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 1,
+      "expected_records": 1,
+      "record_unit": "official_questionnaire_page",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 1/1。"
+    },
+    {
+      "platform": "CN",
+      "round": 4,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "series",
+      "status_basis": "explicit_metadata+interface_probe",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。"
+    },
+    {
+      "platform": "CN",
+      "round": 4,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "explicit_metadata+interface_probe",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "CN1–4 raw 页面及元数据均没有 votedate/votesex/votegeo/votepaper 旧版接口标记。"
+    },
+    {
+      "platform": "CN",
+      "round": 4,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 official_not_offered；默认公开参数成功类别 0。"
+    },
+    {
+      "platform": "CN",
+      "round": 4,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 4,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 5,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 14,
+      "expected_records": 14,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 14/14；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 5,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 4,
+      "expected_records": 4,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 4/4。"
+    },
+    {
+      "platform": "CN",
+      "round": 5,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 4,
+      "expected_records": 4,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 4/4。"
+    },
+    {
+      "platform": "CN",
+      "round": 5,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "available_crawled",
+      "observed_records": 1998,
+      "expected_records": 1998,
+      "record_unit": "series",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 5,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 1998,
+      "expected_records": 1998,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 5,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 official_not_offered；默认公开参数成功类别 0。"
+    },
+    {
+      "platform": "CN",
+      "round": 5,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 5,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 6,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 15,
+      "expected_records": 15,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 15/15；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 6,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": 5,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 5/5。"
+    },
+    {
+      "platform": "CN",
+      "round": 6,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": 5,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 5/5。"
+    },
+    {
+      "platform": "CN",
+      "round": 6,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "available_crawled",
+      "observed_records": 2082,
+      "expected_records": 2082,
+      "record_unit": "series",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 6,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 2082,
+      "expected_records": 2082,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 6,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 official_not_offered；默认公开参数成功类别 0。"
+    },
+    {
+      "platform": "CN",
+      "round": 6,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 6,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 7,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 15,
+      "expected_records": 15,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 15/15；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 7,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": 5,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 5/5。"
+    },
+    {
+      "platform": "CN",
+      "round": 7,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": 5,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 5/5。"
+    },
+    {
+      "platform": "CN",
+      "round": 7,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "available_crawled",
+      "observed_records": 2054,
+      "expected_records": 2054,
+      "record_unit": "series",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 7,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 2054,
+      "expected_records": 2054,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 7,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "official_not_offered",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 official_not_offered；默认公开参数成功类别 0。"
+    },
+    {
+      "platform": "CN",
+      "round": 7,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 7,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 8,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 21,
+      "expected_records": 21,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 21/21；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 8,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": 5,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 5/5。"
+    },
+    {
+      "platform": "CN",
+      "round": 8,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": 5,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 5/5。"
+    },
+    {
+      "platform": "CN",
+      "round": 8,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "available_crawled",
+      "observed_records": 2037,
+      "expected_records": 2037,
+      "record_unit": "series",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 8,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 2037,
+      "expected_records": 2037,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 8,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 available_crawled；默认公开参数成功类别 2。"
+    },
+    {
+      "platform": "CN",
+      "round": 8,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 8,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 9,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 19,
+      "expected_records": 19,
+      "record_unit": "official_summary_pages",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "汇总页 19/19；任一应抓部门失败都会保留为 fetch_failed。"
+    },
+    {
+      "platform": "CN",
+      "round": 9,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": 5,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 5/5。"
+    },
+    {
+      "platform": "CN",
+      "round": 9,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 5,
+      "expected_records": 5,
+      "record_unit": "official_questionnaire_groups",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "paper 问卷状态为 available_crawled；抓取组/页 5/5。"
+    },
+    {
+      "platform": "CN",
+      "round": 9,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "available_crawled",
+      "observed_records": 2263,
+      "expected_records": 2263,
+      "record_unit": "series",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 9,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 2263,
+      "expected_records": 2263,
+      "record_unit": "per_entity_votepaper_json",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "四类逐实体问卷接口文件数量与 coverage metadata 完全一致，且全部 JSON 可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 9,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 2,
+      "expected_records": null,
+      "record_unit": "crossvote_categories",
+      "status_basis": "explicit_metadata",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json",
+        "metadata/cn_official_legacy_validation.json"
+      ],
+      "note": "crossvote 类别状态合并为 available_crawled；默认公开参数成功类别 2。"
+    },
+    {
+      "platform": "CN",
+      "round": 9,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "not_applicable",
+      "observed_records": 0,
+      "expected_records": 0,
+      "record_unit": "condition_files",
+      "status_basis": "interface_scope",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "CN1—9 legacy 接口没有与 CN10—11 全问卷选项条件榜同构的组件。"
+    },
+    {
+      "platform": "CN",
+      "round": 9,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "pending",
+      "observed_records": 0,
+      "expected_records": null,
+      "record_unit": "answers",
+      "status_basis": "incomplete_or_unverified",
+      "evidence": [
+        "metadata/cn_official_legacy_coverage.json"
+      ],
+      "note": "现有 legacy coverage 未单列开放回答正文覆盖；没有证据时保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 10,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 1624,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/rankings.csv"
+      ],
+      "note": "规范化主榜 1624 行；未出现的届次保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 10,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 111,
+      "expected_records": 111,
+      "record_unit": "questions",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/questionnaire_questions.csv",
+        "data_processed/cn_official/questionnaire_options.csv"
+      ],
+      "note": "题目 111/111，选项 390/390。"
+    },
+    {
+      "platform": "CN",
+      "round": 10,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 387,
+      "expected_records": null,
+      "record_unit": "normalized_option_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/questionnaire_long.csv"
+      ],
+      "note": "分类题结果覆盖 74/74 题，共 387 个选项行。"
+    },
+    {
+      "platform": "CN",
+      "round": 10,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "available_crawled",
+      "observed_records": 34802,
+      "expected_records": null,
+      "record_unit": "time_series_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/questionnaire_trends.csv.gz"
+      ],
+      "note": "问卷趋势长表 34802 行。"
+    },
+    {
+      "platform": "CN",
+      "round": 10,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 834,
+      "expected_records": 834,
+      "record_unit": "normalized_rows",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "每个角色/曲目实体的 queryQuestionnaire 过滤快照均存在且可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 10,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 205156,
+      "expected_records": 205156,
+      "record_unit": "pair_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/covote_metrics.csv.gz"
+      ],
+      "note": "共投对 205156/205156；不完整或 API 未认证时记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 10,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "available_crawled",
+      "observed_records": 390,
+      "expected_records": 390,
+      "record_unit": "question_answer_conditions",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/condition_option_summary.csv",
+        "data_processed/cn_official/condition_rankings.csv.gz"
+      ],
+      "note": "条件文件/键 390/390，排名明细 349064 行；部分抓取仍记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 10,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 70818,
+      "expected_records": null,
+      "record_unit": "answer_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/open_text_answers.csv.gz"
+      ],
+      "note": "匿名官网开放回答 70818 行。"
+    },
+    {
+      "platform": "CN",
+      "round": 11,
+      "component": "main_rankings",
+      "component_label": "主榜",
+      "status": "available_crawled",
+      "observed_records": 1449,
+      "expected_records": null,
+      "record_unit": "normalized_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/rankings.csv"
+      ],
+      "note": "规范化主榜 1449 行；未出现的届次保守记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 11,
+      "component": "questionnaire_definitions",
+      "component_label": "问卷定义",
+      "status": "available_crawled",
+      "observed_records": 112,
+      "expected_records": 112,
+      "record_unit": "questions",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/questionnaire_questions.csv",
+        "data_processed/cn_official/questionnaire_options.csv"
+      ],
+      "note": "题目 112/112，选项 406/406。"
+    },
+    {
+      "platform": "CN",
+      "round": 11,
+      "component": "questionnaire_results",
+      "component_label": "问卷结果",
+      "status": "available_crawled",
+      "observed_records": 403,
+      "expected_records": null,
+      "record_unit": "normalized_option_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/questionnaire_long.csv"
+      ],
+      "note": "分类题结果覆盖 73/73 题，共 403 个选项行。"
+    },
+    {
+      "platform": "CN",
+      "round": 11,
+      "component": "questionnaire_trends",
+      "component_label": "问卷趋势",
+      "status": "available_crawled",
+      "observed_records": 28015,
+      "expected_records": null,
+      "record_unit": "time_series_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/questionnaire_trends.csv.gz"
+      ],
+      "note": "问卷趋势长表 28015 行。"
+    },
+    {
+      "platform": "CN",
+      "round": 11,
+      "component": "entity_questionnaire_details",
+      "component_label": "实体问卷明细",
+      "status": "available_crawled",
+      "observed_records": 856,
+      "expected_records": 856,
+      "record_unit": "normalized_rows",
+      "status_basis": "offline_raw_verification",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "metadata/cn_component_verification.json"
+      ],
+      "note": "每个角色/曲目实体的 queryQuestionnaire 过滤快照均存在且可解析。"
+    },
+    {
+      "platform": "CN",
+      "round": 11,
+      "component": "associations_covote",
+      "component_label": "关联/共投",
+      "status": "available_crawled",
+      "observed_records": 216612,
+      "expected_records": 216612,
+      "record_unit": "pair_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/covote_metrics.csv.gz"
+      ],
+      "note": "共投对 216612/216612；不完整或 API 未认证时记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 11,
+      "component": "condition_rankings",
+      "component_label": "条件榜",
+      "status": "available_crawled",
+      "observed_records": 406,
+      "expected_records": 406,
+      "record_unit": "question_answer_conditions",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/condition_option_summary.csv",
+        "data_processed/cn_official/condition_rankings.csv.gz"
+      ],
+      "note": "条件文件/键 406/406，排名明细 316277 行；部分抓取仍记 pending。"
+    },
+    {
+      "platform": "CN",
+      "round": 11,
+      "component": "open_text",
+      "component_label": "开放文本",
+      "status": "available_crawled",
+      "observed_records": 37146,
+      "expected_records": null,
+      "record_unit": "answer_rows",
+      "status_basis": "processed_table",
+      "evidence": [
+        "metadata/cn_modern_coverage.json",
+        "metadata/cn_official_normalization_report.json",
+        "data_processed/cn_official/open_text_answers.csv.gz"
+      ],
+      "note": "匿名官网开放回答 37146 行。"
+    }
+  ],
+  "validation": {
+    "expected_rows": 248,
+    "actual_rows": 248,
+    "unique_keys": 248,
+    "duplicate_key_count": 0,
+    "missing_keys": [],
+    "extra_keys": [],
+    "invalid_statuses": [],
+    "official_not_offered_without_explicit_metadata": [],
+    "fetch_failed_without_explicit_metadata": [],
+    "status_counts": {
+      "available_crawled": 149,
+      "not_applicable": 49,
+      "official_not_offered": 31,
+      "pending": 19
+    },
+    "required_components": [
+      "main_rankings",
+      "questionnaire_definitions",
+      "questionnaire_results",
+      "questionnaire_trends",
+      "entity_questionnaire_details",
+      "associations_covote",
+      "condition_rankings"
+    ],
+    "intentionally_excluded_components": {
+      "open_text": "excluded from the numeric crawl queue scope"
+    },
+    "required_rows": 217,
+    "required_status_counts": {
+      "available_crawled": 137,
+      "not_applicable": 49,
+      "official_not_offered": 31
+    },
+    "incomplete_required_rows": [],
+    "incomplete_required_status_counts": {},
+    "priority_scope": "JP3-22 + CN1-11",
+    "priority_scope_required_rows": 217,
+    "priority_scope_incomplete_rows": [],
+    "priority_scope_complete": true,
+    "valid": true,
+    "all_required_components_complete": true
+  },
+  "input_snapshots": [
+    {
+      "path": "data_processed/cn_official/condition_option_summary.csv",
+      "bytes": 153904,
+      "modified_time_ns": 1788358391194379100,
+      "sha256": "565bdbdbbab0733b65504ee438cc9b83fb396e1e5c4afcd44c6c2fdf965c98ad"
+    },
+    {
+      "path": "data_processed/cn_official/condition_rankings.csv.gz",
+      "bytes": 13094793,
+      "modified_time_ns": 1788358402338463800,
+      "sha256": "9900041e9ad08e012fd171176fd68a6943ffec71c82ab2a20a0bc7792d4593c5"
+    },
+    {
+      "path": "data_processed/cn_official/covote_metrics.csv.gz",
+      "bytes": 25450912,
+      "modified_time_ns": 1788358412722283000,
+      "sha256": "b332daa9a4529a78604719629a3a56d960f4087619dc8748cc809f473ea93b87"
+    },
+    {
+      "path": "data_processed/cn_official/open_text_answers.csv.gz",
+      "bytes": 2048173,
+      "modified_time_ns": 1788358390451465600,
+      "sha256": "a4c44e1257cf6820377723a66889ababd4d22da086191d35e983c974b6e871fa"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_long.csv",
+      "bytes": 193054,
+      "modified_time_ns": 1788358389929774300,
+      "sha256": "0eaefb6a9f2742199f1db97275aa96443fc27fbf1cec5e0fbb7a72c59c8f3c8e"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_options.csv",
+      "bytes": 88154,
+      "modified_time_ns": 1788358389919881600,
+      "sha256": "ddead3befc56e2759197e1975f33b55c54aedcdfc2390e3faf5d70d9c4882a59"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_questions.csv",
+      "bytes": 34982,
+      "modified_time_ns": 1788358389908551700,
+      "sha256": "6b97cf5a3f6481d3356e257d1083c40a39426dcc4eabfcbb9d1fe4da2bd8688c"
+    },
+    {
+      "path": "data_processed/cn_official/questionnaire_trends.csv.gz",
+      "bytes": 184188,
+      "modified_time_ns": 1788358390607992900,
+      "sha256": "f8186fc5906207cf23b6d139ec76b763698a54686e33b44cd17c86f76004a192"
+    },
+    {
+      "path": "data_processed/cn_official/rankings.csv",
+      "bytes": 746468,
+      "modified_time_ns": 1788358412775340500,
+      "sha256": "b300ccbcdc5a2cb81e661298b75ce7421be7f98b6dd00498b9c7e8abc1b8ab6e"
+    },
+    {
+      "path": "data_processed/jp_official/detail_associations.csv",
+      "bytes": 91272297,
+      "modified_time_ns": 1788013533748979200,
+      "sha256": "302824b19844c8bac25da94a5896ed2a729ec0d9e3a836125d89fd71f2f40956"
+    },
+    {
+      "path": "data_processed/jp_official/detail_questionnaire_long.csv",
+      "bytes": 46242659,
+      "modified_time_ns": 1788013532033725500,
+      "sha256": "3868659b9bae9b895d94276de50775dcc405e4ea3992a1b1642d51ec343ce1fc"
+    },
+    {
+      "path": "data_processed/jp_official/questionnaire_feedback_counts.csv",
+      "bytes": 110,
+      "modified_time_ns": 1788013531131048600,
+      "sha256": "7a92e7209164045c811f6b86ac0c619e537151e23ddc43c24293dbfe06749c1a"
+    },
+    {
+      "path": "data_processed/jp_official/questionnaire_long.csv",
+      "bytes": 167750,
+      "modified_time_ns": 1788013531130534900,
+      "sha256": "34c2aceeb2c100df4a73041b401093cc2f2bb01798fc171bc330ac37ab2d25d9"
+    },
+    {
+      "path": "data_processed/jp_official/rankings.csv",
+      "bytes": 320603,
+      "modified_time_ns": 1788013531124781700,
+      "sha256": "fbccf66a10f7a6b88a56fc9313ce92636dd28623f9205ebe49e031f7d1a1446f"
+    },
+    {
+      "path": "data_processed/jp_official_legacy/entity_association_long.csv",
+      "bytes": 60893522,
+      "modified_time_ns": 1786817248614837300,
+      "sha256": "78f25de48fcb61e7518a780eb4f21ca8c454106b8b2fb83b90abd84398fb8fd1"
+    },
+    {
+      "path": "data_processed/jp_official_legacy/entity_questionnaire_long.csv",
+      "bytes": 48639072,
+      "modified_time_ns": 1786817248620652100,
+      "sha256": "57f800ed92aed50d0435c6973a4f55ea58d973a8389b8c0e81c1ca15e52fa85a"
+    },
+    {
+      "path": "data_processed/jp_official_legacy/questionnaire_long.csv",
+      "bytes": 3487600,
+      "modified_time_ns": 1786817248624793000,
+      "sha256": "ff4044403e15d6da3ed0ba94add351849dd6f5f362ef0131a1011868d1751abc"
+    },
+    {
+      "path": "data_processed/jp_official_legacy/source_entity_metrics.csv",
+      "bytes": 1475541,
+      "modified_time_ns": 1786817248612814200,
+      "sha256": "c75e57f5cc7489c025c4539a282e7bcd347f61a1690c7c0dc8447705193f7c10"
+    },
+    {
+      "path": "metadata/cn_component_verification.json",
+      "bytes": 19641,
+      "modified_time_ns": 1788358435026608300,
+      "sha256": "8bfa55d9ead43516a6f4040363f29e718d72d8cf40c4e0c7f046f85699373bf8"
+    },
+    {
+      "path": "metadata/cn_modern_coverage.json",
+      "bytes": 7425,
+      "modified_time_ns": 1786820240063386900,
+      "sha256": "77ab54943812a0136476de4db75d1c0e0423cefe7a3e142ae63ce8dc12220fc9"
+    },
+    {
+      "path": "metadata/cn_official_legacy_coverage.json",
+      "bytes": 93736,
+      "modified_time_ns": 1787735706120956800,
+      "sha256": "c6089404a2ac517b26e5713e3c0d00e82a274f13e5c878bcd16f771bdfccd02f"
+    },
+    {
+      "path": "metadata/cn_official_legacy_validation.json",
+      "bytes": 867,
+      "modified_time_ns": 1787735799963318700,
+      "sha256": "826c3874899fc58fc7c6521d763ccf24f29cb637a674fc149d34b1bfae983314"
+    },
+    {
+      "path": "metadata/cn_official_normalization_report.json",
+      "bytes": 4519,
+      "modified_time_ns": 1788358412808532400,
+      "sha256": "cf5a077fce1dae56f7bb64c534a4deda17b527025ef54e334984e08845c7fd89"
+    },
+    {
+      "path": "metadata/jp_official_download_manifest.json",
+      "bytes": 3513082,
+      "modified_time_ns": 1788013528446364400,
+      "sha256": "04fca70da195bcc388f74b9f43ceaae8db3f8879c37c49028322b9a32745ae91"
+    },
+    {
+      "path": "metadata/jp_official_legacy_component_status.json",
+      "bytes": 9172,
+      "modified_time_ns": 1786817251237927300,
+      "sha256": "708ff5c143295abcc61e3485a9dd1f39e3c87cd629de9ed206513de61c64905d"
+    },
+    {
+      "path": "metadata/jp_official_legacy_coverage.json",
+      "bytes": 16124,
+      "modified_time_ns": 1786788111971749700,
+      "sha256": "e1629af9f79115a5e11ccd57ac06c14ff36d8b248dd87bf5726f72c4b92f0e22"
+    },
+    {
+      "path": "metadata/jp_official_normalization_report.json",
+      "bytes": 4111,
+      "modified_time_ns": 1788013535501763900,
+      "sha256": "71a3e2e729b9b105c753c4f44778a919fe98abf7352a6ef76ef9de5f2777c37b"
+    }
+  ]
+}

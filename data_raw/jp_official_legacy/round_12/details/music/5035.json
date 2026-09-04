@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/5035.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/5035.php",
+    "retrieved_at": "2026-08-15T09:54:59+00:00",
+    "http_status": 200,
+    "bytes": 5012,
+    "sha256": "5160efe7f9b71f55cff1880c75d36a0f144951f353e99ca6e3be3a009b7f4468",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5035",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：呑んべぇのレムリア - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "呑んべぇのレムリア（232位）",
+      "numbers": [
+        {
+          "raw": "232位",
+          "value": 232,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：142点 ｜ 得票数：137票 ｜ 一押し数：5票 ｜ コメント数：18件 継続投票率：62.5%（8名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "142点",
+          "value": 142,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "137票",
+          "value": 137,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "18件",
+          "value": 18,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "62.5%",
+          "value": 62.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "8名",
+          "value": 8,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

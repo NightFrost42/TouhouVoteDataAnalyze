@@ -1,0 +1,22 @@
+import{d as I,a as r,m as b,u as Y,g as B,w as k,s as E,t as v,o as m,b as w,e,h as t,f as s,c as F,v as U,j as l,p as D,k as j,r as G,l as P}from"./index-6eea312f.js";import{c as L}from"./character-458f4fe5.js";import{t as g}from"./numberFormat-0203f5e2.js";import{g as $,a as T,s as O,d as Q,G as z,_ as H}from"./Graph-41af3e26.js";import{g as _}from"./decodeAdditionalConstraint-5d07289b.js";import{c as J}from"./defaultCharacterImage-0631e171.js";import{_ as K}from"./Questionnaire.vue_vue_type_script_setup_true_lang-2fa7606f.js";import"./lz-string-0e91bc36.js";import"./Questionnaire-55179045.js";import"./questionnaire-5ec436a8.js";const M={class:"mx-1 my-3"},W={class:"mb-0 md:mx-5 p-3 space-y-3 bg-white bg-opacity-80 rounded-t md:bg-opacity-0 md:rounded md:flex md:flex-wrap md:justify-between md:items-center"},X={class:"flex items-end"},Z=["src"],ee={class:"text-4xl font-light"},te=e("span",{class:"ml-3 text-xl"},"角色信息",-1),ae={class:"grid grid-cols-3 md:grid-cols-6 gap-1 text-sm md:text-base text-center"},re=e("div",null,"票数",-1),se=e("div",null,"本命票数",-1),ne=e("div",null,"本命率",-1),oe=e("div",null,"票数全局占比",-1),ie=e("div",null,"本命全局占比",-1),le=e("div",null,"投票理由",-1),ce={key:1},ue=e("div",{class:"md:mx-5 p-3 py-1 bg-white bg-opacity-80 rounded-b md:bg-opacity-0 text-sm italic text-gray-700"},[l(" * 本页面为单独角色的详细信息页面，下面每个栏目的内容分别有各自的说明"),e("br")],-1),de={class:"md:mx-5 p-3"},ve=e("div",{class:"text-2xl py-0.5 border-b border-accent-600"},"投票演进",-1),me={class:"py-1 bg-white bg-opacity-80 rounded-b md:bg-opacity-0 text-sm italic text-gray-700"},ge=e("br",null,null,-1),_e=e("br",null,null,-1),he=I({__name:"characterSingleDetail",setup(ye){const n=j(),c=r(Number(n.query.rank?Array.isArray(n.query.rank)?n.query.rank[0]:n.query.rank:1)),u=b(()=>String(n.query.q?Array.isArray(n.query.q)?n.query.q[0]:n.query.q:"")),i=r("ID："+c.value),V=b(()=>{var o;return((o=L.find(C=>C.name===i.value))==null?void 0:o.image)||J}),h=r(-1),y=r(-1),p=r(-1),f=r(-1),q=r(-1),d=r(-1),x=r([]),S=r("NONE"),{result:a,loading:N,onError:R}=Y(B`
+    query ($voteStart: DateTimeUtc!, $voteYear: Int!, $rank: Int!, $query: String) {
+      queryCharacterSingle(voteStart: $voteStart, voteYear: $voteYear, rank: $rank, query: $query) {
+        name
+        voteCount
+        firstVoteCount
+        firstVotePercentage
+        votePercentage
+        firstPercentage
+        numReasons
+        trend {
+          hrs
+          cnt
+        }
+        trendFirst {
+          hrs
+          cnt
+        }
+      }
+    }
+  `,_(u.value)===""?{voteStart:new Date(Date.UTC(2022,5,17,10)),voteYear:10,rank:c.value}:{voteStart:new Date(Date.UTC(2022,5,17,10)),voteYear:10,rank:c.value,query:_(u.value)});return k(()=>{a.value&&a.value.queryCharacterSingle&&(i.value=a.value.queryCharacterSingle.name,E(i.value+" - 第⑩回 中文东方人气投票"),S.value='chars:["'+i.value+'"]',h.value=a.value.queryCharacterSingle.voteCount,y.value=a.value.queryCharacterSingle.firstVoteCount,p.value=g(a.value.queryCharacterSingle.firstVotePercentage),f.value=g(a.value.queryCharacterSingle.votePercentage),q.value=g(a.value.queryCharacterSingle.firstPercentage),d.value=a.value.queryCharacterSingle.numReasons,x.value.push($("总票数",a.value.queryCharacterSingle.trend),T("新增票数",a.value.queryCharacterSingle.trend),$("总本命票数",a.value.queryCharacterSingle.trendFirst),T("新增本命票",a.value.queryCharacterSingle.trendFirst)))}),R(o=>{alert(o.message),console.log(o.message)}),k(()=>{N.value?v.isStarted()||v.start():v.isStarted()&&v.done()}),(o,C)=>{const A=G("router-link");return m(),w("div",M,[e("div",W,[e("div",X,[e("img",{src:t(V),class:"w-10 h-10 col-span-1 row-span-2 rounded"},null,8,Z),e("h2",ee,s(t(i)),1),te]),e("div",ae,[e("div",null,[re,e("div",null,s(t(h)),1)]),e("div",null,[se,e("div",null,s(t(y)),1)]),e("div",null,[ne,e("div",null,s(t(p)),1)]),e("div",null,[oe,e("div",null,s(t(f)),1)]),e("div",null,[ie,e("div",null,s(t(q)),1)]),e("div",null,[le,t(d)>0?(m(),F(A,{key:0,class:"underline",to:"/characterReason?rank="+t(c)+(t(_)(t(u))===""?"":"&q="+t(u))},{default:U(()=>[l(s(t(d)+"(点此查看)"),1)]),_:1},8,["to"])):(m(),w("div",ce,s(t(d)),1))])])]),ue,e("div",de,[ve,e("div",me,[l(" * 该图表表示该角色随着投票进程的票数变化情况。"),ge,l(" * 投票日期："+s(t(O)+" ~ "+t(Q))+"。",1),_e,l(" * 通过拖动底部和右侧的滑柄或在图表上缩放（鼠标或手指）可以筛选数据范围，也可以点击顶部的图例开关某个数据的显示。 ")]),D(H,{"x-axis":t(z),data:t(x),class:"max-w-4xl pt-3 mx-auto"},null,8,["x-axis","data"])]),D(K,{class:"md:mx-5",q:t(S)},null,8,["q"])])}}});typeof P=="function"&&P(he);export{he as default};
+//# sourceMappingURL=characterSingleDetail-72e80e90.js.map

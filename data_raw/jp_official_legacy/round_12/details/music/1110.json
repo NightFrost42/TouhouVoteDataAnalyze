@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1110.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1110.php",
+    "retrieved_at": "2026-08-15T09:54:00+00:00",
+    "http_status": 200,
+    "bytes": 6476,
+    "sha256": "0a1b9095fb482f7332448f9e1014c321693be71e38a611b56d22e5dcf3fb4eee",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1110",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：花は幻想のままに - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "花は幻想のままに（205位）",
+      "numbers": [
+        {
+          "raw": "205位",
+          "value": 205,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：223点 ｜ 得票数：205票 ｜ 一押し数：18票 ｜ コメント数：30件 継続投票率：68.8%（16名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "223点",
+          "value": 223,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "205票",
+          "value": 205,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "18票",
+          "value": 18,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "30件",
+          "value": 30,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "68.8%",
+          "value": 68.8,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "16名",
+          "value": 16,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

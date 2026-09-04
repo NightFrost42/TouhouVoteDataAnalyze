@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2056.php",
+    "effective_url": "https://toho-vote.info/result13/music/2056.php",
+    "retrieved_at": "2026-08-15T09:56:10+00:00",
+    "http_status": 200,
+    "bytes": 3929,
+    "sha256": "b338fba9a681682d924763a168261d700bb31cb265521f3366b9cf1fbc750197",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2056",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：スターボウドリーム - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "スターボウドリーム（379位）",
+      "numbers": [
+        {
+          "raw": "379位",
+          "value": 379,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：23点 ｜ 得票数：22票 ｜ 一押し数：1票 ｜ コメント数：5件 継続投票率：66.7%（6名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "23点",
+          "value": 23,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "22票",
+          "value": 22,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "66.7%",
+          "value": 66.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "6名",
+          "value": 6,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

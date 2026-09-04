@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1185.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1185.php",
+    "retrieved_at": "2026-08-15T09:54:13+00:00",
+    "http_status": 200,
+    "bytes": 4164,
+    "sha256": "b857c5edd02f905dcf2328308e203eec7a94d457e7c2e007f5de14ff576f4511",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1185",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：青空の影 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "青空の影（319位）",
+      "numbers": [
+        {
+          "raw": "319位",
+          "value": 319,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：52点 ｜ 得票数：47票 ｜ 一押し数：5票 ｜ コメント数：5件 継続投票率：33.3%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "52点",
+          "value": 52,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "47票",
+          "value": 47,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "33.3%",
+          "value": 33.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

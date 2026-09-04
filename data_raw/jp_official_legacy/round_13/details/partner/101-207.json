@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/101-207.php",
+    "effective_url": "https://toho-vote.info/result13/partner/101-207.php",
+    "retrieved_at": "2026-08-15T09:56:26+00:00",
+    "http_status": 200,
+    "bytes": 6798,
+    "sha256": "fe49d5bc8aa9ca87c2d10bdb0e978107448da4e862217111e30e49ecd8429bd8",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "101-207",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 霊夢と十六夜 咲夜 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 霊夢と十六夜 咲夜（67位）",
+      "numbers": [
+        {
+          "raw": "67位",
+          "value": 67,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：343点 ｜ 得票数：286票 ｜ 一押し数：57票 ｜ コメント数：33件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "343点",
+          "value": 343,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "286票",
+          "value": 286,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "57票",
+          "value": 57,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "33件",
+          "value": 33,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

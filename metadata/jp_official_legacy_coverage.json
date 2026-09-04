@@ -1,0 +1,707 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-15T10:01:51+00:00",
+  "requested_rounds": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "rounds": {
+    "3": {
+      "pages_recorded": 10,
+      "pages_ok": 10,
+      "pages_error": 0,
+      "roles_recorded": {
+        "aggregate": 5,
+        "detail": 3,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "aggregate": 5,
+        "detail": 3,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 1,
+          "recorded": 1,
+          "fetched_ok": 1,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        },
+        "music": {
+          "discovered": 1,
+          "recorded": 1,
+          "fetched_ok": 1,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        },
+        "spell": {
+          "discovered": 1,
+          "recorded": 1,
+          "fetched_ok": 1,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        }
+      },
+      "numeric_tables": 21,
+      "numeric_rows": 797,
+      "errors": []
+    },
+    "4": {
+      "pages_recorded": 7,
+      "pages_ok": 7,
+      "pages_error": 0,
+      "roles_recorded": {
+        "aggregate": 3,
+        "detail": 2,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "aggregate": 3,
+        "detail": 2,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 1,
+          "recorded": 1,
+          "fetched_ok": 1,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        },
+        "music": {
+          "discovered": 1,
+          "recorded": 1,
+          "fetched_ok": 1,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        }
+      },
+      "numeric_tables": 22,
+      "numeric_rows": 471,
+      "errors": []
+    },
+    "5": {
+      "pages_recorded": 41,
+      "pages_ok": 41,
+      "pages_error": 0,
+      "roles_recorded": {
+        "aggregate": 3,
+        "detail": 36,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "aggregate": 3,
+        "detail": 36,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 94,
+          "numeric_rows": 188
+        },
+        "music": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 266,
+          "numeric_rows": 532
+        },
+        "questionnaire": {
+          "discovered": 7,
+          "recorded": 7,
+          "fetched_ok": 7,
+          "missing": [],
+          "numeric_tables": 5,
+          "numeric_rows": 10
+        },
+        "questionnaire_comment": {
+          "discovered": 25,
+          "recorded": 25,
+          "fetched_ok": 25,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        }
+      },
+      "numeric_tables": 396,
+      "numeric_rows": 1277,
+      "errors": []
+    },
+    "6": {
+      "pages_recorded": 35,
+      "pages_ok": 35,
+      "pages_error": 0,
+      "roles_recorded": {
+        "aggregate": 5,
+        "detail": 28,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "aggregate": 5,
+        "detail": 28,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 108,
+          "numeric_rows": 216
+        },
+        "music": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 318,
+          "numeric_rows": 636
+        },
+        "questionnaire": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 2,
+          "numeric_rows": 4
+        },
+        "questionnaire_comment": {
+          "discovered": 22,
+          "recorded": 22,
+          "fetched_ok": 22,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        }
+      },
+      "numeric_tables": 459,
+      "numeric_rows": 1926,
+      "errors": []
+    },
+    "7": {
+      "pages_recorded": 37,
+      "pages_ok": 37,
+      "pages_error": 0,
+      "roles_recorded": {
+        "aggregate": 4,
+        "detail": 31,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "aggregate": 4,
+        "detail": 31,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 124,
+          "numeric_rows": 248
+        },
+        "music": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 353,
+          "numeric_rows": 706
+        },
+        "questionnaire": {
+          "discovered": 3,
+          "recorded": 3,
+          "fetched_ok": 3,
+          "missing": [],
+          "numeric_tables": 1,
+          "numeric_rows": 2
+        },
+        "questionnaire_comment": {
+          "discovered": 24,
+          "recorded": 24,
+          "fetched_ok": 24,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        }
+      },
+      "numeric_tables": 510,
+      "numeric_rows": 2141,
+      "errors": []
+    },
+    "8": {
+      "pages_recorded": 30,
+      "pages_ok": 30,
+      "pages_error": 0,
+      "roles_recorded": {
+        "aggregate": 4,
+        "detail": 24,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "aggregate": 4,
+        "detail": 24,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 3,
+          "recorded": 3,
+          "fetched_ok": 3,
+          "missing": [],
+          "numeric_tables": 128,
+          "numeric_rows": 256
+        },
+        "music": {
+          "discovered": 3,
+          "recorded": 3,
+          "fetched_ok": 3,
+          "missing": [],
+          "numeric_tables": 376,
+          "numeric_rows": 752
+        },
+        "questionnaire": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 1,
+          "numeric_rows": 2
+        },
+        "questionnaire_comment": {
+          "discovered": 16,
+          "recorded": 16,
+          "fetched_ok": 16,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        }
+      },
+      "numeric_tables": 530,
+      "numeric_rows": 2238,
+      "errors": []
+    },
+    "9": {
+      "pages_recorded": 39,
+      "pages_ok": 39,
+      "pages_error": 0,
+      "roles_recorded": {
+        "aggregate": 4,
+        "detail": 33,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "aggregate": 4,
+        "detail": 33,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 3,
+          "recorded": 3,
+          "fetched_ok": 3,
+          "missing": [],
+          "numeric_tables": 140,
+          "numeric_rows": 280
+        },
+        "music": {
+          "discovered": 3,
+          "recorded": 3,
+          "fetched_ok": 3,
+          "missing": [],
+          "numeric_tables": 393,
+          "numeric_rows": 786
+        },
+        "questionnaire": {
+          "discovered": 1,
+          "recorded": 1,
+          "fetched_ok": 1,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        },
+        "questionnaire_comment": {
+          "discovered": 26,
+          "recorded": 26,
+          "fetched_ok": 26,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        }
+      },
+      "numeric_tables": 570,
+      "numeric_rows": 2554,
+      "errors": []
+    },
+    "10": {
+      "pages_recorded": 36,
+      "pages_ok": 36,
+      "pages_error": 0,
+      "roles_recorded": {
+        "aggregate": 4,
+        "detail": 30,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "aggregate": 4,
+        "detail": 30,
+        "index": 1,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 3,
+          "recorded": 3,
+          "fetched_ok": 3,
+          "missing": [],
+          "numeric_tables": 159,
+          "numeric_rows": 318
+        },
+        "music": {
+          "discovered": 3,
+          "recorded": 3,
+          "fetched_ok": 3,
+          "missing": [],
+          "numeric_tables": 431,
+          "numeric_rows": 862
+        },
+        "questionnaire": {
+          "discovered": 2,
+          "recorded": 2,
+          "fetched_ok": 2,
+          "missing": [],
+          "numeric_tables": 1,
+          "numeric_rows": 2
+        },
+        "questionnaire_comment": {
+          "discovered": 22,
+          "recorded": 22,
+          "fetched_ok": 22,
+          "missing": [],
+          "numeric_tables": 0,
+          "numeric_rows": 0
+        }
+      },
+      "numeric_tables": 621,
+      "numeric_rows": 2582,
+      "errors": []
+    },
+    "11": {
+      "pages_recorded": 324,
+      "pages_ok": 324,
+      "pages_error": 0,
+      "roles_recorded": {
+        "detail": 320,
+        "index": 1,
+        "list": 2,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "detail": 320,
+        "index": 1,
+        "list": 2,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 120,
+          "recorded": 120,
+          "fetched_ok": 120,
+          "missing": [],
+          "numeric_tables": 600,
+          "numeric_rows": 5760
+        },
+        "music": {
+          "discovered": 200,
+          "recorded": 200,
+          "fetched_ok": 200,
+          "missing": [],
+          "numeric_tables": 939,
+          "numeric_rows": 8868
+        }
+      },
+      "numeric_tables": 1555,
+      "numeric_rows": 15528,
+      "errors": []
+    },
+    "12": {
+      "pages_recorded": 690,
+      "pages_ok": 690,
+      "pages_error": 0,
+      "roles_recorded": {
+        "detail": 685,
+        "index": 1,
+        "list": 3,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "detail": 685,
+        "index": 1,
+        "list": 3,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 169,
+          "recorded": 169,
+          "fetched_ok": 169,
+          "missing": [],
+          "numeric_tables": 1650,
+          "numeric_rows": 14193
+        },
+        "music": {
+          "discovered": 475,
+          "recorded": 475,
+          "fetched_ok": 475,
+          "missing": [],
+          "numeric_tables": 2278,
+          "numeric_rows": 19467
+        },
+        "work": {
+          "discovered": 41,
+          "recorded": 41,
+          "fetched_ok": 41,
+          "missing": [],
+          "numeric_tables": 451,
+          "numeric_rows": 3985
+        }
+      },
+      "numeric_tables": 4397,
+      "numeric_rows": 38593,
+      "errors": []
+    },
+    "13": {
+      "pages_recorded": 986,
+      "pages_ok": 986,
+      "pages_error": 0,
+      "roles_recorded": {
+        "detail": 980,
+        "index": 1,
+        "list": 4,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "detail": 980,
+        "index": 1,
+        "list": 4,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 175,
+          "recorded": 175,
+          "fetched_ok": 175,
+          "missing": [],
+          "numeric_tables": 1661,
+          "numeric_rows": 14429
+        },
+        "music": {
+          "discovered": 486,
+          "recorded": 486,
+          "fetched_ok": 486,
+          "missing": [],
+          "numeric_tables": 2285,
+          "numeric_rows": 19653
+        },
+        "partner": {
+          "discovered": 276,
+          "recorded": 276,
+          "fetched_ok": 276,
+          "missing": [],
+          "numeric_tables": 175,
+          "numeric_rows": 4767
+        },
+        "work": {
+          "discovered": 43,
+          "recorded": 43,
+          "fetched_ok": 43,
+          "missing": [],
+          "numeric_tables": 473,
+          "numeric_rows": 4204
+        }
+      },
+      "numeric_tables": 4613,
+      "numeric_rows": 44472,
+      "errors": []
+    },
+    "14": {
+      "pages_recorded": 762,
+      "pages_ok": 762,
+      "pages_error": 0,
+      "roles_recorded": {
+        "detail": 757,
+        "index": 1,
+        "list": 3,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "detail": 757,
+        "index": 1,
+        "list": 3,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 186,
+          "recorded": 186,
+          "fetched_ok": 186,
+          "missing": [],
+          "numeric_tables": 2046,
+          "numeric_rows": 17484
+        },
+        "music": {
+          "discovered": 525,
+          "recorded": 525,
+          "fetched_ok": 525,
+          "missing": [],
+          "numeric_tables": 5861,
+          "numeric_rows": 49369
+        },
+        "work": {
+          "discovered": 46,
+          "recorded": 46,
+          "fetched_ok": 46,
+          "missing": [],
+          "numeric_tables": 506,
+          "numeric_rows": 4324
+        }
+      },
+      "numeric_tables": 8431,
+      "numeric_rows": 72172,
+      "errors": []
+    },
+    "15": {
+      "pages_recorded": 767,
+      "pages_ok": 767,
+      "pages_error": 0,
+      "roles_recorded": {
+        "detail": 762,
+        "index": 1,
+        "list": 3,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "detail": 762,
+        "index": 1,
+        "list": 3,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 186,
+          "recorded": 186,
+          "fetched_ok": 186,
+          "missing": [],
+          "numeric_tables": 2046,
+          "numeric_rows": 17484
+        },
+        "music": {
+          "discovered": 529,
+          "recorded": 529,
+          "fetched_ok": 529,
+          "missing": [],
+          "numeric_tables": 5940,
+          "numeric_rows": 50032
+        },
+        "work": {
+          "discovered": 47,
+          "recorded": 47,
+          "fetched_ok": 47,
+          "missing": [],
+          "numeric_tables": 517,
+          "numeric_rows": 4418
+        }
+      },
+      "numeric_tables": 8520,
+      "numeric_rows": 72969,
+      "errors": []
+    },
+    "16": {
+      "pages_recorded": 800,
+      "pages_ok": 800,
+      "pages_error": 0,
+      "roles_recorded": {
+        "detail": 795,
+        "index": 1,
+        "list": 3,
+        "questionnaire": 1
+      },
+      "roles_ok": {
+        "detail": 795,
+        "index": 1,
+        "list": 3,
+        "questionnaire": 1
+      },
+      "detail_categories": {
+        "character": {
+          "discovered": 198,
+          "recorded": 198,
+          "fetched_ok": 198,
+          "missing": [],
+          "numeric_tables": 2179,
+          "numeric_rows": 18811
+        },
+        "music": {
+          "discovered": 544,
+          "recorded": 544,
+          "fetched_ok": 544,
+          "missing": [],
+          "numeric_tables": 6101,
+          "numeric_rows": 51843
+        },
+        "work": {
+          "discovered": 53,
+          "recorded": 53,
+          "fetched_ok": 53,
+          "missing": [],
+          "numeric_tables": 583,
+          "numeric_rows": 5035
+        }
+      },
+      "numeric_tables": 8880,
+      "numeric_rows": 76724,
+      "errors": []
+    }
+  },
+  "complete": true
+}

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/4057.php",
+    "effective_url": "https://toho-vote.info/result13/music/4057.php",
+    "retrieved_at": "2026-08-15T09:56:20+00:00",
+    "http_status": 200,
+    "bytes": 5045,
+    "sha256": "b13d15481eb6bbcda91db1cd6ae9b592e57fe938e3f1b613f30435de559acc4e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4057",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：未知の花 魅知の旅 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "未知の花 魅知の旅（213位）",
+      "numbers": [
+        {
+          "raw": "213位",
+          "value": 213,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：178点 ｜ 得票数：173票 ｜ 一押し数：5票 ｜ コメント数：21件 継続投票率：41.5%（41名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "178点",
+          "value": 178,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "173票",
+          "value": 173,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "21件",
+          "value": 21,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "41.5%",
+          "value": 41.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "41名",
+          "value": 41,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4026.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4026.php",
+    "retrieved_at": "2026-08-15T09:54:54+00:00",
+    "http_status": 200,
+    "bytes": 4312,
+    "sha256": "f67fdd391ad157f8ca12aad158f5b6d6e4669c08918beed65b66bef4aa0afc1c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4026",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：華胥の夢 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "華胥の夢（303位）",
+      "numbers": [
+        {
+          "raw": "303位",
+          "value": 303,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：59点 ｜ 得票数：55票 ｜ 一押し数：4票 ｜ コメント数：5件 継続投票率：100.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "59点",
+          "value": 59,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "55票",
+          "value": 55,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

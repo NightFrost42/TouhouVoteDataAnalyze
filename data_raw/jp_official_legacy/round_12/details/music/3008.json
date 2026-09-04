@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/3008.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/3008.php",
+    "retrieved_at": "2026-08-15T09:54:50+00:00",
+    "http_status": 200,
+    "bytes": 5169,
+    "sha256": "94100d7fac0b353e07fecba2f4924e4132f1de366bc065b6a37e529955ae3554",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3008",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：サニールチルフレクション - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "サニールチルフレクション（254位）",
+      "numbers": [
+        {
+          "raw": "254位",
+          "value": 254,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：101点 ｜ 得票数：93票 ｜ 一押し数：8票 ｜ コメント数：13件 継続投票率：72.7%（11名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "101点",
+          "value": 101,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "93票",
+          "value": 93,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8票",
+          "value": 8,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "13件",
+          "value": 13,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "72.7%",
+          "value": 72.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "11名",
+          "value": 11,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

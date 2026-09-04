@@ -1,0 +1,89 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/character/706.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/character/706.php",
+    "retrieved_at": "2026-08-15T09:53:34+00:00",
+    "http_status": 200,
+    "bytes": 4187,
+    "sha256": "8831163a24c0937184fef48351c16199dd0787a94f8dee6d2678f0d059ca74fb",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "character",
+  "item_id": "706",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：命蓮 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "命蓮（154位）",
+      "numbers": [
+        {
+          "raw": "154位",
+          "value": 154,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：32点 ｜ 得票数：29票 ｜ 一押し数：3票 ｜ コメント数：6件 ｜ 支援作品数： 0件 継続投票率：66.7%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "32点",
+          "value": 32,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "29票",
+          "value": 29,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "66.7%",
+          "value": 66.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

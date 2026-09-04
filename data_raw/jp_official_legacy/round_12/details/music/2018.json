@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2018.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2018.php",
+    "retrieved_at": "2026-08-15T09:54:39+00:00",
+    "http_status": 200,
+    "bytes": 4565,
+    "sha256": "356bff50f42992943ff6db61d75b3a44e4c8699e4320deeaa505b4129ed39f8a",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2018",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：She's in a temper!! - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "She's in a temper!!（366位）",
+      "numbers": [
+        {
+          "raw": "366位",
+          "value": 366,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：26点 ｜ 得票数：24票 ｜ 一押し数：2票 ｜ コメント数：5件 継続投票率：100.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "26点",
+          "value": 26,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "24票",
+          "value": 24,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

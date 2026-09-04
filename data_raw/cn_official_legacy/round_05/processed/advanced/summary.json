@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "round": 5,
+  "official_base": "https://touhou.vote/v5/",
+  "updated_at": "2026-08-23T14:21:24+00:00",
+  "scope": "bounded analytical advanced-search data: categorical questionnaire answers, unordered distinct categorical-question pairs, and nonempty character/music any/first-vote atomic cohorts, each against the official character/music ranking pages",
+  "intentionally_not_enumerated": [
+    "min/max result display ranges",
+    "client-side keyword search",
+    "open-answer/recommendation-reason prose",
+    "images and fonts",
+    "composite AND/OR condition products beyond the official two-question cross table"
+  ],
+  "interface_support": {
+    "entry_resources": [
+      {
+        "url": "https://touhou.vote/v5/?m=paper",
+        "path": "data_raw/cn_official_legacy/round_05/raw/pages/paper/index.html",
+        "available": true
+      },
+      {
+        "url": "https://touhou.vote/v5/?m=chara&type=simple",
+        "path": "data_raw/cn_official_legacy/round_05/raw/pages/chara/m_chara__type_simple.html",
+        "available": true
+      },
+      {
+        "url": "https://touhou.vote/v5/?m=music&type=simple",
+        "path": "data_raw/cn_official_legacy/round_05/raw/pages/music/m_music__type_simple.html",
+        "available": true
+      },
+      {
+        "url": "https://touhou.vote/v5/js/paperinfo.js",
+        "path": "data_raw/cn_official_legacy/round_05/raw/scripts/paperinfo.js",
+        "available": true
+      },
+      {
+        "url": "https://touhou.vote/v5/js/info.js",
+        "path": "data_raw/cn_official_legacy/round_05/raw/scripts/info.js",
+        "available": true
+      }
+    ],
+    "ranking_support": {
+      "chara": {
+        "questionnaire_filter": true,
+        "entity_filter": true
+      },
+      "music": {
+        "questionnaire_filter": true,
+        "entity_filter": true
+      }
+    },
+    "questionnaire_cross": true,
+    "aggregate_questionnaire": true,
+    "paper_available": true,
+    "paper_client_available": true
+  },
+  "questionnaire": {
+    "analytical_questions": 58,
+    "questions_selected_this_run": 58,
+    "cross_questions_selected_this_run": 57,
+    "intentionally_excluded_questions": 0,
+    "aggregate_expected": 7,
+    "aggregate_available": 7,
+    "advice_expected": 58,
+    "advice_available": 58,
+    "answer_options": 314,
+    "condition_expected": 628,
+    "condition_available": 628,
+    "pair_expected": 1596,
+    "pair_available": 1596,
+    "pair_cells": 45419,
+    "filter_targets": [
+      "chara",
+      "music"
+    ],
+    "cross_offered": true
+  },
+  "stages_completed": [
+    "entity",
+    "questionnaire"
+  ],
+  "status": "available_crawled",
+  "stages_attempted": [
+    "entity",
+    "questionnaire"
+  ],
+  "entity": {
+    "targets": [
+      "chara",
+      "music"
+    ],
+    "catalogue_sources_expected": 2,
+    "catalogue_sources_available": 2,
+    "catalog_items": 694,
+    "condition_expected": 2108,
+    "condition_available": 2108,
+    "zero_cohort_conditions_excluded": 668
+  },
+  "error": "transient circuit breaker: 3 failures in a 11-completion window; transport/status ['transport']"
+}

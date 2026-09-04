@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/230-239.php",
+    "effective_url": "https://toho-vote.info/result13/partner/230-239.php",
+    "retrieved_at": "2026-08-15T09:56:35+00:00",
+    "http_status": 200,
+    "bytes": 16204,
+    "sha256": "eb609f0de626fe42d1d2e71afb81d4ca4bd96a126887f4fab03805e403f6dfe3",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "230-239",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：射命丸 文と犬走 椛 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "射命丸 文と犬走 椛（16位）",
+      "numbers": [
+        {
+          "raw": "16位",
+          "value": 16,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1862点 ｜ 得票数：1499票 ｜ 一押し数：363票 ｜ コメント数：187件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1862点",
+          "value": 1862,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1499票",
+          "value": 1499,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "363票",
+          "value": 363,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "187件",
+          "value": 187,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

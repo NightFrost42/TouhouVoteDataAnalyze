@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/101-230.php",
+    "effective_url": "https://toho-vote.info/result13/partner/101-230.php",
+    "retrieved_at": "2026-08-15T09:56:27+00:00",
+    "http_status": 200,
+    "bytes": 8843,
+    "sha256": "8fafcb54ba26c91b91c6db0623e7525fd1a77af11c104ad4d9624a02fbe04495",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "101-230",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 霊夢と射命丸 文 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 霊夢と射命丸 文（53位）",
+      "numbers": [
+        {
+          "raw": "53位",
+          "value": 53,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：532点 ｜ 得票数：417票 ｜ 一押し数：115票 ｜ コメント数：66件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "532点",
+          "value": 532,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "417票",
+          "value": 417,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "115票",
+          "value": 115,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "66件",
+          "value": 66,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

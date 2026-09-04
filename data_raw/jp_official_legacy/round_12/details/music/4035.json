@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4035.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4035.php",
+    "retrieved_at": "2026-08-15T09:54:54+00:00",
+    "http_status": 200,
+    "bytes": 5412,
+    "sha256": "ca3f884c4bf48a719a95546a6a561a98b90b276d970d6fd576f055de5608a614",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4035",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：幽玄の槭樹 ～ Eternal Dream - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "幽玄の槭樹 ～ Eternal Dream（235位）",
+      "numbers": [
+        {
+          "raw": "235位",
+          "value": 235,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：136点 ｜ 得票数：126票 ｜ 一押し数：10票 ｜ コメント数：22件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "136点",
+          "value": 136,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "126票",
+          "value": 126,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "10票",
+          "value": 10,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "22件",
+          "value": 22,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

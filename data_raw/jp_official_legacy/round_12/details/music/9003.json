@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/9003.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/9003.php",
+    "retrieved_at": "2026-08-15T09:55:00+00:00",
+    "http_status": 200,
+    "bytes": 5553,
+    "sha256": "e490ff1c873b968b13868c9777ca9cb05193d5ffba32495d1ae652157d097ba9",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "9003",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：サーカスレヴァリエ（機械サーカス） - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "サーカスレヴァリエ（機械サーカス）（282位）",
+      "numbers": [
+        {
+          "raw": "282位",
+          "value": 282,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：78点 ｜ 得票数：69票 ｜ 一押し数：9票 ｜ コメント数：17件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "78点",
+          "value": 78,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "69票",
+          "value": 69,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "17件",
+          "value": 17,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

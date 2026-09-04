@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="音乐投票演进对比">
+	
+	<title>音乐投票演进对比 - 东方Project人气投票 第八回 - THBWiki</title>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<link href="https://touhou.vote/v8/style/bootstrap.min.css" rel="stylesheet">
+	<link href="https://touhou.vote/v8/style/bootstrap-theme.min.css" rel="stylesheet">
+	
+	<link type="text/css" href="https://touhou.vote/v8/style/selectize.css" rel="stylesheet">
+	<link type="text/css" href="https://touhou.vote/v8/style/selectize.default.css" rel="stylesheet">
+	<link type="text/css" href="https://touhou.vote/v8/style/list.css" rel="stylesheet">';
+	
+  	<link href="https://touhou.vote/v8/style/footable.bootstrap.css" rel="stylesheet">
+	<link href="https://touhou.vote/v8/style/result.css?v=20191021" rel="stylesheet">
+	
+	<script src="https://touhou.vote/v8/js/jquery-3.1.1.min.js"></script>
+	
+	<script type="text/javascript">
+		var votelist = [ {"value":1,"name":"A Sacred Lot","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/3/32/ha05_01.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":""},
+{"value":2,"name":"永远之巫女","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/0/06/ha05_02.mp3","include":"蓬莱人形、幺乐团的历史5","optlist":[1,25,37],"jpname":"永遠の巫女"},
+{"value":3,"name":"The Positive and Negative","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/1/16/ha05_03.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":""},
+{"value":4,"name":"Highly Responsive to Prayers","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/7/7b/ha05_04.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":""},
+{"value":5,"name":"东方怪奇谈","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/7/72/ha05_05.mp3","include":"蓬莱人形、幺乐团的历史5","optlist":[1,25,37],"jpname":"東方怪奇談"},
+{"value":6,"name":"天使传说","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/f/f4/ha05_06.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":"天使伝説"},
+{"value":7,"name":"Oriental Magician","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/5/50/ha05_07.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":""},
+{"value":8,"name":"破邪的小太刀","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/1/16/ha05_08.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":"破邪の小太刀"},
+{"value":9,"name":"魔镜","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/1/1d/ha05_09.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":"魔鏡"},
+{"value":10,"name":"the Legend of KAGE","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/f/fb/ha05_10.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":""},
+{"value":11,"name":"来吧，直到倒地死去的那一刻","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/9/97/ha05_11.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":"いざ、倒れ逝くその時まで"},
+{"value":12,"name":"同归于尽","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/4/4c/ha05_12.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":"死なばもろとも"},
+{"value":13,"name":"星幽剑士","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/0/02/ha05_13.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":"星幽剣士"},
+{"value":14,"name":"鸢尾花","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/d/df/ha05_14.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":"アイリス"},
+{"value":15,"name":"风之神社","optgroup":"东方灵异传","url":"https://upload.thwiki.cc/7/77/th01_99.mp3","include":"幺乐团的历史5","optlist":[1,37],"jpname":"風の神社"},
+{"value":16,"name":"东方封魔录 ～ 净土曼荼罗","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/3/39/ha03_01.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"東方封魔録 ～ 浄土曼荼羅"},
+{"value":17,"name":"博丽 ～ Eastern Wind","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/c/ca/ha03_02.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"博麗 ～ Eastern Wind"},
+{"value":18,"name":"She's in a temper!!","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/3/3c/ha03_03.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":""},
+{"value":19,"name":"End of Daylight","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/1/1a/ha03_04.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":""},
+{"value":20,"name":"黑暗的力量","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/b/b3/ha03_05.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"やみのちから"},
+{"value":21,"name":"幻梦界","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/f/f8/ha03_06.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"幻夢界"},
+{"value":22,"name":"以死相赌","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/9/95/ha03_07.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"死を賭して"},
+{"value":23,"name":"神篱，如紫色火焰般燃烧","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/d/da/ha03_08.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"ひもろぎ、むらさきにもえ"},
+{"value":24,"name":"恋色Magic（恋色Master spark）","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/e/e6/ha03_09.mp3","include":"永夜抄、萃梦想、幻想曲拔萃、非想天则、核热造神非想天则、深秘录、深秘乐曲集、幺乐团的历史3、凭依华","optlist":[2,9,8,38,16,40,23,42,35,58],"jpname":"恋色マジック"},
+{"value":25,"name":"东方封魔录 ～ 幽幻乱舞","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/b/be/ha03_10.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"東方封魔録 ～ 幽幻乱舞"},
+{"value":26,"name":"Complete Darkness","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/d/db/ha03_11.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":""},
+{"value":27,"name":"Extra Love","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/2/2a/ha03_12.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":""},
+{"value":28,"name":"战车娘所做的梦","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/d/d4/ha03_13.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"戦車むすめのみるゆめ"},
+{"value":29,"name":"远野之森","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/e/e1/ha03_14.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"遠野の森"},
+{"value":30,"name":"传说中的仙境","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/f/f8/ha03_15.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"昔話わんだーらんど"},
+{"value":31,"name":"博丽神社境内","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/c/ca/ha03_16.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"博麗神社境内"},
+{"value":32,"name":"夕阳下落","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/2/2a/ha03_17.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"陽落ちて"},
+{"value":33,"name":"封魔终演","optgroup":"东方封魔录","url":"https://upload.thwiki.cc/c/c5/ha03_18.mp3","include":"幺乐团的历史3","optlist":[2,35],"jpname":"封魔終演"},
+{"value":34,"name":"梦想超越时空","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/0/04/ha04_01.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"夢は時空を越えて"},
+{"value":35,"name":"Selection","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/9/99/ha04_02.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":""},
+{"value":36,"name":"东方妖恋谈","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/0/01/ha04_03.mp3","include":"怪绮谈、萃梦想、幻想曲拔萃、绯想天、全人类的天乐录、非想天则、核热造神非想天则、幺乐团的历史4","optlist":[3,5,8,38,13,39,16,40,36],"jpname":"東方妖恋談"},
+{"value":37,"name":"Reincarnation","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/4/43/ha04_04.mp3","include":"蓬莱人形、幺乐团的历史4","optlist":[3,25,36],"jpname":""},
+{"value":38,"name":"Dim. Dream","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/5/59/ha04_05.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":""},
+{"value":39,"name":"Tabula rasa ～ 空白少女","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/e/e3/ha04_06.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":""},
+{"value":40,"name":"Maniacal Princess","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/7/78/ha04_07.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":""},
+{"value":41,"name":"梦消失 ～ Lost Dream","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/d/d9/ha04_08.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"夢消失 ～ Lost Dream"},
+{"value":42,"name":"梦幻游戏 ～ Dream War","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/0/0f/ha04_09.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"夢幻遊戯 ～ Dream War"},
+{"value":43,"name":"魔法决战！ ～ Fight it out!","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/a/a1/ha04_11.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"魔法決戦！ ～ Fight it out!"},
+{"value":44,"name":"Sailor of Time","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/6/60/ha04_13.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":""},
+{"value":45,"name":"Strawberry Crisis!!","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/6/66/ha04_15.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":""},
+{"value":46,"name":"非统一魔法世界论","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/0/05/ha04_12.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"非統一魔法世界論"},
+{"value":47,"name":"魔法钟爱","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/7/77/ha04_14.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"魔法鐘愛"},
+{"value":48,"name":"久远之梦","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/1/16/ha04_16.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"久遠の夢"},
+{"value":49,"name":"东方的蓝色天空","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/5/5a/ha04_17.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"東方の青い空"},
+{"value":50,"name":"永远的满月","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/1/16/ha04_18.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"永遠の満月"},
+{"value":51,"name":"Maple Dream...","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/c/c5/ha04_19.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":""},
+{"value":52,"name":"灵人的休息日","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/d/da/ha04_21.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"霊人の休日"},
+{"value":53,"name":"胜利的示范","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/a/a8/ha04_10.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"勝利デモ"},
+{"value":54,"name":"Game Over","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/8/8d/ha04_20.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"ゲームオーバー"},
+{"value":55,"name":"时之风","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/b/b1/ha04_22.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"時の風"},
+{"value":56,"name":"Starbow Dream","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/f/f3/ha04_23.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":"スターボウドリーム"},
+{"value":57,"name":"Phantasmagoria","optgroup":"东方梦时空","url":"https://upload.thwiki.cc/8/84/ha04_24.mp3","include":"幺乐团的历史4","optlist":[3,36],"jpname":""},
+{"value":58,"name":"幻想乡 ～ Lotus Land Story","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/f/f7/ha01a_01.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"幻想郷 ～ Lotus Land Story"},
+{"value":59,"name":"Witching Dream","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/4/44/ha01a_02.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":60,"name":"Selene's light","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/d/df/ha01a_03.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":61,"name":"装饰战 ～ Decoration Battle","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/2/28/ha01a_04.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"装飾戦 ～ Decoration Battle"},
+{"value":62,"name":"Break the Sabbath","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/0/09/ha01a_05.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":63,"name":"紅响曲 ～ Scarlet Phoneme","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/0/0f/ha01a_06.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"紅響曲 ～ Scarlet Phoneme"},
+{"value":64,"name":"Bad Apple!!","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/7/70/ha01a_07.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":65,"name":"灵战 ～ Perdition crisis","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/9/95/ha01a_08.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"霊戦 ～ Perdition crisis"},
+{"value":66,"name":"Alice Maestra","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/a/ab/ha01a_09.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"アリスマエステラ"},
+{"value":67,"name":"少女绮想曲 ～ Capriccio","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/2/2e/ha01a_10.mp3","include":"永夜抄、萃梦想、幻想曲拔萃、幺乐团的历史1","optlist":[4,9,8,38,33],"jpname":"少女綺想曲 ～ Capriccio"},
+{"value":68,"name":"星之器 ～ Casket of Star","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/1/16/ha01a_11.mp3","include":"怪绮谈、绯想天、全人类的天乐录、幺乐团的历史1","optlist":[4,5,13,38,33],"jpname":"星の器 ～ Casket of Star"},
+{"value":69,"name":"Lotus Love","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/3/37/ha01a_12.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":70,"name":"能够睡眠的恐怖 ～ Sleeping Terror","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/0/01/ha01a_13.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"眠れる恐怖 ～ Sleeping Terror"},
+{"value":71,"name":"Dream Land","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/b/bd/ha01a_14.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":72,"name":"幽梦 ～ Inanimate Dream","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/6/63/ha01a_15.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"幽夢 ～ Inanimate Dream"},
+{"value":73,"name":"不可不禁止的游戏","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/7/76/ha01b_01.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"禁じざるをえない遊戯"},
+{"value":74,"name":"女仆幻想 ～ Icemilk Magic","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/6/6d/ha01b_02.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"メイド幻想 ～ Icemilk Magic"},
+{"value":75,"name":"可爱的恶魔 ～ Innocence","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/4/47/ha01b_03.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"かわいい悪魔 ～ Innocence"},
+{"value":76,"name":"Days","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/b/bb/ha01b_04.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":77,"name":"Peaceful","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/e/e6/ha01b_05.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":78,"name":"Arcadian Dream","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/d/d6/ha01b_06.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":79,"name":"幻想的居民","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/e/ef/ha01b_07.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":"幻想の住人"},
+{"value":80,"name":"Lotus Road","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/3/30/ha01b_08.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":81,"name":"Dreamy pilot","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/b/b5/ha01b_09.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":82,"name":"Incomplete Plot","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/1/19/ha01b_10.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":83,"name":"Border Land","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/7/76/ha01b_11.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":84,"name":"Magic Shop of Raspberry","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/6/6f/ha01b_12.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":85,"name":"Crescent Dream","optgroup":"东方幻想乡","url":"https://upload.thwiki.cc/1/19/ha01b_13.mp3","include":"幺乐团的历史1","optlist":[4,33],"jpname":""},
+{"value":86,"name":"怪绮谈 ～ Mystic Square","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/e/eb/ha02_01.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"怪綺談 ～ Mystic Square"},
+{"value":87,"name":"Dream Express","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/b/b9/ha02_02.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":""},
+{"value":88,"name":"魔法阵 ～ Magic Square","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/c/c8/ha02_03.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"魔法陣 ～ Magic Square"},
+{"value":89,"name":"梦想时空","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/8/8d/ha02_04.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"夢想時空"},
+{"value":90,"name":"灵天 ～ Spiritual Heaven","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/5/50/ha02_05.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"霊天 ～ Spiritual Heaven"},
+{"value":91,"name":"Romantic Children","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/d/d4/ha02_06.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":""},
+{"value":92,"name":"Plastic Mind","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/1/16/ha02_07.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"プラスチックマインド"},
+{"value":93,"name":"Maple Wise","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/2/2a/ha02_08.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"メイプルワイズ"},
+{"value":94,"name":"禁忌的魔法 ～ Forbidden Magic","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/7/76/ha02_09.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"禁断の魔法 ～ Forbidden Magic"},
+{"value":95,"name":"绯红的少女 ～ Crimson Dead!!","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/f/f0/ha02_10.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"真紅の少女 ～ Crimson Dead!!"},
+{"value":96,"name":"背叛的少女 ～ Judas Kiss","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/e/e0/ha02_11.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"裏切りの少女 ～ Judas Kiss"},
+{"value":97,"name":"the Last Judgement","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/f/f1/ha02_12.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":""},
+{"value":98,"name":"可悲的人偶 ～ Doll of Misery","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/b/b4/ha02_13.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"悲しき人形 ～ Doll of Misery"},
+{"value":99,"name":"世界的尽头 ～ World's End","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/9/98/ha02_14.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"世界の果て ～ World's End"},
+{"value":100,"name":"神话幻想 ～ Infinite Being","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/b/b5/ha02_15.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"神話幻想 ～ Infinite Being"},
+{"value":101,"name":"不可思议之国的爱丽丝","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/4/47/ha02_16.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"不思議の国のアリス"},
+{"value":102,"name":"the Grimoire of Alice","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/8/8d/ha02_17.mp3","include":"非想天则、核热造神非想天则、幺乐团的历史2","optlist":[5,16,40,34],"jpname":""},
+{"value":103,"name":"神社","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/7/74/ha02_18.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":""},
+{"value":104,"name":"Endless","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/a/a9/ha02_19.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":""},
+{"value":105,"name":"永远的乐园","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/b/b1/ha02_20.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"久遠の楽園"},
+{"value":106,"name":"Mystic Dream","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/0/00/ha02_21.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":""},
+{"value":107,"name":"Peaceful Romancer","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/a/a3/ha02_23.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":""},
+{"value":108,"name":"灵魂安息之所","optgroup":"东方怪绮谈","url":"https://upload.thwiki.cc/c/c7/ha02_22.mp3","include":"幺乐团的历史2","optlist":[5,34],"jpname":"魂の休らむ所"},
+{"value":109,"name":"比赤色更红的梦","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/1/11/th06_01.mp3","include":"","optlist":[6],"jpname":"赤より紅い夢"},
+{"value":110,"name":"如鬼灯般的红色之魂","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/4/46/th06_02.mp3","include":"","optlist":[6],"jpname":"ほおずきみたいに紅い魂"},
+{"value":111,"name":"妖魔夜行","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/3/34/th06_03.mp3","include":"","optlist":[6],"jpname":"妖魔夜行"},
+{"value":112,"name":"Lunate Elf","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/1/17/th06_04.mp3","include":"","optlist":[6],"jpname":"ルーネイトエルフ"},
+{"value":113,"name":"活泼的纯情小姑娘（活泼纯情小姑娘的冒险）","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/d/df/th06_05.mp3","include":"花映塚、文花帖、非想天则、核热造神非想天则","optlist":[6,10,16,40,51],"jpname":"おてんば恋娘（おてんば恋娘の冒険）"},
+{"value":114,"name":"上海红茶馆　～ Chinese Tea","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/a/a9/th06_06.mp3","include":"非想天则、核热造神非想天则、梦违科学世纪","optlist":[6,16,40,27],"jpname":"上海紅茶館　～ Chinese Tea"},
+{"value":115,"name":"明治十七年的上海爱丽丝","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/2/24/th06_07.mp3","include":"蓬莱人形","optlist":[6,25],"jpname":"明治十七年の上海アリス"},
+{"value":116,"name":"巴瓦鲁魔法图书馆","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/8/87/th06_08.mp3","include":"萃梦想、幻想曲拔萃、非想天则、核热造神非想天则","optlist":[6,8,38,16,40],"jpname":"ヴワル魔法図書館"},
+{"value":117,"name":"Locked Girl　～ 少女密室","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/6/66/th06_09.mp3","include":"萃梦想、幻想曲拔萃、绯想天、全人类的天乐录、卯酉东海道","optlist":[6,8,38,13,39,28],"jpname":"ラクトガール　～ 少女密室"},
+{"value":118,"name":"女仆与血之怀表","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/0/06/th06_10.mp3","include":"萃梦想、幻想曲拔萃","optlist":[6,8,38],"jpname":"メイドと血の懐中時計"},
+{"value":119,"name":"月时计　～ Luna Dial","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/c/cc/th06_11.mp3","include":"萃梦想、幻想曲拔萃","optlist":[6,8,38],"jpname":"月時計　～ ルナ・ダイアル"},
+{"value":120,"name":"特佩斯的年幼末裔","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/9/9d/th06_12.mp3","include":"","optlist":[6],"jpname":"ツェペシュの幼き末裔"},
+{"value":121,"name":"献给已逝公主的七重奏","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/b/b3/th06_13.mp3","include":"萃梦想、幻想曲拔萃、绯想天、全人类的天乐录","optlist":[6,8,38,13,39],"jpname":"亡き王女の為のセプテット"},
+{"value":122,"name":"魔法少女们的百年祭","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/b/b7/th06_14.mp3","include":"","optlist":[6],"jpname":"魔法少女達の百年祭"},
+{"value":123,"name":"U.N.OWEN就是她吗？","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/a/a4/th06_15.mp3","include":"蓬莱人形","optlist":[6,25],"jpname":"U.N.オーエンは彼女なのか？"},
+{"value":124,"name":"比红色更虚无的永远","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/8/80/th06_16.mp3","include":"","optlist":[6],"jpname":"紅より儚い永遠"},
+{"value":125,"name":"红楼 ～ Eastern Dream…","optgroup":"东方红魔乡","url":"https://upload.thwiki.cc/d/de/th06_17.mp3","include":"","optlist":[6],"jpname":"紅楼　～ Eastern Dream..."},
+{"value":126,"name":"妖妖梦 ～ Snow or Cherry Petal","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/9/98/th07_01.mp3","include":"","optlist":[7],"jpname":"妖々夢 ～ Snow or Cherry Petal"},
+{"value":127,"name":"无何有之乡","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/9/9c/th07_02.mp3","include":"","optlist":[7],"jpname":"無何有の郷 ～ Deep Mountain"},
+{"value":128,"name":"Crystallize Silver","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/6/6a/th07_03.mp3","include":"","optlist":[7],"jpname":"クリスタライズシルバー"},
+{"value":129,"name":"远野幻想物语","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/7/72/th07_04.mp3","include":"","optlist":[7],"jpname":"遠野幻想物語"},
+{"value":130,"name":"凋叶棕（withered leaf）","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/0/04/th07_05.mp3","include":"","optlist":[7],"jpname":"ティアオイエツォン(withered leaf)"},
+{"value":131,"name":"布加勒斯特的人偶师","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/0/0d/th07_06.mp3","include":"萃梦想、幻想曲拔萃、绯想天、全人类的天乐录","optlist":[7,8,38,13,39],"jpname":"ブクレシュティの人形師"},
+{"value":132,"name":"人偶裁判 ～ 玩弄人形的少女","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/a/a1/th07_07.mp3","include":"萃梦想、幻想曲拔萃、梦违科学世纪","optlist":[7,8,38,27],"jpname":"人形裁判　～ 人の形弄びし少女"},
+{"value":133,"name":"天空的花都","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/1/19/th07_08.mp3","include":"","optlist":[7],"jpname":"天空の花の都"},
+{"value":134,"name":"幽灵乐团 ～ Phantom Ensemble","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/a/a2/th07_09.mp3","include":"花映塚","optlist":[7,10],"jpname":"幽霊楽団　～ Phantom Ensemble"},
+{"value":135,"name":"东方妖妖梦 ～ Ancient Temple","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/7/72/th07_10.mp3","include":"萃梦想、幻想曲拔萃、花映塚、莲台野夜行","optlist":[7,8,38,10,26],"jpname":"東方妖々夢　～ Ancient Temple"},
+{"value":136,"name":"广有射怪鸟事 ～ Till When?","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/f/f7/th07_11.mp3","include":"萃梦想、幻想曲拔萃、绯想天、全人类的天乐录","optlist":[7,8,38,13,39],"jpname":"広有射怪鳥事　～ Till When?"},
+{"value":137,"name":"Ultimate Truth","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/0/05/th07_12.mp3","include":"","optlist":[7],"jpname":"アルティメットトゥルース"},
+{"value":138,"name":"幽雅地绽放吧，墨染的樱花　～ Border of Life","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/d/de/th07_13.mp3","include":"萃梦想、幻想曲拔萃、绯想天、全人类的天乐录","optlist":[7,8,38,13,39],"jpname":"幽雅に咲かせ、墨染の桜　～ Border of Life"},
+{"value":139,"name":"Border of Life","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/2/27/th07_14.mp3","include":"","optlist":[7],"jpname":"ボーダーオブライフ"},
+{"value":140,"name":"妖妖跋扈","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/f/ff/th07_15.mp3","include":"","optlist":[7],"jpname":"妖々跋扈"},
+{"value":141,"name":"少女幻葬 ～ Necro-Fantasy","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/9/96/th07_16.mp3","include":"莲台野夜行","optlist":[7,26],"jpname":"少女幻葬～ Necro-Fantasy"},
+{"value":142,"name":"妖妖跋扈 ～ Who done it!","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/a/a6/th07_17.mp3","include":"","optlist":[7],"jpname":"妖々跋扈　～ Who done it!"},
+{"value":143,"name":"Necro-Fantasia","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/0/04/th07_18.mp3","include":"大空魔术","optlist":[7,29],"jpname":"ネクロファンタジア"},
+{"value":144,"name":"春风之梦","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/b/b8/th07_19.mp3","include":"","optlist":[7],"jpname":"春風の夢"},
+{"value":145,"name":"樱花樱花 ～ Japanize Dream...","optgroup":"东方妖妖梦","url":"https://upload.thwiki.cc/b/b0/th07_20.mp3","include":"","optlist":[7],"jpname":"さくらさくら　～ Japanize Dream..."},
+{"value":146,"name":"萃梦想","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/2/26/TFM-001b_01.mp3","include":"幻想曲拔萃、非想天则、核热造神非想天则","optlist":[8,38,16,40],"jpname":"萃夢想"},
+{"value":147,"name":"Demystify Feast","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/a/a3/TFM-001b_14.mp3","include":"幻想曲拔萃、大空魔术","optlist":[8,38,29],"jpname":""},
+{"value":148,"name":"夜幕降临 ～ Evening Star","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/2/29/TFM-001b_16.mp3","include":"幻想曲拔萃、绯想天、全人类的天乐录、梦违科学世纪、凭依华、完全凭依唱片名录","optlist":[8,38,13,39,27,58,61],"jpname":"夜が降りてくる ～ Evening Star"},
+{"value":149,"name":"御伽之国的鬼岛 ～ Missing Power","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/9/96/TFM-001b_18.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"御伽の国の鬼が島 ～ Missing Power"},
+{"value":150,"name":"夏明","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/1/14/TFM-001a_15.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"夏明き"},
+{"value":151,"name":"东方萃梦想","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/0/03/TFM-001b_19.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"東方萃夢想"},
+{"value":152,"name":"魔所","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/3/3b/TFM-001a_09.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":""},
+{"value":153,"name":"月轮","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/d/d4/TFM-001a_03.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"月輪"},
+{"value":154,"name":"遍参","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/3/31/TFM-001a_01.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":""},
+{"value":155,"name":"内心","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/9/92/TFM-001a_11.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"裏心"},
+{"value":156,"name":"间奏曲","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/8/8c/TFM-001a_07.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"Intermezzo"},
+{"value":157,"name":"东风","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/3/38/TFM-001a_05.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"あゆのかぜ"},
+{"value":158,"name":"森闲","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/8/86/TFM-001b_03.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"森閑"},
+{"value":159,"name":"仰空","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/7/78/TFM-001b_13.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":""},
+{"value":160,"name":"幽境","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/a/ae/TFM-001b_07.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":""},
+{"value":161,"name":"稀客","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/0/02/TFM-001b_09.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"珍客"},
+{"value":162,"name":"红夜","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/f/f9/TFM-001b_05.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"紅夜"},
+{"value":163,"name":"战迅","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/6/69/TFM-001b_15.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"戦迅"},
+{"value":164,"name":"祸机","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/5/5d/TFM-001b_11.mp3","include":"幻想曲拔萃","optlist":[8,38],"jpname":"禍機"},
+{"value":165,"name":"碎月","optgroup":"东方萃梦想","url":"https://upload.thwiki.cc/0/0c/TFM-001b_17.mp3","include":"幻想曲拔萃、绯想天、全人类的天乐录","optlist":[8,38,13,39],"jpname":"砕月"},
+{"value":166,"name":"永夜抄　～ Eastern Night.","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/e/e2/th08_01.mp3","include":"","optlist":[9],"jpname":""},
+{"value":167,"name":"幻视之夜　～ Ghostly Eyes","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/d/d2/th08_02.mp3","include":"莲台野夜行","optlist":[9,26],"jpname":"幻視の夜　～ Ghostly Eyes"},
+{"value":168,"name":"蠢蠢的秋月　～ Mooned Insect","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/6/66/th08_03.mp3","include":"","optlist":[9],"jpname":"蠢々秋月　～ Mooned Insect"},
+{"value":169,"name":"夜雀的歌声　～ Night Bird","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/6/62/th08_04.mp3","include":"","optlist":[9],"jpname":"夜雀の歌声　～ Night Bird"},
+{"value":170,"name":"已经只能听见歌声了","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/b/b4/th08_05.mp3","include":"花映塚","optlist":[9,10],"jpname":"もう歌しか聞こえない"},
+{"value":171,"name":"令人怀念的东方之血　～ Old World","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/6/61/th08_06.mp3","include":"","optlist":[9],"jpname":"懐かしき東方の血　～ Old World"},
+{"value":172,"name":"Plain Asia","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/e/e4/th08_07.mp3","include":"","optlist":[9],"jpname":"プレインエイジア"},
+{"value":173,"name":"永夜的报应　～ Imperishable Night（Pipes and Fiddle）","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/9/9c/th08_08.mp3","include":"梦违科学世纪、外来韦编","optlist":[9,27,53],"jpname":"永夜の報い　～ Imperishable Night"},
+{"value":174,"name":"灰姑娘的笼子　～ Kagome-Kagome","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/9/93/th08_11.mp3","include":"幻乐祀典","optlist":[9,999],"jpname":"シンデレラケージ　～ Kagome-Kagome"},
+{"value":175,"name":"狂气之瞳　～ Invisible Full Moon","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/7/79/th08_12.mp3","include":"花映塚、绯想天、全人类的天乐录、深秘录PS4版、深秘乐曲集·补、凭依华","optlist":[9,10,13,39,56,57,58],"jpname":"狂気の瞳　～ Invisible Full Moon"},
+{"value":176,"name":"Voyage1969","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/2/2d/th08_13.mp3","include":"梦违科学世纪","optlist":[9,27],"jpname":"ヴォヤージュ1969"},
+{"value":177,"name":"千年幻想乡　～ History of the Moon","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/e/e3/th08_14.mp3","include":"卯酉东海道","optlist":[9,28],"jpname":"千年幻想郷　～ History of the Moon"},
+{"value":178,"name":"竹取飞翔　～ Lunatic Princess","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/c/c8/th08_15.mp3","include":"卯酉东海道","optlist":[9,28],"jpname":"竹取飛翔　～ Lunatic Princess"},
+{"value":179,"name":"Voyage1970","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/c/c6/th08_16.mp3","include":"","optlist":[9],"jpname":"ヴォヤージュ1970"},
+{"value":180,"name":"Extend Ash　～ 蓬莱人","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/2/2c/th08_17.mp3","include":"","optlist":[9],"jpname":"エクステンドアッシュ　～ 蓬莱人"},
+{"value":181,"name":"飘上月球，不死之烟","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/b/bc/th08_18.mp3","include":"卯酉东海道、深秘录、深秘乐曲集、凭依华","optlist":[9,28,23,42,58],"jpname":"月まで届け、不死の煙"},
+{"value":182,"name":"月见草","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/2/2c/th08_19.mp3","include":"","optlist":[9],"jpname":"月見草"},
+{"value":183,"name":"Eternal Dream　～ 幽玄的枫树","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/0/0d/th08_20.mp3","include":"梦违科学世纪","optlist":[9,27],"jpname":"Eternal Dream　～ 幽玄の槭樹"},
+{"value":184,"name":"东方妖怪小町","optgroup":"东方永夜抄","url":"https://upload.thwiki.cc/f/fd/th08_21.mp3","include":"","optlist":[9],"jpname":"東方妖怪小町"},
+{"value":185,"name":"花映塚　～ Higan Retour","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/6/67/th09_01.mp3","include":"","optlist":[10],"jpname":""},
+{"value":186,"name":"春色小径　～ Colorful Path","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/6/69/th09_02.mp3","include":"心绮楼、暗黑能乐集心绮楼","optlist":[10,20,41],"jpname":""},
+{"value":187,"name":"Oriental Dark Flight","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/3/31/th09_03.mp3","include":"","optlist":[10],"jpname":"オリエンタルダークフライト"},
+{"value":188,"name":"Flowering Night","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/e/e6/th09_04.mp3","include":"绯想天、全人类的天乐录","optlist":[10,13,39],"jpname":"フラワリングナイト"},
+{"value":189,"name":"宇佐大人的白旗","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/9/99/th09_10.mp3","include":"卯酉东海道","optlist":[10,28],"jpname":"お宇佐さまの素い幡"},
+{"value":190,"name":"剧毒身体　～ Forsaken Doll","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/9/92/th09_12.mp3","include":"","optlist":[10],"jpname":"ポイズンボディ　～ Forsaken Doll"},
+{"value":191,"name":"今昔幻想乡　～ Flower Land","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/d/d8/th09_13.mp3","include":"","optlist":[10],"jpname":"今昔幻想郷　～ Flower Land"},
+{"value":192,"name":"彼岸归航　～ Riverside View","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/a/a8/th09_14.mp3","include":"绯想天、全人类的天乐录、卯酉东海道","optlist":[10,13,39,28],"jpname":"彼岸帰航　～ Riverside View"},
+{"value":193,"name":"第六十年的东方审判　～ Fate of Sixty Years","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/1/12/th09_15.mp3","include":"紫香花、伊奘诺物质","optlist":[10,52,32],"jpname":"六十年目の東方裁判　～ Fate of Sixty Years"},
+{"value":194,"name":"映花之塚","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/f/fa/th09_16.mp3","include":"","optlist":[10],"jpname":"花の映る塚"},
+{"value":195,"name":"此岸之塚","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/4/49/th09_17.mp3","include":"","optlist":[10],"jpname":"此岸の塚"},
+{"value":196,"name":"花如幻想一般","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/8/80/th09_18.mp3","include":"","optlist":[10],"jpname":"花は幻想のままに"},
+{"value":197,"name":"魂之花 ～ Another Dream...","optgroup":"东方花映塚","url":"https://upload.thwiki.cc/2/20/th09_19.mp3","include":"","optlist":[10],"jpname":"魂の花　～ Another Dream..."},
+{"value":198,"name":"天狗的笔记 ～ Mysterious Note","optgroup":"东方文花帖","url":"https://upload.thwiki.cc/e/ed/th09.5_01.mp3","include":"","optlist":[11],"jpname":"天狗の手帖　～ Mysterious Note"},
+{"value":199,"name":"风的循环 ～ Wind Tour","optgroup":"东方文花帖","url":"https://upload.thwiki.cc/b/b8/th09.5_02.mp3","include":"","optlist":[11],"jpname":"風の循環　～ Wind Tour"},
+{"value":200,"name":"天狗正凝视着 ～ Black Eyes","optgroup":"东方文花帖","url":"https://upload.thwiki.cc/f/fb/th09.5_03.mp3","include":"","optlist":[11],"jpname":"天狗が見ている　～ Black Eyes"},
+{"value":201,"name":"东之国的不眠夜","optgroup":"东方文花帖","url":"https://upload.thwiki.cc/a/a2/th09.5_04.mp3","include":"大空魔术","optlist":[11,29],"jpname":"東の国の眠らない夜"},
+{"value":202,"name":"回忆京都","optgroup":"东方文花帖","url":"https://upload.thwiki.cc/f/fb/th09.5_05.mp3","include":"卯酉东海道","optlist":[11,28],"jpname":"レトロスペクティブ京都"},
+{"value":203,"name":"被封印的众神","optgroup":"东方风神录","url":"https://upload.thwiki.cc/8/84/th10_01.mp3","include":"","optlist":[12],"jpname":"封印されし神々"},
+{"value":204,"name":"眷爱众生之神　～ Romantic Fall","optgroup":"东方风神录","url":"https://upload.thwiki.cc/6/60/th10_02.mp3","include":"","optlist":[12],"jpname":"人恋し神様　～ Romantic Fall"},
+{"value":205,"name":"会受稻田姬的斥责啦","optgroup":"东方风神录","url":"https://upload.thwiki.cc/d/d2/th10_03.mp3","include":"","optlist":[12],"jpname":"稲田姫様に叱られるから"},
+{"value":206,"name":"厄神降临之路　～ Dark Road","optgroup":"东方风神录","url":"https://upload.thwiki.cc/3/33/th10_04.mp3","include":"","optlist":[12],"jpname":"厄神様の通り道　～ Dark Road"},
+{"value":207,"name":"命运的阴暗面","optgroup":"东方风神录","url":"https://upload.thwiki.cc/b/b6/th10_05.mp3","include":"","optlist":[12],"jpname":"運命のダークサイド"},
+{"value":208,"name":"众神眷恋的幻想乡","optgroup":"东方风神录","url":"https://upload.thwiki.cc/1/1e/th10_06.mp3","include":"","optlist":[12],"jpname":"神々が恋した幻想郷"},
+{"value":209,"name":"芥川龙之介的河童 ～ Candid Friend","optgroup":"东方风神录","url":"https://upload.thwiki.cc/4/4e/th10_07.mp3","include":"心绮楼、暗黑能乐集心绮楼、深秘录、深秘乐曲集、凭依华","optlist":[12,41,23,42,58],"jpname":"芥川龍之介の河童　～ Candid Friend"},
+{"value":210,"name":"Fall of Fall ～ 秋意渐浓之瀑","optgroup":"东方风神录","url":"https://upload.thwiki.cc/0/08/th10_08.mp3","include":"","optlist":[12],"jpname":"フォールオブフォール　～ 秋めく滝"},
+{"value":211,"name":"妖怪之山 ～ Mysterious Mountain","optgroup":"东方风神录","url":"https://upload.thwiki.cc/e/e4/th10_09.mp3","include":"DS、天邪鬼","optlist":[12,17,22],"jpname":"妖怪の山　～ Mysterious Mountain"},
+{"value":212,"name":"少女曾见的日本原风景","optgroup":"东方风神录","url":"https://upload.thwiki.cc/0/0f/th10_10.mp3","include":"","optlist":[12],"jpname":"少女が見た日本の原風景"},
+{"value":213,"name":"信仰是为了虚幻之人","optgroup":"东方风神录","url":"https://upload.thwiki.cc/2/24/th10_11.mp3","include":"非想天则、核热造神非想天则","optlist":[12,16,40],"jpname":"信仰は儚き人間の為に"},
+{"value":214,"name":"御柱的墓场 ～ Grave of Being","optgroup":"东方风神录","url":"https://upload.thwiki.cc/b/bc/th10_12.mp3","include":"","optlist":[12],"jpname":"御柱の墓場　～ Grave of Being"},
+{"value":215,"name":"神圣庄严的古战场 ～ Suwa Foughten Field","optgroup":"东方风神录","url":"https://upload.thwiki.cc/c/ce/th10_13.mp3","include":"","optlist":[12],"jpname":"神さびた古戦場　～ Suwa Foughten Field"},
+{"value":216,"name":"明日之盛，昨日之俗","optgroup":"东方风神录","url":"https://upload.thwiki.cc/7/70/th10_14.mp3","include":"非想天则、核热造神非想天则、未知之花","optlist":[12,16,40,30],"jpname":"明日ハレの日、ケの昨日"},
+{"value":217,"name":"Native Faith","optgroup":"东方风神录","url":"https://upload.thwiki.cc/e/ec/th10_15.mp3","include":"","optlist":[12],"jpname":"ネイティブフェイス"},
+{"value":218,"name":"山脚的神社","optgroup":"东方风神录","url":"https://upload.thwiki.cc/0/02/th10_16.mp3","include":"","optlist":[12],"jpname":"麓の神社"},
+{"value":219,"name":"神明降下恩惠之雨 ～ Sylphid Dream","optgroup":"东方风神录","url":"https://upload.thwiki.cc/5/5f/th10_17.mp3","include":"","optlist":[12],"jpname":"神は恵みの雨を降らす　～ Sylphid Dream"},
+{"value":220,"name":"Player's Score","optgroup":"东方风神录","url":"https://upload.thwiki.cc/5/59/th10_18.mp3","include":"地灵殿、星莲船、大战争、神灵庙、辉针城","optlist":[12,14,15,18,19,21],"jpname":"プレイヤーズスコア"},
+{"value":221,"name":"绯想天","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/c/c0/TFM-003O_01.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"緋想天"},
+{"value":222,"name":"日常坐卧","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/5/53/TFM-003O_02.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"日常坐臥"},
+{"value":223,"name":"地之色乃黄色（地之色乃黄色　～ Primrose）","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/4/4d/TFM-003O_03.mp3","include":"全人类的天乐录、凭依华、完全凭依唱片名录","optlist":[13,39,58,61],"jpname":"地の色は黄色"},
+{"value":224,"name":"甲论乙驳","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/e/e8/TFM-003O_04.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"甲論乙駁"},
+{"value":225,"name":"风光明媚","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/f/f6/TFM-003O_05.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"風光明媚"},
+{"value":226,"name":"散发着香气的树叶花","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/e/e0/TFM-003O_06.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"香る樹葉花"},
+{"value":227,"name":"飞舞的水飞沫","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/7/77/TFM-003O_07.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"踊る水飛沫"},
+{"value":228,"name":"以鱼驱蝇","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/a/ab/TFM-003O_08.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"以魚駆蠅"},
+{"value":229,"name":"放纵不羁","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/d/dd/TFM-003O_11.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"放縦不羈"},
+{"value":230,"name":"嘲讽的游戏","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/5/59/TFM-003O_10.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"嘲りの遊戯"},
+{"value":231,"name":"冷吟闲醉","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/6/6b/TFM-003O_09.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"冷吟閑酔"},
+{"value":232,"name":"云外苍天","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/8/8a/TFM-003O_12.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"雲外蒼天"},
+{"value":233,"name":"黑海中的绯红 ～ Legendary Fish","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/6/65/TFM-003O_13.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"黒い海に紅く ～ Legendary Fish"},
+{"value":234,"name":"天衣无缝（天衣无缝　～ Yellow Lily）","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/6/61/TFM-003O_14.mp3","include":"全人类的天乐录、凭依华、完全凭依唱片名录","optlist":[13,39,58,61],"jpname":"天衣無縫"},
+{"value":235,"name":"有顶天变 ～ Wonderful Heaven","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/1/10/TFM-003O_15.mp3","include":"全人类的天乐录、凭依华、完全凭依唱片名录","optlist":[13,39,58,61],"jpname":"有頂天変 ～ Wonderful Heaven"},
+{"value":236,"name":"幼小的有顶天","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/7/78/TFM-003O_16.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"幼心地の有頂天"},
+{"value":237,"name":"暮色苍然","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/f/fc/TFM-003O_17.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"暮色蒼然"},
+{"value":238,"name":"东方绯想天","optgroup":"东方绯想天","url":"https://upload.thwiki.cc/2/29/TFM-003O_18.mp3","include":"全人类的天乐录","optlist":[13,39],"jpname":"東方緋想天"},
+{"value":239,"name":"地灵们的起床","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/5/5a/th11_01.mp3","include":"","optlist":[14],"jpname":"地霊達の起床"},
+{"value":240,"name":"昏暗的风穴","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/4/41/th11_02.mp3","include":"","optlist":[14],"jpname":"暗闇の風穴"},
+{"value":241,"name":"被封印的妖怪　～ Lost Place","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/b/b5/th11_03.mp3","include":"","optlist":[14],"jpname":"封じられた妖怪 ～ Lost Place"},
+{"value":242,"name":"阻绝人迹之桥","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/7/7f/th11_04.mp3","include":"","optlist":[14],"jpname":"渡る者の途絶えた橋"},
+{"value":243,"name":"绿眼的嫉妒","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/2/25/th11_05.mp3","include":"","optlist":[14],"jpname":"緑眼のジェラシー"},
+{"value":244,"name":"漫游旧地狱街道","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/9/99/th11_06.mp3","include":"","optlist":[14],"jpname":"旧地獄街道を行く"},
+{"value":245,"name":"大江山的花之酒宴","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/8/8e/th11_07.mp3","include":"","optlist":[14],"jpname":"華のさかづき大江山"},
+{"value":246,"name":"Heartfelt Fancy","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/4/42/th11_08.mp3","include":"伊奘诺物质","optlist":[14,32],"jpname":"ハートフェルトファンシー"},
+{"value":247,"name":"少女觉 ～ 3rd eye","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/a/a1/th11_09.mp3","include":"","optlist":[14],"jpname":"少女さとり ～ 3rd eye"},
+{"value":248,"name":"废狱摇篮曲","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/2/24/th11_10.mp3","include":"","optlist":[14],"jpname":"廃獄ララバイ"},
+{"value":249,"name":"尸体旅行　～ Be of good cheer!","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/0/0d/th11_11.mp3","include":"","optlist":[14],"jpname":"死体旅行～Be of good cheer!"},
+{"value":250,"name":"业火地幔","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/9/91/th11_12.mp3","include":"","optlist":[14],"jpname":"業火マントル"},
+{"value":251,"name":"灵知的太阳信仰 ～ Nuclear Fusion","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/c/ca/th11_13.mp3","include":"非想天则、核热造神非想天则","optlist":[14,16,40],"jpname":"霊知の太陽信仰　～ Nuclear Fusion"},
+{"value":252,"name":"Last Remote","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/e/e1/th11_14.mp3","include":"","optlist":[14],"jpname":"ラストリモート"},
+{"value":253,"name":"哈德曼的妖怪少女","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/7/70/th11_15.mp3","include":"鸟船遗迹、心绮楼、暗黑能乐集心绮楼、深秘录、深秘乐曲集、凭依华","optlist":[14,31,20,41,23,42,58],"jpname":"ハルトマンの妖怪少女"},
+{"value":254,"name":"地灵们的归家","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/0/01/th11_16.mp3","include":"","optlist":[14],"jpname":"地霊達の帰宅"},
+{"value":255,"name":"能源黎明 ～ Future Dream...","optgroup":"东方地灵殿","url":"https://upload.thwiki.cc/e/e0/th11_17.mp3","include":"","optlist":[14],"jpname":"エネルギー黎明 ～ Future Dream..."},
+{"value":256,"name":"青空之影","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/9/96/th12_01.mp3","include":"","optlist":[15],"jpname":"青空の影"},
+{"value":257,"name":"春之岸边","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/2/28/th12_02.mp3","include":"","optlist":[15],"jpname":"春の湊に"},
+{"value":258,"name":"小小的贤将","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/f/f7/th12_03.mp3","include":"","optlist":[15],"jpname":"小さな小さな賢将"},
+{"value":259,"name":"封闭的云中通路","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/a/aa/th12_04.mp3","include":"","optlist":[15],"jpname":"閉ざせし雲の通い路"},
+{"value":260,"name":"请注意万年备用伞","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/9/9f/th12_05.mp3","include":"","optlist":[15],"jpname":"万年置き傘にご注意を"},
+{"value":261,"name":"Sky Ruin","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/d/df/th12_06.mp3","include":"","optlist":[15],"jpname":"スカイルーイン"},
+{"value":262,"name":"守旧老爹与前卫少女","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/b/b6/th12_07.mp3","include":"心绮楼、暗黑能乐集心绮楼、深秘录、深秘乐曲集、凭依华","optlist":[15,20,41,23,42,58],"jpname":"時代親父とハイカラ少女"},
+{"value":263,"name":"幽灵客船的时空穿越之旅","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/d/d1/th12_08.mp3","include":"","optlist":[15],"jpname":"幽霊客船の時空を越えた旅"},
+{"value":264,"name":"Captain Murasa","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/7/75/th12_09.mp3","include":"","optlist":[15],"jpname":"キャプテン·ムラサ"},
+{"value":265,"name":"魔界地方都市秘境","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/6/6a/th12_10.mp3","include":"旧约酒吧","optlist":[15,55],"jpname":"魔界地方都市エソテリア"},
+{"value":266,"name":"虎纹的毘沙门天","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/e/e0/th12_11.mp3","include":"","optlist":[15],"jpname":"虎柄の毘沙門天"},
+{"value":267,"name":"法界之火","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/1/1d/th12_12.mp3","include":"","optlist":[15],"jpname":"法界の火"},
+{"value":268,"name":"感情的摩天楼　～ Cosmic Mind","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/6/67/th12_13.mp3","include":"鸟船遗迹、心绮楼、暗黑能乐集心绮楼、深秘录、深秘乐曲集、凭依华","optlist":[15,31,20,41,23,42,58],"jpname":"感情の摩天楼　～ Cosmic Mind"},
+{"value":269,"name":"夜空中的UFO恋曲","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/5/58/th12_14.mp3","include":"鸟船遗迹","optlist":[15,31],"jpname":"夜空のユーフォーロマンス"},
+{"value":270,"name":"平安时代的外星人","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/4/4c/th12_15.mp3","include":"","optlist":[15],"jpname":"平安のエイリアン"},
+{"value":271,"name":"妖怪寺","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/c/c2/th12_16.mp3","include":"","optlist":[15],"jpname":""},
+{"value":272,"name":"空中的归路　～ Sky Dream","optgroup":"东方星莲船","url":"https://upload.thwiki.cc/b/b6/th12_17.mp3","include":"","optlist":[15],"jpname":"空の帰り道　～ Sky Dream"},
+{"value":273,"name":"你见到了那个影子吗","optgroup":"东方非想天则","url":"https://upload.thwiki.cc/7/74/TFM-004_01.mp3","include":"核热造神非想天则","optlist":[16,40],"jpname":"君はあの影を見たか"},
+{"value":274,"name":"传说的巨神","optgroup":"东方非想天则","url":"https://upload.thwiki.cc/5/5c/TFM-004_14.mp3","include":"核热造神非想天则","optlist":[16,40],"jpname":"伝説の巨神"},
+{"value":275,"name":"我们的非想天则","optgroup":"东方非想天则","url":"https://upload.thwiki.cc/7/71/TFM-004_15.mp3","include":"核热造神非想天则","optlist":[16,40],"jpname":"ぼくらの非想天則"},
+{"value":276,"name":"人偶存在的风景","optgroup":"东方非想天则","url":"https://upload.thwiki.cc/5/54/TFM-004_16.mp3","include":"核热造神非想天则","optlist":[16,40],"jpname":"人形のある風景"},
+{"value":277,"name":"悠久的蒸汽机关","optgroup":"东方非想天则","url":"https://upload.thwiki.cc/6/6b/TFM-004_17.mp3","include":"核热造神非想天则、凭依华、完全凭依唱片名录","optlist":[16,40,58,61],"jpname":"悠久の蒸気機関"},
+{"value":278,"name":"未知物Ｘ　～ Unfound Adventure（未知物X　～ Occultly Madness）","optgroup":"东方非想天则","url":"https://upload.thwiki.cc/b/bb/TFM-004_08.mp3","include":"核热造神非想天则、伊奘诺物质、深秘录PS4版、深秘乐曲集·补、凭依华","optlist":[16,40,32,56,57,58],"jpname":"アンノウンＸ　～ Unfound Adventure"},
+{"value":279,"name":"空中飘浮的物体Ｘ","optgroup":"东方非想天则","url":"https://upload.thwiki.cc/2/27/TFM-004_09.mp3","include":"核热造神非想天则","optlist":[16,40],"jpname":"空に浮かぶ物体Ｘ"},
+{"value":280,"name":"Newshound","optgroup":"东方文花帖DS","url":"https://upload.thwiki.cc/6/67/th12.5_01.mp3","include":"","optlist":[17],"jpname":"ニュースハウンド"},
+{"value":281,"name":"你所在之城的怪事","optgroup":"东方文花帖DS","url":"https://upload.thwiki.cc/4/41/th12.5_02.mp3","include":"","optlist":[17],"jpname":"あなたの町の怪事件"},
+{"value":282,"name":"现代妖怪殖民地","optgroup":"东方文花帖DS","url":"https://upload.thwiki.cc/a/a5/th12.5_03.mp3","include":"三月精","optlist":[17,44],"jpname":"妖怪モダンコロニー"},
+{"value":283,"name":"复仇女神的要塞","optgroup":"东方文花帖DS","url":"https://upload.thwiki.cc/1/1b/th12.5_04.mp3","include":"","optlist":[17],"jpname":"ネメシスの要塞"},
+{"value":284,"name":"无间之钟 ～ Infinite Nightmare","optgroup":"东方文花帖DS","url":"https://upload.thwiki.cc/6/6e/th12.5_05.mp3","include":"未知之花","optlist":[17,30],"jpname":"無間の鐘　～ Infinite Nightmare"},
+{"value":285,"name":"曲名不详","optgroup":"东方文花帖DS","url":"https://upload.thwiki.cc/e/e5/th12.5_07.mp3","include":"","optlist":[17],"jpname":""},
+{"value":286,"name":"春之冰精","optgroup":"妖精大战争","url":"https://upload.thwiki.cc/d/d4/th12.8_01.mp3","include":"","optlist":[18],"jpname":"春の氷精"},
+{"value":287,"name":"赌上性命去恶作剧","optgroup":"妖精大战争","url":"https://upload.thwiki.cc/e/e5/th12.8_03.mp3","include":"三月精","optlist":[18,44],"jpname":"いたずらに命をかけて"},
+{"value":288,"name":"Loose Rain","optgroup":"妖精大战争","url":"https://upload.thwiki.cc/c/c9/th12.8_07.mp3","include":"","optlist":[18],"jpname":"ルーズレイン"},
+{"value":289,"name":"Magus Night","optgroup":"妖精大战争","url":"https://upload.thwiki.cc/3/33/th12.8_08.mp3","include":"三月精、心绮楼、暗黑能乐集心绮楼","optlist":[18,20,41],"jpname":"メイガスナイト"},
+{"value":290,"name":"春之冰精 -静-","optgroup":"妖精大战争","url":"https://upload.thwiki.cc/c/c9/th12.8_09.mp3","include":"","optlist":[18],"jpname":"春の氷精　- 静 -"},
+{"value":291,"name":"欲望深重的灵魂","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/c/c2/th13_01.mp3","include":"","optlist":[19],"jpname":"欲深き霊魂"},
+{"value":292,"name":"死灵的夜樱","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/1/12/th13_02.mp3","include":"","optlist":[19],"jpname":"死霊の夜桜"},
+{"value":293,"name":"Ghost Lead","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/e/ee/th13_03.mp3","include":"","optlist":[19],"jpname":"ゴーストリード"},
+{"value":294,"name":"欢迎来到妖怪寺","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/4/41/th13_04.mp3","include":"","optlist":[19],"jpname":"妖怪寺へようこそ"},
+{"value":295,"name":"门前的妖怪小姑娘","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/2/29/th13_05.mp3","include":"","optlist":[19],"jpname":"門前の妖怪小娘"},
+{"value":296,"name":"在美妙的墓地里住下吧","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/3/3c/th13_06.mp3","include":"伊奘诺物质","optlist":[19,32],"jpname":"素敵な墓場で暮しましょ"},
+{"value":297,"name":"Rigid Paradise","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/8/82/th13_07.mp3","include":"","optlist":[19],"jpname":"リジッドパラダイス"},
+{"value":298,"name":"Desire Drive","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/4/4a/th13_08.mp3","include":"鸟船遗迹","optlist":[19,31],"jpname":"デザイアドライブ"},
+{"value":299,"name":"古老的元神","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/d/dc/th13_09.mp3","include":"三月精","optlist":[19,44],"jpname":"古きユアンシェン"},
+{"value":300,"name":"梦殿大祀庙","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/a/a1/th13_10.mp3","include":"","optlist":[19],"jpname":"夢殿大祀廟"},
+{"value":301,"name":"大神神话传","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/c/cc/th13_11.mp3","include":"心绮楼、暗黑能乐集心绮楼、深秘录、深秘乐曲集、旧约酒吧、凭依华","optlist":[19,20,41,23,42,55,58],"jpname":"大神神話伝"},
+{"value":302,"name":"小小欲望的星空","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/2/2f/th13_12.mp3","include":"","optlist":[19],"jpname":"小さな欲望の星空"},
+{"value":303,"name":"圣德传说 ～ True Administrator","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/6/66/th13_13.mp3","include":"心绮楼、暗黑能乐集心绮楼、深秘录、深秘乐曲集、凭依华","optlist":[19,20,41,23,42,58],"jpname":"聖徳伝説 ～ True Administrator"},
+{"value":304,"name":"妖怪里参道","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/6/60/th13_14.mp3","include":"伊奘诺物质","optlist":[19,32],"jpname":"妖怪裏参道"},
+{"value":305,"name":"佐渡的二岩","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/c/cc/th13_15.mp3","include":"心绮楼、暗黑能乐集心绮楼","optlist":[19,20,41],"jpname":"佐渡の二ッ岩"},
+{"value":306,"name":"神社的新风","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/9/9b/th13_16.mp3","include":"","optlist":[19],"jpname":"神社の新しい風"},
+{"value":307,"name":"Desire Dream","optgroup":"东方神灵庙","url":"https://upload.thwiki.cc/1/12/th13_17.mp3","include":"","optlist":[19],"jpname":"デザイアドリーム"},
+{"value":308,"name":"幻想乡的二岩","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/c/c4/TFM-006a_14.mp3","include":"暗黑能乐集心绮楼、深秘录、深秘乐曲集、凭依华","optlist":[20,41,23,42,58],"jpname":"幻想郷の二ッ岩"},
+{"value":309,"name":"亡失的情感","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/1/11/TFM-006a_16.mp3","include":"暗黑能乐集心绮楼、深秘录、深秘乐曲集、旧约酒吧、凭依华","optlist":[20,41,23,42,55,58],"jpname":"亡失のエモーション"},
+{"value":310,"name":"尘世不变的悲观主义","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/5/54/TFM-006a_01.mp3","include":"暗黑能乐集心绮楼","optlist":[20,41],"jpname":"塵界不変のペシミズム"},
+{"value":311,"name":"心绮楼囃子","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/6/63/TFM-006a_19.mp3","include":"暗黑能乐集心绮楼","optlist":[20,41],"jpname":"心綺楼囃子"},
+{"value":312,"name":"有人气的场所","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/a/a6/TFM-006a_02.mp3","include":"暗黑能乐集心绮楼","optlist":[20,41],"jpname":"人気のある場所"},
+{"value":313,"name":"无人气的场所","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/e/e6/TFM-006a_11.mp3","include":"暗黑能乐集心绮楼","optlist":[20,41],"jpname":"人気のない場所"},
+{"value":314,"name":"丑时三刻的村庄","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/e/ed/TFM-006a_15.mp3","include":"暗黑能乐集心绮楼","optlist":[20,41],"jpname":"丑三つ時の里"},
+{"value":315,"name":"本日的头版头条","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/d/df/TFM-006a_13.mp3","include":"暗黑能乐集心绮楼","optlist":[20,41],"jpname":"本日の一面記事"},
+{"value":316,"name":"晓云","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/f/f0/TFM-006a_17.mp3","include":"暗黑能乐集心绮楼","optlist":[20,41],"jpname":"暁雲"},
+{"value":317,"name":"官板黄昏新闻","optgroup":"东方心绮楼","url":"https://upload.thwiki.cc/f/f4/TFM-006a_18.mp3","include":"暗黑能乐集心绮楼","optlist":[20,41],"jpname":"官板黄昏新聞"},
+{"value":318,"name":"不可思议的驱魔棒","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/5/58/th14_01.mp3","include":"","optlist":[21],"jpname":"不思議なお祓い棒"},
+{"value":319,"name":"Mist Lake","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/2/29/th14_02.mp3","include":"","optlist":[21],"jpname":"ミストレイク"},
+{"value":320,"name":"秘境的人鱼","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/0/0a/th14_03.mp3","include":"天邪鬼","optlist":[21,22],"jpname":"秘境のマーメイド"},
+{"value":321,"name":"往来于运河的人与妖","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/f/f1/th14_04.mp3","include":"铃奈庵","optlist":[21,47],"jpname":"運河を行き交う人妖"},
+{"value":322,"name":"柳树下的杜拉罕","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/2/2d/th14_05.mp3","include":"","optlist":[21],"jpname":"柳の下のデュラハン"},
+{"value":323,"name":"满月的竹林","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/5/50/th14_06.mp3","include":"","optlist":[21],"jpname":"満月の竹林"},
+{"value":324,"name":"孤独的狼人","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/0/0b/th14_07.mp3","include":"","optlist":[21],"jpname":"孤独なウェアウルフ"},
+{"value":325,"name":"Magical Storm","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/b/b0/th14_08.mp3","include":"","optlist":[21],"jpname":"マジカルストーム"},
+{"value":326,"name":"幻想净琉璃","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/5/5b/th14_09.mp3","include":"天邪鬼","optlist":[21,22],"jpname":"幻想浄瑠璃"},
+{"value":327,"name":"沉向空中的辉针城","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/5/55/th14_10.mp3","include":"燕石博物志","optlist":[21,54],"jpname":"空中に沈む輝針城"},
+{"value":328,"name":"Reverse Ideology","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/4/49/th14_11.mp3","include":"天邪鬼、旧约酒吧","optlist":[21,22,55],"jpname":"リバースイデオロギー"},
+{"value":329,"name":"针小棒大的天守阁","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/e/e8/th14_12.mp3","include":"","optlist":[21],"jpname":"針小棒大の天守閣"},
+{"value":330,"name":"辉光之针的小人族　～ Little Princess","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/0/0c/th14_13.mp3","include":"深秘录、深秘乐曲集、凭依华、完全凭依唱片名录","optlist":[21,23,42,58,61],"jpname":"輝く針の小人族　～ Little Princess"},
+{"value":331,"name":"魔力的雷云","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/4/45/th14_14.mp3","include":"","optlist":[21],"jpname":"魔力の雷雲"},
+{"value":332,"name":"原初的节拍　～ Pristine Beat","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/a/a3/th14_15.mp3","include":"","optlist":[21],"jpname":"始原のビート　～ Pristine Beat"},
+{"value":333,"name":"小槌的魔力","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/8/83/th14_16.mp3","include":"","optlist":[21],"jpname":"小槌の魔力"},
+{"value":334,"name":"非常非常神奇的道具们","optgroup":"东方辉针城","url":"https://upload.thwiki.cc/c/c5/th14_17.mp3","include":"","optlist":[21],"jpname":"不思議な不思議な道具達"},
+{"value":335,"name":"燃起犯规的狼烟","optgroup":"弹幕天邪鬼","url":"https://upload.thwiki.cc/c/cb/th14.3_01.mp3","include":"","optlist":[22],"jpname":"反則の狼煙を上げろ"},
+{"value":336,"name":"以犯规对不可能的弹幕","optgroup":"弹幕天邪鬼","url":"https://upload.thwiki.cc/8/8c/th14.3_02.mp3","include":"","optlist":[22],"jpname":"不可能弾幕には反則を"},
+{"value":337,"name":"Midnight Spell Card","optgroup":"弹幕天邪鬼","url":"https://upload.thwiki.cc/c/cb/th14.3_03.mp3","include":"","optlist":[22],"jpname":"ミッドナイトスペルカード"},
+{"value":338,"name":"浪漫逃飞行","optgroup":"弹幕天邪鬼","url":"https://upload.thwiki.cc/1/1a/th14.3_04.mp3","include":"","optlist":[22],"jpname":"ロマンチック逃飛行"},
+{"value":339,"name":"永远的三日天下","optgroup":"弹幕天邪鬼","url":"https://upload.thwiki.cc/8/83/th14.3_05.mp3","include":"燕石博物志","optlist":[22,54],"jpname":"永遠の三日天下"},
+{"value":340,"name":"震撼心灵的都市传说","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/d/db/TFM-007a_01.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"心揺さぶる都市伝説"},
+{"value":341,"name":"幻想乡不可思议发现","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/2/21/TFM-007a_02.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"幻想郷ふしぎ発見"},
+{"value":342,"name":"有珠子的日常","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/7/71/TFM-007a_03.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"ボールのある日常"},
+{"value":343,"name":"显现的传承形态","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/e/e6/TFM-007a_05.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"顕現した伝承の形"},
+{"value":344,"name":"时代风潮的造访","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/e/e0/TFM-007a_11.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"時代の風の訪れ"},
+{"value":345,"name":"价值不明","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/b/be/TFM-007a_07.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"価値がわからない"},
+{"value":346,"name":"相信可能性","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/b/b0/TFM-007a_09.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"可能性を信じて"},
+{"value":347,"name":"知晓真相之人","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/4/46/TFM-007a_13.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"真実を知る者"},
+{"value":348,"name":"外界民俗","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/5/57/TFM-007a_15.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"外界フォークロア"},
+{"value":349,"name":"各自的结局","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/b/b5/TFM-007a_17.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"各々の結末"},
+{"value":350,"name":"被揭晓的深秘","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/4/4a/TFM-007a_18.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"明かされる深秘"},
+{"value":351,"name":"灵异任你选（Occult Attract）","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/1/1f/TFM-007a_04.mp3","include":"深秘乐曲集、外来韦编、凭依华","optlist":[23,42,53,58],"jpname":"オカルトアラカルト"},
+{"value":352,"name":"七玉搜集大摊牌","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/4/4b/TFM-007a_06.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"七玉蒐集ショウダウン"},
+{"value":353,"name":"公正的争夺","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/3/39/TFM-007a_08.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"公正なる奪い合い"},
+{"value":354,"name":"对跖点之钟","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/5/59/TFM-007a_10.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"対蹠地の鐘"},
+{"value":355,"name":"竹林大火","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/b/b9/TFM-007a_12.mp3","include":"深秘乐曲集","optlist":[23,42],"jpname":"竹林インフレイム"},
+{"value":356,"name":"华狭间的战场","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/6/61/TFM-007a_14.mp3","include":"深秘乐曲集、凭依华、完全凭依唱片名录","optlist":[23,42,58,61],"jpname":"華狭間のバトルフィールド"},
+{"value":357,"name":"Last Occultism ~现世的秘术师","optgroup":"东方深秘录","url":"https://upload.thwiki.cc/a/a5/TFM-007a_16.mp3","include":"深秘乐曲集、外来韦编、凭依华、完全凭依唱片名录","optlist":[23,42,53,58,61],"jpname":"ラストオカルティズム　～現し世の秘術師"},
+{"value":358,"name":"宇宙巫女现身","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/b/b5/th15_01.mp3","include":"","optlist":[24],"jpname":"宇宙巫女現る"},
+{"value":359,"name":"忘不了，那曾依藉的绿意","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/1/1b/th15_02.mp3","include":"","optlist":[24],"jpname":"忘れがたき、よすがの緑"},
+{"value":360,"name":"兔已着陆","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/6/61/th15_04.mp3","include":"铃奈庵","optlist":[24,47],"jpname":"兎は舞い降りた"},
+{"value":361,"name":"湖上倒映着洁净的月光","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/e/e1/th15_03.mp3","include":"","optlist":[24],"jpname":"湖は浄めの月光を映して"},
+{"value":362,"name":"九月的南瓜","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/b/b7/th15_05.mp3","include":"燕石博物志","optlist":[24,54],"jpname":"九月のパンプキン"},
+{"value":363,"name":"飞翔于宇宙的不可思议巫女","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/f/f4/th15_06.mp3","include":"","optlist":[24],"jpname":"宇宙を飛ぶ不思議な巫女"},
+{"value":364,"name":"永远的春梦","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/5/54/th15_07.mp3","include":"凭依华、完全凭依唱片名录、噩梦日记","optlist":[24,58,61,62],"jpname":"永遠の春夢"},
+{"value":365,"name":"冻结的永远之都","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/e/ed/th15_08.mp3","include":"燕石博物志","optlist":[24,54],"jpname":"凍り付いた永遠の都"},
+{"value":366,"name":"逆转的命运之轮","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/d/de/th15_09.mp3","include":"","optlist":[24],"jpname":"逆転するホイールオブフォーチュン"},
+{"value":367,"name":"遥遥38万公里的航程","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/6/61/th15_10.mp3","include":"","optlist":[24],"jpname":"遥か３８万キロのボヤージュ"},
+{"value":368,"name":"星条旗的小丑","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/3/3a/th15_11.mp3","include":"","optlist":[24],"jpname":"星条旗のピエロ"},
+{"value":369,"name":"故乡之星倒映之海","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/a/a5/th15_12.mp3","include":"燕石博物志","optlist":[24,54],"jpname":"故郷の星が映る海"},
+{"value":370,"name":"Pure Furies　～ 心之所在","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/5/57/th15_13.mp3","include":"燕石博物志","optlist":[24,54],"jpname":"ピュアヒューリーズ　～ 心の在処"},
+{"value":371,"name":"前所未见的噩梦世界","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/d/d3/th15_16.mp3","include":"","optlist":[24],"jpname":"見た事も無い悪夢の世界"},
+{"value":372,"name":"Pandemonic Planet","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/c/c1/th15_17.mp3","include":"旧约酒吧","optlist":[24,55],"jpname":"パンデモニックプラネット"},
+{"value":373,"name":"从神社所见之月","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/8/85/th15_14.mp3","include":"","optlist":[24],"jpname":"神社から見える月"},
+{"value":374,"name":"宇宙巫女归还","optgroup":"东方绀珠传","url":"https://upload.thwiki.cc/d/df/th15_15.mp3","include":"","optlist":[24],"jpname":"宇宙巫女帰還する"},
+{"value":375,"name":"蓬莱传说","optgroup":"蓬莱人形","url":"https://upload.thwiki.cc/d/dc/hr01_01.mp3","include":"","optlist":[25],"jpname":"蓬莱伝説"},
+{"value":376,"name":"人偶之森","optgroup":"蓬莱人形","url":"https://upload.thwiki.cc/0/08/hr01_08.mp3","include":"","optlist":[25],"jpname":"人形の森"},
+{"value":377,"name":"空中飞翔的巫女不可思议的每天","optgroup":"蓬莱人形","url":"https://upload.thwiki.cc/d/d7/hr01_13.mp3","include":"","optlist":[25],"jpname":"空飛ぶ巫女の不思議な毎日"},
+{"value":378,"name":"走在夜晚的莲台野","optgroup":"莲台野夜行","url":"https://upload.thwiki.cc/9/99/hr02_01.mp3","include":"","optlist":[26],"jpname":"夜のデンデラ野を逝く"},
+{"value":379,"name":"少女秘封俱乐部","optgroup":"莲台野夜行","url":"https://upload.thwiki.cc/d/dd/hr02_02.mp3","include":"","optlist":[26],"jpname":"少女秘封倶楽部"},
+{"value":380,"name":"古老的冥界寺","optgroup":"莲台野夜行","url":"https://upload.thwiki.cc/5/52/hr02_04.mp3","include":"","optlist":[26],"jpname":"古の冥界寺"},
+{"value":381,"name":"魔术师梅莉","optgroup":"莲台野夜行","url":"https://upload.thwiki.cc/6/6c/hr02_06.mp3","include":"","optlist":[26],"jpname":"魔術師メリー"},
+{"value":382,"name":"月之妖鸟、化猫之幻","optgroup":"莲台野夜行","url":"https://upload.thwiki.cc/2/27/hr02_07.mp3","include":"","optlist":[26],"jpname":"月の妖鳥、化猫の幻"},
+{"value":383,"name":"过去的花 ～ Fairy of Flower","optgroup":"莲台野夜行","url":"https://upload.thwiki.cc/a/ad/hr02_08.mp3","include":"","optlist":[26],"jpname":"過去の花　～ Fairy of Flower"},
+{"value":384,"name":"幻想的永远祭","optgroup":"莲台野夜行","url":"https://upload.thwiki.cc/1/19/hr02_11.mp3","include":"","optlist":[26],"jpname":"幻想の永遠祭"},
+{"value":385,"name":"童祭 ～ Innocent Treasures","optgroup":"梦违科学世纪","url":"https://upload.thwiki.cc/6/66/hr03_01.mp3","include":"","optlist":[27],"jpname":""},
+{"value":386,"name":"华胥之梦","optgroup":"梦违科学世纪","url":"https://upload.thwiki.cc/7/7d/hr03_02.mp3","include":"","optlist":[27],"jpname":"華胥の夢"},
+{"value":387,"name":"科学世纪的少年少女","optgroup":"梦违科学世纪","url":"https://upload.thwiki.cc/e/ef/hr03_05.mp3","include":"","optlist":[27],"jpname":"科学世紀の少年少女"},
+{"value":388,"name":"梦境与现实的境界","optgroup":"梦违科学世纪","url":"https://upload.thwiki.cc/e/e1/hr03_09.mp3","include":"","optlist":[27],"jpname":"夢と現の境界"},
+{"value":389,"name":"广重36号 ～ Neo Super-Express","optgroup":"卯酉东海道","url":"https://upload.thwiki.cc/9/97/hr04_01.mp3","include":"","optlist":[28],"jpname":"ヒロシゲ36号　～ Neo Super-Express"},
+{"value":390,"name":"53分钟的蓝色大海","optgroup":"卯酉东海道","url":"https://upload.thwiki.cc/2/21/hr04_02.mp3","include":"","optlist":[28],"jpname":"53ミニッツの青い海"},
+{"value":391,"name":"青木原的传说","optgroup":"卯酉东海道","url":"https://upload.thwiki.cc/0/05/hr04_05.mp3","include":"","optlist":[28],"jpname":"青木ヶ原の伝説"},
+{"value":392,"name":"最澄澈的空与海","optgroup":"卯酉东海道","url":"https://upload.thwiki.cc/8/8d/hr04_11.mp3","include":"","optlist":[28],"jpname":"最も澄みわたる空と海"},
+{"value":393,"name":"欢迎来到月面旅行团","optgroup":"大空魔术","url":"https://upload.thwiki.cc/9/94/hr05_01.mp3","include":"","optlist":[29],"jpname":"月面ツアーへようこそ"},
+{"value":394,"name":"天空的格林尼治","optgroup":"大空魔术","url":"https://upload.thwiki.cc/a/ae/hr05_02.mp3","include":"","optlist":[29],"jpname":"天空のグリニッジ"},
+{"value":395,"name":"轮椅上的未来宇宙","optgroup":"大空魔术","url":"https://upload.thwiki.cc/0/02/hr05_04.mp3","include":"","optlist":[29],"jpname":"車椅子の未来宇宙"},
+{"value":396,"name":"卫星露天咖啡屋","optgroup":"大空魔术","url":"https://upload.thwiki.cc/a/a6/hr05_06.mp3","include":"","optlist":[29],"jpname":"衛星カフェテラス"},
+{"value":397,"name":"G Free","optgroup":"大空魔术","url":"https://upload.thwiki.cc/3/3d/hr05_07.mp3","include":"","optlist":[29],"jpname":"G Free"},
+{"value":398,"name":"大空魔术 ～ Magical Astronomy","optgroup":"大空魔术","url":"https://upload.thwiki.cc/8/88/hr05_08.mp3","include":"","optlist":[29],"jpname":"大空魔術　～ Magical Astronomy"},
+{"value":399,"name":"月的另一侧","optgroup":"大空魔术","url":"https://upload.thwiki.cc/a/a9/hr05_10.mp3","include":"","optlist":[29],"jpname":"向こう側の月"},
+{"value":400,"name":"未知之花 魅知之旅","optgroup":"未知之花 魅知之旅","url":"https://upload.thwiki.cc/7/7b/hr06_01.mp3","include":"","optlist":[30],"jpname":"未知の花 魅知の旅"},
+{"value":401,"name":"卫星鸟船","optgroup":"鸟船遗迹","url":"https://upload.thwiki.cc/5/5f/hr07_01.mp3","include":"","optlist":[31],"jpname":"衛星トリフネ"},
+{"value":402,"name":"特洛伊群的密林","optgroup":"鸟船遗迹","url":"https://upload.thwiki.cc/c/c6/hr07_02.mp3","include":"","optlist":[31],"jpname":"トロヤ群の密林"},
+{"value":403,"name":"天鸟船神社","optgroup":"鸟船遗迹","url":"https://upload.thwiki.cc/4/47/hr07_05.mp3","include":"","optlist":[31],"jpname":"天鳥船神社"},
+{"value":404,"name":"天鸟船神社的结界","optgroup":"鸟船遗迹","url":"https://upload.thwiki.cc/5/59/hr07_08.mp3","include":"","optlist":[31],"jpname":"天鳥船神社の結界"},
+{"value":405,"name":"漂浮于宇宙之中的幻想乡","optgroup":"鸟船遗迹","url":"https://upload.thwiki.cc/1/14/hr07_10.mp3","include":"","optlist":[31],"jpname":"宇宙に浮かぶ幻想郷"},
+{"value":406,"name":"绿意盎然的疗养院","optgroup":"伊奘诺物质","url":"https://upload.thwiki.cc/3/3f/hr08_01.mp3","include":"","optlist":[32],"jpname":"緑のサナトリウム"},
+{"value":407,"name":"被牛引到善光寺","optgroup":"伊奘诺物质","url":"https://upload.thwiki.cc/a/a0/hr08_02.mp3","include":"","optlist":[32],"jpname":"牛に引かれて善光寺参り"},
+{"value":408,"name":"阿加尔塔之风","optgroup":"伊奘诺物质","url":"https://upload.thwiki.cc/7/7f/hr08_05.mp3","include":"","optlist":[32],"jpname":"アガルタの風"},
+{"value":409,"name":"伊奘诺物质","optgroup":"伊奘诺物质","url":"https://upload.thwiki.cc/a/a2/hr08_06.mp3","include":"","optlist":[32],"jpname":"イザナギオブジェクト"},
+{"value":410,"name":"收集日本各地的不可思议","optgroup":"伊奘诺物质","url":"https://upload.thwiki.cc/3/3d/hr08_09.mp3","include":"","optlist":[32],"jpname":"日本中の不思議を集めて"},
+{"value":411,"name":"Theme of Eastern Story","optgroup":"幺乐团的历史","url":"https://upload.thwiki.cc/6/62/ha05_15.mp3","include":"","optlist":[37],"jpname":"テーマ·オブ·イースタンストーリー"},
+{"value":412,"name":"Japanese Saga","optgroup":"东方求闻史纪","url":"https://upload.thwiki.cc/9/91/PMiSS_01.mp3","include":"","optlist":[48],"jpname":"ジャパニーズサーガ"},
+{"value":413,"name":"阿礼的孩子","optgroup":"东方求闻史纪","url":"https://upload.thwiki.cc/3/3f/PMiSS_02.mp3","include":"","optlist":[48],"jpname":"阿礼の子供"},
+{"value":414,"name":"飞翔夜晚的鸠山 - Power MIX","optgroup":"东方求闻史纪","url":"https://upload.thwiki.cc/8/8d/PMiSS_03.mp3","include":"","optlist":[48],"jpname":"夜の鳩山を飛ぶ -Power MIX"},
+{"value":415,"name":"妖怪宇宙旅行","optgroup":"东方儚月抄","url":"https://upload.thwiki.cc/5/5a/SSiB_01.mp3","include":"","optlist":[45],"jpname":""},
+{"value":416,"name":"绵月的符卡 ～ Lunatic Blue","optgroup":"东方儚月抄","url":"https://upload.thwiki.cc/2/2e/SSiB_02.mp3","include":"","optlist":[45],"jpname":"綿月のスペルカード　～ Lunatic Blue"},
+{"value":417,"name":"风神少女","optgroup":"东方文花帖（书籍）","url":"https://upload.thwiki.cc/4/47/BAiJR_01.mp3","include":"花映塚、文花帖、绯想天、全人类的天乐录","optlist":[51,10,11,13,39],"jpname":"風神少女"},
+{"value":418,"name":"花映塚 ～ after Higan Retour","optgroup":"东方文花帖（书籍）","url":"https://upload.thwiki.cc/7/72/BAiJR_03.mp3","include":"文花帖游戏","optlist":[51],"jpname":""},
+{"value":419,"name":"魔法使的忧郁","optgroup":"The Grimoire of Marisa","url":"https://upload.thwiki.cc/4/47/GoM_01.mp3","include":"","optlist":[50],"jpname":"魔法使いの憂鬱"},
+{"value":420,"name":"Sunny Rutile Flection","optgroup":"东方三月精","url":"https://upload.thwiki.cc/4/44/EaLND_01.mp3","include":"","optlist":[44],"jpname":"サニールチルフレクション"},
+{"value":421,"name":"夜晚无法入睡","optgroup":"东方三月精","url":"https://upload.thwiki.cc/f/f9/EaLND_02.mp3","include":"","optlist":[44],"jpname":"夜だから眠れない"},
+{"value":422,"name":"妖精灿烂的样子","optgroup":"东方三月精","url":"https://upload.thwiki.cc/a/af/EaLND_03.mp3","include":"","optlist":[44],"jpname":"妖精燦々として"},
+{"value":423,"name":"桑尼米尔克的红雾异变","optgroup":"东方三月精","url":"https://upload.thwiki.cc/2/28/SaBND01_01.mp3","include":"","optlist":[44],"jpname":"サニーミルクの紅霧異変"},
+{"value":424,"name":"雪月樱花之国","optgroup":"东方三月精","url":"https://upload.thwiki.cc/3/38/SaBND01_02.mp3","include":"","optlist":[44],"jpname":"雪月桜花の国"},
+{"value":425,"name":"Star Voyage2008","optgroup":"东方三月精","url":"https://upload.thwiki.cc/c/c6/SaBND01_03.mp3","include":"","optlist":[44],"jpname":"スターヴォヤージュ2008"},
+{"value":426,"name":"可爱的大战争叠奏曲","optgroup":"东方三月精","url":"https://upload.thwiki.cc/c/cb/SaBND02_01.mp3","include":"妖精大战争","optlist":[44,18],"jpname":"可愛い大戦争のリフレーン"},
+{"value":427,"name":"妖精冒险谭","optgroup":"东方三月精","url":"https://upload.thwiki.cc/e/e1/SaBND03_01.mp3","include":"","optlist":[44],"jpname":"フェアリー冒険譚"},
+{"value":428,"name":"两个世界","optgroup":"东方三月精","url":"https://upload.thwiki.cc/b/b1/SaBND03_02.mp3","include":"","optlist":[44],"jpname":"二つの世界"},
+{"value":429,"name":"神域的捉迷藏生活","optgroup":"东方三月精","url":"https://upload.thwiki.cc/4/4f/OSP01_01.mp3","include":"","optlist":[44],"jpname":"神域のかくれんぼ暮らし"},
+{"value":430,"name":"时刻旺盛的好奇心","optgroup":"东方三月精","url":"https://upload.thwiki.cc/e/e8/th12.8_04.mp3","include":"妖精大战争","optlist":[44,18],"jpname":"年中夢中の好奇心"},
+{"value":431,"name":"午夜中的妖精舞会","optgroup":"东方三月精","url":"https://upload.thwiki.cc/e/e2/th12.8_05.mp3","include":"妖精大战争","optlist":[44,18],"jpname":"真夜中のフェアリーダンス"},
+{"value":432,"name":"妖精大战争 ～Faily Wars","optgroup":"东方三月精","url":"https://upload.thwiki.cc/4/4a/th12.8_06.mp3","include":"妖精大战争","optlist":[44,18],"jpname":"妖精大戦争　～ Fairy Wars"},
+{"value":433,"name":"秋霜玉　～ Clockworks","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/8/86/SE01_01.mp3","include":"","optlist":[999],"jpname":""},
+{"value":434,"name":"False Strawberry","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/e/e1/SE01_02.mp3","include":"","optlist":[999],"jpname":"フォルスストロベリー"},
+{"value":435,"name":"Primrose Shiver","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/b/ba/SE01_03.mp3","include":"","optlist":[999],"jpname":"プリムローズシヴァ"},
+{"value":436,"name":"幻想帝都","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/9/90/SE01_04.mp3","include":"","optlist":[999],"jpname":""},
+{"value":437,"name":"Disastrous Gemini","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/2/27/SE01_05.mp3","include":"","optlist":[999],"jpname":"ディザストラスジェミニ"},
+{"value":438,"name":"华之幻想 红梦之宙","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/c/c4/SE01_06.mp3","include":"","optlist":[999],"jpname":"華の幻想　紅夢の宙"},
+{"value":439,"name":"天空军团","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/d/d2/SE01_07.mp3","include":"","optlist":[999],"jpname":"天空アーミー"},
+{"value":440,"name":"斯普特尼克幻夜","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/4/40/SE01_08.mp3","include":"tGoM","optlist":[999,50],"jpname":"スプートニク幻夜"},
+{"value":441,"name":"机械马戏团　～ Reverie（Circus Reverie）","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/a/a8/SE01_09.mp3","include":"蓬莱人形","optlist":[999,25],"jpname":"機械サーカス　～ Reverie"},
+{"value":442,"name":"卡纳维拉尔角的梦幻少女","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/0/0c/SE01_10.mp3","include":"","optlist":[999],"jpname":"カナベラルの夢幻少女"},
+{"value":443,"name":"魔法少女十字军","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/4/47/SE01_11.mp3","include":"莲台野夜行","optlist":[999,26],"jpname":"魔法少女十字軍"},
+{"value":444,"name":"Antique Terror","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/5/54/SE01_12.mp3","include":"","optlist":[999],"jpname":"アンティークテラー"},
+{"value":445,"name":"梦机械　～ Innocent Power","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/a/a5/SE01_13.mp3","include":"","optlist":[999],"jpname":"夢機械　～ Innocent Power"},
+{"value":446,"name":"幻想科学　～ Doll's Phantom","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/1/1f/SE01_14.mp3","include":"梦违科学世纪","optlist":[999,27],"jpname":""},
+{"value":447,"name":"少女神性　～ Pandora's Box","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/e/ee/SE01_15.mp3","include":"","optlist":[999],"jpname":""},
+{"value":448,"name":"Silk Road Alice","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/d/d9/SE01_16.mp3","include":"","optlist":[999],"jpname":"シルクロードアリス"},
+{"value":449,"name":"魔女们的舞会　～ Magus","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/f/fc/SE01_17.mp3","include":"萃梦想、幻想曲拔萃","optlist":[999,8,38],"jpname":"魔女達の舞踏会　～ Magus"},
+{"value":450,"name":"二色莲花蝶　～ Ancients（二色莲花蝶　～ Red and White）","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/3/31/SE01_18.mp3","include":"蓬莱人形、非想天则、核热造神非想天则、深秘录、深秘乐曲集、凭依华","optlist":[999,25,16,40,23,42,58],"jpname":"二色蓮花蝶　～ Ancients"},
+{"value":451,"name":"Herselves","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/4/47/SE01_19.mp3","include":"","optlist":[999],"jpname":"ハーセルヴズ"},
+{"value":452,"name":"Titled Maid","optgroup":"秋霜玉","url":"https://upload.thwiki.cc/7/79/SE01_20.mp3","include":"","optlist":[999],"jpname":"タイトルドメイド"},
+{"value":453,"name":"稀翁玉　～ Fairy Dance","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/6/62/SE02_01.mp3","include":"","optlist":[999],"jpname":""},
+{"value":454,"name":"天鹅绒少女战　～ Velvet Battle","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/c/c5/SE02_02.mp3","include":"","optlist":[999],"jpname":"天鵝絨少女戰　～ Velvet Battle"},
+{"value":455,"name":"Castle Explorer -in the Sky-","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/3/3c/SE02_03.mp3","include":"","optlist":[999],"jpname":"Castle Explorer -in the Sky-"},
+{"value":456,"name":"俄耳甫斯的诗　～ Pseudoclassic","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/6/66/SE02_04.mp3","include":"","optlist":[999],"jpname":"オルフェの詩　～ Pseudoclassic"},
+{"value":457,"name":"新幻想　～ New Fantasy","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/1/16/SE02_05.mp3","include":"","optlist":[999],"jpname":""},
+{"value":458,"name":"奥尔良的圣骑士","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/1/1c/SE02_06.mp3","include":"","optlist":[999],"jpname":"オルレアンの聖騎士"},
+{"value":459,"name":"My Maid, Sweet Maid","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/7/77/SE02_07.mp3","include":"","optlist":[999],"jpname":""},
+{"value":460,"name":"樱花之恋塚　～ Flower of Japan","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/6/64/SE02_08.mp3","include":"蓬莱人形","optlist":[999,25],"jpname":"櫻花之戀塚　～ Flower of Japan"},
+{"value":461,"name":"少女战士　～ Heart of Valkyrie","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/4/42/SE02_09.mp3","include":"","optlist":[999],"jpname":"乙女戰士 ～ Heart of Valkyrie"},
+{"value":462,"name":"神秘的人偶　～ God Knows","optgroup":"稀翁玉","url":"https://upload.thwiki.cc/1/15/SE02_10.mp3","include":"蓬莱人形","optlist":[999,25],"jpname":"エニグマティクドール ～ God Knows"},
+{"value":463,"name":"Witch of Love Potion","optgroup":"Torte Le Magic","url":"https://upload.thwiki.cc/a/aa/trt_00.mp3","include":"蓬莱人形","optlist":[999,25],"jpname":""},
+{"value":464,"name":"Magical and Hopeless","optgroup":"Torte Le Magic","url":"https://upload.thwiki.cc/0/0a/trt_01.mp3","include":"","optlist":[999],"jpname":""},
+{"value":465,"name":"Sacred Battle","optgroup":"Torte Le Magic","url":"https://upload.thwiki.cc/2/2f/trt_02.mp3","include":"","optlist":[999],"jpname":""},
+{"value":466,"name":"酒鬼的雷姆利亚","optgroup":"黄昏酒场","url":"https://upload.thwiki.cc/0/0d/SSiB_03.mp3","include":"儚月抄","optlist":[999,45],"jpname":"呑んべぇのレムリア"},
+{"value":467,"name":"AN ORDEAL FROM GOD","optgroup":"神魔讨绮传","url":"https://upload.thwiki.cc/4/46/DNAS-MJST_29.mp3","include":"幻想麻雀","optlist":[999],"jpname":""},
+{"value":468,"name":"好奇的上海古牌","optgroup":"东方幻想麻将","url":"https://upload.thwiki.cc/0/01/DNAS-MJST_17.mp3","include":"","optlist":[999],"jpname":"キュアリアス上海古牌"},
+{"value":469,"name":"妖妖跋扈　～ Speed Fox!","optgroup":"Cradle - 东方幻乐祀典 -","url":"https://upload.thwiki.cc/1/1f/SEPR-0001_17.mp3","include":"","optlist":[999],"jpname":"妖々跋扈　～ Speed Fox!"},
+{"value":470,"name":"黄昏的魔术师","optgroup":"其他曲目","url":"https://upload.thwiki.cc/6/62/zun_001.mp3","include":"","optlist":[999],"jpname":"宵闇の魔術師"},
+{"value":471,"name":"Magic of Life","optgroup":"其他曲目","url":"https://upload.thwiki.cc/f/fc/zun_002.mp3","include":"","optlist":[999],"jpname":""},
+{"value":472,"name":"Plastic Space","optgroup":"其他曲目","url":"https://upload.thwiki.cc/9/9f/zun_003.mp3","include":"","optlist":[999],"jpname":""},
+{"value":473,"name":"Inventive City","optgroup":"其他曲目","url":"https://upload.thwiki.cc/9/9f/zun_004.mp3","include":"","optlist":[999],"jpname":""},
+{"value":474,"name":"梦幻回廊","optgroup":"其他曲目","url":"https://upload.thwiki.cc/f/f5/zun_005.mp3","include":"","optlist":[999],"jpname":"夢幻回廊"},
+{"value":475,"name":"蓬莱幻想 ～ far East","optgroup":"其他曲目","url":"https://upload.thwiki.cc/8/87/zun_006.mp3","include":"","optlist":[999],"jpname":""},
+{"value":476,"name":"巨大的影子与渺小的结局","optgroup":"黄昏OST追加曲目","url":"https://upload.thwiki.cc/9/9d/TFM-004_20.mp3","include":"东方非想天则","optlist":[40],"jpname":"巨大な影と小さな結末"},
+{"value":477,"name":"心绮楼祭囃子","optgroup":"黄昏OST追加曲目","url":"https://upload.thwiki.cc/0/0d/TFM-006b_01.mp3","include":"","optlist":[41],"jpname":"心綺楼祭囃子"},
+{"value":478,"name":"出演者选择","optgroup":"黄昏OST追加曲目","url":"https://upload.thwiki.cc/8/87/TFM-006b_02.mp3","include":"","optlist":[41],"jpname":"演者選択"},
+{"value":479,"name":"没用上的场所","optgroup":"黄昏OST追加曲目","url":"https://upload.thwiki.cc/1/18/TFM-006b_03.mp3","include":"","optlist":[41],"jpname":"使われなかった場所"},
+{"value":480,"name":"Lastword发动","optgroup":"黄昏OST追加曲目","url":"https://upload.thwiki.cc/5/51/TFM-006b_14.mp3","include":"","optlist":[41],"jpname":"ラストワード発動"},
+{"value":481,"name":"天真无邪的二人的博物志","optgroup":"燕石博物志","url":"https://upload.thwiki.cc/7/73/hr09_01.mp3","include":"","optlist":[54],"jpname":"他愛も無い二人の博物誌"},
+{"value":482,"name":"Dr. Latency的令人不眠之瞳","optgroup":"燕石博物志","url":"https://upload.thwiki.cc/f/fb/hr09_03.mp3","include":"","optlist":[54],"jpname":"Dr.レイテンシーの眠れなくなる瞳"},
+{"value":483,"name":"比普朗克更短的须臾","optgroup":"燕石博物志","url":"https://upload.thwiki.cc/1/1e/hr09_05.mp3","include":"","optlist":[54],"jpname":"須臾はプランクを超えて"},
+{"value":484,"name":"薛定谔的怪猫","optgroup":"燕石博物志","url":"https://upload.thwiki.cc/2/2b/hr09_06.mp3","include":"","optlist":[54],"jpname":"シュレディンガーの化猫"},
+{"value":485,"name":"禁忌的膜壁","optgroup":"燕石博物志","url":"https://upload.thwiki.cc/c/ce/hr09_08.mp3","include":"","optlist":[54],"jpname":"禁忌の膜壁"},
+{"value":486,"name":"Bar·Old Adam","optgroup":"旧约酒吧","url":"https://upload.thwiki.cc/4/4c/hr10_01.mp3","include":"噩梦日记","optlist":[55,62],"jpname":"バー・オールドアダム"},
+{"value":487,"name":"燕石博物志所带来的黑暗","optgroup":"旧约酒吧","url":"https://upload.thwiki.cc/e/e4/hr10_02.mp3","include":"噩梦日记","optlist":[55,62],"jpname":"燕石博物誌が連れてきた闇"},
+{"value":488,"name":"Outsider Cocktail","optgroup":"旧约酒吧","url":"https://upload.thwiki.cc/5/57/hr10_04.mp3","include":"","optlist":[55],"jpname":"アウトサイダーカクテル"},
+{"value":489,"name":"旧世界的冒险酒吧","optgroup":"旧约酒吧","url":"https://upload.thwiki.cc/3/39/hr10_07.mp3","include":"","optlist":[55],"jpname":"旧世界の冒険酒場"},
+{"value":490,"name":"宿醉者的同床异梦","optgroup":"旧约酒吧","url":"https://upload.thwiki.cc/7/75/hr10_10.mp3","include":"","optlist":[55],"jpname":"二日酔いの同床異夢"},
+{"value":491,"name":"Mysterious Shrine","optgroup":"8BIT MUSIC POWER NEXT","url":"https://upload.thwiki.cc/3/3c/8MPN_07.mp3","include":"","optlist":[999],"jpname":""},
+{"value":492,"name":"樱花舞落的天空","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/2/20/th16_01.mp3","include":"","optlist":[59],"jpname":"桜舞い散る天空"},
+{"value":493,"name":"希望之星直升青霄","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/6/63/th16_02.mp3","include":"","optlist":[59],"jpname":"希望の星は青霄に昇る"},
+{"value":494,"name":"仲夏的妖精梦","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/0/00/th16_03.mp3","include":"","optlist":[59],"jpname":"真夏の妖精の夢"},
+{"value":495,"name":"妖怪山间无色风","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/1/10/th16_04.mp3","include":"","optlist":[59],"jpname":"色無き風は妖怪の山に"},
+{"value":496,"name":"深山的遭遇","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/3/37/th16_05.mp3","include":"","optlist":[59],"jpname":"山奥のエンカウンター"},
+{"value":497,"name":"泳于樱色之海","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/8/86/th16_06.mp3","include":"","optlist":[59],"jpname":"桜色の海を泳いで"},
+{"value":498,"name":"一对的神兽","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/8/8b/th16_07.mp3","include":"","optlist":[59],"jpname":"一対の神獣"},
+{"value":499,"name":"幻想的White Traveler","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/a/a4/th16_08.mp3","include":"","optlist":[59],"jpname":"幻想のホワイトトラベラー"},
+{"value":500,"name":"魔法的笠地藏","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/c/c9/th16_09.mp3","include":"","optlist":[59],"jpname":"魔法の笠地蔵"},
+{"value":501,"name":"禁断之门对面，是此世还是彼世","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/a/a1/th16_10.mp3","include":"","optlist":[59],"jpname":"禁断の扉の向こうは、この世かあの世か"},
+{"value":502,"name":"Crazy Back Dancers","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/3/39/th16_11.mp3","include":"","optlist":[59],"jpname":"クレイジーバックダンサーズ"},
+{"value":503,"name":"Into Backdoor","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/3/32/th16_12.mp3","include":"","optlist":[59],"jpname":"イントゥ・バックドア"},
+{"value":504,"name":"被秘匿的四个季节","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/8/8c/th16_13.mp3","include":"噩梦日记","optlist":[59,62],"jpname":"秘匿されたフォーシーズンズ"},
+{"value":505,"name":"门再也进不去了","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/9/97/th16_14.mp3","include":"","optlist":[59],"jpname":"もうドアには入れない"},
+{"value":506,"name":"秘神摩多罗　～ Hidden Star in All Seasons.","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/b/b0/th16_15.mp3","include":"","optlist":[59],"jpname":"秘神マターラ　～ Hidden Star in All Seasons."},
+{"value":507,"name":"不自然的自然","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/5/50/th16_16.mp3","include":"","optlist":[59],"jpname":"不自然な自然"},
+{"value":508,"name":"白色旅人","optgroup":"东方天空璋","url":"https://upload.thwiki.cc/7/72/th16_17.mp3","include":"","optlist":[59],"jpname":"白い旅人"},
+{"value":509,"name":"圣辇船飞向天空","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/c/c6/TFM-009a_06.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"聖輦船空を往く"},
+{"value":510,"name":"新竹林大火","optgroup":"东方深秘录PS4版","url":"https://upload.thwiki.cc/5/51/TFM-008_02.mp3","include":"深秘乐曲集·补、凭依华","optlist":[56,57,58],"jpname":"ネオ竹林インフレイム"},
+{"value":511,"name":"亿万劫之钟","optgroup":"东方深秘录PS4版","url":"https://upload.thwiki.cc/d/d8/TFM-008_03.mp3","include":"深秘乐曲集·补、凭依华","optlist":[56,57,58],"jpname":"億万劫の鐘"},
+{"value":512,"name":"Occult Attract","optgroup":"东方深秘录PS4版","url":"https://upload.thwiki.cc/a/a0/TFM-008_04.mp3","include":"深秘乐曲集·补、外来韦编","optlist":[53,56,57],"jpname":"オカルトアトラクト"},
+{"value":513,"name":"境界民俗","optgroup":"东方深秘录PS4版","url":"https://upload.thwiki.cc/b/b9/TFM-008_05.mp3","include":"深秘乐曲集·补","optlist":[56,57],"jpname":"境界フォークロア"},
+{"value":514,"name":"凭投依合","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/b/bb/TFM-009a_02.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"憑依投合"},
+{"value":515,"name":"容貌错乱　～ Horrible Night","optgroup":"东方深秘录PS4版","url":"https://upload.thwiki.cc/3/3e/TFM-008_07.mp3","include":"深秘乐曲集·补","optlist":[56,57],"jpname":"相貌の狂い　～ Horrible Night"},
+{"value":516,"name":"识文解意的爱书人","optgroup":"东方铃奈庵","url":"https://upload.thwiki.cc/e/e5/FS01_01.mp3","include":"","optlist":[47],"jpname":"判読眼のビブロフィリア"},
+{"value":517,"name":"Mushroom·Waltz","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/7/71/TFM-009a_04.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"マッシュルーム・ワルツ"},
+{"value":518,"name":"不灭的赤魂","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/5/53/TFM-009b_02.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"不滅のレッドソウル"},
+{"value":519,"name":"法力之下的平等","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/3/30/TFM-009a_07.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"法力の下の平等"},
+{"value":520,"name":"恒常不变的参庙祀","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/0/08/TFM-009a_10.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"恒常不変の参廟祀"},
+{"value":521,"name":"光辉的天球仪","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/e/e9/TFM-009a_11.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"光輝く天球儀"},
+{"value":522,"name":"泽之河童的技术力","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/5/55/TFM-009a_13.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"沢の河童の技術力"},
+{"value":523,"name":"地底绽放的蔷薇","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/0/05/TFM-009a_14.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"地底に咲く薔薇"},
+{"value":524,"name":"在深绿的狸森里","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/0/04/TFM-009a_15.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"深緑の狸森にて"},
+{"value":525,"name":"心绮楼演舞","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/f/f5/TFM-009b_06.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"心綺楼演舞"},
+{"value":526,"name":"落日映照下的逆城","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/3/36/TFM-009b_05.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"落日に映える逆さ城"},
+{"value":527,"name":"克服万千之试炼","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/1/13/TFM-009b_12.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"千の試練を超えて"},
+{"value":528,"name":"梦世界民俗","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/1/13/TFM-009b_08.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"夢世界フォークロア"},
+{"value":529,"name":"永远延续的回廊","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/e/ef/TFM-009b_03.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"永遠に続く回廊"},
+{"value":530,"name":"Sleep Sheep·Parade","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/5/5e/TFM-009b_09.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"スリープシープ・パレード"},
+{"value":531,"name":"到达有顶天","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/6/61/TFM-009b_11.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"至る有頂天"},
+{"value":532,"name":"凭坐处于梦与现实之间　～ Necro-Fantasia","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/8/8f/TFM-009a_17.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"憑坐は夢と現の間に　～ Necro-Fantasia"},
+{"value":533,"name":"今宵是飘逸的自我主义者(Live ver)　～ Egoistic Flowers.","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/6/69/TFM-009b_14.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"今宵は飄逸なエゴイスト(Live ver)　～ Egoistic Flowers."},
+{"value":534,"name":"连带责人","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/3/34/TFM-009a_05.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"連帯責人"},
+{"value":535,"name":"合缘奇缘","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/f/f4/TFM-009a_09.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"合縁奇縁"},
+{"value":536,"name":"异心同体","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/5/5b/TFM-009a_12.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"異心同体"},
+{"value":537,"name":"豪言壮语","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/a/a4/TFM-009b_04.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"壮言大語"},
+{"value":538,"name":"智略纵横","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/8/86/TFM-009a_16.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"知略縦横"},
+{"value":539,"name":"意气洋洋","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/2/29/TFM-009b_07.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"意気揚々"},
+{"value":540,"name":"开演间近","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/3/39/TFM-009b_13.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"開演間近"},
+{"value":541,"name":"行云流水","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/2/2b/TFM-009a_18.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"行雲流水"},
+{"value":542,"name":"异变的种子","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/6/63/TFM-009a_01.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"異変の種子"},
+{"value":543,"name":"疑惑的萌芽","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/4/4b/TFM-009a_08.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"疑惑の芽生え"},
+{"value":544,"name":"含苞待放的凭依华","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/5/54/TFM-009a_19.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"未だ蕾む憑依華"},
+{"value":545,"name":"通往真相的枝叶","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/9/98/TFM-009b_01.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"真相へ繋がる枝葉"},
+{"value":546,"name":"争奇斗艳的凭依华","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/a/a8/TFM-009b_15.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"咲き誇る憑依華"},
+{"value":547,"name":"飞舞飘散的凭依华吹雪","optgroup":"东方凭依华","url":"https://upload.thwiki.cc/c/cd/TFM-009b_16.mp3","include":"完全凭依唱片名录","optlist":[58,61],"jpname":"舞い散る憑依華吹雪"},
+{"value":548,"name":"凭依华","optgroup":"黄昏OST追加曲目","url":"https://upload.thwiki.cc/d/dc/TFM-009c_01.mp3","include":"","optlist":[61],"jpname":"憑依華"},
+{"value":549,"name":"噩梦日记","optgroup":"秘封噩梦日记","url":"https://upload.thwiki.cc/3/3d/th16.5_01.mp3","include":"","optlist":[62],"jpname":"悪夢日記"},
+{"value":550,"name":"Lucid Dreamer","optgroup":"秘封噩梦日记","url":"https://upload.thwiki.cc/2/2f/th16.5_02.mp3","include":"","optlist":[62],"jpname":"ルーシッドドリーマー"},
+{"value":551,"name":"Lunatic Dreamer","optgroup":"秘封噩梦日记","url":"https://upload.thwiki.cc/8/8f/th16.5_03.mp3","include":"","optlist":[62],"jpname":"ルナティックドリーマー"},
+{"value":552,"name":"Nightmare Diary","optgroup":"秘封噩梦日记","url":"https://upload.thwiki.cc/4/49/th16.5_04.mp3","include":"","optlist":[62],"jpname":"ナイトメアダイアリー"},
+{"value":553,"name":"沉默的兽灵","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/8/88/th17_01.mp3","include":"","optlist":[64],"jpname":"物言わぬ獣の霊"},
+{"value":554,"name":"只有地藏知晓的哀叹","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/8/8f/th17_02.mp3","include":"","optlist":[64],"jpname":"地蔵だけが知る哀嘆"},
+{"value":555,"name":"Jelly Stone","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/f/f2/th17_03.mp3","include":"","optlist":[64],"jpname":"ジェリーストーン"},
+{"value":556,"name":"Lost River","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/a/a0/th17_04.mp3","include":"","optlist":[64],"jpname":"ロストリバー"},
+{"value":557,"name":"石之婴儿与水中牛","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/c/cd/th17_05.mp3","include":"","optlist":[64],"jpname":"石の赤子と水中の牛"},
+{"value":558,"name":"不朽的曼珠沙华","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/c/c2/th17_06.mp3","include":"","optlist":[64],"jpname":"不朽の曼珠沙華"},
+{"value":559,"name":"Seraphic Chicken","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/2/2a/th17_07.mp3","include":"","optlist":[64],"jpname":"セラフィックチキン"},
+{"value":560,"name":"Unlocated Hell","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/9/92/th17_08.mp3","include":"","optlist":[64],"jpname":"アンロケイテッドヘル"},
+{"value":561,"name":"Tortoise Dragon　～ 幸运与不幸","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/8/89/th17_09.mp3","include":"","optlist":[64],"jpname":"トータスドラゴン　～ 幸運と不運"},
+{"value":562,"name":"Beast Metropolis","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/5/55/th17_10.mp3","include":"","optlist":[64],"jpname":"ビーストメトロポリス"},
+{"value":563,"name":"陶瓷的杖刀人","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/7/75/th17_11.mp3","include":"","optlist":[64],"jpname":"セラミックスの杖刀人"},
+{"value":564,"name":"Electric Heritage","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/7/7f/th17_12.mp3","include":"","optlist":[64],"jpname":"エレクトリックヘリテージ"},
+{"value":565,"name":"寄世界于偶像　～ Idoratrize World","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/9/94/th17_13.mp3","include":"","optlist":[64],"jpname":"偶像に世界を委ねて　～ Idoratrize World"},
+{"value":566,"name":"闪耀的弱肉强食法则","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/b/bd/th17_14.mp3","include":"","optlist":[64],"jpname":"輝かしき弱肉強食の掟"},
+{"value":567,"name":"圣德太子的天马　～ Dark Pegasus","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/9/90/th17_15.mp3","include":"","optlist":[64],"jpname":"聖徳太子のペガサス　～ Dark Pegasus"},
+{"value":568,"name":"畜生们的休息","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/5/5a/th17_16.mp3","include":"","optlist":[64],"jpname":"畜生達の休息"},
+{"value":569,"name":"从地下的归还","optgroup":"东方鬼形兽","url":"https://upload.thwiki.cc/f/fd/th17_17.mp3","include":"","optlist":[64],"jpname":"地下からの帰還"} ];
+		var type = "music";
+		var footable;
+	</script>
+</head>
+
+<body>
+		<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">导航条</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="." class="navbar-brand">东方Project人气投票</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="https://touhou.vote/v8/?m=music">音乐部分</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">本届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v8/?m=chara">角色部分</a></li>
+							<li><a href="https://touhou.vote/v8/?m=music">音乐部分</a></li>
+							<li><a href="https://touhou.vote/v8/?m=work">作品部分</a></li>
+							<li><a href="https://touhou.vote/v8/?m=cp">组合部分</a></li>
+							<li><a href="https://touhou.vote/v8/?m=game">游戏部分</a></li>
+							<li><a href="https://touhou.vote/v8/?m=paper">问卷部分</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">往届结果 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://touhou.vote/v8/../v7" target="_blank">第七回</a></li>
+							<li><a href="https://touhou.vote/v8/../v6" target="_blank">第六回</a></li>
+							<li><a href="https://touhou.vote/v8/../v5" target="_blank">第五回</a></li>
+							<li><a href="https://touhou.vote/v8/../v4" target="_blank">第四回</a></li>
+							<li><a href="https://touhou.vote/v8/../v3" target="_blank">第三回</a></li>
+							<li><a href="https://touhou.vote/v8/../v2" target="_blank">第二回</a></li>
+							<li><a href="https://touhou.vote/v8/../v1" target="_blank">第一回</a></li>
+						</ul>
+					</li>
+					<li><a href="https://thwiki.cc" target="_blank">THBWiki主站</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>	<!-- Header -->
+	<div class="jumbotron bitlower">
+	
+		<div class="container">
+			<h2>音乐投票演进对比</h2>
+			<h1>音乐部分</h1>
+		</div>
+	
+	</div>
+	<!-- Content -->
+	<div class="container">
+	
+		<div class="callout callout-info">
+			<h4>总体投票情况</h4>
+			<ul>
+				<li>
+					本页面为单独音乐投票的演进对比页面。
+				</li>
+				<li>
+					总有效票数<b>6805</b>，
+					总本命票数<b>6478</b>，
+					参投音乐总数<b>569</b>。
+				</li>
+				<li>
+					请在下方下拉框中选择您要对比的音乐，最多可选择10个。
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div id="maininfo-div" class="block-div">
+				<h3>选择音乐</h3>
+				<table class="footable-details table">
+					<tbody>
+						<tr>
+							<td colspan="2" style="display: table-cell;">
+								<div class="callout callout-info">
+									<h4>使用说明</h4>
+									<ul>
+										<li>
+											<b>注意：该功能尚在测试中，如果出现BUG属于正常情况。</b>
+										</li>
+										<li>
+											通过下方的下拉框选择音乐，该下拉框为多选框，如果需要删除音乐请选中并按Del或BackSpace键，或者点击标签上的×。
+										</li>
+										<li>
+											可以通过打字的方式搜索音乐。
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+	  							<div class="col-xs-8">
+									<select
+										tabindex="-1"
+										id="item-box"
+										class="chara itemselect" 
+										name="item-box[]" 
+										placeholder="请选择音乐" 
+										title="可以通过搜索的方式选择"
+									>
+									<span class="help-block">选择主条件，该问卷问题将作为图表的主体元素。</span>
+	  							</div>
+							</td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr>
+							<td>
+								<div id="alert-success" class="alert alert-success" role="alert">载入完毕...</div>
+								<div id="alert-info" class="alert alert-info" role="alert">载入中...请耐心等候</div>
+								<div id="alert-warning" class="alert alert-warning" role="alert">提交的列表无法获取到数据</div>
+								<div id="alert-danger" class="alert alert-danger" role="alert">载入失败</div>
+								<button type="button" id="button" class="btn btn-primary" value="提交图表生成请求" class="bt-blue">提交图表生成请求</button>
+							</td>
+							<td style="display: none;"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="progress-div" class="block-div">
+				<h3>投票演进</h3>
+				<table class="table footable" id="progressTab" data-show-toggle="false" data-expand-all="true" data-show-header="false">
+					<thead class="footable-header">
+						<tr>
+							<th>票数演进变化</th>
+							<th style="display: none;">图表说明</th>
+							<th style="display: none;">图表</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="footable-detail-row clickable-row" id="progressHeader" data-toggle="progress">
+							<td>投票期间：2019-09-30 18:00:00 至 2019-10-15 20:00:00</td>
+							<td style="display: none;"></td>
+							<td style="display: none;"></td>
+						</tr>
+						<tr class="footable-detail-row" id="progressTr">
+							<td colspan="3">
+								<table class="footable-details table">
+									<tbody>
+										<tr>
+											<td style="display: table-cell;">
+												<div class="callout callout-info">
+													<h4>说明</h4>
+													<ul>
+														<li>
+															该图表表示该音乐随着投票进程的票数变化情况。
+														</li>
+														<li>
+															其中减少的票数是因为投票人修改自己的投票去掉该音乐而导致的。
+														</li>
+														<li>
+															通过拖动底部和右侧的滑柄或在图表上缩放（鼠标或手指）可以筛选数据范围，也可以点击顶部的图例开关某个数据的显示。
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><b>总票数演进</b></td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><div class="chart-div" id="progress-chart-1"></div></td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><b>总本命票数演进</b></td>
+										</tr>
+										<tr>
+											<td style="display: table-cell;"><div class="chart-div" id="progress-chart-2"></div></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<br />
+			<a href="https://touhou.vote/v8/?m=music" id="button" value="返回音乐部门目录" class="bt-blue">返回音乐部门目录</a>
+						
+			<h5></h5>
+			<span id="bottom">THBWiki - <a href="https://touhou.vote/v8/" title="东方Project人气投票">东方Project人气投票</a></span>
+		</div>
+				<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2e5ba8781d699fe45b54547f88ffeec5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	</div>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<script src="https://touhou.vote/v8/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://touhou.vote/v8/js/ie10-viewport-bug-workaround.js"></script>
+	
+	<script src="https://touhou.vote/v8/js/footable.js"></script>
+	<script src="https://touhou.vote/v8/js/echarts.js"></script>
+	<script src="https://touhou.vote/v8/js/selectize.js"></script>
+	
+	<script src="https://touhou.vote/v8/js/progress.js?v=20191023"></script>
+</body>
+</html>

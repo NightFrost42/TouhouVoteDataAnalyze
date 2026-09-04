@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1084.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1084.php",
+    "retrieved_at": "2026-08-15T09:53:58+00:00",
+    "http_status": 200,
+    "bytes": 3700,
+    "sha256": "e3be0d42524cb14714978fe76172146089643c260bb571647184fc32f780b2f2",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1084",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：あゆのかぜ - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "あゆのかぜ（378位）",
+      "numbers": [
+        {
+          "raw": "378位",
+          "value": 378,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：21点 ｜ 得票数：21票 ｜ 一押し数：0票 ｜ コメント数：1件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "21点",
+          "value": 21,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "21票",
+          "value": 21,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

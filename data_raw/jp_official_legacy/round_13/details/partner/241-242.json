@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/241-242.php",
+    "effective_url": "https://toho-vote.info/result13/partner/241-242.php",
+    "retrieved_at": "2026-08-15T09:56:37+00:00",
+    "http_status": 200,
+    "bytes": 9151,
+    "sha256": "a17a45bccd45fc8bbcb199ac3b4e5c2ea34776f5543d3aedc98623721d231b3d",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "241-242",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：八坂 神奈子と洩矢 諏訪子 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "八坂 神奈子と洩矢 諏訪子（40位）",
+      "numbers": [
+        {
+          "raw": "40位",
+          "value": 40,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：752点 ｜ 得票数：642票 ｜ 一押し数：110票 ｜ コメント数：82件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "752点",
+          "value": 752,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "642票",
+          "value": 642,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "110票",
+          "value": 110,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "82件",
+          "value": 82,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

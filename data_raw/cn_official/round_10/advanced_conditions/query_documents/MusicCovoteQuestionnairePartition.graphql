@@ -1,0 +1,20 @@
+query MusicCovoteQuestionnairePartition(
+  $query: String!
+  $voteStart: DateTimeUtc!
+  $voteYear: Int!
+  $topK: Int!
+) {
+  queryGlobalStats(query: $query, voteStart: $voteStart, voteYear: $voteYear) {
+    voteYear
+    numVote
+    numMusic
+  }
+  queryMusicsCovote(
+    query: $query
+    voteStart: $voteStart
+    voteYear: $voteYear
+    topK: $topK
+  ) {
+    items { a b m00 m01 m10 m11 }
+  }
+}

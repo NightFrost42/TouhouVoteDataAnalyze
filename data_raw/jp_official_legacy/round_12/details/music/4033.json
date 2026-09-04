@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4033.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4033.php",
+    "retrieved_at": "2026-08-15T09:54:56+00:00",
+    "http_status": 200,
+    "bytes": 8172,
+    "sha256": "11aa0c6831426c72ff32f147c06ae73c8cd1c3b3b8d85960997a382d6e75145b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4033",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：夢と現の境界 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "夢と現の境界（238位）",
+      "numbers": [
+        {
+          "raw": "238位",
+          "value": 238,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：128点 ｜ 得票数：117票 ｜ 一押し数：11票 ｜ コメント数：36件 継続投票率：86.7%（15名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "128点",
+          "value": 128,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "117票",
+          "value": 117,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "11票",
+          "value": 11,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "36件",
+          "value": 36,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "86.7%",
+          "value": 86.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "15名",
+          "value": 15,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,89 @@
+<!DOCTYPEhtml>
+<html lang="zh">
+<head>
+	<title>作品部门 - 东方Project人气投票 第四回 - THBWiki</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="作品部门" />
+	<link type="text/css" href="https://touhou.vote/v4/style/item_r.css" rel="stylesheet">
+	<script src="https://touhou.vote/v4/js/jquery-latest.min.js"></script>
+  	<link type="text/css" href="https://touhou.vote/v4/style/jquery.pageslide.css" rel="stylesheet" />
+	<script src="https://touhou.vote/v4/js/sorttable.js" type="text/javascript"></script>
+	<style type="text/css">
+		.clearDiv, #tagdiv, #buydiv, #ofldiv, #upload, #chain, #imagereset, #checkchain, #upchain, #imagereset2, #chainidiv {
+			display: none;
+		}
+		#thumb {
+			display: none;
+			float: right;
+		}
+	</style>
+	<script type="text/javascript">
+		var sort = "total";
+		var vote = [{"id":"9","name":"东方永夜抄","1st":"923","2nd":"573","3rd":"319","total":"4234","sum":"1815","index":1,"p1st":"923","p2nd":"573","p3rd":"319"},{"id":"12","name":"东方风神录","1st":"453","2nd":"376","3rd":"289","total":"2400","sum":"1118","index":2,"p1st":"453","p2nd":"376","p3rd":"289"},{"id":"7","name":"东方妖妖梦","1st":"425","2nd":"342","3rd":"216","total":"2175","sum":"983","index":3,"p1st":"425","p2nd":"342","p3rd":"216"},{"id":"6","name":"东方红魔乡","1st":"434","2nd":"297","3rd":"155","total":"2051","sum":"886","index":4,"p1st":"434","p2nd":"297","p3rd":"155"},{"id":"16","name":"东方非想天则","1st":"358","2nd":"235","3rd":"228","total":"1772","sum":"821","index":5,"p1st":"358","p2nd":"235","p3rd":"228"},{"id":"14","name":"东方地灵殿","1st":"316","2nd":"254","3rd":"191","total":"1647","sum":"761","index":6,"p1st":"316","p2nd":"254","p3rd":"191"},{"id":"24","name":"东方绀珠传","1st":"223","2nd":"251","3rd":"286","total":"1457","sum":"760","index":7,"p1st":"223","p2nd":"251","p3rd":"286"},{"id":"21","name":"东方辉针城","1st":"229","2nd":"222","3rd":"179","total":"1310","sum":"630","index":8,"p1st":"229","p2nd":"222","p3rd":"179"},{"id":"19","name":"东方神灵庙","1st":"160","2nd":"141","3rd":"120","total":"882","sum":"421","index":9,"p1st":"160","p2nd":"141","p3rd":"120"},{"id":"23","name":"东方深秘录","1st":"132","2nd":"155","3rd":"155","total":"861","sum":"442","index":10,"p1st":"132","p2nd":"155","p3rd":"155"},{"id":"20","name":"东方心绮楼","1st":"122","2nd":"155","3rd":"146","total":"822","sum":"423","index":11,"p1st":"122","p2nd":"155","p3rd":"146"},{"id":"13","name":"东方绯想天","1st":"134","2nd":"127","3rd":"97","total":"753","sum":"358","index":12,"p1st":"134","p2nd":"127","p3rd":"97"},{"id":"22","name":"弹幕天邪鬼","1st":"103","2nd":"148","3rd":"134","total":"739","sum":"385","index":13,"p1st":"103","p2nd":"148","p3rd":"134"},{"id":"15","name":"东方星莲船","1st":"98","2nd":"133","3rd":"113","total":"673","sum":"344","index":14,"p1st":"98","p2nd":"133","p3rd":"113"},{"id":"47","name":"东方铃奈庵（书籍）","1st":"81","2nd":"116","3rd":"126","total":"601","sum":"323","index":15,"p1st":"81","p2nd":"116","p3rd":"126"},{"id":"48","name":"东方求闻史纪（书籍）","1st":"64","2nd":"65","3rd":"111","total":"433","sum":"240","index":16,"p1st":"64","p2nd":"65","p3rd":"111"},{"id":"10","name":"东方花映塚","1st":"77","2nd":"69","3rd":"62","total":"431","sum":"208","index":17,"p1st":"77","p2nd":"69","p3rd":"62"},{"id":"46","name":"东方茨歌仙（书籍）","1st":"58","2nd":"77","3rd":"87","total":"415","sum":"222","index":18,"p1st":"58","p2nd":"77","p3rd":"87"},{"id":"43","name":"东方香霖堂（书籍）","1st":"55","2nd":"48","3rd":"65","total":"326","sum":"168","index":19,"p1st":"55","p2nd":"48","p3rd":"65"},{"id":"45","name":"东方儚月抄（书籍）","1st":"43","2nd":"44","3rd":"71","total":"288","sum":"158","index":20,"p1st":"43","p2nd":"44","p3rd":"71"},{"id":"25","name":"蓬莱人形（专辑）","1st":"41","2nd":"45","3rd":"66","total":"279","sum":"152","index":21,"p1st":"41","p2nd":"45","p3rd":"66"},{"id":"44","name":"东方三月精（书籍）","1st":"29","2nd":"42","3rd":"46","total":"217","sum":"117","index":22,"p1st":"29","p2nd":"42","p3rd":"46"},{"id":"49","name":"东方求闻口授（书籍）","1st":"10","2nd":"39","3rd":"64","total":"172","sum":"113","index":23,"p1st":"10","p2nd":"39","p3rd":"64"},{"id":"29","name":"大空魔术（专辑）","1st":"23","2nd":"34","3rd":"23","total":"160","sum":"80","index":24,"p1st":"23","p2nd":"34","p3rd":"23"},{"id":"8","name":"东方萃梦想","1st":"18","2nd":"38","3rd":"27","total":"157","sum":"83","index":25,"p1st":"18","p2nd":"38","p3rd":"27"},{"id":"17","name":"东方文花帖DS","1st":"22","2nd":"25","3rd":"29","total":"145","sum":"76","index":26,"p1st":"22","p2nd":"25","p3rd":"29"},{"id":"18","name":"妖精大战争","1st":"21","2nd":"22","3rd":"31","total":"138","sum":"74","index":27,"p1st":"21","p2nd":"22","p3rd":"31"},{"id":"27","name":"梦违科学世纪（专辑）","1st":"13","2nd":"32","3rd":"29","total":"132","sum":"74","index":28,"p1st":"13","p2nd":"32","p3rd":"29"},{"id":"28","name":"卯酉东海道（专辑）","1st":"18","2nd":"19","3rd":"38","total":"130","sum":"75","index":29,"p1st":"18","p2nd":"19","p3rd":"38"},{"id":"3","name":"东方梦时空","1st":"24","2nd":"19","3rd":"18","total":"128","sum":"61","index":30,"p1st":"24","p2nd":"19","p3rd":"18"},{"id":"11","name":"东方文花帖","1st":"15","2nd":"27","3rd":"25","total":"124","sum":"67","index":31,"p1st":"15","p2nd":"27","p3rd":"25"},{"id":"26","name":"莲台野夜行（专辑）","1st":"11","2nd":"17","3rd":"36","total":"103","sum":"64","index":32,"p1st":"11","p2nd":"17","p3rd":"36"},{"id":"4","name":"东方幻想乡","1st":"18","2nd":"15","3rd":"15","total":"99","sum":"48","index":33,"p1st":"18","p2nd":"15","p3rd":"15"},{"id":"5","name":"东方怪绮谈","1st":"14","2nd":"19","3rd":"17","total":"97","sum":"50","index":34,"p1st":"14","p2nd":"19","p3rd":"17"},{"id":"50","name":"The Grimoire of Marisa（书籍）","1st":"11","2nd":"10","3rd":"19","total":"72","sum":"40","index":35,"p1st":"11","p2nd":"10","p3rd":"19"},{"id":"32","name":"伊奘诺物质（专辑）","1st":"9","2nd":"13","3rd":"18","total":"71","sum":"40","index":36,"p1st":"9","p2nd":"13","p3rd":"18"},{"id":"39","name":"全人类的天乐录（专辑）","1st":"8","2nd":"14","3rd":"10","total":"62","sum":"32","index":37,"p1st":"8","p2nd":"14","p3rd":"10"},{"id":"30","name":"未知之花 魅知之旅（专辑）","1st":"5","2nd":"16","3rd":"9","total":"56","sum":"30","index":38,"p1st":"5","p2nd":"16","p3rd":"9"},{"id":"31","name":"鸟船遗迹（专辑）","1st":"2","2nd":"14","3rd":"21","total":"55","sum":"37","index":39,"p1st":"2","p2nd":"14","p3rd":"21"},{"id":"40","name":"核热造神非想天则（专辑）","1st":"5","2nd":"7","3rd":"10","total":"39","sum":"22","index":40,"p1st":"5","p2nd":"7","p3rd":"10"},{"id":"41","name":"暗黑能乐集心绮楼‎（专辑）","1st":"3","2nd":"7","3rd":"14","total":"37","sum":"24","index":41,"p1st":"3","p2nd":"7","p3rd":"14"},{"id":"51","name":"东方文花帖（书籍）","1st":"2","2nd":"5","3rd":"11","total":"27","sum":"18","index":42,"p1st":"2","p2nd":"5","p3rd":"11"},{"id":"1","name":"东方灵异传","1st":"4","2nd":"5","3rd":"5","total":"27","sum":"14","index":42,"p1st":"4","p2nd":"5","p3rd":"5"},{"id":"53","name":"东方外来韦编（书籍）","1st":"1","2nd":"4","3rd":"12","total":"23","sum":"17","index":44,"p1st":"1","p2nd":"4","p3rd":"12"},{"id":"38","name":"幻想曲拔萃（专辑）","1st":"2","2nd":"4","3rd":"8","total":"22","sum":"14","index":45,"p1st":"2","p2nd":"4","p3rd":"8"},{"id":"42","name":"深秘乐曲集‎（专辑）","1st":"5","2nd":"2","3rd":"3","total":"22","sum":"10","index":45,"p1st":"5","p2nd":"2","p3rd":"3"},{"id":"2","name":"东方封魔录","1st":"4","2nd":"4","3rd":"2","total":"22","sum":"10","index":45,"p1st":"4","p2nd":"4","p3rd":"2"},{"id":"52","name":"东方紫香花（书籍）","1st":"1","2nd":"3","3rd":"7","total":"16","sum":"11","index":48,"p1st":"1","p2nd":"3","p3rd":"7"},{"id":"37","name":"幺乐团的历史 vol.5（专辑）","1st":"0","2nd":"3","3rd":"1","total":"7","sum":"4","index":49,"p1st":"0","p2nd":"3","p3rd":"1"},{"id":"36","name":"幺乐团的历史 vol.4（专辑）","1st":"1","2nd":"1","3rd":"2","total":"7","sum":"4","index":49,"p1st":"1","p2nd":"1","p3rd":"2"},{"id":"34","name":"幺乐团的历史 vol.2（专辑）","1st":"0","2nd":"2","3rd":"0","total":"4","sum":"2","index":51,"p1st":"0","p2nd":"2","p3rd":"0"},{"id":"35","name":"幺乐团的历史 vol.3（专辑）","1st":"0","2nd":"1","3rd":"0","total":"2","sum":"1","index":52,"p1st":"0","p2nd":"1","p3rd":"0"},{"id":"33","name":"幺乐团的历史 vol.1（专辑）","1st":"0","2nd":"1","3rd":"0","total":"2","sum":"1","index":52,"p1st":"0","p2nd":"1","p3rd":"0"}];
+	</script>
+</head>
+
+<body>
+	<div id="holder">
+		<div id="content">
+			<h1>东方Project人气投票 - 作品部门</h1>
+			<a href="https://touhou.vote/v4/?v=result&m=work">返回作品部门目录</a>
+			<p style="margin-top: 5px;">本页面为作品部门的票数排行简表，点击表头可排序，点作品名可展开详情。<br />加权票数是 一位×3+二位×2+三位×1，相加票数则是直接相加。</p>
+			<p style="margin-top: 5px;">总有效票数4839，参投作品总数53，其中游戏总数24。</p>
+			<div>
+				<table class='worksimple scrolltable' id='stable'>
+				<thead><tr>
+					<th class="index">名次</th><th class="tname">作品名</th>
+					<th class="total"><a class="blink" id="total" href="./?v=result&m=work&t=simple"><b>加权票数</b></a></th>
+					<th class="1st"><a class="blink" id="1st" href="./?v=result&m=work&t=simple&s=1st"><b>一位票</b></a></th>
+					<th class="2nd"><a class="blink" id="2nd" href="./?v=result&m=work&t=simple&s=2nd"><b>二位票</b></a></th>
+					<th class="3rd"><a class="blink" id="3rd" href="./?v=result&m=work&t=simple&s=3rd"><b>三位票</b></a></th>
+					<th class="sum"><a class="blink" id="sum" href="./?v=result&m=work&t=simple&s=sum"><b>相加票数</b></a></th>
+				</tr></thead>
+				<tbody></tbody>
+				<tfoot></tfoot>
+				</table>
+			</div>
+			
+			<br />
+			<a href="https://touhou.vote/v4/?v=result&m=work" id="button" value="返回作品部门目录" class="bt-blue">返回作品部门目录</a>
+						
+			<h5></h5>
+			<span id="bottom">TBSGroup - <a href="https://touhou.vote/v4/" title="东方Project人气投票">东方Project人气投票</a></span>
+		</div>
+				<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2e5ba8781d699fe45b54547f88ffeec5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	</div>
+	<script type="text/javascript">
+		$("#"+sort).css("color","purple");
+		var table = $("#stable > tbody");
+		$.each(vote, function(i, item){
+			table.append("<tr id=\"item"+item.id+"\">"+
+				"<td class=\"index\">"+item.index+"</td>"+
+				"<td class=\"tname\"><span class=\"name\"><a href=\"./?v=json&m=work&i="+item.id+"\" class=\"clink\" title=\""+item.name+"\">"+item.name+"</a></span></td>"+
+				"<td class=\"total\">"+item.total+"</td>"+
+				"<td class=\"1st\">"+item.p1st+"</td>"+
+				"<td class=\"2nd\">"+item.p2nd+"</td>"+
+				"<td class=\"3rd\">"+item.p3rd+"</td>"+
+				"<td class=\"sum\">"+item.sum+"</td>"+
+			"</tr>");     
+		});
+		$("#stable > thead > tr > th").each(function(){
+			var classname = $(this).prop("class");
+			$(this).width( $("#item1 > ."+classname).outerWidth() - 3);
+		});
+	</script>
+    <script src="https://touhou.vote/v4/js/jquery.pageslide.min.js"></script>
+	<script>
+	    $("a.clink").pageslide();
+	</script>
+</body>
+</html>

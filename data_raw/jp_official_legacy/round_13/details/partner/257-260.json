@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/257-260.php",
+    "effective_url": "https://toho-vote.info/result13/partner/257-260.php",
+    "retrieved_at": "2026-08-15T09:56:40+00:00",
+    "http_status": 200,
+    "bytes": 5817,
+    "sha256": "9433395400db0bba4fcb8de9b4c3c3b0ad9c25dc07c58c4a8222a9331264b295",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "257-260",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：村紗 水蜜と封獣 ぬえ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "村紗 水蜜と封獣 ぬえ（74位）",
+      "numbers": [
+        {
+          "raw": "74位",
+          "value": 74,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：302点 ｜ 得票数：242票 ｜ 一押し数：60票 ｜ コメント数：29件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "302点",
+          "value": 302,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "242票",
+          "value": 242,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "60票",
+          "value": 60,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "29件",
+          "value": 29,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

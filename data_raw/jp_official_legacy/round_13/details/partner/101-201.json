@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/101-201.php",
+    "effective_url": "https://toho-vote.info/result13/partner/101-201.php",
+    "retrieved_at": "2026-08-15T09:56:26+00:00",
+    "http_status": 200,
+    "bytes": 6510,
+    "sha256": "b5e706f174dad7bfdf976003613bae50d53a110afa401d1ee1e6b0d8a2b0ac15",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "101-201",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 霊夢とルーミア - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 霊夢とルーミア（81位）",
+      "numbers": [
+        {
+          "raw": "81位",
+          "value": 81,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：279点 ｜ 得票数：216票 ｜ 一押し数：63票 ｜ コメント数：45件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "279点",
+          "value": 279,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "216票",
+          "value": 216,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "63票",
+          "value": 63,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "45件",
+          "value": 45,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

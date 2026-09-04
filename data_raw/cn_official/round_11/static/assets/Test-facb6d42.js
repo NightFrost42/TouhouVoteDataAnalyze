@@ -1,0 +1,2 @@
+import{c as n}from"./character-85fa06ec.js";import{m as o}from"./music-ed4ffed9.js";import{d as s,o as m,a as c,b as a,t,u as r,F as i}from"./index-c1d6c5d6.js";function u(){return n.map(e=>({id:e.id,name:e.name}))}function p(){return o.map(e=>({id:e.id,name:e.name}))}const h=s({__name:"Test",setup(e){return(l,d)=>(m(),c(i,null,[a("div",null,t(r(u)()),1),a("div",null,t(r(p)()),1)],64))}});export{h as default};
+//# sourceMappingURL=Test-facb6d42.js.map

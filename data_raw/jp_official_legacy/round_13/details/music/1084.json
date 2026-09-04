@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1084.php",
+    "effective_url": "https://toho-vote.info/result13/music/1084.php",
+    "retrieved_at": "2026-08-15T09:55:45+00:00",
+    "http_status": 200,
+    "bytes": 3577,
+    "sha256": "1a542be2a26be7555fd792cf6b7c6a340550f4b81fbdee6d3a48b42952dd0a9b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1084",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：あゆのかぜ - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "あゆのかぜ（389位）",
+      "numbers": [
+        {
+          "raw": "389位",
+          "value": 389,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：17点 ｜ 得票数：16票 ｜ 一押し数：1票 ｜ コメント数：1件 継続投票率：0.0%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "17点",
+          "value": 17,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "16票",
+          "value": 16,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1件",
+          "value": 1,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0.0%",
+          "value": 0.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

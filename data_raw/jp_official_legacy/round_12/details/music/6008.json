@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/6008.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/6008.php",
+    "retrieved_at": "2026-08-15T09:55:01+00:00",
+    "http_status": 200,
+    "bytes": 3962,
+    "sha256": "86802f7cd96650bdcd7af6ab5fa9c94fdcdc877669badcade08ed5178e75077d",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "6008",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：夜の鳩山を飛ぶ - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "夜の鳩山を飛ぶ（293位）",
+      "numbers": [
+        {
+          "raw": "293位",
+          "value": 293,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：65点 ｜ 得票数：62票 ｜ 一押し数：3票 ｜ コメント数：4件 継続投票率：75.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "65点",
+          "value": 65,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "62票",
+          "value": 62,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4件",
+          "value": 4,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "75.0%",
+          "value": 75.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

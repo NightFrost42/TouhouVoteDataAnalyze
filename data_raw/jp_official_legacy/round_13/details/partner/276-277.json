@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/276-277.php",
+    "effective_url": "https://toho-vote.info/result13/partner/276-277.php",
+    "retrieved_at": "2026-08-15T09:56:43+00:00",
+    "http_status": 200,
+    "bytes": 27897,
+    "sha256": "d395be5614399d5319e087e81231f180b6e3324b730e4ce68c1fbebfc6f105dc",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "276-277",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：鬼人 正邪と少名 針妙丸 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "鬼人 正邪と少名 針妙丸（15位）",
+      "numbers": [
+        {
+          "raw": "15位",
+          "value": 15,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：1866点 ｜ 得票数：1573票 ｜ 一押し数：293票 ｜ コメント数：267件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "1866点",
+          "value": 1866,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "1573票",
+          "value": 1573,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "293票",
+          "value": 293,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "267件",
+          "value": 267,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1238.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1238.php",
+    "retrieved_at": "2026-08-15T09:54:21+00:00",
+    "http_status": 200,
+    "bytes": 5127,
+    "sha256": "e480888aad24377ed94b7d3201dd5cef99f07b394ace141b967e42f8779b826e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1238",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：欲深き霊魂 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "欲深き霊魂（299位）",
+      "numbers": [
+        {
+          "raw": "299位",
+          "value": 299,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：61点 ｜ 得票数：60票 ｜ 一押し数：1票 ｜ コメント数：12件 継続投票率：100.0%（1名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "61点",
+          "value": 61,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "60票",
+          "value": 60,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "12件",
+          "value": 12,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "100.0%",
+          "value": 100.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "1名",
+          "value": 1,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

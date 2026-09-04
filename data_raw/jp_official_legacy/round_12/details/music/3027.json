@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/3027.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/3027.php",
+    "retrieved_at": "2026-08-15T09:54:52+00:00",
+    "http_status": 200,
+    "bytes": 4894,
+    "sha256": "e7a9b1b2710c5a3f93226cfedf4941e84cfc3318fca3d6091ee0d6657e75f4ef",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3027",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：スプートニク幻夜 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "スプートニク幻夜（265位）",
+      "numbers": [
+        {
+          "raw": "265位",
+          "value": 265,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：90点 ｜ 得票数：87票 ｜ 一押し数：3票 ｜ コメント数：10件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "90点",
+          "value": 90,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "87票",
+          "value": 87,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "10件",
+          "value": 10,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

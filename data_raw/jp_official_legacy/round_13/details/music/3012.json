@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/3012.php",
+    "effective_url": "https://toho-vote.info/result13/music/3012.php",
+    "retrieved_at": "2026-08-15T09:56:16+00:00",
+    "http_status": 200,
+    "bytes": 4946,
+    "sha256": "35af5d1e5daa5480c3b55ea8892831f489f9bdeb8241fbdad9c9121f1713136a",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "3012",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：雪月桜花の国 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "雪月桜花の国（310位）",
+      "numbers": [
+        {
+          "raw": "310位",
+          "value": 310,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：53点 ｜ 得票数：48票 ｜ 一押し数：5票 ｜ コメント数：9件 継続投票率：63.6%（11名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "53点",
+          "value": 53,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "48票",
+          "value": 48,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5票",
+          "value": 5,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "63.6%",
+          "value": 63.6,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "11名",
+          "value": 11,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

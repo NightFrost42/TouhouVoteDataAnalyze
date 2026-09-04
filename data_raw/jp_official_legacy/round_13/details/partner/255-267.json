@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/255-267.php",
+    "effective_url": "https://toho-vote.info/result13/partner/255-267.php",
+    "retrieved_at": "2026-08-15T09:56:40+00:00",
+    "http_status": 200,
+    "bytes": 8806,
+    "sha256": "cb2ef1a78d36ca576525dad6131823a1b4f7eca3b209cb05cf2fbb3c87d71554",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "255-267",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：雲居 一輪と物部 布都 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "雲居 一輪と物部 布都（73位）",
+      "numbers": [
+        {
+          "raw": "73位",
+          "value": 73,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：308点 ｜ 得票数：262票 ｜ 一押し数：46票 ｜ コメント数：60件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "308点",
+          "value": 308,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "262票",
+          "value": 262,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "46票",
+          "value": 46,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "60件",
+          "value": 60,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

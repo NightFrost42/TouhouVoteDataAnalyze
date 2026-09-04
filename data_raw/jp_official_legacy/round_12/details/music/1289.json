@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1289.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1289.php",
+    "retrieved_at": "2026-08-15T09:54:28+00:00",
+    "http_status": 200,
+    "bytes": 4550,
+    "sha256": "3dccc244017ea1ba1b921ce2c97abc028a949f39fdc86f4656657e06a6aa54db",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1289",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：魔力の雷雲 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "魔力の雷雲（275位）",
+      "numbers": [
+        {
+          "raw": "275位",
+          "value": 275,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：82点 ｜ 得票数：76票 ｜ 一押し数：6票 ｜ コメント数：9件 継続投票率：71.4%（7名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "82点",
+          "value": 82,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "76票",
+          "value": 76,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "71.4%",
+          "value": 71.4,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "7名",
+          "value": 7,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

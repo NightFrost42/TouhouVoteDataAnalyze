@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/5026.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/5026.php",
+    "retrieved_at": "2026-08-15T09:54:59+00:00",
+    "http_status": 200,
+    "bytes": 3805,
+    "sha256": "66b82a83f80e52faaabf767b82f3838c97acdc6ed692a9ebe216004842227cee",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5026",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：オルレアンの聖騎士 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "オルレアンの聖騎士（404位）",
+      "numbers": [
+        {
+          "raw": "404位",
+          "value": 404,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：13点 ｜ 得票数：13票 ｜ 一押し数：0票 ｜ コメント数：2件 継続投票率：50.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "13点",
+          "value": 13,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "13票",
+          "value": 13,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

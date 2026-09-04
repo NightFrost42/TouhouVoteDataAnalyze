@@ -1,0 +1,74 @@
+{
+  "round": 10,
+  "category": "music",
+  "sourceItems": 595,
+  "sourceCheckpoints": 595,
+  "expectedPairs": 176715,
+  "observedPairs": 176715,
+  "universe": 17442,
+  "cellConvention": {
+    "m00": "both selected (intersection)",
+    "m01": "a not selected, b selected",
+    "m10": "a selected, b not selected",
+    "m11": "neither selected"
+  },
+  "allMarginalAndUniverseIdentitiesPassed": true,
+  "allConditionalSymmetryChecksPassed": true,
+  "symmetryPairsChecked": 176715,
+  "identitySamples": [
+    {
+      "a": "寄世界于偶像　～ Idoratrize World",
+      "b": "众神眷恋的幻想乡",
+      "m00": 1208,
+      "m01": 3304,
+      "m10": 3151,
+      "m11": 9779,
+      "pairIndex": 0,
+      "countAFromCells": 4359,
+      "countAOfficialRanking": 4359,
+      "countBFromCells": 4512,
+      "countBOfficialRanking": 4512,
+      "universeFromCells": 17442,
+      "universeOfficial": 17442,
+      "reverseConditionalIntersection": 1208
+    },
+    {
+      "a": "Silk Road Alice",
+      "b": "禁忌的膜壁",
+      "m00": 0,
+      "m01": 29,
+      "m10": 18,
+      "m11": 17395,
+      "pairIndex": 88357,
+      "countAFromCells": 18,
+      "countAOfficialRanking": 18,
+      "countBFromCells": 29,
+      "countBOfficialRanking": 29,
+      "universeFromCells": 17442,
+      "universeOfficial": 17442,
+      "reverseConditionalIntersection": 0
+    },
+    {
+      "a": "连带责人",
+      "b": "间奏曲",
+      "m00": 0,
+      "m01": 0,
+      "m10": 0,
+      "m11": 17442,
+      "pairIndex": 176714,
+      "countAFromCells": 0,
+      "countAOfficialRanking": 0,
+      "countBFromCells": 0,
+      "countBOfficialRanking": 0,
+      "universeFromCells": 17442,
+      "universeOfficial": 17442,
+      "reverseConditionalIntersection": 0
+    }
+  ],
+  "directTopKCrosscheck": {
+    "available": true,
+    "topK": 10,
+    "pairsChecked": 45,
+    "mismatches": []
+  }
+}

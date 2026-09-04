@@ -1,0 +1,149 @@
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
+    <meta name="description" content="東方Projectシリーズの第11回人気投票のページです。">
+    <meta property="og:url" content="http://thwiki.info/th/vote11/">
+    <meta property="og:description" content="東方Projectシリーズの第11回人気投票のページです。">
+    <meta property="og:title" content="第11回東方Project人気投票">
+
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/PluginToggle.js"></script>
+    <script src="./js/PluginCdown.js"></script>
+    <script src="./js/scriptTohoVote.js"></script>
+    <script>$(function(){$('.Timer1 time').yycountdown({endDateTime:'2015/05/24 00:00:00'});})</script>
+    <script>$(function(){$('.Timer2 time').yycountdown({endDateTime:'2015/05/31 00:00:00'});})</script>
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+
+    <link href="./css/styleTohoVoteCommon.css" rel="stylesheet" type="text/css">
+    <title>トップページ - 第11回 東方Project 人気投票</title>
+</head>
+<body id="TohoProjectPopularityVoteIndex">
+
+<!--	FaceBookButton    -->
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.3";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!--//	FaceBookButton    -->
+
+<header>
+    <h1 id="SiteTitle"><a href="./index.php">第11回 東方Project 人気投票</a></h1>
+    <p id="HeldPeriod"><em>開催期間</em> <time>2015年5月24日（日）</time>　～　<time>2015年5月30日（土）</time></p>
+</header>
+
+<aside id="GlobalNavi">
+    <nav>
+        <ul>
+            <li><a href="List.php" title="投票対象一覧">投票対象一覧</a></li><!--
+            --><li><a href="Rule.php" title="投票の決まり">投票の決まり</a></li><!--
+            --><li><a href="Faq.php" title="よくある質問">よくある質問</a></li><!--
+            --><li><a href="Shien.php" title="投票支援リンク集">投票支援リンク集</a></li>
+        </ul>
+    </nav>
+</aside>
+<!---------------------- ここから本文  ---------------------->
+
+<section>
+    <h2>データ消失に関する報告（6/13）</h2>
+    <article id="Report">
+        <p>投票期間中に発生した不具合の詳細、また今後の対応について、<a href="Report.php">こちらのページ</a>にて報告させていただきます。</p>
+    </article>
+    <h2>最終集計結果</h2>
+    <article id="Notification">
+<p>
+	・<a href="result_list_character.php" title="キャラ部門速報">キャラ部門</a><br>
+	・<a href="result_list_music.php" title="音楽部門速報">音楽部門</a><br>
+	・<a href="result_questionnaire.php" title="アンケート">アンケート</a>
+</p>
+	<p>有効投票数<br>
+	・キャラ部門：32,244票<br> 
+	・音楽部門　：20,843票<br>
+	・アンケート：10,636件</p>
+	</article>
+
+    <h2>開催概要</h2>
+    <article id="VoteSummary">
+        <p>東方Projectのキャラクター、音楽を対象とした人気投票です。
+        投票の対象、投票の方法、また投票支援の方法などをご確認の上ご参加下さい。</p>
+        <p><a href="http://thwiki.info/?%BF%CD%B5%A4%C5%EA%C9%BC%B7%EB%B2%CC" title="過去の人気投票結果の一覧表">過去の人気投票結果の一覧表</a><br>
+        <a href="contact.php">お問い合わせ</a></p>
+    </article>
+
+    <h2>投票を行う</h2>
+	<article id="VoteDoneHere">
+<p>投票期間は終了しました。
+    </article>
+	<article id="Advertising">
+		<ul>
+            <li class="Twitter">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://thwiki.info/th/vote11/" data-text="第11回東方Project人気投票" data-lang="ja" data-hashtags="toho_vote11">ツイート</a>
+			<script>
+				!function(d,s,id){
+					var js,
+					fjs=d.getElementsByTagName(s)[0],
+					p=/^http:/.test(d.location)?'http':'https';
+					if(!d.getElementById(id)){
+						js=d.createElement(s);
+						js.id=id;
+						js.src=p+'://platform.twitter.com/widgets.js';
+						fjs.parentNode.insertBefore(js,fjs);
+					}
+				}(document, 'script', 'twitter-wjs');
+            </script>
+			</li>
+            <li class="Line">
+                <span>
+                <script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411"></script>
+                <script type="text/javascript">
+                new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
+                </script>
+                </span>
+            </li>
+            <li class="FaceB">
+                <div class="fb-like" data-href="http://thwiki.info/th/vote11/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            </li>
+            <li class="Gplus">
+                <div class="g-plusone" data-href="http://thwiki.info/th/vote11/"></div>
+            </li>
+        </ul>
+        
+	<aside>
+		<a class="twitter-timeline" href="https://twitter.com/hashtag/toho_vote11" data-widget-id="595761286836813824">#toho_vote11 のツイート</a>
+		<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+        </aside>
+	</article>
+</section>
+
+
+<!---------------------- ここまで本文  ---------------------->
+<footer>
+    <p class="banner"><img src="./img/bnr468_60.png"></p>
+    <dl>
+        <dt>東方人気投票運営</dt>
+        <dd>東方人気投票実行委員会</dd>
+        <dt>東方Project制作元</dt>
+        <dd><a href="http://www16.big.or.jp/~zun/">上海アリス幻樂団</a></dd>
+    </dl>
+    <dl>
+        <dt>イラスト</dt>
+        <dd>べにしゃけ（<a href="http://ricecake.moo.jp/">poprication</a>）</dd>
+        <dt>Web</dt>
+        <dd>妹尾ありか（<a href="http://imoni.org/">ありや</a>）</dd>
+    </dl>
+</footer>
+</body>
+</html>
+
+

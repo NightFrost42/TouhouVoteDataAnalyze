@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2084.php",
+    "effective_url": "https://toho-vote.info/result13/music/2084.php",
+    "retrieved_at": "2026-08-15T09:56:13+00:00",
+    "http_status": 200,
+    "bytes": 4440,
+    "sha256": "a857e292b7e3a17730bb637d556e1409e5b64b174345bb2ef6bb3bdeb9601f52",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2084",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Magic Shop of Raspberry - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Magic Shop of Raspberry（342位）",
+      "numbers": [
+        {
+          "raw": "342位",
+          "value": 342,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：40点 ｜ 得票数：38票 ｜ 一押し数：2票 ｜ コメント数：8件 継続投票率：75.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "40点",
+          "value": 40,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "38票",
+          "value": 38,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8件",
+          "value": 8,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "75.0%",
+          "value": 75.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

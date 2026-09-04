@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/5023.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/5023.php",
+    "retrieved_at": "2026-08-15T09:54:58+00:00",
+    "http_status": 200,
+    "bytes": 5099,
+    "sha256": "8776f7421614f921b38a42f0f5f4eaf6ec61204cb6c94c5699083cbd51d99a0e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5023",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：Castle Explorer -in the Sky- - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "Castle Explorer -in the Sky-（380位）",
+      "numbers": [
+        {
+          "raw": "380位",
+          "value": 380,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：20点 ｜ 得票数：19票 ｜ 一押し数：1票 ｜ コメント数：9件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "20点",
+          "value": 20,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "19票",
+          "value": 19,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9件",
+          "value": 9,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

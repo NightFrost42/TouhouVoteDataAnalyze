@@ -1,0 +1,224 @@
+﻿round,question_id,questionnaire_id,questionnaire_name,section_key,questionnaire_key,group_index,branch_index,question_type,question,introduction,input,option_count
+10,11011,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,0,0,Single,您的性别是？（填写的信息仅用于数据分析，不会以任何形式披露投票者个人信息）,,,2
+10,11021,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,1,0,Single,您现在的主要所在地区为？,,,2
+10,11031,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,2,0,Single,您现在的最主要所在地是哪个省级行政区？,,,34
+10,11032,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,2,1,Single,您现在的主要所在地位于哪个地区？,,,8
+10,11041,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,3,0,Single,您现在的年龄所在区间为？,,,8
+10,11051,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,4,0,Single,您当前的受教育程度为？,,,6
+10,11061,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,5,0,Single,您目前还是学生吗？,,,2
+10,11070,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,6,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,11071,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,6,1,Single,您现在的工作情况为？,,,4
+10,11081,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,7,0,Single,您是从什么时间段开始对东方Project感兴趣的？,,,7
+10,11091,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,8,0,Single,您是第几次参加人气投票活动？,,,10
+10,11101,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,9,0,Single,您对东方的官方作品感兴趣吗？,,,4
+10,11111,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,10,0,Single,您对东方的二次创作感兴趣吗？,,,4
+10,12011,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,0,0,Multiple,您平时比较关注哪种体裁的东方官方作品？,,,5
+10,12021,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,1,0,Single,您更喜欢官方游戏中的哪一类？,,,4
+10,12031,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,2,0,Single,您是否了解旧五作？,,,3
+10,12041,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,3,0,Single,您是否在steam平台上购买过官方游戏？,,,3
+10,12051,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,4,0,Multiple,您关注哪些近期连载的官方作品？,,,5
+10,12061,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,5,0,Multiple,您最喜欢东方原作的哪方面？,,,5
+10,12071,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,6,0,Single,您购买过实体正版原作吗？,,,4
+10,12081,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,7,0,Multiple,您购买正版原作的渠道为？,,,6
+10,12082,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,7,1,Multiple,是什么原因而没有购买？,,,5
+10,12091,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,8,0,Single,您的能接受的官方作品的价格范围是？（单个作品，含税费、运费等）,,,6
+10,12101,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,9,0,Single,您是否了解国内已引进的正版简体中文的东方官方出版物？,,,4
+10,12111,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,10,0,Input,您最喜欢的官方作品是？（可填无）,,,0
+10,12121,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,11,0,Input,喜欢的理由是？（可填无）,,,0
+10,13011,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,0,0,Multiple,您比较关注哪一类二次创作？,,,9
+10,13021,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,1,0,Multiple,您关注二次创作的原因？,,,5
+10,13031,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,2,0,Single,平均来说，您浏览二次创作的大致频率为？,,,5
+10,13041,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,3,0,Single,您购买过国内的二次同人作品吗？,,,2
+10,13050,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,4,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,13051,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,4,1,Multiple,您购买的国内二次同人作品类型为？（分类均包含数字版）,,,9
+10,13060,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,5,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,13061,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,5,1,Multiple,您购买国内二次同人作品的渠道为？,,,6
+10,13070,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,6,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,13071,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,6,1,Single,您对国内二次同人作品的购买力范围是？（单个作品，含手续费、运费等）,,,6
+10,13081,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,7,0,Single,您购买过国外的二次同人作品吗？,,,2
+10,13090,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,8,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,13091,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,8,1,Multiple,您购买的国外二次同人作品类型为？,,,9
+10,13100,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,9,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,13101,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,9,1,Multiple,您购买国外二次同人作品的渠道为？,,,8
+10,13110,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,10,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,13111,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,10,1,Single,您对国外二次同人作品的购买力范围是？（单个作品，含手续费、税费、运费等）,,,7
+10,13121,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,11,0,Multiple,阻碍您购买二次同人作品的原因是？,,,7
+10,13131,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,12,0,Single,您在进行（任何形式、任何程度的）二次创作吗？,,,3
+10,13141,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,13,0,Single,您了解官方授权商业作品（归言录、弹幕神乐等）吗？,,,5
+10,21011,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,0,0,Multiple,您在进行何种类型的二次创作？,,,9
+10,21021,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,1,0,Multiple,在创作过程中，您的动力来源是？,,,6
+10,21031,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,2,0,Input,在诸多支持您进行创作的因素中，最主要的是？,,,1
+10,21041,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,3,0,Multiple,在创作过程中遇到过什么样的困难？,,,9
+10,21051,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,4,0,Input,您认为在创作过程中遇到过的各种困难，可以如何得到改善？（如，印刷生产方面的建议和帮助、更好的同人作品发布平台，等等）,,,1
+10,21061,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,5,0,Input,您认为您需要/希望获得来自平台方面的何种帮助？（如建立新的推荐作品的渠道等）（如果认为现在状况很好可以写现状很好）,,,1
+10,21071,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,6,0,Single,基于线下的同人展会对您来说意义如何？,,,4
+10,22011,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,0,0,Single,您玩过STG正作吗？,,,2
+10,22020,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,1,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,22021,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,1,1,Single,您以什么为目标游玩STG？,,,5
+10,22031,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,2,0,Single,您玩过旧作吗？,,,3
+10,22041,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,3,0,Single,您玩过FTG作（单人）吗？,,,2
+10,22050,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,4,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,22051,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,4,1,Single,您以什么为目标游玩FTG？,,,4
+10,22061,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,5,0,Single,您玩过FTG作（多人）吗？,,,2
+10,22070,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,6,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,22071,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,6,1,Single,您的多人FTG对战情况是什么样的？,,,4
+10,22081,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,7,0,Single,您是否玩过《东方刚欲异闻》？,,,2
+10,23011,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,0,0,Single,您是否（作为游客/摊主）参加过东方主题的线下活动？,,,2
+10,23021,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,1,0,Single,您2022年内是否（作为游客/摊主）参加过东方主题的线下活动？,,,2
+10,23022,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,1,1,Multiple,您没有参加过展会的原因是？,,,6
+10,23031,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,2,0,Single,在参加展会方面您是否受到了疫情的影响？,,,2
+10,23041,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,3,0,Single,您是否只考虑参加本地或附近地区的同人展？,,,2
+10,23051,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,4,0,Single,您了解官方授权商业手游《东方LostWord（东方归言录）》吗？,,,5
+10,23060,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,5,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,23061,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,5,1,Input,您对《东方LostWord（东方归言录）》评价如何？,,,0
+10,23071,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,6,0,Single,您了解官方授权商业手游《东方弹幕神乐》吗？,,,5
+10,23081,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,7,0,Input,您对《东方弹幕神乐》评价如何？,,,0
+10,23080,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,7,1,Input,被遗忘的问题 ～ Error Occured,,,0
+10,23091,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,8,0,Single,您是否了解其他几款商业授权手游作品（如东方大炮弹、东方DungeonDive、东方ArcadiaRecord等）？,,,4
+10,23101,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,9,0,Input,您对商业授权手游的看法如何？,,,0
+10,24011,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,0,0,Single,您是否购买过已经引进的正版简中出版物《东方人物名鉴 常世篇/宵暗篇》？,,,5
+10,24021,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,1,0,Single,您是否购买过已经引进的正版简中出版物《东方文果真报》？,,,3
+10,24031,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,2,0,Single,您认为现在的官中出版物定价如何？,,,3
+10,24041,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,3,0,Single,您是否支持继续以目前的模式（保持现在的引进速度及质量）引进官中出版物？,,,2
+10,24050,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,4,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,24051,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,4,1,Input,您不支持的理由是？,,,0
+10,24061,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,5,0,Single,您对于目前引进的官中出版物质量是否满意？,,,2
+10,24070,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,6,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,24071,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,6,1,Input,您不满意的原因是？,,,0
+10,24081,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,7,0,Single,您是否使用过盗版官作游戏？（注：网络上免费下载的完整官作游戏均为盗版）,,,3
+10,24090,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,8,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,24091,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,8,1,Input,您使用盗版官作游戏的理由是？,,,0
+10,24101,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,9,0,Single,您是否了解过盗版的二创作品（盗版CD、盗版漫画等）？,,,3
+10,24110,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,10,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,24111,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,10,1,Input,您如何看待盗版的二创作品（盗版CD、盗版漫画等）？,,,0
+10,24121,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,11,0,Single,您是否了解在同人创作中存在的盗用（如盗视频，挪用换皮，抄袭剽窃等）？,,,3
+10,24130,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,12,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,24131,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,12,1,Input,您如何看待同人创作中出现的盗版作品？,,,0
+10,24141,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,13,0,Single,您是否了解类似流星计划、因幡帝汉化组这样的同人作品正版引进的组织？,,,3
+10,25011,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,0,0,Single,请问您是否知道“THBWiki”？,,,5
+10,25021,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,1,0,Single,请问您是否知道VoileLabs的下属网站“PatchyVideo（帕琪站）”？,,,5
+10,25030,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,2,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,25031,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,2,1,Single,请问您是否了解视频索引站（如帕琪站）的具体功能的用途？,,,3
+10,25041,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,3,0,Input,您认为帕琪站可以或者应该提供哪些功能？（不限于视频方面）,,,0
+10,25051,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,4,0,Single,您平时是否会“主动”关注东方信息？,,,4
+10,25061,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,5,0,Multiple,您接触东方信息的渠道有哪些？,,,7
+10,25071,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,6,0,Multiple,您“主动”关注的信息类型有哪些？,,,6
+10,25081,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,7,0,Multiple,您平时被动接触到的信息类型有哪些？,,,6
+10,25091,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,8,0,Multiple,您通过哪些账号或平台了解东方信息？,,,20
+10,25100,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,9,0,Input,被遗忘的问题 ～ Error Occured,,,0
+10,25101,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,9,1,Input,除以上账号/平台外，您通过哪些账号/平台了解东方信息？,,,0
+10,25111,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,10,0,Input,您对于国内现有的平台有何建议和看法？,,,0
+10,25112,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,11,0,Input,您认为除了现有平台，还可以搭建什么样的平台来帮助创作者与观众？,,,0
+10,25113,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,12,0,Input,您对于本次投票有何意见或建议呢？,,,0
+11,11011,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,0,0,Single,您的性别是？（填写的信息仅用于数据分析，我们不会以任何形式披露投票者个人信息）,,,2
+11,11021,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,1,0,Single,您现在的主要所在地为？,,,2
+11,11031,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,2,0,Single,您现在的主要所在地位于哪个省级行政区？,,,34
+11,11032,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,2,1,Single,您现在的主要所在地位于哪个地区？,,,8
+11,11041,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,3,0,Single,您现在的年龄所在区间为？,,,8
+11,11051,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,4,0,Single,您当前的受教育程度为？,,,6
+11,11061,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,5,0,Single,您是学生吗？,,,2
+11,11070,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,6,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,11071,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,6,1,Single,您现在的工作情况为？,,,4
+11,11081,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,7,0,Single,您是从什么时间段开始对东方Project感兴趣的？,,,7
+11,11091,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,8,0,Single,您是第几次参加中文东方人气投票活动？,,,11
+11,11101,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,9,0,Single,您对东方的官方作品感兴趣吗？,,,4
+11,11111,11,主要问卷 - 基础问卷,mainQuestionnaire,requiredQuestionnaire,10,0,Single,您对东方的二次创作感兴趣吗？,,,4
+11,12011,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,0,0,Multiple,您平时比较关注哪种体裁的东方官方作品？,,,5
+11,12021,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,1,0,Single,您更喜欢官方游戏中的哪一类？,,,4
+11,12031,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,2,0,Single,您是否了解旧五作？,,,3
+11,12041,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,3,0,Single,您是否在steam平台上购买过官方游戏？,,,3
+11,12051,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,4,0,Multiple,您关注哪些近期连载的官方作品？,,,5
+11,12061,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,5,0,Multiple,您最喜欢东方原作的哪方面？,,,5
+11,12071,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,6,0,Single,您购买过实体正版原作吗？,,,4
+11,12081,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,7,0,Multiple,您购买正版原作的渠道为？,,,6
+11,12082,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,7,1,Multiple,是什么原因而没有购买？,,,5
+11,12091,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,8,0,Single,您的能接受的官方作品的价格范围是？（单个作品，含税费、运费等）,,,6
+11,12101,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,9,0,Single,您是否了解国内已引进的正版简体中文的东方官方出版物？,,,4
+11,12111,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,10,0,Input,您最喜欢的官方作品是？（可填无）,,,0
+11,12121,12,主要问卷 - 官方作品问卷,mainQuestionnaire,optionalQuestionnaire1,11,0,Input,喜欢的理由是？（可填无）,,,0
+11,13011,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,0,0,Multiple,您比较关注哪一类二次创作？,,,9
+11,13021,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,1,0,Multiple,您关注二次创作的原因？,,,5
+11,13031,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,2,0,Single,平均来说，您浏览二次创作的大致频率为？,,,5
+11,13041,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,3,0,Single,您购买过国内的二次同人作品吗？,,,2
+11,13050,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,4,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,13051,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,4,1,Multiple,您购买的国内二次同人作品类型为？（分类均包含数字版）,,,9
+11,13060,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,5,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,13061,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,5,1,Multiple,您购买国内二次同人作品的渠道为？,,,6
+11,13070,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,6,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,13071,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,6,1,Single,您对国内二次同人作品的购买力范围是？（单个作品，含手续费、运费等）,,,6
+11,13081,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,7,0,Single,您购买过国外的二次同人作品吗？,,,2
+11,13090,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,8,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,13091,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,8,1,Multiple,您购买的国外二次同人作品类型为？,,,9
+11,13100,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,9,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,13101,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,9,1,Multiple,您购买国外二次同人作品的渠道为？,,,8
+11,13110,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,10,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,13111,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,10,1,Single,您对国外二次同人作品的购买力范围是？（单个作品，含手续费、税费、运费等）,,,7
+11,13121,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,11,0,Multiple,阻碍您购买二次同人作品的原因是？,,,7
+11,13131,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,12,0,Single,您在进行（任何形式、任何程度的）二次创作吗？,,,3
+11,13141,13,主要问卷 - 二次创作问卷,mainQuestionnaire,optionalQuestionnaire2,13,0,Single,您了解官方授权商业作品（归言录、东方幻想Eclipse等）吗？,,,6
+11,21011,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,0,0,Multiple,您在进行何种类型的二次创作？,,,9
+11,21021,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,1,0,Multiple,在创作过程中，您的动力来源是？,,,6
+11,21031,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,2,0,Input,在诸多支持您进行创作的因素中，最主要的是？,,,1
+11,21041,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,3,0,Multiple,在创作过程中遇到过什么样的困难？,,,8
+11,21051,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,4,0,Input,您认为在创作过程中遇到过的各种困难，可以如何得到改善？（如，印刷生产方面的建议和帮助、更好的同人作品发布平台，等等）,,,1
+11,21061,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,5,0,Input,您认为您需要/希望获得来自平台方面的何种帮助？（如建立新的推荐作品的渠道等）（如果认为现在状况很好可以写现状很好）,,,1
+11,21071,21,额外问卷 - 同人创作相关,extraQuestionnaire,exQuestionnaire1,6,0,Single,基于线下的同人展会对您来说意义如何？,,,4
+11,22011,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,0,0,Single,您玩过STG正作吗？,,,2
+11,22020,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,1,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,22021,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,1,1,Single,您以什么为目标游玩STG？,,,5
+11,22031,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,2,0,Single,您玩过旧作吗？,,,3
+11,22041,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,3,0,Single,您玩过FTG作（单人）吗？,,,2
+11,22050,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,4,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,22051,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,4,1,Single,您以什么为目标游玩FTG？,,,4
+11,22061,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,5,0,Single,您玩过FTG作（多人）吗？,,,2
+11,22070,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,6,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,22071,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,6,1,Single,您的多人FTG对战情况是什么样的？,,,4
+11,22081,22,额外问卷 - 官作游戏相关,extraQuestionnaire,exQuestionnaire2,7,0,Single,您是否玩过《东方兽王园》？,,,2
+11,23011,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,0,0,Single,您是否（作为游客/摊主）参加过东方主题的线下活动？,,,2
+11,23021,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,1,0,Single,您2023年内是否（作为游客/摊主）参加过东方主题的线下活动？,,,2
+11,23022,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,1,1,Multiple,您没有参加过展会的原因是？,,,6
+11,23031,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,2,0,Single,您是否只考虑参加本地或附近地区的同人展？,,,2
+11,23041,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,3,0,Single,您了解官方授权商业游戏《东方弹幕神乐 失落幻想》及前作吗？,,,4
+11,23050,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,4,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,23051,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,4,1,Input,您对《东方弹幕神乐》评价如何？,,,0
+11,23061,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,5,0,Single,您是否了解其他几款商业授权手游作品（如东方大炮弹、东方DungeonDive、东方ArcadiaRecord等）？,,,4
+11,23071,23,额外问卷 - 展会与手游相关,extraQuestionnaire,exQuestionnaire3,6,0,Input,您对商业授权手游的看法如何？,,,0
+11,24011,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,0,0,Multiple,您是否购买过已经引进的正版简中出版物？,,,5
+11,24020,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,1,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,24021,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,1,1,Single,您未购买的原因是,,,5
+11,24030,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,2,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,24031,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,2,1,Single,您更感兴趣的作品是,,,12
+11,24040,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,3,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,24041,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,3,1,Input,您希望引进哪些其他ZUN参与的书籍？,,,0
+11,24051,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,4,0,Single,您认为现在的官中出版物定价如何？,,,3
+11,24061,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,5,0,Single,您是否支持继续以目前的模式（保持现在的引进速度及质量）引进官中出版物？,,,2
+11,24070,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,6,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,24071,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,6,1,Input,您不支持的理由是？,,,0
+11,24081,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,7,0,Single,您对于目前引进的官中出版物质量是否满意？,,,2
+11,24090,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,8,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,24091,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,8,1,Input,您不满意的原因是？,,,0
+11,24101,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,9,0,Single,您是否使用过盗版官作游戏？（注：网络上免费下载的完整官作游戏均为盗版）,,,3
+11,24110,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,10,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,24111,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,10,1,Input,您使用盗版官作游戏的理由是？,,,0
+11,24121,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,11,0,Single,您是否了解过盗版的二创作品（盗版CD、盗版漫画等）？,,,3
+11,24130,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,12,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,24131,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,12,1,Input,您如何看待盗版的二创作品（盗版CD、盗版漫画等）？,,,0
+11,24141,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,13,0,Single,您是否了解在同人创作中存在的盗用（如盗视频，挪用换皮，抄袭剽窃等）？,,,3
+11,24150,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,14,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,24151,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,14,1,Input,您如何看待同人创作中出现的盗版作品？,,,0
+11,24161,24,额外问卷 - 正版盗版相关,extraQuestionnaire,exQuestionnaire4,15,0,Single,您是否了解类似流星计划、因幡帝汉化组这样的同人作品正版引进的组织？,,,3
+11,25011,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,0,0,Single,请问您是否知道“THBWiki”？,,,5
+11,25021,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,1,0,Single,请问您是否知道VoileLabs的下属网站“PatchyVideo（帕琪站）”？,,,5
+11,25030,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,2,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,25031,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,2,1,Single,请问您是否了解视频索引站（如帕琪站）的具体功能的用途？,,,3
+11,25041,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,3,0,Input,您认为帕琪站可以或者应该提供哪些功能？（不限于视频方面）,,,0
+11,25051,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,4,0,Single,您平时是否会“主动”关注东方信息？,,,4
+11,25061,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,5,0,Multiple,您接触东方信息的渠道有哪些？,,,9
+11,25071,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,6,0,Multiple,您“主动”关注的信息类型有哪些？,,,6
+11,25081,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,7,0,Multiple,您平时被动接触到的信息类型有哪些？,,,6
+11,25091,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,8,0,Multiple,您通过哪些账号或平台了解东方信息？,,,27
+11,25100,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,9,0,Input,被遗忘的问题 ～ Error Occured,,,0
+11,25101,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,9,1,Input,除以上账号/平台外，您通过哪些账号/平台了解东方信息？,,,0
+11,25111,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,10,0,Input,您对于国内现有的平台有何建议和看法？,,,0
+11,25121,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,11,0,Input,您认为除了现有平台，还可以搭建什么样的平台来帮助创作者与观众？,,,0
+11,25131,25,额外问卷 - 社群相关/主办方附加,extraQuestionnaire,exQuestionnaire5,12,0,Input,您对于本次投票有何意见或建议呢？,,,0

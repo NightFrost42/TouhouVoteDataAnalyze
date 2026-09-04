@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/4060.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/4060.php",
+    "retrieved_at": "2026-08-15T09:54:56+00:00",
+    "http_status": 200,
+    "bytes": 6198,
+    "sha256": "5ff512355faa28ba53ecb8bf859e029559c3b1980b8cba3f0f8a2d690d36d2b7",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4060",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：衛星トリフネ - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "衛星トリフネ（214位）",
+      "numbers": [
+        {
+          "raw": "214位",
+          "value": 214,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：182点 ｜ 得票数：173票 ｜ 一押し数：9票 ｜ コメント数：26件 継続投票率：78.3%（23名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "182点",
+          "value": 182,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "173票",
+          "value": 173,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "9票",
+          "value": 9,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "26件",
+          "value": 26,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "78.3%",
+          "value": 78.3,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "23名",
+          "value": 23,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

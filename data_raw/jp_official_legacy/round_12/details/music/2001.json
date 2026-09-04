@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2001.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2001.php",
+    "retrieved_at": "2026-08-15T09:54:37+00:00",
+    "http_status": 200,
+    "bytes": 4217,
+    "sha256": "26b634b4ad4e2bf9281183031bae26deb37e6bbfab675a0748ae5e2c46bf064c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2001",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：A Sacred Lot - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "A Sacred Lot（364位）",
+      "numbers": [
+        {
+          "raw": "364位",
+          "value": 364,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：27点 ｜ 得票数：27票 ｜ 一押し数：0票 ｜ コメント数：5件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "27点",
+          "value": 27,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "27票",
+          "value": 27,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "0票",
+          "value": 0,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "5件",
+          "value": 5,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

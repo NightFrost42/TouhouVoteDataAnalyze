@@ -1,0 +1,224 @@
+{
+  "schema_version": 2,
+  "status": "complete",
+  "source_frontend_url": "https://cd.thwiki.cc/",
+  "source_api_url": "https://thwiki.cc/api.php",
+  "method": "Semantic MediaWiki exact release-date aggregate counts only; no arrangement rows downloaded",
+  "count_basis": "one match per arrangement track using the original; multi-original tracks count for each original",
+  "date_aggregation": "exact arrangement 发售日期 (YYYY-MM-DD), retained only as aggregate counts in the checkpoint",
+  "timeline_bucket": "calendar half-year derived locally from exact-date aggregates (YYYYH1/YYYYH2)",
+  "jp_vote_window_rule": "only true end-to-end interval counts are emitted: round N (N=4..22) owns (end of round N-1, end of round N]; all boundaries use previous-end exclusive/current-end inclusive. Each row also carries arrangement_cumulative_count for all dated releases on or before that vote end.",
+  "jp_vote_round_3_lower_bound": "releases on or before 2004-10-23 are retained only as an internal pre-first-end baseline and are excluded from the interval CSV",
+  "cn_vote_window_rule": "only true end-to-end interval counts are emitted: round N (N=2..11) owns (end of round N-1, end of round N]; CN1 is retained only as an internal pre-first-end baseline and is excluded from the interval CSV. Each row also carries arrangement_cumulative_count for all dated releases on or before that vote end.",
+  "cn_vote_round_1_lower_bound": "releases on or before 2012-07-30 are retained only as an internal pre-first-end baseline and are excluded from the interval CSV",
+  "post_round_22_rule": "releases after 2026-08-28 are retained only as an internal waiting_next_vote bucket and are excluded from the interval CSV",
+  "jp_vote_calendar": [
+    {
+      "round": 3,
+      "start": "2004-10-17",
+      "end": "2004-10-23",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第三回"
+    },
+    {
+      "round": 4,
+      "start": "2005-12-18",
+      "end": "2005-12-24",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第四回"
+    },
+    {
+      "round": 5,
+      "start": "2008-02-10",
+      "end": "2008-02-16",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第五回"
+    },
+    {
+      "round": 6,
+      "start": "2009-01-18",
+      "end": "2009-01-24",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第六回"
+    },
+    {
+      "round": 7,
+      "start": "2010-02-07",
+      "end": "2010-02-13",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第七回"
+    },
+    {
+      "round": 8,
+      "start": "2011-02-13",
+      "end": "2011-02-19",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第八回"
+    },
+    {
+      "round": 9,
+      "start": "2012-02-19",
+      "end": "2012-02-25",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第九回"
+    },
+    {
+      "round": 10,
+      "start": "2014-02-23",
+      "end": "2014-03-01",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十回"
+    },
+    {
+      "round": 11,
+      "start": "2015-05-24",
+      "end": "2015-05-31",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十一回"
+    },
+    {
+      "round": 12,
+      "start": "2016-01-10",
+      "end": "2016-01-16",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十二回"
+    },
+    {
+      "round": 13,
+      "start": "2017-01-15",
+      "end": "2017-01-21",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十三回"
+    },
+    {
+      "round": 14,
+      "start": "2018-01-14",
+      "end": "2018-01-20",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十四回"
+    },
+    {
+      "round": 15,
+      "start": "2019-01-27",
+      "end": "2019-02-02",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十五回"
+    },
+    {
+      "round": 16,
+      "start": "2020-06-07",
+      "end": "2020-06-13",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十六回"
+    },
+    {
+      "round": 17,
+      "start": "2021-09-26",
+      "end": "2021-10-03",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十七回"
+    },
+    {
+      "round": 18,
+      "start": "2022-09-17",
+      "end": "2022-09-24",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十八回"
+    },
+    {
+      "round": 19,
+      "start": "2023-09-17",
+      "end": "2023-09-30",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第十九回"
+    },
+    {
+      "round": 20,
+      "start": "2024-08-10",
+      "end": "2024-08-23",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第二十回"
+    },
+    {
+      "round": 21,
+      "start": "2025-08-16",
+      "end": "2025-08-29",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第二十一回"
+    },
+    {
+      "round": 22,
+      "start": "2026-08-22",
+      "end": "2026-08-28",
+      "source_url": "https://thwiki.cc/东方系列人气投票/第二十二回"
+    }
+  ],
+  "cn_vote_calendar": [
+    {
+      "round": 1,
+      "start": "2012-07-23",
+      "end": "2012-07-30",
+      "source_url": "https://touhou.vote/v1/"
+    },
+    {
+      "round": 2,
+      "start": "2013-10-01",
+      "end": "2013-10-07",
+      "source_url": "https://touhou.vote/v2/"
+    },
+    {
+      "round": 3,
+      "start": "2014-08-22",
+      "end": "2014-08-28",
+      "source_url": "https://touhou.vote/v3/"
+    },
+    {
+      "round": 4,
+      "start": "2015-10-01",
+      "end": "2015-10-15",
+      "source_url": "https://touhou.vote/v4/"
+    },
+    {
+      "round": 5,
+      "start": "2016-10-01",
+      "end": "2016-10-16",
+      "source_url": "https://touhou.vote/v5/"
+    },
+    {
+      "round": 6,
+      "start": "2017-10-01",
+      "end": "2017-10-15",
+      "source_url": "https://touhou.vote/v6/"
+    },
+    {
+      "round": 7,
+      "start": "2018-09-30",
+      "end": "2018-10-15",
+      "source_url": "https://touhou.vote/v7/"
+    },
+    {
+      "round": 8,
+      "start": "2019-09-30",
+      "end": "2019-10-15",
+      "source_url": "https://touhou.vote/v8/"
+    },
+    {
+      "round": 9,
+      "start": "2020-12-18",
+      "end": "2020-12-31",
+      "source_url": "https://touhou.vote/v9/"
+    },
+    {
+      "round": 10,
+      "start": "2022-06-17",
+      "end": "2022-07-04",
+      "source_url": "https://touhou.vote/v10/"
+    },
+    {
+      "round": 11,
+      "start": "2023-12-29",
+      "end": "2024-01-15",
+      "source_url": "https://touhou.vote/v11/"
+    }
+  ],
+  "observed_at_utc": "2026-09-04T07:18:56+00:00",
+  "original_song_count": 633,
+  "timeline_row_count": 15424,
+  "jp_vote_window_row_count": 12027,
+  "cn_vote_window_row_count": 6330,
+  "missing_original_release_date_count": 0,
+  "originals_without_dated_arrangements_count": 0,
+  "sum_per_original_arrangement_counts": 218144,
+  "sum_note": "not a distinct-track total because a multi-original track is counted under every original",
+  "earliest_original_release_date": "1996-11-03",
+  "latest_original_release_date": "2026-08-16",
+  "arrangements_after_latest_vote_count": 173,
+  "arrangements_before_first_vote_end_count": 251,
+  "outputs": {
+    "totals_csv": "data_raw/thwiki_music/original_song_arrangement_counts.csv",
+    "half_year_csv": "data_raw/thwiki_music/original_song_arrangement_counts_half_year.csv",
+    "jp_vote_windows_csv": "data_raw/thwiki_music/original_song_arrangement_counts_jp_vote_windows.csv",
+    "cn_vote_windows_csv": "data_raw/thwiki_music/original_song_arrangement_counts_cn_vote_windows.csv"
+  }
+}

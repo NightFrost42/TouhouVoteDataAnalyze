@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/206-212.php",
+    "effective_url": "https://toho-vote.info/result13/partner/206-212.php",
+    "retrieved_at": "2026-08-15T09:56:31+00:00",
+    "http_status": 200,
+    "bytes": 8097,
+    "sha256": "0775a42c6dcc48365d9cd2533b7bdb7e1894dd8ea79752a410d0f19e239864dd",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "206-212",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：パチュリー・ノーレッジとアリス・マーガトロイド - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "パチュリー・ノーレッジとアリス・マーガトロイド（48位）",
+      "numbers": [
+        {
+          "raw": "48位",
+          "value": 48,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：653点 ｜ 得票数：545票 ｜ 一押し数：108票 ｜ コメント数：68件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "653点",
+          "value": 653,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "545票",
+          "value": 545,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "108票",
+          "value": 108,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "68件",
+          "value": 68,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

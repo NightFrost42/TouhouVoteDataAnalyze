@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/237-238.php",
+    "effective_url": "https://toho-vote.info/result13/partner/237-238.php",
+    "retrieved_at": "2026-08-15T09:56:37+00:00",
+    "http_status": 200,
+    "bytes": 7600,
+    "sha256": "1fc1e1f3f8956494ab7b2fdddc80aaf06280ab697b09fe87979b033c5c4ba081",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "237-238",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：鍵山 雛と河城 にとり - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "鍵山 雛と河城 にとり（47位）",
+      "numbers": [
+        {
+          "raw": "47位",
+          "value": 47,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：678点 ｜ 得票数：558票 ｜ 一押し数：120票 ｜ コメント数：65件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "678点",
+          "value": 678,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "558票",
+          "value": 558,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "120票",
+          "value": 120,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "65件",
+          "value": 65,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

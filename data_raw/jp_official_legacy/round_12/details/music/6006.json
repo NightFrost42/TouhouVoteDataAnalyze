@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/6006.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/6006.php",
+    "retrieved_at": "2026-08-15T09:54:59+00:00",
+    "http_status": 200,
+    "bytes": 5606,
+    "sha256": "94cb9d9a4053feecdf6d5d2745c6cc252d886b513a258eadbd5ca853f4f1a1a9",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "6006",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：夢幻回廊 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "夢幻回廊（275位）",
+      "numbers": [
+        {
+          "raw": "275位",
+          "value": 275,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：82点 ｜ 得票数：75票 ｜ 一押し数：7票 ｜ コメント数：20件 継続投票率：50.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "82点",
+          "value": 82,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "75票",
+          "value": 75,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "20件",
+          "value": 20,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

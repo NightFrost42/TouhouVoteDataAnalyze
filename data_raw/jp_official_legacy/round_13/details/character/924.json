@@ -1,0 +1,89 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/character/924.php",
+    "effective_url": "https://toho-vote.info/result13/character/924.php",
+    "retrieved_at": "2026-08-15T09:55:36+00:00",
+    "http_status": 200,
+    "bytes": 4291,
+    "sha256": "e33d7bed425308127e30c23c8f4a0168125c37fdd1140b0f5b3bafbb211dc71b",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "character",
+  "item_id": "924",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：カラス（地獄鴉、紫・文の使い魔他） - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "カラス（地獄鴉、紫・文の使い魔他）（158位）",
+      "numbers": [
+        {
+          "raw": "158位",
+          "value": 158,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：31点 ｜ 得票数：28票 ｜ 一押し数：3票 ｜ コメント数：8件 ｜ 支援作品数： 0件 継続投票率：50.0%（2名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "31点",
+          "value": 31,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "28票",
+          "value": 28,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8件",
+          "value": 8,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "2名",
+          "value": 2,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

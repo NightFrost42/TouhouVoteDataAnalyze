@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/5035.php",
+    "effective_url": "https://toho-vote.info/result13/music/5035.php",
+    "retrieved_at": "2026-08-15T09:56:24+00:00",
+    "http_status": 200,
+    "bytes": 5074,
+    "sha256": "78a4046b3ca85fe455789fd8ef81e973f4bf010ef49d9492651450699ef84a65",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5035",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：呑んべぇのレムリア - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "呑んべぇのレムリア（230位）",
+      "numbers": [
+        {
+          "raw": "230位",
+          "value": 230,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：141点 ｜ 得票数：134票 ｜ 一押し数：7票 ｜ コメント数：19件 継続投票率：55.0%（20名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "141点",
+          "value": 141,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "134票",
+          "value": 134,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "19件",
+          "value": 19,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "55.0%",
+          "value": 55.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "20名",
+          "value": 20,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

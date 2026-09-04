@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/9007.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/9007.php",
+    "retrieved_at": "2026-08-15T09:55:01+00:00",
+    "http_status": 200,
+    "bytes": 4920,
+    "sha256": "2178b0a1f5755a5a5a990d53ad8ab536636cf231bb3a153510b5a3fa1272a373",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "9007",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：花映塚 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "花映塚（251位）",
+      "numbers": [
+        {
+          "raw": "251位",
+          "value": 251,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：108点 ｜ 得票数：101票 ｜ 一押し数：7票 ｜ コメント数：14件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "108点",
+          "value": 108,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "101票",
+          "value": 101,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "14件",
+          "value": 14,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

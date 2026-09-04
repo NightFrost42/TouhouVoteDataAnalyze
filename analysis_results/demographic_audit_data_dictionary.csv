@@ -1,0 +1,9 @@
+﻿dataset,field,type,definition,denominator,caveat
+jp_respondent_demographics_by_session,female_share_all_reported_categories,"number [0,1]",female / (male + female + other) respondent counts,reported JP respondents in that session,"other is unreported, not measured zero, before session 18"
+jp_respondent_demographics_by_session,female_share_binary_only,"number [0,1]",female / (male + female) respondent counts,JP respondents reporting male or female,excludes other from sessions 18-20
+cn_character_mark_composition_by_session,female_share_known_binary_character_marks,"number [0,1] or null",female character marks / (male + female character marks),known-binary-gender character ballot marks over the raw roster,not a unique-voter or respondent share
+work13_female_preference.sessions,female_relative_preference_ratio,positive number,(work13 female marks/all female marks)/(work13 male marks/all male marks),all raw-roster marks of the same reported gender in that CN session,marks from the same respondent are not independent
+latest_cn11_jp20.characters,rank_gap_cn_minus_jp,integer,CN11 official rank minus JP20 official rank,122-character exact-match grouped roster,positive means a better numeric rank in JP; not a causal effect
+latest_cn11_jp20.characters,female_relative_preference_ratio,positive number,character-level female share-of-all-female marks divided by male share-of-all-male marks,CN11 raw-roster known-gender character marks,undefined causal direction; based on CN preferences only
+tag_audit,expanded_proxy_hit,boolean,"any exact tag in [伪郎, 伪娘, 可爱的男孩子, 跨性别者]",122 normalized Character_tag rows,"exploratory fan-wiki proxy, not canon gender classification"
+illustrative_reweighting,reweighted_rank_change_negative_is_improvement,integer,raw-vote rank at JP20 binary female weight minus raw-vote rank at CN11 mark weight,122-character comparable roster,sensitivity scenario; ignores first-choice bonus and assumes transportability

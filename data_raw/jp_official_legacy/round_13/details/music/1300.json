@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1300.php",
+    "effective_url": "https://toho-vote.info/result13/music/1300.php",
+    "retrieved_at": "2026-08-15T09:56:02+00:00",
+    "http_status": 200,
+    "bytes": 5757,
+    "sha256": "61480e7ccb3c856f6d1e425650877856fc645531240327ff7f530051eb1d0471",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1300",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：ロマンチック逃飛行 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "ロマンチック逃飛行（213位）",
+      "numbers": [
+        {
+          "raw": "213位",
+          "value": 213,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：178点 ｜ 得票数：176票 ｜ 一押し数：2票 ｜ コメント数：22件 継続投票率：50.0%（30名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "178点",
+          "value": 178,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "176票",
+          "value": 176,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "22件",
+          "value": 22,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "30名",
+          "value": 30,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

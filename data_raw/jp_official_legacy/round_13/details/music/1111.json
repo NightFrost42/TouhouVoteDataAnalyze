@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1111.php",
+    "effective_url": "https://toho-vote.info/result13/music/1111.php",
+    "retrieved_at": "2026-08-15T09:55:47+00:00",
+    "http_status": 200,
+    "bytes": 3873,
+    "sha256": "8142b3e05fa545b1642c5d818f1347015223b02cb5170faf03863617c6efd190",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1111",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：魂の花 ～ Another Dream... - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "魂の花 ～ Another Dream...（332位）",
+      "numbers": [
+        {
+          "raw": "332位",
+          "value": 332,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：44点 ｜ 得票数：41票 ｜ 一押し数：3票 ｜ コメント数：3件 継続投票率：75.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "44点",
+          "value": 44,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "41票",
+          "value": 41,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3件",
+          "value": 3,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "75.0%",
+          "value": 75.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

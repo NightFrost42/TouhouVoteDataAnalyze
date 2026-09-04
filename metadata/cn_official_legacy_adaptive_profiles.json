@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "stages": {
+    "cn_legacy_advanced": {
+      "updated_at": "2026-08-23T14:33:36+00:00",
+      "adaptive_workers": 8,
+      "adaptive_safe_worker_ceiling": 8,
+      "adaptive_batch_pause_seconds": 6.0,
+      "configured_workers": 3,
+      "configured_worker_ceiling": 8,
+      "request_limit": 30,
+      "request_limit_ceiling": 30,
+      "adaptive_worker_ceiling": 8,
+      "adaptive_batch_pause_ceiling_seconds": 6.0,
+      "adaptive_pause_floor_seconds": 0.25,
+      "adaptive_decrease_min_interval_seconds": 30.0,
+      "adaptive_increase_min_interval_seconds": 30.0,
+      "adaptive_success_window_results": 20,
+      "adaptive_pause_increase_step_seconds": 0.5,
+      "adaptive_pause_decrease_step_seconds": 0.25,
+      "adaptive_failure_wave_active": false
+    },
+    "cn_legacy_remaining": {
+      "updated_at": "2026-08-26T09:10:58+00:00",
+      "adaptive_workers": 8,
+      "adaptive_safe_worker_ceiling": 8,
+      "adaptive_batch_pause_seconds": 3.0,
+      "adaptive_safe_pause_floor_seconds": 0.25,
+      "configured_workers": 4,
+      "configured_worker_ceiling": 8,
+      "request_limit": 30,
+      "request_limit_ceiling": 30,
+      "adaptive_worker_ceiling": 8,
+      "adaptive_batch_pause_ceiling_seconds": 3.0,
+      "adaptive_pause_floor_seconds": 0.25,
+      "adaptive_decrease_min_interval_seconds": 30.0,
+      "adaptive_increase_min_interval_seconds": 30.0,
+      "adaptive_success_window_results": 20,
+      "adaptive_pause_increase_step_seconds": 0.5,
+      "adaptive_pause_decrease_step_seconds": 0.25,
+      "adaptive_pause_success_streak": 0,
+      "adaptive_pause_rollback": 0.0,
+      "adaptive_failure_wave_active": false
+    }
+  }
+}

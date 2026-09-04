@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/2001.php",
+    "effective_url": "https://toho-vote.info/result13/music/2001.php",
+    "retrieved_at": "2026-08-15T09:56:05+00:00",
+    "http_status": 200,
+    "bytes": 4018,
+    "sha256": "db9521fcb7a5489540977559c31d08cf68084ace0d93b4990af5c61917710e23",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2001",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：A Sacred Lot - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "A Sacred Lot（349位）",
+      "numbers": [
+        {
+          "raw": "349位",
+          "value": 349,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：35点 ｜ 得票数：32票 ｜ 一押し数：3票 ｜ コメント数：6件 継続投票率：0.0%（3名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "35点",
+          "value": 35,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "32票",
+          "value": 32,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0.0%",
+          "value": 0.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "3名",
+          "value": 3,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

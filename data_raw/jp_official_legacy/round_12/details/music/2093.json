@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2093.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2093.php",
+    "retrieved_at": "2026-08-15T09:54:49+00:00",
+    "http_status": 200,
+    "bytes": 5258,
+    "sha256": "b5c0edfbe3fc2ed316234e1207171f3836757deafdcb7ba07292682f16092b1e",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2093",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：メイプルワイズ - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "メイプルワイズ（272位）",
+      "numbers": [
+        {
+          "raw": "272位",
+          "value": 272,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：84点 ｜ 得票数：76票 ｜ 一押し数：8票 ｜ コメント数：12件 継続投票率：80.0%（10名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "84点",
+          "value": 84,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "76票",
+          "value": 76,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "8票",
+          "value": 8,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "12件",
+          "value": 12,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "80.0%",
+          "value": 80.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "10名",
+          "value": 10,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

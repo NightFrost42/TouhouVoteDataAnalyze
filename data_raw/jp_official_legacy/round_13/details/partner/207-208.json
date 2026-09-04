@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/207-208.php",
+    "effective_url": "https://toho-vote.info/result13/partner/207-208.php",
+    "retrieved_at": "2026-08-15T09:56:30+00:00",
+    "http_status": 200,
+    "bytes": 32822,
+    "sha256": "da0698c3818443ea7d4a4a06da62f9a0c615bac8bbb1e739b406f25a59b4780d",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "207-208",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：十六夜 咲夜とレミリア・スカーレット - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "十六夜 咲夜とレミリア・スカーレット（4位）",
+      "numbers": [
+        {
+          "raw": "4位",
+          "value": 4,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：4121点 ｜ 得票数：3372票 ｜ 一押し数：749票 ｜ コメント数：380件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "4121点",
+          "value": 4121,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "3372票",
+          "value": 3372,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "749票",
+          "value": 749,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "380件",
+          "value": 380,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote9/result_anq2o.html",
+    "effective_url": "http://thwiki.info/th/vote9/result_anq2o.html",
+    "retrieved_at": "2026-08-15T09:49:40+00:00",
+    "http_status": 200,
+    "bytes": 294496,
+    "sha256": "9ab9ee3a24e9737ffa106ba1f552b4eea8ff5e30bbd0abd3a371c5a293d6fc8e",
+    "charset": "euc_jp",
+    "header_charset": null
+  },
+  "round": 9,
+  "role": "detail",
+  "category": "questionnaire",
+  "item_id": "result_anq2o",
+  "discovery_label": "コメント一覧",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "第９回東方シリーズ人気投票 投票者アンケート結果 作品別コメント",
+      "numbers": []
+    },
+    {
+      "kind": "item_header",
+      "text": "東方神霊廟 平均：4.09点 コメント数:4403",
+      "numbers": [
+        {
+          "raw": "4.09点",
+          "value": 4.09,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "4403",
+          "value": 4403,
+          "unit": null,
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

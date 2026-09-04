@@ -1,0 +1,77 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/character/809.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/character/809.php",
+    "retrieved_at": "2026-08-15T09:53:36+00:00",
+    "http_status": 200,
+    "bytes": 3805,
+    "sha256": "a8a6039da4d4ec42876dd326288b28b4844c8a4aa4cfdea871a97ae2309e59ba",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "character",
+  "item_id": "809",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：木花咲耶姫 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "木花咲耶姫（162位）",
+      "numbers": [
+        {
+          "raw": "162位",
+          "value": 162,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：12点 ｜ 得票数：11票 ｜ 一押し数：1票 ｜ コメント数：2件 ｜ 支援作品数： 0件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "12点",
+          "value": 12,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "11票",
+          "value": 11,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2件",
+          "value": 2,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

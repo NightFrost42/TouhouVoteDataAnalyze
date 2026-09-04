@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/2020.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/2020.php",
+    "retrieved_at": "2026-08-15T09:54:39+00:00",
+    "http_status": 200,
+    "bytes": 3964,
+    "sha256": "5ef0d32589be12d0f23f1149bc7826b0f9e0bb7457d7d13a25641757920c8d29",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "2020",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：やみのちから - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "やみのちから（372位）",
+      "numbers": [
+        {
+          "raw": "372位",
+          "value": 372,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：23点 ｜ 得票数：21票 ｜ 一押し数：2票 ｜ コメント数：4件 継続投票率：75.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "23点",
+          "value": 23,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "21票",
+          "value": 21,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "2票",
+          "value": 2,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4件",
+          "value": 4,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "75.0%",
+          "value": 75.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/partner/101-845.php",
+    "effective_url": "https://toho-vote.info/result13/partner/101-845.php",
+    "retrieved_at": "2026-08-15T09:56:27+00:00",
+    "http_status": 200,
+    "bytes": 12772,
+    "sha256": "95757234fd9bf98a7793cef12488d566100ec5aa3666d279da815176401158a9",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "partner",
+  "item_id": "101-845",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：博麗 霊夢と易者 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "博麗 霊夢と易者（59位）",
+      "numbers": [
+        {
+          "raw": "59位",
+          "value": 59,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：429点 ｜ 得票数：369票 ｜ 一押し数：60票 ｜ コメント数：116件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "429点",
+          "value": 429,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "369票",
+          "value": 369,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "60票",
+          "value": 60,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "116件",
+          "value": 116,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

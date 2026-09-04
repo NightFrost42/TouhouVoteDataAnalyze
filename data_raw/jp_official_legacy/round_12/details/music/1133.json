@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/1133.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/1133.php",
+    "retrieved_at": "2026-08-15T09:54:04+00:00",
+    "http_status": 200,
+    "bytes": 4127,
+    "sha256": "a291b2b734a6fd90c735940625449f6b9eadbb0785bf55943bf9db501a7da78c",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1133",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：麓の神社 - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "麓の神社（339位）",
+      "numbers": [
+        {
+          "raw": "339位",
+          "value": 339,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：41点 ｜ 得票数：38票 ｜ 一押し数：3票 ｜ コメント数：6件 継続投票率は、前回投票IDから割り出した継続投票数が一定以下の場合は表示されません。 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "41点",
+          "value": 41,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "38票",
+          "value": 38,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "3票",
+          "value": 3,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

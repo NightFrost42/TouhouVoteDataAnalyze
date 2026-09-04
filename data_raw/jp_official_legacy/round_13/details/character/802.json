@@ -1,0 +1,89 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/character/802.php",
+    "effective_url": "https://toho-vote.info/result13/character/802.php",
+    "retrieved_at": "2026-08-15T09:55:33+00:00",
+    "http_status": 200,
+    "bytes": 4371,
+    "sha256": "88c5481591961651e68728afb97f77cc7daa7fca670d7c6ba86a72d771d9dbd6",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "character",
+  "item_id": "802",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：酒虫 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "酒虫（155位）",
+      "numbers": [
+        {
+          "raw": "155位",
+          "value": 155,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：36点 ｜ 得票数：35票 ｜ 一押し数：1票 ｜ コメント数：14件 ｜ 支援作品数： 0件 継続投票率：50.0%（4名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "36点",
+          "value": 36,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "35票",
+          "value": 35,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "1票",
+          "value": 1,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "14件",
+          "value": 14,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "0件",
+          "value": 0,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "50.0%",
+          "value": 50.0,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "4名",
+          "value": 4,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

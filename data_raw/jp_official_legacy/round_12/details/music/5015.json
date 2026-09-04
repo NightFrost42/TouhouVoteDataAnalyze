@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "http://thwiki.info/th/vote12/result/music/5015.php",
+    "effective_url": "http://thwiki.info/th/vote12/result/music/5015.php",
+    "retrieved_at": "2026-08-15T09:54:59+00:00",
+    "http_status": 200,
+    "bytes": 5328,
+    "sha256": "6806f7f3905ec6ae113bd6764daaf8020b7d565bd4ceb2c2eb74edafd7385fcc",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 12,
+  "role": "detail",
+  "category": "music",
+  "item_id": "5015",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：少女神性 ～ Pandora's Box - 第12回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "少女神性 ～ Pandora's Box（272位）",
+      "numbers": [
+        {
+          "raw": "272位",
+          "value": 272,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：84点 ｜ 得票数：77票 ｜ 一押し数：7票 ｜ コメント数：16件 継続投票率：66.7%（9名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "84点",
+          "value": 84,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "77票",
+          "value": 77,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "7票",
+          "value": 7,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "16件",
+          "value": 16,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "66.7%",
+          "value": 66.7,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "9名",
+          "value": 9,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

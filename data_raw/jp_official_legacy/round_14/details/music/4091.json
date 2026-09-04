@@ -1,0 +1,71 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result14/music/4091.php",
+    "effective_url": "https://toho-vote.info/result14/music/4091.php",
+    "retrieved_at": "2026-08-15T09:58:10+00:00",
+    "http_status": 200,
+    "bytes": 4359,
+    "sha256": "4325c3fb7b34b81cf0c4281c54c5676d2ff83a517cb6c44c67f69f6fba3b951f",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 14,
+  "role": "detail",
+  "category": "music",
+  "item_id": "4091",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：バー・オールドアダム - 第14回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "バー・オールドアダム（238位）",
+      "numbers": [
+        {
+          "raw": "238位",
+          "value": 238,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：124点 ｜ 得票数：118票 ｜ 一押し数：6票 ｜ コメント数：10件 リストへ戻る",
+      "numbers": [
+        {
+          "raw": "124点",
+          "value": 124,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "118票",
+          "value": 118,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6票",
+          "value": 6,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "10件",
+          "value": 10,
+          "unit": "件",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}

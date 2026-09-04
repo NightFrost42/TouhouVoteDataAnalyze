@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "normalizer_version": "jp-official-legacy-normalizer-v2",
+  "meaning": {
+    "available_crawled": "the official site exposed the component and the local crawl succeeded",
+    "official_not_offered": "the archived official site did not expose this component; this is not a crawler failure",
+    "fetch_failed": "the component was expected but the request failed"
+  },
+  "rounds": {
+    "3": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music",
+        "spell"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "spell"
+      ],
+      "entity_numeric_profiles": "official_not_offered",
+      "questionnaire_rows": 102,
+      "source_metric_rows": 0,
+      "entity_questionnaire_rows": 0,
+      "entity_association_rows": 0,
+      "fetch_failures": []
+    },
+    "4": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "entity_numeric_profiles": "official_not_offered",
+      "questionnaire_rows": 161,
+      "source_metric_rows": 0,
+      "entity_questionnaire_rows": 0,
+      "entity_association_rows": 0,
+      "fetch_failures": []
+    },
+    "5": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "questionnaire",
+        "questionnaire_comment"
+      ],
+      "entity_numeric_profiles": "official_not_offered",
+      "questionnaire_rows": 154,
+      "source_metric_rows": 0,
+      "entity_questionnaire_rows": 0,
+      "entity_association_rows": 0,
+      "fetch_failures": []
+    },
+    "6": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "questionnaire",
+        "questionnaire_comment"
+      ],
+      "entity_numeric_profiles": "official_not_offered",
+      "questionnaire_rows": 183,
+      "source_metric_rows": 0,
+      "entity_questionnaire_rows": 0,
+      "entity_association_rows": 0,
+      "fetch_failures": []
+    },
+    "7": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "questionnaire",
+        "questionnaire_comment"
+      ],
+      "entity_numeric_profiles": "official_not_offered",
+      "questionnaire_rows": 227,
+      "source_metric_rows": 0,
+      "entity_questionnaire_rows": 0,
+      "entity_association_rows": 0,
+      "fetch_failures": []
+    },
+    "8": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "questionnaire",
+        "questionnaire_comment"
+      ],
+      "entity_numeric_profiles": "official_not_offered",
+      "questionnaire_rows": 261,
+      "source_metric_rows": 0,
+      "entity_questionnaire_rows": 0,
+      "entity_association_rows": 0,
+      "fetch_failures": []
+    },
+    "9": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "questionnaire",
+        "questionnaire_comment"
+      ],
+      "entity_numeric_profiles": "official_not_offered",
+      "questionnaire_rows": 529,
+      "source_metric_rows": 0,
+      "entity_questionnaire_rows": 0,
+      "entity_association_rows": 0,
+      "fetch_failures": []
+    },
+    "10": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "questionnaire",
+        "questionnaire_comment"
+      ],
+      "entity_numeric_profiles": "official_not_offered",
+      "questionnaire_rows": 216,
+      "source_metric_rows": 0,
+      "entity_questionnaire_rows": 0,
+      "entity_association_rows": 0,
+      "fetch_failures": []
+    },
+    "11": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell",
+        "work"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music"
+      ],
+      "entity_numeric_profiles": "available_crawled",
+      "questionnaire_rows": 617,
+      "source_metric_rows": 630,
+      "entity_questionnaire_rows": 10240,
+      "entity_association_rows": 2849,
+      "fetch_failures": []
+    },
+    "12": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music",
+        "work"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "work"
+      ],
+      "entity_numeric_profiles": "available_crawled",
+      "questionnaire_rows": 614,
+      "source_metric_rows": 685,
+      "entity_questionnaire_rows": 13209,
+      "entity_association_rows": 15915,
+      "fetch_failures": []
+    },
+    "13": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music",
+        "partner",
+        "work"
+      ],
+      "ranking_categories_official_not_offered": [
+        "spell"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "partner",
+        "work"
+      ],
+      "entity_numeric_profiles": "available_crawled",
+      "questionnaire_rows": 665,
+      "source_metric_rows": 1141,
+      "entity_questionnaire_rows": 13644,
+      "entity_association_rows": 20608,
+      "fetch_failures": []
+    },
+    "14": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music",
+        "work"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "work"
+      ],
+      "entity_numeric_profiles": "available_crawled",
+      "questionnaire_rows": 270,
+      "source_metric_rows": 757,
+      "entity_questionnaire_rows": 28652,
+      "entity_association_rows": 26214,
+      "fetch_failures": []
+    },
+    "15": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music",
+        "work"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "work"
+      ],
+      "entity_numeric_profiles": "available_crawled",
+      "questionnaire_rows": 514,
+      "source_metric_rows": 762,
+      "entity_questionnaire_rows": 28956,
+      "entity_association_rows": 26417,
+      "fetch_failures": []
+    },
+    "16": {
+      "questionnaire": "available_crawled",
+      "ranking_categories_available_crawled": [
+        "character",
+        "music",
+        "work"
+      ],
+      "ranking_categories_official_not_offered": [
+        "partner",
+        "spell"
+      ],
+      "entity_detail_categories_available_crawled": [
+        "character",
+        "music",
+        "work"
+      ],
+      "entity_numeric_profiles": "available_crawled",
+      "questionnaire_rows": 527,
+      "source_metric_rows": 795,
+      "entity_questionnaire_rows": 31005,
+      "entity_association_rows": 26743,
+      "fetch_failures": []
+    }
+  }
+}

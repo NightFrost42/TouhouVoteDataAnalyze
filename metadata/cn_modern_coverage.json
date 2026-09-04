@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-15T18:57:20Z",
+  "scope": "public official aggregate/static results for Chinese rounds 10 and 11",
+  "rounds": [
+    {
+      "round": 10,
+      "voteStart": "2022-06-17T10:00:00.000Z",
+      "complete": false,
+      "base": {
+        "numVote": 25707,
+        "numChar": 23518,
+        "numMusic": 17442,
+        "numCp": 17383,
+        "numDoujin": 2250,
+        "numMale": 21541,
+        "numFemale": 4166,
+        "characters": 239,
+        "music": 595,
+        "cp": 790
+      },
+      "questionnaire": {
+        "questions": 111,
+        "types": {
+          "Single": 54,
+          "Input": 37,
+          "Multiple": 20
+        },
+        "options": 390,
+        "uniqueAnswerIds": 389,
+        "conditionFilesExpected": 390
+      },
+      "covote": {
+        "character": {
+          "topK": 239,
+          "expectedPairs": 28441,
+          "observedPairs": 0
+        },
+        "music": {
+          "topK": 595,
+          "expectedPairs": 176715,
+          "observedPairs": 0
+        }
+      },
+      "doujin": {
+        "officialPageDisplayedTotalVotes": 2250,
+        "graphqlGlobalStatsNumDoujin": 2250,
+        "topEntries": 10,
+        "scopeNote": "The two independently published totals happen to agree in this round."
+      },
+      "checks": [
+        {
+          "name": "base_counts_match_known_official_response",
+          "ok": true,
+          "details": {
+            "expected": {
+              "numVote": 25707,
+              "numChar": 23518,
+              "numMusic": 17442,
+              "numCp": 17383,
+              "numDoujin": 2250,
+              "numMale": 21541,
+              "numFemale": 4166,
+              "characters": 239,
+              "music": 595,
+              "cp": 790
+            },
+            "observed": {
+              "numVote": 25707,
+              "numChar": 23518,
+              "numMusic": 17442,
+              "numCp": 17383,
+              "numDoujin": 2250,
+              "numMale": 21541,
+              "numFemale": 4166,
+              "characters": 239,
+              "music": 595,
+              "cp": 790
+            }
+          }
+        },
+        {
+          "name": "questionnaire_definition_complete",
+          "ok": true,
+          "details": {
+            "expectedQuestionsOptionsUniqueAnswerIds": [
+              111,
+              390,
+              389
+            ],
+            "observedQuestionsOptionsUniqueAnswerIds": [
+              111,
+              390,
+              389
+            ],
+            "types": {
+              "Single": 54,
+              "Input": 37,
+              "Multiple": 20
+            },
+            "conditionIdentity": "(questionId, answerId); answerId alone is not globally unique"
+          }
+        },
+        {
+          "name": "categorical_questionnaire_results_complete",
+          "ok": true,
+          "details": {
+            "expected": 74,
+            "observed": 74,
+            "missing": [],
+            "extra": []
+          }
+        },
+        {
+          "name": "open_questionnaire_results_complete",
+          "ok": true,
+          "details": {
+            "expected": 37,
+            "observed": 37,
+            "missing": [],
+            "extra": [],
+            "answerStringCount": 70818
+          }
+        },
+        {
+          "name": "completion_rates_present",
+          "ok": true,
+          "details": {
+            "expected": 8,
+            "observed": 8
+          }
+        },
+        {
+          "name": "questionnaire_trends_complete",
+          "ok": true,
+          "details": {
+            "expected": 111,
+            "observed": 111,
+            "missing": []
+          }
+        },
+        {
+          "name": "all_option_condition_rankings_complete",
+          "ok": true,
+          "details": {
+            "expected": 390,
+            "valid": 390,
+            "missing": [],
+            "invalid": [],
+            "eachContains": [
+              "global",
+              "character ranking",
+              "music ranking",
+              "CP ranking"
+            ]
+          }
+        },
+        {
+          "name": "character_covote_complete_matrix",
+          "ok": false,
+          "details": {
+            "topK": 239,
+            "expectedPairs": 28441,
+            "observedPairs": 0
+          }
+        },
+        {
+          "name": "music_covote_complete_matrix",
+          "ok": false,
+          "details": {
+            "topK": 595,
+            "expectedPairs": 176715,
+            "observedPairs": 0
+          }
+        },
+        {
+          "name": "doujin_static_summary",
+          "ok": true,
+          "details": {
+            "expectedPageTotal": 2250,
+            "observedPageTotal": 2250,
+            "entries": 10,
+            "graphqlNumDoujin": 2250,
+            "sameAsGraphqlAggregate": true
+          }
+        },
+        {
+          "name": "essential_static_provenance_present",
+          "ok": true,
+          "details": {
+            "resourceRecords": 74,
+            "unavailableSourceMaps": [],
+            "essentialFiles": [
+              "static/index.html",
+              "static/assets/index-6eea312f.js",
+              "static/assets/questionnaire-5ec436a8.js",
+              "static/assets/questionnaire-5ec436a8.js.map",
+              "static/assets/Doujin-63a8c5a8.js",
+              "static/assets/Doujin-63a8c5a8.js.map"
+            ]
+          }
+        },
+        {
+          "name": "parsed_outputs_exclude_reason_and_token_fields",
+          "ok": true,
+          "details": {
+            "filesWithForbiddenKeys": []
+          }
+        }
+      ]
+    }
+  ],
+  "publicInterfacesCaptured": [
+    "global aggregate statistics",
+    "complete character ranking",
+    "complete music ranking",
+    "complete CP ranking",
+    "full questionnaire definition recovered from official source map",
+    "categorical questionnaire distributions and completion rates",
+    "anonymous official open-question answer arrays",
+    "questionnaire hourly trends for every question",
+    "global + character/music/CP rankings for every categorical answer option",
+    "complete unfiltered character and music co-vote pair matrices",
+    "Doujin static page displayed total and top-ten metadata",
+    "official result app JavaScript and available source maps"
+  ],
+  "intentionalExclusions": [
+    {
+      "scope": "character/music/CP recommendation reasons",
+      "reason": "reason bodies are not needed for association analysis and were not queried"
+    },
+    {
+      "scope": "Doujin reasons/comments/descriptions in parsed outputs",
+      "reason": "only top-ten work metadata was extracted; verbatim official JS/maps remain provenance"
+    },
+    {
+      "scope": "getSubmitDojinVote(voteToken)",
+      "reason": "private per-ballot token endpoint; never called"
+    },
+    {
+      "scope": "conditional Doujin ranking/details",
+      "reason": "the public GraphQL schema exposes no Doujin result ranking query"
+    },
+    {
+      "scope": "images and fonts",
+      "reason": "not result data; source URLs in static modules are sufficient provenance"
+    }
+  ],
+  "knownScopeDifferences": [
+    {
+      "round": 11,
+      "officialStaticDoujinPageDisplayedTotal": 1272,
+      "graphqlGlobalStatsNumDoujin": 1237,
+      "interpretation": "independently published, non-interchangeable measures; no undocumented reconciliation was imposed"
+    }
+  ],
+  "allRequiredChecksPassed": false
+}

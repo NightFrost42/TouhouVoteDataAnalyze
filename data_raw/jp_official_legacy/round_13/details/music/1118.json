@@ -1,0 +1,83 @@
+{
+  "parser_version": "jp-official-legacy-v3",
+  "source": {
+    "url": "https://toho-vote.info/result13/music/1118.php",
+    "effective_url": "https://toho-vote.info/result13/music/1118.php",
+    "retrieved_at": "2026-08-15T09:55:48+00:00",
+    "http_status": 200,
+    "bytes": 3948,
+    "sha256": "73a7cfd063d86c0c743800d2f32988b8c40606e65648e6faeba3fdaf6bdabc52",
+    "charset": "utf-8",
+    "header_charset": "utf-8"
+  },
+  "round": 13,
+  "role": "detail",
+  "category": "music",
+  "item_id": "1118",
+  "discovery_label": "コメント",
+  "summary": [
+    {
+      "kind": "title",
+      "text": "投票結果：封印されし神々 - 第13回 東方Project 人気投票",
+      "numbers": []
+    },
+    {
+      "kind": "item_heading",
+      "text": "封印されし神々（253位）",
+      "numbers": [
+        {
+          "raw": "253位",
+          "value": 253,
+          "unit": "位",
+          "kind": "number"
+        }
+      ]
+    },
+    {
+      "kind": "item_statistics",
+      "text": "ポイント：99点 ｜ 得票数：95票 ｜ 一押し数：4票 ｜ コメント数：6件 継続投票率：37.5%（8名中） リストへ戻る",
+      "numbers": [
+        {
+          "raw": "99点",
+          "value": 99,
+          "unit": "点",
+          "kind": "number"
+        },
+        {
+          "raw": "95票",
+          "value": 95,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "4票",
+          "value": 4,
+          "unit": "票",
+          "kind": "number"
+        },
+        {
+          "raw": "6件",
+          "value": 6,
+          "unit": "件",
+          "kind": "number"
+        },
+        {
+          "raw": "37.5%",
+          "value": 37.5,
+          "unit": "%",
+          "kind": "percentage"
+        },
+        {
+          "raw": "8名",
+          "value": 8,
+          "unit": "名",
+          "kind": "number"
+        }
+      ]
+    }
+  ],
+  "numeric_tables": [],
+  "omitted": [
+    "free_text_vote_comments"
+  ]
+}
