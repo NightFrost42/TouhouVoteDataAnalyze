@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="东方人气投票研究：角色、曲子、CP、问卷与同人曲数量的静态分析工具">
+  <title>东方人气投票研究｜网页版</title>
+  <link rel="stylesheet" href="styles.css?v=2026-09-06-49">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">TOUHOU VOTE RESEARCH · GITHUB PAGES</p>
+        <h1>东方人气投票研究</h1>
+        <p class="subtitle">角色、曲子、CP、问卷与同人曲数量的可复算静态分析。</p>
+      </div>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>仅读取公开分析 CSV 与静态快照</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="panel controls-panel" aria-labelledby="controls-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">ANALYSIS WORKBENCH</p>
+          <h2 id="controls-title">分析配置</h2>
+        </div>
+        <button class="button secondary" id="reset-button" type="button">恢复默认</button>
+      </div>
+
+      <div class="controls-grid">
+        <label>
+          <span>分析项目</span>
+          <select id="analysis-kind">
+            <optgroup label="单届结果（分析项目根目录）">
+              <option value="ranking">角色/曲子排行</option>
+              <option value="arrangement">曲子投票 × 同人曲数量</option>
+              <option value="cp">CP 投票</option>
+              <option value="questionnaire">问卷选项</option>
+            </optgroup>
+            <optgroup label="对比分析项目（统一对比表）">
+              <option value="desktop_compare">桌面版完整分析（单届 + 跨届）</option>
+            </optgroup>
+          </select>
+        </label>
+        <label id="template-label" class="hidden">
+          <span>桌面版模板</span>
+          <select id="template"></select>
+        </label>
+        <label>
+          <span>地区与届次</span>
+          <select id="round"></select>
+        </label>
+        <label id="compare-round-label" class="hidden">
+          <span>对比届次</span>
+          <select id="compare-round"></select>
+        </label>
+        <label id="faction-label" class="hidden">
+          <span>原作阵营</span>
+          <select id="faction"></select>
+        </label>
+        <label id="subject-label">
+          <span>部门</span>
+          <select id="subject">
+            <option value="character">角色</option>
+            <option value="music">曲子</option>
+          </select>
+        </label>
+        <label id="metric-label">
+          <span>指标</span>
+          <select id="metric"></select>
+        </label>
+        <label id="x-metric-label" class="hidden">
+          <span id="x-metric-title">横轴（同人曲口径）</span>
+          <select id="x-metric"></select>
+        </label>
+        <label id="y-metric-label" class="hidden">
+          <span id="y-metric-title">纵轴（投票指标）</span>
+          <select id="y-metric"></select>
+        </label>
+        <label id="relation-value-mode-label" class="hidden">
+          <span>问卷关联值</span>
+          <select id="relation-value-mode">
+            <option value="rate">问卷选项比例</option>
+            <option value="difference">相对全体差值（百分点）</option>
+          </select>
+        </label>
+        <label id="relation-sort-label" class="hidden">
+          <span>关联排序</span>
+          <select id="relation-sort">
+            <option value="count">选项人数降序</option>
+            <option value="rate">选项比例降序</option>
+            <option value="difference">差值绝对值降序</option>
+          </select>
+        </label>
+        <label id="question-label" class="hidden">
+          <span>问卷题目</span>
+          <select id="question"></select>
+        </label>
+        <label>
+          <span id="top-n-title">Top N</span>
+          <input id="top-n" type="number" min="3" max="100" step="1" value="20">
+        </label>
+        <label id="rank-start-label" class="hidden">
+          <span>起始名次/序号</span>
+          <input id="rank-start" type="number" min="1" max="2000" step="1" value="1">
+        </label>
+        <label id="rank-end-label" class="hidden">
+          <span>结束名次/序号</span>
+          <input id="rank-end" type="number" min="1" max="2000" step="1" value="100">
+        </label>
+        <label id="min-count-label" class="hidden">
+          <span>最少共同人数/数据值</span>
+          <input id="min-count" type="number" min="0" max="1000000" step="1" value="0">
+        </label>
+        <label id="sort-label" class="hidden">
+          <span>排序</span>
+          <select id="sort">
+            <option value="desc">数值降序</option>
+            <option value="asc">数值升序</option>
+            <option value="abs">绝对值降序</option>
+          </select>
+        </label>
+        <label id="change-direction-label" class="hidden">
+          <span>变化方向</span>
+          <select id="change-direction">
+            <option value="all">全部变化</option>
+            <option value="positive">仅增加/上升</option>
+            <option value="negative">仅减少/下降</option>
+          </select>
+        </label>
+        <label id="language-label" class="hidden">
+          <span>名称语言</span>
+          <select id="language">
+            <option value="cn">中文优先</option>
+            <option value="jp">日文优先</option>
+            <option value="both">中日并列（有数据时）</option>
+          </select>
+        </label>
+        <label id="relation-question-label" class="hidden">
+          <span>实体问卷</span>
+          <select id="relation-question"></select>
+        </label>
+        <label id="relation-answer-label" class="hidden">
+          <span>问卷选项</span>
+          <select id="relation-answer"></select>
+        </label>
+        <label id="min-votes-label">
+          <span id="min-votes-title">最少实体投票人数</span>
+          <input id="min-votes" type="number" min="0" max="1000000" step="1" value="0">
+        </label>
+        <label class="wide-control">
+          <span>名称搜索</span>
+          <input id="search" type="search" placeholder="角色、曲名或 CP 名称">
+        </label>
+      </div>
+
+      <div class="control-note" id="control-note">
+        Top N 是图表和结果表最终显示的行数，不是重新计算投票总数的抽样人数。
+      </div>
+      <div class="project-path" id="project-path">项目层级：单届结果（分析项目根目录）</div>
+      <div class="status-line" id="status-line" role="status" aria-live="polite">准备读取数据…</div>
+    </section>
+
+    <section class="panel summary-panel" aria-label="数据摘要">
+      <div class="summary-card"><span>当前届次</span><strong id="summary-round">—</strong></div>
+      <div class="summary-card"><span>可用结果</span><strong id="summary-count">—</strong></div>
+      <div class="summary-card"><span>图表类型</span><strong id="summary-chart">—</strong></div>
+      <div class="summary-card"><span>数据来源</span><strong id="summary-source">本地 CSV</strong></div>
+    </section>
+
+    <section class="panel chart-panel" aria-labelledby="chart-title">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="section-kicker">VISUAL RESULT</p>
+          <h2 id="chart-title">正在读取…</h2>
+        </div>
+        <div class="chart-actions">
+          <button class="button secondary" id="chart-zoom-out" type="button" title="缩小图表">−</button>
+          <span class="chart-zoom-value" id="chart-zoom-value">100%</span>
+          <button class="button secondary" id="chart-zoom-in" type="button" title="放大图表">+</button>
+          <button class="button secondary" id="chart-zoom-reset" type="button">重置大小</button>
+          <button class="button secondary" id="download-button" type="button">下载当前结果 CSV</button>
+        </div>
+      </div>
+      <p class="chart-note" id="chart-note"></p>
+      <div class="chart-wrap" id="chart-wrap">
+        <div class="loading-state" id="loading-state">读取分析数据…</div>
+        <svg id="chart" role="img" aria-labelledby="chart-title" viewBox="0 0 1100 540"></svg>
+        <div class="chart-tooltip" id="chart-tooltip" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="panel table-panel" aria-labelledby="table-title">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="section-kicker">COMPUTED TABLE</p>
+          <h2 id="table-title">计算结果表</h2>
+        </div>
+        <span class="muted" id="table-count"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="result-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel provenance-panel">
+      <h2>口径与部署</h2>
+      <p id="provenance-text">网页读取仓库内的全量分析 CSV；实体问卷、角色/曲子交叉、CP、同投矩阵、网络、气泡、指标、跨届变化、方向、累计、聚类、四象限、异常和自定义视图均先按当前筛选重算全量数据，再在最后一步按 Top N 切片。空白表示原始来源未公开，不会强制填成 0。中文区和日文区的同人曲投票窗口使用各自的日期。</p>
+      <p class="small-note">部署到 GitHub Pages 时，默认数据路径为 <code>../vote_explorer/data/</code>。如果只发布本目录，可在 URL 后追加 <code>?data=./data/</code> 并把所需 CSV 放入同名 data 目录。</p>
+      <div class="links-row">
+        <a href="../vote_explorer/README.md">桌面工具说明</a>
+        <a href="../vote_explorer/data/analysis_data_manifest.json">分析数据 manifest</a>
+        <a href="https://github.com/">GitHub Pages 文档</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">东方人气投票研究 · 静态网页原型 · 不修改桌面工具本体</footer>
+  <script src="app.js?v=2026-09-06-49" defer></script>
+</body>
+</html>
