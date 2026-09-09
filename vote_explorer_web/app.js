@@ -8,7 +8,7 @@
 
 const params = new URLSearchParams(window.location.search);
 const DATA_BASE = new URL(params.get("data") || "../vote_explorer/data/", document.baseURI).href;
-const DATA_VERSION = "2026-09-06-49";
+const DATA_VERSION = "2026-09-09-50";
 
 const ROUND_LABELS = [
   ...Array.from({ length: 11 }, (_, i) => `CN${i + 1}`),
@@ -2025,8 +2025,15 @@ function drawCategorical(result) {
   hideChartTooltip();
   const categories = result.categories || result.rows.map((row) => displayLabel(row));
   const longLabels = categories.some((category) => String(category).length > 12);
-  const width = Math.max(1100, 92 + categories.length * (longLabels ? 76 : 54) + 130), height = 570;
-  const margin = { top: 72, right: 130, bottom: longLabels ? 142 : 108, left: 92 };
+  // Rotated category labels can extend much farther below their anchor than
+  // their line height suggests (especially for CJK labels).  The old fixed
+  // 570×142 layout clipped the last line into the SVG viewport, hiding parts
+  // of the labels and the x-axis title.  Give long-label charts their own
+  // bottom band and a little extra canvas height instead of relying on SVG
+  // overflow being visible in every browser.
+  const width = Math.max(1100, 92 + categories.length * (longLabels ? 76 : 54) + 130);
+  const height = longLabels ? 660 : 570;
+  const margin = { top: 72, right: 130, bottom: longLabels ? 190 : 108, left: 92 };
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.setAttribute("width", width);
   svg.style.height = `${height}px`;
@@ -2093,7 +2100,10 @@ function drawLine(result) {
   const svg = $("chart"); svg.innerHTML = "";
   hideChartTooltip();
   const categories = result.categories || [], series = result.series || [];
-  const width = Math.max(1100, 82 + categories.length * 62 + 130), height = 570, margin = { top: 72, right: 130, bottom: 112, left: 82 };
+  const longLabels = categories.some((category) => String(category).length > 12);
+  const width = Math.max(1100, 82 + categories.length * 62 + 130);
+  const height = longLabels ? 660 : 570;
+  const margin = { top: 72, right: 130, bottom: longLabels ? 178 : 112, left: 82 };
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.setAttribute("width", width);
   svg.style.height = `${height}px`;
@@ -2272,9 +2282,12 @@ function drawHeatmap(result) {
   const svg = $("chart"); svg.innerHTML = "";
   hideChartTooltip();
   const rows = result.row_labels || [], cols = result.col_labels || [], matrix = result.matrix || [];
-  // Reserve a generous top band for rotated column labels.  The previous
-  // 102px band clipped the ascenders of long questionnaire/metric names.
-  const cellW = Math.max(64, Math.min(128, 860 / Math.max(cols.length, 1))), cellH = 32, margin = { top: 154, right: 150, bottom: 64, left: 230 };
+  // Reserve a top band for rotated column labels.  Labels are drawn with an
+  // upward-facing anchor below, so they stay above the first row instead of
+  // being painted underneath the heatmap cells.  Wider matrices use shorter
+  // two-line labels to avoid adjacent labels covering one another.
+  const denseColumns = cols.length > 36;
+  const cellW = Math.max(64, Math.min(128, 860 / Math.max(cols.length, 1))), cellH = 32, margin = { top: denseColumns ? 210 : 188, right: 150, bottom: 64, left: 230 };
   const width = Math.max(1160, margin.left + cols.length * cellW + margin.right);
   const height = Math.max(600, margin.top + rows.length * cellH + margin.bottom);
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
@@ -2282,10 +2295,6 @@ function drawHeatmap(result) {
   svg.style.height = `${height}px`;
   if (!rows.length || !cols.length) return chartMessage(svg, "当前筛选没有可绘制的矩阵");
   const values = matrix.flat().map((value) => number(value, null)).filter((value) => value !== null), min = Math.min(...values, 0), max = Math.max(...values, 1), span = Math.max(1e-9, max - min);
-  cols.forEach((label, col) => {
-    const xx = margin.left + col * cellW + cellW / 2;
-    drawCategoryLabel(svg, label, xx, margin.top - 18, { maxChars: 12, maxLines: 3, rotate: -48, fill: "#475569", fontSize: 10 });
-  });
   rows.forEach((label, row) => {
     const yy = margin.top + row * cellH; drawText(svg, String(label).length > 24 ? `${String(label).slice(0, 24)}…` : label, margin.left - 10, yy + cellH / 2 + 4, { "text-anchor": "end", fill: "#475569", "font-size": 11 });
     cols.forEach((_, col) => {
@@ -2296,6 +2305,14 @@ function drawHeatmap(result) {
       bindPointTooltip(cell, { label: String(label), tooltipPairs: [[String(cols[col]), value === null ? "—" : formatAxis(value, result.metric, result.value_format)]] }, result);
       if (value !== null) drawText(svg, formatAxis(value, result.metric, result.value_format), xx + cellW / 2, yy + cellH / 2 + 4, { "text-anchor": "middle", fill: "#334155", "font-size": 10 });
     });
+  });
+  // Paint the labels after the cells so a long rotated label can never be
+  // hidden by the first heatmap row.  `start` + negative rotation sends the
+  // text upward/right from the anchor, which is the safe orientation for a
+  // label band above the matrix.
+  cols.forEach((label, col) => {
+    const xx = margin.left + col * cellW + cellW / 2;
+    drawCategoryLabel(svg, label, xx, margin.top - 18, { anchor: "start", maxChars: denseColumns ? 8 : 12, maxLines: denseColumns ? 2 : 3, rotate: -48, fill: "#475569", fontSize: 10 });
   });
 }
 
