@@ -156211,11 +156211,13 @@
     "split_files": {
       "analysis_covote_pairs_all.csv": {
         "parts_manifest": "analysis_covote_pairs_all.csv.parts.json",
-        "original_bytes": 145449204,
-        "original_sha256": "e03673c9b3e953be50038f46c7b85abd3f6786d23ee7522387bf5b2ecca55d3c",
+        "original_bytes": 302019432,
+        "original_sha256": "a05af12a91d1a78eee82c54d9c7efe6a97765e10abb81d51fc4397d5a5ec2a05",
         "parts": [
-          "analysis_covote_pairs_all.csv.part-001",
-          "analysis_covote_pairs_all.csv.part-002"
+          "analysis_covote_pairs_all.csv.bundle-001",
+          "analysis_covote_pairs_all.csv.bundle-002",
+          "analysis_covote_pairs_all.csv.bundle-003",
+          "analysis_covote_pairs_all.csv.bundle-004"
         ]
       },
       "cn_advanced_questionnaire.csv": {

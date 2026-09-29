@@ -70,8 +70,10 @@ const DATA_FILES = {
 // lightweight and research views never download these raw matrices.
 const COVOTE_PAIR_PART_MANIFEST = "analysis_covote_pairs_all.csv.parts.json";
 const FALLBACK_COVOTE_PAIR_PARTS = [
-  "analysis_covote_pairs_all.csv.part-001",
-  "analysis_covote_pairs_all.csv.part-002",
+  "analysis_covote_pairs_all.csv.bundle-001",
+  "analysis_covote_pairs_all.csv.bundle-002",
+  "analysis_covote_pairs_all.csv.bundle-003",
+  "analysis_covote_pairs_all.csv.bundle-004",
 ];
 let covotePairPartsPromise = null;
 
