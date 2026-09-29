@@ -7,6 +7,7 @@ node_modules/
 .playwright-browsers/
 .claude/
 review.diff
+vote_explorer/data/analysis_covote_pairs_all.csv.part-*
 
 # Reproducible local build environments used by the Windows packagers
 vote_explorer/.build_python/
