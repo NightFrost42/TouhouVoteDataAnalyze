@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "207",
+  "entity_name": "玛○奇",
+  "rank": 207,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "d1cbdcafcfe20e2616cb62dea214d55bf9740144b272627c1f60f4fb3274f2ef",
+    "bytes": 72,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:32+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 207
+      }
+    }
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "207",
+      "entity_name": "玛○奇",
+      "rank": 207,
+      "comment_index": 1,
+      "text": "都是年轻惹的祸",
+      "raw_text": "都是年轻惹的祸",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "d1cbdcafcfe20e2616cb62dea214d55bf9740144b272627c1f60f4fb3274f2ef",
+      "source_bytes": 72,
+      "retrieved_at": "2026-09-28T18:04:32+00:00"
+    }
+  ],
+  "error": null
+}

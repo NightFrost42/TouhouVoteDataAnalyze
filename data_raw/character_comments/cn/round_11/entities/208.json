@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 11,
+  "category": "character",
+  "entity_id": "208",
+  "entity_name": "野狼灵",
+  "rank": 208,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "0c622942d799bcd1bc2acadf328434d944893013e2fe27daddf6aa2201757451",
+    "bytes": 150,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:05:12+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2023-12-29T10:00:00.000Z",
+        "voteYear": 11,
+        "rank": 208
+      }
+    }
+  },
+  "comment_count": 2,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 11,
+      "category": "character",
+      "entity_id": "208",
+      "entity_name": "野狼灵",
+      "rank": 208,
+      "comment_index": 1,
+      "text": "宝宝你是个最好的狗狗",
+      "raw_text": "宝宝你是个最好的狗狗",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "0c622942d799bcd1bc2acadf328434d944893013e2fe27daddf6aa2201757451",
+      "source_bytes": 150,
+      "retrieved_at": "2026-09-28T18:05:12+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 11,
+      "category": "character",
+      "entity_id": "208",
+      "entity_name": "野狼灵",
+      "rank": 208,
+      "comment_index": 2,
+      "text": "野狼灵允许你超高威力猛烈喷射，快说谢谢野狼灵",
+      "raw_text": "野狼灵允许你超高威力猛烈喷射，快说谢谢野狼灵",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "0c622942d799bcd1bc2acadf328434d944893013e2fe27daddf6aa2201757451",
+      "source_bytes": 150,
+      "retrieved_at": "2026-09-28T18:05:12+00:00"
+    }
+  ],
+  "error": null
+}

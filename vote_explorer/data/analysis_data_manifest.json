@@ -1,6 +1,6 @@
 {
-  "schema_version": 9,
-  "generated_at": "2026-09-04T07:23:07.818515+00:00",
+  "schema_version": 10,
+  "generated_at": "2026-09-20T04:47:52.795106+00:00",
   "scope": {
     "cn_rounds": [
       1,
@@ -43,15 +43,34 @@
     "ranking_metrics": "CN1-11, JP3-22",
     "music_metrics": "CN1-11, JP3-22",
     "jp_rich_character_metrics": "JP17-22 (fields vary by round)",
-    "covote": "JP11-22 plus complete CN10/11 character and music matrices; source_type distinguishes departments and origins",
-    "cp": "Official CP/组合 rankings where published (CN2-11); combination table falls back to co-vote pairs when a CP row is absent",
+    "covote": "CN10/11 character and music complete four-cell matrices; JP11-22 character and music official published leading lists; all other round/category sources are unavailable and omitted rather than filled with zero",
+    "covote_metrics": {
+      "raw_count": "published m00/intersection; JP directional raw counts retained separately",
+      "conditional_rate": "direction-specific P(B|A) or P(A|B) from the published conditional row",
+      "lift": "CN complete 2x2 independence lift; JP published conditional_rate/overall_rate only",
+      "complete_2x2_only": [
+        "baseline_count",
+        "excess_count",
+        "cosine",
+        "ochiai",
+        "jaccard",
+        "pmi",
+        "npmi",
+        "phi"
+      ],
+      "complete_matrix_sources": "CN10/11 same-department character and music matrices",
+      "jp_policy": "JP leading association lists never receive fabricated missing-pair zeros or complete 2x2 metrics",
+      "audit_report": "analysis_results/covote_metrics_audit.json"
+    },
     "questionnaire": "CN1-11 static/modern aggregate tables plus JP17-22 (question availability varies by round)",
     "entity_questionnaire_links": "CN2-4 official detail-page vote-group marginals, CN5-11 questionnaire-conditioned character/music/CP rows, plus JP17-22 character/music/work",
     "cn_advanced_search": "CN5-11 normalized atomic questionnaire/entity conditions; CN5-9 include the official questionnaire pair matrix; CN10-11 expose Boolean AND/OR queries on demand but no legacy all-answer pair endpoint",
     "cn_advanced_search_contract": "scripts_pipeline/cn_advanced_contract.py",
     "work_catalog": "CN legacy translated catalogue plus maintained JP modern additions; release_order is independent of vote rank",
     "character_factions": "THBWiki-backed conservative original-setting groups plus separate first-appearance work cohorts; unverified characters remain unclassified",
-    "character_music_links": "CN1-11, JP3-22 from local_music_merged mapped_character tags",
+    "character_music_links": "CN1-11, JP3-22 direct character_theme relations from music_associations.csv; scene and derivative relations excluded",
+    "music_associations": "CN1-11, JP3-22 typed character_theme, scene_context, and derivative_source relations",
+    "character_pair_structure_features": "Observed character co-vote pairs joined to character_structure_metadata.csv; each attribute comparison is true/false only when both endpoints are confirmed, otherwise unknown",
     "character_music_covote": "CN10-11 official advanced-condition checkpoints plus JP17-22 official character detail pages; count=P(character and music), rate=P(music|character voters participating in music)",
     "music_arrangement_counts": "JP4-22 and CN2-11 THBWiki original-song inter-vote increments, cumulative dated counts through each vote end, and crawl-time all-history totals; CN1 is baseline-only and same-numbered JP/CN rounds use independent calendars",
     "music_arrangement_cross": "JP4-22 and CN2-11 song-vote and character-vote scatter analysis with three selectable x-axis scopes: inter-vote increment, cumulative dated count through vote end, or crawl-time cumulative total; CN1 has no inter-vote increment; character totals deduplicate mapped canonical original songs",
@@ -68,159 +87,1334 @@
   "character_music_link_coverage": {
     "CN1": {
       "music_rows": 399,
-      "tagged_music_rows": 106,
-      "character_music_relations": 121
+      "tagged_music_rows": 92,
+      "character_music_relations": 99
     },
     "CN2": {
       "music_rows": 435,
-      "tagged_music_rows": 102,
-      "character_music_relations": 114
+      "tagged_music_rows": 91,
+      "character_music_relations": 97
     },
     "CN3": {
       "music_rows": 440,
-      "tagged_music_rows": 106,
-      "character_music_relations": 118
+      "tagged_music_rows": 94,
+      "character_music_relations": 100
     },
     "CN4": {
       "music_rows": 476,
-      "tagged_music_rows": 129,
-      "character_music_relations": 143
+      "tagged_music_rows": 111,
+      "character_music_relations": 117
     },
     "CN5": {
       "music_rows": 488,
-      "tagged_music_rows": 136,
-      "character_music_relations": 152
+      "tagged_music_rows": 118,
+      "character_music_relations": 126
     },
     "CN6": {
       "music_rows": 512,
-      "tagged_music_rows": 143,
-      "character_music_relations": 163
+      "tagged_music_rows": 124,
+      "character_music_relations": 134
     },
     "CN7": {
       "music_rows": 546,
-      "tagged_music_rows": 149,
-      "character_music_relations": 170
+      "tagged_music_rows": 130,
+      "character_music_relations": 141
     },
     "CN8": {
       "music_rows": 563,
-      "tagged_music_rows": 156,
-      "character_music_relations": 175
+      "tagged_music_rows": 137,
+      "character_music_relations": 148
     },
     "CN9": {
       "music_rows": 565,
-      "tagged_music_rows": 156,
-      "character_music_relations": 175
+      "tagged_music_rows": 137,
+      "character_music_relations": 148
     },
     "CN10": {
       "music_rows": 588,
-      "tagged_music_rows": 169,
-      "character_music_relations": 188
+      "tagged_music_rows": 149,
+      "character_music_relations": 160
     },
     "CN11": {
       "music_rows": 605,
-      "tagged_music_rows": 181,
-      "character_music_relations": 202
+      "tagged_music_rows": 160,
+      "character_music_relations": 171
     },
     "JP3": {
       "music_rows": 158,
-      "tagged_music_rows": 41,
-      "character_music_relations": 46
+      "tagged_music_rows": 36,
+      "character_music_relations": 39
     },
     "JP4": {
       "music_rows": 205,
-      "tagged_music_rows": 52,
-      "character_music_relations": 57
+      "tagged_music_rows": 46,
+      "character_music_relations": 48
     },
     "JP5": {
       "music_rows": 265,
-      "tagged_music_rows": 70,
-      "character_music_relations": 76
+      "tagged_music_rows": 65,
+      "character_music_relations": 67
     },
     "JP6": {
       "music_rows": 317,
-      "tagged_music_rows": 85,
-      "character_music_relations": 91
+      "tagged_music_rows": 77,
+      "character_music_relations": 79
     },
     "JP7": {
       "music_rows": 352,
-      "tagged_music_rows": 93,
-      "character_music_relations": 99
+      "tagged_music_rows": 85,
+      "character_music_relations": 87
     },
     "JP8": {
       "music_rows": 375,
-      "tagged_music_rows": 100,
-      "character_music_relations": 115
+      "tagged_music_rows": 89,
+      "character_music_relations": 95
     },
     "JP9": {
       "music_rows": 392,
-      "tagged_music_rows": 110,
-      "character_music_relations": 125
+      "tagged_music_rows": 96,
+      "character_music_relations": 102
     },
     "JP10": {
       "music_rows": 430,
-      "tagged_music_rows": 120,
-      "character_music_relations": 136
+      "tagged_music_rows": 106,
+      "character_music_relations": 113
     },
     "JP11": {
       "music_rows": 457,
-      "tagged_music_rows": 127,
-      "character_music_relations": 143
+      "tagged_music_rows": 111,
+      "character_music_relations": 118
     },
     "JP12": {
       "music_rows": 474,
-      "tagged_music_rows": 138,
-      "character_music_relations": 154
+      "tagged_music_rows": 120,
+      "character_music_relations": 127
     },
     "JP13": {
       "music_rows": 485,
-      "tagged_music_rows": 138,
-      "character_music_relations": 154
+      "tagged_music_rows": 120,
+      "character_music_relations": 127
     },
     "JP14": {
       "music_rows": 523,
-      "tagged_music_rows": 149,
-      "character_music_relations": 170
+      "tagged_music_rows": 130,
+      "character_music_relations": 140
     },
     "JP15": {
       "music_rows": 528,
-      "tagged_music_rows": 153,
-      "character_music_relations": 174
+      "tagged_music_rows": 134,
+      "character_music_relations": 144
     },
     "JP16": {
       "music_rows": 543,
-      "tagged_music_rows": 161,
-      "character_music_relations": 182
+      "tagged_music_rows": 141,
+      "character_music_relations": 151
     },
     "JP17": {
       "music_rows": 566,
-      "tagged_music_rows": 171,
-      "character_music_relations": 192
+      "tagged_music_rows": 150,
+      "character_music_relations": 160
     },
     "JP18": {
       "music_rows": 578,
-      "tagged_music_rows": 173,
-      "character_music_relations": 194
+      "tagged_music_rows": 152,
+      "character_music_relations": 162
     },
     "JP19": {
       "music_rows": 594,
-      "tagged_music_rows": 181,
-      "character_music_relations": 202
+      "tagged_music_rows": 160,
+      "character_music_relations": 170
     },
     "JP20": {
       "music_rows": 598,
-      "tagged_music_rows": 181,
-      "character_music_relations": 202
+      "tagged_music_rows": 160,
+      "character_music_relations": 170
     },
     "JP21": {
       "music_rows": 606,
-      "tagged_music_rows": 187,
-      "character_music_relations": 208
+      "tagged_music_rows": 161,
+      "character_music_relations": 171
     },
     "JP22": {
       "music_rows": 621,
-      "tagged_music_rows": 190,
-      "character_music_relations": 211
+      "tagged_music_rows": 164,
+      "character_music_relations": 174
     }
+  },
+  "covote_coverage": {
+    "CN1": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN2": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN3": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN4": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN5": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN6": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN7": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN8": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN9": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "CN10": {
+      "character": {
+        "status": "complete_matrix",
+        "data_completeness": "complete_matrix",
+        "censoring_status": "not_censored",
+        "source_entity_count": 239,
+        "source_pair_count": 28441,
+        "expected_pairs": 28441,
+        "observed_pairs": 28441,
+        "exported_rows": 28441,
+        "explicit_zero_rows": 14877,
+        "metric_status_counts": {
+          "exact_complete_2x2": 28441
+        },
+        "complete_metric_rows": 28441,
+        "source_path": "data_raw/cn_official/round_10/covote/characters.json",
+        "validation_path": "data_raw/cn_official/round_10/covote/character_reconstruction_validation.json",
+        "note": "完整未截断四格矩阵；m00 明确为 0 的单元保留为观测 0。",
+        "matrix_checks": {
+          "expected_equals_observed": true,
+          "all_marginal_and_universe_identities_passed": true,
+          "all_conditional_symmetry_checks_passed": true,
+          "symmetry_pairs_checked": 28441
+        },
+        "cell_convention": {
+          "m00": "both selected (intersection)",
+          "m01": "a not selected, b selected",
+          "m10": "a selected, b not selected",
+          "m11": "neither selected"
+        }
+      },
+      "music": {
+        "status": "complete_matrix",
+        "data_completeness": "complete_matrix",
+        "censoring_status": "not_censored",
+        "source_entity_count": 595,
+        "source_pair_count": 176715,
+        "expected_pairs": 176715,
+        "observed_pairs": 176715,
+        "exported_rows": 176715,
+        "explicit_zero_rows": 112234,
+        "metric_status_counts": {
+          "exact_complete_2x2": 176715
+        },
+        "complete_metric_rows": 176715,
+        "source_path": "data_raw/cn_official/round_10/covote/music.json",
+        "validation_path": "data_raw/cn_official/round_10/covote/music_reconstruction_validation.json",
+        "note": "完整未截断四格矩阵；m00 明确为 0 的单元保留为观测 0。",
+        "matrix_checks": {
+          "expected_equals_observed": true,
+          "all_marginal_and_universe_identities_passed": true,
+          "all_conditional_symmetry_checks_passed": true,
+          "symmetry_pairs_checked": 176715
+        },
+        "cell_convention": {
+          "m00": "both selected (intersection)",
+          "m01": "a not selected, b selected",
+          "m10": "a selected, b not selected",
+          "m11": "neither selected"
+        }
+      }
+    },
+    "CN11": {
+      "character": {
+        "status": "complete_matrix",
+        "data_completeness": "complete_matrix",
+        "censoring_status": "not_censored",
+        "source_entity_count": 244,
+        "source_pair_count": 29646,
+        "expected_pairs": 29646,
+        "observed_pairs": 29646,
+        "exported_rows": 29646,
+        "explicit_zero_rows": 17309,
+        "metric_status_counts": {
+          "exact_complete_2x2": 29646
+        },
+        "complete_metric_rows": 29646,
+        "source_path": "data_raw/cn_official/round_11/covote/characters.json",
+        "validation_path": "data_raw/cn_official/round_11/covote/character_reconstruction_validation.json",
+        "note": "完整未截断四格矩阵；m00 明确为 0 的单元保留为观测 0。",
+        "matrix_checks": {
+          "expected_equals_observed": true,
+          "all_marginal_and_universe_identities_passed": true,
+          "all_conditional_symmetry_checks_passed": true,
+          "symmetry_pairs_checked": 29646
+        },
+        "cell_convention": {
+          "m00": "both selected (intersection)",
+          "m01": "a not selected, b selected",
+          "m10": "a selected, b not selected",
+          "m11": "neither selected"
+        }
+      },
+      "music": {
+        "status": "complete_matrix",
+        "data_completeness": "complete_matrix",
+        "censoring_status": "not_censored",
+        "source_entity_count": 612,
+        "source_pair_count": 186966,
+        "expected_pairs": 186966,
+        "observed_pairs": 186966,
+        "exported_rows": 186966,
+        "explicit_zero_rows": 133619,
+        "metric_status_counts": {
+          "exact_complete_2x2": 186966
+        },
+        "complete_metric_rows": 186966,
+        "source_path": "data_raw/cn_official/round_11/covote/music.json",
+        "validation_path": "data_raw/cn_official/round_11/covote/music_reconstruction_validation.json",
+        "note": "完整未截断四格矩阵；m00 明确为 0 的单元保留为观测 0。 两个 conditional source query 有官方查询缺陷，但最终四格 pair 数与边际恒等式验证通过。",
+        "matrix_checks": {
+          "expected_equals_observed": true,
+          "all_marginal_and_universe_identities_passed": true,
+          "all_conditional_symmetry_checks_passed": true,
+          "symmetry_pairs_checked": 185745
+        },
+        "cell_convention": {
+          "m00": "both selected (intersection)",
+          "m01": "a not selected, b selected",
+          "m10": "a selected, b not selected",
+          "m11": "neither selected"
+        }
+      }
+    },
+    "JP3": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "JP4": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "JP5": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "JP6": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "JP7": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "JP8": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "JP9": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "JP10": {
+      "character": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      },
+      "music": {
+        "status": "not_available",
+        "data_completeness": "not_available",
+        "censoring_status": "not_observed",
+        "source_entity_count": 0,
+        "source_pair_count": 0,
+        "expected_pairs": null,
+        "observed_pairs": 0,
+        "exported_rows": 0,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {},
+        "complete_metric_rows": 0,
+        "source_path": "",
+        "validation_path": "",
+        "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。"
+      }
+    },
+    "JP11": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 123,
+        "source_pair_count": 1184,
+        "expected_pairs": null,
+        "observed_pairs": 1184,
+        "exported_rows": 1184,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1184
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 171,
+        "source_pair_count": 1487,
+        "expected_pairs": null,
+        "observed_pairs": 1487,
+        "exported_rows": 1487,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1487
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP12": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 154,
+        "source_pair_count": 1710,
+        "expected_pairs": null,
+        "observed_pairs": 1710,
+        "exported_rows": 1710,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1710
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 209,
+        "source_pair_count": 2462,
+        "expected_pairs": null,
+        "observed_pairs": 2462,
+        "exported_rows": 2462,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 2462
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP13": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 157,
+        "source_pair_count": 1700,
+        "expected_pairs": null,
+        "observed_pairs": 1700,
+        "exported_rows": 1700,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1700
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 209,
+        "source_pair_count": 2445,
+        "expected_pairs": null,
+        "observed_pairs": 2445,
+        "exported_rows": 2445,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 2445
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP14": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 186,
+        "source_pair_count": 1879,
+        "expected_pairs": null,
+        "observed_pairs": 1879,
+        "exported_rows": 1879,
+        "explicit_zero_rows": 4,
+        "metric_status_counts": {
+          "official_published_leading_list": 1879
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 528,
+        "source_pair_count": 5722,
+        "expected_pairs": null,
+        "observed_pairs": 5722,
+        "exported_rows": 5722,
+        "explicit_zero_rows": 16,
+        "metric_status_counts": {
+          "official_published_leading_list": 5722
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP15": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 186,
+        "source_pair_count": 1883,
+        "expected_pairs": null,
+        "observed_pairs": 1883,
+        "exported_rows": 1883,
+        "explicit_zero_rows": 8,
+        "metric_status_counts": {
+          "official_published_leading_list": 1883
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 530,
+        "source_pair_count": 5805,
+        "expected_pairs": null,
+        "observed_pairs": 5805,
+        "exported_rows": 5805,
+        "explicit_zero_rows": 15,
+        "metric_status_counts": {
+          "official_published_leading_list": 5805
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP16": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 198,
+        "source_pair_count": 2017,
+        "expected_pairs": null,
+        "observed_pairs": 2017,
+        "exported_rows": 2017,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 2017
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 544,
+        "source_pair_count": 5891,
+        "expected_pairs": null,
+        "observed_pairs": 5891,
+        "exported_rows": 5891,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "conflicting_published_directions": 1,
+          "official_published_leading_list": 5890
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP17": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 206,
+        "source_pair_count": 2154,
+        "expected_pairs": null,
+        "observed_pairs": 2154,
+        "exported_rows": 2154,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "conflicting_published_directions": 10,
+          "official_published_leading_list": 2144
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 567,
+        "source_pair_count": 6246,
+        "expected_pairs": null,
+        "observed_pairs": 6246,
+        "exported_rows": 6246,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 6246
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP18": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 208,
+        "source_pair_count": 2205,
+        "expected_pairs": null,
+        "observed_pairs": 2205,
+        "exported_rows": 2205,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "conflicting_published_directions": 3,
+          "official_published_leading_list": 2202
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 579,
+        "source_pair_count": 6428,
+        "expected_pairs": null,
+        "observed_pairs": 6428,
+        "exported_rows": 6428,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "conflicting_published_directions": 3,
+          "official_published_leading_list": 6425
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP19": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 216,
+        "source_pair_count": 2307,
+        "expected_pairs": null,
+        "observed_pairs": 2307,
+        "exported_rows": 2307,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "conflicting_published_directions": 57,
+          "official_published_leading_list": 2250
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 595,
+        "source_pair_count": 6446,
+        "expected_pairs": null,
+        "observed_pairs": 6446,
+        "exported_rows": 6446,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "conflicting_published_directions": 13,
+          "official_published_leading_list": 6433
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP20": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 217,
+        "source_pair_count": 2331,
+        "expected_pairs": null,
+        "observed_pairs": 2331,
+        "exported_rows": 2331,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 2331
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 599,
+        "source_pair_count": 6545,
+        "expected_pairs": null,
+        "observed_pairs": 6545,
+        "exported_rows": 6545,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 6545
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP21": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 221,
+        "source_pair_count": 2387,
+        "expected_pairs": null,
+        "observed_pairs": 2387,
+        "exported_rows": 2387,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "conflicting_published_directions": 42,
+          "official_published_leading_list": 2345
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 607,
+        "source_pair_count": 6617,
+        "expected_pairs": null,
+        "observed_pairs": 6617,
+        "exported_rows": 6617,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 6617
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    },
+    "JP22": {
+      "character": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 225,
+        "source_pair_count": 2402,
+        "expected_pairs": null,
+        "observed_pairs": 2402,
+        "exported_rows": 2402,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "conflicting_published_directions": 3,
+          "official_published_leading_list": 2399
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      },
+      "music": {
+        "status": "official_published_leading_list",
+        "data_completeness": "official_published_leading_list",
+        "censoring_status": "right_censored_by_official_list",
+        "source_entity_count": 623,
+        "source_pair_count": 6721,
+        "expected_pairs": null,
+        "observed_pairs": 6721,
+        "exported_rows": 6721,
+        "explicit_zero_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 6721
+        },
+        "complete_metric_rows": 0,
+        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+        "validation_path": "",
+        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。"
+      }
+    }
+  },
+  "character_pair_structure": {
+    "metadata_path": "metadata/character_structure_metadata.csv",
+    "metadata_sha256": "0135dc5df6029594e07120d90b927611d268f1f082d151f585b6b718a8cbf928",
+    "output_path": "vote_explorer/data/analysis_character_pair_structure_features_all.csv",
+    "rows": 82246,
+    "unknown_feature_policy": "A same_* or shared_* value is unknown when either endpoint attribute is blank, unknown, or unresolved; missing is never false."
   },
   "cn_advanced_contract": {
     "scope": "CN5–11 official bounded advanced-search extracts; CN10–11 rebuild the legacy pair-cell surface with explicit Boolean intersection queries",
@@ -376,15 +1570,15 @@
   "outputs": {
     "analysis_character_metrics_all.csv": {
       "rows": 5482,
-      "sha256": "5417cdb7d52a65e185b128be2f83f4e2e6b85ce64e79406822eb85b2b27f5b5a"
+      "sha256": "dbce92a4afc4065099860e137c3544a123db8e1b83b9fcb3aba3d7a43cc486d8"
     },
     "analysis_music_metrics_all.csv": {
       "rows": 14684,
-      "sha256": "b74e1336ccfd48ce4579030d83760c87faf1ada607d0f0dd0a194f9b58d35474"
+      "sha256": "623643bc0e34414e104c04fdf9c5c5b5026dd95f706cd3bfcd6f685eb234c773"
     },
     "analysis_covote_pairs_all.csv": {
-      "rows": 408419,
-      "sha256": "e03673c9b3e953be50038f46c7b85abd3f6786d23ee7522387bf5b2ecca55d3c"
+      "rows": 508742,
+      "sha256": "a05af12a91d1a78eee82c54d9c7efe6a97765e10abb81d51fc4397d5a5ec2a05"
     },
     "analysis_cp_metrics_all.csv": {
       "rows": 11257,
@@ -392,11 +1586,11 @@
     },
     "analysis_vote_combinations_all.csv": {
       "rows": 92489,
-      "sha256": "7a25a9cd3697fdb8e576521385ddeec7fede4d1cb4075b920f97dd839ebec932"
+      "sha256": "3678746762dbc9cf7df4228a5a408e58a24a490af6f534898f16940d4cddb851"
     },
     "analysis_character_factions.csv": {
       "rows": 371,
-      "sha256": "d1788773541ab8b3a6d65f50a3a2d2e632475e0f349c7535b1f8c1c9a402bbeb"
+      "sha256": "bfca9bbf72030783e863f513075f0fe749bf0323b72a7b725c90503e16a78eeb"
     },
     "analysis_questionnaire_all.csv": {
       "rows": 3138,
@@ -404,15 +1598,15 @@
     },
     "analysis_entity_questionnaire_all.csv.gz": {
       "rows": 1758271,
-      "sha256": "48fc1d13cbaaa6593aeb9838afd62df1af04cb0f30ac158b0b9519806c2e9ac5"
+      "sha256": "376b6d89bb4d184b9b9b9cd2c8da521bf0ac20561cbb70495026fcc136e7bc64"
     },
     "analysis_character_music_links_all.csv": {
-      "rows": 4652,
-      "sha256": "127daf71bfe542f06699516b2dfb1385f6db56d1205bda6c2b70d154ff594ce0"
+      "rows": 3885,
+      "sha256": "d0abb99fa050f7327c1e7e8880ac12c629700d92acdc66cc878b861872be9dac"
     },
     "analysis_character_music_covote_all.csv": {
       "rows": 126103,
-      "sha256": "c7c1f6b29c330be48bc87b1afa5f4de2d02df9d56ed11b4a6f7e9b47ca788293"
+      "sha256": "3762f0d570bfccf0846ebcba2a0c99325c664080a7e6133c10103d25a05d3002"
     },
     "analysis_work_catalog.csv": {
       "rows": 110,
@@ -422,49 +1616,23 @@
       "rows": 342,
       "sha256": "72e3a912beb4ae8829dca7c9d085895fe026241e81e6cb7fccc5b7a6567a3c65"
     },
+    "analysis_music_associations_all.csv": {
+      "rows": 4633,
+      "sha256": "62e206f2d6d9e9561f492124727b0b0a32cba64825df5a07f069b33ae9bdc863"
+    },
+    "analysis_character_pair_structure_features_all.csv": {
+      "rows": 82246,
+      "sha256": "9f9c238cbfb04a6ccc9908cec40e54a3f1e393a4d67cf0f9c0a87cb4b1c846ae"
+    },
     "analysis_cn_advanced_pairs_all.csv.gz": {
       "rows": 404671,
-      "sha256": "31cf3898c8ba050e5714733cf1de799c678daf856227d1da73ff32d1555f1715"
+      "sha256": "3a01ce1b3d1e755ea5c313620ec1e1dc6b54aeb109563e407c703b3b0c80c887"
     }
   },
-  "storage": {
-    "split_files": {
-      "analysis_covote_pairs_all.csv": {
-        "parts_manifest": "analysis_covote_pairs_all.csv.parts.json",
-        "original_bytes": 145449204,
-        "original_sha256": "e03673c9b3e953be50038f46c7b85abd3f6786d23ee7522387bf5b2ecca55d3c",
-        "parts": [
-          "analysis_covote_pairs_all.csv.part-001",
-          "analysis_covote_pairs_all.csv.part-002"
-        ]
-      },
-      "cn_advanced_questionnaire.csv": {
-        "parts_manifest": "cn_advanced_questionnaire.csv.parts.json",
-        "original_bytes": 662193825,
-        "original_sha256": "5b810153ef04afeb3833892b91c23172f8fd76bfc4c57e215f0ae29f1cdec8d6",
-        "parts": [
-          "cn_advanced_questionnaire.csv.part-001",
-          "cn_advanced_questionnaire.csv.part-002",
-          "cn_advanced_questionnaire.csv.part-003",
-          "cn_advanced_questionnaire.csv.part-004",
-          "cn_advanced_questionnaire.csv.part-005",
-          "cn_advanced_questionnaire.csv.part-006",
-          "cn_advanced_questionnaire.csv.part-007",
-          "cn_advanced_questionnaire.csv.part-008"
-        ]
-      },
-      "cn_legacy_advanced_questionnaire.csv": {
-        "parts_manifest": "cn_legacy_advanced_questionnaire.csv.parts.json",
-        "original_bytes": 372189398,
-        "original_sha256": "5c1e8dfaf81adebb45a422bec2e76d76c6ba3151048d1cfc1a4a5caa9cfdfb4c",
-        "parts": [
-          "cn_legacy_advanced_questionnaire.csv.part-001",
-          "cn_legacy_advanced_questionnaire.csv.part-002",
-          "cn_legacy_advanced_questionnaire.csv.part-003",
-          "cn_legacy_advanced_questionnaire.csv.part-004",
-          "cn_legacy_advanced_questionnaire.csv.part-005"
-        ]
-      }
-    }
+  "covote_metrics_audit": {
+    "status": "PASS",
+    "report": "analysis_results/covote_metrics_audit.json",
+    "report_sha256": "afde70dafd401b491c084179dcb62b0188ded9d06060ac90a2db6a0a74158ace",
+    "markdown_report": "analysis_results/covote_metrics_audit.md"
   }
 }

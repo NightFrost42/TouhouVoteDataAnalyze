@@ -8,6 +8,7 @@ Python runtime or a server API.
 
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import sys
@@ -163,6 +164,14 @@ def annotate_language_labels(repo: AnalysisRepository, snapshot: dict, *round_la
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--research-only", action="store_true", help="Package completed statistics without rebuilding desktop snapshots")
+    args = parser.parse_args()
+    from research_bundle import build_research_bundle
+    research = build_research_bundle(ROOT, Path(__file__).resolve().parent / "web_data" / "research")
+    print(f"research: {len(research['entries'])} shards, {research['total_rows']} rows; no statistical recomputation")
+    if args.research_only:
+        return 0
     data_dir = ROOT / "vote_explorer" / "data"
     output_path = Path(__file__).resolve().parent / "web_data" / "templates.json"
     repo = AnalysisRepository(data_dir)

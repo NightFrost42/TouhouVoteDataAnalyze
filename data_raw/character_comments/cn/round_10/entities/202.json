@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "202",
+  "entity_name": "万岁乐",
+  "rank": 202,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "b43f051d25a1136a5fb06207365d62d07e7474b69a57cc41e67c8a6d94d05c51",
+    "bytes": 219,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:31+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 202
+      }
+    }
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "202",
+      "entity_name": "万岁乐",
+      "rank": 202,
+      "comment_index": 1,
+      "text": "和河童们一起勤勤恳恳在水上乐园表演的小海豹谁不喜欢呢。而且还有才艺，没有不投的理由。有机会想玩一下河童的水滑道。",
+      "raw_text": "和河童们一起勤勤恳恳在水上乐园表演的小海豹谁不喜欢呢。而且还有才艺，没有不投的理由。有机会想玩一下河童的水滑道。",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "b43f051d25a1136a5fb06207365d62d07e7474b69a57cc41e67c8a6d94d05c51",
+      "source_bytes": 219,
+      "retrieved_at": "2026-09-28T18:04:31+00:00"
+    }
+  ],
+  "error": null
+}

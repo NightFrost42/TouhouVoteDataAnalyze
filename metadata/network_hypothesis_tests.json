@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "analysis_name": "character_pair_network_hypothesis_tests",
+  "analysis_version": "1.0.0",
+  "parameters": {
+    "random_seed": 20260929,
+    "permutations": 199,
+    "bootstrap_repetitions": 199,
+    "confidence_level": 0.95,
+    "tail": "two-sided",
+    "adjustment_family": "region_round_metric"
+  },
+  "scope": {
+    "region": ["cn", "jp"],
+    "pair_category": "character",
+    "round": "all_observed"
+  },
+  "metrics": [
+    {
+      "name": "intersection_count",
+      "column": "intersection_count",
+      "minimum_scope": "any_observed",
+      "description": "Published pair intersection; zero is retained only when the source explicitly observed it."
+    },
+    {
+      "name": "conditional_rate",
+      "column": "conditional_rate",
+      "minimum_scope": "any_observed",
+      "description": "Published directional conditional rate in the source row."
+    },
+    {
+      "name": "share",
+      "column": "share",
+      "minimum_scope": "complete_matrix",
+      "description": "Complete-matrix intersection share only; never reconstructed for a leading list."
+    },
+    {
+      "name": "jaccard",
+      "column": "jaccard",
+      "minimum_scope": "complete_matrix",
+      "description": "Complete four-cell matrix Jaccard similarity."
+    }
+  ],
+  "hypotheses": [
+    {
+      "name": "same_first_appearance_work",
+      "observation": "same_first_appearance_work == 1",
+      "control": "same_first_appearance_work == 0",
+      "scope": "all_pairs",
+      "inference_status": "exploratory"
+    },
+    {
+      "name": "same_character_type",
+      "observation": "same_character_type == 1",
+      "control": "same_character_type == 0",
+      "scope": "all_pairs",
+      "inference_status": "exploratory"
+    },
+    {
+      "name": "same_source_group",
+      "observation": "same_source_group == 1",
+      "control": "same_source_group == 0",
+      "scope": "all_pairs",
+      "inference_status": "exploratory"
+    },
+    {
+      "name": "same_region",
+      "observation": "same_region == 1",
+      "control": "same_region == 0",
+      "scope": "all_pairs",
+      "inference_status": "exploratory"
+    },
+    {
+      "name": "same_stage",
+      "observation": "same_stage == 1",
+      "control": "same_stage == 0",
+      "scope": "all_pairs",
+      "inference_status": "exploratory"
+    }
+  ]
+}

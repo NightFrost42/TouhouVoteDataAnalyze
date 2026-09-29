@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "223",
+  "entity_name": "天宇受卖命",
+  "rank": 223,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "6c829e9e3bf6ba130f750464aecd11e73858761627fcf77cb5f5de9302f38adc",
+    "bytes": 69,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:35+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 223
+      }
+    }
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "223",
+      "entity_name": "天宇受卖命",
+      "rank": 223,
+      "comment_index": 1,
+      "text": "派对之神（）",
+      "raw_text": "派对之神（）",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "6c829e9e3bf6ba130f750464aecd11e73858761627fcf77cb5f5de9302f38adc",
+      "source_bytes": 69,
+      "retrieved_at": "2026-09-28T18:04:35+00:00"
+    }
+  ],
+  "error": null
+}

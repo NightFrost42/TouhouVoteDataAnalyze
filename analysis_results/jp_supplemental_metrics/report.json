@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-20T04:42:38Z",
+  "scope": "Japanese official supplemental entity data, rounds 11-21",
+  "policy": {
+    "missing_pairs": "never treated as zero because official association tables are leading lists",
+    "complete_2x2_metrics": "never emitted for rows marked complete_pair_matrix=false, even when marginal-looking counts could form an arithmetic table",
+    "rounded_legacy_percentages": "retained as provenance only; they do not make an incomplete association list a complete matrix",
+    "manual_or_estimated_numbers": 0,
+    "pmi_log_base": "natural logarithm"
+  },
+  "association": {
+    "input_rows": 296796,
+    "metric_status_counts": {
+      "incomplete_published_leading_list": 296796
+    },
+    "exact_2x2_by_round": {},
+    "candidate_2x2_by_round": {
+      "14": 214,
+      "15": 6,
+      "18": 29043,
+      "19": 29489,
+      "20": 29806,
+      "21": 30345,
+      "22": 31008
+    },
+    "suppressed_exact_due_incomplete": 149911,
+    "invalid_2x2_rows": 0,
+    "nonfinite_metric_rows": 0
+  },
+  "symmetry": {
+    "bidirectionally_published_unique_pairs": 18140,
+    "exact_intersection_matches": 16829,
+    "intersection_mismatches": 1311
+  },
+  "questionnaire": {
+    "input_rows": 353188,
+    "summary_groups": 170,
+    "valid_effect_rows": 349979
+  },
+  "output_counts": {
+    "association_metrics.csv.gz": 296796,
+    "association_symmetry_audit.csv": 18140,
+    "questionnaire_effect_summary.csv": 170
+  },
+  "validations": {
+    "association_row_conservation": true,
+    "questionnaire_input_nonempty": true,
+    "no_invalid_2x2_rows_emitted_as_exact": true,
+    "no_nonfinite_metrics": true,
+    "no_complete_2x2_metrics_from_incomplete_lists": true,
+    "all_jaccard_within_zero_one": true,
+    "all_phi_within_minus_one_one": true,
+    "all_npmi_within_minus_one_one": true,
+    "official_scope_preserved_as_incomplete_lists": true
+  },
+  "inputs": [
+    {
+      "path": "data_processed/jp_unified/entity_association_long.csv.gz",
+      "bytes": 14499545,
+      "sha256": "c8d5d868dda07aca64c52221a62d595c64a305f59753816f2b9775ad1a6c0c47"
+    },
+    {
+      "path": "data_processed/jp_unified/entity_questionnaire_long.csv.gz",
+      "bytes": 12384902,
+      "sha256": "4d242606403450eea633658d25841650e8e03bb80291c72d59649b205cca3303"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "analysis_results/jp_supplemental_metrics/association_metrics.csv.gz",
+      "bytes": 13701584,
+      "sha256": "a7c7d89f0a0c5ee22ecad265377f6ed99d7200522ef2f644379cbe6639b9e9d0",
+      "rows": 296796
+    },
+    {
+      "path": "analysis_results/jp_supplemental_metrics/association_symmetry_audit.csv",
+      "bytes": 1443984,
+      "sha256": "f286b4bcc9c721ebdf62520af1beefb30e3477fc98a7df5a9d451facb0937bfd",
+      "rows": 18140
+    },
+    {
+      "path": "analysis_results/jp_supplemental_metrics/questionnaire_effect_summary.csv",
+      "bytes": 35909,
+      "sha256": "8e0a0814f96210740d8e3bbcb3ac0927c9a60d9f4aee085ef694101210b5a81f",
+      "rows": 170
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "175",
+  "entity_name": "小丑",
+  "rank": 175,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "91cbe16c01ec5e3f7d8e3b2b6ee2005bbfb8168a83823abd60a3c66f13344dc5",
+    "bytes": 129,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:27+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 175
+      }
+    }
+  },
+  "comment_count": 3,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "175",
+      "entity_name": "小丑",
+      "rank": 175,
+      "comment_index": 1,
+      "text": "喜欢小丑",
+      "raw_text": "喜欢小丑",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "91cbe16c01ec5e3f7d8e3b2b6ee2005bbfb8168a83823abd60a3c66f13344dc5",
+      "source_bytes": 129,
+      "retrieved_at": "2026-09-28T18:04:27+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "175",
+      "entity_name": "小丑",
+      "rank": 175,
+      "comment_index": 2,
+      "text": "小丑你根本不在幻想乡，你躲哪儿去了？",
+      "raw_text": "小丑你根本不在幻想乡，你躲哪儿去了？",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "91cbe16c01ec5e3f7d8e3b2b6ee2005bbfb8168a83823abd60a3c66f13344dc5",
+      "source_bytes": 129,
+      "retrieved_at": "2026-09-28T18:04:27+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "175",
+      "entity_name": "小丑",
+      "rank": 175,
+      "comment_index": 3,
+      "text": "吓人",
+      "raw_text": "吓人",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "91cbe16c01ec5e3f7d8e3b2b6ee2005bbfb8168a83823abd60a3c66f13344dc5",
+      "source_bytes": 129,
+      "retrieved_at": "2026-09-28T18:04:27+00:00"
+    }
+  ],
+  "error": null
+}

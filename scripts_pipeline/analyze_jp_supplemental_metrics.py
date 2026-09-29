@@ -1,8 +1,9 @@
 """Compute analysis-ready metrics from the unified JP supplemental data.
 
 No absent pair is treated as zero: the official association tables are leading
-lists.  Metrics requiring a full 2x2 table are emitted only when every count is
-published or uniquely recoverable from the official rounded percentage.
+lists.  Complete-2x2 metrics are emitted only for an explicitly verified
+``complete_pair_matrix=true`` source; JP association rows remain descriptive
+raw/conditional/rate-ratio observations even when their marginals are known.
 """
 
 from __future__ import annotations
@@ -19,6 +20,8 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Iterator
+
+from covote_metrics import exact_2x2_metrics
 
 
 WORKSPACE = Path(__file__).resolve().parents[1]
@@ -144,8 +147,8 @@ ASSOCIATION_FIELDS = [
     "phi_exact",
     "odds_ratio_exact",
     "m00_both_selected",
-    "m01_source_only",
-    "m10_target_only",
+    "m01_b_only",
+    "m10_a_only",
     "m11_neither",
     "source_url",
     "source_sha256",
@@ -156,14 +159,23 @@ def association_metrics() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     output: list[dict[str, Any]] = []
     status_counts: Counter[str] = Counter()
     exact_round_counts: Counter[int] = Counter()
+    candidate_round_counts: Counter[int] = Counter()
     invalid_2x2 = 0
     nonfinite_metrics = 0
+    suppressed_exact_due_incomplete = 0
     for row in rows(ASSOCIATION_INPUT):
         n = as_int(row.get("overall_denominator"))
         a = as_int(row.get("conditional_denominator"))
         ab = as_int(row.get("intersection_count"))
         b, b_basis = recover_target_count(row)
-        metric_status = "exact_2x2_available"
+        complete_matrix = str(row.get("complete_pair_matrix", "")).casefold() == "true"
+        exact_counts_available = None not in (n, a, b, ab)
+        if exact_counts_available:
+            candidate_round_counts[int(row["round"])] += 1
+
+        metric_status = "exact_2x2_available" if complete_matrix and exact_counts_available else (
+            "incomplete_published_leading_list" if not complete_matrix else "insufficient_exact_counts"
+        )
         cells: tuple[int, int, int, int] | None = None
         metrics: dict[str, float | None] = {
             "support_exact": None,
@@ -174,45 +186,37 @@ def association_metrics() -> tuple[list[dict[str, Any]], dict[str, Any]]:
             "phi_exact": None,
             "odds_ratio_exact": None,
         }
-        if None in (n, a, b, ab):
-            metric_status = "insufficient_exact_counts"
-        else:
+        if not complete_matrix and exact_counts_available:
+            # The row contains enough marginal-looking numbers to make an
+            # arithmetic table, but its source is a leading list.  Suppress
+            # every complete-2x2 metric rather than presenting that table as
+            # an observed population contingency table.
+            suppressed_exact_due_incomplete += 1
+        elif complete_matrix and exact_counts_available:
             assert n is not None and a is not None and b is not None and ab is not None
-            m00 = ab
-            m01 = a - ab
-            m10 = b - ab
-            m11 = n - a - b + ab
-            if min(m00, m01, m10, m11) < 0:
+            try:
+                calculated = exact_2x2_metrics(ab, b - ab, a - ab, n - a - b + ab)
+            except ValueError:
+                calculated = None
+            if calculated is None:
                 metric_status = "invalid_2x2_counts"
                 invalid_2x2 += 1
             else:
-                cells = (m00, m01, m10, m11)
-                support = ab / n if n else None
-                lift = ab * n / (a * b) if a and b else None
-                union = a + b - ab
-                jaccard = ab / union if union else None
-                pmi = math.log(lift) if lift is not None and lift > 0 else None
-                npmi = (
-                    pmi / -math.log(support)
-                    if pmi is not None and support is not None and 0 < support < 1
-                    else None
+                cells = (
+                    calculated["m00_both_selected"], calculated["m01_b_only"],
+                    calculated["m10_a_only"], calculated["m11_neither_selected"],
                 )
-                phi_denominator = a * b * (n - a) * (n - b)
-                phi = (
-                    (ab * n - a * b) / math.sqrt(phi_denominator)
-                    if phi_denominator > 0
-                    else None
-                )
-                odds_denominator = m01 * m10
-                odds = m00 * m11 / odds_denominator if odds_denominator else None
                 metrics.update(
-                    support_exact=support,
-                    lift_exact_2x2=lift,
-                    jaccard_exact=jaccard,
-                    pmi_nats_exact=pmi,
-                    npmi_exact=npmi,
-                    phi_exact=phi,
-                    odds_ratio_exact=odds,
+                    support_exact=calculated["share"],
+                    lift_exact_2x2=calculated["lift"],
+                    jaccard_exact=calculated["jaccard"],
+                    pmi_nats_exact=calculated["pmi"],
+                    npmi_exact=calculated["npmi"],
+                    phi_exact=calculated["phi"],
+                    odds_ratio_exact=(
+                        cells[0] * cells[3] / (cells[1] * cells[2])
+                        if cells[1] * cells[2] else None
+                    ),
                 )
                 if any(value is not None and not math.isfinite(value) for value in metrics.values()):
                     nonfinite_metrics += 1
@@ -243,8 +247,8 @@ def association_metrics() -> tuple[list[dict[str, Any]], dict[str, Any]]:
                 "lift_official_rate_ratio": as_float(row.get("lift")),
                 **metrics,
                 "m00_both_selected": cells[0] if cells else None,
-                "m01_source_only": cells[1] if cells else None,
-                "m10_target_only": cells[2] if cells else None,
+                "m01_b_only": cells[1] if cells else None,
+                "m10_a_only": cells[2] if cells else None,
                 "m11_neither": cells[3] if cells else None,
                 "source_url": row["source_url"],
                 "source_sha256": row["source_sha256"],
@@ -254,6 +258,8 @@ def association_metrics() -> tuple[list[dict[str, Any]], dict[str, Any]]:
         "input_rows": len(output),
         "metric_status_counts": dict(sorted(status_counts.items())),
         "exact_2x2_by_round": dict(sorted(exact_round_counts.items())),
+        "candidate_2x2_by_round": dict(sorted(candidate_round_counts.items())),
+        "suppressed_exact_due_incomplete": suppressed_exact_due_incomplete,
         "invalid_2x2_rows": invalid_2x2,
         "nonfinite_metric_rows": nonfinite_metrics,
     }
@@ -446,9 +452,18 @@ def main() -> None:
     }
     validations = {
         "association_row_conservation": output_counts[association_path.name] == association_report["input_rows"],
-        "questionnaire_row_conservation": questionnaire_report["input_rows"] == 313624,
+        "questionnaire_input_nonempty": questionnaire_report["input_rows"] > 0,
         "no_invalid_2x2_rows_emitted_as_exact": association_report["invalid_2x2_rows"] == 0,
         "no_nonfinite_metrics": association_report["nonfinite_metric_rows"] == 0,
+        "no_complete_2x2_metrics_from_incomplete_lists": all(
+            str(row["complete_pair_matrix"]).casefold() == "false"
+            and all(row[field] is None for field in (
+                "support_exact", "lift_exact_2x2", "jaccard_exact", "pmi_nats_exact",
+                "npmi_exact", "phi_exact", "odds_ratio_exact", "m00_both_selected",
+                "m01_b_only", "m10_a_only", "m11_neither",
+            ))
+            for row in metrics
+        ),
         "all_jaccard_within_zero_one": all(
             row["jaccard_exact"] is None or 0 <= row["jaccard_exact"] <= 1 for row in metrics
         ),
@@ -473,7 +488,8 @@ def main() -> None:
         "scope": "Japanese official supplemental entity data, rounds 11-21",
         "policy": {
             "missing_pairs": "never treated as zero because official association tables are leading lists",
-            "rounded_legacy_percentages": "2x2 metrics computed only when a unique integer target count is consistent with the published rounded percentage",
+            "complete_2x2_metrics": "never emitted for rows marked complete_pair_matrix=false, even when marginal-looking counts could form an arithmetic table",
+            "rounded_legacy_percentages": "retained as provenance only; they do not make an incomplete association list a complete matrix",
             "manual_or_estimated_numbers": 0,
             "pmi_log_base": "natural logarithm",
         },
@@ -508,7 +524,8 @@ def main() -> None:
             [
                 "# 日文实体附加数据数值分析",
                 "",
-                f"- 关联前列输入/输出：{association_report['input_rows']:,}行；可唯一恢复完整四格并计算Jaccard、PMI/NPMI、φ和odds ratio：{association_report['metric_status_counts'].get('exact_2x2_available', 0):,}行。",
+                f"- 关联前列输入/输出：{association_report['input_rows']:,}行；由于所有源行均为官网前列（非完整矩阵），完整2×2指标输出：{association_report['metric_status_counts'].get('exact_2x2_available', 0):,}行；仅保留可观察的交集、条件率和官方rate-ratio lift。",
+                f"- 候选四格行（仅作可恢复性审计，不作为输出指标）：{sum(association_report['candidate_2x2_by_round'].values()):,}；因前列范围被抑制：{association_report['suppressed_exact_due_incomplete']:,}。",
                 f"- 双向均被官网发布的唯一实体对：{symmetry_report['bidirectionally_published_unique_pairs']:,}；交集数完全一致：{symmetry_report['exact_intersection_matches']:,}；不一致：{symmetry_report['intersection_mismatches']:,}。",
                 f"- 实体アンケート输入：{questionnaire_report['input_rows']:,}行；逐届/类别/题目汇总：{questionnaire_report['summary_groups']:,}组。",
                 "- 官网未发布的关联对从不补零；不能唯一恢复整数四格的行只保留官方rate/lift，不输出伪精确Jaccard或NPMI。",

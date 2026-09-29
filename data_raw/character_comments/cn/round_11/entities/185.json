@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 11,
+  "category": "character",
+  "entity_id": "185",
+  "entity_name": "嫦娥",
+  "rank": 185,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "47f9183c30c77d3c0088cd95219fc2b8569712cc4b53c77c317d1c22bbc1c799",
+    "bytes": 107,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:05:08+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2023-12-29T10:00:00.000Z",
+        "voteYear": 11,
+        "rank": 185
+      }
+    }
+  },
+  "comment_count": 2,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 11,
+      "category": "character",
+      "entity_id": "185",
+      "entity_name": "嫦娥",
+      "rank": 185,
+      "comment_index": 1,
+      "text": "嫦娥啊 你看到了吗 ",
+      "raw_text": "嫦娥啊 你看到了吗 ",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "47f9183c30c77d3c0088cd95219fc2b8569712cc4b53c77c317d1c22bbc1c799",
+      "source_bytes": 107,
+      "retrieved_at": "2026-09-28T18:05:08+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 11,
+      "category": "character",
+      "entity_id": "185",
+      "entity_name": "嫦娥",
+      "rank": 185,
+      "comment_index": 2,
+      "text": "儿时就听说过的神话",
+      "raw_text": "儿时就听说过的神话",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "47f9183c30c77d3c0088cd95219fc2b8569712cc4b53c77c317d1c22bbc1c799",
+      "source_bytes": 107,
+      "retrieved_at": "2026-09-28T18:05:08+00:00"
+    }
+  ],
+  "error": null
+}

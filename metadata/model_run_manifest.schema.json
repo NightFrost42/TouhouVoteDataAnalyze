@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:touhou-fun:schema:model-run-manifest:1",
+  "title": "Network statistical analysis model run manifest",
+  "description": "Reproducibility metadata for one network statistical analysis run.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "manifest_type",
+    "analysis",
+    "generated_at_utc",
+    "code",
+    "parameters",
+    "statistical_test",
+    "node_set",
+    "pair_inclusion",
+    "data_integrity",
+    "inputs",
+    "outputs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "manifest_type": {
+      "const": "network_statistical_analysis"
+    },
+    "analysis": {
+      "$ref": "#/$defs/analysis"
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "code": {
+      "$ref": "#/$defs/code"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Complete JSON-serializable analysis parameters.",
+      "additionalProperties": true
+    },
+    "statistical_test": {
+      "$ref": "#/$defs/statisticalTest"
+    },
+    "node_set": {
+      "$ref": "#/$defs/nodeSet"
+    },
+    "pair_inclusion": {
+      "$ref": "#/$defs/pairInclusion"
+    },
+    "data_integrity": {
+      "$ref": "#/$defs/dataIntegrity"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fileRecord"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fileRecord"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "analysis": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "code": {
+      "type": "object",
+      "required": [
+        "git_commit",
+        "git_describe",
+        "git_dirty",
+        "python_version",
+        "version"
+      ],
+      "properties": {
+        "git_commit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "git_describe": {
+          "type": "string",
+          "minLength": 1
+        },
+        "git_dirty": {
+          "type": ["boolean", "null"]
+        },
+        "python_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "script": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "statisticalTest": {
+      "type": "object",
+      "required": ["method", "random_seed", "permutations", "tail"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "random_seed": {
+          "type": ["integer", "null"]
+        },
+        "permutations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tail": {
+          "enum": ["two-sided", "greater", "less"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "nodeSet": {
+      "type": "object",
+      "required": ["entity_type", "source", "selection_rule", "count"],
+      "properties": {
+        "entity_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "selection_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "ids_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["ids"]
+          },
+          "then": {
+            "required": ["ids_sha256"]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    "pairInclusion": {
+      "type": "object",
+      "required": [
+        "rule",
+        "directed",
+        "self_pairs",
+        "deduplication",
+        "missing_pair_policy"
+      ],
+      "properties": {
+        "rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "directed": {
+          "type": "boolean"
+        },
+        "self_pairs": {
+          "type": "boolean"
+        },
+        "deduplication": {
+          "type": "string",
+          "minLength": 1
+        },
+        "missing_pair_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "included_pairs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "excluded_pairs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minimum_count": {
+          "type": "number",
+          "minimum": 0
+        },
+        "minimum_intersection_count": {
+          "type": "number",
+          "minimum": 0
+        },
+        "threshold": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "dataIntegrity": {
+      "type": "object",
+      "required": [
+        "status",
+        "checks",
+        "coverage",
+        "missing",
+        "duplicate_count",
+        "invalid_count",
+        "warnings"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checks": {
+          "type": "array"
+        },
+        "coverage": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "missing": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "duplicate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "invalid_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "fileRecord": {
+      "type": "object",
+      "required": ["path", "sha256", "size_bytes"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\\\]+$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "role": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

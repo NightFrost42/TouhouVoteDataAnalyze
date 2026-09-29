@@ -1,20 +1,31 @@
 {
   "schema_version": 1,
   "base_name": "analysis_covote_pairs_all.csv",
-  "original_bytes": 145449204,
-  "original_sha256": "e03673c9b3e953be50038f46c7b85abd3f6786d23ee7522387bf5b2ecca55d3c",
+  "original_bytes": 302019432,
+  "original_sha256": "a05af12a91d1a78eee82c54d9c7efe6a97765e10abb81d51fc4397d5a5ec2a05",
   "part_bytes_target": 83886080,
   "parts": [
     {
-      "name": "analysis_covote_pairs_all.csv.part-001",
-      "bytes": 83885972,
-      "sha256": "96ba7612af1d79f751d0c56e620447a3b2b86638cbc152164234325b19fb9e84"
+      "name": "analysis_covote_pairs_all.csv.bundle-001",
+      "bytes": 83885895,
+      "sha256": "a65839e5d26a9a9748e4766f34d4244a391de40741f81a5973e6543dc8f80712"
     },
     {
-      "name": "analysis_covote_pairs_all.csv.part-002",
-      "bytes": 61563531,
-      "sha256": "fb54d1006b4802c282f14a24b556329cc013596c4d91432efd989bf36c66c2ed"
+      "name": "analysis_covote_pairs_all.csv.bundle-002",
+      "bytes": 83886020,
+      "sha256": "7969b6afe0339d651de65390ea29b29b49280013f09535417c52990e36026db8"
+    },
+    {
+      "name": "analysis_covote_pairs_all.csv.bundle-003",
+      "bytes": 83886004,
+      "sha256": "d420b969beecccff93a3fb47ed3fd3db13690861cf07f9cc708198059ad22437"
+    },
+    {
+      "name": "analysis_covote_pairs_all.csv.bundle-004",
+      "bytes": 50363454,
+      "sha256": "8180edfbced0c0425315569bf268256327786a895606f10f86fb7502e4819d7a"
     }
   ],
-  "generated_at": "2026-09-04T10:15:49.485646+00:00"
+  "generated_at": "2026-09-20T04:44:45.213247+00:00",
+  "storage_note": "bundle parts are used by the static web loader; legacy locked .part-001/.part-002 files are not referenced"
 }

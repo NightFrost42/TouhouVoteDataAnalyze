@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 11,
+  "category": "character",
+  "entity_id": "223",
+  "entity_name": "导航",
+  "rank": 223,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "469c0a7705150b09421e516b43a80311943814f33923685cc2a292b8eb6bbe23",
+    "bytes": 63,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:05:14+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2023-12-29T10:00:00.000Z",
+        "voteYear": 11,
+        "rank": 223
+      }
+    }
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 11,
+      "category": "character",
+      "entity_id": "223",
+      "entity_name": "导航",
+      "rank": 223,
+      "comment_index": 1,
+      "text": "此人谓谁",
+      "raw_text": "此人谓谁",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "469c0a7705150b09421e516b43a80311943814f33923685cc2a292b8eb6bbe23",
+      "source_bytes": 63,
+      "retrieved_at": "2026-09-28T18:05:14+00:00"
+    }
+  ],
+  "error": null
+}

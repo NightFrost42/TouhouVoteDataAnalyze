@@ -65,9 +65,16 @@ MUSIC_METRICS = [
     "rank", "equal_rank", "points", "primary_count", "secondary_count", "selection_count",
     "primary_rate", "selection_rate", "comment_count",
 ]
-COVOTE_METRICS = ["intersection_count", "share", "lift", "excess_count", "phi", "asymmetry"]
+COVOTE_METRICS = [
+    "intersection_count", "raw_count", "count_a", "count_b", "ballots",
+    "conditional_rate", "conditional_rate_a_to_b", "conditional_rate_b_to_a",
+    "direction_a_to_b", "direction_b_to_a", "share", "lift", "lift_a_to_b", "lift_b_to_a",
+    "cosine", "ochiai", "jaccard", "pmi", "pmi_nats", "npmi", "phi", "excess_count", "asymmetry",
+]
 CP_METRICS = ["rank", "vote_count", "first_choice_count", "points", "vote_rate"]
 ARRANGEMENT_X_METRICS = ["arrangement_count", "arrangement_cumulative_count", "arrangement_total_count"]
+NETWORK_NODE_SIZE_OPTIONS = {"选择人数": "selection_count", "加权度": "weighted_degree", "PageRank": "pagerank"}
+NETWORK_EDGE_COLOR_OPTIONS = {"lift": "lift", "cosine": "cosine", "φ": "phi"}
 
 
 def fmt(value, kind="number") -> str:
@@ -158,6 +165,7 @@ class ChartRenderer:
         # or questionnaire option is changed.
         canvas._line_points = []
         canvas._point_points = []
+        canvas._network_points = []
         canvas.delete("line_overlay")
         width = max(canvas.winfo_width(), 760)
         height = max(canvas.winfo_height(), 480)
@@ -406,6 +414,12 @@ class ChartRenderer:
         point = ChartRenderer._point_hit(canvas, event.x, event.y)
         if point:
             ChartRenderer._show_point_tooltip(canvas, point)
+        elif getattr(canvas, "_network_points", []):
+            point = ChartRenderer._network_hit(canvas, event.x, event.y)
+            if point:
+                ChartRenderer._show_network_tooltip(canvas, point)
+            else:
+                canvas.delete("line_overlay")
         else:
             canvas.delete("line_overlay")
 
@@ -419,10 +433,52 @@ class ChartRenderer:
         point = ChartRenderer._point_hit(canvas, event.x, event.y)
         if point:
             ChartRenderer._show_point_tooltip(canvas, point)
+            return
+        point = ChartRenderer._network_hit(canvas, event.x, event.y)
+        if point:
+            ChartRenderer._show_network_tooltip(canvas, point)
 
     @staticmethod
     def _on_chart_leave(event):
         event.widget.delete("line_overlay")
+
+    @staticmethod
+    def _network_hit(canvas, x, y):
+        points = getattr(canvas, "_network_points", [])
+        if not points:
+            return None
+        nearest = min(points, key=lambda item: (item["x"] - x) ** 2 + (item["y"] - y) ** 2)
+        return nearest if math.hypot(nearest["x"] - x, nearest["y"] - y) <= max(16, nearest.get("radius", 8) + 5) else None
+
+    @staticmethod
+    def _show_network_tooltip(canvas, point):
+        canvas.delete("line_overlay")
+        width = max(canvas.winfo_width(), 760); height = max(canvas.winfo_height(), 480)
+        node = point["node"]
+        lines = [
+            str(node.get("label", "节点")),
+            f"选择人数：{fmt(node.get('selection_count'))}｜加权度：{fmt(node.get('weighted_degree'))}｜PageRank：{fmt(node.get('pagerank'))}",
+            f"社区：{node.get('community', '未计算')}｜原作阵营：{', '.join(node.get('factions') or ['未标注'])}",
+        ]
+        edge = point.get("edge")
+        if edge:
+            lines += [
+                f"同投边：{edge.get('label', '')}",
+                f"共同人数：{fmt(edge.get('intersection_count'))}｜A边缘（仅A）：{fmt(edge.get('a_only_count'))}｜B边缘（仅B）：{fmt(edge.get('b_only_count'))}",
+                f"A总选择：{fmt(edge.get('count_a'))}｜B总选择：{fmt(edge.get('count_b'))}",
+                f"期望人数：{fmt(edge.get('expected_count'))}｜lift：{fmt(edge.get('lift'))}｜cosine：{fmt(edge.get('cosine'))}｜φ：{fmt(edge.get('phi'))}",
+                f"完整性：{edge.get('data_completeness', '—')}｜截尾：{edge.get('censoring_status', '—')}",
+                f"来源：{edge.get('source_type', '—')}｜{edge.get('warning', '')}" if edge.get('warning') else f"来源：{edge.get('source_type', '—')}",
+            ]
+        max_chars = max(len(line) for line in lines)
+        box_w = max(270, min(620, 7 * max_chars + 30)); box_h = 18 * len(lines) + 18
+        tx = clamp(point["x"] + 16, 8 + box_w / 2, width - 8 - box_w / 2)
+        ty = clamp(point["y"] - box_h / 2 - 12, 8 + box_h / 2, height - 8 - box_h / 2)
+        canvas.create_rectangle(tx - box_w / 2, ty - box_h / 2, tx + box_w / 2, ty + box_h / 2,
+                                fill="#fffef5", outline="#2563eb", width=1, tags="line_overlay")
+        canvas.create_text(tx, ty, text="\n".join(lines), justify="left", anchor="center",
+                           font=("Microsoft YaHei UI", 9), fill="#1e293b", tags="line_overlay")
+        canvas.tag_raise("line_overlay")
 
     def draw_line(self, canvas, chart, options, palette, width, height):
         categories, series = chart["categories"], chart["series"]
@@ -735,6 +791,7 @@ class ChartRenderer:
 
     def draw_network(self, canvas, chart, options, palette, width, height):
         nodes, edges = chart.get("nodes", []), chart.get("edges", [])
+        canvas._network_points = []
         if not nodes:
             return
         list_width = min(390, max(240, width * .28))
@@ -744,24 +801,52 @@ class ChartRenderer:
         for idx, node in enumerate(nodes):
             angle = -math.pi / 2 + 2 * math.pi * idx / len(nodes)
             positions[node["id"]] = (cx + radius * math.cos(angle), cy + radius * math.sin(angle))
-        max_edge = max([e["value"] for e in edges] + [1]); max_node = max([n["value"] for n in nodes] + [1])
+        node_metric = chart.get("network_node_size", "selection_count")
+        edge_metric = chart.get("network_edge_color", "lift")
+        node_values = [max(0, number(n.get(node_metric), 0)) for n in nodes]
+        max_edge = max([number(e.get("intersection_count", e.get("value")), 0) for e in edges] + [1]); max_node = max(node_values + [1])
+        edge_values = [number(e.get(edge_metric), 0) for e in edges if e.get(edge_metric) is not None]
+        edge_lo, edge_hi = (min(edge_values), max(edge_values)) if edge_values else (0, 1)
+        if edge_lo == edge_hi: edge_hi = edge_lo + 1
+        community_keys = sorted({str(n.get("community") or "未计算") for n in nodes})
+        community_colors = {key: palette[i % len(palette)] for i, key in enumerate(community_keys)}
+        canvas._network_points = []
         for edge in sorted(edges, key=lambda e: e["value"]):
             if edge["source"] not in positions or edge["target"] not in positions:
                 continue
             x1, y1 = positions[edge["source"]]; x2, y2 = positions[edge["target"]]
-            width_line = 1 + 6 * edge["value"] / max_edge
-            color = mix_color("#cbd5e1", palette[0], min(1, edge.get("lift", 1) / 8))
-            canvas.create_line(x1, y1, x2, y2, fill=color, width=width_line)
+            count = number(edge.get("intersection_count", edge.get("value")), 0)
+            width_line = 1 + 6 * count / max_edge
+            ratio = (number(edge.get(edge_metric), edge_lo) - edge_lo) / (edge_hi - edge_lo) if edge.get(edge_metric) is not None else 0
+            color = mix_color("#cbd5e1", palette[1 if len(palette) > 1 else 0], ratio)
+            dash = (6, 4) if edge.get("censoring_status") != "not_censored" or edge.get("data_completeness") != "complete_matrix" else None
+            kwargs = {"fill": color, "width": max(1, round(width_line))}
+            if edge.get("low_support"):
+                kwargs["stipple"] = "gray50"
+            if dash: kwargs["dash"] = dash
+            canvas.create_line(x1, y1, x2, y2, **kwargs)
+            canvas._network_points.append({"x": (x1 + x2) / 2, "y": (y1 + y2) / 2, "radius": max(10, width_line + 4), "node": next((n for n in nodes if n["id"] == edge["source"]), {}), "edge": edge})
         for idx, node in enumerate(nodes):
             x, y = positions[node["id"]]; size = 6 + 11 * math.sqrt(node["value"] / max_node)
-            color = palette[idx % len(palette)]
+            metric_value = max(0, number(node.get(node_metric), node.get("value", 0)))
+            size = 6 + 11 * math.sqrt(metric_value / max_node)
+            color = community_colors.get(str(node.get("community") or "未计算"), "#94a3b8")
             canvas.create_oval(x - size, y - size, x + size, y + size, fill=color, outline="#ffffff", width=2)
+            if node.get("isolate"):
+                canvas.create_oval(x - size - 3, y - size - 3, x + size + 3, y + size + 3, outline="#64748b", dash=(2, 2))
             if options.get("show_labels", True):
                 canvas.create_text(x, y, text=str(idx + 1), font=("Microsoft YaHei UI", 8, "bold"), fill=contrast_color(color))
+            canvas._network_points.append({"x": x, "y": y, "radius": size, "node": node})
         if options.get("show_labels", True):
             canvas.create_text(graph_width + 12, 55, text="节点完整名称", anchor="w", font=("Microsoft YaHei UI", 10, "bold"), fill="#263238")
             for idx, node in enumerate(nodes):
                 canvas.create_text(graph_width + 12, 78 + idx * 19, text=f"{idx + 1}. {node['label']}", anchor="w", font=("Microsoft YaHei UI", 8), fill="#263238")
+        legend_y = height - 48
+        canvas.create_text(graph_width + 12, legend_y, text=f"节点大小：{node_metric}｜边宽：共同人数｜边色：{edge_metric}", anchor="w", font=("Microsoft YaHei UI", 8), fill="#52606d")
+        canvas.create_text(graph_width + 12, legend_y + 17, text="节点颜色：社区；虚线：部分公开/右删失；外圈：孤立节点", anchor="w", font=("Microsoft YaHei UI", 8), fill="#52606d")
+        for idx, key in enumerate(community_keys[:8]):
+            canvas.create_rectangle(graph_width + 12, legend_y + 30 + idx * 16, graph_width + 22, legend_y + 40 + idx * 16, fill=community_colors[key], outline="")
+            canvas.create_text(graph_width + 28, legend_y + 35 + idx * 16, text=f"社区 {key}", anchor="w", font=("Microsoft YaHei UI", 7), fill="#52606d")
 
     def draw_faceted_network(self, canvas, chart, options, palette, width, height):
         panels = chart.get("panels", [])
@@ -897,6 +982,8 @@ class AnalysisWorkbench:
         self.y_metric = tk.StringVar(value="rank")
         self.x_metric_display = tk.StringVar(value=METRIC_LABELS["selection_count"])
         self.y_metric_display = tk.StringVar(value=METRIC_LABELS["rank"])
+        self.network_node_size = tk.StringVar(value="选择人数")
+        self.network_edge_color = tk.StringVar(value="lift")
         self.custom_title = tk.StringVar()
         self.export_width = tk.StringVar(value="1400")
         self.export_height = tk.StringVar(value="900")
@@ -943,6 +1030,8 @@ class AnalysisWorkbench:
         )
         self.x_combo = self._combo(controls, 3, 8, "横轴指标", self.x_metric_display, [METRIC_LABELS[x] for x in CHARACTER_METRICS], 18, self.on_metric_changed)
         self.y_combo = self._combo(controls, 3, 10, "纵轴指标", self.y_metric_display, [METRIC_LABELS[x] for x in CHARACTER_METRICS], 18, self.on_metric_changed)
+        self.network_node_size_combo = self._combo(controls, 7, 0, "网络节点大小", self.network_node_size, list(NETWORK_NODE_SIZE_OPTIONS), 15, self.refresh)
+        self.network_edge_color_combo = self._combo(controls, 7, 2, "网络边颜色", self.network_edge_color, list(NETWORK_EDGE_COLOR_OPTIONS), 12, self.refresh)
 
         self.export_width_spin = self._spin(controls, 4, 0, "导出宽度", self.export_width, 600, 4000)
         self.export_height_spin = self._spin(controls, 4, 2, "导出高度", self.export_height, 400, 3000)
@@ -967,7 +1056,7 @@ class AnalysisWorkbench:
         self.relation_value_combo = self._combo(controls, 6, 6, "关联纵轴", self.relation_value_mode, list(RELATION_VALUE_OPTIONS), 22, self.refresh)
         self.relation_sort_combo = self._combo(controls, 6, 9, "关联排序", self.relation_sort_mode, list(RELATION_SORT_OPTIONS), 16, self.refresh)
         self.relation_hint = ttk.Label(controls, text="横轴=所选人群人数；纵轴=该人群比例；点大小=该题有效人数", foreground="#475569")
-        self.relation_hint.grid(row=7, column=0, columnspan=12, padx=9, pady=3, sticky="w")
+        self.relation_hint.grid(row=8, column=0, columnspan=12, padx=9, pady=3, sticky="w")
 
         ttk.Label(self.window, textvariable=self.description, foreground="#334155").pack(fill="x", padx=12, pady=(2, 0))
         ttk.Label(self.window, textvariable=self.note, foreground="#9a3412").pack(fill="x", padx=12, pady=(0, 3))
@@ -1072,6 +1161,8 @@ class AnalysisWorkbench:
             "relation_question": self.relation_question.get(), "relation_answer": self.relation_answer.get(),
             "relation_value_mode": RELATION_VALUE_OPTIONS[self.relation_value_mode.get()],
             "relation_sort": RELATION_SORT_OPTIONS[self.relation_sort_mode.get()],
+            "network_node_size": NETWORK_NODE_SIZE_OPTIONS.get(self.network_node_size.get(), "selection_count"),
+            "network_edge_color": NETWORK_EDGE_COLOR_OPTIONS.get(self.network_edge_color.get(), "lift"),
         }
 
     def render_options(self) -> dict:
@@ -1099,6 +1190,9 @@ class AnalysisWorkbench:
 
     def on_template_changed(self):
         spec = TEMPLATE_BY_KEY[self.template_key()]
+        network_view = spec.chart_type in {"network", "faceted_network"} or spec.builder in {"covote_network", "concentration_clusters"}
+        self._set_control_visible(self.network_node_size_combo, network_view)
+        self._set_control_visible(self.network_edge_color_combo, network_view)
         # Top N is applied after each template's own sort.  Relation/scatter
         # views select entities, while ranking/table views select result rows;
         # make that distinction visible instead of leaving an unexplained
@@ -1193,7 +1287,7 @@ class AnalysisWorkbench:
         relation_keys = {item.key for item in TEMPLATES if item.builder in {"entity_question_scatter", "entity_question_difference", "entity_question_correlation", "character_cognition", "work_question_matrix", "entity_question_matrix"}}
         range_visible = spec.group in {"角色", "角色画像", "曲子", "曲子问卷关联", "问卷关联", "同投", "角色—曲子", "CP投票"} and key not in relation_keys
         pair_visible = spec.group == "同投"
-        search_visible = spec.group not in {"问卷"}
+        search_visible = spec.group not in {"问卷", "研究网络分析"}
         self._set_control_visible(self.compare_round_combo, key in compare_keys or key == "p02_combination_compare")
         self._set_control_visible(self.question_combo, key == "q_custom")
         self._set_control_visible(self.relation_question_combo, key in relation_keys)
@@ -1235,7 +1329,7 @@ class AnalysisWorkbench:
         threshold_visible = key in relation_keys and key != "r08_work_question_matrix"
         self._set_control_visible(self.min_entity_votes_spin, threshold_visible)
         self._set_control_visible(self.pair_range_combo, pair_visible)
-        self._set_control_visible(self.sort_combo, key not in {"c00_rank_trend", "c00_all_trend", "m03_rank_trend", "m03_all_trend", "c00_round_compare", "m02_round_compare", "p02_combination_compare", "c10_growth_lag", "c11_structure", "c11_metric_heatmap", "c12_gender_structure", "r01_character_question_scatter", "r04_music_question_scatter", "x_character", "x_covote", "m05_character_music_cross", "m06_music_character_cross", "m09_music_arrangement_cross", "m10_character_arrangement_cross", "a01_direction_matrix", "a01_count_matrix", "a02_network", "a03_bubble", "a10_direction", "a13_quadrant", "q01_age", "q02_cognition", "q03_usertype", "q04_new", "q_custom"})
+        self._set_control_visible(self.sort_combo, spec.group != "研究网络分析" and key not in {"c00_rank_trend", "c00_all_trend", "m03_rank_trend", "m03_all_trend", "c00_round_compare", "m02_round_compare", "p02_combination_compare", "c10_growth_lag", "c11_structure", "c11_metric_heatmap", "c12_gender_structure", "r01_character_question_scatter", "r04_music_question_scatter", "x_character", "x_covote", "m05_character_music_cross", "m06_music_character_cross", "m09_music_arrangement_cross", "m10_character_arrangement_cross", "a01_direction_matrix", "a01_count_matrix", "a02_network", "a03_bubble", "a10_direction", "a13_quadrant", "q01_age", "q02_cognition", "q03_usertype", "q04_new", "q_custom"})
         self._set_control_visible(self.change_direction_combo, key in change_keys)
         for widget in (self.rank_start_spin, self.rank_end_spin, self.range_preset_combo, self.shift_prev_button, self.shift_next_button):
             self._set_control_visible(widget, range_visible)
@@ -1487,6 +1581,8 @@ class AnalysisWorkbench:
 
     def overview_rows(self):
         cfg = self.config()
+        if TEMPLATE_BY_KEY[self.template_key()].group == "研究网络分析":
+            return []
         if self.is_cp_template():
             # CP/组合模板 must not reuse the character overview fields.
             # Keep the same Treeview width but return the actual combination
@@ -1507,6 +1603,9 @@ class AnalysisWorkbench:
 
     def populate_overview(self):
         self.overview.delete(*self.overview.get_children())
+        if TEMPLATE_BY_KEY[self.template_key()].group == "研究网络分析":
+            self.overview_caption.configure(text=f"{self.current_round.get()}｜研究网络分析模板不使用官方排名分段总览；请查看计算结果表。")
+            return
         rows = self.overview_rows()
         if self.is_cp_template():
             headers = ["届次", "官方名次", "组合名称", "投票人数", "第一顺位票", "官方分数", "投票率", "来源"]
@@ -1566,6 +1665,7 @@ class AnalysisWorkbench:
         self.x_metric.set("selection_count"); self.y_metric.set("rank")
         self.x_metric_display.set(METRIC_LABELS["selection_count"]); self.y_metric_display.set(METRIC_LABELS["rank"])
         self.export_width.set("1400"); self.export_height.set("900")
+        self.network_node_size.set("选择人数"); self.network_edge_color.set("lift")
         self.show_labels.set(True); self.show_grid.set(True); self.custom_title.set("")
         self.relation_question.set("sex"); self.relation_question_display.set(ENTITY_QUESTION_LABELS["sex"])
         self.relation_answer.set("女性"); self.relation_value_mode.set("问卷选项比例")
@@ -1780,19 +1880,24 @@ def chart_to_svg(chart: dict, options: dict, renderer: ChartRenderer) -> str:
                 if v is not None and options.get('show_labels',True) and cw>28 and ch>16: out.append(svg_text(left+(c+.5)*cw,top+(r+.65)*ch,fmt(v,chart.get('value_format')),7,'middle',contrast_color(color)))
                 if (r,c) in anomalies: out.append(f'<rect x="{left+c*cw+1:.1f}" y="{top+r*ch+1:.1f}" width="{cw-2:.1f}" height="{ch-2:.1f}" fill="none" stroke="#dd6b20" stroke-width="2"/>')
     elif chart_type == "network" and chart.get("nodes") is not None:
-        nodes,edges=chart.get('nodes',[]),chart.get('edges',[]); listw=min(420,max(250,width*.3)); graphw=width-listw; cx,cy=graphw/2,height/2+15; radius=min(graphw,height)*.34; pos={}
+        nodes,edges=chart.get('nodes',[]),chart.get('edges',[]); listw=min(390,max(240,width*.28)); graphw=width-listw; cx,cy=graphw/2,height/2+15; radius=max(100,min(graphw,height)*.34); pos={}
         for i,n in enumerate(nodes):
             a=-math.pi/2+2*math.pi*i/max(1,len(nodes)); pos[n['id']]=(cx+radius*math.cos(a),cy+radius*math.sin(a))
-        maxe=max([e['value'] for e in edges]+[1]); maxn=max([n['value'] for n in nodes]+[1])
+        node_metric=chart.get('network_node_size','selection_count'); edge_metric=chart.get('network_edge_color','lift'); node_values=[max(0,number(n.get(node_metric),0)) for n in nodes]; maxn=max(node_values+[1]); maxe=max([number(e.get('intersection_count',e.get('value')),0) for e in edges]+[1]); edge_values=[number(e.get(edge_metric),0) for e in edges if e.get(edge_metric) is not None]; elo,ehi=(min(edge_values),max(edge_values)) if edge_values else (0,1); ehi=elo+1 if elo==ehi else ehi; community_keys=sorted({str(n.get('community') or '未计算') for n in nodes}); community_colors={key:palette[i%len(palette)] for i,key in enumerate(community_keys)}
         for e in edges:
             if e['source'] in pos and e['target'] in pos:
-                x1,y1=pos[e['source']];x2,y2=pos[e['target']];out.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{mix_color("#cbd5e1",palette[0],min(1,e.get("lift",1)/8))}" stroke-width="{1+6*e["value"]/maxe:.1f}"/>')
+                x1,y1=pos[e['source']];x2,y2=pos[e['target']]; count=number(e.get('intersection_count',e.get('value')),0); ratio=(number(e.get(edge_metric),elo)-elo)/(ehi-elo) if e.get(edge_metric) is not None else 0; color=mix_color('#cbd5e1',palette[1 if len(palette)>1 else 0],ratio); dash=' stroke-dasharray="6 4"' if e.get('censoring_status')!='not_censored' or e.get('data_completeness')!='complete_matrix' else ''; opacity=' opacity="0.35"' if e.get('low_support') else ' opacity="0.82"'; out.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{color}" stroke-width="{1+6*count/maxe:.1f}"{dash}{opacity}/>')
         for i,n in enumerate(nodes):
-            x,y=pos[n['id']]; size=6+11*math.sqrt(n['value']/maxn); out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{size:.1f}" fill="{palette[i%len(palette)]}" stroke="#fff" stroke-width="2"/>')
-            if options.get('show_labels',True): out.append(svg_text(x,y+3,i+1,9,'middle',contrast_color(palette[i%len(palette)]),'bold'))
+            x,y=pos[n['id']]; value=max(0,number(n.get(node_metric),n.get('value',0))); size=6+11*math.sqrt(value/maxn); color=community_colors.get(str(n.get('community') or '未计算'),'#94a3b8'); out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{size:.1f}" fill="{color}" stroke="#fff" stroke-width="2"/>')
+            if n.get('isolate'): out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{size+3:.1f}" fill="none" stroke="#64748b" stroke-dasharray="2 2"/>')
+            if options.get('show_labels',True): out.append(svg_text(x,y+3,i+1,9,'middle',contrast_color(color),'bold'))
         if options.get('show_labels',True):
             out.append(svg_text(graphw+12,60,'节点完整名称',11,weight='bold'))
             for i,n in enumerate(nodes): out.append(svg_text(graphw+12,84+i*20,f"{i+1}. {n['label']}",9))
+        out.append(svg_text(graphw+12,height-48,f"节点大小：{node_metric}｜边宽：共同人数｜边色：{edge_metric}",8,'start','#52606d'))
+        out.append(svg_text(graphw+12,height-31,'节点颜色：社区；虚线：部分公开/右删失；外圈：孤立节点',8,'start','#52606d'))
+        for i,key in enumerate(community_keys[:8]):
+            y=height-14+i*16; out.append(f'<rect x="{graphw+12:.1f}" y="{y-8:.1f}" width="10" height="10" fill="{community_colors[key]}"/>'); out.append(svg_text(graphw+28,y,f"社区 {key}",7,'start','#52606d'))
     elif chart_type == "faceted_network" and chart.get("panels") is not None:
         panels=chart.get('panels',[]); gap,area_top,legend_h=20,52,58; panelw=(width-gap*3)/2; panelh=(height-area_top-legend_h-gap*3)/2
         def svg_edge_style(lift):

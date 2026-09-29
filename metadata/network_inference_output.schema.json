@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:touhou-fun:schema:network-inference-output:1",
+  "title": "Unified network inference output manifest",
+  "description": "This contract extends metadata/model_run_manifest.schema.json. The result tables are UTF-8-BOM CSV; missing cells are blank rather than zero. An unestimated effect has status=not_estimable, and an uncorrected p value has adjustment_method=not_applied.",
+  "allOf": [
+    {"$ref": "model_run_manifest.schema.json"},
+    {
+      "type": "object",
+      "required": ["parameters", "inputs", "outputs"],
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "required": ["output_contract_version", "output_contract", "schema_path", "table_order", "table_counts", "table_columns", "analysis_config", "fixed_warnings", "upstream_manifests"],
+          "properties": {
+            "output_contract_version": {"const": 1},
+            "output_contract": {
+              "type": "object",
+              "required": ["name", "schema_version", "schema_path", "tables", "summary", "figures_optional"],
+              "properties": {
+                "name": {"const": "network-inference-output-v1"},
+                "schema_version": {"const": 1},
+                "schema_path": {"const": "metadata/network_inference_output.schema.json"},
+                "tables": {
+                  "type": "object",
+                  "required": ["hypothesis_tests", "matrix_correlations", "mrqap_coefficients", "sensitivity_scan"],
+                  "properties": {
+                    "hypothesis_tests": {"const": "hypothesis_tests.csv"},
+                    "matrix_correlations": {"const": "matrix_correlations.csv"},
+                    "mrqap_coefficients": {"const": "mrqap_coefficients.csv"},
+                    "sensitivity_scan": {"const": "sensitivity_scan.csv"}
+                  },
+                  "additionalProperties": false
+                },
+                "summary": {"const": "analysis_summary.md"},
+                "figures_optional": {"const": true}
+              }
+            },
+            "schema_path": {"const": "metadata/network_inference_output.schema.json"},
+            "table_order": {"const": ["hypothesis_tests", "matrix_correlations", "mrqap_coefficients", "sensitivity_scan"]},
+            "table_counts": {
+              "type": "object",
+              "required": ["hypothesis_tests", "matrix_correlations", "mrqap_coefficients", "sensitivity_scan"],
+              "properties": {
+                "hypothesis_tests": {"type": "integer", "minimum": 0},
+                "matrix_correlations": {"type": "integer", "minimum": 0},
+                "mrqap_coefficients": {"type": "integer", "minimum": 0},
+                "sensitivity_scan": {"type": "integer", "minimum": 0}
+              }
+            },
+            "table_columns": {
+              "type": "object",
+              "required": ["hypothesis_tests", "matrix_correlations", "mrqap_coefficients", "sensitivity_scan"],
+              "additionalProperties": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+            },
+            "analysis_config": {"type": "object"},
+            "fixed_warnings": {"type": "array", "items": {"type": "string"}, "minItems": 5},
+            "upstream_manifests": {"type": "array", "items": {"type": "object"}}
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "minItems": 6,
+          "items": {"$ref": "model_run_manifest.schema.json#/$defs/fileRecord"}
+        }
+      }
+    }
+  ],
+  "x-csv-contract": {
+    "encoding": "utf-8-sig",
+    "files": ["hypothesis_tests.csv", "matrix_correlations.csv", "mrqap_coefficients.csv", "sensitivity_scan.csv"],
+    "required_columns": ["analysis_id", "result_id", "region", "round", "round_label", "pair_category", "feature_id", "feature_label_zh", "feature_label_en", "metric", "method", "effect_size", "n_pairs", "p_value", "q_value", "adjustment_method", "permutations", "random_seed", "missing_policy", "data_scope", "source_path", "status"],
+    "not_estimable": "effect_size/p_value/q_value are blank, status=not_estimable; source_status records the upstream reason",
+    "uncorrected": "q_value is blank and adjustment_method=not_applied",
+    "no_missing_pair_zero_fill": true
+  }
+}

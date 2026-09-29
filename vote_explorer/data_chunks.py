@@ -21,9 +21,27 @@ PART_RE = re.compile(r"\.part-(\d+)$")
 
 
 def part_paths(path: Path) -> list[Path]:
-    """返回逻辑文件对应的实际文件列表，并检查分卷编号是否连续。"""
+    """Return the manifest-listed partitions, or contiguous legacy parts.
+
+    A manifest is authoritative when present.  This permits a rebuild to use
+    a new partition naming set while an older locked ``.part-001`` file is
+    still present on Windows; the stale file must never be silently merged
+    with the current data.
+    """
     if path.is_file():
         return [path]
+    manifest = part_manifest_path(path)
+    if manifest.is_file():
+        try:
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            listed = payload.get("parts", []) if isinstance(payload, dict) else []
+            names = [item if isinstance(item, str) else item.get("name") for item in listed]
+            names = [name for name in names if name]
+            manifest_paths = [path.parent / name for name in names]
+            if manifest_paths and all(item.is_file() for item in manifest_paths):
+                return manifest_paths
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            pass
     candidates: list[tuple[int, Path]] = []
     for item in path.parent.glob(path.name + ".part-*"):
         match = PART_RE.search(item.name)

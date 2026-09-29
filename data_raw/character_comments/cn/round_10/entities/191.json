@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "191",
+  "entity_name": "幽灵",
+  "rank": 191,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "e63d56ffa3ccf307150e5e3bebbe7f82890d0d32295ffb9ab2d06d45cf6909e1",
+    "bytes": 87,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:30+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 191
+      }
+    }
+  },
+  "comment_count": 2,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "191",
+      "entity_name": "幽灵",
+      "rank": 191,
+      "comment_index": 1,
+      "text": "夏天用制冷设备（迫真",
+      "raw_text": "夏天用制冷设备（迫真",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "e63d56ffa3ccf307150e5e3bebbe7f82890d0d32295ffb9ab2d06d45cf6909e1",
+      "source_bytes": 87,
+      "retrieved_at": "2026-09-28T18:04:30+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "191",
+      "entity_name": "幽灵",
+      "rank": 191,
+      "comment_index": 2,
+      "text": "无",
+      "raw_text": "无",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "e63d56ffa3ccf307150e5e3bebbe7f82890d0d32295ffb9ab2d06d45cf6909e1",
+      "source_bytes": 87,
+      "retrieved_at": "2026-09-28T18:04:30+00:00"
+    }
+  ],
+  "error": null
+}

@@ -9,6 +9,8 @@
 - `analysis_cp_metrics_all.csv`：CN2–11 已发布的官方 CP/组合排行。
 - `analysis_vote_combinations_all.csv`：跨届组合比较表；官方 CP 缺失时使用同投人数替代，并在 `data_source` 标记。
 - `analysis_music_metrics_all.csv`：曲子投票指标与三种同人曲数量口径；CN2–11 和 JP3–22 使用各自投票窗口，CN1/JP3 的届间口径为空。
+- `analysis_covote_pairs_all.csv`：角色×角色与曲子×曲子同投长表。CN10/11 的两类矩阵均为完整四格矩阵；JP11–22 仅为官网公开的关联前列，未出现的配对未知，不补 0。`canonical_pair_key` 是按 canonical 端点排序的稳定无序键。
+- `analysis_character_pair_structure_features_all.csv`：按地区/届次从当前角色同投节点集生成的角色对结构特征；每个 `same_*` / `shared_*` 只有在两端该属性都已确认时才为 `true` 或 `false`，否则为 `unknown`，不会把缺失当成 `false`。
 - `analysis_character_music_links_all.csv`：角色—原曲打标关系及对应的投票/同人曲指标，用于角色×音乐交叉。
 - `analysis_character_music_covote_all.csv`：官方公开的角色—曲子条件同投记录；未公开的届次不补 0。
 - `analysis_questionnaire_all.csv`：总体问卷比例；题目和选项按地区/届次保留来源差异。
@@ -27,9 +29,8 @@
 ## 大文件分卷
 
 `cn_advanced_questionnaire.csv`、`cn_legacy_advanced_questionnaire.csv` 和
-`analysis_covote_pairs_all.csv` 已按完整记录切为约 80 MB 一卷。每卷都保留表头，
-分卷清单为同名 `.parts.json`，包含原文件大小和 SHA-256。查询器启动时会自动按
-编号读取并合并，不需要手工改名或拼接。
+`analysis_covote_pairs_all.csv` 已按完整记录切为分卷。每卷都保留表头，
+同名 `.parts.json` 保存原文件大小、SHA-256 和实际分卷顺序；查询器按 manifest 自动读取，不假设固定卷数。
 
 ## 字段约定
 
@@ -45,9 +46,27 @@ CN 规则、可投票数量和加权方式在历届有变化；JP 旧版与现�
 
 共 33,533 行排行、94 行票数汇总。详细分组行数见 `manifest.json` 的 `row_counts_by_region_round_category`。
 
+## 同投来源、完整性与删失
+
+`analysis_covote_pairs_all.csv` 的同投指标字段统一为 raw count（`raw_count`/`intersection_count`）、双向 conditional rate、lift、`cosine`/`ochiai`、Jaccard、PMI/NPMI、φ。后八类依赖完整四格与共同总体，只在 `metric_status=exact_complete_2x2` 的 CN 行填充；JP 行的 `lift` 明确标为官网 conditional/overall rate ratio，不能与 CN 的 independence lift 混用。不可用字段为空，不表示 0；方向冲突时保留 `raw_count_a_to_b`/`raw_count_b_to_a` 并将公共派生值置空。
+
+
+## 角色对结构特征
+
+`analysis_character_pair_structure_features_all.csv` 只物化 `analysis_covote_pairs_all.csv` 中已观察到的 `pair_category=character` 配对，并按 `(region, round, canonical_pair_key)` 去重。`canonical_pair_key` 与同投表共用同一无序 canonical 端点键，显示名称和端点顺序不影响连接。
+
+每个结构属性同时保留 `a_<attribute>` / `b_<attribute>` 端点值，以及 `same_<attribute>` 比较结果；`region`、`community` 另有 `shared_*` 和 `common_*`。两端任一属性为空、unknown、未解析或冲突时，比较结果写 `unknown`；只有两端都已确认时才写 `true` 或 `false`。这一区分适用于结构字段本身为空的 `stage`、`boss_identity`，不能把它们解释为“并不相同”。
+
+## MRQAP 网络回归结果
+
+`scripts_pipeline/mrqap.py` 的 `analysis_results/network_inference/mrqap_coefficients.csv` 是可供报告或 UI 直接读取的逐地区/逐届系数表。`lift`、`cosine`、`phi` 各自运行连续 OLS；二值 `formed`（只有完整、显式的二值关系矩阵才能使用）标记为线性概率模型 `linear_probability`。`ordinary_p` 是普通 OLS 的参考 p 值，`qap_p` 是保留节点结构的 studentized-t QAP p 值，二者不能互换。
+
+MRQAP 只接受 `complete_matrix`/`complete_pair_matrix=True` 的完整无向矩阵；JP 关联前列、未列出的配对和完整/部分混合组不会被补 0 或混入。空白/`unknown` 结构字段保持缺失，缺失会通过节点级完整子矩阵处理；`same_stage` 当前没有已确认的生产数据时，相关模型应显示无完整案例，而不是产生 `same_stage=0` 的效果。每个结果目录同时有 `model_run_manifest.json`，记录输入输出哈希、节点集合、模型规格、置换次数、随机种子、置换方案、完整性检查和排除原因。
+
+
 ## 生成与空值
 
-本目录由 `scripts_pipeline/build_vote_explorer_analysis_data.py` 生成，属于应用随附数据，不应手工编辑。缺失值统一留空而不是写成 0：例如首届没有“上一届结束—本届结束”的同人曲增量，或某地区/届次没有官方问卷题目时，工作台会在注释中说明原因。问卷关联工作台另有“最少实体投票人数”阈值，按 `selection_count` 过滤低票角色/曲子，默认不筛选。
+本目录由 `scripts_pipeline/build_vote_explorer_analysis_data.py` 生成，属于应用随附数据，不应手工编辑。一般缺失值统一留空而不是写成 0：例如首届没有“上一届结束—本届结束”的同人曲增量，或某地区/届次没有官方问卷题目时，工作台会在注释中说明原因。问卷关联工作台另有“最少实体投票人数”阈值，按 `selection_count` 过滤低票角色/曲子，默认不筛选。
 
 ## 来源与复现
 

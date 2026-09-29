@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "231",
+  "entity_name": "袈裟罗婆娑罗",
+  "rank": 231,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "82772caf53e544cd2f3d1f698f60761ca6788c60a14945fd5d8bbb1059782f38",
+    "bytes": 49,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:36+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 231
+      }
+    }
+  },
+  "comment_count": 0,
+  "comments": [],
+  "error": null
+}

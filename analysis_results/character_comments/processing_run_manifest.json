@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-29T16:12:04+00:00",
+  "input": {
+    "path": "metadata/character_comments_manifest.json",
+    "sha256": "d4e868faf46c3356a31b12231ba976443a36d9cf1267c949403f3ab02cde7697",
+    "records": 5420
+  },
+  "outputs": {
+    "comments": {
+      "path": "data_processed/character_comments/comments.csv.gz",
+      "sha256": "8852b0452232947da4a49118fcac7c343dbc450ed564928cda168852bfb45a83",
+      "bytes": 117122295
+    },
+    "entity_summary": {
+      "path": "data_processed/character_comments/entity_summary.csv",
+      "sha256": "2fb4235a46a0746dde464992d083849326081554dedbc4a8823e8b3bef34fe67",
+      "bytes": 1390263
+    },
+    "round_summary": {
+      "path": "data_processed/character_comments/round_summary.csv",
+      "sha256": "02ca20b77317dd1648d34351596077e8a6081b40d1f5964afcda156e4ad23127",
+      "bytes": 1562
+    }
+  },
+  "counts": {
+    "entities": 5420,
+    "comments_raw": 1220817,
+    "comments_nonempty": 1220598,
+    "comments_unique": 1122351,
+    "exact_duplicates": 98247,
+    "blank_comments": 219
+  },
+  "input_error_count": 0
+}

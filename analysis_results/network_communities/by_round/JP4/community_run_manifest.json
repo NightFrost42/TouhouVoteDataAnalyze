@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "manifest_type": "network_statistical_analysis",
+  "analysis": {
+    "name": "standard_community_detection",
+    "version": "1.0.0"
+  },
+  "generated_at_utc": "2026-09-28T20:09:01Z",
+  "code": {
+    "git_commit": "unknown",
+    "git_describe": "unknown",
+    "git_dirty": null,
+    "python_version": "3.14.7",
+    "version": "1.0.0",
+    "script": "scripts_pipeline/network_communities.py"
+  },
+  "parameters": {
+    "round_label": "JP4",
+    "scope": "character",
+    "algorithm": "louvain",
+    "algorithm_version": "1.0.0",
+    "weight_metric": "intersection_count",
+    "threshold": 100.0,
+    "min_intersection_count": 0.0,
+    "resolution": 1.0,
+    "random_seed": 20260801,
+    "data_policy": "observed",
+    "max_levels": 100,
+    "max_passes": 100,
+    "include_isolated_nodes": true,
+    "community_id_scheme": "sha256([round_label + ':' + scope, sorted_member_node_ids])[0:16]",
+    "bridge_score_definition": "cross-community incident weight / weighted degree",
+    "nmi_definition": "arithmetic 2I/(H_community+H_connected_component)",
+    "software_version": "1.0.0",
+    "benchmark": {
+      "runtime_seconds": 0.0840918000030797,
+      "load_seconds": 0.07753710000542924,
+      "algorithm_seconds": 0.006554699997650459,
+      "peak_memory_bytes": 227701
+    },
+    "official_faction_source": "not_used",
+    "official_faction_note": "community labels are structural network results; they are not official factions and do not replace original-setting faction metadata"
+  },
+  "statistical_test": {
+    "method": "louvain_seeded_local_move",
+    "random_seed": 20260801,
+    "permutations": 0,
+    "tail": "two-sided"
+  },
+  "node_set": {
+    "entity_type": "character",
+    "source": "vote_explorer/data/analysis_character_metrics_all.csv",
+    "selection_rule": "round_label and scope node universe; isolates retained",
+    "ids": [
+      "上海人偶",
+      "上白泽慧音",
+      "伊吹萃香",
+      "八云紫",
+      "八云蓝",
+      "八意永琳",
+      "冈崎梦美",
+      "北白河千百合",
+      "十六夜咲夜",
+      "博丽灵梦",
+      "卡娜安娜贝拉尔",
+      "四季映姬夜摩仙那度",
+      "因幡帝",
+      "大妖精",
+      "大蛤蟆",
+      "奥莲姬",
+      "宇佐见莲子2",
+      "射命丸文",
+      "小兔姬",
+      "小恶魔",
+      "小野塚小町",
+      "帕秋莉诺蕾姬",
+      "幻月",
+      "斯塔萨菲雅",
+      "无名的读书妖怪（朱鹭子）",
+      "旧作的一种杂鱼译名未定",
+      "明罗",
+      "朝仓理香子",
+      "杂鱼妖精",
+      "桑尼米尔克",
+      "梅蒂欣梅兰可莉",
+      "梅露兰普莉兹姆利巴",
+      "梦子",
+      "梦月",
+      "森近霖之助",
+      "橙",
+      "毛玉",
+      "爱丽丝玛格特洛依德",
+      "爱莲",
+      "玄爷",
+      "玛艾露贝莉赫恩3",
+      "琪露诺",
+      "留琴",
+      "神绮",
+      "米斯蒂娅萝蕾拉",
+      "红美铃",
+      "胡桃",
+      "舞",
+      "艾丽",
+      "芙兰朵露斯卡蕾特",
+      "莉格露奈特巴格",
+      "莉莉卡普莉兹姆利巴",
+      "莉莉霍瓦特",
+      "萨丽爱尔",
+      "蓬莱山辉夜",
+      "蕾拉普莉兹姆利巴",
+      "蕾米莉亚斯卡蕾特",
+      "蕾蒂霍瓦特洛克",
+      "藤原妹红",
+      "西行寺幽幽子",
+      "里香",
+      "铃仙优昙华院因幡",
+      "雾雨魔理沙",
+      "露娜切露德",
+      "露娜萨普莉兹姆利巴",
+      "露易兹",
+      "露米娅",
+      "风见幽香",
+      "魂魄妖忌",
+      "魂魄妖梦",
+      "魅魔"
+    ],
+    "count": 71,
+    "ids_sha256": "eee605b8259061c080efbd04184bc494db50803b2f82865c197275a8c48257b1"
+  },
+  "pair_inclusion": {
+    "rule": "intersection_count >= 100.0",
+    "directed": false,
+    "self_pairs": false,
+    "deduplication": "canonical_unordered_first_observation",
+    "missing_pair_policy": "exclude_unpublished_or_invalid_rows_and_report",
+    "included_pairs": 0,
+    "excluded_pairs": 0,
+    "threshold": 100.0,
+    "minimum_intersection_count": 0.0
+  },
+  "data_integrity": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "positive_finite_included_weights",
+        "ok": true
+      },
+      {
+        "name": "isolated_nodes_retained",
+        "ok": true
+      },
+      {
+        "name": "official_faction_metadata_not_used",
+        "ok": true
+      }
+    ],
+    "coverage": {
+      "round_label": "JP4",
+      "scope": "character",
+      "data_policy": "observed"
+    },
+    "missing": {
+      "excluded_pair_reasons": {}
+    },
+    "duplicate_count": 0,
+    "invalid_count": 0,
+    "warnings": []
+  },
+  "inputs": [
+    {
+      "path": "vote_explorer/data/analysis_character_metrics_all.csv",
+      "sha256": "dbce92a4afc4065099860e137c3544a123db8e1b83b9fcb3aba3d7a43cc486d8",
+      "size_bytes": 1178795,
+      "role": "network_input"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "analysis_results/network_communities/by_round/JP4/community_assignments.csv",
+      "sha256": "8912a819ec33b993ac4751c43959076b2c92b7fe20c9c2396b1f8e3dfc2b6fd0",
+      "size_bytes": 25518,
+      "role": "community_output"
+    },
+    {
+      "path": "analysis_results/network_communities/by_round/JP4/community_summary.csv",
+      "sha256": "a6695c9abe81b50dba8c501031ee0a864d86b027b052fd9652865aaaf707f726",
+      "size_bytes": 18089,
+      "role": "community_output"
+    },
+    {
+      "path": "analysis_results/network_communities/by_round/JP4/modularity_summary.csv",
+      "sha256": "f9b575012801c3d315b0de0631e7ed9aca5a57aad1e4313b6ff6178030e3b77b",
+      "size_bytes": 695,
+      "role": "community_output"
+    },
+    {
+      "path": "analysis_results/network_communities/by_round/JP4/node_centrality.csv",
+      "sha256": "7473d52661bb4111e34f7c8b385ed73220b822da0a923f8395b2a849dea820bd",
+      "size_bytes": 24975,
+      "role": "community_output"
+    }
+  ],
+  "community_contract": {
+    "labels_are_not_official_factions": true,
+    "existing_single_link_components_are_unchanged": true,
+    "connected_component_reference": "thresholded observed graph",
+    "output_files": {
+      "community_assignments": "analysis_results/network_communities/by_round/JP4/community_assignments.csv",
+      "community_summary": "analysis_results/network_communities/by_round/JP4/community_summary.csv",
+      "node_centrality": "analysis_results/network_communities/by_round/JP4/node_centrality.csv",
+      "modularity_summary": "analysis_results/network_communities/by_round/JP4/modularity_summary.csv"
+    },
+    "benchmark": {
+      "runtime_seconds": 0.0840918000030797,
+      "load_seconds": 0.07753710000542924,
+      "algorithm_seconds": 0.006554699997650459,
+      "peak_memory_bytes": 227701
+    }
+  }
+}

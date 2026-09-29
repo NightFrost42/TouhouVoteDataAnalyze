@@ -97,6 +97,18 @@ def read_numeric_csv(path: Path, numeric_fields: set[str]) -> list[dict]:
     return rows
 
 
+def read_research_csv(path: Path, numeric_fields: set[str] | None = None) -> list[dict]:
+    """Read an optional offline research result without making it required.
+
+    Research outputs are generated outside the normal vote-explorer data
+    bundle.  Keeping this reader permissive lets the desktop app run with an
+    older bundle while preserving blank cells from the statistical contract.
+    """
+    if not path.exists():
+        return []
+    return read_numeric_csv(path, numeric_fields or set())
+
+
 CHARACTER_FIELDS = {
     "round", "rank", "equal_rank", "old_2_1_rank", "points", "old_2_1_points",
     "primary_count", "secondary_count", "other_count", "selection_count", "ballots",
@@ -114,9 +126,10 @@ MUSIC_FIELDS = {
 }
 
 COVOTE_FIELDS = {
-    "round", "rank_a", "rank_b", "count_a", "count_b", "ballots", "intersection_count",
-    "direction_a_to_b", "direction_b_to_a", "share", "baseline_count", "lift",
-    "excess_count", "phi", "asymmetry", "anomaly_difference", "directions_found",
+    "round", "rank_a", "rank_b", "count_a", "count_b", "ballots", "intersection_count", "raw_count",
+    "raw_count_a_to_b", "raw_count_b_to_a", "m00_both_selected", "m01_b_only", "m10_a_only", "m11_neither_selected",
+    "conditional_rate", "conditional_rate_a_to_b", "conditional_rate_b_to_a", "direction_a_to_b", "direction_b_to_a", "share", "baseline_count", "lift", "lift_a_to_b", "lift_b_to_a",
+    "excess_count", "cosine", "cosine_ochiai", "ochiai", "jaccard", "pmi", "pmi_nats", "npmi", "phi", "asymmetry", "anomaly_difference", "directions_found",
 }
 CP_FIELDS = {
     "round", "member_count", "rank", "vote_count", "first_choice_count", "points", "vote_rate", "ballots"
@@ -134,8 +147,8 @@ LINK_FIELDS = {
 } | {f"{prefix}_{field}" for prefix, fields in (("character", CHARACTER_FIELDS), ("music", MUSIC_FIELDS)) for field in fields if field not in {"round"}}
 CROSSVOTE_FIELDS = {
     "round", "character_rank", "character_selection_count", "character_ballots", "music_rank",
-    "music_selection_count", "music_ballots", "intersection_count", "conditional_denominator", "conditional_rate",
-    "music_overall_rate", "lift",
+    "music_selection_count", "music_ballots", "intersection_count", "raw_count", "conditional_denominator", "conditional_rate",
+    "conditional_rate_a_to_b", "music_overall_rate", "lift", "cosine", "cosine_ochiai", "ochiai", "jaccard", "pmi", "pmi_nats", "npmi", "phi",
 }
 
 METRIC_LABELS = {
@@ -145,12 +158,18 @@ METRIC_LABELS = {
     "secondary_rate": "第二顺位率", "top2_rate": "前两顺位集中率", "selection_rate": "选择率",
     "male_rate": "男性比例", "female_rate": "女性比例", "under20_rate": "20岁以下比例",
     "intersection_count": "共同投票人数", "share": "同投占总盘比例", "lift": "同投集中倍数",
+    "raw_count": "官方公开交集人数", "raw_count_a_to_b": "A→B官方交集人数", "raw_count_b_to_a": "B→A官方交集人数",
+    "m00_both_selected": "双方均选择", "m01_b_only": "仅B选择", "m10_a_only": "仅A选择", "m11_neither_selected": "双方均未选择",
+    "conditional_rate": "官方条件同投率", "conditional_rate_a_to_b": "A→B官方条件率", "conditional_rate_b_to_a": "B→A官方条件率",
+    "lift_a_to_b": "A→B官方集中倍数", "lift_b_to_a": "B→A官方集中倍数", "cosine": "余弦相似度", "ochiai": "Ochiai相似度", "jaccard": "Jaccard相似度", "pmi": "PMI", "pmi_nats": "PMI（自然对数）", "npmi": "NPMI",
     "excess_count": "比人气基准多出人数", "phi": "综合重合分数 φ", "asymmetry": "方向同投率差",
     "old_2_1_points": "2/1规则分数", "other_gender_rate": "其他性别比例",
     "comment_count": "评论数", "arrangement_count": "届间新增同人曲数",
     "arrangement_cumulative_count": "截至投票结束累计同人曲数", "undated_arrangement_count": "未标日期同人曲数",
     "arrangement_total_count": "同人曲累计总数（抓取时点）", "question_rate": "所选问卷选项比例",
     "difference_points": "相对全体差值（百分点）", "correlation": "皮尔逊相关系数",
+    "metric_status": "指标可用性", "data_completeness": "数据完整性", "censoring_status": "截尾状态",
+    "complete_pair_matrix": "完整2×2", "lift_basis": "lift口径", "source_type": "数据来源",
     "associated_music_count": "关联曲数量", "associated_character_count": "所属角色数量",
     "associated_music_avg": "关联曲平均指标", "associated_character_avg": "所属角色平均指标",
     "conditional_rate": "角色条件下同投率", "music_overall_rate": "曲子总体选择率",
@@ -327,6 +346,14 @@ class TemplateSpec:
 # grouped/stacked chart.
 def template_chart_types(spec: TemplateSpec) -> tuple[str, ...]:
     key = spec.key
+    if key == "a23_threshold_sensitivity":
+        return ("auto", "line", "table")
+    if key == "a25_node_centrality":
+        return ("auto", "bar", "network", "table")
+    if key == "a19_network_metric_compare":
+        return ("auto", "grouped", "bar", "table")
+    if key in {"a20_hypothesis_effects", "a21_matrix_correlation", "a22_mrqap_coefficients", "a24_community_summary"}:
+        return ("auto", "bar", "table")
     if key in {"c00_round_compare", "m02_round_compare", "a04_count_dumbbell", "a10_direction",
                "q01_age", "q02_cognition", "q03_usertype", "q04_new", "q_custom", "p02_combination_compare"}:
         return ("auto", "dumbbell", "table")
@@ -400,7 +427,7 @@ TEMPLATES = [
     TemplateSpec("r10_music_question_matrix", "曲子问卷关联", "曲子 × 问卷选项矩阵", "entity_question_matrix", "heatmap", "每行是一首曲子，每列是年龄、入坑时间等所选问题的一个选项；颜色表示该曲听众中的比例。"),
     TemplateSpec("a01_direction_matrix", "同投", "TOP角色方向同投率矩阵", "covote_matrix_rate", "heatmap", "每一行以该角色选择人数为分母。"),
     TemplateSpec("a01_count_matrix", "同投", "TOP角色共同人数矩阵", "covote_matrix_count", "heatmap", "矩阵展示两名角色的共同投票人数。"),
-    TemplateSpec("a02_network", "同投", "团体/阵营关联网络", "covote_network", "network", "节点为角色，边宽按同投人数。搜索可限制阵营角色。"),
+    TemplateSpec("a02_network", "同投", "角色同投网络", "covote_network", "network", "节点为角色，边宽按共同投票人数；颜色和虚线分别表达归一化指标与数据完整性。搜索可限制原作阵营。"),
     TemplateSpec("a17_concentration_clusters", "同投", "跨部门同投集中聚类", "concentration_clusters", "network", "仅对角色×曲子跨类别同投关系按集中倍数聚类；当前覆盖 CN10–11 与 JP17–22。"),
     TemplateSpec("a18_music_concentration_clusters", "同投", "音乐内部同投集中聚类", "concentration_clusters", "network", "对同一音乐部门内的曲子×曲子关系聚类；当前完整矩阵覆盖 CN10–11。"),
     TemplateSpec("a03_bubble", "同投", "共同人数 × 集中倍数气泡图", "covote_bubble", "bubble", "横轴共同人数使用对数尺度，纵轴为集中倍数，气泡大小表示正向 φ。"),
@@ -419,6 +446,16 @@ TEMPLATES = [
     TemplateSpec("a14_count_top10", "同投", "同投人数 TOP10", "covote_metric", "bar", "文章末尾摘要榜，可由Top N配置改变。"),
     TemplateSpec("a15_lift_top10", "同投", "集中倍数 TOP10", "covote_metric", "bar", "默认要求共同人数达到阈值。"),
     TemplateSpec("a16_anomalies", "同投", "官方异常数据", "covote_anomaly", "bar", "双向公布的共同人数不一致；TOP100应为38组。"),
+    # Research templates consume audited offline network/statistical outputs.
+    # They live in their own group so exploratory rankings cannot be confused
+    # with inferential or structural network results.
+    TemplateSpec("a19_network_metric_compare", "研究网络分析", "网络指标对照", "network_metric_compare", "bar", "比较同一网络假设在不同指标下的效应量；这是统计结果，不是排名。"),
+    TemplateSpec("a20_hypothesis_effects", "研究网络分析", "假设效应量", "hypothesis_effects", "bar", "展示离线假设检验的效应量、置信区间和调整后显著性。"),
+    TemplateSpec("a21_matrix_correlation", "研究网络分析", "矩阵相关", "matrix_correlation", "bar", "比较网络指标矩阵的相关系数；空白表示该届没有可对齐的矩阵。"),
+    TemplateSpec("a22_mrqap_coefficients", "研究网络分析", "MRQAP 系数", "mrqap_coefficients", "bar", "展示 MRQAP 回归系数及 QAP p 值；不可估计的模型保留空白。"),
+    TemplateSpec("a23_threshold_sensitivity", "研究网络分析", "阈值敏感性", "threshold_sensitivity", "line", "观察阈值改变时假设效应量的变化；这是敏感性分析，不是稳定排名。"),
+    TemplateSpec("a24_community_summary", "研究网络分析", "社区摘要", "community_summary", "bar", "展示网络社区的规模、边数和结构权重；社区标签不是官方阵营。"),
+    TemplateSpec("a25_node_centrality", "研究网络分析", "节点中心性", "node_centrality", "bar", "展示网络节点中心性指标；中心性不是投票排名，也不替代官方名次。"),
     TemplateSpec("p01_cp_metric", "CP投票", "CP投票结果排行", "cp_metric", "bar", "官方CP/组合投票结果；展示官方名次、投票人数或比例。"),
     TemplateSpec("p02_combination_compare", "CP投票", "所有组合跨届对比", "combination_compare", "dumbbell", "有官方CP时使用CP投票；没有CP项目时自动使用同投，并在结果表标明来源。"),
     TemplateSpec("q01_age", "问卷", "年龄结构比例哑铃图", "questionnaire_age", "dumbbell", "按文章口径合并年龄段，以两个点比较任意两届比例。"),
@@ -436,6 +473,15 @@ TEMPLATE_BY_KEY = {item.key: item for item in TEMPLATES}
 class AnalysisRepository:
     def __init__(self, data_dir: Path = DATA_DIR):
         self.data_dir = data_dir
+        # Source runs keep offline research results beside the repository;
+        # packaged builds may instead place them beside the external data
+        # folder.  Choose the first populated location and tolerate absence.
+        research_candidates = [
+            data_dir.parent.parent / "analysis_results",
+            data_dir.parent / "analysis_results",
+            data_dir / "analysis_results",
+        ]
+        self.research_dir = next((path for path in research_candidates if path.is_dir()), research_candidates[0])
         character_path = data_dir / "analysis_character_metrics_all.csv"
         music_path = data_dir / "analysis_music_metrics_all.csv"
         pair_path = data_dir / "analysis_covote_pairs_all.csv"
@@ -498,6 +544,7 @@ class AnalysisRepository:
         )
         self.links = read_numeric_csv(link_path, LINK_FIELDS) if link_path.exists() else []
         self.character_music_covote = read_numeric_csv(character_music_covote_path, CROSSVOTE_FIELDS) if character_music_covote_path.exists() else []
+        self._load_research_outputs()
         self.character_by_round = defaultdict(list)
         self.music_by_round = defaultdict(list)
         self.pairs_by_round = defaultdict(list)
@@ -552,6 +599,75 @@ class AnalysisRepository:
             label = normalize_round_label(row.get("round_label") or row.get("round"))
             row["round_label"] = label
             self.entity_questionnaire_by_round_category[(label, row.get("category", ""))].append(row)
+
+    def _load_research_outputs(self) -> None:
+        """Load optional network inference/community snapshots.
+
+        The unified files carry the display contract used by the workbench.
+        Empty unified files (notably a sensitivity table for an unavailable
+        run) fall back to the original output when it has rows.
+        """
+        inference = self.research_dir / "network_inference"
+        unified = inference / "unified"
+
+        def load(name: str, numeric: set[str]) -> list[dict]:
+            merged = read_research_csv(unified / name, numeric)
+            if merged:
+                return merged
+            return read_research_csv(inference / name, numeric)
+
+        self.research_hypothesis = load("hypothesis_tests.csv", {
+            "effect_size", "n_pairs", "n_nodes", "p_value", "q_value", "permutations", "valid_permutations",
+            "observation_n", "control_n", "observation_median", "control_median", "u_statistic", "cliffs_delta",
+            "ci_low", "ci_high", "raw_p", "adjusted_p",
+        })
+        self.research_matrix = load("matrix_correlations.csv", {
+            "effect_size", "n_pairs", "n_nodes", "p_value", "q_value", "permutations", "valid_permutations",
+            "node_count", "pair_count", "observed_correlation", "permutation_p",
+        })
+        self.research_mrqap = load("mrqap_coefficients.csv", {
+            "effect_size", "n_pairs", "n_nodes", "p_value", "q_value", "permutations", "valid_permutations",
+            "coefficient", "ordinary_se", "ordinary_t", "ordinary_p", "qap_p", "permutations_used",
+            "permutation_seed", "r_squared", "complete_case_n", "n_pairs_total",
+        })
+        self.research_sensitivity = load("sensitivity_scan.csv", {
+            "threshold", "effect_size", "observation_n", "control_n", "raw_p", "adjusted_p", "pair_coverage",
+            "eligible_pair_n", "effective_pair_n", "valid_permutations",
+        })
+        self.research_coverage = read_research_csv(self.research_dir / "network_coverage.csv", {
+            "observed_pair_rows", "complete_pair_rows", "matrix_source_pair_rows", "matrix_source_complete_pair_rows", "result_rows",
+        })
+        self.research_coverage_by_key = {
+            (str(row.get("analysis", "")), self.research_round(row)): row for row in self.research_coverage
+        }
+
+        community_root = self.research_dir / "network_communities" / "by_round"
+        self.research_community_summary: list[dict] = []
+        self.research_node_centrality: list[dict] = []
+        if community_root.is_dir():
+            for round_dir in sorted((p for p in community_root.iterdir() if p.is_dir()), key=lambda p: round_sort_key(p.name)):
+                for scope_dir in [round_dir, *sorted((p for p in round_dir.iterdir() if p.is_dir()), key=lambda p: p.name)]:
+                    summary = scope_dir / "community_summary.csv"
+                    centrality = scope_dir / "node_centrality.csv"
+                    for row in read_research_csv(summary, {"community_rank", "node_count", "edge_count", "internal_weight", "total_weighted_degree", "modularity_contribution", "threshold", "min_intersection_count", "resolution", "random_seed"}):
+                        row.setdefault("round_label", round_dir.name)
+                        row.setdefault("scope", scope_dir.name if scope_dir != round_dir else "character")
+                        self.research_community_summary.append(row)
+                    for row in read_research_csv(centrality, {"weighted_degree", "unweighted_degree", "pagerank", "betweenness", "k_core", "bridge_score", "community_rank", "community_size", "threshold", "min_intersection_count", "resolution", "random_seed"}):
+                        row.setdefault("round_label", round_dir.name)
+                        row.setdefault("scope", scope_dir.name if scope_dir != round_dir else "character")
+                        self.research_node_centrality.append(row)
+
+    @staticmethod
+    def research_round(row: dict) -> str:
+        label = normalize_round_label(row.get("round_label"), "")
+        if label:
+            return label
+        raw = str(row.get("round", "")).strip()
+        if re.fullmatch(r"(?:CN|JP)\d+", raw.upper()):
+            return raw.upper()
+        region = str(row.get("region", "")).strip().upper()
+        return f"{region}{raw}" if region in {"CN", "JP"} and raw else raw.upper()
 
     def name(self, row: dict, config: dict, pair_side: str = "") -> str:
         suffix = f"_{pair_side}" if pair_side else ""
@@ -794,6 +910,11 @@ class AnalysisRepository:
         faction = self._selected_faction(config)
         rows = []
         for row in self.pairs_by_round[rnd]:
+            pair_category = str(row.get("pair_category") or "").strip()
+            if pair_category and pair_category != "character":
+                continue
+            if not pair_category and row.get("source_type") == "cn10_11_official_music_covote_matrix":
+                continue
             a_in = rank_start <= integer(row.get("rank_a"), 999999) <= rank_limit
             b_in = rank_start <= integer(row.get("rank_b"), 999999) <= rank_limit
             if (range_mode == "either" and not (a_in or b_in)) or (range_mode != "either" and not (a_in and b_in)):
@@ -862,20 +983,194 @@ class AnalysisRepository:
             chart["note"] = (chart.get("note", "") + f" 原作阵营筛选：{selected_faction}；角色可同时属于多个原作群体。" ).strip()
         if not chart.get("table_rows"):
             chart["note"] = (chart.get("note", "") + f" 当前选择的 {current} 没有这一指标的可用公开数据。请更换届次或指标。").strip()
+        if spec.group == "研究网络分析":
+            metadata = chart.setdefault("research_metadata", {})
+            chart.setdefault("data_source", metadata.get("source", "离线研究结果"))
+            chart.setdefault("valid_pair_count", metadata.get("valid_pair_count"))
+            chart.setdefault("completeness_status", metadata.get("completeness", ""))
+            chart.setdefault("metric", metadata.get("metric", ""))
+            chart.setdefault("statistical_warnings", metadata.get("warnings", []))
+            source_text = chart.get("data_source") or "离线研究结果未找到"
+            pair_text = chart.get("valid_pair_count")
+            pair_text = "未知" if pair_text in (None, "") else f"{number(pair_text):,.0f}"
+            completeness = chart.get("completeness_status") or "未报告"
+            metric = chart.get("metric") or "未报告"
+            warnings = chart.get("statistical_warnings") or []
+            metadata_note = f"数据来源：{source_text}；有效配对数：{pair_text}；完整性：{completeness}；指标：{metric}。"
+            if warnings:
+                metadata_note += " 统计警告：" + "；".join(str(item) for item in warnings[:3]) + "。"
+            chart["note"] = (chart.get("note", "") + " " + metadata_note).strip()
         chart["interpretation"] = self.interpret_chart(spec, chart, config)
         chart["template"] = spec.key
+        return chart
+
+    def _research_rows(self, rows: list[dict], config: dict) -> list[dict]:
+        current = normalize_round_label(config.get("current_round", "JP22"))
+        return [row for row in rows if self.research_round(row) == current]
+
+    @staticmethod
+    def _research_metadata(rows: list[dict], source: str, metric: str = "", extra_warnings: list[str] | None = None) -> dict:
+        rows = rows or []
+        pair_values = []
+        for row in rows:
+            for field in ("n_pairs", "pair_count", "n_pairs_total", "effective_pair_n", "complete_case_n"):
+                value = row.get(field)
+                if value not in (None, ""):
+                    pair_values.append(number(value))
+                    break
+        completeness_values = []
+        warnings: list[str] = list(extra_warnings or [])
+        for row in rows:
+            completeness = row.get("data_completeness") or row.get("data_scope") or row.get("source_status") or row.get("status")
+            if completeness and completeness not in completeness_values:
+                completeness_values.append(str(completeness))
+            for field in ("warning", "interpretation_note", "official_faction_note"):
+                value = str(row.get(field) or "").strip()
+                if value and value not in warnings:
+                    warnings.append(value)
+        valid_pair_count = max(pair_values) if pair_values else None
+        return {
+            "source": source,
+            "valid_pair_count": valid_pair_count,
+            "completeness": "；".join(completeness_values) if completeness_values else "",
+            "metric": metric,
+            "warnings": warnings,
+        }
+
+    @staticmethod
+    def _research_round_reason(coverage: list[dict], analysis: str, current: str) -> str:
+        for row in coverage:
+            row_round = AnalysisRepository.research_round(row)
+            if row.get("analysis") == analysis and row_round == current:
+                return str(row.get("reason") or row.get("status") or "该届没有可用离线结果")
+        return "该届没有可用离线结果；空白不是0"
+
+    def _research_base_chart(self, rows: list[dict], config: dict, source: str, metric: str, analysis: str) -> dict:
+        current = normalize_round_label(config.get("current_round", "JP22"))
+        warnings: list[str] = []
+        missing_reason = ""
+        if not rows:
+            missing_reason = self._research_round_reason(self.research_coverage, analysis, current)
+            warnings.append(missing_reason)
+        chart = {
+            "research_metadata": self._research_metadata(rows, source, metric, warnings),
+            "data_source": source,
+            "metric": metric,
+            "table_rows": [],
+        }
+        if missing_reason:
+            chart["missing_reason"] = missing_reason
+            coverage_row = next((row for row in self.research_coverage if row.get("analysis") == analysis and self.research_round(row) == current), None)
+            if coverage_row:
+                chart["research_metadata"]["completeness"] = str(coverage_row.get("status") or coverage_row.get("source_scope") or "unavailable")
+        return chart
+
+    def build_network_metric_compare(self, spec, config):
+        rows = self._research_rows(self.research_hypothesis, config)
+        source = "analysis_results/network_inference/unified/hypothesis_tests.csv"
+        metric_rows = [row for row in rows if row.get("feature_label_zh") or row.get("feature_id")]
+        features = sorted({str(row.get("feature_label_zh") or row.get("feature_id")) for row in metric_rows})
+        metrics = sorted({str(row.get("metric") or "") for row in metric_rows if row.get("metric")})
+        by_feature_metric = {(str(row.get("feature_label_zh") or row.get("feature_id")), str(row.get("metric"))): row for row in metric_rows}
+        ranked = sorted(features, key=lambda label: max((abs(number(by_feature_metric.get((label, metric), {}).get("effect_size"))) for metric in metrics), default=0), reverse=True)
+        features = ranked[:integer(config.get("top_n", 20), 20)]
+        chart = self._research_base_chart(rows, config, source, "effect_size（Cliff's δ）", "hypothesis_tests")
+        chart.update({"chart_type": "grouped", "categories": features, "series": [{"name": metric, "values": [number(by_feature_metric.get((label, metric), {}).get("effect_size"), None) for label in features]} for metric in metrics], "value_format": "number"})
+        chart["table_headers"] = ["假设"] + metrics + ["有效配对数", "完整性", "统计警告"]
+        chart["table_rows"] = []
+        for label in features:
+            representative = next((by_feature_metric.get((label, metric), {}) for metric in metrics if by_feature_metric.get((label, metric))), {})
+            chart["table_rows"].append([label] + [by_feature_metric.get((label, metric), {}).get("effect_size", "") for metric in metrics] + [representative.get("n_pairs", ""), representative.get("data_scope", representative.get("data_status", "")), representative.get("warning", "")])
+        return chart
+
+    def build_hypothesis_effects(self, spec, config):
+        all_rows = self._research_rows(self.research_hypothesis, config)
+        rows = sorted(all_rows, key=lambda row: abs(number(row.get("effect_size"))), reverse=True)[:integer(config.get("top_n", 20), 20)]
+        source = "analysis_results/network_inference/unified/hypothesis_tests.csv"
+        chart = self._research_base_chart(all_rows, config, source, "effect_size（Cliff's δ）", "hypothesis_tests")
+        labels = [f"{row.get('feature_label_zh') or row.get('feature_id')} · {row.get('metric', '')}" for row in rows]
+        chart.update({"chart_type": "bar", "categories": labels, "series": [{"name": "效应量", "values": [number(row.get("effect_size"), None) for row in rows]}], "value_format": "number"})
+        chart["table_headers"] = ["假设·指标", "效应量", "置信区间", "p值", "q值", "有效配对数", "完整性", "统计警告"]
+        chart["table_rows"] = [[label, row.get("effect_size", ""), f"[{row.get('ci_low', '')}, {row.get('ci_high', '')}]" if row.get("ci_low") not in (None, "") else "", row.get("p_value", row.get("raw_p", "")), row.get("q_value", row.get("adjusted_p", "")), row.get("n_pairs", ""), row.get("data_scope", row.get("data_status", "")), row.get("warning", "")] for label, row in zip(labels, rows)]
+        return chart
+
+    def build_matrix_correlation(self, spec, config):
+        all_rows = self._research_rows(self.research_matrix, config)
+        rows = sorted(all_rows, key=lambda row: abs(number(row.get("observed_correlation"))), reverse=True)[:integer(config.get("top_n", 20), 20)]
+        source = "analysis_results/network_inference/unified/matrix_correlations.csv"
+        chart = self._research_base_chart(all_rows, config, source, "observed_correlation", "matrix_within_round")
+        labels = [f"{row.get('metric_a', '')} × {row.get('metric_b', '')} ({row.get('correlation_method', '')})" for row in rows]
+        chart.update({"chart_type": "bar", "categories": labels, "series": [{"name": "相关系数", "values": [number(row.get("observed_correlation"), None) for row in rows]}], "value_format": "number"})
+        chart["table_headers"] = ["矩阵指标", "相关系数", "置换p值", "有效配对数", "完整矩阵", "警告"]
+        chart["table_rows"] = [[label, row.get("observed_correlation", ""), row.get("permutation_p", ""), row.get("pair_count", row.get("n_pairs", "")), row.get("complete_pair_matrix", ""), row.get("warning", row.get("interpretation_note", ""))] for label, row in zip(labels, rows)]
+        return chart
+
+    def build_mrqap_coefficients(self, spec, config):
+        all_rows = self._research_rows(self.research_mrqap, config)
+        rows = sorted(all_rows, key=lambda row: (number(row.get("coefficient"), 0) == 0 and not row.get("coefficient"), -abs(number(row.get("coefficient")))),)[:integer(config.get("top_n", 20), 20)]
+        source = "analysis_results/network_inference/unified/mrqap_coefficients.csv"
+        chart = self._research_base_chart(all_rows, config, source, "MRQAP coefficient", "mrqap")
+        labels = [f"{row.get('predictor', '')} → {row.get('dependent_metric', '')} ({row.get('permutation_scheme', '')})" for row in rows]
+        chart.update({"chart_type": "bar", "categories": labels, "series": [{"name": "系数", "values": [number(row.get("coefficient"), None) if row.get("coefficient") not in (None, "") else None for row in rows]}], "value_format": "number"})
+        chart["table_headers"] = ["预测变量·因变量", "系数", "QAP p值", "完整案例数", "状态", "完整性", "统计警告"]
+        chart["table_rows"] = [[label, row.get("coefficient", ""), row.get("qap_p", ""), row.get("complete_case_n", ""), row.get("status", ""), row.get("data_scope", ""), row.get("warning", row.get("source_status", ""))] for label, row in zip(labels, rows)]
+        return chart
+
+    def build_threshold_sensitivity(self, spec, config):
+        rows = self._research_rows(self.research_sensitivity, config)
+        # The scan is a fixed design, so retain all thresholds; Top N applies
+        # to ranking-oriented templates and must not silently drop scenarios.
+        rows = [row for row in rows if str(row.get("adjustment_method", "")).lower() in {"", "bh"}]
+        source = "analysis_results/network_inference/sensitivity_scan.csv"
+        chart = self._research_base_chart(rows, config, source, "effect_size（敏感性扫描）", "sensitivity_scan")
+        scenarios = sorted({f"{row.get('threshold_type', '')}={row.get('threshold', '')}" for row in rows}, key=str)
+        metrics = sorted({str(row.get("metric")) for row in rows if row.get("metric")})
+        lookup = {(f"{row.get('threshold_type', '')}={row.get('threshold', '')}", str(row.get("metric"))): row for row in rows}
+        chart.update({"chart_type": "line", "categories": scenarios, "series": [{"name": metric, "values": [number(lookup.get((scenario, metric), {}).get("effect_size"), None) for scenario in scenarios]} for metric in metrics], "x_label": "阈值情景", "y_label": "效应量", "value_format": "number"})
+        chart["table_headers"] = ["阈值情景", "指标", "效应量", "调整后p值", "有效配对数", "完整性", "统计警告"]
+        chart["table_rows"] = [[f"{row.get('threshold_type', '')}={row.get('threshold', '')}", row.get("metric", ""), row.get("effect_size", ""), row.get("adjusted_p", ""), row.get("effective_pair_n", ""), row.get("data_completeness", ""), row.get("warning", "")] for row in rows]
+        return chart
+
+    def build_community_summary(self, spec, config):
+        current = normalize_round_label(config.get("current_round", "JP22"))
+        all_rows = [row for row in self.research_community_summary if self.research_round(row) == current and str(row.get("scope", "character")) == "character"]
+        rows = sorted(all_rows, key=lambda row: number(row.get("community_rank"), 999999))[:integer(config.get("top_n", 20), 20)]
+        source = "analysis_results/network_communities/by_round/{round}/community_summary.csv".format(round=current)
+        chart = self._research_base_chart(all_rows, config, source, "community structure", "communities")
+        chart["research_metadata"]["completeness"] = "complete_matrix" if rows else chart["research_metadata"].get("completeness", "")
+        labels = [f"社区 {row.get('community_rank', '')}" for row in rows]
+        chart.update({"chart_type": "bar", "categories": labels, "series": [{"name": "节点数", "values": [number(row.get("node_count"), None) for row in rows]}, {"name": "内部权重", "values": [number(row.get("internal_weight"), None) for row in rows]}], "value_format": "number"})
+        chart["table_headers"] = ["社区", "节点数", "边数", "内部权重", "模块度贡献", "阈值", "警告"]
+        chart["table_rows"] = [[label, row.get("node_count", ""), row.get("edge_count", ""), row.get("internal_weight", ""), row.get("modularity_contribution", ""), row.get("threshold", ""), row.get("official_faction_note", "")] for label, row in zip(labels, rows)]
+        return chart
+
+    def build_node_centrality(self, spec, config):
+        current = normalize_round_label(config.get("current_round", "JP22"))
+        all_rows = [row for row in self.research_node_centrality if self.research_round(row) == current and str(row.get("scope", "character")) == "character"]
+        metric = "pagerank"
+        rows = sorted(all_rows, key=lambda row: number(row.get(metric), -math.inf), reverse=True)[:integer(config.get("top_n", 20), 20)]
+        source = "analysis_results/network_communities/by_round/{round}/node_centrality.csv".format(round=current)
+        chart = self._research_base_chart(all_rows, config, source, metric, "communities")
+        chart["research_metadata"]["completeness"] = "complete_matrix" if rows else chart["research_metadata"].get("completeness", "")
+        labels = [str(row.get("name_cn") or row.get("name_jp") or row.get("canonical_name") or "?") for row in rows]
+        chart.update({"chart_type": "bar", "categories": labels, "series": [{"name": "PageRank", "values": [number(row.get(metric), None) for row in rows]}], "value_format": "number"})
+        chart["table_headers"] = ["节点", "PageRank", "加权度", "介数中心性", "社区", "桥接分数", "警告"]
+        chart["table_rows"] = [[label, row.get("pagerank", ""), row.get("weighted_degree", ""), row.get("betweenness", ""), row.get("community_id", ""), row.get("bridge_score", ""), row.get("official_faction_note", "")] for label, row in zip(labels, rows)]
         return chart
 
     def interpret_chart(self, spec: TemplateSpec, chart: dict, config: dict) -> str:
         """Return a short, data-aware reading guide shown beside every chart."""
         key = spec.key
+        current = normalize_round_label(config.get("current_round", "JP22"))
         text: list[str] = []
         if key in {"c01_rank_change", "c03_primary_rate_change", "c06_primary_change", "c07_selection_change", "c07_selection_yoy", "c08_points_change", "c09_selection_rate_change", "c12_gender_change", "a04_count_change", "a05_largest_change", "a09_phi_change"}:
             text.append("变化图：正数表示当前届相对对比届增加/名次上升（名次数字变小才是上升）；负数表示下降。它不是因果效应。")
         elif key in {"a16_anomalies"}:
             text.append("异常行表示官网 A→B 与 B→A 公布的共同人数不一致，是源数据发布冲突，不等同于关系特别强；需要回溯原始页面。")
-        elif key in {"a01_direction_matrix", "a01_count_matrix", "c11_metric_heatmap", "r08_work_question_matrix", "r09_character_question_matrix", "r10_music_question_matrix"}:
+        if key in {"a01_direction_matrix", "a01_count_matrix", "c11_metric_heatmap", "r08_work_question_matrix", "r09_character_question_matrix", "r10_music_question_matrix"}:
             text.append("矩阵按行/列分别展示；斜线或空白表示未公开，不是0。热力颜色只在当前矩阵语境内比较，不能把不同列直接当成同一尺度。")
+            if current.startswith("JP"):
+                text.append("当前日文站同投来源是官网关联前列而非完整矩阵；cosine/Ochiai、Jaccard、PMI/NPMI、φ等完整2×2指标不可用。")
         elif key == "a03_bubble":
             text.append("气泡图横轴是共同人数、纵轴是集中倍数；1倍为按双方人气得到的随机基准。小共同人数的高倍数可能不稳定，要同时看人数、倍数和 φ。")
         elif key in {"q01_age", "q02_cognition", "q03_usertype", "q04_new", "q_custom"}:
@@ -889,6 +1184,10 @@ class AnalysisRepository:
         elif key in {"a17_concentration_clusters", "a18_music_concentration_clusters"}:
             scope = "角色×音乐跨部门" if key == "a17_concentration_clusters" else "音乐×音乐内部"
             text.append(f"这是{scope}聚类，不是官方榜：先按共同人数和集中倍数筛边，再以单链接连通分量成簇；集中度得分是组件内超出随机期望的共同人数之和。两个范围分开计算，不混成一个网络。")
+        elif spec.group == "研究网络分析":
+            text.append("研究网络模板读取离线统计快照；效应量、相关系数、回归系数和中心性都不是官方排名，也不构成因果证明。空白单元格表示该届或该模型不可估计。")
+            if chart.get("statistical_warnings"):
+                text.append("统计警告：" + "；".join(str(item) for item in chart["statistical_warnings"][:3]) + "。")
         elif key == "m07_character_music_covote":
             text.append("同投人数是官方角色详情中的条件交叉计数；同投率=P(曲子|角色)。这里只列官方公开的条件排行，未公开组合不能解释为0。")
         elif key in {"m05_character_music_cross", "m06_music_character_cross", "m08_character_carryover", "m09_music_arrangement_cross", "m10_character_arrangement_cross"}:
@@ -1246,7 +1545,8 @@ class AnalysisRepository:
         to guess a relationship from a title string.
         """
         return [row for row in self.links_by_round[normalize_round_label(round_label)]
-                if row.get("character_canonical") and row.get("music_canonical")]
+                if row.get("character_canonical") and row.get("music_canonical")
+                and row.get("relation_type", "character_theme") == "character_theme"]
 
     @staticmethod
     def _mean(values: list[float]) -> float | None:
@@ -1850,23 +2150,95 @@ class AnalysisRepository:
         return chart
 
     def build_covote_matrix_rate(self, spec, config):
-        return self._build_covote_matrix(spec, config, "direction_rate")
+        return self._build_covote_matrix(spec, config, "direction_a_to_b")
 
     def build_covote_matrix_count(self, spec, config):
         return self._build_covote_matrix(spec, config, "intersection_count")
 
     def build_covote_network(self, spec, config):
         entities = self._matrix_entities(config)
-        allowed = {normalize_name(r["name_jp"]): r for r in entities}
-        nodes = [{"id": normalize_name(r["name_jp"]), "label": self.name(r, config), "value": number(r["selection_count"]), "rank": number(r["rank"])} for r in entities]
+        allowed = {}
+        for row in entities:
+            node_id = normalize_name(row.get("name_jp") or row.get("name_cn") or row.get("canonical_name"))
+            for raw in (row.get("name_jp"), row.get("name_cn"), row.get("canonical_name")):
+                if raw:
+                    allowed[normalize_name(raw)] = row
+        round_label = normalize_round_label(config.get("current_round", "JP22"))
+        centrality = {}
+        for row in self.research_node_centrality:
+            if self.research_round(row) != round_label or str(row.get("scope", "character")) != "character":
+                continue
+            for raw in (row.get("canonical_name"), row.get("name_jp"), row.get("name_cn")):
+                if raw:
+                    key = normalize_name(raw)
+                    if number(row.get("weighted_degree"), 0) > number(centrality.get(key, {}).get("weighted_degree"), -1):
+                        centrality[key] = row
+        nodes = []
+        for r in entities:
+            key = normalize_name(r["name_jp"])
+            stats = centrality.get(key, {})
+            weighted_degree = number(stats.get("weighted_degree"), 0)
+            pagerank = number(stats.get("pagerank"), 0)
+            community = str(stats.get("community_id") or "未计算")
+            nodes.append({
+                "id": key, "label": self.name(r, config), "value": number(r["selection_count"]),
+                "selection_count": number(r.get("selection_count")), "rank": number(r.get("rank")),
+                "weighted_degree": weighted_degree, "unweighted_degree": number(stats.get("unweighted_degree"), 0),
+                "pagerank": pagerank, "betweenness": number(stats.get("betweenness"), 0),
+                "bridge_score": number(stats.get("bridge_score"), 0), "community": community,
+                "community_rank": number(stats.get("community_rank"), 0),
+                "factions": sorted(self.faction_labels_for_row(r)),
+                "isolate": False,
+                "centrality_source": str(stats.get("source_path") or "analysis_results/network_communities"),
+            })
         edges = []
         for pair in self.filtered_pairs(config):
             a, b = normalize_name(pair["name_a"]), normalize_name(pair["name_b"])
             if a in allowed and b in allowed:
-                edges.append({"source": a, "target": b, "value": number(pair["intersection_count"]), "lift": number(pair["lift"]), "label": self.pair_label(pair, config)})
+                a = normalize_name(allowed[a].get("name_jp") or allowed[a].get("name_cn"))
+                b = normalize_name(allowed[b].get("name_jp") or allowed[b].get("name_cn"))
+                count = number(pair.get("intersection_count"), 0)
+                lift = number(pair.get("lift"), None) if str(pair.get("lift", "")).strip() else None
+                expected = number(pair.get("baseline_count"), None) if str(pair.get("baseline_count", "")).strip() else None
+                low_support = count < 25 or (lift is not None and lift >= 3 and count < 100)
+                edges.append({
+                    "source": a, "target": b, "value": count, "intersection_count": count,
+                    "count_a": number(pair.get("count_a"), None), "count_b": number(pair.get("count_b"), None),
+                    "a_only_count": number(pair.get("m10_a_only"), None), "b_only_count": number(pair.get("m01_b_only"), None),
+                    "expected_count": expected, "lift": lift,
+                    "cosine": number(pair.get("cosine"), None) if str(pair.get("cosine", "")).strip() else None,
+                    "phi": number(pair.get("phi"), None) if str(pair.get("phi", "")).strip() else None,
+                    "conditional_rate": number(pair.get("conditional_rate"), None) if str(pair.get("conditional_rate", "")).strip() else None,
+                    "data_completeness": pair.get("data_completeness") or "unknown",
+                    "censoring_status": pair.get("censoring_status") or "unknown",
+                    "metric_status": pair.get("metric_status") or "unknown",
+                    "source_type": pair.get("source_type") or "unknown",
+                    "source_path": pair.get("source_path") or "",
+                    "low_support": low_support,
+                    "warning": "低支持度：共同人数少，lift 可能不稳定" if low_support else "",
+                    "label": self.pair_label(pair, config),
+                })
         edges = sorted(edges, key=lambda e: e["value"], reverse=True)[: max(integer(config.get("top_n", 20), 20) * 3, 20)]
-        table = [[e["label"], e["value"], e["lift"]] for e in edges]
-        return {"title": spec.title, "chart_type": "network", "nodes": nodes, "edges": edges, "table_headers": ["关系", "共同人数", "集中倍数"], "table_rows": table, "value_format": "number", "note": "节点为角色；边宽表示共同人数，颜色深浅表示集中倍数。"}
+        visible_degree = defaultdict(int)
+        for edge in edges:
+            visible_degree[edge["source"]] += 1
+            visible_degree[edge["target"]] += 1
+        for node in nodes:
+            node["isolate"] = visible_degree[node["id"]] == 0
+        edge_metric = config.get("network_edge_color", "lift")
+        node_metric = config.get("network_node_size", "selection_count")
+        for edge in edges:
+            edge["color_value"] = edge.get(edge_metric)
+        table = [[e["label"], e["intersection_count"], e.get("a_only_count"), e.get("b_only_count"), e.get("expected_count"), e.get("count_a"), e.get("count_b"), e.get("lift"), e.get("cosine"), e.get("phi"), e.get("data_completeness"), e.get("censoring_status"), e.get("source_type"), e.get("warning")] for e in edges]
+        return {
+            "title": spec.title, "chart_type": "network", "nodes": nodes, "edges": edges,
+            "network_node_size": node_metric, "network_edge_color": edge_metric,
+            "network_encoding": {"node_size": node_metric, "edge_width": "intersection_count", "edge_color": edge_metric,
+                                  "node_color": "community", "edge_dash": "data_completeness/censoring_status", "edge_opacity": "support"},
+            "table_headers": ["同投边（不是角色关系）", "共同人数", "A边缘人数（仅A）", "B边缘人数（仅B）", "期望人数", "A总选择人数", "B总选择人数", "lift", "cosine", "φ", "数据完整性", "截尾状态", "来源", "警告"],
+            "table_rows": table, "value_format": "number",
+            "note": "节点颜色表示结构社区（不是原作阵营）；边宽表示共同人数，边色由所选归一化指标编码。虚线表示部分公开/右删失，低支持度边降低透明度并显示警告。"
+        }
 
     def build_concentration_clusters(self, spec, config):
         """Cluster heterogeneous co-vote edges using an auditable rule.
@@ -1907,7 +2279,12 @@ class AnalysisRepository:
         # CN10/11 also expose complete music×music conditional matrices, but
         # keep these in their own template rather than mixing departments.
         for row in (self.pairs_by_round.get(round_label, []) if music_internal else []):
-            if row.get("source_type") != "cn10_11_official_music_covote_matrix":
+            pair_category = str(row.get("pair_category") or "").strip()
+            completeness = str(row.get("data_completeness") or "").strip()
+            if pair_category:
+                if pair_category != "music" or completeness != "complete_matrix":
+                    continue
+            elif row.get("source_type") != "cn10_11_official_music_covote_matrix":
                 continue
             count = number(row.get("intersection_count"), None)
             lift = number(row.get("lift"), None)
@@ -2260,7 +2637,12 @@ class AnalysisRepository:
             if row.get(x_field) is not None and row.get(y_field) is not None:
                 points.append({"label": self.pair_label(row, config), "x": number(row[x_field]), "y": number(row[y_field])})
         points = sorted(points, key=lambda p: p["x"], reverse=True)[: max(integer(config.get("top_n", 20), 20), 20)]
-        chart = self._scatter(spec.title, points, METRIC_LABELS.get(x_field, x_field), METRIC_LABELS.get(y_field, y_field), "auto", "自定义同投指标。")
+        scope_note = (
+            "JP11–22 仅使用官网公开关联前列；列表外配对未知，完整2×2派生指标不可用。"
+            if normalize_round_label(config.get("current_round", "JP22")).startswith("JP")
+            else "CN10–11 使用经四格恒等式验证的完整同投矩阵。"
+        )
+        chart = self._scatter(spec.title, points, METRIC_LABELS.get(x_field, x_field), METRIC_LABELS.get(y_field, y_field), "auto", f"{scope_note} 空白表示来源未公开或数学上未定义，不表示0。")
         chart["x_format"], chart["y_format"] = metric_axis_format(x_field), metric_axis_format(y_field)
         return chart
 

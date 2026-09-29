@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 11,
+  "category": "character",
+  "entity_id": "224",
+  "entity_name": "天宇受卖命",
+  "rank": 224,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "7fb67c6ee6a89d086f7d2b1e5ccd773dcc0a684bbfca1827ba468359e6821307",
+    "bytes": 108,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:05:14+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2023-12-29T10:00:00.000Z",
+        "voteYear": 11,
+        "rank": 224
+      }
+    }
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 11,
+      "category": "character",
+      "entity_id": "224",
+      "entity_name": "天宇受卖命",
+      "rank": 224,
+      "comment_index": 1,
+      "text": "摩还在寻找她的996舞女您要去应聘一下不？",
+      "raw_text": "摩还在寻找她的996舞女您要去应聘一下不？",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "7fb67c6ee6a89d086f7d2b1e5ccd773dcc0a684bbfca1827ba468359e6821307",
+      "source_bytes": 108,
+      "retrieved_at": "2026-09-28T18:05:14+00:00"
+    }
+  ],
+  "error": null
+}

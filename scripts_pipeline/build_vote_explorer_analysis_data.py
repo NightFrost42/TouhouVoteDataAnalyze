@@ -18,7 +18,7 @@ import json
 import math
 import re
 import unicodedata
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Mapping
@@ -31,6 +31,13 @@ except ImportError:  # pragma: no cover - direct execution from a non-root cwd
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
     from vote_explorer.data_chunks import logical_file_exists, read_csv_rows
+
+from covote_metrics import CN_CELL_CONVENTION, empty_exact_metrics, exact_2x2_metrics
+from build_character_pair_structure_features import (
+    DEFAULT_OUTPUT_PATH as CHARACTER_PAIR_STRUCTURE_FEATURES_PATH,
+    build_character_pair_structure_features,
+    canonical_pair_key,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -379,6 +386,11 @@ def normalize_name(value: str) -> str:
     return re.sub(r"[\s・･·\-—_]+", "", value or "").casefold()
 
 
+def _character_key(value: str) -> str:
+    """Normalize character labels including full-/half-width punctuation."""
+    return normalize_name(unicodedata.normalize("NFKC", str(value or "")))
+
+
 def normalize_music_title(value: str) -> str:
     """Normalize title punctuation/width without changing entity-name keys.
 
@@ -705,6 +717,20 @@ def load_name_maps() -> tuple[dict[str, str], dict[str, str]]:
                 continue
             jp_to_cn[normalize_name(jp)] = cn
             cn_to_jp[normalize_name(cn)] = jp
+    # ``local_music_merged.csv`` stores curated Chinese short forms (for
+    # example ``灵梦``/``魔理沙``) while the metrics table uses the canonical
+    # full names.  Treat the maintained alias table as an additional lookup
+    # source.  Keep the established JP crosswalk authoritative if an alias
+    # ever happens to share a normalized key with a JP name.
+    aliases_path = ROOT / "metadata" / "character_translation_aliases_cn.csv"
+    if aliases_path.exists():
+        for row in read_csv(aliases_path):
+            alias = row.get("alias_cn", "").strip()
+            canonical = row.get("canonical_cn", "").strip()
+            if not alias or not canonical:
+                continue
+            jp_to_cn.setdefault(normalize_name(alias), canonical)
+            jp_to_cn.setdefault(_character_key(alias), canonical)
     return jp_to_cn, cn_to_jp
 
 
@@ -1144,6 +1170,42 @@ MUSIC_LINK_METRICS = [
 ]
 
 
+def _find_character_row(
+    rows: list[dict], raw_name: str, jp_to_cn: Mapping[str, str], site: str,
+) -> dict | None:
+    """Resolve a source character label without ever matching an empty name.
+
+    Local music tags may use a Chinese nickname while the per-round metrics
+    table stores the canonical full name.  The alias map bridges that gap in
+    either region.  An absent translation is deliberately treated as
+    unmatched; otherwise ``normalize_name("")`` could select an unrelated row
+    whose translated name is blank.
+    """
+    raw_key = _character_key(raw_name)
+    for row in rows:
+        if raw_key in {
+            _character_key(row.get("name_cn", "")),
+            _character_key(row.get("name_jp", "")),
+            _character_key(row.get("canonical_name", "")),
+        }:
+            return row
+    translated = jp_to_cn.get(raw_key, "") or jp_to_cn.get(normalize_name(raw_name), "")
+    if not translated:
+        return None
+    translated_key = _character_key(translated)
+    return next(
+        (
+            row for row in rows
+            if translated_key in {
+                _character_key(row.get("name_cn", "")),
+                _character_key(row.get("name_jp", "")),
+                _character_key(row.get("canonical_name", "")),
+            }
+        ),
+        None,
+    )
+
+
 def build_character_music_links(characters: list[dict], music: list[dict], jp_to_cn: dict[str, str]) -> list[dict]:
     """Materialise the user's music→character tags as an analysis dataset.
 
@@ -1157,7 +1219,7 @@ def build_character_music_links(characters: list[dict], music: list[dict], jp_to
     if not source_path.exists():
         empty_fields = [
             "region", "round", "round_label", "character_canonical", "character_name_cn", "character_name_jp",
-            "music_canonical", "music_name_cn", "music_name_jp", "association_source",
+            "music_canonical", "music_name_cn", "music_name_jp", "relation_type", "association_source",
         ] + [f"character_{field}" for field in CHARACTER_LINK_METRICS] + [f"music_{field}" for field in MUSIC_LINK_METRICS]
         write_csv(OUT / "analysis_character_music_links_all.csv", [], empty_fields)
         return []
@@ -1224,16 +1286,9 @@ def build_character_music_links(characters: list[dict], music: list[dict], jp_to
             # Some repaired workbook cells contain several roles in one tag.
             expanded.extend(part.strip() for part in str(value).split("|") if part.strip())
         for raw_character in dict.fromkeys(expanded):
-            candidate = None
-            raw_key = normalize_name(raw_character)
-            for row in character_index[(site, rnd)]:
-                if raw_key in {normalize_name(row.get("name_cn", "")), normalize_name(row.get("name_jp", ""))}:
-                    candidate = row
-                    break
-            if not candidate and site == "jp":
-                translated = jp_to_cn.get(raw_key, "")
-                candidate = next((row for row in character_index[(site, rnd)]
-                                  if normalize_name(row.get("name_cn", "")) == normalize_name(translated)), None)
+            candidate = _find_character_row(
+                character_index[(site, rnd)], raw_character, jp_to_cn, site,
+            )
             if not candidate:
                 continue
             relation = {
@@ -1242,14 +1297,15 @@ def build_character_music_links(characters: list[dict], music: list[dict], jp_to
                 "character_name_cn": candidate.get("name_cn", ""), "character_name_jp": candidate.get("name_jp", ""),
                 "music_canonical": music_row.get("canonical_name", ""),
                 "music_name_cn": music_row.get("name_cn", ""), "music_name_jp": music_row.get("name_jp", ""),
-                "association_source": "local_music_merged.mapped_characters_json",
+                "relation_type": "character_theme",
+                "association_source": "local_music_merged.mapped_characters_json:character_theme",
             }
             relation.update({f"character_{field}": candidate.get(field, "") for field in CHARACTER_LINK_METRICS})
             relation.update({f"music_{field}": music_row.get(field, "") for field in MUSIC_LINK_METRICS})
             output.append(relation)
     fields = [
         "region", "round", "round_label", "character_canonical", "character_name_cn", "character_name_jp",
-        "music_canonical", "music_name_cn", "music_name_jp", "association_source",
+        "music_canonical", "music_name_cn", "music_name_jp", "relation_type", "association_source",
     ] + [f"character_{field}" for field in CHARACTER_LINK_METRICS] + [f"music_{field}" for field in MUSIC_LINK_METRICS]
     output.sort(key=lambda row: (0 if row["region"] == "cn" else 1, row["round"], integer(row["character_rank"], 999999), integer(row["music_rank"], 999999)))
     write_csv(OUT / "analysis_character_music_links_all.csv", output, fields)
@@ -1269,7 +1325,9 @@ def build_character_music_covote(characters: list[dict], music: list[dict], jp_t
         "region", "round", "round_label", "character_canonical", "character_name_cn", "character_name_jp",
         "character_rank", "character_selection_count", "character_ballots", "music_canonical",
         "music_name_cn", "music_name_jp", "music_rank", "music_selection_count", "music_ballots",
-        "intersection_count", "conditional_denominator", "conditional_rate", "music_overall_rate", "lift", "source",
+        "intersection_count", "raw_count", "conditional_denominator", "conditional_rate", "conditional_rate_a_to_b",
+        "music_overall_rate", "lift", "lift_basis", "data_completeness", "censoring_status", "complete_pair_matrix",
+        "metric_status", "cosine", "cosine_ochiai", "ochiai", "jaccard", "pmi", "pmi_nats", "npmi", "phi", "source",
     ]
     output: list[dict] = []
     # A title can occur more than once in a tied/legacy table; keep all rows
@@ -1300,9 +1358,12 @@ def build_character_music_covote(characters: list[dict], music: list[dict], jp_t
             if not character:
                 # A few source pages use spacing variants; fall back to the
                 # translated crosswalk and then canonical Chinese key.
-                translated = jp_to_cn.get(normalize_name(source_name), "")
-                character = next((row for (rr, _), row in character_by_name.items()
-                                  if rr == rnd and normalize_name(row.get("name_cn", "")) == normalize_name(translated)), None)
+                character = _find_character_row(
+                    [row for (rr, _), row in character_by_name.items() if rr == rnd],
+                    source_name,
+                    jp_to_cn,
+                    "jp",
+                )
             if not character:
                 continue
             others = data.get("others") or {}
@@ -1339,11 +1400,19 @@ def build_character_music_covote(characters: list[dict], music: list[dict], jp_t
                     "music_canonical": music_row.get("canonical_name", ""),
                     "music_name_cn": music_row.get("name_cn", ""), "music_name_jp": music_row.get("name_jp", ""),
                     "music_rank": music_row.get("rank", ""), "music_selection_count": music_row.get("selection_count", ""),
-                    "music_ballots": music_row.get("ballots", ""), "intersection_count": intersection or "",
+                    "music_ballots": music_row.get("ballots", ""), "intersection_count": intersection if intersection is not None else "",
+                    "raw_count": intersection if intersection is not None else "",
                     "conditional_denominator": (intersection / conditional_rate) if intersection is not None and conditional_rate else "",
                     "conditional_rate": conditional_rate if conditional_rate is not None else "",
+                    "conditional_rate_a_to_b": conditional_rate if conditional_rate is not None else "",
                     "music_overall_rate": overall_rate if overall_rate is not None else "",
                     "lift": lift if lift is not None else "",
+                    "lift_basis": "published_conditional_overall_rate_ratio",
+                    "data_completeness": "cross_department_conditional_only",
+                    "censoring_status": "right_censored_by_official_list",
+                    "complete_pair_matrix": False,
+                    "metric_status": "cross_department_conditional_only",
+                    **empty_exact_metrics("cross_department_conditional_only"),
                     "source": f"jp_official/round_{rnd}/detail/character/{path.stem}.json",
                 })
     # CN10/11 checkpoints contain the same direction explicitly: a character
@@ -1399,9 +1468,12 @@ def build_character_music_covote(characters: list[dict], music: list[dict], jp_t
                     "music_canonical": music_row.get("canonical_name", ""), "music_name_cn": music_row.get("name_cn", ""),
                     "music_name_jp": music_row.get("name_jp", ""), "music_rank": music_row.get("rank", ""),
                     "music_selection_count": music_row.get("selection_count", ""), "music_ballots": music_row.get("ballots", ""),
-                    "intersection_count": intersection, "conditional_denominator": conditional_denominator,
-                    "conditional_rate": conditional_rate, "music_overall_rate": overall_rate,
-                    "lift": conditional_rate / overall_rate,
+                    "intersection_count": intersection, "raw_count": intersection, "conditional_denominator": conditional_denominator,
+                    "conditional_rate": conditional_rate, "conditional_rate_a_to_b": conditional_rate, "music_overall_rate": overall_rate,
+                    "lift": conditional_rate / overall_rate, "lift_basis": "published_conditional_overall_rate_ratio",
+                    "data_completeness": "cross_department_conditional_only", "censoring_status": "right_censored_by_official_list",
+                    "complete_pair_matrix": False, "metric_status": "cross_department_conditional_only",
+                    **empty_exact_metrics("cross_department_conditional_only"),
                     "source": str(path.relative_to(ROOT)).replace("\\", "/"),
                 })
     output.sort(key=lambda row: (row["region"], row["round"], integer(row.get("character_rank"), 999999), -num(row.get("intersection_count"), 0), row.get("music_name_jp", "")))
@@ -1482,9 +1554,9 @@ def build_vote_combinations(cp_rows: list[dict], covote_rows: list[dict]) -> lis
     # because co-vote matrices are symmetric, whereas CP labels retain member
     # order in their own key.
     for row in covote_rows:
-        # Music×music pairs are kept for the dedicated concentration/network
+        # Music×music rows are kept for the dedicated concentration/network
         # analysis, but must not be presented as CP fallback combinations.
-        if row.get("source_type") == "cn10_11_official_music_covote_matrix":
+        if _is_music_covote_row(row):
             continue
         members = [str(row.get("name_a_cn") or row.get("name_a") or "").strip(), str(row.get("name_b_cn") or row.get("name_b") or "").strip()]
         if not all(members) or normalize_name(members[0]) == normalize_name(members[1]):
@@ -1507,179 +1579,335 @@ def build_vote_combinations(cp_rows: list[dict], covote_rows: list[dict]) -> lis
     return output
 
 
+def _is_music_covote_row(row: Mapping[str, object]) -> bool:
+    """Return whether a pair row belongs to the music×music department."""
+    category = str(row.get("pair_category") or "").strip()
+    if category:
+        return category == "music"
+    # Compatibility with bundles generated before ``pair_category`` existed.
+    return row.get("source_type") == "cn10_11_official_music_covote_matrix"
+
+
+def _covote_pair_values(
+    m00: int, m01: int, m10: int, m11: int,
+) -> dict[str, object]:
+    """Return the unified metrics for one verified four-cell matrix row."""
+    return exact_2x2_metrics(m00, m01, m10, m11)
+
+
+def _blank_jp_pair_metrics(status: str) -> dict[str, object]:
+    """Blank every metric that requires a complete JP 2×2 evidence table."""
+    values = empty_exact_metrics(status, complete_pair_matrix=False)
+    values.update(
+        {
+            "complete_pair_matrix": False,
+            "data_completeness": "official_published_leading_list",
+            "censoring_status": "right_censored_by_official_list",
+        }
+    )
+    return values
+
+
 def build_covote_pairs(metrics: list[dict], jp_to_cn: dict[str, str], music_metrics: list[dict] | None = None) -> list[dict]:
-    """Build all in-scope co-vote rows.
+    """Build source-scoped character×character and music×music co-vote rows.
 
-    JP rows come from the unified directional association extract.  CN10/11
-    additionally have complete reconstructed character matrices under
-    ``data_raw/cn_official/round_XX/covote/characters.json``; those cells are
-    imported with the same metrics and an explicit source marker.
+    CN10/11 are reconstructed from exact four-cell matrices.  JP11–22 are
+    limited to the official leading association lists; an absent JP pair is
+    unknown, not a zero.  Missing source components are represented in the
+    analysis manifest rather than by fabricated rows here.
     """
-    metric_map = {(row["region"], row["round"], normalize_name(row["name_jp"] or row["name_cn"])): row for row in metrics}
-    directions: dict[tuple[int, str, str], dict] = {}
-    source = ROOT / "data_processed" / "jp_unified" / "entity_association_long.csv.gz"
-    with gzip.open(source, "rt", encoding="utf-8-sig", newline="") as fh:
-        for row in csv.DictReader(fh):
-            rnd = integer(row.get("round"))
-            if rnd not in ALLOWED_JP or row.get("source_category") != "character" or row.get("target_category") != "character":
-                continue
-            a, b = row.get("source_name", ""), row.get("target_name", "")
-            if not a or not b or normalize_name(a) == normalize_name(b):
-                continue
-            key = (rnd, normalize_name(a), normalize_name(b))
-            current = directions.get(key)
-            if current is None or integer(row.get("intersection_count")) > integer(current.get("intersection_count")):
-                directions[key] = row
+    rankings = read_csv(OUT / "rankings.csv")
+    analysis_rows = {
+        "character": metrics,
+        "music": music_metrics or [],
+    }
 
-    pair_directions: dict[tuple[int, str, str], list[dict]] = defaultdict(list)
-    for (rnd, source_key, target_key), row in directions.items():
-        a, b = sorted((source_key, target_key))
-        pair_directions[(rnd, a, b)].append(row)
+    metric_index_cache: dict[tuple[str, int, str], dict[str, dict]] = {}
+
+    def metric_index(region: str, round_no: int, category: str) -> dict[str, dict]:
+        cache_key = (region, round_no, category)
+        if cache_key in metric_index_cache:
+            return metric_index_cache[cache_key]
+        index: dict[str, dict] = {}
+        # Raw ranking rows define the entity identity, rank and marginal vote
+        # count for a matrix.  This is important for music rows that the
+        # analysis table intentionally merges into a canonical theme key.
+        for row in rankings:
+            if row.get("region") != region or integer(row.get("round")) != round_no or row.get("category") != category:
+                continue
+            raw_name = str(row.get("entity_name") or "").strip()
+            if not raw_name:
+                continue
+            normalized = {
+                **row,
+                "name_jp": raw_name if region == "jp" else "",
+                "name_cn": row.get("entity_name_localized", "") or raw_name,
+                "rank": row.get("rank", ""),
+                "selection_count": row.get("vote_count", ""),
+                "canonical_name": normalize_music_title(raw_name) if category == "music" else normalize_name(raw_name),
+                "_covote_raw_ranking": True,
+            }
+            for value in (raw_name, row.get("entity_name_localized", "")):
+                key = normalize_name(value)
+                if key:
+                    index.setdefault(key, normalized)
+        # Analysis rows supply fields not present in the raw ranking table,
+        # especially the ballot denominator.  Never override raw identity or
+        # marginal counts with a canonical-theme aggregate.
+        for row in analysis_rows[category]:
+            if row.get("region") != region or integer(row.get("round")) != round_no:
+                continue
+            for field in ("name_jp", "name_cn", "canonical_name"):
+                key = normalize_name(row.get(field, ""))
+                if not key:
+                    continue
+                current = index.setdefault(key, {})
+                for name, value in row.items():
+                    if name in {"rank", "selection_count", "name_jp", "name_cn", "canonical_name"}:
+                        if current.get(name) in (None, ""):
+                            current[name] = value
+                    elif current.get(name) in (None, ""):
+                        current[name] = value
+        metric_index_cache[cache_key] = index
+        return index
+
+    def find_metric(index: dict[str, dict], raw_name: str, category: str) -> dict | None:
+        key = normalize_name(raw_name)
+        metric = index.get(key)
+        if metric:
+            return metric
+        translated = jp_to_cn.get(key, "")
+        return index.get(normalize_name(translated)) if translated else None
+
+    def metric_value(row: dict | None, *fields: str) -> int | None:
+        if not row:
+            return None
+        for field in fields:
+            value = num(row.get(field), None)
+            if value is not None:
+                return int(value)
+        return None
+
+    def canonical_value(row: dict | None, raw_name: str, category: str) -> str:
+        if row and row.get("canonical_name"):
+            return str(row["canonical_name"])
+        return normalize_music_title(raw_name) if category == "music" else normalize_name(raw_name)
+
+    def make_row(
+        *, region: str, round_no: int, category: str, name_a: str, name_b: str,
+        metric_a: dict | None, metric_b: dict | None, values: dict[str, object],
+        source_type: str, source_path: str, completeness: str, censoring: str,
+        directions_found: int, anomaly: str = "false", anomaly_difference: int = 0,
+    ) -> dict:
+        canonical_a = canonical_value(metric_a, name_a, category)
+        canonical_b = canonical_value(metric_b, name_b, category)
+        return {
+            "region": region, "round": round_no, "round_label": round_label(region, round_no),
+            "pair_category": category,
+            "data_completeness": completeness, "censoring_status": censoring,
+            "complete_pair_matrix": completeness == "complete_matrix",
+            "name_a": name_a, "name_b": name_b,
+            "name_a_cn": (metric_a or {}).get("name_cn", "") or (name_a if region == "cn" else jp_to_cn.get(normalize_name(name_a), "")),
+            "name_b_cn": (metric_b or {}).get("name_cn", "") or (name_b if region == "cn" else jp_to_cn.get(normalize_name(name_b), "")),
+            "canonical_a": canonical_a,
+            "canonical_b": canonical_b,
+            "canonical_pair_key": canonical_pair_key(canonical_a, canonical_b),
+            "rank_a": (metric_a or {}).get("rank", ""), "rank_b": (metric_b or {}).get("rank", ""),
+            **values,
+            "anomaly": anomaly, "anomaly_difference": anomaly_difference,
+            "directions_found": directions_found, "source_type": source_type, "source_path": source_path,
+        }
 
     output: list[dict] = []
-    for (rnd, a_key, b_key), rows in pair_directions.items():
-        ma = metric_map.get(("jp", rnd, a_key)); mb = metric_map.get(("jp", rnd, b_key))
-        if not ma or not mb:
-            continue
-        intersections = [integer(row.get("intersection_count")) for row in rows if str(row.get("intersection_count", "")).strip()]
-        if not intersections:
-            continue
-        ab = max(intersections)
-        count_a, count_b = integer(ma.get("selection_count")), integer(mb.get("selection_count"))
-        ballots = integer(ma.get("ballots"))
-        baseline = count_a * count_b / ballots if ballots and count_a and count_b else None
-        lift = ab / baseline if baseline else None
-        excess = ab - baseline if baseline is not None else None
-        denom = math.sqrt(count_a * (ballots - count_a) * count_b * (ballots - count_b)) if ballots and count_a and count_b else 0
-        phi = (ab * ballots - count_a * count_b) / denom if denom else None
-        output.append({
-            "region": "jp", "round": rnd, "round_label": round_label("jp", rnd),
-            "name_a": ma["name_jp"], "name_b": mb["name_jp"],
-            "name_a_cn": ma.get("name_cn") or jp_to_cn.get(a_key, ""), "name_b_cn": mb.get("name_cn") or jp_to_cn.get(b_key, ""),
-            "canonical_a": ma["canonical_name"], "canonical_b": mb["canonical_name"],
-            "rank_a": ma["rank"], "rank_b": mb["rank"], "count_a": count_a or "", "count_b": count_b or "",
-            "ballots": ballots or "", "intersection_count": ab,
-            "direction_a_to_b": ab / count_a if count_a else "", "direction_b_to_a": ab / count_b if count_b else "",
-            "share": ab / ballots if ballots else "", "baseline_count": baseline if baseline is not None else "",
-            "lift": lift if lift is not None else "", "excess_count": excess if excess is not None else "",
-            "phi": phi if phi is not None else "", "asymmetry": ab / count_a - ab / count_b if count_a and count_b else "",
-            "anomaly": "true" if len(set(intersections)) > 1 else "false",
-            "anomaly_difference": max(intersections) - min(intersections) if len(set(intersections)) > 1 else 0,
-            "directions_found": len(rows), "source_type": "jp_official_entity_association", "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
-        })
 
-    # CN10/11 official conditional matrices are symmetric m00 cells.  The
-    # archived JSON includes the full ranking universe, not only the display
-    # top-N, so no arbitrary truncation is applied here.
-    for rnd in sorted(ALLOWED_CN):
-        if rnd < 10:
-            continue
-        source_path = ROOT / "data_raw" / "cn_official" / f"round_{rnd:02d}" / "covote" / "characters.json"
-        if not source_path.exists():
-            continue
-        try:
-            payload = json.loads(source_path.read_text(encoding="utf-8"))
-            items = payload.get("data", {}).get("queryCharsCovote", {}).get("items", [])
-        except (OSError, UnicodeDecodeError, json.JSONDecodeError, AttributeError):
-            items = []
-        if not isinstance(items, list):
-            continue
-        # CN modern metrics use Chinese display names directly; retain a
-        # fallback through the JP→CN crosswalk for any mixed-source cell.
-        cn_metrics = {
-            normalize_name(row.get("name_cn") or row.get("name_jp")): row
-            for row in metrics if row.get("region") == "cn" and integer(row.get("round")) == rnd
-        }
-        for item in items:
-            if not isinstance(item, dict):
-                continue
-            a_raw, b_raw = str(item.get("a") or "").strip(), str(item.get("b") or "").strip()
-            if not a_raw or not b_raw or normalize_name(a_raw) == normalize_name(b_raw):
-                continue
-            ma = cn_metrics.get(normalize_name(a_raw))
-            mb = cn_metrics.get(normalize_name(b_raw))
-            if not ma or not mb:
+    # JP official association data is a leading list, not a complete matrix.
+    # Keep character×character and music×music in separate pair categories.
+    directions: dict[tuple[int, str, str, str], list[dict]] = defaultdict(list)
+    source = ROOT / "data_processed" / "jp_unified" / "entity_association_long.csv.gz"
+    if source.exists():
+        with gzip.open(source, "rt", encoding="utf-8-sig", newline="") as fh:
+            for row in csv.DictReader(fh):
+                rnd = integer(row.get("round"))
+                category = str(row.get("source_category") or "").strip()
+                if (
+                    rnd not in ALLOWED_JP
+                    or category not in {"character", "music"}
+                    or row.get("target_category") != category
+                ):
+                    continue
+                a, b = str(row.get("source_name") or "").strip(), str(row.get("target_name") or "").strip()
+                if not a or not b or normalize_name(a) == normalize_name(b):
+                    continue
+                directions[(rnd, category, normalize_name(a), normalize_name(b))].append(row)
+
+    pair_directions: dict[tuple[int, str, str, str], list[dict]] = defaultdict(list)
+    for (rnd, category, source_key, target_key), rows in directions.items():
+        a, b = sorted((source_key, target_key))
+        pair_directions[(rnd, category, a, b)].extend(rows)
+
+    def unique_value(rows: list[dict], field: str) -> tuple[float | None, bool]:
+        values = [num(row.get(field), None) for row in rows if str(row.get(field, "")).strip()]
+        if not values:
+            return None, False
+        distinct = {round(value, 12) for value in values}
+        if field in {"intersection_count"}:
+            values = [int(value) for value in values]
+        return values[0], len(distinct) > 1
+
+    for (rnd, category, a_key, b_key), rows in pair_directions.items():
+        index = metric_index("jp", rnd, category)
+        ma, mb = find_metric(index, a_key, category), find_metric(index, b_key, category)
+        # The pair is represented in deterministic key order. Each direction
+        # retains its own official count/rate/lift; a missing reverse row is
+        # unknown, not a zero.
+        a_to_b_rows = [row for row in rows if normalize_name(row.get("source_name", "")) == a_key]
+        b_to_a_rows = [row for row in rows if normalize_name(row.get("source_name", "")) == b_key]
+        ab, ab_conflict = unique_value(a_to_b_rows, "intersection_count")
+        ba, ba_conflict = unique_value(b_to_a_rows, "intersection_count")
+        rate_ab, rate_ab_conflict = unique_value(a_to_b_rows, "conditional_rate")
+        rate_ba, rate_ba_conflict = unique_value(b_to_a_rows, "conditional_rate")
+        lift_ab, lift_ab_conflict = unique_value(a_to_b_rows, "lift")
+        lift_ba, lift_ba_conflict = unique_value(b_to_a_rows, "lift")
+        direction_mismatch = ab is not None and ba is not None and ab != ba
+        conflict = any((ab_conflict, ba_conflict, rate_ab_conflict, rate_ba_conflict, lift_ab_conflict, lift_ba_conflict)) or direction_mismatch
+        public_intersection = None if conflict else (ab if ab is not None else ba)
+        count_a = metric_value(ma, "selection_count", "vote_count")
+        count_b = metric_value(mb, "selection_count", "vote_count")
+        ballots_a = metric_value(ma, "ballots")
+        ballots_b = metric_value(mb, "ballots")
+        ballots = ballots_a if ballots_a is not None and ballots_a == ballots_b else None
+        values = _blank_jp_pair_metrics(
+            "conflicting_published_directions" if conflict else "official_published_leading_list"
+        )
+        values.update(
+            {
+                "count_a": count_a if count_a is not None else "",
+                "count_b": count_b if count_b is not None else "",
+                "ballots": ballots if ballots is not None else "",
+                "intersection_count": public_intersection if public_intersection is not None else "",
+                "raw_count": public_intersection if public_intersection is not None else "",
+                "raw_count_a_to_b": ab if ab is not None else "",
+                "raw_count_b_to_a": ba if ba is not None else "",
+                "conditional_rate": rate_ab if rate_ab is not None else (rate_ba if rate_ba is not None else ""),
+                "conditional_rate_a_to_b": rate_ab if rate_ab is not None else "",
+                "conditional_rate_b_to_a": rate_ba if rate_ba is not None else "",
+                "direction_a_to_b": rate_ab if rate_ab is not None else "",
+                "direction_b_to_a": rate_ba if rate_ba is not None else "",
+                "share": public_intersection / ballots if public_intersection is not None and ballots else "",
+                "asymmetry": rate_ab - rate_ba if rate_ab is not None and rate_ba is not None else "",
+                "lift": lift_ab if lift_ab is not None else (lift_ba if lift_ba is not None else ""),
+                "lift_a_to_b": lift_ab if lift_ab is not None else "",
+                "lift_b_to_a": lift_ba if lift_ba is not None else "",
+                "lift_basis": "published_conditional_overall_rate_ratio",
+                "complete_pair_matrix": False,
+                "data_completeness": "official_published_leading_list",
+                "censoring_status": "right_censored_by_official_list",
+            }
+        )
+        def endpoint_name(endpoint_key: str, prefer_source: bool) -> str:
+            for row in rows:
+                candidate_fields = ("source_name", "target_name") if prefer_source else ("target_name", "source_name")
+                for field in candidate_fields:
+                    value = str(row.get(field) or "").strip()
+                    if value and normalize_name(value) == endpoint_key:
+                        return value
+            return endpoint_key
+
+        output.append(make_row(
+            region="jp", round_no=rnd, category=category,
+            name_a=endpoint_name(a_key, bool(a_to_b_rows)),
+            name_b=endpoint_name(b_key, bool(b_to_a_rows)),
+            metric_a=ma, metric_b=mb, values=values,
+            source_type="jp_official_entity_association",
+            source_path="data_processed/jp_unified/entity_association_long.csv.gz",
+            completeness="official_published_leading_list",
+            censoring="right_censored_by_official_list",
+            directions_found=len(rows),
+            anomaly="true" if conflict or (ab is not None and ba is not None and ab != ba) else "false",
+            anomaly_difference=int(abs(ab - ba)) if ab is not None and ba is not None and ab != ba else 0,
+        ))
+
+    # CN10/11 contain exact, untruncated four-cell matrices.  Use the matrix
+    # entity universe and raw ranking rows directly so canonical music merges
+    # cannot silently remove valid matrix vertices.
+    for rnd in (10, 11):
+        for category, filename, graphql_key, source_type in (
+            ("character", "characters.json", "queryCharsCovote", "cn10_11_official_covote_matrix"),
+            ("music", "music.json", "queryMusicsCovote", "cn10_11_official_music_covote_matrix"),
+        ):
+            source_path = ROOT / "data_raw" / "cn_official" / f"round_{rnd:02d}" / "covote" / filename
+            if not source_path.exists():
                 continue
             try:
-                intersection = int(item.get("m00"))
-            except (TypeError, ValueError):
-                continue
-            count_a = integer(ma.get("selection_count"), 0)
-            count_b = integer(mb.get("selection_count"), 0)
-            ballots = integer(ma.get("ballots"), 0)
-            baseline = count_a * count_b / ballots if ballots and count_a and count_b else None
-            lift = intersection / baseline if baseline else None
-            excess = intersection - baseline if baseline is not None else None
-            denom = math.sqrt(count_a * (ballots - count_a) * count_b * (ballots - count_b)) if ballots and count_a and count_b else 0
-            phi = (intersection * ballots - count_a * count_b) / denom if denom else None
-            output.append({
-                "region": "cn", "round": rnd, "round_label": round_label("cn", rnd),
-                "name_a": a_raw, "name_b": b_raw,
-                "name_a_cn": a_raw, "name_b_cn": b_raw,
-                "canonical_a": ma.get("canonical_name", normalize_name(a_raw)),
-                "canonical_b": mb.get("canonical_name", normalize_name(b_raw)),
-                "rank_a": ma.get("rank", ""), "rank_b": mb.get("rank", ""),
-                "count_a": count_a or "", "count_b": count_b or "", "ballots": ballots or "",
-                "intersection_count": intersection,
-                "direction_a_to_b": intersection / count_a if count_a else "",
-                "direction_b_to_a": intersection / count_b if count_b else "",
-                "share": intersection / ballots if ballots else "",
-                "baseline_count": baseline if baseline is not None else "",
-                "lift": lift if lift is not None else "", "excess_count": excess if excess is not None else "",
-                "phi": phi if phi is not None else "",
-                "asymmetry": intersection / count_a - intersection / count_b if count_a and count_b else "",
-                "anomaly": "false", "anomaly_difference": 0, "directions_found": 1,
-                "source_type": "cn10_11_official_covote_matrix", "source_path": str(source_path.relative_to(ROOT)).replace("\\", "/"),
-            })
-        # CN10/11 also publish a complete reconstructed music×music matrix.
-        # Keep it in the same portable pair table; source_type lets the UI
-        # and concentration analysis distinguish it from character pairs.
-        music_path = ROOT / "data_raw" / "cn_official" / f"round_{rnd:02d}" / "covote" / "music.json"
-        if music_path.exists() and music_metrics:
-            try:
-                payload = json.loads(music_path.read_text(encoding="utf-8"))
-                items = payload.get("data", {}).get("queryMusicsCovote", {}).get("items", [])
+                payload = json.loads(source_path.read_text(encoding="utf-8"))
+                items = payload.get("data", {}).get(graphql_key, {}).get("items", [])
             except (OSError, UnicodeDecodeError, json.JSONDecodeError, AttributeError):
                 items = []
-            music_map = {normalize_name(row.get("name_cn") or row.get("name_jp")): row
-                         for row in music_metrics if row.get("region") == "cn" and integer(row.get("round")) == rnd}
-            for item in items if isinstance(items, list) else []:
+            if not isinstance(items, list):
+                continue
+            index = metric_index("cn", rnd, category)
+            validation_path = source_path.with_name(f"{category}_reconstruction_validation.json")
+            try:
+                validation = json.loads(validation_path.read_text(encoding="utf-8"))
+            except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+                validation = {}
+            expected_pairs = integer(validation.get("expectedPairs"), -1)
+            observed_pairs = integer(validation.get("observedPairs"), -1)
+            validated_universe = integer(validation.get("universe"), -1)
+            if (
+                expected_pairs < 0
+                or observed_pairs != expected_pairs
+                or validation.get("allMarginalAndUniverseIdentitiesPassed") is not True
+                or validation.get("allConditionalSymmetryChecksPassed", validation.get("allAvailableConditionalSymmetryChecksPassed")) is not True
+                or payload.get("context", {}).get("fieldConvention") != CN_CELL_CONVENTION
+                or len(items) != expected_pairs
+            ):
+                raise AssertionError(f"CN{rnd} {category} co-vote completeness proof is missing or invalid")
+            seen_pairs: set[tuple[str, str]] = set()
+            matrix_start = len(output)
+            for item in items:
                 if not isinstance(item, dict):
-                    continue
+                    raise AssertionError(f"CN{rnd} {category} co-vote item is not an object")
                 a_raw, b_raw = str(item.get("a") or "").strip(), str(item.get("b") or "").strip()
                 if not a_raw or not b_raw or normalize_name(a_raw) == normalize_name(b_raw):
-                    continue
-                ma, mb = music_map.get(normalize_name(a_raw)), music_map.get(normalize_name(b_raw))
-                if not ma or not mb:
-                    continue
+                    raise AssertionError(f"CN{rnd} {category} co-vote item has invalid endpoints")
+                pair_key = tuple(sorted((normalize_name(a_raw), normalize_name(b_raw))))
+                if pair_key in seen_pairs:
+                    raise AssertionError(f"CN{rnd} {category} co-vote item is duplicated: {a_raw} / {b_raw}")
+                seen_pairs.add(pair_key)
                 try:
-                    intersection = int(item.get("m00"))
-                except (TypeError, ValueError):
-                    continue
-                count_a, count_b = integer(ma.get("selection_count"), 0), integer(mb.get("selection_count"), 0)
-                ballots = integer(ma.get("ballots"), 0)
-                baseline = count_a * count_b / ballots if ballots and count_a and count_b else None
-                lift = intersection / baseline if baseline else None
-                excess = intersection - baseline if baseline is not None else None
-                denom = math.sqrt(count_a * (ballots - count_a) * count_b * (ballots - count_b)) if ballots and count_a and count_b else 0
-                phi = (intersection * ballots - count_a * count_b) / denom if denom else None
-                output.append({
-                    "region": "cn", "round": rnd, "round_label": round_label("cn", rnd),
-                    "name_a": a_raw, "name_b": b_raw, "name_a_cn": a_raw, "name_b_cn": b_raw,
-                    "canonical_a": ma.get("canonical_name", normalize_name(a_raw)), "canonical_b": mb.get("canonical_name", normalize_name(b_raw)),
-                    "rank_a": ma.get("rank", ""), "rank_b": mb.get("rank", ""), "count_a": count_a or "", "count_b": count_b or "", "ballots": ballots or "",
-                    "intersection_count": intersection, "direction_a_to_b": intersection / count_a if count_a else "", "direction_b_to_a": intersection / count_b if count_b else "",
-                    "share": intersection / ballots if ballots else "", "baseline_count": baseline if baseline is not None else "", "lift": lift if lift is not None else "", "excess_count": excess if excess is not None else "", "phi": phi if phi is not None else "",
-                    "asymmetry": intersection / count_a - intersection / count_b if count_a and count_b else "", "anomaly": "false", "anomaly_difference": 0, "directions_found": 1,
-                    "source_type": "cn10_11_official_music_covote_matrix", "source_path": str(music_path.relative_to(ROOT)).replace("\\", "/"),
-                })
+                    intersection = int(item["m00"])
+                    m01, m10, m11 = int(item["m01"]), int(item["m10"]), int(item["m11"])
+                except (KeyError, TypeError, ValueError) as exc:
+                    raise AssertionError(f"CN{rnd} {category} co-vote item has invalid cells") from exc
+                ma, mb = find_metric(index, a_raw, category), find_metric(index, b_raw, category)
+                values = _covote_pair_values(intersection, m01, m10, m11)
+                if validated_universe >= 0 and values["ballots"] != validated_universe:
+                    raise AssertionError(
+                        f"CN{rnd} {category} co-vote row has universe {values['ballots']} != {validated_universe}"
+                    )
+                output.append(make_row(
+                    region="cn", round_no=rnd, category=category, name_a=a_raw, name_b=b_raw,
+                    metric_a=ma, metric_b=mb, values=values,
+                    source_type=source_type,
+                    source_path=str(source_path.relative_to(ROOT)).replace("\\", "/"),
+                    completeness="complete_matrix", censoring="not_censored", directions_found=1,
+                ))
+            if len(output) - matrix_start != expected_pairs:
+                raise AssertionError(
+                    f"CN{rnd} {category} exported {len(output) - matrix_start} pairs != {expected_pairs}"
+                )
+
     fields = [
-        "region", "round", "round_label", "name_a", "name_b", "name_a_cn", "name_b_cn", "canonical_a", "canonical_b",
-        "rank_a", "rank_b", "count_a", "count_b", "ballots", "intersection_count", "direction_a_to_b",
-        "direction_b_to_a", "share", "baseline_count", "lift", "excess_count", "phi", "asymmetry", "anomaly",
-        "anomaly_difference", "directions_found", "source_type", "source_path",
+        "region", "round", "round_label", "pair_category", "data_completeness", "censoring_status",
+        "complete_pair_matrix", "metric_status", "name_a", "name_b", "name_a_cn", "name_b_cn", "canonical_a", "canonical_b", "canonical_pair_key",
+        "rank_a", "rank_b", "count_a", "count_b", "ballots", "intersection_count", "raw_count", "raw_count_a_to_b", "raw_count_b_to_a",
+        "m00_both_selected", "m01_b_only", "m10_a_only", "m11_neither_selected", "conditional_rate", "conditional_rate_a_to_b", "conditional_rate_b_to_a",
+        "direction_a_to_b", "direction_b_to_a", "share", "baseline_count", "lift", "lift_a_to_b", "lift_b_to_a", "lift_basis",
+        "excess_count", "cosine", "ochiai", "jaccard", "pmi", "pmi_nats", "npmi", "phi", "asymmetry",
+        "anomaly", "anomaly_difference", "directions_found", "source_type", "source_path",
     ]
-    output.sort(key=lambda r: (r["round"], -r["intersection_count"], r["name_a"], r["name_b"]))
+    output.sort(key=lambda r: (r["region"], r["round"], r["pair_category"], -integer(r["intersection_count"]), r["name_a"], r["name_b"]))
     write_csv(OUT / "analysis_covote_pairs_all.csv", output, fields)
     return output
 
@@ -2142,6 +2370,20 @@ def sha256(path: Path) -> str:
         return digest.hexdigest()
 
 
+def build_music_associations() -> list[dict]:
+    """Expose typed music relations without mixing them into theme links."""
+    source_path = ROOT / "data_processed" / "music_canonical" / "music_associations.csv"
+    fields = [
+        "site", "round", "music_track_id", "canonical_track", "title_variant_key",
+        "association_type", "entity_type", "entity_key", "entity_name", "raw_character",
+        "source_kind", "source_file", "source_sheet", "source_excel_row", "source_record_id",
+        "thbwiki_url", "source_note", "confidence",
+    ]
+    rows = read_csv(source_path) if source_path.exists() else []
+    write_csv(OUT / "analysis_music_associations_all.csv", rows, fields)
+    return rows
+
+
 def write_music_catalog_unmatched(music: list[dict]) -> list[dict]:
     """Write an auditable list of source songs absent from the standard table."""
     grouped: dict[tuple[str, int, str, str], dict] = {}
@@ -2164,16 +2406,120 @@ def write_music_catalog_unmatched(music: list[dict]) -> list[dict]:
     return output
 
 
+def build_covote_coverage(pair_rows: list[dict]) -> dict[str, dict[str, dict]]:
+    """Describe source completeness without materialising unknown pairs."""
+    exported: dict[tuple[str, int, str], int] = defaultdict(int)
+    exported_zero: dict[tuple[str, int, str], int] = defaultdict(int)
+    metric_counts: dict[tuple[str, int, str], Counter] = defaultdict(Counter)
+    for row in pair_rows:
+        key = (row.get("region", ""), integer(row.get("round")), row.get("pair_category", ""))
+        exported[key] += 1
+        if str(row.get("intersection_count", "")).strip() and num(row.get("intersection_count"), None) == 0:
+            exported_zero[key] += 1
+        status = str(row.get("metric_status") or "").strip()
+        metric_counts[key][status or "missing_status"] += 1
+
+    jp_pairs: dict[tuple[int, str], set[tuple[str, str]]] = defaultdict(set)
+    jp_entities: dict[tuple[int, str], set[str]] = defaultdict(set)
+    association_source = ROOT / "data_processed" / "jp_unified" / "entity_association_long.csv.gz"
+    if association_source.exists():
+        with gzip.open(association_source, "rt", encoding="utf-8-sig", newline="") as fh:
+            for row in csv.DictReader(fh):
+                rnd = integer(row.get("round"))
+                category = str(row.get("source_category") or "").strip()
+                if rnd not in range(11, 23) or category not in {"character", "music"} or row.get("target_category") != category:
+                    continue
+                a, b = normalize_name(row.get("source_name", "")), normalize_name(row.get("target_name", ""))
+                if not a or not b or a == b:
+                    continue
+                jp_pairs[(rnd, category)].add(tuple(sorted((a, b))))
+                jp_entities[(rnd, category)].update((a, b))
+
+    coverage: dict[str, dict[str, dict]] = {}
+    for region, rounds in (("cn", sorted(ALLOWED_CN)), ("jp", sorted(ALLOWED_JP))):
+        for rnd in rounds:
+            label = round_label(region, rnd)
+            coverage[label] = {}
+            for category in ("character", "music"):
+                key = (region, rnd, category)
+                item = {
+                    "status": "not_available",
+                    "data_completeness": "not_available",
+                    "censoring_status": "not_observed",
+                    "source_entity_count": 0,
+                    "source_pair_count": 0,
+                    "expected_pairs": None,
+                    "observed_pairs": 0,
+                    "exported_rows": exported.get(key, 0),
+                    "explicit_zero_rows": exported_zero.get(key, 0),
+                    "metric_status_counts": dict(sorted(metric_counts[key].items())),
+                    "complete_metric_rows": metric_counts[key].get("exact_complete_2x2", 0),
+                    "source_path": "",
+                    "validation_path": "",
+                    "note": "没有同部门官方同投来源；未生成配对行，缺失不表示真实 0。",
+                }
+                if region == "cn" and rnd in {10, 11}:
+                    filename = "characters.json" if category == "character" else "music.json"
+                    source_path = ROOT / "data_raw" / "cn_official" / f"round_{rnd:02d}" / "covote" / filename
+                    validation_path = source_path.with_name(f"{category}_reconstruction_validation.json")
+                    validation = {}
+                    if validation_path.exists():
+                        try:
+                            validation = json.loads(validation_path.read_text(encoding="utf-8"))
+                        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+                            validation = {}
+                    expected = validation.get("expectedPairs")
+                    observed = validation.get("observedPairs")
+                    item.update({
+                        "status": "complete_matrix",
+                        "data_completeness": "complete_matrix",
+                        "censoring_status": "not_censored",
+                        "source_entity_count": validation.get("sourceItems", 0),
+                        "source_pair_count": expected or 0,
+                        "expected_pairs": expected,
+                        "observed_pairs": observed,
+                        "source_path": str(source_path.relative_to(ROOT)).replace("\\", "/") if source_path.exists() else "",
+                        "validation_path": str(validation_path.relative_to(ROOT)).replace("\\", "/") if validation_path.exists() else "",
+                        "matrix_checks": {
+                            "expected_equals_observed": expected is not None and expected == observed,
+                            "all_marginal_and_universe_identities_passed": validation.get("allMarginalAndUniverseIdentitiesPassed"),
+                            "all_conditional_symmetry_checks_passed": validation.get("allConditionalSymmetryChecksPassed", validation.get("allAvailableConditionalSymmetryChecksPassed")),
+                            "symmetry_pairs_checked": validation.get("symmetryPairsChecked"),
+                        },
+                        "cell_convention": CN_CELL_CONVENTION,
+                        "note": "完整未截断四格矩阵；m00 明确为 0 的单元保留为观测 0。",
+                    })
+                    if rnd == 11 and category == "music" and validation.get("missingConditionalSources"):
+                        item["note"] += " 两个 conditional source query 有官方查询缺陷，但最终四格 pair 数与边际恒等式验证通过。"
+                elif region == "jp" and rnd in range(11, 23):
+                    pair_key = (rnd, category)
+                    item.update({
+                        "status": "official_published_leading_list",
+                        "data_completeness": "official_published_leading_list",
+                        "censoring_status": "right_censored_by_official_list",
+                        "source_entity_count": len(jp_entities[pair_key]),
+                        "source_pair_count": len(jp_pairs[pair_key]),
+                        "observed_pairs": len(jp_pairs[pair_key]),
+                        "source_path": "data_processed/jp_unified/entity_association_long.csv.gz",
+                        "note": "仅官网公开的关联前列；未出现的实体对未知，不能解释为 0。",
+                    })
+                coverage[label][category] = item
+    return coverage
+
+
 def main() -> None:
     jp_to_cn, cn_to_jp = load_name_maps()
     work_catalog = build_work_catalog()
     metrics = build_character_metrics(jp_to_cn, cn_to_jp)
     character_factions = build_character_factions()
     music = build_music_metrics()
+    music_associations = build_music_associations()
     unmatched_music = write_music_catalog_unmatched(music)
     character_music_links = build_character_music_links(metrics, music, jp_to_cn)
     character_music_covote = build_character_music_covote(metrics, music, jp_to_cn)
     pairs = build_covote_pairs(metrics, jp_to_cn, music)
+    covote_coverage = build_covote_coverage(pairs)
+    character_pair_structure_features = build_character_pair_structure_features(pairs)
     cp_metrics = build_cp_metrics()
     vote_combinations = build_vote_combinations(cp_metrics, pairs)
     questionnaire = build_questionnaire(work_catalog)
@@ -2198,6 +2544,8 @@ def main() -> None:
         "analysis_character_music_links_all.csv", "analysis_character_music_covote_all.csv",
         "analysis_work_catalog.csv",
         "analysis_music_catalog_unmatched.csv",
+        "analysis_music_associations_all.csv",
+        "analysis_character_pair_structure_features_all.csv",
         "analysis_cn_advanced_pairs_all.csv.gz",
     ]
     counts = {
@@ -2213,6 +2561,8 @@ def main() -> None:
         "analysis_character_music_covote_all.csv": len(character_music_covote),
         "analysis_work_catalog.csv": len(work_catalog),
         "analysis_music_catalog_unmatched.csv": len(unmatched_music),
+        "analysis_music_associations_all.csv": len(music_associations),
+        "analysis_character_pair_structure_features_all.csv": len(character_pair_structure_features),
         "analysis_cn_advanced_pairs_all.csv.gz": len(cn_advanced_pairs),
     }
     link_coverage = {}
@@ -2226,7 +2576,7 @@ def main() -> None:
                 "character_music_relations": len(link_rows),
             }
     manifest = {
-        "schema_version": 9,
+        "schema_version": 10,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "scope": {"cn_rounds": sorted(ALLOWED_CN), "jp_rounds": sorted(ALLOWED_JP)},
         "excluded_scope": {},
@@ -2234,15 +2584,25 @@ def main() -> None:
             "ranking_metrics": "CN1-11, JP3-22",
             "music_metrics": "CN1-11, JP3-22",
             "jp_rich_character_metrics": "JP17-22 (fields vary by round)",
-            "covote": "JP11-22 plus complete CN10/11 character and music matrices; source_type distinguishes departments and origins",
-            "cp": "Official CP/组合 rankings where published (CN2-11); combination table falls back to co-vote pairs when a CP row is absent",
+            "covote": "CN10/11 character and music complete four-cell matrices; JP11-22 character and music official published leading lists; all other round/category sources are unavailable and omitted rather than filled with zero",
+            "covote_metrics": {
+                "raw_count": "published m00/intersection; JP directional raw counts retained separately",
+                "conditional_rate": "direction-specific P(B|A) or P(A|B) from the published conditional row",
+                "lift": "CN complete 2x2 independence lift; JP published conditional_rate/overall_rate only",
+                "complete_2x2_only": ["baseline_count", "excess_count", "cosine", "ochiai", "jaccard", "pmi", "npmi", "phi"],
+                "complete_matrix_sources": "CN10/11 same-department character and music matrices",
+                "jp_policy": "JP leading association lists never receive fabricated missing-pair zeros or complete 2x2 metrics",
+                "audit_report": "analysis_results/covote_metrics_audit.json",
+            },
             "questionnaire": "CN1-11 static/modern aggregate tables plus JP17-22 (question availability varies by round)",
             "entity_questionnaire_links": "CN2-4 official detail-page vote-group marginals, CN5-11 questionnaire-conditioned character/music/CP rows, plus JP17-22 character/music/work",
             "cn_advanced_search": "CN5-11 normalized atomic questionnaire/entity conditions; CN5-9 include the official questionnaire pair matrix; CN10-11 expose Boolean AND/OR queries on demand but no legacy all-answer pair endpoint",
             "cn_advanced_search_contract": "scripts_pipeline/cn_advanced_contract.py",
             "work_catalog": "CN legacy translated catalogue plus maintained JP modern additions; release_order is independent of vote rank",
             "character_factions": "THBWiki-backed conservative original-setting groups plus separate first-appearance work cohorts; unverified characters remain unclassified",
-            "character_music_links": "CN1-11, JP3-22 from local_music_merged mapped_character tags",
+            "character_music_links": "CN1-11, JP3-22 direct character_theme relations from music_associations.csv; scene and derivative relations excluded",
+            "music_associations": "CN1-11, JP3-22 typed character_theme, scene_context, and derivative_source relations",
+            "character_pair_structure_features": "Observed character co-vote pairs joined to character_structure_metadata.csv; each attribute comparison is true/false only when both endpoints are confirmed, otherwise unknown",
             "character_music_covote": "CN10-11 official advanced-condition checkpoints plus JP17-22 official character detail pages; count=P(character and music), rate=P(music|character voters participating in music)",
             "music_arrangement_counts": "JP4-22 and CN2-11 THBWiki original-song inter-vote increments, cumulative dated counts through each vote end, and crawl-time all-history totals; CN1 is baseline-only and same-numbered JP/CN rounds use independent calendars",
             "music_arrangement_cross": "JP4-22 and CN2-11 song-vote and character-vote scatter analysis with three selectable x-axis scopes: inter-vote increment, cumulative dated count through vote end, or crawl-time cumulative total; CN1 has no inter-vote increment; character totals deduplicate mapped canonical original songs",
@@ -2257,6 +2617,14 @@ def main() -> None:
             },
         },
         "character_music_link_coverage": link_coverage,
+        "covote_coverage": covote_coverage,
+        "character_pair_structure": {
+            "metadata_path": "metadata/character_structure_metadata.csv",
+            "metadata_sha256": sha256(ROOT / "metadata" / "character_structure_metadata.csv") if (ROOT / "metadata" / "character_structure_metadata.csv").exists() else "",
+            "output_path": CHARACTER_PAIR_STRUCTURE_FEATURES_PATH.relative_to(ROOT).as_posix(),
+            "rows": len(character_pair_structure_features),
+            "unknown_feature_policy": "A same_* or shared_* value is unknown when either endpoint attribute is blank, unknown, or unresolved; missing is never false.",
+        },
         "cn_advanced_contract": canonical_advanced,
         "outputs": {name: {"rows": counts[name], "sha256": sha256(OUT / name)} for name in files},
     }
@@ -2265,7 +2633,7 @@ def main() -> None:
     print(f"music metrics: {len(music)} (CN1-11, JP3-22)")
     print(f"character-music links: {len(character_music_links)} (CN1-11, JP3-22)")
     print(f"character-music co-vote rows: {len(character_music_covote)} (CN10-11 + JP17-22; official conditional detail)")
-    print(f"co-vote pairs: {len(pairs)} (JP11-22 + CN10/11 official matrices)")
+    print(f"co-vote pairs: {len(pairs)} (CN10/11 complete character+music matrices; JP11-22 published leading lists)")
     print(f"CP metrics: {len(cp_metrics)}; unified combinations: {len(vote_combinations)} (official CP with co-vote fallback)")
     print(f"questionnaire rows: {len(questionnaire)} (CN1-11 static/modern aggregates + JP17-22; question availability varies)")
     print(f"entity-questionnaire rows: {len(entity_questionnaire)} (CN2-4 detail marginals + CN5-11 advanced + JP17-22)")

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "225",
+  "entity_name": "水鬼鬼神长",
+  "rank": 225,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "907a25b6e0f265ae239a983fe32ccec0ccdc4f5d23ddacb711682a531961f6fc",
+    "bytes": 66,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:35+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 225
+      }
+    }
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "225",
+      "entity_name": "水鬼鬼神长",
+      "rank": 225,
+      "comment_index": 1,
+      "text": "看起来好强",
+      "raw_text": "看起来好强",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "907a25b6e0f265ae239a983fe32ccec0ccdc4f5d23ddacb711682a531961f6fc",
+      "source_bytes": 66,
+      "retrieved_at": "2026-09-28T18:04:35+00:00"
+    }
+  ],
+  "error": null
+}

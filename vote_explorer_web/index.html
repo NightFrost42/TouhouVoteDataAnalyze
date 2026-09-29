@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="东方人气投票研究：角色、曲子、CP、问卷与同人曲数量的静态分析工具">
   <title>东方人气投票研究｜网页版</title>
-  <link rel="stylesheet" href="styles.css?v=2026-09-09-50">
+  <link rel="stylesheet" href="styles.css?v=2026-09-29-research">
 </head>
 <body>
   <header class="hero">
@@ -44,6 +44,9 @@
             </optgroup>
             <optgroup label="对比分析项目（统一对比表）">
               <option value="desktop_compare">桌面版完整分析（单届 + 跨届）</option>
+            </optgroup>
+            <optgroup label="研究型网络（离线统计结果）">
+              <option value="research">网络统计与结构社区</option>
             </optgroup>
           </select>
         </label>
@@ -117,6 +120,8 @@
           <span>最少共同人数/数据值</span>
           <input id="min-count" type="number" min="0" max="1000000" step="1" value="0">
         </label>
+        <label id="network-node-size-label" class="hidden"><span>节点大小</span><select id="network-node-size"><option value="selection_count">选择人数</option><option value="weighted_degree">加权度</option><option value="pagerank">PageRank</option></select></label>
+        <label id="network-edge-color-label" class="hidden"><span>边颜色</span><select id="network-edge-color"><option value="lift">lift</option><option value="cosine">cosine</option><option value="phi">φ</option></select></label>
         <label id="sort-label" class="hidden">
           <span>排序</span>
           <select id="sort">
@@ -162,6 +167,22 @@
       <div class="control-note" id="control-note">
         Top N 是图表和结果表最终显示的行数，不是重新计算投票总数的抽样人数。
       </div>
+      <fieldset id="research-controls" class="hidden research-controls">
+        <legend>研究型网络 · 只读取构建阶段的结果</legend>
+        <div class="controls-grid">
+          <label><span>分析层级</span><select id="research-level"></select></label>
+          <label><span>网络范围</span><select id="research-scope"></select></label>
+          <label><span>比较范围</span><select id="research-comparison"></select></label>
+          <label><span>指标</span><select id="research-metric"></select></label>
+          <label><span>统计方法</span><select id="research-method"></select></label>
+          <label><span>阈值（已运行场景）</span><select id="research-threshold"></select></label>
+          <label><span>社区算法</span><select id="research-algorithm"></select></label>
+          <label><span>最低配对数</span><input id="research-min-pairs" type="number" min="0" step="1" value="0"></label>
+          <label><span>是否只看完整矩阵</span><select id="research-complete"><option value="all">全部（明确标注完整性）</option><option value="complete">只看已确认完整矩阵</option></select></label>
+          <label><span>是否显示探索性结果</span><select id="research-exploratory"><option value="hide">隐藏探索性结果</option><option value="show">显示并标注</option></select></label>
+        </div>
+        <p class="small-note">这些控件只筛选已完成的统计运行，不改变检验参数。普通同投网络仍在桌面版完整分析中；结构社区不是原作阵营。未发布关系与删失值不补零。</p>
+      </fieldset>
       <div class="project-path" id="project-path">项目层级：单届结果（分析项目根目录）</div>
       <div class="status-line" id="status-line" role="status" aria-live="polite">准备读取数据…</div>
     </section>
@@ -185,6 +206,8 @@
           <button class="button secondary" id="chart-zoom-in" type="button" title="放大图表">+</button>
           <button class="button secondary" id="chart-zoom-reset" type="button">重置大小</button>
           <button class="button secondary" id="download-button" type="button">下载当前结果 CSV</button>
+          <button class="button secondary hidden" id="download-svg" type="button">下载 SVG</button>
+          <button class="button secondary hidden" id="research-download-all" type="button">下载全部筛选结果 CSV</button>
         </div>
       </div>
       <p class="chart-note" id="chart-note"></p>
@@ -193,6 +216,11 @@
         <svg id="chart" role="img" aria-labelledby="chart-title" viewBox="0 0 1100 540"></svg>
         <div class="chart-tooltip" id="chart-tooltip" role="status" aria-live="polite"></div>
       </div>
+      <p id="research-caveat" class="chart-note hidden"></p>
+      <details id="research-provenance" class="hidden">
+        <summary>运行参数、来源与数据完整性</summary>
+        <pre id="research-run-details"></pre>
+      </details>
     </section>
 
     <section class="panel table-panel" aria-labelledby="table-title">
@@ -213,7 +241,7 @@
 
     <section class="panel provenance-panel">
       <h2>口径与部署</h2>
-      <p id="provenance-text">网页读取仓库内的全量分析 CSV；实体问卷、角色/曲子交叉、CP、同投矩阵、网络、气泡、指标、跨届变化、方向、累计、聚类、四象限、异常和自定义视图均先按当前筛选重算全量数据，再在最后一步按 Top N 切片。空白表示原始来源未公开，不会强制填成 0。中文区和日文区的同人曲投票窗口使用各自的日期。</p>
+      <p id="provenance-text">研究型网络仅读取离线统计结果，运行参数和完整性见图下注释与清单。普通视图读取仓库内的全量分析 CSV；实体问卷、角色/曲子交叉、CP、同投矩阵、网络、气泡、指标、跨届变化、方向、累计、聚类、四象限、异常和自定义视图先按当前筛选计算，再按 Top N 切片。空白不等于 0。中文区和日文区的同人曲投票窗口使用各自的日期。</p>
       <p class="small-note">部署到 GitHub Pages 时，默认数据路径为 <code>../vote_explorer/data/</code>。如果只发布本目录，可在 URL 后追加 <code>?data=./data/</code> 并把所需 CSV 放入同名 data 目录。</p>
       <div class="links-row">
         <a href="../vote_explorer/README.md">桌面工具说明</a>
@@ -224,6 +252,7 @@
   </main>
 
   <footer class="footer">东方人气投票研究 · 静态网页原型 · 不修改桌面工具本体</footer>
-  <script src="app.js?v=2026-09-09-50" defer></script>
+  <script src="research.js?v=2026-09-29-research" defer></script>
+  <script src="app.js?v=2026-09-29-research" defer></script>
 </body>
 </html>

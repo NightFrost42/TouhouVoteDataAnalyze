@@ -73,6 +73,13 @@ code { padding: 2px 5px; border-radius: 5px; background: #f1f5f9; color: #9f3046
 .footer { padding: 20px 16px 35px; text-align: center; color: #94a3b8; font-size: 12px; }
 .hidden { display: none !important; }
 .error-text { color: #b91c1c; }
+.research-controls { margin: 16px 0 0; padding: 14px; border: 1px solid var(--line); border-radius: 10px; }
+.research-controls legend { color: var(--accent-dark); font-weight: 650; padding: 0 6px; }
+#research-caveat { margin: 12px 0; padding: 10px 12px; background: #fff7ed; border-left: 3px solid #d97706; }
+#research-provenance { margin-top: 12px; font-size: 13px; color: var(--muted); }
+#research-provenance summary { cursor: pointer; color: var(--ink); }
+#research-run-details { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 360px; overflow: auto; padding: 12px; background: #f8fafc; }
+#chart.research-chart { min-width: 0; }
 @media (max-width: 900px) {
   .hero-inner { align-items: flex-start; flex-direction: column; }
   .controls-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }

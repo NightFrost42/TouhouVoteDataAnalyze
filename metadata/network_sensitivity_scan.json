@@ -1,0 +1,39 @@
+{
+  "analysis_name": "character_pair_network_sensitivity",
+  "parameters": {
+    "random_seed": 20260929,
+    "permutations": 199,
+    "min_group_n": 10,
+    "alpha": 0.05,
+    "tail": "two-sided"
+  },
+  "scope": {
+    "region": ["cn", "jp"],
+    "round": "all_observed"
+  },
+  "metrics": [
+    {"name": "lift", "column": "lift", "minimum_scope": "complete_matrix"},
+    {"name": "cosine", "column": "cosine", "minimum_scope": "complete_matrix"},
+    {"name": "phi", "column": "phi", "minimum_scope": "complete_matrix"}
+  ],
+  "hypotheses": [
+    {
+      "name": "same_first_appearance_work",
+      "observation": "same_first_appearance_work == 1",
+      "control": "same_first_appearance_work == 0",
+      "scope": "all_pairs",
+      "inference_status": "exploratory"
+    }
+  ],
+  "scans": [
+    {"threshold_type": "intersection_count", "thresholds": [0, 50, 100]},
+    {"threshold_type": "lift", "thresholds": [1, 1.25]},
+    {"threshold_type": "cp_vote_count", "thresholds": [0, 100]}
+  ],
+  "node_sets": [
+    {"name": "all_observed"},
+    {"name": "top_ranked", "rank_max": 30}
+  ],
+  "data_completeness": ["complete_matrix"],
+  "adjustments": ["holm", "bh"]
+}

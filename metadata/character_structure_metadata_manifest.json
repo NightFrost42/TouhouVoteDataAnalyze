@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "coding_version": "character-structure-v1",
+  "scope": {
+    "roster_source": "metadata/character_name_crosswalk.csv",
+    "primary_key": [
+      "canonical_name",
+      "crosswalk_key"
+    ],
+    "rows": 217,
+    "primary_key_unique": true
+  },
+  "policy": {
+    "unknown_values": "empty_string",
+    "reference_index_note": "THBWiki saved character reference index; not official certification",
+    "manual_values": "Accepted only from the exact-name override ledger with non-empty basis/source/version.",
+    "prohibited_inference": "No vote, social-platform, tag, graph, network-cluster, or community-detection output may fill structure fields.",
+    "forbidden_source_fragments": [
+      "analysis_results/community_poll_alignment",
+      "analysis_character_factions.csv",
+      "bilibili",
+      "tieba",
+      "pixiv",
+      "character_community_tag_coverage",
+      "community_detection",
+      "network_cluster"
+    ]
+  },
+  "inputs": {
+    "metadata/character_name_crosswalk.csv": {
+      "rows": 217,
+      "sha256": "8426081e206035e00331f9672ac4b202c585916d80d511f435eecb4d471cefff"
+    },
+    "metadata/thbwiki_official_character_list.csv": {
+      "rows": 179,
+      "sha256": "b49bb196d4b01850e4ad6cf6ec09828e25105eed51a93f0776fd059f99ae9d69"
+    },
+    "metadata/character_structure_manual_overrides.csv": {
+      "rows": 80,
+      "sha256": "5904e1ca8db8b0ad9dc68bd311255b024b55deb59b27eb03944a012ac1ed0de5",
+      "rejected_rows": []
+    },
+    "scripts_pipeline/build_vote_explorer_analysis_data.py#FACTION_MEMBERS": {
+      "sha256": "3ab44c3db330bbbde3e9eef74b1a0f2dd1e7d8782e005ead030669f50f8469ed",
+      "usage": "Declared source of the pre-existing explicit manual affiliations copied into the override ledger; never parsed as a roster or inference input."
+    }
+  },
+  "reference_match_status": {
+    "exact_canonical_cn_fun": 4,
+    "exact_character_key_thb": 161,
+    "unmatched": 52
+  },
+  "metadata_status": {
+    "crosswalk_only": 48,
+    "manual_only": 4,
+    "reference_and_manual": 75,
+    "reference_only": 90
+  },
+  "field_coverage": {
+    "crosswalk_first_appearance_work_id": {
+      "populated": 151,
+      "blank": 66
+    },
+    "reference_first_appearance_work": {
+      "populated": 165,
+      "blank": 52
+    },
+    "reference_identity_or_title": {
+      "populated": 165,
+      "blank": 52
+    },
+    "reference_character_type": {
+      "populated": 165,
+      "blank": 52
+    },
+    "reference_source_group": {
+      "populated": 165,
+      "blank": 52
+    },
+    "stage": {
+      "populated": 0,
+      "blank": 217
+    },
+    "boss_identity": {
+      "populated": 0,
+      "blank": 217
+    },
+    "region": {
+      "populated": 33,
+      "blank": 184
+    },
+    "region_type": {
+      "populated": 33,
+      "blank": 184
+    },
+    "community": {
+      "populated": 47,
+      "blank": 170
+    },
+    "community_type": {
+      "populated": 47,
+      "blank": 170
+    }
+  },
+  "outputs": {
+    "metadata/character_structure_metadata.csv": {
+      "rows": 217,
+      "sha256": "0135dc5df6029594e07120d90b927611d268f1f082d151f585b6b718a8cbf928"
+    },
+    "metadata/character_structure_field_audit.csv": {
+      "rows": 2387,
+      "sha256": "898f3fe8c9c4659cc46449c217956cb82764c59dc21340defcbe5b33c215a961"
+    }
+  }
+}

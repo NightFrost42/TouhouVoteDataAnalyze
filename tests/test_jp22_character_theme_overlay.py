@@ -60,14 +60,15 @@ class JP22CharacterThemeOverlayTests(unittest.TestCase):
 
     def test_overlay_has_only_verified_new_character_themes(self) -> None:
         by_title, by_music_id = canonical.load_jp22_theme_overlay()
-        self.assertEqual(set(by_music_id), {"837", "841", "843"})
-        self.assertEqual(len(by_title), 3)
+        self.assertEqual(set(by_music_id), {"835", "837", "841", "843"})
+        self.assertEqual(len(by_title), 4)
         self.assertEqual(
             {
                 (row["music_id"], row["character_id"], row["character_name_cn"])
                 for row in by_music_id.values()
             },
             {
+                ("835", "221", "道神驯子"),
                 ("837", "223", "维缦·浅间"),
                 ("841", "224", "磐永阿梨夜"),
                 ("843", "225", "渡里贝子"),
@@ -86,6 +87,7 @@ class JP22CharacterThemeOverlayTests(unittest.TestCase):
         report = json.loads(report_path.read_text(encoding="utf-8"))
 
         expected = {
+            "835": ("どうせなら命を賭けて謎を解け", "道神驯子"),
             "837": ("鹿狩りのレミニセンス", "维缦·浅间"),
             "841": ("最後の一人は慣れてるから 〜 Stone Goddess", "磐永阿梨夜"),
             "843": ("二枚貝の上のハルシネーション", "渡里贝子"),
@@ -102,7 +104,8 @@ class JP22CharacterThemeOverlayTests(unittest.TestCase):
             # Once the verified rows are written to the user's workbook, the
             # workbook mapping is authoritative; the overlay remains a
             # traceable fallback for a fresh checkout without those rows.
-            self.assertEqual(source[0]["merge_basis"], "official_jp_user_repaired_exact")
+            expected_basis = "official_jp_thbwiki_overlay" if music_id == "835" else "official_jp_user_repaired_exact"
+            self.assertEqual(source[0]["merge_basis"], expected_basis)
 
             merged = [
                 row
@@ -115,8 +118,8 @@ class JP22CharacterThemeOverlayTests(unittest.TestCase):
             self.assertEqual(json.loads(merged[0]["mapped_characters_json"]), [owner])
 
         self.assertEqual(report["round_coverage"]["jp"][-1], 22)
-        self.assertEqual(report["jp22_character_theme_overlay"]["rows"], 3)
-        self.assertEqual(report["jp22_character_theme_overlay"]["mapped_source_rows"], 0)
+        self.assertEqual(report["jp22_character_theme_overlay"]["rows"], 4)
+        self.assertEqual(report["jp22_character_theme_overlay"]["mapped_source_rows"], 2)
         self.assertEqual(report["jp22_character_theme_overlay"]["workbook_authoritative_rows"], 3)
 
 

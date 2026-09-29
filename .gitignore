@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
+node_modules/
+.playwright-browsers/
+.claude/
+review.diff
 
 # Reproducible local build environments used by the Windows packagers
 vote_explorer/.build_python/

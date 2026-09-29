@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "source_rows": 14764,
-  "merged_rows": 14714,
+  "merged_rows": 14744,
   "round_coverage": {
     "jp": [
       3,
@@ -84,18 +84,33 @@
   "jp_official_supplement_mapping": {
     "rows": 1230,
     "matched_existing_repaired_mapping": 1199,
-    "unmatched_kept_as_official_japanese": 31,
+    "unmatched_kept_as_official_japanese": 29,
     "audit_path": "data_processed/music_canonical/jp_official_supplement_mapping_audit.csv",
     "policy": "never guess or overwrite missing translations; keep the official Japanese title and expose it for manual review"
   },
+  "music_relations": {
+    "schema_version": 1,
+    "override_path": "metadata/music_character_relation_overrides.csv",
+    "association_rows": 4633,
+    "audit_rows": 4439,
+    "by_type": {
+      "character_theme": 3896,
+      "scene_context": 679,
+      "derivative_source": 58
+    },
+    "outputs": [
+      "data_processed/music_canonical/music_associations.csv",
+      "data_processed/music_canonical/music_relation_audit.csv"
+    ]
+  },
   "jp22_character_theme_overlay": {
     "path": "metadata/jp22_character_theme_tags.csv",
-    "rows": 3,
-    "mapped_source_rows": 0,
+    "rows": 4,
+    "mapped_source_rows": 2,
     "workbook_authoritative_rows": 3,
     "policy": "add only missing JP22 character-theme mappings; never overwrite repaired workbook ownership"
   },
-  "groups_with_multiple_rows_same_round": 37,
+  "groups_with_multiple_rows_same_round": 19,
   "conservation": [
     {
       "site": "cn",
@@ -317,9 +332,9 @@
   ],
   "all_score_totals_conserved": true,
   "cn11_yaoya_bahu_check": {
-    "source_row_count": 3,
-    "score": 151.0,
-    "primary_count": 5.0
+    "source_row_count": 1,
+    "score": 83.0,
+    "primary_count": 2.0
   },
   "rule": "sum additive fields within site+round+merge_group_id; never across rounds"
 }

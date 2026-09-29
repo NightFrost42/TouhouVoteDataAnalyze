@@ -1,5 +1,7 @@
 # 东方人气投票数据工作区
 
+新增同投网络与统计结果的非代码说明：[方法与解释边界](docs/network_analysis_methodology.md)、[逐列数据字典](docs/network_analysis_data_dictionary.md)、[覆盖与复现](docs/network_analysis_reproducibility.md)。同投不是 CP、原作关系或因果证据；未公开配对不能补零。具体届次以数据 manifest 和运行清单为准。
+
 ## 🌐 网页版入口（推荐）
 
 **[立即打开东方人气投票研究网页版 →](https://nightfrost42.github.io/TouhouVoteDataAnalyze/vote_explorer_web/)**
@@ -15,6 +17,7 @@
 - `analysis_results/`：由本地程序计算的数值结果，不把截图当作数值来源。
 - `scripts_pipeline/`：当前维护的爬虫、规范化、校验、分析程序和爬取控制台。具体控制方式见 `scripts_pipeline/README.md`。
 - `metadata/`：manifest、隐藏 journal、覆盖矩阵、校验结果、队列配置/状态和日志。它们同时承担溯源与断点恢复，不能按普通缓存删除。
+- 角色结构元数据以 `metadata/character_structure_metadata.csv` 为宽表、`metadata/character_structure_field_audit.csv` 为逐字段审计表；它们只以 `metadata/character_name_crosswalk.csv` 定义的当前角色 roster 为范围。无法确认的关卡、Boss 身份、区域或社群字段保持空白；`metadata/character_structure_manual_overrides.csv` 是唯一允许写入人工编码的台账，必须有 `basis/source/version`。
 - `reports/`：覆盖审计、文章核查和清理报告等人类可读文档。
 - `tests/`：当前流水线的自动化回归测试。
 - `vote_explorer/`：离线查询器、文章分析工作台、便携数据和 Windows 构建脚本；入口与分析口径见 `vote_explorer/README.md`。

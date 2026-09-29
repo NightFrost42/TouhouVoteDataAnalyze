@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "169",
+  "entity_name": "菊理",
+  "rank": 169,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "cb2ca3185c80e90e75c43891a59d25097d6e8b5c90f96feefd37b3b1e7454ce8",
+    "bytes": 105,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:26+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 169
+      }
+    }
+  },
+  "comment_count": 2,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "169",
+      "entity_name": "菊理",
+      "rank": 169,
+      "comment_index": 1,
+      "text": "关爱旧作...（）",
+      "raw_text": "关爱旧作...（）",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "cb2ca3185c80e90e75c43891a59d25097d6e8b5c90f96feefd37b3b1e7454ce8",
+      "source_bytes": 105,
+      "retrieved_at": "2026-09-28T18:04:26+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "169",
+      "entity_name": "菊理",
+      "rank": 169,
+      "comment_index": 2,
+      "text": "菊理，我美丽的大铜玉",
+      "raw_text": "菊理，我美丽的大铜玉",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "cb2ca3185c80e90e75c43891a59d25097d6e8b5c90f96feefd37b3b1e7454ce8",
+      "source_bytes": 105,
+      "retrieved_at": "2026-09-28T18:04:26+00:00"
+    }
+  ],
+  "error": null
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 11,
+  "category": "character",
+  "entity_id": "173",
+  "entity_name": "大鲶鱼",
+  "rank": 173,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "ba193f986c0d9648f99b1231f5f95530b6e03904544a68f4f256893a6f3f33b7",
+    "bytes": 114,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:05:06+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2023-12-29T10:00:00.000Z",
+        "voteYear": 11,
+        "rank": 173
+      }
+    }
+  },
+  "comment_count": 2,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 11,
+      "category": "character",
+      "entity_id": "173",
+      "entity_name": "大鲶鱼",
+      "rank": 173,
+      "comment_index": 1,
+      "text": "你是我格斗作第一个打不过的。",
+      "raw_text": "你是我格斗作第一个打不过的。",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "ba193f986c0d9648f99b1231f5f95530b6e03904544a68f4f256893a6f3f33b7",
+      "source_bytes": 114,
+      "retrieved_at": "2026-09-28T18:05:06+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 11,
+      "category": "character",
+      "entity_id": "173",
+      "entity_name": "大鲶鱼",
+      "rank": 173,
+      "comment_index": 2,
+      "text": "肥肥的很可爱",
+      "raw_text": "肥肥的很可爱",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "ba193f986c0d9648f99b1231f5f95530b6e03904544a68f4f256893a6f3f33b7",
+      "source_bytes": 114,
+      "retrieved_at": "2026-09-28T18:05:06+00:00"
+    }
+  ],
+  "error": null
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "214",
+  "entity_name": "野槌",
+  "rank": 214,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "70564851c71f9f52013d6f7d9317a202bb92b2a96ee63fe6387b256698983bc7",
+    "bytes": 88,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:33+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 214
+      }
+    }
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "214",
+      "entity_name": "野槌",
+      "rank": 214,
+      "comment_index": 1,
+      "text": "Ꮝ：是喜欢硬币的friends呢！",
+      "raw_text": "Ꮝ：是喜欢硬币的friends呢！",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "70564851c71f9f52013d6f7d9317a202bb92b2a96ee63fe6387b256698983bc7",
+      "source_bytes": 88,
+      "retrieved_at": "2026-09-28T18:04:33+00:00"
+    }
+  ],
+  "error": null
+}

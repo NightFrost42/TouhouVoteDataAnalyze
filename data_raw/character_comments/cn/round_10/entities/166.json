@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "166",
+  "entity_name": "管狐",
+  "rank": 166,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "326a08c9e3c197802a64999b8dff091b9549f174c4784e2eb37c7809647203ca",
+    "bytes": 122,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:26+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 166
+      }
+    }
+  },
+  "comment_count": 2,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "166",
+      "entity_name": "管狐",
+      "rank": 166,
+      "comment_index": 1,
+      "text": "狡猾小狐狸(๑＞ڡ＜)☆ （其实是因为好色哦）",
+      "raw_text": "狡猾小狐狸(๑＞ڡ＜)☆ （其实是因为好色哦）",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "326a08c9e3c197802a64999b8dff091b9549f174c4784e2eb37c7809647203ca",
+      "source_bytes": 122,
+      "retrieved_at": "2026-09-28T18:04:26+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "166",
+      "entity_name": "管狐",
+      "rank": 166,
+      "comment_index": 2,
+      "text": "色色",
+      "raw_text": "色色",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "326a08c9e3c197802a64999b8dff091b9549f174c4784e2eb37c7809647203ca",
+      "source_bytes": 122,
+      "retrieved_at": "2026-09-28T18:04:26+00:00"
+    }
+  ],
+  "error": null
+}

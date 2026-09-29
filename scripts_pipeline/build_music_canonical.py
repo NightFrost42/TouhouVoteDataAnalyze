@@ -23,6 +23,9 @@ WORKSPACE = Path(__file__).resolve().parents[1]
 OUT_ROOT = WORKSPACE / "data_processed" / "music_canonical"
 REPORT_PATH = WORKSPACE / "metadata" / "music_canonical_validation.json"
 JP22_THEME_OVERLAY_PATH = WORKSPACE / "metadata" / "jp22_character_theme_tags.csv"
+MUSIC_RELATION_OVERRIDES_PATH = WORKSPACE / "metadata" / "music_character_relation_overrides.csv"
+CHARACTER_IDENTITY_ALIASES_PATH = WORKSPACE / "metadata" / "character_identity_aliases.csv"
+RELATION_SCHEMA_VERSION = 1
 
 MANUAL_ALIASES = {
     "今宵是飘逸的利己主义者": "今宵是飘逸的自我主义者",
@@ -78,6 +81,106 @@ def jp_title_key(value: Any) -> str:
 def group_id(title: str) -> str:
     digest = hashlib.sha256(title.encode("utf-8")).hexdigest()[:16]
     return f"music:{digest}"
+
+
+def variant_key(value: Any) -> str:
+    """Normalize a full title for explicit variant overrides only."""
+    text = clean_text(value).casefold()
+    text = text.replace("〜", "～").replace("~", "～")
+    return re.sub(r"\s+", "", text)
+
+
+def load_relation_overrides(path: Path = MUSIC_RELATION_OVERRIDES_PATH) -> dict[str, dict[str, str]]:
+    """Load explicit THBWiki-backed semantic and variant corrections."""
+    output: dict[str, dict[str, str]] = {}
+    if not path.exists():
+        return output
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        required = {
+            "title_variant_key", "title_jp", "title_cn", "relation_type",
+            "theme_characters", "scene_context", "derivative_sources",
+            "canonical_track", "thbwiki_url", "source_note", "confidence",
+        }
+        missing = required - set(reader.fieldnames or ())
+        if missing:
+            raise ValueError(f"music relation override missing columns: {sorted(missing)!r}")
+        for raw in reader:
+            record = {key: clean_text(value) for key, value in raw.items()}
+            if not record.get("title_variant_key") or not record.get("relation_type"):
+                raise ValueError(f"invalid music relation override: {record!r}")
+            keys = {record["title_variant_key"]}
+            for title in (record.get("title_jp", ""), record.get("title_cn", "")):
+                if title:
+                    keys.add(variant_key(title))
+            for key in keys:
+                if key in output and output[key] != record:
+                    raise ValueError(f"duplicate music relation override key: {key!r}")
+                output[key] = record
+    return output
+
+
+def load_character_identity_aliases(path: Path = CHARACTER_IDENTITY_ALIASES_PATH) -> dict[str, str]:
+    """Load aliases that collapse old/new labels to one analysis identity."""
+    output: dict[str, str] = {}
+    if not path.exists():
+        return output
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        required = {"alias", "canonical_identity", "era", "source_note"}
+        missing = required - set(reader.fieldnames or ())
+        if missing:
+            raise ValueError(f"character identity alias file missing columns: {sorted(missing)!r}")
+        for raw in reader:
+            alias = clean_text(raw.get("alias"))
+            canonical = clean_text(raw.get("canonical_identity"))
+            if not alias or not canonical:
+                continue
+            key = variant_key(alias)
+            previous = output.get(key)
+            if previous and previous != canonical:
+                raise ValueError(f"conflicting character identity alias: {alias!r}")
+            output[key] = canonical
+    return output
+
+
+def canonicalize_character_names(value: Any, aliases: dict[str, str]) -> str:
+    """Return pipe-separated canonical identities while preserving tag order."""
+    output: list[str] = []
+    for raw in split_relation_values(value):
+        canonical = aliases.get(variant_key(raw), raw)
+        if canonical not in output:
+            output.append(canonical)
+    return "|".join(output)
+
+
+def relation_for_title(overrides: dict[str, dict[str, str]], *titles: Any) -> dict[str, str] | None:
+    for title in titles:
+        key = variant_key(title)
+        if key and key in overrides:
+            return overrides[key]
+    # A display-only subtitle may be present in one voting source but absent in
+    # another.  Permit a stripped-title fallback only when it resolves to one
+    # unambiguous override; variant families with competing owners remain
+    # unresolved and are never assigned by first-row order.
+    candidates: dict[str, dict[str, str]] = {}
+    for record in overrides.values():
+        for title in (record.get("title_jp", ""), record.get("title_cn", "")):
+            base = variant_key(normalize_exact_title(title))
+            if base:
+                candidates.setdefault(base, record)
+                if candidates[base] != record:
+                    candidates[base] = {}
+    for title in titles:
+        base = variant_key(normalize_exact_title(title))
+        record = candidates.get(base)
+        if record:
+            return record
+    return None
+
+
+def split_relation_values(value: Any) -> list[str]:
+    return [part.strip() for part in re.split(r"[|;]", clean_text(value)) if part.strip()]
 
 
 def numeric(value: Any) -> float | int | None:
@@ -176,6 +279,8 @@ def main() -> None:
 
     mapping = pd.read_excel(WORKSPACE / "TouhouMusicInfo.xlsx")
     overlay_by_title, overlay_by_music_id = load_jp22_theme_overlay()
+    relation_overrides = load_relation_overrides()
+    identity_aliases = load_character_identity_aliases()
     mapping_rows: list[dict[str, str]] = []
     by_jp_exact: dict[str, dict[str, str]] = {}
     by_jp_theme_key: dict[str, dict[str, str]] = {}
@@ -241,17 +346,36 @@ def main() -> None:
                     if overlay is not None:
                         mapped = overlay_mapping(overlay)
                         merge_basis = "jp22_thbwiki_overlay"
-                if mapped is not None:
-                    canonical = (
-                        mapped["canonical_theme"]
-                        if mapped["owner"]
-                        else mapped["canonical_full"]
+                override = relation_for_title(relation_overrides, raw_jp, raw_cn)
+                if override is not None:
+                    relation_type = override["relation_type"]
+                    owner = canonicalize_character_names(
+                        override.get("theme_characters", "") if relation_type == "character_theme" else "",
+                        identity_aliases,
                     )
+                    canonical = override.get("canonical_track", "") or normalize_exact_title(raw_cn or raw_jp)
+                    scene_context = override.get("scene_context", "")
+                    if not scene_context and relation_type == "scene_context":
+                        scene_context = re.split(r"[；;]", override.get("source_note", ""), maxsplit=1)[0].strip()
+                    derivative_sources = override.get("derivative_sources", "")
+                    merge_basis = f"relation_override_{relation_type}"
                 else:
-                    canonical = normalize_exact_title(raw_cn or raw_jp)
+                    relation_type = "character_theme" if mapped is not None and mapped["owner"] else ""
+                    scene_context = ""
+                    derivative_sources = ""
+                    if mapped is not None:
+                        canonical = (
+                            mapped["canonical_theme"]
+                            if mapped["owner"]
+                            else mapped["canonical_full"]
+                        )
+                    else:
+                        canonical = normalize_exact_title(raw_cn or raw_jp)
+                    owner = canonicalize_character_names(mapped["owner"] if mapped else "", identity_aliases)
                 if not canonical:
                     canonical = raw_cn or raw_jp
-                owner = mapped["owner"] if mapped else ""
+                explicit_variant = override.get("title_variant_key", "") if override else ""
+                track_variant = explicit_variant or variant_key(canonical)
 
                 score = numeric(first_present(row, ["得票数", "票数"]))
                 primary = numeric(first_present(row, ["本名票数", "本命数"]))
@@ -271,9 +395,19 @@ def main() -> None:
                         "raw_title_jp": raw_jp,
                         "raw_title_cn": raw_cn,
                         "canonical_track": canonical,
-                        "merge_group_id": group_id(canonical),
+                        "title_variant_key": track_variant,
+                        "music_track_id": group_id(track_variant),
+                        "merge_group_id": group_id(track_variant),
                         "merge_basis": merge_basis,
                         "mapped_character": owner,
+                        "theme_characters_json": json.dumps(split_relation_values(owner), ensure_ascii=False),
+                        "scene_context_json": json.dumps([scene_context] if clean_text(scene_context) else [], ensure_ascii=False),
+                        "derivative_sources_json": json.dumps(split_relation_values(derivative_sources), ensure_ascii=False),
+                        "relation_type": relation_type,
+                        "relation_thbwiki_url": override.get("thbwiki_url", "") if override else "",
+                        "relation_source_note": override.get("source_note", "") if override else "",
+                        "relation_confidence": override.get("confidence", "") if override else "",
+                        "relation_schema_version": RELATION_SCHEMA_VERSION,
                         "score": score,
                         "primary_count": primary,
                         "comment_count": comments,
@@ -298,6 +432,7 @@ def main() -> None:
             if round_number in existing_jp_rounds:
                 continue
             raw_jp = clean_text(row.get("name"))
+            raw_cn = ""
             mapped = by_jp_exact.get(raw_jp)
             merge_basis = "official_jp_exact_title"
             if mapped is not None:
@@ -317,18 +452,39 @@ def main() -> None:
                 if overlay is not None:
                     mapped = overlay_mapping(overlay)
                     merge_basis = "official_jp_thbwiki_overlay"
-            if mapped is not None:
-                canonical = (
-                    mapped["canonical_theme"]
-                    if mapped["owner"]
-                    else mapped["canonical_full"]
+            overlay_by_id = overlay_by_music_id.get(clean_text(row.get("code")))
+            if overlay_by_id is not None and (mapped is None or not mapped.get("owner")):
+                mapped = overlay_mapping(overlay_by_id)
+                merge_basis = "official_jp_thbwiki_overlay"
+            override = None if merge_basis == "official_jp_thbwiki_overlay" else relation_for_title(relation_overrides, raw_jp, raw_cn)
+            if override is not None:
+                relation_type = override["relation_type"]
+                owner = canonicalize_character_names(
+                    override.get("theme_characters", "") if relation_type == "character_theme" else "",
+                    identity_aliases,
                 )
+                canonical = override.get("canonical_track", "") or normalize_exact_title(raw_jp)
+                raw_cn = override.get("title_cn", "")
+                scene_context = override.get("scene_context", "")
+                if not scene_context and relation_type == "scene_context":
+                    scene_context = re.split(r"[；;]", override.get("source_note", ""), maxsplit=1)[0].strip()
+                derivative_sources = override.get("derivative_sources", "")
+                merge_basis = f"relation_override_{relation_type}"
+            elif mapped is not None:
+                relation_type = "character_theme" if mapped["owner"] else ""
+                canonical = mapped["canonical_theme"] if mapped["owner"] else mapped["canonical_full"]
                 raw_cn = mapped["canonical_full"]
-                owner = mapped["owner"]
+                owner = canonicalize_character_names(mapped["owner"], identity_aliases)
+                scene_context = ""
+                derivative_sources = ""
             else:
+                relation_type = ""
                 canonical = raw_jp
                 raw_cn = ""
                 owner = ""
+                scene_context = ""
+                derivative_sources = ""
+            track_variant = (override.get("title_variant_key", "") if override else "") or variant_key(canonical)
             source_rows.append(
                 {
                     "site": "jp",
@@ -342,9 +498,19 @@ def main() -> None:
                     "raw_title_jp": raw_jp,
                     "raw_title_cn": raw_cn,
                     "canonical_track": canonical,
-                    "merge_group_id": group_id(canonical),
+                    "title_variant_key": track_variant,
+                    "music_track_id": group_id(track_variant),
+                    "merge_group_id": group_id(track_variant),
                     "merge_basis": merge_basis,
                     "mapped_character": owner,
+                    "theme_characters_json": json.dumps(split_relation_values(owner), ensure_ascii=False),
+                    "scene_context_json": json.dumps([scene_context] if clean_text(scene_context) else [], ensure_ascii=False),
+                    "derivative_sources_json": json.dumps(split_relation_values(derivative_sources), ensure_ascii=False),
+                    "relation_type": relation_type,
+                    "relation_thbwiki_url": override.get("thbwiki_url", "") if override else "",
+                    "relation_source_note": override.get("source_note", "") if override else "",
+                    "relation_confidence": override.get("confidence", "") if override else "",
+                    "relation_schema_version": RELATION_SCHEMA_VERSION,
                     "score": numeric(row.get("point")),
                     "primary_count": numeric(row.get("primary_num")),
                     "comment_count": numeric(row.get("comment_num")),
@@ -355,6 +521,70 @@ def main() -> None:
 
     source = pd.DataFrame(source_rows)
     source.to_csv(OUT_ROOT / "local_music_source_rows.csv", index=False, encoding="utf-8-sig")
+
+    association_rows: list[dict[str, Any]] = []
+    for _, source_row in source.iterrows():
+        common = {
+            "site": source_row["site"], "round": int(source_row["round"]),
+            "music_track_id": source_row["music_track_id"],
+            "canonical_track": source_row["canonical_track"],
+            "title_variant_key": source_row["title_variant_key"],
+            "source_kind": source_row["source_kind"], "source_file": source_row["source_file"],
+            "source_sheet": source_row["source_sheet"], "source_excel_row": source_row["source_excel_row"],
+            "source_record_id": source_row["source_record_id"],
+        }
+        for field, relation_type, entity_type in (
+            ("theme_characters_json", "character_theme", "character"),
+            ("scene_context_json", "scene_context", "scene"),
+            ("derivative_sources_json", "derivative_source", "music"),
+        ):
+            try:
+                values = json.loads(source_row[field] or "[]")
+            except (TypeError, json.JSONDecodeError):
+                values = []
+            for value in values:
+                association_rows.append({
+                    **common, "association_type": relation_type, "entity_type": entity_type,
+                    "entity_key": variant_key(value), "entity_name": value,
+                    "raw_character": source_row["mapped_character"] if relation_type == "character_theme" else "",
+                    "thbwiki_url": source_row["relation_thbwiki_url"],
+                    "source_note": source_row["relation_source_note"],
+                    "confidence": source_row["relation_confidence"] or "curated",
+                })
+    association_fields = [
+        "site", "round", "music_track_id", "canonical_track", "title_variant_key",
+        "association_type", "entity_type", "entity_key", "entity_name", "raw_character",
+        "source_kind", "source_file", "source_sheet", "source_excel_row", "source_record_id",
+        "thbwiki_url", "source_note", "confidence",
+    ]
+    pd.DataFrame(association_rows, columns=association_fields).to_csv(
+        OUT_ROOT / "music_associations.csv", index=False, encoding="utf-8-sig"
+    )
+    audit_rows = []
+    for _, source_row in source.iterrows():
+        if not str(source_row.get("relation_type", "")) and not str(source_row.get("relation_source_note", "")):
+            continue
+        audit_rows.append({
+            "site": source_row["site"], "round": int(source_row["round"]),
+            "source_file": source_row["source_file"], "source_sheet": source_row["source_sheet"],
+            "source_excel_row": source_row["source_excel_row"], "source_record_id": source_row["source_record_id"],
+            "raw_title_jp": source_row["raw_title_jp"], "raw_title_cn": source_row["raw_title_cn"],
+            "raw_relation_tag": source_row["mapped_character"],
+            "classification": source_row["relation_type"] or "override",
+            "canonical_track": source_row["canonical_track"],
+            "title_variant_key": source_row["title_variant_key"],
+            "reason": source_row["relation_source_note"],
+            "thbwiki_url": source_row["relation_thbwiki_url"],
+            "confidence": source_row["relation_confidence"],
+        })
+    audit_fields = [
+        "site", "round", "source_file", "source_sheet", "source_excel_row", "source_record_id",
+        "raw_title_jp", "raw_title_cn", "raw_relation_tag", "classification", "canonical_track",
+        "title_variant_key", "reason", "thbwiki_url", "confidence",
+    ]
+    pd.DataFrame(audit_rows, columns=audit_fields).to_csv(
+        OUT_ROOT / "music_relation_audit.csv", index=False, encoding="utf-8-sig"
+    )
     supplemental_mapping_audit = source[
         source["source_kind"] == "normalized_jp_official"
     ][
@@ -388,11 +618,24 @@ def main() -> None:
     for (site, round_number, merge_id, canonical), group in source.groupby(
         ["site", "round", "merge_group_id", "canonical_track"], sort=False, dropna=False
     ):
+        def aggregate_json(field: str) -> str:
+            values: set[str] = set()
+            for raw_value in group[field]:
+                try:
+                    parsed = json.loads(raw_value or "[]")
+                except (TypeError, json.JSONDecodeError):
+                    parsed = []
+                values.update(str(value) for value in parsed if str(value).strip())
+            return json.dumps(sorted(values), ensure_ascii=False)
+
         row: dict[str, Any] = {
             "site": site,
             "round": int(round_number),
             "merge_group_id": merge_id,
+            "music_track_id": group["music_track_id"].iloc[0],
             "canonical_track": canonical,
+            "title_variant_key": group["title_variant_key"].iloc[0],
+            "relation_schema_version": RELATION_SCHEMA_VERSION,
             "source_row_count": len(group),
             "source_titles_jp_json": json.dumps(
                 sorted({value for value in group["raw_title_jp"] if value}), ensure_ascii=False
@@ -404,9 +647,10 @@ def main() -> None:
                 [int(value) if float(value).is_integer() else float(value) for value in group["source_rank"].dropna()],
                 ensure_ascii=False,
             ),
-            "mapped_characters_json": json.dumps(
-                sorted({value for value in group["mapped_character"] if value}), ensure_ascii=False
-            ),
+            "mapped_characters_json": aggregate_json("theme_characters_json"),
+            "theme_characters_json": aggregate_json("theme_characters_json"),
+            "scene_context_json": aggregate_json("scene_context_json"),
+            "derivative_sources_json": aggregate_json("derivative_sources_json"),
             "merge_bases_json": json.dumps(
                 sorted(set(group["merge_basis"])), ensure_ascii=False
             ),
@@ -437,8 +681,11 @@ def main() -> None:
             source_row_count=("merge_group_id", "size"),
             sites=("site", lambda values: json.dumps(sorted(set(values)), ensure_ascii=False)),
             mapped_characters=(
-                "mapped_character",
-                lambda values: json.dumps(sorted({value for value in values if value}), ensure_ascii=False),
+                "theme_characters_json",
+                lambda values: json.dumps(
+                    sorted({item for value in values for item in json.loads(value or "[]")}),
+                    ensure_ascii=False,
+                ),
             ),
         )
         .sort_values("canonical_track")
@@ -494,6 +741,20 @@ def main() -> None:
             ),
             "audit_path": "data_processed/music_canonical/jp_official_supplement_mapping_audit.csv",
             "policy": "never guess or overwrite missing translations; keep the official Japanese title and expose it for manual review",
+        },
+        "music_relations": {
+            "schema_version": RELATION_SCHEMA_VERSION,
+            "override_path": MUSIC_RELATION_OVERRIDES_PATH.relative_to(WORKSPACE).as_posix(),
+            "association_rows": len(association_rows),
+            "audit_rows": len(audit_rows),
+            "by_type": {
+                relation_type: int(sum(1 for row in association_rows if row["association_type"] == relation_type))
+                for relation_type in ("character_theme", "scene_context", "derivative_source")
+            },
+            "outputs": [
+                "data_processed/music_canonical/music_associations.csv",
+                "data_processed/music_canonical/music_relation_audit.csv",
+            ],
         },
         "jp22_character_theme_overlay": {
             "path": JP22_THEME_OVERLAY_PATH.relative_to(WORKSPACE).as_posix(),

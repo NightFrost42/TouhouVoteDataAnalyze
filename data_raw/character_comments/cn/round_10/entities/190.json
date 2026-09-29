@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "190",
+  "entity_name": "座敷童子",
+  "rank": 190,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "3e53f6d6d722a7905caf49f7489807abb99df233feade15d9aa36491136f60ad",
+    "bytes": 93,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:29+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 190
+      }
+    }
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "190",
+      "entity_name": "座敷童子",
+      "rank": 190,
+      "comment_index": 1,
+      "text": "做的菜看着很有食欲（笑），艾",
+      "raw_text": "做的菜看着很有食欲（笑），艾",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "3e53f6d6d722a7905caf49f7489807abb99df233feade15d9aa36491136f60ad",
+      "source_bytes": 93,
+      "retrieved_at": "2026-09-28T18:04:29+00:00"
+    }
+  ],
+  "error": null
+}

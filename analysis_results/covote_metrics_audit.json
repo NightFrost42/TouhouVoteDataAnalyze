@@ -1,0 +1,749 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "hard_failures": [],
+  "policy": {
+    "cn_complete_matrix": "compute all exact 2x2 metrics from verified m00/m01/m10/m11",
+    "jp_published_leading_list": "keep raw/conditional/rate-ratio lift; suppress complete 2x2 metrics and missing-pair zeros",
+    "cross_department": "conditional/lift only because character and music use different ballot universes"
+  },
+  "cn": [
+    {
+      "round": 10,
+      "category": "character",
+      "source_path": "data_raw/cn_official/round_10/covote/characters.json",
+      "validation_path": "data_raw/cn_official/round_10/covote/character_reconstruction_validation.json",
+      "expected_pairs": 28441,
+      "raw_items": 28441,
+      "raw_unique_pairs": 28441,
+      "generated_rows": 28441,
+      "generated_unique_pairs": 28441,
+      "missing_generated_pairs": 0,
+      "extra_generated_pairs": 0,
+      "duplicate_raw_pairs": 0,
+      "duplicate_generated_pairs": 0,
+      "cell_errors": 0,
+      "cell_error_examples": [],
+      "mismatch_count": 0,
+      "mismatch_examples": [],
+      "zero_preservation_failures": 0,
+      "exact_metric_rows": 28441,
+      "nonfinite_rows": 0,
+      "validation": {
+        "expected_equals_observed": true,
+        "cell_convention": {
+          "m00": "both selected (intersection)",
+          "m01": "a not selected, b selected",
+          "m10": "a selected, b not selected",
+          "m11": "neither selected"
+        },
+        "cell_convention_matches": true,
+        "all_marginal_and_universe_identities_passed": true,
+        "all_conditional_symmetry_checks_passed": true,
+        "universe": 23518
+      }
+    },
+    {
+      "round": 10,
+      "category": "music",
+      "source_path": "data_raw/cn_official/round_10/covote/music.json",
+      "validation_path": "data_raw/cn_official/round_10/covote/music_reconstruction_validation.json",
+      "expected_pairs": 176715,
+      "raw_items": 176715,
+      "raw_unique_pairs": 176715,
+      "generated_rows": 176715,
+      "generated_unique_pairs": 176715,
+      "missing_generated_pairs": 0,
+      "extra_generated_pairs": 0,
+      "duplicate_raw_pairs": 0,
+      "duplicate_generated_pairs": 0,
+      "cell_errors": 0,
+      "cell_error_examples": [],
+      "mismatch_count": 0,
+      "mismatch_examples": [],
+      "zero_preservation_failures": 0,
+      "exact_metric_rows": 176715,
+      "nonfinite_rows": 0,
+      "validation": {
+        "expected_equals_observed": true,
+        "cell_convention": {
+          "m00": "both selected (intersection)",
+          "m01": "a not selected, b selected",
+          "m10": "a selected, b not selected",
+          "m11": "neither selected"
+        },
+        "cell_convention_matches": true,
+        "all_marginal_and_universe_identities_passed": true,
+        "all_conditional_symmetry_checks_passed": true,
+        "universe": 17442
+      }
+    },
+    {
+      "round": 11,
+      "category": "character",
+      "source_path": "data_raw/cn_official/round_11/covote/characters.json",
+      "validation_path": "data_raw/cn_official/round_11/covote/character_reconstruction_validation.json",
+      "expected_pairs": 29646,
+      "raw_items": 29646,
+      "raw_unique_pairs": 29646,
+      "generated_rows": 29646,
+      "generated_unique_pairs": 29646,
+      "missing_generated_pairs": 0,
+      "extra_generated_pairs": 0,
+      "duplicate_raw_pairs": 0,
+      "duplicate_generated_pairs": 0,
+      "cell_errors": 0,
+      "cell_error_examples": [],
+      "mismatch_count": 0,
+      "mismatch_examples": [],
+      "zero_preservation_failures": 0,
+      "exact_metric_rows": 29646,
+      "nonfinite_rows": 0,
+      "validation": {
+        "expected_equals_observed": true,
+        "cell_convention": {
+          "m00": "both selected (intersection)",
+          "m01": "a not selected, b selected",
+          "m10": "a selected, b not selected",
+          "m11": "neither selected"
+        },
+        "cell_convention_matches": true,
+        "all_marginal_and_universe_identities_passed": true,
+        "all_conditional_symmetry_checks_passed": true,
+        "universe": 13283
+      }
+    },
+    {
+      "round": 11,
+      "category": "music",
+      "source_path": "data_raw/cn_official/round_11/covote/music.json",
+      "validation_path": "data_raw/cn_official/round_11/covote/music_reconstruction_validation.json",
+      "expected_pairs": 186966,
+      "raw_items": 186966,
+      "raw_unique_pairs": 186966,
+      "generated_rows": 186966,
+      "generated_unique_pairs": 186966,
+      "missing_generated_pairs": 0,
+      "extra_generated_pairs": 0,
+      "duplicate_raw_pairs": 0,
+      "duplicate_generated_pairs": 0,
+      "cell_errors": 0,
+      "cell_error_examples": [],
+      "mismatch_count": 0,
+      "mismatch_examples": [],
+      "zero_preservation_failures": 0,
+      "exact_metric_rows": 186966,
+      "nonfinite_rows": 0,
+      "validation": {
+        "expected_equals_observed": true,
+        "cell_convention": {
+          "m00": "both selected (intersection)",
+          "m01": "a not selected, b selected",
+          "m10": "a selected, b not selected",
+          "m11": "neither selected"
+        },
+        "cell_convention_matches": true,
+        "all_marginal_and_universe_identities_passed": true,
+        "all_conditional_symmetry_checks_passed": true,
+        "universe": 10185
+      }
+    }
+  ],
+  "jp": {
+    "by_round_category": [
+      {
+        "round": 11,
+        "category": "character",
+        "candidate_entities": 172,
+        "possible_pairs": 14706,
+        "observed_published_pairs": 1184,
+        "coverage": 0.08051135590915273,
+        "published_direction_rows": 1320,
+        "bidirectional_pairs": 136,
+        "generated_rows": 1184,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1184
+        },
+        "available_metric_rows": {
+          "raw_count": 1184,
+          "conditional_rate": 1184,
+          "published_rate_ratio_lift": 1184,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 11,
+        "category": "music",
+        "candidate_entities": 457,
+        "possible_pairs": 104196,
+        "observed_published_pairs": 1487,
+        "coverage": 0.014271181235364121,
+        "published_direction_rows": 1529,
+        "bidirectional_pairs": 42,
+        "generated_rows": 1487,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1487
+        },
+        "available_metric_rows": {
+          "raw_count": 1487,
+          "conditional_rate": 1487,
+          "published_rate_ratio_lift": 1487,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 12,
+        "category": "character",
+        "candidate_entities": 169,
+        "possible_pairs": 14196,
+        "observed_published_pairs": 1710,
+        "coverage": 0.12045646661031277,
+        "published_direction_rows": 1994,
+        "bidirectional_pairs": 284,
+        "generated_rows": 1710,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1710
+        },
+        "available_metric_rows": {
+          "raw_count": 1710,
+          "conditional_rate": 1710,
+          "published_rate_ratio_lift": 1710,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 12,
+        "category": "music",
+        "candidate_entities": 474,
+        "possible_pairs": 112101,
+        "observed_published_pairs": 2462,
+        "coverage": 0.021962337534901562,
+        "published_direction_rows": 2711,
+        "bidirectional_pairs": 249,
+        "generated_rows": 2462,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 2462
+        },
+        "available_metric_rows": {
+          "raw_count": 2462,
+          "conditional_rate": 2462,
+          "published_rate_ratio_lift": 2462,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 13,
+        "category": "character",
+        "candidate_entities": 175,
+        "possible_pairs": 15225,
+        "observed_published_pairs": 1700,
+        "coverage": 0.1116584564860427,
+        "published_direction_rows": 1972,
+        "bidirectional_pairs": 272,
+        "generated_rows": 1700,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1700
+        },
+        "available_metric_rows": {
+          "raw_count": 1700,
+          "conditional_rate": 1700,
+          "published_rate_ratio_lift": 1700,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 13,
+        "category": "music",
+        "candidate_entities": 485,
+        "possible_pairs": 117370,
+        "observed_published_pairs": 2445,
+        "coverage": 0.020831558319843232,
+        "published_direction_rows": 2696,
+        "bidirectional_pairs": 251,
+        "generated_rows": 2445,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 2445
+        },
+        "available_metric_rows": {
+          "raw_count": 2445,
+          "conditional_rate": 2445,
+          "published_rate_ratio_lift": 2445,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 14,
+        "category": "character",
+        "candidate_entities": 186,
+        "possible_pairs": 17205,
+        "observed_published_pairs": 1879,
+        "coverage": 0.10921243824469631,
+        "published_direction_rows": 2124,
+        "bidirectional_pairs": 245,
+        "generated_rows": 1879,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1879
+        },
+        "available_metric_rows": {
+          "raw_count": 1879,
+          "conditional_rate": 1879,
+          "published_rate_ratio_lift": 1879,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 14,
+        "category": "music",
+        "candidate_entities": 523,
+        "possible_pairs": 136503,
+        "observed_published_pairs": 5722,
+        "coverage": 0.04191849263386153,
+        "published_direction_rows": 5990,
+        "bidirectional_pairs": 268,
+        "generated_rows": 5722,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 5722
+        },
+        "available_metric_rows": {
+          "raw_count": 5722,
+          "conditional_rate": 5722,
+          "published_rate_ratio_lift": 5719,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 15,
+        "category": "character",
+        "candidate_entities": 186,
+        "possible_pairs": 17205,
+        "observed_published_pairs": 1883,
+        "coverage": 0.10944492879976751,
+        "published_direction_rows": 2127,
+        "bidirectional_pairs": 244,
+        "generated_rows": 1883,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 1883
+        },
+        "available_metric_rows": {
+          "raw_count": 1883,
+          "conditional_rate": 1883,
+          "published_rate_ratio_lift": 1883,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 15,
+        "category": "music",
+        "candidate_entities": 528,
+        "possible_pairs": 139128,
+        "observed_published_pairs": 5805,
+        "coverage": 0.04172416767293428,
+        "published_direction_rows": 6066,
+        "bidirectional_pairs": 261,
+        "generated_rows": 5805,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 5805
+        },
+        "available_metric_rows": {
+          "raw_count": 5805,
+          "conditional_rate": 5805,
+          "published_rate_ratio_lift": 5805,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 16,
+        "category": "character",
+        "candidate_entities": 198,
+        "possible_pairs": 19503,
+        "observed_published_pairs": 2017,
+        "coverage": 0.10341998666871763,
+        "published_direction_rows": 2250,
+        "bidirectional_pairs": 233,
+        "generated_rows": 2017,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 2017
+        },
+        "available_metric_rows": {
+          "raw_count": 2017,
+          "conditional_rate": 2017,
+          "published_rate_ratio_lift": 2017,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 16,
+        "category": "music",
+        "candidate_entities": 543,
+        "possible_pairs": 147153,
+        "observed_published_pairs": 5891,
+        "coverage": 0.040033162762566854,
+        "published_direction_rows": 6174,
+        "bidirectional_pairs": 283,
+        "generated_rows": 5891,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 1,
+        "metric_status_counts": {
+          "conflicting_published_directions": 1,
+          "official_published_leading_list": 5890
+        },
+        "available_metric_rows": {
+          "raw_count": 5890,
+          "conditional_rate": 5891,
+          "published_rate_ratio_lift": 5891,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 17,
+        "category": "character",
+        "candidate_entities": 206,
+        "possible_pairs": 21115,
+        "observed_published_pairs": 2154,
+        "coverage": 0.10201278711816245,
+        "published_direction_rows": 2398,
+        "bidirectional_pairs": 244,
+        "generated_rows": 2154,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 10,
+        "metric_status_counts": {
+          "conflicting_published_directions": 10,
+          "official_published_leading_list": 2144
+        },
+        "available_metric_rows": {
+          "raw_count": 2144,
+          "conditional_rate": 2154,
+          "published_rate_ratio_lift": 2154,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 17,
+        "category": "music",
+        "candidate_entities": 566,
+        "possible_pairs": 159895,
+        "observed_published_pairs": 6246,
+        "coverage": 0.039063135182463495,
+        "published_direction_rows": 6511,
+        "bidirectional_pairs": 265,
+        "generated_rows": 6246,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 6246
+        },
+        "available_metric_rows": {
+          "raw_count": 6246,
+          "conditional_rate": 6246,
+          "published_rate_ratio_lift": 6246,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 18,
+        "category": "character",
+        "candidate_entities": 208,
+        "possible_pairs": 21528,
+        "observed_published_pairs": 2205,
+        "coverage": 0.1024247491638796,
+        "published_direction_rows": 2452,
+        "bidirectional_pairs": 247,
+        "generated_rows": 2205,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 3,
+        "metric_status_counts": {
+          "conflicting_published_directions": 3,
+          "official_published_leading_list": 2202
+        },
+        "available_metric_rows": {
+          "raw_count": 2202,
+          "conditional_rate": 2205,
+          "published_rate_ratio_lift": 2205,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 18,
+        "category": "music",
+        "candidate_entities": 578,
+        "possible_pairs": 166753,
+        "observed_published_pairs": 6428,
+        "coverage": 0.03854803211936217,
+        "published_direction_rows": 6704,
+        "bidirectional_pairs": 276,
+        "generated_rows": 6428,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 3,
+        "metric_status_counts": {
+          "conflicting_published_directions": 3,
+          "official_published_leading_list": 6425
+        },
+        "available_metric_rows": {
+          "raw_count": 6425,
+          "conditional_rate": 6428,
+          "published_rate_ratio_lift": 6428,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 19,
+        "category": "character",
+        "candidate_entities": 216,
+        "possible_pairs": 23220,
+        "observed_published_pairs": 2307,
+        "coverage": 0.09935400516795866,
+        "published_direction_rows": 2551,
+        "bidirectional_pairs": 244,
+        "generated_rows": 2307,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 57,
+        "metric_status_counts": {
+          "conflicting_published_directions": 57,
+          "official_published_leading_list": 2250
+        },
+        "available_metric_rows": {
+          "raw_count": 2250,
+          "conditional_rate": 2307,
+          "published_rate_ratio_lift": 2307,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 19,
+        "category": "music",
+        "candidate_entities": 594,
+        "possible_pairs": 176121,
+        "observed_published_pairs": 6446,
+        "coverage": 0.036599837611642,
+        "published_direction_rows": 6737,
+        "bidirectional_pairs": 291,
+        "generated_rows": 6446,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 13,
+        "metric_status_counts": {
+          "conflicting_published_directions": 13,
+          "official_published_leading_list": 6433
+        },
+        "available_metric_rows": {
+          "raw_count": 6433,
+          "conditional_rate": 6446,
+          "published_rate_ratio_lift": 6446,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 20,
+        "category": "character",
+        "candidate_entities": 217,
+        "possible_pairs": 23436,
+        "observed_published_pairs": 2331,
+        "coverage": 0.09946236559139784,
+        "published_direction_rows": 2564,
+        "bidirectional_pairs": 233,
+        "generated_rows": 2331,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 2331
+        },
+        "available_metric_rows": {
+          "raw_count": 2331,
+          "conditional_rate": 2331,
+          "published_rate_ratio_lift": 2331,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 20,
+        "category": "music",
+        "candidate_entities": 598,
+        "possible_pairs": 178503,
+        "observed_published_pairs": 6545,
+        "coverage": 0.036666050430524975,
+        "published_direction_rows": 6815,
+        "bidirectional_pairs": 270,
+        "generated_rows": 6545,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 6545
+        },
+        "available_metric_rows": {
+          "raw_count": 6545,
+          "conditional_rate": 6545,
+          "published_rate_ratio_lift": 6545,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 21,
+        "category": "character",
+        "candidate_entities": 221,
+        "possible_pairs": 24310,
+        "observed_published_pairs": 2387,
+        "coverage": 0.09819004524886878,
+        "published_direction_rows": 2637,
+        "bidirectional_pairs": 250,
+        "generated_rows": 2387,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 42,
+        "metric_status_counts": {
+          "conflicting_published_directions": 42,
+          "official_published_leading_list": 2345
+        },
+        "available_metric_rows": {
+          "raw_count": 2345,
+          "conditional_rate": 2387,
+          "published_rate_ratio_lift": 2387,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 21,
+        "category": "music",
+        "candidate_entities": 606,
+        "possible_pairs": 183315,
+        "observed_published_pairs": 6617,
+        "coverage": 0.03609633690641791,
+        "published_direction_rows": 6900,
+        "bidirectional_pairs": 283,
+        "generated_rows": 6617,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 6617
+        },
+        "available_metric_rows": {
+          "raw_count": 6617,
+          "conditional_rate": 6617,
+          "published_rate_ratio_lift": 6617,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 22,
+        "category": "character",
+        "candidate_entities": 225,
+        "possible_pairs": 25200,
+        "observed_published_pairs": 2402,
+        "coverage": 0.09531746031746031,
+        "published_direction_rows": 2671,
+        "bidirectional_pairs": 269,
+        "generated_rows": 2402,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 3,
+        "metric_status_counts": {
+          "conflicting_published_directions": 3,
+          "official_published_leading_list": 2399
+        },
+        "available_metric_rows": {
+          "raw_count": 2399,
+          "conditional_rate": 2402,
+          "published_rate_ratio_lift": 2402,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      },
+      {
+        "round": 22,
+        "category": "music",
+        "candidate_entities": 621,
+        "possible_pairs": 192510,
+        "observed_published_pairs": 6721,
+        "coverage": 0.0349124720793725,
+        "published_direction_rows": 7023,
+        "bidirectional_pairs": 302,
+        "generated_rows": 6721,
+        "missing_observed_pairs_in_generated": 0,
+        "extra_generated_pairs": 0,
+        "conflicting_published_direction_rows": 0,
+        "metric_status_counts": {
+          "official_published_leading_list": 6721
+        },
+        "available_metric_rows": {
+          "raw_count": 6721,
+          "conditional_rate": 6721,
+          "published_rate_ratio_lift": 6721,
+          "complete_2x2_metrics": 0
+        },
+        "complete_2x2_nonblank_cells": 0
+      }
+    ],
+    "hard_failures": []
+  },
+  "cross_department": {
+    "rows": 126103,
+    "exact_2x2_nonblank_rows": 0,
+    "metric_status_counts": {
+      "cross_department_conditional_only": 126103
+    },
+    "complete_pair_matrix_true_rows": 0
+  }
+}

@@ -177,10 +177,12 @@ def split_file(path: Path, part_bytes: int = PART_BYTES, remove_original: bool =
         if combined_size != original_bytes:
             raise RuntimeError(f"分卷大小校验失败：{path}，{combined_size} != {original_bytes}")
 
-        # 只有全部分卷写完并通过大小校验后才替换旧分卷。
-        for old in part_paths(path):
-            if old != path:
-                old.unlink()
+        # ``part_paths`` returns only the complete file when it exists, so it
+        # cannot discover stale partitions from a previous build. Enumerate
+        # those targets directly before replacing the newly written parts.
+        old_parts = sorted(path.parent.glob(path.name + ".part-*"), key=lambda item: item.name)
+        for old in old_parts:
+            old.unlink()
         for temporary in temporary_paths:
             temporary.replace(path.parent / temporary.name)
 

@@ -8,7 +8,7 @@
 
 const params = new URLSearchParams(window.location.search);
 const DATA_BASE = new URL(params.get("data") || "../vote_explorer/data/", document.baseURI).href;
-const DATA_VERSION = "2026-09-09-50";
+const DATA_VERSION = "2026-09-29-research";
 
 const ROUND_LABELS = [
   ...Array.from({ length: 11 }, (_, i) => `CN${i + 1}`),
@@ -37,9 +37,14 @@ const METRIC_LABELS = {
   overall_other_gender_rate: "全体其他性别比例", other_count: "其他顺位票", ballots: "有效票数",
   equal_rank: "等权排名", old_2_1_rank: "旧2:1排名", old_2_1_points: "旧2:1分数",
   intersection_count: "共同投票人数", share: "同投占比", lift: "同投集中倍数",
+  raw_count: "官方公开交集人数", raw_count_a_to_b: "A→B官方交集人数", raw_count_b_to_a: "B→A官方交集人数",
+  m00_both_selected: "双方均选择", m01_b_only: "仅B选择", m10_a_only: "仅A选择", m11_neither_selected: "双方均未选择",
+  conditional_rate: "官方条件同投率", conditional_rate_a_to_b: "A→B官方条件率", conditional_rate_b_to_a: "B→A官方条件率",
+  lift_a_to_b: "A→B官方集中倍数", lift_b_to_a: "B→A官方集中倍数", cosine: "余弦相似度", ochiai: "Ochiai相似度", jaccard: "Jaccard相似度", pmi: "PMI", pmi_nats: "PMI（自然对数）", npmi: "NPMI",
   excess_count: "超出人气基准人数", phi: "综合重合分数 φ", asymmetry: "方向同投率差",
   direction_a_to_b: "A→B方向同投率", direction_b_to_a: "B→A方向同投率",
   anomaly_difference: "双向人数差", correlation: "皮尔逊相关系数", difference_points: "相对全体差值（百分点）",
+  metric_status: "指标可用性", data_completeness: "数据完整性", censoring_status: "截尾状态", complete_pair_matrix: "完整2×2", lift_basis: "lift口径",
   denominator: "问卷有效人数", member_count: "组合成员数", source_type: "数据来源", value: "数值",
 };
 
@@ -56,17 +61,19 @@ const DATA_FILES = {
 };
 
 // The pair matrix is intentionally loaded lazily (only for a co-vote view).
-// It is split into two CSV parts in the repository; loadCSV("covote_pairs")
-// joins both parts and removes their repeated headers.
+// loadCSV("covote_pairs") discovers every part through the manifest and
+// joins them without repeated headers.
 
-// The complete same-department co-vote matrix is split into two files because
+// The complete same-department co-vote matrix is split into multiple files because
 // GitHub Pages and common static hosts have awkward limits around very large
-// single files.  It is fetched only when the music-internal cluster view is
-// selected; the ordinary lightweight views never pay the 145 MB transfer.
-const COVOTE_PAIR_PARTS = [
+// single files. It is fetched only when a full co-vote template is selected;
+// lightweight and research views never download these raw matrices.
+const COVOTE_PAIR_PART_MANIFEST = "analysis_covote_pairs_all.csv.parts.json";
+const FALLBACK_COVOTE_PAIR_PARTS = [
   "analysis_covote_pairs_all.csv.part-001",
   "analysis_covote_pairs_all.csv.part-002",
 ];
+let covotePairPartsPromise = null;
 
 // The desktop workbench has two natural scopes.  Single-round metrics belong
 // to the root of a round's analysis project; anything that compares rounds is
@@ -121,6 +128,7 @@ function desktopScope(mode = currentMode()) {
 }
 
 function projectLabel(mode = currentMode()) {
+  if (mode === "research") return "研究型网络（构建阶段完成统计，浏览器只读结果）";
   if (mode === "desktop_compare") return "桌面版完整分析（单届结果根目录 + 对比分析表）";
   return "单届结果（分析项目根目录）";
 }
@@ -135,6 +143,8 @@ const state = {
   chartZoom: 1,
   lastMode: "ranking",
   heavyCacheProfile: "",
+  researchRows: [],
+  researchAllRows: [],
 };
 
 // Every control change can start another asynchronous CSV/bundle read.  Keep
@@ -228,6 +238,13 @@ function integer(value, fallback = 0) {
   return parsed === null ? fallback : Math.trunc(parsed);
 }
 
+function mixHex(a, b, ratio) {
+  const t = Math.max(0, Math.min(1, Number(ratio) || 0));
+  const parse = (value) => [1, 3, 5].map((offset) => parseInt(value.slice(offset, offset + 2), 16));
+  const left = parse(a), right = parse(b);
+  return `#${left.map((value, index) => Math.round(value + (right[index] - value) * t).toString(16).padStart(2, "0")).join("")}`;
+}
+
 function escapeHTML(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -262,13 +279,41 @@ function parseCSV(text) {
   });
 }
 
+async function covotePairParts() {
+  if (covotePairPartsPromise) return covotePairPartsPromise;
+  covotePairPartsPromise = fetch(`${DATA_BASE}${COVOTE_PAIR_PART_MANIFEST}?v=${DATA_VERSION}`)
+    .then(async (response) => {
+      if (!response.ok) {
+        // A local checkout may retain the complete generated CSV while its
+        // large-file partitions are temporarily unavailable. Prefer that
+        // truthful complete source before falling back to legacy part names.
+        const full = await fetch(`${DATA_BASE}analysis_covote_pairs_all.csv?v=${DATA_VERSION}`);
+        return full.ok ? ["analysis_covote_pairs_all.csv"] : FALLBACK_COVOTE_PAIR_PARTS;
+      }
+      const manifest = await response.json();
+      const parts = Array.isArray(manifest?.parts)
+        ? manifest.parts.map((part) => typeof part === "string" ? part : part?.name).filter(Boolean)
+        : [];
+      return parts.length ? parts : FALLBACK_COVOTE_PAIR_PARTS;
+    })
+    .catch(async () => {
+      try {
+        const full = await fetch(`${DATA_BASE}analysis_covote_pairs_all.csv?v=${DATA_VERSION}`);
+        return full.ok ? ["analysis_covote_pairs_all.csv"] : FALLBACK_COVOTE_PAIR_PARTS;
+      } catch (_) {
+        return FALLBACK_COVOTE_PAIR_PARTS;
+      }
+    });
+  return covotePairPartsPromise;
+}
+
 async function loadCSV(kind) {
   if (state.cache.has(kind)) return state.cache.get(kind);
   if (kind === "covote_pairs") {
-    const promise = Promise.all(COVOTE_PAIR_PARTS.map((file) => fetch(`${DATA_BASE}${file}?v=${DATA_VERSION}`).then(async (response) => {
+    const promise = covotePairParts().then((parts) => Promise.all(parts.map((file) => fetch(`${DATA_BASE}${file}?v=${DATA_VERSION}`).then(async (response) => {
       if (!response.ok) throw new Error(`读取 ${file} 失败（HTTP ${response.status}）`);
       return response.text();
-    }))).then((texts) => texts.flatMap((text) => parseCSV(text))
+    })))).then((texts) => texts.flatMap((text) => parseCSV(text))
       // Each part carries its own CSV header.  parseCSV turns the repeated
       // header into a normal row, so discard it here before analysis.
       .filter((row) => row.round_label && row.round_label !== "round_label"));
@@ -349,11 +394,15 @@ function normalizeName(value) {
 }
 
 function isMusicPairRow(row) {
+  const category = String(row?.pair_category || "").trim();
+  if (category) return category === "music";
   return String(row?.source_type || "").includes("music_covote_matrix");
 }
 
 function isCharacterPairRow(row) {
-  return Boolean(row) && !isMusicPairRow(row);
+  const category = String(row?.pair_category || "").trim();
+  if (category) return category === "character";
+  return !isMusicPairRow(row);
 }
 
 function pairKey(a, b) {
@@ -405,6 +454,10 @@ function currentMode() { return controls.kind.value; }
 
 function updateControlVisibility() {
   const mode = currentMode();
+  const research = mode === "research";
+  toggle("research-controls", research);
+  toggle("research-download-all", research);
+  if (!research) { toggle("research-provenance", false); toggle("research-caveat", false); }
   const questionnaire = mode === "questionnaire";
   const arrangement = mode === "arrangement";
   const cp = mode === "cp";
@@ -412,6 +465,7 @@ function updateControlVisibility() {
   const templateKey = controls.template.value;
   const comparison = desktop && COMPARISON_TEMPLATE_KEYS.has(templateKey);
   const faction = desktop && templateKey === "a02_network";
+  const network = desktop && ["a02_network", "a17_concentration_clusters", "a18_music_concentration_clusters"].includes(templateKey);
   const factionSelected = faction && Boolean(controls.faction.value);
   const desktopQuestion = desktop && templateKey === "q_custom";
   const customCharacter = desktop && templateKey === "x_character";
@@ -428,8 +482,8 @@ function updateControlVisibility() {
   const relationMetric = relation && ["r01_character_question_scatter", "r03_character_question_corr", "r04_music_question_scatter", "r06_music_question_corr", "r07_character_cognition"].includes(templateKey);
   const relationValue = relation && !["r03_character_question_corr", "r06_music_question_corr", "r08_work_question_matrix", "r09_character_question_matrix", "r10_music_question_matrix"].includes(templateKey);
   const relationSort = relation && !["r08_work_question_matrix", "r09_character_question_matrix", "r10_music_question_matrix"].includes(templateKey);
-  toggle("subject-label", !questionnaire && !cp && !arrangement && !desktop);
-  toggle("metric-label", !questionnaire && !arrangement && !desktop);
+  toggle("subject-label", !questionnaire && !cp && !arrangement && !desktop && !research);
+  toggle("metric-label", !questionnaire && !arrangement && !desktop && !research);
   toggle("x-metric-label", arrangement || relationMetric || customCharacter || customCovote || crossMetric);
   toggle("y-metric-label", arrangement || customCharacter || customCovote || crossMetric);
   toggle("relation-value-mode-label", relationValue);
@@ -438,6 +492,9 @@ function updateControlVisibility() {
   toggle("template-label", desktop);
   toggle("compare-round-label", comparison);
   toggle("faction-label", faction);
+  toggle("network-node-size-label", network);
+  toggle("network-edge-color-label", network);
+  toggle("download-svg", network);
   toggle("rank-start-label", desktop && !relation && !noRankRange);
   toggle("rank-end-label", desktop && !relation && !noRankRange);
   toggle("min-count-label", desktop && ["a01_direction_matrix", "a01_count_matrix", "a02_network", "a17_concentration_clusters", "a18_music_concentration_clusters", "a03_bubble", "a03_count_top", "a04_count_dumbbell", "a04_count_change", "a05_largest_change", "a06_lift", "a07_excess", "a08_phi", "a09_phi_change", "a10_direction", "a11_asymmetry", "a12_cumulative", "a13_quadrant", "a14_count_top10", "a15_lift_top10", "a16_anomalies", "x_covote"].includes(templateKey));
@@ -451,7 +508,7 @@ function updateControlVisibility() {
   // also prevents a stale threshold from being reported as if it filtered
   // the matrix.
   const relationVoteThreshold = relation && templateKey !== "r08_work_question_matrix";
-  toggle("min-votes-label", (!questionnaire && !desktop) || relationVoteThreshold);
+  toggle("min-votes-label", (!questionnaire && !desktop && !research) || relationVoteThreshold);
   controls.subject.disabled = questionnaire || cp || arrangement || desktop;
   controls.metric.disabled = questionnaire || arrangement || desktop;
   controls.xMetric.disabled = !(arrangement || relationMetric || customCharacter || customCovote || crossMetric);
@@ -460,6 +517,8 @@ function updateControlVisibility() {
   controls.template.disabled = !desktop;
   controls.compareRound.disabled = !comparison;
   controls.faction.disabled = !faction;
+  $("network-node-size").disabled = !network;
+  $("network-edge-color").disabled = !network;
   controls.rankStart.disabled = !(desktop && !relation && !noRankRange && !factionSelected);
   controls.rankEnd.disabled = !(desktop && !relation && !noRankRange && !factionSelected);
   controls.minCount.disabled = !(desktop && ["a01_direction_matrix", "a01_count_matrix", "a02_network", "a17_concentration_clusters", "a18_music_concentration_clusters", "a03_bubble", "a03_count_top", "a04_count_dumbbell", "a04_count_change", "a05_largest_change", "a06_lift", "a07_excess", "a08_phi", "a09_phi_change", "a10_direction", "a11_asymmetry", "a12_cumulative", "a13_quadrant", "a14_count_top10", "a15_lift_top10", "a16_anomalies", "x_covote"].includes(templateKey));
@@ -476,7 +535,10 @@ function updateControlVisibility() {
     $("x-metric-title").textContent = templateKey === "m05_character_music_cross" ? "角色横轴" : templateKey === "m06_music_character_cross" ? "曲子横轴" : "同人曲数量横轴";
     $("y-metric-title").textContent = templateKey === "m05_character_music_cross" ? "关联曲纵轴" : templateKey === "m06_music_character_cross" ? "所属角色纵轴" : "投票指标纵轴";
   } else if (customCharacter || customCovote) $("y-metric-title").textContent = customCovote ? "同投纵轴" : "角色纵轴";
-  if (arrangement) {
+  if (research) {
+    $("control-note").textContent = "研究结果来自离线统计运行。Top N 只限制展示行数；下载全部筛选结果不受 Top N 限制。完整性未知不等于完整；探索性结果默认隐藏。更改阈值只选择已运行场景，不重跑检验。";
+    $("top-n-title").textContent = "展示行数（Top N）";
+  } else if (arrangement) {
     $("control-note").textContent = "横轴是同人曲数量，纵轴是投票指标；两轴均使用当前地区/届次，数量轴保持整数。CN1/JP3 为首届基线，届间新增与截至投票结束累计为空。";
   } else if (questionnaire) {
     $("control-note").textContent = "问卷题目和选项按当前地区/届次读取；不同地区的实体问卷不会合并。Top N 是图表和结果表显示的选项数。";
@@ -526,10 +588,13 @@ async function prepareControls() {
   controls.relationSort.value = controls.relationSort.value || "count";
   await updateKindAvailability();
   await updateQuestionOptions();
-  try {
-    await updateDesktopTemplateOptions();
-  } catch (error) {
-    setOptions(controls.template, [{ value: "", label: "静态模板快照不可用" }], "");
+  // The desktop catalogue is large; load it only when that mode is selected.
+  if (isDesktopMode()) {
+    try {
+      await updateDesktopTemplateOptions();
+    } catch (error) {
+      setOptions(controls.template, [{ value: "", label: "静态模板快照不可用" }], "");
+    }
   }
   updateRelationMetricOptions();
   updateCustomMetricOptions();
@@ -641,7 +706,7 @@ function updateRelationMetricOptions() {
 function updateCustomMetricOptions() {
   const key = controls.template.value;
   if (key === "x_covote") {
-    const fields = ["intersection_count", "share", "lift", "excess_count", "phi", "asymmetry", "direction_a_to_b", "direction_b_to_a"];
+    const fields = ["intersection_count", "raw_count", "count_a", "count_b", "ballots", "conditional_rate", "conditional_rate_a_to_b", "conditional_rate_b_to_a", "direction_a_to_b", "direction_b_to_a", "share", "lift", "lift_a_to_b", "lift_b_to_a", "cosine", "cosine_ochiai", "ochiai", "jaccard", "pmi", "pmi_nats", "npmi", "phi", "excess_count", "asymmetry"];
     setOptions(controls.xMetric, fields.map((field) => ({ value: field, label: METRIC_LABELS[field] || field })), fields.includes(controls.xMetric.value) ? controls.xMetric.value : "intersection_count");
     setOptions(controls.yMetric, fields.map((field) => ({ value: field, label: METRIC_LABELS[field] || field })), fields.includes(controls.yMetric.value) ? controls.yMetric.value : "lift");
   } else if (key === "x_character") {
@@ -801,7 +866,10 @@ async function musicConcentrationClusterResult() {
   const round = controls.round.value;
   const minimum = Math.max(0, integer(controls.minCount.value, 0));
   const sourceRows = await loadCSV("covote_pairs");
-  const edges = sourceRows.filter((row) => selectedRound(row) === round && row.source_type === "cn10_11_official_music_covote_matrix")
+  const edges = sourceRows.filter((row) => selectedRound(row) === round && (
+    (String(row.pair_category || "").trim() === "music" && String(row.data_completeness || "").trim() === "complete_matrix")
+    || (!String(row.pair_category || "").trim() && row.source_type === "cn10_11_official_music_covote_matrix")
+  ))
     .map((row) => {
       const count = number(row.intersection_count, null), lift = number(row.lift, null);
       const a = String(row.name_a_cn || row.name_a || "").trim();
@@ -1156,6 +1224,23 @@ async function dynamicCovoteResult(templateKey) {
   const filtered = filteredCovoteRows(sourceRows, metrics, aliasMap);
   const limit = topNLimit(templateKey);
   const selectedMetrics = new Map(metrics.map((row) => [normalizeName(row.canonical_name || row.name_cn || row.name_jp), row]));
+  let centralityByAlias = new Map();
+  if (templateKey === "a02_network") {
+    try {
+      const index = await researchLoader.index();
+      const entry = index.entries.find((item) => item.level === "node_centrality" && item.round === round && item.scope === "character");
+      if (entry) {
+        const payload = await researchLoader.shard(entry);
+        payload.rows.forEach((row) => {
+          const aliases = [row.canonical_name, row.name_cn, row.name_jp].filter(Boolean).map(normalizeName);
+          aliases.forEach((alias) => {
+            const previous = centralityByAlias.get(alias);
+            if (!previous || number(row.weighted_degree, -1) > number(previous.weighted_degree, -1)) centralityByAlias.set(alias, row);
+          });
+        });
+      }
+    } catch (_) { /* network still renders without optional centrality output */ }
+  }
 
   if (["a01_direction_matrix", "a01_count_matrix"].includes(templateKey)) {
     // Read the complete role metric list first.  The old implementation had
@@ -1199,9 +1284,16 @@ async function dynamicCovoteResult(templateKey) {
     }).sort((a, b) => number(a.rank, 999999) - number(b.rank, 999999));
     const cohortRows = selectedFaction ? rankedRows : rankedRows.slice(0, limit);
     const allowed = new Map(cohortRows.map((row) => [normalizeName(row.canonical_name || row.name_cn || row.name_jp), row]));
-    const nodes = [...allowed.entries()].map(([id, row]) => ({ id, label: row.name_cn || row.name_jp || row.canonical_name, value: number(row.selection_count, 0), rank: number(row.rank, null), factions: row.faction_labels || [] }));
+    const nodes = [...allowed.entries()].map(([id, row]) => {
+      const stats = centralityByAlias.get(id) || {};
+      return { id, label: row.name_cn || row.name_jp || row.canonical_name, value: number(row.selection_count, 0), selection_count: number(row.selection_count, 0), rank: number(row.rank, null), factions: row.faction_labels || [], weighted_degree: number(stats.weighted_degree, 0), pagerank: number(stats.pagerank, 0), unweighted_degree: number(stats.unweighted_degree, 0), community: stats.community_id || "未计算" };
+    });
     const selectedIds = new Set(allowed.keys());
-    const edges = filtered.filter((row) => selectedIds.has(row.__a) && selectedIds.has(row.__b)).map((row) => ({ source: row.__a, target: row.__b, value: number(row.intersection_count, 0), lift: number(row.lift, null), label: row.__label }));
+    const edges = filtered.filter((row) => selectedIds.has(row.__a) && selectedIds.has(row.__b)).map((row) => {
+      const count = number(row.intersection_count, 0), lift = number(row.lift, null);
+      const lowSupport = count < 25 || (lift !== null && lift >= 3 && count < 100);
+      return { source: row.__a, target: row.__b, value: count, intersection_count: count, count_a: number(row.count_a, null), count_b: number(row.count_b, null), a_only_count: number(row.m10_a_only, null), b_only_count: number(row.m01_b_only, null), expected_count: number(row.baseline_count, null), lift, cosine: number(row.cosine, null), phi: number(row.phi, null), data_completeness: row.data_completeness || "unknown", censoring_status: row.censoring_status || "unknown", metric_status: row.metric_status || "unknown", source_type: row.source_type || "unknown", source_path: row.source_path || "", low_support: lowSupport, warning: lowSupport ? "低支持度：共同人数少，lift 可能不稳定" : "", label: row.__label };
+    });
     edges.sort((a, b) => b.value - a.value || (b.lift || 0) - (a.lift || 0));
     // Top N defines the ranked role cohort; drawing a different number of
     // edges made the SVG disagree with the control. Keep the table and graph
@@ -1210,7 +1302,12 @@ async function dynamicCovoteResult(templateKey) {
     // edge after the threshold/search filters.
     const tableEdges = edges.slice(0, limit);
     const graphEdges = tableEdges;
-    return { title: `角色同投关联网络（${round}）`, chartType: "network", source_label: "全量同投分卷 CSV", nodes, edges: graphEdges, headers: ["关系", "共同人数", "集中倍数"], table: tableEdges.map((e) => [e.label, e.value, e.lift]), displayTable: tableEdges.map((e) => [e.label, formatAxis(e.value, "intersection_count", "integer"), formatAxis(e.lift, "lift", "number")]), note: `${round}｜${selectedFaction ? `阵营筛选直接使用该阵营的完整角色集合（${nodes.length} 个角色），不受 Top N 或默认名次范围截断；` : `Top N 先选择按名次排序的 ${nodes.length} 个角色；`}表格和图表再共同使用其中共同人数最高的 ${graphEdges.length} 条关系。无关系角色仍保留为节点，名称只标注少量高连接角色，其余可悬停查看。${selectedFaction ? `当前阵营筛选：${selectedFaction}。` : ""}`, xLabel: "", yLabel: "" };
+    const nodeSize = $("network-node-size")?.value || "selection_count", edgeColor = $("network-edge-color")?.value || "lift";
+    const displayHeaders = ["同投边（不是角色关系）", "共同人数", "A边缘人数（仅A）", "B边缘人数（仅B）", "期望人数", "A总选择人数", "B总选择人数", "lift", "cosine", "φ", "数据完整性", "截尾状态", "来源", "警告"];
+    const table = tableEdges.map((e) => [e.label, e.intersection_count, e.a_only_count, e.b_only_count, e.expected_count, e.count_a, e.count_b, e.lift, e.cosine, e.phi, e.data_completeness, e.censoring_status, e.source_type, e.warning]);
+    const numericFields = ["", "intersection_count", "a_only_count", "b_only_count", "baseline_count", "count_a", "count_b", "lift", "cosine", "phi"];
+    const displayTable = table.map((row) => row.map((value, index) => index === 0 || index >= 10 ? (value ?? "—") : formatAxis(value, numericFields[index], index <= 6 ? "integer" : "number")));
+    return { title: `角色同投网络（${round}）`, chartType: "network", source_label: "全量同投分卷 CSV", nodes, edges: graphEdges, networkNodeSize: nodeSize, networkEdgeColor: edgeColor, headers: displayHeaders, table, displayTable, note: `${round}｜${selectedFaction ? `阵营筛选直接使用该阵营的完整角色集合（${nodes.length} 个角色），不受 Top N 或默认名次范围截断；` : `Top N 先选择按名次排序的 ${nodes.length} 个角色；`}边宽=共同人数，边色=${edgeColor}，节点大小=${nodeSize}；节点颜色表示结构社区，原作阵营只在提示框中显示。虚线表示部分公开/右删失，低支持度边会降低透明度并提示警告。${selectedFaction ? `当前阵营筛选：${selectedFaction}。` : ""}`, xLabel: "", yLabel: "" };
   }
 
   if (templateKey === "a03_bubble") {
@@ -1272,8 +1369,9 @@ async function dynamicCovoteResult(templateKey) {
   }
 
   if (templateKey === "x_covote") {
-    const xField = ["intersection_count", "share", "lift", "excess_count", "phi", "asymmetry", "direction_a_to_b", "direction_b_to_a"].includes(controls.xMetric.value) ? controls.xMetric.value : "intersection_count";
-    const yField = ["intersection_count", "share", "lift", "excess_count", "phi", "asymmetry", "direction_a_to_b", "direction_b_to_a"].includes(controls.yMetric.value) ? controls.yMetric.value : "lift";
+    const covoteFields = ["intersection_count", "raw_count", "count_a", "count_b", "ballots", "conditional_rate", "conditional_rate_a_to_b", "conditional_rate_b_to_a", "direction_a_to_b", "direction_b_to_a", "share", "lift", "lift_a_to_b", "lift_b_to_a", "cosine", "cosine_ochiai", "ochiai", "jaccard", "pmi", "pmi_nats", "npmi", "phi", "excess_count", "asymmetry"];
+    const xField = covoteFields.includes(controls.xMetric.value) ? controls.xMetric.value : "intersection_count";
+    const yField = covoteFields.includes(controls.yMetric.value) ? controls.yMetric.value : "lift";
     const points = filtered.filter((r) => number(r[xField], null) !== null && number(r[yField], null) !== null).sort((a, b) => number(b[xField], 0) - number(a[xField], 0)).slice(0, limit).map((r) => ({ label: r.__label, x: number(r[xField]), y: number(r[yField]), size: number(r.intersection_count, 0), tooltipPairs: [[METRIC_LABELS[xField] || xField, formatAxis(r[xField], xField, dynamicMetricFormat(xField))], [METRIC_LABELS[yField] || yField, formatAxis(r[yField], yField, dynamicMetricFormat(yField))], ["共同人数", formatAxis(r.intersection_count, "intersection_count", "integer")]] }));
     const xLabel = METRIC_LABELS[xField] || xField;
     const yLabel = METRIC_LABELS[yField] || yField;
@@ -1281,7 +1379,10 @@ async function dynamicCovoteResult(templateKey) {
     const headers = ["关系", xLabel, yLabel, ...(includeSize ? ["点大小：共同人数"] : [])];
     const table = points.map((p) => [p.label, p.x, p.y, ...(includeSize ? [p.size] : [])]);
     const displayTable = points.map((p) => [p.label, formatAxis(p.x, xField, dynamicMetricFormat(xField)), formatAxis(p.y, yField, dynamicMetricFormat(yField)), ...(includeSize ? [formatAxis(p.size, "intersection_count", "integer")] : [])]);
-    return { title: `自定义同投指标（${round}）`, chartType: "scatter", source_label: "全量同投分卷 CSV", points, rows: points, metric: yField, xMetric: xField, xLabel, yLabel, x_format: dynamicMetricFormat(xField), y_format: dynamicMetricFormat(yField), headers, table, displayTable, note: `横轴和纵轴均从完整角色同投分卷即时计算；散点旁仅标注共同人数最高的 ${Math.min(8, points.length)} 个关系，其余关系可悬停或查看结果表。${includeSize ? "点大小表示共同人数。" : "当前坐标轴已使用共同人数，因此不再重复显示点大小列。"}` };
+    const scopeNote = round.startsWith("JP")
+      ? "JP11–22 仅使用官网公开关联前列；列表外配对未知，且完整2×2派生指标在当前口径下不可用。"
+      : "CN10–11 使用经四格恒等式验证的完整角色/曲子矩阵；明确的交集0保留为观测0。";
+    return { title: `自定义同投指标（${round}）`, chartType: "scatter", source_label: "全量同投分卷 CSV", points, rows: points, metric: yField, xMetric: xField, xLabel, yLabel, x_format: dynamicMetricFormat(xField), y_format: dynamicMetricFormat(yField), headers, table, displayTable, note: `${scopeNote} 横轴和纵轴从当前来源即时计算；散点旁仅标注共同人数最高的 ${Math.min(8, points.length)} 个关系，其余关系可悬停或查看结果表。${includeSize ? "点大小表示共同人数。" : "当前坐标轴已使用共同人数，因此不再重复显示点大小列。"}` };
   }
 
   return null;
@@ -1347,7 +1448,8 @@ function crossMetricField(value, allowed, fallback) {
 }
 
 function crossLinkRowsForRound(rows, round) {
-  return rows.filter((row) => selectedRound(row) === round && row.character_canonical && row.music_canonical);
+  return rows.filter((row) => selectedRound(row) === round && row.character_canonical && row.music_canonical
+    && (row.relation_type || "character_theme") === "character_theme");
 }
 
 function dynamicCrossNote(snapshot, suffix) {
@@ -2335,6 +2437,10 @@ function drawNetwork(result) {
   if (!nodes.length) return chartMessage(svg, "当前筛选没有可绘制的网络");
   const centerX = width / 2, centerY = height / 2 + 22, map = new Map();
   const palette = ["#7c3aed", "#c2415b", "#2563eb", "#0f766e", "#d97706", "#0891b2", "#be123c", "#4f46e5", "#15803d", "#a16207"];
+  const standardNetwork = !panelLayout && result.networkNodeSize;
+  const nodeMetric = result.networkNodeSize || "selection_count", edgeMetric = result.networkEdgeColor || "lift";
+  const communityKeys = [...new Set(nodes.map((node) => node.community || "未计算"))].sort();
+  const communityColor = new Map(communityKeys.map((key, index) => [key, palette[index % palette.length]]));
   const groups = clusterNames.length ? clusterNames.map((cluster) => ({ cluster, nodes: nodes.filter((node) => node.cluster === cluster) })) : [{ cluster: "", nodes }];
   if (panelLayout) {
     // Cluster views can contain hundreds of nodes.  Give every component a
@@ -2351,7 +2457,7 @@ function drawNetwork(result) {
       group.nodes.forEach((node, index) => {
         const col = index % gridCols, row = Math.floor(index / gridCols);
         const px = panelX + 21 + (gridCols > 1 ? col * stepX : usableW / 2), py = panelY + 52 + (gridRows > 1 ? row * stepY : usableH / 2);
-        map.set(node.id, { ...node, x: px, y: py, color: palette[groupIndex % palette.length] });
+        map.set(node.id, { ...node, x: px, y: py, color: standardNetwork ? (communityColor.get(node.community || "未计算") || "#94a3b8") : palette[groupIndex % palette.length] });
       });
     });
   } else {
@@ -2368,7 +2474,7 @@ function drawNetwork(result) {
         : Math.min(300, 55 + group.nodes.length * 2.4);
       group.nodes.forEach((node, index) => {
         const angle = -Math.PI / 2 + (index / Math.max(group.nodes.length, 1)) * Math.PI * 2;
-        map.set(node.id, { ...node, x: cx + nodeRadius * Math.cos(angle), y: cy + nodeRadius * Math.sin(angle), color: palette[groupIndex % palette.length] });
+        map.set(node.id, { ...node, x: cx + nodeRadius * Math.cos(angle), y: cy + nodeRadius * Math.sin(angle), color: standardNetwork ? (communityColor.get(node.community || "未计算") || "#94a3b8") : palette[groupIndex % palette.length] });
       });
     });
   }
@@ -2412,26 +2518,36 @@ function drawNetwork(result) {
       if (labelIds.size < labelBudget) labelIds.add(node.id);
     });
   }
-  const maxEdge = Math.max(...edges.map((edge) => number(edge.value, 1) || 1), 1);
+  const maxEdge = Math.max(...edges.map((edge) => number(edge.intersection_count ?? edge.value, 1) || 1), 1);
+  const edgeValues = edges.map((edge) => number(edge[edgeMetric], null)).filter((value) => value !== null);
+  const edgeMin = edgeValues.length ? Math.min(...edgeValues) : 0, edgeMax = edgeValues.length ? Math.max(...edgeValues) : 1;
   edges.forEach((edge) => {
     const a = map.get(edge.source), b = map.get(edge.target); if (!a || !b) return;
-    const line = svgEl("line", { x1: a.x, y1: a.y, x2: b.x, y2: b.y, stroke: "#94a3b8", "stroke-width": panelLayout ? 1 + 2.8 * Math.sqrt((number(edge.value, 0) || 0) / maxEdge) : 1 + 5 * Math.sqrt((number(edge.value, 0) || 0) / maxEdge), opacity: panelLayout ? .18 : .28, "pointer-events": "stroke" });
+    const count = number(edge.intersection_count ?? edge.value, 0) || 0;
+    const edgeRatio = edge[edgeMetric] === null || edge[edgeMetric] === undefined ? 0 : (number(edge[edgeMetric], edgeMin) - edgeMin) / Math.max(1e-9, edgeMax - edgeMin);
+    const edgeColor = standardNetwork ? mixHex("#cbd5e1", "#2563eb", edgeRatio) : "#94a3b8";
+    const lineAttrs = { x1: a.x, y1: a.y, x2: b.x, y2: b.y, stroke: edgeColor, "stroke-width": panelLayout ? 1 + 2.8 * Math.sqrt(count / maxEdge) : 1 + 5 * Math.sqrt(count / maxEdge), opacity: edge.low_support ? .35 : (panelLayout ? .18 : .82), "pointer-events": "stroke" };
+    if (standardNetwork && (edge.data_completeness !== "complete_matrix" || edge.censoring_status !== "not_censored")) lineAttrs["stroke-dasharray"] = "6 4";
+    const line = svgEl("line", lineAttrs);
     svg.appendChild(line);
-    bindPointTooltip(line, { label: edge.label || `${a.label} × ${b.label}`, tooltipPairs: [["共同人数", formatAxis(edge.value, "", "integer")], ["集中倍数", formatAxis(edge.lift, "", "number")]] }, result);
+    bindPointTooltip(line, { label: edge.label || `${a.label} × ${b.label}`, tooltipPairs: standardNetwork ? [["共同人数", formatAxis(edge.intersection_count, "intersection_count", "integer")], ["A边缘人数（仅A）", formatAxis(edge.a_only_count, "a_only_count", "integer")], ["B边缘人数（仅B）", formatAxis(edge.b_only_count, "b_only_count", "integer")], ["A总选择人数", formatAxis(edge.count_a, "count_a", "integer")], ["B总选择人数", formatAxis(edge.count_b, "count_b", "integer")], ["期望人数", formatAxis(edge.expected_count, "baseline_count", "integer")], ["lift", formatAxis(edge.lift, "lift", "number")], ["cosine", formatAxis(edge.cosine, "cosine", "number")], ["φ", formatAxis(edge.phi, "phi", "number")], ["数据完整性", edge.data_completeness || "—"], ["截尾状态", edge.censoring_status || "—"], ["来源", edge.source_type || "—"], ...(edge.warning ? [["警告", edge.warning]] : [])] : [["共同人数", formatAxis(edge.value, "", "integer")], ["集中倍数", formatAxis(edge.lift, "", "number")]] }, result);
   });
-  const maxNode = Math.max(...nodes.map((node) => number(node.value, 1) || 1), 1);
+  const maxNode = Math.max(...nodes.map((node) => number(node[nodeMetric] ?? node.value, 1) || 1), 1);
   nodes.forEach((node) => {
     const p = map.get(node.id); if (!p) return;
     const degree = edges.reduce((sum, edge) => sum + (edge.source === node.id || edge.target === node.id ? 1 : 0), 0);
     const r = panelLayout
       ? 5 + Math.min(5, degree / 3)
-      : 7 + 16 * Math.sqrt((number(node.value, 0) || 0) / maxNode) + Math.min(5, degree / 4);
+      : 7 + 16 * Math.sqrt((number(node[nodeMetric] ?? node.value, 0) || 0) / maxNode) + Math.min(5, degree / 4);
     const fill = p.color || (node.cluster ? "#7c3aed" : "#c2415b");
     const circle = svgEl("circle", { cx: p.x, cy: p.y, r, fill, opacity: .88, stroke: "#fff", "stroke-width": 2, "data-node-id": node.id, "aria-label": node.label || node.id });
     svg.appendChild(circle);
     bindPointTooltip(circle, { label: node.label || node.id, tooltipPairs: [
       ...(number(node.rank, null) !== null ? [["官方名次", formatAxis(node.rank, "rank", "rank")]] : []),
-      ["节点值", formatAxis(node.value, "", "number")],
+      ["选择人数", formatAxis(node.selection_count ?? node.value, "selection_count", "integer")],
+      ["加权度", formatAxis(node.weighted_degree, "weighted_degree", "number")],
+      ["PageRank", formatAxis(node.pagerank, "pagerank", "number")],
+      ["社区", node.community || "未计算"], ["原作阵营", (node.factions || []).join("、") || "未标注"],
       ...(node.cluster ? [["聚类", node.cluster]] : []),
     ] }, result);
     // Hundreds of labels make a cluster graph unreadable.  Keep labels for
@@ -2447,6 +2563,15 @@ function drawNetwork(result) {
       const x = 24 + (index % 6) * 195, y = 28 + Math.floor(index / 6) * 20;
       svg.appendChild(svgEl("rect", { x, y: y - 10, width: 12, height: 12, rx: 3, fill: palette[index % palette.length] }));
       drawText(svg, `${group.cluster || "网络"}（${group.nodes.length}节点）`, x + 18, y, { fill: "#475569", "font-size": 11 });
+    });
+  }
+  if (standardNetwork) {
+    const legendY = Math.max(24, height - 26);
+    drawText(svg, `节点大小：${nodeMetric}｜边宽：共同人数｜边色：${edgeMetric}`, 24, legendY, { fill: "#475569", "font-size": 11 });
+    drawText(svg, "节点颜色：社区；虚线：部分公开/右删失；透明度降低：低支持度；同投不是角色关系/CP", 24, legendY + 18, { fill: "#64748b", "font-size": 10 });
+    communityKeys.slice(0, 8).forEach((key, index) => {
+      const x = 24 + index * 150; svg.appendChild(svgEl("rect", { x, y: legendY + 26, width: 11, height: 11, fill: communityColor.get(key) || "#94a3b8" }));
+      drawText(svg, `社区 ${key}`, x + 17, legendY + 36, { fill: "#64748b", "font-size": 9 });
     });
   }
 }
@@ -2466,6 +2591,103 @@ function applyChartZoom() {
 function setChartZoom(value) {
   state.chartZoom = Math.max(.75, Math.min(3, Math.round(Number(value) * 4) / 4));
   applyChartZoom();
+}
+
+const researchLoader = VoteResearch.createLoader(new URL("web_data/research/", document.baseURI).href);
+
+function researchSelect(id, values, selected, includeAll = true) {
+  const options = [...new Set(values)].map(value => ({ value, label: VoteResearch.label(value) }));
+  setOptions($(id), includeAll ? [{ value: "", label: "全部已运行结果" }, ...options] : options, selected);
+  $(id).disabled = options.length === 0;
+}
+
+async function researchResult(serial) {
+  const index = await researchLoader.index();
+  if (serial !== refreshSerial) return null;
+  setOptions($("research-level"), Object.entries(index.levels).map(([value, label]) => ({ value, label })), $("research-level").value);
+  const level = $("research-level").value, round = controls.round.value;
+  const scopes = [...new Set(index.entries.filter(e => e.level === level).map(e => e.scope))];
+  setOptions($("research-scope"), scopes.map(value => ({ value, label: VoteResearch.SCOPE_LABELS[value] || value })), $("research-scope").value);
+  const scope = $("research-scope").value;
+  const comparisons = [...new Set(index.entries.filter(e => e.level === level && e.scope === scope && e.round.startsWith(`${round}_vs_`)).map(e => e.round))];
+  setOptions($("research-comparison"), [{ value: round, label: "当前单届" }, ...comparisons.map(value => ({ value, label: value.replace("_vs_", " 与 ") }))], $("research-comparison").value);
+  $("research-comparison").disabled = comparisons.length === 0;
+  const selectedRound = $("research-comparison").value;
+  const entry = index.entries.find(e => e.level === level && e.round === selectedRound && e.scope === scope);
+  const payload = entry ? await researchLoader.shard(entry) : { rows: [], sources: [] };
+  if (serial !== refreshSerial) return null;
+  const sourceRows = payload.rows;
+  const community = VoteResearch.COMMUNITY_METRICS[level];
+  researchSelect("research-metric", community || sourceRows.map(r => r.web_metric).filter(Boolean), $("research-metric").value, false);
+  researchSelect("research-method", sourceRows.map(r => r.web_method), $("research-method").value);
+  researchSelect("research-threshold", sourceRows.map(r => r.web_threshold), $("research-threshold").value);
+  researchSelect("research-algorithm", sourceRows.map(r => r.web_algorithm), $("research-algorithm").value);
+  const filters = { level, metric: $("research-metric").value, method: $("research-method").value,
+    threshold: $("research-threshold").value, algorithm: $("research-algorithm").value,
+    minPairs: $("research-min-pairs").value, completeOnly: $("research-complete").value === "complete",
+    showExploratory: $("research-exploratory").value === "show", search: controls.search.value };
+  const allRows = VoteResearch.filterRows(sourceRows, filters);
+  if (community) allRows.sort((a, b) => (VoteResearch.effect(b, level, filters.metric) ?? -Infinity) - (VoteResearch.effect(a, level, filters.metric) ?? -Infinity));
+  const rows = allRows.slice(0, Math.max(3, Math.min(100, integer(controls.topN.value, 20))));
+  const table = VoteResearch.table(rows, level, filters.metric);
+  const plotted = rows.filter(r => VoteResearch.effect(r, level, filters.metric) !== null);
+  const unique = key => [...new Set(sourceRows.map(r => r[key]))].map(v => v === "" || v === undefined || v === null ? "未报告" : VoteResearch.label(v)).join("、") || "未报告";
+  const hiddenExploratory = sourceRows.filter(r => r.web_exploratory).length;
+  const unavailable = !entry ? "该地区/届次/范围尚未提供此离线结果；可查看「数据覆盖与不可用原因」。" :
+    !allRows.length ? `当前条件无结果。此分片共 ${sourceRows.length} 行，其中 ${hiddenExploratory} 行标记为探索性；可调整完整性、探索性及其他筛选。` :
+    !plotted.length && level !== "coverage" ? "当前结果没有可绘制的估计值，原因保留在表格；空白未替换为零。" : "";
+  const note = `研究型网络 · ${index.levels[level]}。来源 ${sourceRows.length} 行，筛选后 ${allRows.length} 行，展示 ${rows.length} 行。${unavailable} 原始矩阵不在此视图下载，浏览器不执行 MRQAP 或置换。`;
+  const caveat = `${index.caveats.join(" ")} 完整性：${unique("web_completeness")}；删失：${unique("web_censoring")}；缺失处理：${unique("web_missing_policy")}。请求置换：${unique("web_permutations")}；随机种子：${unique("web_random_seed")}。` +
+    (payload.sources.some(s => s.provenance_status === "no_run_manifest") ? " 本结果无运行清单，未报告的参数保持未知。" : "") +
+    (payload.sources.some(s => s.data_integrity?.status && s.data_integrity.status !== "passed") ? " 来源完整性检查含警告，详见运行清单。" : "");
+  return { title: `${selectedRound.replace("_vs_", " 与 ")} · ${index.levels[level]}（离线研究）`,
+    chartType: "research", rows, allRows, headers: table.headers, table: table.values,
+    points: plotted.map(r => ({ label: VoteResearch.feature(r, level), value: VoteResearch.effect(r, level, filters.metric),
+      tooltipPairs: [[table.effectTitle, VoteResearch.effect(r, level, filters.metric)], ["置换 p", VoteResearch.probability(r, level) || "未报告"],
+        ["完整性", VoteResearch.label(r.web_completeness)], ["删失", VoteResearch.label(r.web_censoring)], ["阈值", VoteResearch.label(r.web_threshold)],
+        ["探索性", r.web_exploratory ? "是" : "源结果未标记"]] })),
+    metric: filters.metric, yLabel: table.effectTitle, note, caveat,
+    emptyMessage: unavailable || "此分析层级以数据覆盖表展示，不把缺失状态绘制为数值。",
+    source_label: "离线统计 JSON",
+    researchProvenance: { build_generated_at: index.generated_at, filters, displayed_rows: rows.length, filtered_rows: allRows.length,
+      shard: entry || null, sources: payload.sources, notices: index.notices },
+  };
+}
+
+function drawResearch(result) {
+  const svg = $("chart"); svg.innerHTML = ""; hideChartTooltip();
+  const width = Math.max(320, Math.min(1100, $("chart-wrap").clientWidth - 2));
+  const height = Math.max(350, 90 + result.points.length * 34);
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  if (!result.points.length) {
+    const characters = Array.from(result.emptyMessage), lineLength = Math.max(16, Math.floor((width - 40) / 13));
+    for (let i = 0; i < characters.length; i += lineLength) {
+      drawText(svg, characters.slice(i, i + lineLength).join(""), 20, 60 + Math.floor(i / lineLength) * 24, { fill: "#64748b", "font-size": 13 });
+    }
+    return;
+  }
+  const min = Math.min(0, ...result.points.map(p => p.value)), max = Math.max(0, ...result.points.map(p => p.value));
+  const left = Math.min(385, width * .42), plotWidth = width - left - 85;
+  const span = max - min || 1, x = value => left + (value - min) / span * plotWidth;
+  svg.appendChild(svgEl("line", { x1: x(0), x2: x(0), y1: 40, y2: height - 35, stroke: "#94a3b8" }));
+  drawText(svg, result.yLabel, left + plotWidth / 2, 23, { fill: "#475569", "text-anchor": "middle" });
+  result.points.forEach((point, i) => {
+    const y = 60 + i * 34;
+    const labelLimit = Math.max(8, Math.floor((left - 15) / 9));
+    const text = point.label.length > labelLimit ? point.label.slice(0, labelLimit - 1) + "…" : point.label;
+    drawText(svg, text, left - 15, y + 4, { fill: "#334155", "font-size": 12, "text-anchor": "end" });
+    svg.appendChild(svgEl("line", { x1: x(0), x2: x(point.value), y1: y, y2: y, stroke: "#c2415b", "stroke-width": 4 }));
+    const dot = svgEl("circle", { cx: x(point.value), cy: y, r: 5, fill: "#9f3046" });
+    bindPointTooltip(dot, point, result); svg.appendChild(dot);
+    drawText(svg, Number(point.value.toPrecision(6)).toString(), left + plotWidth + 12, y + 4, { fill: "#475569", "font-size": 12 });
+  });
+}
+
+function downloadResearchAll() {
+  if (state.lastMode !== "research" || !state.researchAllRows.length) return;
+  const blob = new Blob([String.fromCharCode(0xfeff) + VoteResearch.csv(state.researchAllRows)], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob), link = document.createElement("a");
+  link.href = url; link.download = `touhou-research-${controls.round.value}-${$("research-level").value}-filtered.csv`; link.click(); URL.revokeObjectURL(url);
 }
 
 function renderTable(result) {
@@ -2492,10 +2714,21 @@ function clearRenderedResult() {
   state.resultRows = [];
   state.tableRows = [];
   state.headers = [];
+  state.researchRows = []; state.researchAllRows = [];
+  toggle("research-provenance", false); toggle("research-caveat", false);
+  $("research-run-details").textContent = "";
+  $("research-caveat").textContent = "";
 }
 
 function renderResult(result) {
   state.resultRows = result.rows || []; state.tableRows = result.table || []; state.headers = result.headers || []; state.lastMode = currentMode();
+  $("chart").classList.toggle("research-chart", result.chartType === "research");
+  if (result.researchProvenance) {
+    state.researchRows = result.rows; state.researchAllRows = result.allRows;
+    toggle("research-provenance", true); toggle("research-caveat", true);
+    $("research-run-details").textContent = JSON.stringify(result.researchProvenance, null, 2);
+    $("research-caveat").textContent = result.caveat;
+  }
   $("chart-title").textContent = result.title;
   $("table-title").textContent = `${result.title}｜计算结果表`;
   $("chart-note").textContent = result.note;
@@ -2504,7 +2737,8 @@ function renderResult(result) {
   $("summary-chart").textContent = ({ bar: "条形图", line: "折线图", scatter: "散点图", bubble: "气泡图", dumbbell: "哑铃图", grouped: "分组柱状图", stacked: "堆叠柱状图", heatmap: "热力图", network: "网络图" }[result.chartType] || result.chartType || "—");
   $("summary-source").textContent = result.source_label || (result.desktopSnapshot ? "桌面快照 JSON" : "本地 CSV");
   $("loading-state").classList.add("hidden");
-  if (result.chartType === "line") drawLine(result);
+  if (result.chartType === "research") { $("summary-chart").textContent = "离线统计结果"; drawResearch(result); }
+  else if (result.chartType === "line") drawLine(result);
   else if (result.chartType === "scatter") drawScatter(result);
   else if (result.chartType === "bubble") drawScatter(result, true);
   else if (result.chartType === "dumbbell") drawDumbbell(result);
@@ -2516,6 +2750,7 @@ function renderResult(result) {
 }
 
 function resultAsCSV() {
+  if (state.lastMode === "research") return VoteResearch.csv(state.researchRows);
   if (isDesktopMode(state.lastMode)) {
     const lines = [state.headers, ...state.tableRows];
     return lines.map((line) => line.map((cell) => `"${String(cell ?? "").replaceAll('"', '""')}"`).join(",")).join("\r\n");
@@ -2558,6 +2793,22 @@ async function refresh() {
   clearRenderedResult();
   $("loading-state").classList.remove("hidden");
   $("status-line").classList.remove("error-text");
+  if (mode === "research") {
+    $("status-line").textContent = "正在按需读取离线统计索引与当前结果分片…";
+    try {
+      const result = await researchResult(serial);
+      if (serial !== refreshSerial || !result) return;
+      renderResult(result);
+      $("status-line").textContent = `离线结果：筛选后 ${result.allRows.length} 行，显示 ${result.rows.length} 行；检验参数见图下注释与运行清单。`;
+    } catch (error) {
+      if (serial !== refreshSerial) return;
+      $("loading-state").classList.add("hidden");
+      $("chart-title").textContent = "离线研究结果不可用";
+      $("status-line").classList.add("error-text");
+      $("status-line").textContent = `${error.message}。请运行 build_static_bundle.py --research-only 并部署 web_data/research/。`;
+    }
+    return;
+  }
   if (isDesktopMode(mode)) {
     try {
       const bundle = await loadBundle();
@@ -2613,6 +2864,8 @@ async function refresh() {
 }
 
 function reset() {
+  for (const id of ["research-level", "research-scope", "research-comparison", "research-metric", "research-method", "research-threshold", "research-algorithm"]) $(id).value = "";
+  $("research-min-pairs").value = "0"; $("research-complete").value = "all"; $("research-exploratory").value = "hide";
   // Restoring the analysis defaults also returns the chart viewport to its
   // neutral size, so a previous large-chart zoom does not leak into a new
   // default result.
@@ -2624,6 +2877,7 @@ function reset() {
   controls.rankStart.value = "1"; controls.rankEnd.value = "100"; controls.minCount.value = "0";
   controls.sort.value = "desc"; controls.changeDirection.value = "all"; controls.language.value = "cn";
   controls.relationValueMode.value = "rate"; controls.relationSort.value = "count";
+  $("network-node-size").value = "selection_count"; $("network-edge-color").value = "lift";
   updateQuestionOptions().finally(() => { updateControlVisibility(); refresh(); });
 }
 
@@ -2709,6 +2963,8 @@ controls.relationQuestion.addEventListener("change", async () => {
 controls.relationAnswer.addEventListener("change", refresh);
 controls.relationValueMode.addEventListener("change", refresh);
 controls.relationSort.addEventListener("change", refresh);
+$("network-node-size").addEventListener("change", refresh);
+$("network-edge-color").addEventListener("change", refresh);
 controls.topN.addEventListener("input", scheduleRefresh);
 controls.topN.addEventListener("change", scheduleRefresh);
 controls.minVotes.addEventListener("input", scheduleRefresh);
@@ -2716,6 +2972,15 @@ controls.minVotes.addEventListener("change", scheduleRefresh);
 controls.search.addEventListener("input", () => { window.clearTimeout(window.__voteSearchTimer); window.__voteSearchTimer = window.setTimeout(refresh, 180); });
 $("reset-button").addEventListener("click", reset);
 $("download-button").addEventListener("click", downloadCSV);
+$("download-svg").addEventListener("click", () => {
+  const svg = $("chart");
+  const blob = new Blob([new XMLSerializer().serializeToString(svg)], { type: "image/svg+xml;charset=utf-8" });
+  const url = URL.createObjectURL(blob), link = document.createElement("a");
+  link.href = url; link.download = `touhou-vote-${controls.round.value}-${controls.template.value}.svg`; link.click(); URL.revokeObjectURL(url);
+});
+$("research-download-all").addEventListener("click", downloadResearchAll);
+for (const id of ["research-level", "research-scope", "research-comparison", "research-metric", "research-method", "research-threshold", "research-algorithm", "research-complete", "research-exploratory"]) $(id).addEventListener("change", refresh);
+$("research-min-pairs").addEventListener("input", scheduleRefresh);
 $("chart-zoom-out").addEventListener("click", () => setChartZoom(state.chartZoom - .25));
 $("chart-zoom-in").addEventListener("click", () => setChartZoom(state.chartZoom + .25));
 $("chart-zoom-reset").addEventListener("click", () => setChartZoom(1));

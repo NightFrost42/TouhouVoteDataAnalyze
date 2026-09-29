@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 10,
+  "category": "character",
+  "entity_id": "198",
+  "entity_name": "木花咲耶姬",
+  "rank": 198,
+  "source_kind": "cn_modern_graphql_reason",
+  "source": {
+    "url": "https://touhou.vote/res-be/graphql",
+    "effective_url": "https://touhou.vote/res-be/graphql",
+    "sha256": "5f83cf13b2203f7e10b32b034342da3b7bf2f31773b93ed074bec7447cc0ef49",
+    "bytes": 111,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T18:04:31+00:00",
+    "request": {
+      "query_sha256": "911be12a97925ace74d5327814ca5cfa4341793e9972eac2f0532f0391252a54",
+      "variables": {
+        "voteStart": "2022-06-17T10:00:00.000Z",
+        "voteYear": 10,
+        "rank": 198
+      }
+    }
+  },
+  "comment_count": 2,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "198",
+      "entity_name": "木花咲耶姬",
+      "rank": 198,
+      "comment_index": 1,
+      "text": "干不过寿命论就成为BBA",
+      "raw_text": "干不过寿命论就成为BBA",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "5f83cf13b2203f7e10b32b034342da3b7bf2f31773b93ed074bec7447cc0ef49",
+      "source_bytes": 111,
+      "retrieved_at": "2026-09-28T18:04:31+00:00"
+    },
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 10,
+      "category": "character",
+      "entity_id": "198",
+      "entity_name": "木花咲耶姬",
+      "rank": 198,
+      "comment_index": 2,
+      "text": "咲夜可能的原型之一",
+      "raw_text": "咲夜可能的原型之一",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_modern_graphql_reason",
+      "source_url": "https://touhou.vote/res-be/graphql",
+      "source_sha256": "5f83cf13b2203f7e10b32b034342da3b7bf2f31773b93ed074bec7447cc0ef49",
+      "source_bytes": 111,
+      "retrieved_at": "2026-09-28T18:04:31+00:00"
+    }
+  ],
+  "error": null
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "region": "cn",
+  "round": 5,
+  "category": "character",
+  "entity_id": "123",
+  "entity_name": "奥莲姬",
+  "rank": null,
+  "source_kind": "cn_legacy_reason_html",
+  "source": {
+    "url": "https://touhou.vote/v5/index.php?m=reason&type=chara&id=123",
+    "effective_url": "https://touhou.vote/v5/index.php?m=reason&type=chara&id=123",
+    "sha256": "3f44858d94fc9128a01631f0cbb8f38ba7a6a0a8b3f111a3034cf275ee365bc5",
+    "bytes": 5644,
+    "charset": "utf-8",
+    "retrieved_at": "2026-09-28T17:33:53+00:00"
+  },
+  "comment_count": 1,
+  "comments": [
+    {
+      "schema_version": 1,
+      "region": "cn",
+      "round": 5,
+      "category": "character",
+      "entity_id": "123",
+      "entity_name": "奥莲姬",
+      "rank": null,
+      "comment_index": 1,
+      "text": "萌萌哒元气少女",
+      "raw_text": "萌萌哒元气少女",
+      "author": null,
+      "is_primary": null,
+      "submitted_at": null,
+      "source_kind": "cn_legacy_reason_html",
+      "source_url": "https://touhou.vote/v5/index.php?m=reason&type=chara&id=123",
+      "source_sha256": "3f44858d94fc9128a01631f0cbb8f38ba7a6a0a8b3f111a3034cf275ee365bc5",
+      "source_bytes": 5644,
+      "retrieved_at": "2026-09-28T17:33:53+00:00"
+    }
+  ],
+  "error": null
+}
