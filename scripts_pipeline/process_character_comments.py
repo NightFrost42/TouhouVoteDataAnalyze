@@ -217,6 +217,13 @@ def process(manifest_path: Path = DEFAULT_INPUT, output_dir: Path = DEFAULT_OUTP
         })
     output_dir.mkdir(parents=True, exist_ok=True)
     write_csv_gz(output_dir / "comments.csv.gz", comments, COMMENT_FIELDS)
+    # Keep the original for local analysis and publish verified binary volumes.
+    try:
+        from .split_binary_archive import split
+    except ImportError:
+        from split_binary_archive import split
+    if (output_dir / "comments.csv.gz").stat().st_size > 40 * 1024 * 1024:
+        split(output_dir / "comments.csv.gz")
     write_csv(output_dir / "entity_summary.csv", sorted(entities, key=lambda r: (r["region"], r["round"], str(r["entity_id"]))), ENTITY_FIELDS)
     round_rows = [rounds[key] for key in sorted(rounds)]
     write_csv(output_dir / "round_summary.csv", round_rows, ROUND_FIELDS)

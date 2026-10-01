@@ -60,6 +60,7 @@ CHARACTER_METRICS = [
     "rank", "equal_rank", "old_2_1_rank", "points", "primary_count", "secondary_count",
     "other_count", "selection_count", "primary_rate", "secondary_rate", "top2_rate",
     "selection_rate", "male_rate", "female_rate", "under20_rate",
+    "comments_nonempty", "comments_unique", "comment_unique_rate", "comment_avg_chars", "comment_to_selection_ratio",
 ]
 MUSIC_METRICS = [
     "rank", "equal_rank", "points", "primary_count", "secondary_count", "selection_count",

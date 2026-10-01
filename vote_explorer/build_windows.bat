@@ -2,7 +2,7 @@
 setlocal EnableExtensions
 cd /d "%~dp0"
 set "PY_CMD="
-set "PYTHONPATH=%~dp0.build_python;%PYTHONPATH%"
+set "PYTHONPATH=%~dp0..;%~dp0.build_python;%PYTHONPATH%"
 
 rem Prefer a normal Python installation over the Windows Store py alias.
 call :try_python_with_tk python
@@ -44,6 +44,8 @@ if errorlevel 1 goto failed
 echo Splitting large CSV data files for repository compatibility...
 %PY_CMD% "%~dp0..\scripts_pipeline\split_large_files.py" --all --replace
 if errorlevel 1 goto failed
+%PY_CMD% "%~dp0..\scripts_pipeline\stage_desktop_data.py" "data" ".build_data"
+if errorlevel 1 goto failed
 
 echo Building the portable Windows application...
 %PY_CMD% -m PyInstaller --noconfirm --clean --windowed --onedir --name TouhouVoteExplorer app.py
@@ -52,7 +54,7 @@ if errorlevel 1 goto failed
 if not exist "dist\TouhouVoteExplorer\TouhouVoteExplorer.exe" goto failed
 echo Copying data beside the portable EXE...
 if not exist "dist\TouhouVoteExplorer\data" mkdir "dist\TouhouVoteExplorer\data"
-xcopy "data\*" "dist\TouhouVoteExplorer\data" /E /I /Y >nul
+%PY_CMD% "%~dp0..\scripts_pipeline\stage_desktop_data.py" "data" "dist\TouhouVoteExplorer\data"
 if errorlevel 1 goto failed
 if not exist "dist\TouhouVoteExplorer\data\analysis_data_manifest.json" goto failed
 rem Keep the legacy final_onedir location in sync for older launch shortcuts.

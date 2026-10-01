@@ -39,6 +39,7 @@ BROAD_SINGLE_KEYS = {
     "c00_round_compare", "c00_rank_trend", "c00_all_trend", "c01_rank_change", "c02_selection_top",
     "c02_equal_rank", "c11_structure", "c11_metric_heatmap", "c12_gender_structure", "m02_round_compare",
     "c03_primary_rate", "c03_primary_rate_change", "c04_secondary_rate", "c05_top2_rate",
+    "c13_comments_top", "c14_comment_unique_rate", "c15_comment_length",
     "c06_primary_change", "c07_selection_change", "c07_selection_yoy", "c08_points_change",
     "c09_selection_rate_change", "c10_growth_lag", "c12_gender_lean", "c12_gender_change",
     "r01_character_question_scatter", "r02_character_question_diff", "r03_character_question_corr",
@@ -172,8 +173,10 @@ def main() -> int:
     print(f"research: {len(research['entries'])} shards, {research['total_rows']} rows; no statistical recomputation")
     if args.research_only:
         return 0
+    from data_shards import build_data_shards, split_templates, prune_unreferenced
     data_dir = ROOT / "vote_explorer" / "data"
     output_path = Path(__file__).resolve().parent / "web_data" / "templates.json"
+    build_data_shards(data_dir, output_path.parent / "tables")
     repo = AnalysisRepository(data_dir)
     snapshots: dict[str, dict[str, dict]] = {}
     pair_snapshots: dict[str, dict[str, dict[str, dict]]] = {}
@@ -265,9 +268,13 @@ def main() -> int:
         "errors": errors,
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    payload = split_templates(payload, output_path.parent / "templates")
+    temporary = output_path.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    temporary.replace(output_path)
+    prune_unreferenced(output_path.parent / "templates", {Path(e["path"]).name for e in payload["template_shards"].values()})
     print(f"wrote {output_path} ({output_path.stat().st_size:,} bytes); templates={len(TEMPLATES)}; errors={len(errors)}")
-    return 0
+    return 1 if errors else 0
 
 
 if __name__ == "__main__":

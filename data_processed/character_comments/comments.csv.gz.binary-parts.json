@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "format": "binary-concatenation",
+  "base_name": "comments.csv.gz",
+  "original_bytes": 117122295,
+  "original_sha256": "8852b0452232947da4a49118fcac7c343dbc450ed564928cda168852bfb45a83",
+  "parts": [
+    {
+      "name": "comments.csv.gz.fee23fa0c2d0ee79.binpart",
+      "bytes": 41943040,
+      "sha256": "fee23fa0c2d0ee790eb1495f18938470a8d0e0a46ce674bdd066b2f7b8c22078"
+    },
+    {
+      "name": "comments.csv.gz.c199203a06a530a2.binpart",
+      "bytes": 41943040,
+      "sha256": "c199203a06a530a2fb0189683f7b60ec311c6509fd6dd834eaaf754080efb467"
+    },
+    {
+      "name": "comments.csv.gz.669dbb4d28368f0e.binpart",
+      "bytes": 33236215,
+      "sha256": "669dbb4d28368f0ea4ef21a5158c9b3dc5d718eb3c92d12a8b70aa50bcccc199"
+    }
+  ]
+}

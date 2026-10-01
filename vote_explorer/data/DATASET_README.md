@@ -15,6 +15,7 @@
 - `cn_legacy_detail_demographics.csv.gz`：CN2–4 详情页逐实体投票群体统计；字段含性别、年龄、接触时间等实际公开题目及实体内/全体比例。
 - `manifest.json`：输入/输出 SHA-256、行数、覆盖范围和校验结果。
 - `analysis_character_metrics_all.csv`：角色分析长表，覆盖 CN1–11 与 JP3–22；未公开字段留空。
+- [角色评论逐届审计](../../analysis_results/character_comments/role_by_round.csv)：位于仓库的 `analysis_results/`，不是本数据目录下的文件；评论指标已并入 `analysis_character_metrics_all.csv`。
 - `analysis_music_metrics_all.csv`：曲子分析长表，覆盖 CN1–11 与 JP3–22；支持名次、分数、选择人数、第一顺位率等。
 - `analysis_music_catalog_unmatched.csv`：按届次列出未能安全对应到根目录 `TouhouMusicInfo.xlsx` 的曲名；这些行会保留原始名称，不会被模糊猜测合并。
 - `analysis_covote_pairs_all.csv`：同投关系长表。CN10/11 覆盖角色×角色、曲子×曲子的完整四格矩阵；JP11–22 覆盖官网实际公开的两类关联前列，未公开配对不补 0。
@@ -54,6 +55,10 @@ CN 规则、可投票数量和加权方式在历届有变化；JP 旧版与现�
 共 33,533 行排行、94 行票数汇总。详细分组行数见 `manifest.json` 的 `row_counts_by_region_round_category`。
 
 附加分析表的实际行数和校验值以 `analysis_data_manifest.json` 为准；其中总体问卷同时包含 CN1–11 静态/现代汇总和 JP17–22，逐实体问卷包含 CN2–4 详情统计、CN5–11 高级条件结果及 JP17–22。曲子指标已对 CN1–11、JP3–22 统一应用 `TouhouMusicInfo.xlsx` 的全名/译名和所属角色主题变体规则，并在同一届将同一规范曲目合并为一行；未能安全对应的曲名见 `analysis_music_catalog_unmatched.csv`。同投表保留 CN10/11 原始角色/音乐矩阵的完整实体宇宙，不因曲目 canonical 合并而删掉矩阵顶点；JP11–22 只保留官方角色/音乐关联前列，列表外配对未知。CN1–9、JP3–10 没有同部门官方同投来源，不会伪造 0。JP3–16 的排行、分数和可推导选择人数可用，但第二顺位、实体问卷及部分人口指标没有公开时保持空值。分析工作台遇到这类部分公开指标时，会保留能计算的系列；例如旧届顺位结构显示“第一顺位/非第一顺位”，不会将缺失的第二顺位写成 0。
+
+角色评论/投票理由按 CN1–11、JP3–22 的实际公开范围保存。`comments_nonempty`、`comments_unique`、`comment_avg_chars` 等字段只描述文本数量、重复和长度；`comment_to_selection_ratio` 是文本条数与选择人数的比值，不能解释为“有多少投票者评论”，因为来源没有评论者与投票者的一一对应关系。无法匹配、同名歧义或来源错误的排行实体保持空值（分别为 `unmatched`、`ambiguous`、`source_error`），逐届匹配率和未匹配清单见 `analysis_results/character_comments/role_by_round.csv` 与 `unmatched_entities.csv`。评论正文仍只在独立压缩归档中保存，展示时必须按纯文本处理。
+
+评论字段公式、状态和逐届汇总口径见[评论数据字典](../../docs/network_analysis_data_dictionary.md#角色评论与投票理由)。`mean_entity_comment_chars` 为各角色平均长度的等权均值，替代含义不清的旧列 `mean_comment_chars`。
 
 ## 来源与复现
 

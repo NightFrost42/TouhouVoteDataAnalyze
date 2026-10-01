@@ -54,6 +54,13 @@ python .\scripts_pipeline\process_character_comments.py
 `entity_summary.csv`、`round_summary.csv`，以及 `analysis_results/character_comments/processing_summary.json`。
 这些字段只描述文本结构和数据质量，不把关键词、长度或重复数解释成情绪、支持度或票数。
 
+统一分析构建脚本会读取 `entity_summary.csv`，按地区/届次/角色名把摘要并入
+`vote_explorer/data/analysis_character_metrics_all.csv`，并生成
+`analysis_results/character_comments/role_by_round.csv`、`role_analysis.json` 和未匹配实体清单。
+评论在系统中是公开理由/表达行为的描述性旁证；没有评论者与投票者的一一对应关系，不能把评论条数当成票数或评论者比例。
+
+已有角色表可用 `python scripts_pipeline/build_vote_explorer_analysis_data.py --comments-only` 单独刷新评论列与审计清单。同名歧义、别名冲突或重复挂接保持 `ambiguous` 空值；来源错误为 `source_error`。逐届 `mean_entity_comment_chars` 为角色平均长度的等权均值（schema v2，替代旧列 `mean_comment_chars`），完整公式见[数据字典](../docs/network_analysis_data_dictionary.md#角色评论与投票理由)。
+
 
 `build_vote_dataset.py` 离线读取 `data_raw/`、`data_processed/` 和已修订工作簿，生成 `datasets/votes_cn1-9_jp3-22/` 的统一长表，覆盖 CN1–11 与 JP3–22。CN10/CN11 的普通榜来自官方 GraphQL `graphql/base.json`；高级问卷条件、实体问卷和两两交叉表分别保留来源与缺陷审计，不把缺失接口结果补成 0。
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 10,
-  "generated_at": "2026-09-20T04:47:52.795106+00:00",
+  "generated_at": "2026-09-29T19:37:42.646868+00:00",
   "scope": {
     "cn_rounds": [
       1,
@@ -82,7 +82,8 @@
       "unmatched_unique_rows": 342,
       "unmatched_output": "analysis_music_catalog_unmatched.csv",
       "note": "Unmatched titles are retained with source names; no ambiguous fuzzy merge is forced."
-    }
+    },
+    "character_comments": "CN1-11, JP3-22 comment aggregates; ambiguous/unmatched/error rows remain blank"
   },
   "character_music_link_coverage": {
     "CN1": {
@@ -1567,10 +1568,50 @@
       "unified_questionnaire_pairs": "cn_advanced_pairs.csv.gz"
     }
   },
+  "character_comments": {
+    "scope": "CN1-11, JP3-22",
+    "source_summary": "data_processed/character_comments/entity_summary.csv",
+    "source_summary_sha256": "2fb4235a46a0746dde464992d083849326081554dedbc4a8823e8b3bef34fe67",
+    "raw_text_archive": "data_processed/character_comments/comments.csv.gz",
+    "processing_summary": "analysis_results/character_comments/processing_summary.json",
+    "processing_summary_sha256": "7330dc7d6a90cd75dcdb8478432da47f5c0642cf9177cb4dd46db1ccaac15812",
+    "raw_comments": 1220817,
+    "nonempty_comments": 1220598,
+    "unique_comments": 1122351,
+    "join_policy": "先按地区/届次/非空源实体 ID，再按唯一中日名称别名；同名歧义、多个别名冲突或同一来源重复挂接标记 ambiguous 并留空。",
+    "interpretation": "公开投票评论/理由是文本参与度与表达形状旁证，不是票数、支持度、情绪或因果变量。",
+    "role_audit": {
+      "schema_version": 2,
+      "round_path": "analysis_results/character_comments/role_by_round.csv",
+      "summary_path": "analysis_results/character_comments/role_analysis.json",
+      "unmatched_path": "analysis_results/character_comments/unmatched_entities.csv",
+      "rounds": 31,
+      "ranking_entities": 5482,
+      "matched_entities": 5415,
+      "unmatched_entities": 67,
+      "status_counts": {
+        "ok": 5415,
+        "unmatched": 65,
+        "ambiguous": 2
+      },
+      "sha256": {
+        "role_by_round.csv": "c4b7326d256b097f776da55f25b930baf74c6d91f0496649b32512aa9895209f",
+        "role_analysis.json": "72e01021b964701a39a19f9f099f0f43f7428360daeca38dad2571bfacb7773a",
+        "unmatched_entities.csv": "4c022e7a7a04a3cb7bb1d502a49a6c7b896dd34d1bbb33333833740b4e73b4b5"
+      }
+    },
+    "generated_at": "2026-09-29T20:03:42.062353+00:00"
+  },
+  "covote_metrics_audit": {
+    "status": "PASS",
+    "report": "analysis_results/covote_metrics_audit.json",
+    "report_sha256": "afde70dafd401b491c084179dcb62b0188ded9d06060ac90a2db6a0a74158ace",
+    "markdown_report": "analysis_results/covote_metrics_audit.md"
+  },
   "outputs": {
     "analysis_character_metrics_all.csv": {
       "rows": 5482,
-      "sha256": "dbce92a4afc4065099860e137c3544a123db8e1b83b9fcb3aba3d7a43cc486d8"
+      "sha256": "5161b31bab35d010df49dd2b44283af2d446933b1a917c12e0b05cb35b6b2fd8"
     },
     "analysis_music_metrics_all.csv": {
       "rows": 14684,
@@ -1598,7 +1639,7 @@
     },
     "analysis_entity_questionnaire_all.csv.gz": {
       "rows": 1758271,
-      "sha256": "376b6d89bb4d184b9b9b9cd2c8da521bf0ac20561cbb70495026fcc136e7bc64"
+      "sha256": "53503b6762013ade1d083103dfab69851935ef38cca56324d5c0dd44921c1363"
     },
     "analysis_character_music_links_all.csv": {
       "rows": 3885,
@@ -1626,13 +1667,7 @@
     },
     "analysis_cn_advanced_pairs_all.csv.gz": {
       "rows": 404671,
-      "sha256": "3a01ce1b3d1e755ea5c313620ec1e1dc6b54aeb109563e407c703b3b0c80c887"
+      "sha256": "a97325cef83a2e36a3b3ada86f0b73bf2c48c457b92293e2e1c60de1c2461633"
     }
-  },
-  "covote_metrics_audit": {
-    "status": "PASS",
-    "report": "analysis_results/covote_metrics_audit.json",
-    "report_sha256": "afde70dafd401b491c084179dcb62b0188ded9d06060ac90a2db6a0a74158ace",
-    "markdown_report": "analysis_results/covote_metrics_audit.md"
   }
 }

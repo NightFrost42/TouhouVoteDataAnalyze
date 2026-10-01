@@ -3,11 +3,22 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from scripts_pipeline import build_character_pair_structure_features as structure
 
 
 class CharacterPairStructureFeatureTests(unittest.TestCase):
+    def test_write_failure_preserves_existing_output(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "features.csv"
+            output.write_text("old result\n", encoding="utf-8")
+            with mock.patch.object(structure.os, "replace", side_effect=OSError("replace failed")):
+                with self.assertRaisesRegex(OSError, "replace failed"):
+                    structure.write_csv(output, [{"name": "new"}], ["name"])
+            self.assertEqual(output.read_text(encoding="utf-8"), "old result\n")
+            self.assertEqual(list(output.parent.iterdir()), [output])
+
     def setUp(self) -> None:
         self.metadata = [
             {

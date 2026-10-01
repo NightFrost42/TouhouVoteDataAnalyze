@@ -22,6 +22,8 @@
 
 ## 用结果前的固定检查
 
+评论接入的来源摘要、处理总数及逐届输出哈希见 `analysis_data_manifest.json > character_comments`；原始处理总数不等于已连接排行实体的汇总数。评论派生列的单独刷新命令为 `python scripts_pipeline/build_vote_explorer_analysis_data.py --comments-only`，会更新角色表的评论列、31 届评论审计及对应清单，不重建同投矩阵。列定义见[评论数据字典](network_analysis_data_dictionary.md#角色评论与投票理由)。`covote_metrics_audit.status` 读取报告内的实际结果：报告失败为 `FAIL`、缺失为 `UNAVAILABLE`、格式/状态无效为 `INVALID`；文件存在不等于审计通过，旧报告的 PASS 也不证明新输入已重新审计。
+
 1. 在 `analysis_data_manifest.json > covote_coverage[届次][类别]` 查 `status`、`source_path`、`expected_pairs`、`observed_pairs` 和 `metric_status_counts`。`not_available` 不生成配对，`official_published_leading_list` 的列表外为未知；只有 `complete_matrix` 且具体行 `metric_status=exact_complete_2x2` 才读四格指标。
 2. 在 `analysis_results/network_coverage.csv` 看分析状态，再打开对应运行清单。核对 `inputs`/`outputs` 的路径、SHA-256、计数、实际参数及 `pair_inclusion`；对无独立清单的阈值扫描，明确标注“运行参数未由 manifest 证实”。
 3. 对社区结果，先看 `all_rounds_manifest.json > run_manifests`，再读目标届次的五件套和 manifest。若 `included_pairs=0` 或覆盖表为 `computed_isolates_only`，只报告保留节点，不报告已发现的同投社群。

@@ -11,12 +11,15 @@ and retains the source marker for every observation.
 from __future__ import annotations
 
 import csv
+import argparse
 import difflib
 import gzip
 import hashlib
 import json
 import math
+import os
 import re
+import tempfile
 import unicodedata
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
@@ -180,6 +183,21 @@ def write_csv_gzip(path: Path, rows: list[dict], fields: list[str]) -> None:
         writer = csv.DictWriter(fh, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
+
+
+def write_json_atomic(path: Path, payload: object) -> None:
+    """Write large generated manifests through a sibling temp file on Windows."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as handle:
+            json.dump(payload, handle, ensure_ascii=False, indent=2)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(name, path)
+    finally:
+        Path(name).unlink(missing_ok=True)
 
 
 def _work_order_value(order: str, fallback: int = 999999) -> int:
@@ -734,6 +752,176 @@ def load_name_maps() -> tuple[dict[str, str], dict[str, str]]:
     return jp_to_cn, cn_to_jp
 
 
+def load_character_comment_summaries(
+    jp_to_cn: Mapping[str, str], cn_to_jp: Mapping[str, str],
+) -> tuple[dict[tuple[str, int, str], dict | None], dict[tuple[str, int, str], dict | None]]:
+    """Load processed character-comment aggregates and index both IDs and names.
+
+    IDs are scoped to region and round. Legacy rows without a matching ID
+    may use a unique name alias. None marks a collision, never a first hit.
+    """
+    path = ROOT / "data_processed" / "character_comments" / "entity_summary.csv"
+    by_id: dict[tuple[str, int, str], dict | None] = {}
+    by_name: dict[tuple[str, int, str], dict | None] = {}
+    if not path.exists():
+        return by_id, by_name
+    for row in read_csv(path):
+        region, rnd = row.get("region", ""), integer(row.get("round"))
+        entity_id = str(row.get("entity_id", "")).strip()
+        if entity_id:
+            id_key = (region, rnd, entity_id)
+            by_id[id_key] = row if id_key not in by_id else None
+        raw_names = [row.get("entity_name", "")]
+        if region == "jp":
+            translated = jp_to_cn.get(normalize_name(row.get("entity_name", "")), "")
+            if translated:
+                raw_names.append(translated)
+        elif region == "cn":
+            translated = cn_to_jp.get(normalize_name(row.get("entity_name", "")), "")
+            if translated:
+                raw_names.append(translated)
+        for key in {_character_key(name) for name in raw_names}:
+            if key:
+                name_key = (region, rnd, key)
+                by_name[name_key] = row if name_key not in by_name else None
+    return by_id, by_name
+
+
+def attach_character_comment_metrics(
+    rows: list[dict],
+    comment_by_id: Mapping[tuple[str, int, str], dict | None],
+    comment_by_name: Mapping[tuple[str, int, str], dict | None],
+) -> None:
+    """Attach text-shape aggregates without treating comments as votes."""
+    fields = (
+        "comments_raw", "comments_nonempty", "comments_unique", "comment_exact_duplicates",
+        "comment_blank", "comment_avg_chars", "comment_median_chars", "comment_unique_rate",
+        "comment_to_selection_ratio", "comment_data_status",
+    )
+    matches = []
+    for row in rows:
+        id_key = (row.get("region", ""), integer(row.get("round")), str(row.get("entity_id", "")).strip())
+        summary = comment_by_id.get(id_key) if id_key[2] else None
+        ambiguous = bool(id_key[2] and id_key in comment_by_id and summary is None)
+        if summary is None and not ambiguous:
+            candidates = {}
+            for name in (row.get("name_cn", ""), row.get("name_jp", ""), row.get("canonical_name", "")):
+                name_key = (id_key[0], id_key[1], _character_key(name))
+                if name_key in comment_by_name:
+                    candidate = comment_by_name[name_key]
+                    if candidate is None:
+                        ambiguous = True
+                    else:
+                        candidates[id(candidate)] = candidate
+            ambiguous = ambiguous or len(candidates) > 1
+            if len(candidates) == 1 and not ambiguous:
+                summary = next(iter(candidates.values()))
+        matches.append((summary, ambiguous))
+    # A unique source alias must not silently attach to multiple ranking rows.
+    usage = Counter(id(summary) for summary, ambiguous in matches if summary is not None and not ambiguous)
+    for row, (summary, ambiguous) in zip(rows, matches):
+        for field in fields:
+            row[field] = ""
+        if ambiguous or (summary is not None and usage[id(summary)] > 1):
+            row["comment_data_status"] = "ambiguous"
+            continue
+        if summary is None:
+            row["comment_data_status"] = "unmatched"
+            continue
+        if summary.get("status") != "ok":
+            row["comment_data_status"] = "source_error"
+            continue
+        raw = integer(summary.get("comments_raw"), 0)
+        nonempty = integer(summary.get("comments_nonempty"), 0)
+        unique = integer(summary.get("comments_unique"), 0)
+        row.update({
+            "comments_raw": raw,
+            "comments_nonempty": nonempty,
+            "comments_unique": unique,
+            "comment_exact_duplicates": integer(summary.get("exact_duplicates"), 0),
+            "comment_blank": max(0, raw - nonempty),
+            "comment_avg_chars": num(summary.get("avg_char_count"), ""),
+            "comment_median_chars": num(summary.get("median_char_count"), ""),
+            "comment_unique_rate": unique / nonempty if nonempty else "",
+            # This is a text-to-selection ratio, not a voter-level comment
+            # rate: the public data do not identify commenters.
+            "comment_to_selection_ratio": nonempty / num(row.get("selection_count"), 0) if num(row.get("selection_count"), 0) else "",
+            "comment_data_status": "ok" if summary.get("status") == "ok" else "source_error",
+        })
+
+
+def _pearson_pairs(pairs: list[tuple[float, float]]) -> float | None:
+    if len(pairs) < 2:
+        return None
+    xs, ys = zip(*pairs)
+    mean_x, mean_y = sum(xs) / len(xs), sum(ys) / len(ys)
+    denom_x = sum((x - mean_x) ** 2 for x in xs)
+    denom_y = sum((y - mean_y) ** 2 for y in ys)
+    if not denom_x or not denom_y:
+        return None
+    return sum((x - mean_x) * (y - mean_y) for x, y in pairs) / math.sqrt(denom_x * denom_y)
+
+
+def write_character_comment_role_audit(rows: list[dict]) -> dict:
+    """Write a descriptive coverage/role audit for every available round."""
+    by_round: dict[tuple[str, int], list[dict]] = defaultdict(list)
+    for row in rows:
+        by_round[(row.get("region", ""), integer(row.get("round")))].append(row)
+    audit_rows: list[dict] = []
+    for (region, rnd), group in sorted(by_round.items()):
+        matched = [row for row in group if row.get("comment_data_status") == "ok"]
+        nonempty = [row for row in matched if integer(row.get("comments_nonempty"), 0) > 0]
+        selection_pairs = [(num(row.get("comments_nonempty")), num(row.get("selection_count"))) for row in matched if num(row.get("comments_nonempty"), None) is not None and num(row.get("selection_count"), None) is not None]
+        rank_pairs = [(num(row.get("comments_nonempty")), num(row.get("rank"))) for row in matched if num(row.get("comments_nonempty"), None) is not None and num(row.get("rank"), None) is not None]
+        audit_rows.append({
+            "region": region, "round": rnd, "round_label": round_label(region, rnd),
+            "ranking_entities": len(group), "comment_entities_matched": len(matched),
+            "entities_with_nonempty_comments": len(nonempty),
+            "match_rate": len(matched) / len(group) if group else "",
+            "comments_raw": sum(integer(row.get("comments_raw"), 0) for row in matched),
+            "comments_nonempty": sum(integer(row.get("comments_nonempty"), 0) for row in matched),
+            "comments_unique": sum(integer(row.get("comments_unique"), 0) for row in matched),
+            "exact_duplicates": sum(integer(row.get("comment_exact_duplicates"), 0) for row in matched),
+            "mean_entity_comment_chars": (sum(num(row.get("comment_avg_chars"), 0) for row in nonempty) / len(nonempty)) if nonempty else "",
+            "comment_count_selection_pearson": _pearson_pairs(selection_pairs),
+            "comment_count_rank_pearson": _pearson_pairs(rank_pairs),
+            "interpretation": "描述性文本参与度/表达长度；不等于票数、支持度或情绪。",
+        })
+    out_dir = ROOT / "analysis_results" / "character_comments"
+    write_csv(out_dir / "role_by_round.csv", audit_rows, list(audit_rows[0]) if audit_rows else ["region", "round"])
+    unmatched = [
+        {
+            "region": row.get("region", ""), "round": row.get("round", ""),
+            "round_label": row.get("round_label", ""), "entity_id": row.get("entity_id", ""),
+            "name_cn": row.get("name_cn", ""), "name_jp": row.get("name_jp", ""),
+            "canonical_name": row.get("canonical_name", ""), "comment_data_status": row.get("comment_data_status", ""),
+            "rank": row.get("rank", ""),
+        }
+        for row in rows if row.get("comment_data_status") != "ok"
+    ]
+    write_csv(out_dir / "unmatched_entities.csv", unmatched, list(unmatched[0]) if unmatched else ["region", "round", "round_label", "entity_id", "name_cn", "name_jp", "canonical_name", "comment_data_status", "rank"])
+    payload = {
+        "schema_version": 2,
+        "scope": "CN1-11, JP3-22",
+        "mean_entity_comment_chars_definition": "Unweighted mean of per-entity average character counts among matched entities with nonempty comments; not a pooled comment mean.",
+        "role": "公开投票理由/评论的文本参与度与数据质量描述",
+        "policy": "评论正文不进入排行分数；不推断情绪、主题或因果。相关系数仅描述评论量与选择人数/名次的共同变化。",
+        "rounds": audit_rows,
+    }
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "role_analysis.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (out_dir / "role_analysis.md").write_text(
+        "# Character comment role audit\n\n"
+        "评论在本体系中作为公开投票理由/评论的文本参与度和数据质量旁证。评论条数不是票数，"
+        "因为来源没有评论者与投票者的一一对应关系；也不从正文推断情绪或主题。\n\n"
+        "`mean_entity_comment_chars` 是有非空评论角色的平均长度再取等权均值，不是全届评论的合并均值。\n\n"
+        "`comment_count_selection_pearson` 与 `comment_count_rank_pearson` 是逐届描述性相关，"
+        "不能解释为因果。详表见 `role_by_round.csv`。\n",
+        encoding="utf-8",
+    )
+    return payload
+
+
 def build_character_metrics(jp_to_cn: dict[str, str], cn_to_jp: dict[str, str]) -> list[dict]:
     rankings = read_csv(OUT / "rankings.csv")
     ballot_map = {
@@ -812,6 +1000,10 @@ def build_character_metrics(jp_to_cn: dict[str, str], cn_to_jp: dict[str, str]) 
             "source_type": source.get("source_type", ""),
         })
 
+    comment_by_id, comment_by_name = load_character_comment_summaries(jp_to_cn, cn_to_jp)
+    attach_character_comment_metrics(output, comment_by_id, comment_by_name)
+    write_character_comment_role_audit(output)
+
     by_round: dict[tuple[str, int], list[dict]] = defaultdict(list)
     for row in output:
         by_round[(row["region"], row["round"])].append(row)
@@ -838,6 +1030,8 @@ def build_character_metrics(jp_to_cn: dict[str, str], cn_to_jp: dict[str, str]) 
         "other_count", "selection_count", "ballots", "primary_rate", "secondary_rate", "top2_rate", "selection_rate",
         "male_rate", "female_rate", "other_gender_rate", "under20_rate", "overall_male_rate", "overall_female_rate",
         "overall_other_gender_rate", "equal_rank_change", "source_type",
+        "comments_raw", "comments_nonempty", "comments_unique", "comment_exact_duplicates", "comment_blank",
+        "comment_avg_chars", "comment_median_chars", "comment_unique_rate", "comment_to_selection_ratio", "comment_data_status",
     ]
     output.sort(key=lambda r: (0 if r["region"] == "cn" else 1, r["round"], r["rank"], r["canonical_name"]))
     write_csv(OUT / "analysis_character_metrics_all.csv", output, fields)
@@ -2507,6 +2701,78 @@ def build_covote_coverage(pair_rows: list[dict]) -> dict[str, dict[str, dict]]:
     return coverage
 
 
+def covote_audit_manifest() -> dict:
+    """Read the report's actual status; existence alone is not a passed audit."""
+    path = ROOT / "analysis_results" / "covote_metrics_audit.json"
+    result = {
+        "status": "UNAVAILABLE", "report": "analysis_results/covote_metrics_audit.json",
+        "report_sha256": "", "markdown_report": "analysis_results/covote_metrics_audit.md",
+    }
+    if not path.exists():
+        return result
+    try:
+        result["report_sha256"] = sha256(path)
+        report = json.loads(path.read_text(encoding="utf-8-sig"))
+        if not isinstance(report, dict) or report.get("status") not in ("PASS", "FAIL"):
+            result["status"] = "INVALID"
+        else:
+            result["status"] = "FAIL" if report.get("hard_failures") else report["status"]
+    except (OSError, ValueError):
+        result["status"] = "INVALID"
+    return result
+
+
+def character_comments_manifest(metrics: list[dict]) -> dict:
+    summary_path = ROOT / "analysis_results/character_comments/processing_summary.json"
+    summary = json.loads(summary_path.read_text(encoding="utf-8")) if summary_path.exists() else {}
+    audit_dir = ROOT / "analysis_results/character_comments"
+    return {
+        "scope": "CN1-11, JP3-22",
+        "source_summary": "data_processed/character_comments/entity_summary.csv",
+        "source_summary_sha256": sha256(ROOT / "data_processed/character_comments/entity_summary.csv") if (ROOT / "data_processed/character_comments/entity_summary.csv").exists() else "",
+        "raw_text_archive": "data_processed/character_comments/comments.csv.gz",
+        "processing_summary": "analysis_results/character_comments/processing_summary.json",
+        "processing_summary_sha256": sha256(summary_path) if summary_path.exists() else "",
+        "raw_comments": summary.get("comments_raw", ""),
+        "nonempty_comments": summary.get("comments_nonempty", ""),
+        "unique_comments": summary.get("comments_unique", ""),
+        "join_policy": "先按地区/届次/非空源实体 ID，再按唯一中日名称别名；同名歧义、多个别名冲突或同一来源重复挂接标记 ambiguous 并留空。",
+        "interpretation": "公开投票评论/理由是文本参与度与表达形状旁证，不是票数、支持度、情绪或因果变量。",
+        "role_audit": {
+            "schema_version": 2,
+            "round_path": "analysis_results/character_comments/role_by_round.csv",
+            "summary_path": "analysis_results/character_comments/role_analysis.json",
+            "unmatched_path": "analysis_results/character_comments/unmatched_entities.csv",
+            "rounds": len({(row.get("region"), integer(row.get("round"))) for row in metrics}),
+            "ranking_entities": len(metrics),
+            "matched_entities": sum(row.get("comment_data_status") == "ok" for row in metrics),
+            "unmatched_entities": sum(row.get("comment_data_status") != "ok" for row in metrics),
+            "status_counts": dict(Counter(row.get("comment_data_status") for row in metrics)),
+            "sha256": {name: sha256(audit_dir / name) for name in ("role_by_round.csv", "role_analysis.json", "unmatched_entities.csv")},
+        },
+    }
+
+
+def refresh_character_comments() -> None:
+    """Refresh comment columns and audit metadata without rebuilding other tables."""
+    path = OUT / "analysis_character_metrics_all.csv"
+    metrics = read_csv(path)
+    fields = list(metrics[0])
+    indexes = load_character_comment_summaries(*load_name_maps())
+    attach_character_comment_metrics(metrics, *indexes)
+    write_character_comment_role_audit(metrics)
+    write_csv(path, metrics, fields)
+    manifest_path = OUT / "analysis_data_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["character_comments"] = character_comments_manifest(metrics)
+    manifest["covote_metrics_audit"] = covote_audit_manifest()
+    manifest["outputs"][path.name] = {"rows": len(metrics), "sha256": sha256(path)}
+    manifest["availability"]["character_comments"] = "CN1-11, JP3-22 comment aggregates; ambiguous/unmatched/error rows remain blank"
+    manifest["character_comments"]["generated_at"] = datetime.now(timezone.utc).isoformat()
+    write_json_atomic(manifest_path, manifest)
+    print(json.dumps(manifest["character_comments"]["role_audit"], ensure_ascii=False))
+
+
 def main() -> None:
     jp_to_cn, cn_to_jp = load_name_maps()
     work_catalog = build_work_catalog()
@@ -2581,6 +2847,7 @@ def main() -> None:
         "scope": {"cn_rounds": sorted(ALLOWED_CN), "jp_rounds": sorted(ALLOWED_JP)},
         "excluded_scope": {},
         "availability": {
+            "character_comments": "CN1-11, JP3-22 comment aggregates; ambiguous/unmatched/error rows remain blank",
             "ranking_metrics": "CN1-11, JP3-22",
             "music_metrics": "CN1-11, JP3-22",
             "jp_rich_character_metrics": "JP17-22 (fields vary by round)",
@@ -2626,9 +2893,11 @@ def main() -> None:
             "unknown_feature_policy": "A same_* or shared_* value is unknown when either endpoint attribute is blank, unknown, or unresolved; missing is never false.",
         },
         "cn_advanced_contract": canonical_advanced,
+        "character_comments": character_comments_manifest(metrics),
+        "covote_metrics_audit": covote_audit_manifest(),
         "outputs": {name: {"rows": counts[name], "sha256": sha256(OUT / name)} for name in files},
     }
-    (OUT / "analysis_data_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_json_atomic(OUT / "analysis_data_manifest.json", manifest)
     print(f"character metrics: {len(metrics)} (CN1-11, JP3-22)")
     print(f"music metrics: {len(music)} (CN1-11, JP3-22)")
     print(f"character-music links: {len(character_music_links)} (CN1-11, JP3-22)")
@@ -2640,4 +2909,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--comments-only", action="store_true", help="Refresh comment fields and their audit in existing character metrics")
+    args = parser.parse_args()
+    if args.comments_only:
+        refresh_character_comments()
+    else:
+        main()

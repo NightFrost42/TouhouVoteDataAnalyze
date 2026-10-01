@@ -5,6 +5,9 @@ __pycache__/
 .mypy_cache/
 node_modules/
 .playwright-browsers/
+# Locally reconstructed originals; publish their verified partitions instead.
+vote_explorer/data/analysis_covote_pairs_all.csv
+data_processed/character_comments/comments.csv.gz
 .claude/
 review.diff
 vote_explorer/data/analysis_covote_pairs_all.csv.part-*
@@ -50,3 +53,5 @@ metadata/workspace_inventory_files.csv
 # README files that only describe archived snapshots/local broken environments
 archive_legacy/vote_datasets/**/README.md
 archive_legacy/environment_py311_broken/README.md
+
+vote_explorer/.build_data/

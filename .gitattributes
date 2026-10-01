@@ -1,0 +1,6 @@
+# Preserve manifest SHA-256 bytes on Windows and after fresh checkout.
+*.csv -text
+*.part-* -text
+*.bundle-* -text
+*.binpart -text
+*.gz -text

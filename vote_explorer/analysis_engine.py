@@ -117,6 +117,8 @@ CHARACTER_FIELDS = {
     "overall_female_rate", "overall_other_gender_rate", "rank_change", "equal_rank_change",
     "points_change", "primary_count_change", "secondary_count_change", "selection_count_change",
     "selection_rate_change", "primary_rate_change", "female_rate_change", "selection_yoy",
+    "comments_raw", "comments_nonempty", "comments_unique", "comment_exact_duplicates", "comment_blank",
+    "comment_avg_chars", "comment_median_chars", "comment_unique_rate", "comment_to_selection_ratio",
 }
 
 MUSIC_FIELDS = {
@@ -165,6 +167,10 @@ METRIC_LABELS = {
     "excess_count": "比人气基准多出人数", "phi": "综合重合分数 φ", "asymmetry": "方向同投率差",
     "old_2_1_points": "2/1规则分数", "other_gender_rate": "其他性别比例",
     "comment_count": "评论数", "arrangement_count": "届间新增同人曲数",
+    "comments_raw": "评论原始条数", "comments_nonempty": "非空评论条数", "comments_unique": "去重评论条数",
+    "comment_exact_duplicates": "精确重复评论数", "comment_blank": "空评论数",
+    "comment_avg_chars": "评论平均字符数", "comment_median_chars": "评论字符数中位数",
+    "comment_unique_rate": "非空评论去重率", "comment_to_selection_ratio": "评论数/选择人数比",
     "arrangement_cumulative_count": "截至投票结束累计同人曲数", "undated_arrangement_count": "未标日期同人曲数",
     "arrangement_total_count": "同人曲累计总数（抓取时点）", "question_rate": "所选问卷选项比例",
     "difference_points": "相对全体差值（百分点）", "correlation": "皮尔逊相关系数",
@@ -183,6 +189,7 @@ PERCENT_FIELDS = {
     "primary_rate", "secondary_rate", "top2_rate", "selection_rate", "male_rate", "female_rate",
     "other_gender_rate", "under20_rate", "share", "direction_a_to_b", "direction_b_to_a",
     "asymmetry", "selection_rate_change", "primary_rate_change", "female_rate_change", "selection_yoy",
+    "comment_unique_rate", "comment_to_selection_ratio",
 }
 
 
@@ -404,6 +411,9 @@ TEMPLATES = [
     TemplateSpec("c12_gender_structure", "角色画像", "支持者性别构成", "gender_structure", "stacked", "男性、女性及其他性别比例。"),
     TemplateSpec("c12_gender_lean", "角色画像", "相对全体的性别倾向", "gender_lean", "bar", "正数更偏女性，负数更偏男性。"),
     TemplateSpec("c12_gender_change", "角色画像", "性别比例跨届变化", "gender_change", "bar", "女性比例当前届减去对比届。"),
+    TemplateSpec("c13_comments_top", "角色评论", "非空评论数 TOP", "character_metric", "bar", "公开评论/投票理由的非空条数；这是文本参与度，不是票数。"),
+    TemplateSpec("c14_comment_unique_rate", "角色评论", "评论去重率", "character_metric", "bar", "非空评论中去除精确重复后的比例；不能解释为意见多样性。"),
+    TemplateSpec("c15_comment_length", "角色评论", "评论平均长度", "character_metric", "bar", "非空评论的平均字符数，仅描述文本形状。"),
     TemplateSpec("r01_character_question_scatter", "问卷关联", "角色投票结果 × 问卷选项", "entity_question_scatter", "scatter", "把角色投票指标与该角色支持者的问卷选项比例/倾向放在同一散点图中。"),
     TemplateSpec("r02_character_question_diff", "问卷关联", "角色问卷倾向排行", "entity_question_difference", "bar", "按所选问卷选项相对全体的百分点差排序。"),
     TemplateSpec("r03_character_question_corr", "问卷关联", "角色投票指标与问卷各项相关系数", "entity_question_correlation", "bar", "对所选题目的每个选项分别计算角色投票指标与选项比例的皮尔逊相关系数。"),
@@ -1924,6 +1934,9 @@ class AnalysisRepository:
         mapping = {
             "c02_selection_top": ("selection_count", "number"), "c03_primary_rate": ("primary_rate", "percent"),
             "c04_secondary_rate": ("secondary_rate", "percent"), "c05_top2_rate": ("top2_rate", "percent"),
+            "c13_comments_top": ("comments_nonempty", "number"),
+            "c14_comment_unique_rate": ("comment_unique_rate", "percent"),
+            "c15_comment_length": ("comment_avg_chars", "number"),
         }
         return mapping.get(key, (config.get("y_metric", "selection_count"), "number"))
 
@@ -2109,7 +2122,7 @@ class AnalysisRepository:
         return self._categorical(spec.title, rows, [("女性比例变化", "value")], value_format="percent")
 
     def _matrix_entities(self, config: dict) -> list[dict]:
-        return sorted(self.filtered_characters(config), key=lambda r: number(r["rank"]))[: min(integer(config.get("top_n", 20), 20), 30)]
+        return sorted(self.filtered_characters(config), key=lambda r: number(r["rank"]))[: max(1, min(integer(config.get("top_n", 20), 20), 100))]
 
     def _build_covote_matrix(self, spec, config, field: str):
         entities = self._matrix_entities(config)

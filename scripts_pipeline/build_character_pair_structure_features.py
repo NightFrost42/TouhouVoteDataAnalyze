@@ -9,7 +9,9 @@ endpoint yields ``unknown`` for that feature rather than ``false``.
 from __future__ import annotations
 
 import csv
+import os
 import re
+import tempfile
 import unicodedata
 from collections import defaultdict
 from pathlib import Path
@@ -115,10 +117,17 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 def write_csv(path: Path, rows: Iterable[Mapping[str, object]], fields: Iterable[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8-sig", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(fields), extrasaction="ignore")
-        writer.writeheader()
-        writer.writerows(rows)
+    fd, name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8-sig", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=list(fields), extrasaction="ignore")
+            writer.writeheader()
+            writer.writerows(rows)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(name, path)
+    finally:
+        Path(name).unlink(missing_ok=True)
 
 
 def normalize_name(value: object) -> str:

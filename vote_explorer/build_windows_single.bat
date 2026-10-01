@@ -2,7 +2,7 @@
 setlocal EnableExtensions
 cd /d "%~dp0"
 set "PY_CMD="
-set "PYTHONPATH=%~dp0.build_python;%PYTHONPATH%"
+set "PYTHONPATH=%~dp0..;%~dp0.build_python;%PYTHONPATH%"
 
 rem Prefer a normal Python installation over the Windows Store py alias.
 rem The Store alias can import tkinter but does not ship Tcl/Tk archives,
@@ -45,6 +45,8 @@ if errorlevel 1 goto failed
 if errorlevel 1 goto failed
 echo Splitting large CSV data files for repository compatibility...
 %PY_CMD% "%~dp0..\scripts_pipeline\split_large_files.py" --all --replace
+if errorlevel 1 goto failed
+%PY_CMD% "%~dp0..\scripts_pipeline\stage_desktop_data.py" "data" ".build_data"
 if errorlevel 1 goto failed
 
 rem Python 3.14 ships Tcl/Tk library files as ZIP archives.  PyInstaller
@@ -91,7 +93,7 @@ if defined TK_ZIP (
 )
 
 echo Building one EXE with all data embedded...
-%PY_CMD% -m PyInstaller --noconfirm --clean --windowed --onefile --name TouhouVoteExplorer_Portable --add-data "data;data" --add-data ".build_tcl\tcl_library;_tcl_data" --add-data ".build_tk\tk_library;_tk_data" --distpath "dist\single_file" --workpath "build_single" app.py
+%PY_CMD% -m PyInstaller --noconfirm --clean --windowed --onefile --name TouhouVoteExplorer_Portable --add-data ".build_data;data" --add-data ".build_tcl\tcl_library;_tcl_data" --add-data ".build_tk\tk_library;_tk_data" --distpath "dist\single_file" --workpath "build_single" app.py
 if errorlevel 1 goto failed
 
 if not exist "dist\single_file\TouhouVoteExplorer_Portable.exe" goto failed

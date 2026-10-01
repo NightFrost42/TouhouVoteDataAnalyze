@@ -15,6 +15,7 @@
 - `data_raw/`：按站点和届次保存的官方原始响应及站内处理结果。抓取断点依赖这里的文件，不要手工去重或改名。
 - `data_processed/`：规范化、统一字段和音乐同曲合并后的分析输入。相同曲目在不同作品中的再收录按既定映射叠加，但只作为一个规范曲目分析。
 - `analysis_results/`：由本地程序计算的数值结果，不把截图当作数值来源。
+- `data_processed/character_comments/`：CN1–11、JP3–22 的公开角色评论/投票理由归档；角色级文本形状指标已并入 `vote_explorer/data/analysis_character_metrics_all.csv`，逐届作用与对齐审计见 `analysis_results/character_comments/`。
 - `scripts_pipeline/`：当前维护的爬虫、规范化、校验、分析程序和爬取控制台。具体控制方式见 `scripts_pipeline/README.md`。
 - `metadata/`：manifest、隐藏 journal、覆盖矩阵、校验结果、队列配置/状态和日志。它们同时承担溯源与断点恢复，不能按普通缓存删除。
 - 角色结构元数据以 `metadata/character_structure_metadata.csv` 为宽表、`metadata/character_structure_field_audit.csv` 为逐字段审计表；它们只以 `metadata/character_name_crosswalk.csv` 定义的当前角色 roster 为范围。无法确认的关卡、Boss 身份、区域或社群字段保持空白；`metadata/character_structure_manual_overrides.csv` 是唯一允许写入人工编码的台账，必须有 `basis/source/version`。

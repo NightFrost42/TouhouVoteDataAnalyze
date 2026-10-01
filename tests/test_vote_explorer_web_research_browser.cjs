@@ -105,15 +105,7 @@ const server = http.createServer((request, response) => {
     downloadPromise = page.waitForEvent('download');
     await page.click('#download-button'); download = await downloadPromise;
     assert.ok(fs.readFileSync(await download.path(), 'utf8').length > 100);
-    // Small fixed source fixture exercises the legacy renderers without
-    // downloading the complete 302 MB matrix during a UI regression.
-    const pairFixture = [
-      'region,round,round_label,pair_category,name_a,name_b,name_a_cn,name_b_cn,intersection_count,lift,phi,direction_a_to_b,direction_b_to_a',
-      'cn,11,CN11,character,博丽灵梦,雾雨魔理沙,博丽灵梦,雾雨魔理沙,200,2,0.2,0.2,0.3',
-      'cn,10,CN10,character,博丽灵梦,雾雨魔理沙,博丽灵梦,雾雨魔理沙,150,1.8,0.1,0.15,0.2',
-    ].join(String.fromCharCode(10));
-    await page.route('**/analysis_covote_pairs_all.csv.parts.json*', route => route.fulfill({ json: { parts: [{ name: 'analysis_covote_pairs_all.csv.fixture' }] } }));
-    await page.route('**/analysis_covote_pairs_all.csv.fixture*', route => route.fulfill({ contentType: 'text/csv', body: pairFixture }));
+    // Real per-round shards keep the matrix/network regression small.
     for (const [template, chart] of [['a01_count_matrix', '热力图'], ['a02_network', '网络图'], ['a03_bubble', '气泡图'], ['a04_count_change', '条形图']]) {
       await choose('template', template);
       assert.equal(await page.locator('#summary-chart').innerText(), chart, template);
@@ -133,7 +125,7 @@ const server = http.createServer((request, response) => {
     await page.waitForTimeout(500);
     assert.doesNotMatch(await page.locator('#chart-title').innerText(), /离线研究/);
     assert.deepEqual(errors, []);
-    console.log(JSON.stringify({ status: 'PASS', assertions: 'mobile lazy loading, filters, missing estimates, all-round scopes, CSV, reset, legacy network/matrix/bubble/change/factions using fixed fixture, stale request guard', screenshots: output }));
+    console.log(JSON.stringify({ status: 'PASS', assertions: 'mobile lazy loading, filters, missing estimates, all-round scopes, CSV, reset, legacy network/matrix/bubble/change/factions using verified per-round shards, stale request guard', screenshots: output }));
   } catch (error) {
     await page.screenshot({ path: path.join(output, 'failure.png'), fullPage: true }).catch(() => {});
     console.error('UI state:', await page.locator('#status-line').innerText(), 'errors:', errors);

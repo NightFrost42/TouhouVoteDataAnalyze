@@ -8,7 +8,10 @@
 
 const params = new URLSearchParams(window.location.search);
 const DATA_BASE = new URL(params.get("data") || "../vote_explorer/data/", document.baseURI).href;
-const DATA_VERSION = "2026-09-29-research";
+const DATA_VERSION = "2026-09-30-shards";
+const tableLoader = TableShards.createLoader("web_data/tables/");
+const templateLoader = TableShards.createLoader("web_data/");
+const templateCache = new Map();
 
 const ROUND_LABELS = [
   ...Array.from({ length: 11 }, (_, i) => `CN${i + 1}`),
@@ -28,6 +31,10 @@ const METRIC_LABELS = {
   rank: "官方名次", points: "官方分数", primary_count: "第一顺位票", secondary_count: "第二顺位票",
   selection_count: "实际选择人数", selection_rate: "选择率", primary_rate: "第一顺位率",
   comment_count: "评论数", arrangement_count: "届间新增同人曲数",
+  comments_raw: "评论原始条数", comments_nonempty: "非空评论条数", comments_unique: "去重评论条数",
+  comment_exact_duplicates: "精确重复评论数", comment_blank: "空评论数",
+  comment_avg_chars: "评论平均字符数", comment_median_chars: "评论字符数中位数",
+  comment_unique_rate: "非空评论去重率", comment_to_selection_ratio: "评论数/选择人数比",
   arrangement_cumulative_count: "截至投票结束累计同人曲数", arrangement_total_count: "同人曲累计总数（抓取时点）",
   vote_count: "CP投票人数", vote_rate: "CP投票比例", comparison_count: "组合对比人数",
   comparison_rate: "组合对比比例", cp_vote_count: "CP官方人数", covote_count: "同投替代人数",
@@ -60,22 +67,7 @@ const DATA_FILES = {
   character_music_covote: "analysis_character_music_covote_all.csv",
 };
 
-// The pair matrix is intentionally loaded lazily (only for a co-vote view).
-// loadCSV("covote_pairs") discovers every part through the manifest and
-// joins them without repeated headers.
-
-// The complete same-department co-vote matrix is split into multiple files because
-// GitHub Pages and common static hosts have awkward limits around very large
-// single files. It is fetched only when a full co-vote template is selected;
-// lightweight and research views never download these raw matrices.
-const COVOTE_PAIR_PART_MANIFEST = "analysis_covote_pairs_all.csv.parts.json";
-const FALLBACK_COVOTE_PAIR_PARTS = [
-  "analysis_covote_pairs_all.csv.bundle-001",
-  "analysis_covote_pairs_all.csv.bundle-002",
-  "analysis_covote_pairs_all.csv.bundle-003",
-  "analysis_covote_pairs_all.csv.bundle-004",
-];
-let covotePairPartsPromise = null;
+// Heavy tables are selected through the bounded web_data/tables index.
 
 // The desktop workbench has two natural scopes.  Single-round metrics belong
 // to the root of a round's analysis project; anything that compares rounds is
@@ -83,6 +75,7 @@ let covotePairPartsPromise = null;
 // the source of truth for the actual 72-template catalogue.
 const DESKTOP_SINGLE_KEYS = new Set([
   "c02_selection_top", "c02_equal_rank", "c03_primary_rate", "c04_secondary_rate", "c05_top2_rate",
+  "c13_comments_top", "c14_comment_unique_rate", "c15_comment_length",
   "c11_structure", "c11_metric_heatmap", "c12_gender_structure", "c12_gender_lean",
   "r01_character_question_scatter", "r02_character_question_diff", "r03_character_question_corr",
   "m01_metric", "m04_primary_rate", "m05_character_music_cross", "m06_music_character_cross",
@@ -170,7 +163,7 @@ const DYNAMIC_METRIC_TEMPLATE_KEYS = new Set([
   "c02_equal_rank", "c03_primary_rate", "c03_primary_rate_change", "c04_secondary_rate", "c05_top2_rate",
   "c06_primary_change", "c07_selection_change", "c07_selection_yoy", "c08_points_change",
   "c09_selection_rate_change", "c10_growth_lag", "c11_structure", "c11_metric_heatmap",
-  "c12_gender_structure", "c12_gender_lean", "c12_gender_change", "m01_metric", "m02_round_compare",
+  "c12_gender_structure", "c12_gender_lean", "c12_gender_change", "c13_comments_top", "c14_comment_unique_rate", "c15_comment_length", "m01_metric", "m02_round_compare",
   "m03_rank_trend", "m03_all_trend", "m04_primary_rate",
 ]);
 
@@ -188,10 +181,11 @@ function releaseInactiveHeavyCaches(mode = currentMode(), templateKey = controls
   let profile = "none";
   if (isDesktopMode(mode)) {
     if (ENTITY_RELATION_TEMPLATE_KEYS.has(templateKey)) profile = "entity";
-    else if (templateKey === "a17_concentration_clusters") profile = "music_covote";
+    else if (["a17_concentration_clusters", "m07_character_music_covote"].includes(templateKey)) profile = "music_covote";
     else if (templateKey === "a18_music_concentration_clusters" || DYNAMIC_COVOTE_TEMPLATE_KEYS.has(templateKey)) profile = "covote";
   }
   if (profile === state.heavyCacheProfile) return;
+  tableLoader.clear();
   if (profile !== "entity") state.cache.delete("entity_questionnaire");
   if (profile !== "covote") state.cache.delete("covote_pairs");
   if (profile !== "music_covote") state.cache.delete("character_music_covote");
@@ -281,70 +275,18 @@ function parseCSV(text) {
   });
 }
 
-async function covotePairParts() {
-  if (covotePairPartsPromise) return covotePairPartsPromise;
-  covotePairPartsPromise = fetch(`${DATA_BASE}${COVOTE_PAIR_PART_MANIFEST}?v=${DATA_VERSION}`)
-    .then(async (response) => {
-      if (!response.ok) {
-        // A local checkout may retain the complete generated CSV while its
-        // large-file partitions are temporarily unavailable. Prefer that
-        // truthful complete source before falling back to legacy part names.
-        const full = await fetch(`${DATA_BASE}analysis_covote_pairs_all.csv?v=${DATA_VERSION}`);
-        return full.ok ? ["analysis_covote_pairs_all.csv"] : FALLBACK_COVOTE_PAIR_PARTS;
-      }
-      const manifest = await response.json();
-      const parts = Array.isArray(manifest?.parts)
-        ? manifest.parts.map((part) => typeof part === "string" ? part : part?.name).filter(Boolean)
-        : [];
-      return parts.length ? parts : FALLBACK_COVOTE_PAIR_PARTS;
-    })
-    .catch(async () => {
-      try {
-        const full = await fetch(`${DATA_BASE}analysis_covote_pairs_all.csv?v=${DATA_VERSION}`);
-        return full.ok ? ["analysis_covote_pairs_all.csv"] : FALLBACK_COVOTE_PAIR_PARTS;
-      } catch (_) {
-        return FALLBACK_COVOTE_PAIR_PARTS;
-      }
-    });
-  return covotePairPartsPromise;
-}
-
 async function loadCSV(kind) {
-  if (state.cache.has(kind)) return state.cache.get(kind);
-  if (kind === "covote_pairs") {
-    const promise = covotePairParts().then((parts) => Promise.all(parts.map((file) => fetch(`${DATA_BASE}${file}?v=${DATA_VERSION}`).then(async (response) => {
-      if (!response.ok) throw new Error(`读取 ${file} 失败（HTTP ${response.status}）`);
-      return response.text();
-    })))).then((texts) => texts.flatMap((text) => parseCSV(text))
-      // Each part carries its own CSV header.  parseCSV turns the repeated
-      // header into a normal row, so discard it here before analysis.
-      .filter((row) => row.round_label && row.round_label !== "round_label"));
-    state.cache.set(kind, promise);
-    return promise;
+  if (!DATA_FILES[kind] || ["covote_pairs", "entity_questionnaire", "character_music_covote"].includes(kind)) {
+    throw new Error("大表必须按届次和范围读取分片");
   }
+  if (state.cache.has(kind)) return state.cache.get(kind);
   const promise = fetch(`${DATA_BASE}${DATA_FILES[kind]}?v=${DATA_VERSION}`)
-    .then(async (response) => {
+    .then(async response => {
       if (!response.ok) throw new Error(`读取 ${DATA_FILES[kind]} 失败（HTTP ${response.status}）`);
-      if (kind !== "entity_questionnaire") return response.text();
-      // The entity questionnaire is kept as the repository's 69 MB gzip
-      // source.  Decompress it lazily in the browser instead of baking one
-      // default question/answer into the static snapshot.  Modern Chrome,
-      // Edge, Firefox and Safari all expose DecompressionStream; a plain CSV
-      // response is also accepted for local deployments that pre-decompress
-      // the file.
-      const buffer = await response.arrayBuffer();
-      const bytes = new Uint8Array(buffer);
-      if (bytes[0] === 0x1f && bytes[1] === 0x8b) {
-        if (typeof DecompressionStream === "undefined") {
-          throw new Error("当前浏览器不支持 gzip 解压，无法读取实体问卷全量数据");
-        }
-        const stream = new Blob([buffer]).stream().pipeThrough(new DecompressionStream("gzip"));
-        return new Response(stream).text();
-      }
-      return new TextDecoder("utf-8").decode(buffer);
-    })
-    .then(parseCSV);
+      return parseCSV(await response.text());
+    });
   state.cache.set(kind, promise);
+  promise.catch(() => { if (state.cache.get(kind) === promise) state.cache.delete(kind); });
   return promise;
 }
 
@@ -354,6 +296,20 @@ async function loadBundle() {
   if (!response.ok) throw new Error(`读取桌面版模板快照失败（HTTP ${response.status}）`);
   state.bundle = await response.json();
   return state.bundle;
+}
+
+async function loadTemplateBundle(key) {
+  const index = await loadBundle();
+  const entry = index.template_shards?.[key];
+  if (!entry) return index;
+  if (!templateCache.has(key)) {
+    const promise = templateLoader.verified(entry);
+    templateCache.set(key, promise);
+    while (templateCache.size > 2) templateCache.delete(templateCache.keys().next().value);
+    promise.catch(() => { if (templateCache.get(key) === promise) templateCache.delete(key); });
+  }
+  const content = await templateCache.get(key);
+  return { ...index, ...content };
 }
 
 function labelForQuestion(key) {
@@ -621,6 +577,7 @@ async function updateQuestionOptions() {
 
 function snapshotHasData(snapshot) {
   if (!snapshot || snapshot.error) return false;
+  if (typeof snapshot.available === "boolean") return snapshot.available;
   if (Array.isArray(snapshot.points)) return snapshot.points.length > 0;
   if (Array.isArray(snapshot.nodes)) return snapshot.nodes.length > 0;
   if (Array.isArray(snapshot.row_labels)) return snapshot.row_labels.length > 0 && (snapshot.col_labels || []).length > 0;
@@ -701,7 +658,7 @@ function updateRelationMetricOptions() {
   if (!relationMetric) return;
   const fields = category === "music"
     ? ["rank", "points", "selection_count", "selection_rate", "primary_rate"]
-    : ["rank", "points", "selection_count", "selection_rate", "primary_rate", "female_rate"];
+    : ["rank", "points", "selection_count", "selection_rate", "primary_rate", "female_rate", "comments_nonempty", "comments_unique", "comment_unique_rate", "comment_avg_chars", "comment_to_selection_ratio"];
   setOptions(controls.xMetric, fields.map((field) => ({ value: field, label: METRIC_LABELS[field] || field })), fields.includes(controls.xMetric.value) ? controls.xMetric.value : "rank");
 }
 
@@ -712,11 +669,11 @@ function updateCustomMetricOptions() {
     setOptions(controls.xMetric, fields.map((field) => ({ value: field, label: METRIC_LABELS[field] || field })), fields.includes(controls.xMetric.value) ? controls.xMetric.value : "intersection_count");
     setOptions(controls.yMetric, fields.map((field) => ({ value: field, label: METRIC_LABELS[field] || field })), fields.includes(controls.yMetric.value) ? controls.yMetric.value : "lift");
   } else if (key === "x_character") {
-    const fields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate"];
+    const fields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate", "comments_nonempty", "comments_unique", "comment_unique_rate", "comment_avg_chars", "comment_to_selection_ratio"];
     setOptions(controls.xMetric, fields.map((field) => ({ value: field, label: METRIC_LABELS[field] || field })), fields.includes(controls.xMetric.value) ? controls.xMetric.value : "selection_count");
     setOptions(controls.yMetric, fields.map((field) => ({ value: field, label: METRIC_LABELS[field] || field })), fields.includes(controls.yMetric.value) ? controls.yMetric.value : "primary_rate");
   } else if (["m05_character_music_cross", "m06_music_character_cross", "m09_music_arrangement_cross", "m10_character_arrangement_cross"].includes(key)) {
-    const characterFields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate"];
+    const characterFields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate", "comments_nonempty", "comments_unique", "comment_unique_rate", "comment_avg_chars", "comment_to_selection_ratio"];
     const musicFields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "comment_count", "arrangement_count", "arrangement_cumulative_count", "arrangement_total_count"];
     const arrangementFields = ["arrangement_count", "arrangement_cumulative_count", "arrangement_total_count"];
     const xFields = key === "m05_character_music_cross" ? characterFields : key === "m06_music_character_cross" ? musicFields : arrangementFields;
@@ -867,7 +824,7 @@ function arrangementResult(rows) {
 async function musicConcentrationClusterResult() {
   const round = controls.round.value;
   const minimum = Math.max(0, integer(controls.minCount.value, 0));
-  const sourceRows = await loadCSV("covote_pairs");
+  const sourceRows = await tableLoader.load(["covote_pairs", round, "music"]);
   const edges = sourceRows.filter((row) => selectedRound(row) === round && (
     (String(row.pair_category || "").trim() === "music" && String(row.data_completeness || "").trim() === "complete_matrix")
     || (!String(row.pair_category || "").trim() && row.source_type === "cn10_11_official_music_covote_matrix")
@@ -1018,8 +975,8 @@ async function entityQuestionnaireResult(templateKey) {
   const current = controls.round.value;
   const category = templateKey === "r08_work_question_matrix"
     ? "work" : ["r04_music_question_scatter", "r05_music_question_diff", "r06_music_question_corr", "r10_music_question_matrix"].includes(templateKey) ? "music" : "character";
-  const entityRows = await loadCSV("entity_questionnaire");
   const question = templateKey === "r07_character_cognition" ? "cognition" : controls.relationQuestion.value;
+  const entityRows = await tableLoader.load(["entity_questionnaire", current, category, question]);
   const answer = controls.relationAnswer.value || "";
   const metricRows = category === "music" ? await loadCSV("music") : category === "character" ? await loadCSV("character") : [];
   const metrics = new Map(metricRows.filter((row) => selectedRound(row) === current).map((row) => [String(row.canonical_name || ""), row]));
@@ -1102,7 +1059,7 @@ async function entityQuestionnaireResult(templateKey) {
 async function crossConcentrationClusterResult() {
   const round = controls.round.value;
   const minimum = Math.max(0, integer(controls.minCount.value, 0));
-  const sourceRows = await loadCSV("character_music_covote");
+  const sourceRows = await tableLoader.load(["character_music_covote", round]);
   const edges = sourceRows.filter((row) => selectedRound(row) === round)
     .map((row) => {
       const count = number(row.intersection_count, null), lift = number(row.lift, null);
@@ -1133,7 +1090,7 @@ function covoteRoundRows(rows, round) {
 }
 
 async function loadCovoteContext(round) {
-  const [pairRows, characterRows] = await Promise.all([loadCSV("covote_pairs"), loadCSV("character")]);
+  const [pairRows, characterRows] = await Promise.all([tableLoader.load(["covote_pairs", round, "character"]), loadCSV("character")]);
   const metrics = characterRows.filter((row) => selectedRound(row) === round);
   const aliasMap = new Map();
   metrics.forEach((row) => {
@@ -1217,7 +1174,7 @@ async function dynamicCovoteResult(templateKey) {
   factionRows.forEach((row) => entityAliases(row).forEach((alias) => merge(alias, factionLabels(row))));
   if (!factionRows.length) {
     try {
-      const bundle = await loadBundle();
+      const bundle = await loadTemplateBundle("a02_network");
       const factionNodes = bundle.snapshots?.a02_network?.[round]?.nodes || [];
       factionNodes.forEach((node) => entityAliases({ canonical_name: node.id, name_cn: node.label, name_jp: node.label }).forEach((alias) => merge(alias, factionLabels(node))));
     } catch (_) { /* faction filtering remains empty when no crosswalk is available */ }
@@ -1465,7 +1422,7 @@ async function dynamicCrossResult(templateKey, bundle) {
   const snapshot = selectedDesktopSnapshot(bundle, templateKey, current, compare) || {};
   const limit = Math.max(3, Math.min(100, integer(controls.topN.value, 20)));
   const language = controls.language.value || "cn";
-  const characterFields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate"];
+  const characterFields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate", "comments_nonempty", "comments_unique", "comment_unique_rate", "comment_avg_chars", "comment_to_selection_ratio"];
   const musicFields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "comment_count", "arrangement_count", "arrangement_cumulative_count", "arrangement_total_count"];
 
   if (templateKey === "m05_character_music_cross" || templateKey === "m06_music_character_cross" || templateKey === "m08_character_carryover" || templateKey === "m10_character_arrangement_cross") {
@@ -1566,7 +1523,7 @@ async function dynamicCrossResult(templateKey, bundle) {
   }
 
   if (templateKey === "m07_character_music_covote") {
-    const rows = await loadCSV("character_music_covote");
+    const rows = await tableLoader.load(["character_music_covote", current]);
     const rankStart = Math.max(1, integer(controls.rankStart.value, 1));
     const rankEnd = Math.max(rankStart, integer(controls.rankEnd.value, 100));
     const query = controls.search.value.trim().toLocaleLowerCase();
@@ -1663,6 +1620,9 @@ async function dynamicMetricResult(templateKey, bundle) {
     c04_secondary_rate: ["secondary_rate", "第二顺位率", "percent"],
     c05_top2_rate: ["top2_rate", "前两顺位集中率", "percent"],
     c12_gender_lean: ["__gender_lean", "女性比例－全体女性比例", "percent"],
+    c13_comments_top: ["comments_nonempty", "非空评论条数", "integer"],
+    c14_comment_unique_rate: ["comment_unique_rate", "评论去重率", "percent"],
+    c15_comment_length: ["comment_avg_chars", "评论平均字符数", "number"],
   } : {
     m01_metric: ["selection_count", "实际选择人数", "integer"],
     m04_primary_rate: ["primary_rate", "第一顺位率", "percent"],
@@ -1772,8 +1732,9 @@ async function dynamicMetricResult(templateKey, bundle) {
 async function dynamicCharacterResult() {
   const round = controls.round.value;
   const rows = (await loadCSV("character")).filter((row) => selectedRound(row) === round);
-  const xField = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate"].includes(controls.xMetric.value) ? controls.xMetric.value : "selection_count";
-  const yField = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate"].includes(controls.yMetric.value) ? controls.yMetric.value : "primary_rate";
+  const characterFields = ["rank", "points", "selection_count", "selection_rate", "primary_rate", "secondary_rate", "top2_rate", "female_rate", "comments_nonempty", "comments_unique", "comment_unique_rate", "comment_avg_chars", "comment_to_selection_ratio"];
+  const xField = characterFields.includes(controls.xMetric.value) ? controls.xMetric.value : "selection_count";
+  const yField = characterFields.includes(controls.yMetric.value) ? controls.yMetric.value : "primary_rate";
   const rankStart = Math.max(1, integer(controls.rankStart.value, 1)), rankEnd = Math.max(rankStart, integer(controls.rankEnd.value, 2000));
   const minimum = Math.max(0, integer(controls.minVotes.value, 0));
   const query = controls.search.value.trim().toLocaleLowerCase();
@@ -2813,7 +2774,7 @@ async function refresh() {
   }
   if (isDesktopMode(mode)) {
     try {
-      const bundle = await loadBundle();
+      const bundle = await loadTemplateBundle(templateKey);
       const result = DYNAMIC_CROSS_TEMPLATE_KEYS.has(templateKey)
         ? await dynamicCrossResult(templateKey, bundle)
         : DYNAMIC_COVOTE_TEMPLATE_KEYS.has(templateKey)

@@ -37,6 +37,28 @@
 
 跨部门表中的 `character_*`、`music_*` 分别是两端的规范名、显示名、名次、选择人数和该部门有效选票数；`conditional_denominator` 是来源条件率的分母，`music_overall_rate=music_selection_count/music_ballots` 是音乐总体率；其 `lift=conditional_rate/music_overall_rate`（分母有效时），口径见 `lift_basis`。这类表不具备同一个完整四格选票宇宙，`cosine`/`cosine_ochiai`/`ochiai`/`jaccard`/`pmi`/`pmi_nats`/`npmi`/`phi` 等完整 2×2 列留空。
 
+## 角色评论与投票理由
+
+来源为 `data_processed/character_comments/entity_summary.csv` 的逐实体文本摘要，原文及文本哈希在 `comments.csv.gz`。角色指标表 `vote_explorer/data/analysis_character_metrics_all.csv` 按地区、届次及非空实体 ID 连接；无 ID 命中时只接受唯一名称别名。同名来源、多别名冲突及同一来源重复挂接均为 `ambiguous`，数值留空，不取第一条。来源未正常处理为 `source_error`；找不到来源为 `unmatched`；只有 `ok` 行可用于统计。`ok` 表示成功连接，不保证整届评论全部公开或完整抓取。
+
+| 字段 | 单位、公式与限制 |
+|---|---|
+| `comments_raw` | 来源保存的原始文本条数，包括空文本。 |
+| `comments_nonempty` | 非空文本条数；来源成功而无非空文本可为真实 0。 |
+| `comments_unique` | 该地区、届次、角色内的非空文本精确去重条数；不是独立评论者数。 |
+| `comment_exact_duplicates` | `comments_nonempty-comments_unique`；重复文本不等于重复投票。 |
+| `comment_blank` | `comments_raw-comments_nonempty`。 |
+| `comment_avg_chars`, `comment_median_chars` | 非空文本字符数的平均数及中位数，来自上游摘要；无非空文本则空白。字符不是词，长度不是情绪或支持度。 |
+| `comment_unique_rate` | `comments_unique/comments_nonempty`，分母为 0 时空白；这是去重后保留的比例，不是删除比例或意见多样性。 |
+| `comment_to_selection_ratio` | `comments_nonempty/selection_count`，选择人数缺失或为 0 时空白；不是评论者占投票者比例，不据此推断独立人数。 |
+| `comment_data_status` | `ok`、`unmatched`、`ambiguous`、`source_error`；后三者的所有评论数值均为空。 |
+
+`analysis_results/character_comments/role_by_round.csv` 每行一届，覆盖 CN1–11、JP3–22 的 31 个审计范围。`region`/`round`/`round_label` 定位该届，`ranking_entities` 为排行实体行数，`comment_entities_matched` 为 `ok` 行数，`entities_with_nonempty_comments` 为其中非空条数大于 0 的行数；`match_rate=comment_entities_matched/ranking_entities` 是连接成功比例，不是原站抓取完整率。`comments_raw`/`comments_nonempty`/`comments_unique`/`exact_duplicates` 是 **已匹配排行实体内**的计数之和，不能与整个原文归档总数混用；`comments_unique` 不跨角色去重。
+
+`mean_entity_comment_chars=Σ各角色comment_avg_chars/有非空评论的已匹配角色数`，保留每个角色等权的口径，**不是全届评论合并后的平均长度**。schema v2 用此列替代旧 `mean_comment_chars`。`comment_count_selection_pearson` 和 `comment_count_rank_pearson` 在有效的已匹配角色上计算非空评论条数与选择人数/名次的 Pearson 相关；不足两个有效实体或某列为常量则空白。名次越小表示排名越高，需注意方向；这些值没有显著性检验或因果含义。`interpretation` 保存解释限制。
+
+`role_analysis.json` 保存同一逐届结果与定义，`role_analysis.md` 是解释摘要；`unmatched_entities.csv` 列出全部非 `ok` 行，以 `region`/`round`/`round_label`、`entity_id`、`name_cn`/`name_jp`/`canonical_name` 和 `comment_data_status` 定位。其数量及文件哈希见 `analysis_data_manifest.json > character_comments.role_audit`，其中 `unmatched_entities` 是所有非 `ok` 状态合计，明细看 `status_counts`。
+
 ## 结构元数据和配对特征
 
 `metadata/character_structure_metadata.csv` 只覆盖 `character_name_crosswalk.csv` 的角色 roster；`metadata/character_structure_metadata_manifest.json` 记录行数与来源。宽表字段及允许证据详见 [结构元数据 schema](../metadata/character_structure_metadata_schema.md)。`character_structure_field_audit.csv` 每个角色每个属性一行：`attribute` 为属性名，`value` 为证据值，`value_status` 区分 crosswalk 原值、参考索引值、人工编码和未验证空白；`basis`/`source`/`version`/`source_sha256` 标明依据，`match_status` 标明匹配结果。THBWiki 参考索引不是官方阵营认证；`stage`/`boss_identity` 当前无已验证值时为空。
